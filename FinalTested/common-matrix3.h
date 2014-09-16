@@ -13,7 +13,6 @@ namespace Common
 
 		Matrix3()
 		{
-			set(1, 0, 0, 0, 1, 0, 0, 0, 1);
 		}
 
 		Matrix3(const TVALUE value)
@@ -154,6 +153,16 @@ namespace Common
 						return false;
 
 			return true;
+		}
+
+		void identity()
+		{
+			set(1, 0, 0, 0, 1, 0, 0, 0, 1);
+		}
+
+		void zero()
+		{
+			operator =(0);
 		}
 
 		virtual ~Matrix3()

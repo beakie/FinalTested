@@ -23,6 +23,8 @@ namespace Common
 		virtual TIMPLEMENTATION operator-(const TIMPLEMENTATION &matrix) const = 0;
 		virtual TIMPLEMENTATION & operator-=(const TIMPLEMENTATION &matrix) = 0;
 		virtual bool operator==(const TIMPLEMENTATION &matrix) = 0;
+		virtual void identity() = 0;
+		virtual void zero() = 0;
 		virtual ~IMatrix() { }
 	};
 

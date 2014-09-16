@@ -13,12 +13,11 @@ namespace Common
 
 		Matrix2()
 		{
-			set(1, 0, 0, 1);
 		}
 
 		Matrix2(const TVALUE value)
 		{
-			set(value);
+			operator =(value);
 		}
 
 		Matrix2(const TVALUE x1y1, const TVALUE x2y1, const TVALUE x1y2, const TVALUE x2y2)
@@ -29,6 +28,11 @@ namespace Common
 		Matrix2(const Matrix2<TVALUE> &matrix)
 		{
 			set(matrix);
+		}
+
+		void set(const TVALUE value)
+		{
+			operator =(value);
 		}
 
 		void set(const TVALUE value)
@@ -134,6 +138,16 @@ namespace Common
 						return false;
 
 			return true;
+		}
+
+		void identity()
+		{
+			set(1, 0, 0, 1);
+		}
+
+		void zero()
+		{
+			operator =(0);
 		}
 
 		virtual ~Matrix2()
