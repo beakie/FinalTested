@@ -17,17 +17,12 @@ namespace Common
 
 		Matrix3(const TVALUE value)
 		{
-			set(value);
+			operator =(value);
 		}
 
 		Matrix3(const TVALUE x1y1, const TVALUE x2y1, const TVALUE x3y1, const TVALUE x1y2, const TVALUE x2y2, const TVALUE x3y2, const TVALUE x1y3, const TVALUE x2y3, const TVALUE x3y3)
 		{
 			set(x1y1, x2y1, x3y1, x1y2, x2y2, x3y2, x1y3, x2y3, x3y3);
-		}
-
-		Matrix3(const Matrix3<TVALUE> &matrix)
-		{
-			set(matrix);
 		}
 
 		void set(const TVALUE value)
@@ -55,9 +50,7 @@ namespace Common
 
 		void set(const Matrix3<TVALUE> &matrix)
 		{
-			for (unsigned char x = 0; x < 3; x++)
-				for (unsigned char y = 0; y < 3; y++)
-					values[x][y] = matrix.values[x][y];
+			operator =(matrix);
 		}
 
 		TVALUE get(const unsigned char x, const unsigned char y)
@@ -77,16 +70,30 @@ namespace Common
 
 		Matrix3<TVALUE> & operator=(const TVALUE &value)
 		{
-			for (unsigned char x = 0; x < 3; x++)
-				for (unsigned char y = 0; y < 3; y++)
-					values[x][y] = value;
+			values[0][0] = value;
+			values[0][1] = value;
+			values[0][2] = value;
+			values[1][0] = value;
+			values[1][1] = value;
+			values[1][2] = value;
+			values[2][0] = value;
+			values[2][1] = value;
+			values[2][2] = value;
 
 			return *this;
 		}
 
 		Matrix3<TVALUE> & operator=(const Matrix3<TVALUE> &matrix)
 		{
-			set(matrix);
+			values[0][0] = matrix.values[0][0];
+			values[0][1] = matrix.values[0][1];
+			values[0][2] = matrix.values[0][2];
+			values[1][0] = matrix.values[1][0];
+			values[1][1] = matrix.values[1][1];
+			values[1][2] = matrix.values[1][2];
+			values[2][0] = matrix.values[2][0];
+			values[2][1] = matrix.values[2][1];
+			values[2][2] = matrix.values[2][2];
 
 			return *this;
 		}

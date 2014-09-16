@@ -11,20 +11,32 @@ namespace Common
 	{
 		TVALUE values[2][2];
 
+		/// <summary>
+		/// Constructs an unpopulated matrix
+		/// </summary>
 		Matrix2()
 		{
 		}
 
+		/// <summary>
+		/// Constructs a matrix and sets all the values to a single value
+		/// </summary>
 		Matrix2(const TVALUE value)
 		{
 			operator =(value);
 		}
 
+		/// <summary>
+		/// Constructs a matrix and sets each value from specified parameter
+		/// </summary>
 		Matrix2(const TVALUE x1y1, const TVALUE x2y1, const TVALUE x1y2, const TVALUE x2y2)
 		{
 			set(x1y1, x2y1, x1y2, x2y2);
 		}
 
+		/// <summary>
+		/// Sets all the values to a single value [Preferred method: equals operator]
+		/// </summary>
 		void set(const TVALUE value)
 		{
 			operator =(value);
