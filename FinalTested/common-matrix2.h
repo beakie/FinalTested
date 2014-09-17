@@ -8,7 +8,7 @@ namespace Common
 	template <typename TVALUE>
 	struct Matrix2 : public IMatrix < TVALUE, unsigned char, Matrix2<TVALUE> >
 	{
-		TVALUE values[2][2];
+		TVALUE values[2][2]; // [x][y]
 
 		/// <summary>
 		/// Constructs an unpopulated matrix
@@ -229,6 +229,11 @@ namespace Common
 			set(matrix.values[1][1], -matrix.values[1][0], -matrix.values[0][1], matrix.values[0][0]);
 
 			return *this;
+		}
+
+		TVALUE determinant() const
+		{
+			return (values[0][0] * values[1][1]) - (values[0][1] * values[1][0]);
 		}
 
 		bool equals(const Matrix2<TVALUE> &matrix) const

@@ -87,6 +87,10 @@ namespace Common
 		/// Inverts the matrix passed
 		/// </summary>
 		virtual TIMPLEMENTATION& inverse(const TIMPLEMENTATION& matrix) = 0;
+		/// <summary>
+		/// Gets the determinate of the matrix
+		/// </summary>
+		virtual TVALUE determinant() const = 0;
 
 		//static TIMPLEMENTATION getIdentity();
 		//static TIMPLEMENTATION getZero();
