@@ -14,10 +14,13 @@ namespace Common
 		virtual TVALUE get(const TINDEX x, const TINDEX y) = 0;
 		virtual bool equals(const TIMPLEMENTATION &matrix) = 0;
 		virtual TIMPLEMENTATION & multiply(const TIMPLEMENTATION &matrix) = 0;
+		virtual TIMPLEMENTATION & multiply(const TVALUE value) = 0;
 		virtual TIMPLEMENTATION & operator=(const TVALUE &value) = 0;
 		virtual TIMPLEMENTATION & operator=(const TIMPLEMENTATION &matrix) = 0;
 		virtual TIMPLEMENTATION operator*(const TIMPLEMENTATION &matrix) const = 0;
 		virtual TIMPLEMENTATION & operator*=(const TIMPLEMENTATION &matrix) = 0;
+		virtual TIMPLEMENTATION operator*(const TVALUE matrix) const = 0;
+		virtual TIMPLEMENTATION & operator*=(const TVALUE matrix) = 0;
 		virtual TIMPLEMENTATION operator+(const TIMPLEMENTATION &matrix) const = 0;
 		virtual TIMPLEMENTATION & operator+=(const TIMPLEMENTATION &matrix) = 0;
 		virtual TIMPLEMENTATION operator-(const TIMPLEMENTATION &matrix) const = 0;

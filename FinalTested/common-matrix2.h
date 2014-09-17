@@ -27,7 +27,7 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Constructs a matrix and sets each value from specified parameter
+		/// Constructs a matrix and sets each value from parameter list
 		/// </summary>
 		Matrix2(const TVALUE x1y1, const TVALUE x2y1, const TVALUE x1y2, const TVALUE x2y2)
 		{
@@ -35,13 +35,16 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Sets all the values to a single value [Preferred method: equals operator]
+		/// Sets all the values to a single value [Preferred method: Assignment operator]
 		/// </summary>
 		void set(const TVALUE value)
 		{
 			operator =(value);
 		}
 
+		/// <summary>
+		/// Sets each value from parameter list
+		/// </summary>
 		void set(const TVALUE x1y1, const TVALUE x2y1, const TVALUE x1y2, const TVALUE x2y2)
 		{
 			values[0][0] = x1y1;
@@ -50,32 +53,52 @@ namespace Common
 			values[1][1] = x2y2;
 		}
 
+		/// <summary>
+		/// Sets specified value [Preferred method: Setting values directly]
+		/// </summary>
 		void set(const unsigned char x, const unsigned char y, const TVALUE value)
 		{
 			values[x][y] = value;
 		}
 
+		/// <summary>
+		/// Copies values from matrix [Preferred method: Assignment operator]
+		/// </summary>
 		void set(const Matrix2<TVALUE> &matrix)
 		{
 			operator =(matrix);
 		}
 
-		//////////////
+		/// <summary>
+		/// Gets the value [Preferred method: Getting values directly]
+		/// </summary>
 		TVALUE get(const unsigned char x, const unsigned char y)
 		{
 			return values[x][y];
 		}
 
-		//////////////
+		/// <summary>
+		/// Compares the matrix [Preferred method: Relational operator ]
+		/// </summary>
 		bool equals(const Matrix2<TVALUE> &matrix)
 		{
 			return this->operator ==(matrix);
 		}
 
-		//////////////
+		/// <summary>
+		/// Dot product multiplication [Preferred method: Multiplication operator ]
+		/// </summary>
 		Matrix2<TVALUE> & multiply(const Matrix2<TVALUE> &matrix)
 		{
 			return this->operator *(matrix);
+		}
+
+		/// <summary>
+		/// Dot product multiplication [Preferred method: Multiplication operator ]
+		/// </summary>
+		Matrix2<TVALUE> & multiply(const TVALUE value)
+		{
+			return this->operator *(value);
 		}
 
 		Matrix2<TVALUE> & operator=(const TVALUE &value)
@@ -111,6 +134,21 @@ namespace Common
 		Matrix2<TVALUE> & operator*=(const Matrix2<TVALUE> &matrix)
 		{
 			return *this * matrix;
+		}
+
+		//////////////
+		Matrix2<TVALUE> operator*(const TVALUE value) const
+		{
+			return Matrix2<TVALUE>(values[0][0] * value,
+									values[1][0] * value,
+									values[0][1] * value,
+									values[1][1] * value);
+		}
+
+		//////////////
+		Matrix2<TVALUE> & operator*=(const TVALUE value)
+		{
+			return *this * value;
 		}
 
 		//////////////
