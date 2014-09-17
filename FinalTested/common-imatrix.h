@@ -45,6 +45,9 @@ namespace Common
 
 		virtual bool operator == (const TIMPLEMENTATION& matrix) const = 0;
 
+		/// <summary>
+		/// Dot product multiplication
+		/// </summary>
 		virtual TIMPLEMENTATION& multiply(const TIMPLEMENTATION& matrix) = 0;
 		/// <summary>
 		/// Scalar multiplication
