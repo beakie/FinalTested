@@ -202,19 +202,16 @@ namespace Common
 			return this->operator *=(value);
 		}
 
-		//////////////
 		void identity()
 		{
 			set(1, 0, 0, 1);
 		}
 
-		//////////////
 		void zero()
 		{
 			operator =(0);
 		}
 
-		//////////////
 		void allOnes()
 		{
 			operator =(1);

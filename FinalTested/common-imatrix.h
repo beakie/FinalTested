@@ -65,8 +65,17 @@ namespace Common
 		/// </summary>
 		virtual bool equals(const TIMPLEMENTATION& matrix) const = 0;
 
+		/// <summary>
+		/// Populates the matrix with an identity matrix
+		/// </summary>
 		virtual void identity() = 0;
+		/// <summary>
+		/// Populates the matrix with a zero matrix
+		/// </summary>
 		virtual void zero() = 0;
+		/// <summary>
+		/// Populates the matrix with an all-ones matrix
+		/// </summary>
 		virtual void allOnes() = 0;
 
 		//static TIMPLEMENTATION getIdentity();
