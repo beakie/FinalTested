@@ -44,7 +44,7 @@ namespace Common
 		virtual TIMPLEMENTATION operator / (const TVALUE value) const = 0;
 		virtual TIMPLEMENTATION& operator /= (const TVALUE value) = 0;
 
-		virtual bool operator == (const TIMPLEMENTATION& matrix) = 0;
+		virtual bool operator == (const TIMPLEMENTATION& matrix) const = 0;
 
 		virtual TIMPLEMENTATION& multiply(const TIMPLEMENTATION& matrix) = 0;
 		/// <summary>
@@ -63,7 +63,7 @@ namespace Common
 		/// <summary>
 		/// Compares the matrix
 		/// </summary>
-		virtual bool equals(const TIMPLEMENTATION& matrix) = 0;
+		virtual bool equals(const TIMPLEMENTATION& matrix) const = 0;
 
 		virtual void identity() = 0;
 		virtual void zero() = 0;

@@ -172,7 +172,7 @@ namespace Common
 		}
 
 		//////////////
-		bool operator==(const Matrix2<TVALUE> &matrix)
+		bool operator==(const Matrix2<TVALUE> &matrix) const
 		{
 			for (unsigned char x = 0; x < 2; x++)
 				for (unsigned char y = 0; y < 2; y++)
@@ -220,7 +220,7 @@ namespace Common
 			operator =(1);
 		}
 
-		bool equals(const Matrix2<TVALUE> &matrix)
+		bool equals(const Matrix2<TVALUE> &matrix) const
 		{
 			return this->operator ==(matrix);
 		}
