@@ -11,9 +11,11 @@ int main(int argc, char *argv[])
 
 	Common::Matrix2<float> matrix2 = Common::Matrix2<float>(matrix);
 
-	matrix.invert();
+	matrix.inverse();
 
 	matrix2.inverse(matrix);
+
+	float d = matrix.determinant();
 
 	return a.exec();
 }

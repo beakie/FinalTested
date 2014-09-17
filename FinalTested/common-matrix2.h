@@ -43,7 +43,7 @@ namespace Common
 			values[x][y] = value;
 		}
 
-		void set(const Matrix2<TVALUE> &matrix)
+		void set(const Matrix2<TVALUE>& matrix)
 		{
 			operator =(matrix);
 		}
@@ -64,7 +64,7 @@ namespace Common
 			return values[x][y];
 		}
 
-		Matrix2<TVALUE> & operator=(const TVALUE &value)
+		Matrix2<TVALUE>& operator =(const TVALUE& value)
 		{
 			values[0][0] = value;
 			values[0][1] = value;
@@ -74,7 +74,7 @@ namespace Common
 			return *this;
 		}
 
-		Matrix2<TVALUE> & operator=(const Matrix2<TVALUE> &matrix)
+		Matrix2<TVALUE>& operator =(const Matrix2<TVALUE>& matrix)
 		{
 			values[0][0] = matrix.values[0][0];
 			values[0][1] = matrix.values[0][1];
@@ -85,79 +85,85 @@ namespace Common
 		}
 
 		//////////////
-		Matrix2<TVALUE> operator+(const Matrix2<TVALUE> &matrix) const
+		Matrix2<TVALUE> operator +(const Matrix2<TVALUE>& matrix) const
 		{
 			return Matrix2<TVALUE>(values[0][0] + matrix.values[0][0],
-				values[1][0] + matrix.values[1][0],
-				values[0][1] + matrix.values[0][1],
-				values[1][1] + matrix.values[1][1]);
+									values[1][0] + matrix.values[1][0],
+									values[0][1] + matrix.values[0][1],
+									values[1][1] + matrix.values[1][1]);
 		}
 
 		//////////////
-		Matrix2<TVALUE> & operator+=(const Matrix2<TVALUE> &matrix)
+		Matrix2<TVALUE>& operator +=(const Matrix2<TVALUE>& matrix)
 		{
 			return *this + matrix;
 		}
 
 		//////////////
-		Matrix2<TVALUE> operator-(const Matrix2<TVALUE> &matrix) const
+		Matrix2<TVALUE> operator -(const Matrix2<TVALUE>& matrix) const
 		{
 			return Matrix2<TVALUE>(values[0][0] - matrix.values[0][0],
-				values[1][0] - matrix.values[1][0],
-				values[0][1] - matrix.values[0][1],
-				values[1][1] - matrix.values[1][1]);
+									values[1][0] - matrix.values[1][0],
+									values[0][1] - matrix.values[0][1],
+									values[1][1] - matrix.values[1][1]);
 		}
 
 		//////////////
-		Matrix2<TVALUE> & operator-=(const Matrix2<TVALUE> &matrix)
+		Matrix2<TVALUE>& operator -=(const Matrix2<TVALUE>& matrix)
 		{
 			return *this - matrix;
 		}
 
 		//////////////
-		Matrix2<TVALUE> operator*(const Matrix2<TVALUE> &matrix) const
+		Matrix2<TVALUE> operator *(const Matrix2<TVALUE>& matrix) const
 		{
 			return Matrix2<TVALUE>((matrix.values[0][0] * values[0][0]) + (matrix.values[0][1] * values[1][0]),
-				(matrix.values[1][0] * values[0][0]) + (matrix.values[1][1] * values[1][0]),
-				(matrix.values[0][0] * values[0][1]) + (matrix.values[0][1] * values[1][1]),
-				(matrix.values[1][0] * values[0][1]) + (matrix.values[1][1] * values[1][1]));
+									(matrix.values[1][0] * values[0][0]) + (matrix.values[1][1] * values[1][0]),
+									(matrix.values[0][0] * values[0][1]) + (matrix.values[0][1] * values[1][1]),
+									(matrix.values[1][0] * values[0][1]) + (matrix.values[1][1] * values[1][1]));
 		}
 
 		//////////////
-		Matrix2<TVALUE> & operator*=(const Matrix2<TVALUE> &matrix)
+		Matrix2<TVALUE>& operator *=(const Matrix2<TVALUE>& matrix)
 		{
 			return *this * matrix;
 		}
 
 		//////////////
-		Matrix2<TVALUE> operator*(const TVALUE value) const
+		Matrix2<TVALUE> operator *(const TVALUE value) const
 		{
 			return Matrix2<TVALUE>(values[0][0] * value,
-				values[1][0] * value,
-				values[0][1] * value,
-				values[1][1] * value);
+									values[1][0] * value,
+									values[0][1] * value,
+									values[1][1] * value);
 		}
 
 		//////////////
-		Matrix2<TVALUE> & operator*=(const TVALUE value)
+		Matrix2<TVALUE>& operator *=(const TVALUE value)
 		{
 			return *this * value;
 		}
 
 		//////////////
-		Matrix2<TVALUE> operator/(const Matrix2<TVALUE> &matrix) const
+		Matrix2<TVALUE> operator /(const Matrix2<TVALUE>& matrix) const
 		{
-			return Matrix2<TVALUE>(); // TODO !!!! TODO !!!! TODO !!!! TODO !!!! TODO !!!! TODO !!!! TODO !!!! TODO !!!! TODO !!!!
+			Matrix2<TVALUE> i = *matrix.inverse();
+			TVALUE d = i.determinant();
+
+			if (d == 0)
+				throw 123;
+
+			return Matrix2<TVALUE>();
 		}
 
 		//////////////
-		Matrix2<TVALUE> & operator/=(const Matrix2<TVALUE> &matrix)
+		Matrix2<TVALUE>& operator /=(const Matrix2<TVALUE>& matrix)
 		{
 			return *this / matrix;
 		}
 
 		//////////////
-		Matrix2<TVALUE> operator/(const TVALUE value) const
+		Matrix2<TVALUE> operator /(const TVALUE value) const
 		{
 			return Matrix2<TVALUE>(values[0][0] / value,
 									values[1][0] / value,
@@ -166,13 +172,13 @@ namespace Common
 		}
 
 		//////////////
-		Matrix2<TVALUE> & operator/=(const TVALUE value)
+		Matrix2<TVALUE>& operator /=(const TVALUE value)
 		{
 			return *this / value;
 		}
 
 		//////////////
-		bool operator==(const Matrix2<TVALUE> &matrix) const
+		bool operator ==(const Matrix2<TVALUE>& matrix) const
 		{
 			for (unsigned char x = 0; x < 2; x++)
 				for (unsigned char y = 0; y < 2; y++)
@@ -182,49 +188,49 @@ namespace Common
 			return true;
 		}
 
-		Matrix2<TVALUE> & multiply(const Matrix2<TVALUE> &matrix)
+		Matrix2<TVALUE>& multiply(const Matrix2<TVALUE>& matrix)
 		{
 			return this->operator *=(matrix);
 		}
 
-		Matrix2<TVALUE> & multiply(const TVALUE value)
+		Matrix2<TVALUE>& multiply(const TVALUE value)
 		{
 			return this->operator *=(value);
 		}
 
-		Matrix2<TVALUE> & dotProduct(const Matrix2<TVALUE> &matrix)
+		Matrix2<TVALUE>& dotProduct(const Matrix2<TVALUE>& matrix)
 		{
 			return this->operator *=(matrix);
 		}
 
-		Matrix2<TVALUE> & scalar(const TVALUE value)
+		Matrix2<TVALUE>& scalar(const TVALUE value)
 		{
 			return this->operator *=(value);
 		}
 
-		Matrix2<TVALUE> & identity()
+		Matrix2<TVALUE>& identity()
 		{
 			set(1, 0, 0, 1);
 
 			return *this;
 		}
 
-		Matrix2<TVALUE> & zero()
+		Matrix2<TVALUE>& zero()
 		{
 			return this->operator =(0);
 		}
 
-		Matrix2<TVALUE> & allOnes()
+		Matrix2<TVALUE>& allOnes()
 		{
 			return this->operator =(1);
 		}
 
-		Matrix2<TVALUE> & invert()
+		Matrix2<TVALUE>& inverse()
 		{
 			return this->inverse(*this);
 		}
 
-		Matrix2<TVALUE> & inverse(const Matrix2<TVALUE>& matrix)
+		Matrix2<TVALUE>& inverse(const Matrix2<TVALUE>& matrix)
 		{
 			set(matrix.values[1][1], -matrix.values[1][0], -matrix.values[0][1], matrix.values[0][0]);
 
@@ -236,7 +242,7 @@ namespace Common
 			return (values[0][0] * values[1][1]) - (values[0][1] * values[1][0]);
 		}
 
-		bool equals(const Matrix2<TVALUE> &matrix) const
+		bool equals(const Matrix2<TVALUE>& matrix) const
 		{
 			return this->operator ==(matrix);
 		}

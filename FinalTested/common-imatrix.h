@@ -82,7 +82,7 @@ namespace Common
 		/// <summary>
 		/// Inverts the matrix
 		/// </summary>
-		virtual TIMPLEMENTATION& invert() = 0;
+		virtual TIMPLEMENTATION& inverse() = 0;
 		/// <summary>
 		/// Inverts the matrix passed
 		/// </summary>
@@ -96,6 +96,7 @@ namespace Common
 		//static TIMPLEMENTATION getZero();
 		//static TIMPLEMENTATION getAllOnes();
 		//static TIMPLEMENTATION getInverse(const TIMPLEMENTATION& matrix);
+		//static TVALUE getDeterminant(const TIMPLEMENTATION& matrix);
 
 		virtual ~IMatrix () { }
 	};
