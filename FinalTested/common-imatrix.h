@@ -45,9 +45,9 @@ namespace Common
 		virtual void zero() = 0;
 		virtual void allOnes() = 0;
 
-		//static TIMPLEMENTATION identity();
-		//static TIMPLEMENTATION zero();
-		//static TIMPLEMENTATION allOnes();
+		//static TIMPLEMENTATION getIdentity();
+		//static TIMPLEMENTATION getZero();
+		//static TIMPLEMENTATION getAllOnes();
 
 		virtual ~IMatrix () { }
 	};
