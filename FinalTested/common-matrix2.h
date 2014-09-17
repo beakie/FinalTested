@@ -147,7 +147,7 @@ namespace Common
 		//////////////
 		Matrix2<TVALUE> operator /(const Matrix2<TVALUE>& matrix) const
 		{
-			Matrix2<TVALUE> i = *matrix.inverse();
+			Matrix2<TVALUE> i = Matrix2<TVALUE>(matrix).inverse();
 			TVALUE d = i.determinant();
 
 			if (d == 0)
