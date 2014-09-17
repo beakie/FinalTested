@@ -202,19 +202,33 @@ namespace Common
 			return this->operator *=(value);
 		}
 
-		void identity()
+		Matrix2<TVALUE> & identity()
 		{
 			set(1, 0, 0, 1);
+
+			return *this;
 		}
 
-		void zero()
+		Matrix2<TVALUE> & zero()
 		{
-			operator =(0);
+			return this->operator =(0);
 		}
 
-		void allOnes()
+		Matrix2<TVALUE> & allOnes()
 		{
-			operator =(1);
+			return this->operator =(1);
+		}
+
+		Matrix2<TVALUE> & invert()
+		{
+			return this->inverse(*this);
+		}
+
+		Matrix2<TVALUE> & inverse(const Matrix2<TVALUE>& matrix)
+		{
+			set(matrix.values[1][1], -matrix.values[1][0], -matrix.values[0][1], matrix.values[0][0]);
+
+			return *this;
 		}
 
 		bool equals(const Matrix2<TVALUE> &matrix) const

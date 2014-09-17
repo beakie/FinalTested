@@ -70,19 +70,28 @@ namespace Common
 		/// <summary>
 		/// Populates the matrix with an identity matrix
 		/// </summary>
-		virtual void identity() = 0;
+		virtual TIMPLEMENTATION& identity() = 0;
 		/// <summary>
 		/// Populates the matrix with a zero matrix
 		/// </summary>
-		virtual void zero() = 0;
+		virtual TIMPLEMENTATION& zero() = 0;
 		/// <summary>
 		/// Populates the matrix with an all-ones matrix
 		/// </summary>
-		virtual void allOnes() = 0;
+		virtual TIMPLEMENTATION& allOnes() = 0;
+		/// <summary>
+		/// Inverts the matrix
+		/// </summary>
+		virtual TIMPLEMENTATION& invert() = 0;
+		/// <summary>
+		/// Inverts the matrix passed
+		/// </summary>
+		virtual TIMPLEMENTATION& inverse(const TIMPLEMENTATION& matrix) = 0;
 
 		//static TIMPLEMENTATION getIdentity();
 		//static TIMPLEMENTATION getZero();
 		//static TIMPLEMENTATION getAllOnes();
+		//static TIMPLEMENTATION getInverse(const TIMPLEMENTATION& matrix);
 
 		virtual ~IMatrix () { }
 	};
