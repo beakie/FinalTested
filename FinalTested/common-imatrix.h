@@ -3,7 +3,6 @@
 
 namespace Common
 {
-
 	template <typename TVALUE, typename TINDEX, typename TIMPLEMENTATION>
 	struct IMatrix
 	{
