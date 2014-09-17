@@ -8,27 +8,43 @@ namespace Common
 	struct IMatrix
 	{
 	public:
-		virtual void set(const TVALUE value) = 0;
-		virtual void set(const TINDEX x, const TINDEX y, const TVALUE value) = 0;
-		virtual void set(const TIMPLEMENTATION &matrix) = 0;
-		virtual TVALUE get(const TINDEX x, const TINDEX y) = 0;
-		virtual bool equals(const TIMPLEMENTATION &matrix) = 0;
+		virtual void set (const TVALUE value) = 0;
+		virtual void set (const TINDEX x, const TINDEX y, const TVALUE value) = 0;
+		virtual void set (const TIMPLEMENTATION &matrix) = 0;
+
+		virtual TVALUE get (const TINDEX x, const TINDEX y) = 0;
+
+		virtual TIMPLEMENTATION & operator = (const TVALUE &value) = 0;
+		virtual TIMPLEMENTATION & operator = (const TIMPLEMENTATION &matrix) = 0;
+
+		virtual TIMPLEMENTATION operator + (const TIMPLEMENTATION &matrix) const = 0;
+		virtual TIMPLEMENTATION & operator += (const TIMPLEMENTATION &matrix) = 0;
+		virtual TIMPLEMENTATION operator - (const TIMPLEMENTATION &matrix) const = 0;
+		virtual TIMPLEMENTATION & operator -= (const TIMPLEMENTATION &matrix) = 0;
+
+		virtual TIMPLEMENTATION operator * (const TIMPLEMENTATION &matrix) const = 0;
+		virtual TIMPLEMENTATION & operator *= (const TIMPLEMENTATION &matrix) = 0;
+		virtual TIMPLEMENTATION operator * (const TVALUE value) const = 0;
+		virtual TIMPLEMENTATION & operator *= (const TVALUE value) = 0;
+
+		virtual TIMPLEMENTATION operator / (const TIMPLEMENTATION &matrix) const = 0;
+		virtual TIMPLEMENTATION & operator /= (const TIMPLEMENTATION &matrix) = 0;
+		virtual TIMPLEMENTATION operator / (const TVALUE value) const = 0;
+		virtual TIMPLEMENTATION & operator /= (const TVALUE value) = 0;
+
+		virtual bool operator == (const TIMPLEMENTATION &matrix) = 0;
+
+		virtual void identity () = 0;
+		virtual void zero () = 0;
+
 		virtual TIMPLEMENTATION & multiply(const TIMPLEMENTATION &matrix) = 0;
 		virtual TIMPLEMENTATION & multiply(const TVALUE value) = 0;
-		virtual TIMPLEMENTATION & operator=(const TVALUE &value) = 0;
-		virtual TIMPLEMENTATION & operator=(const TIMPLEMENTATION &matrix) = 0;
-		virtual TIMPLEMENTATION operator*(const TIMPLEMENTATION &matrix) const = 0;
-		virtual TIMPLEMENTATION & operator*=(const TIMPLEMENTATION &matrix) = 0;
-		virtual TIMPLEMENTATION operator*(const TVALUE matrix) const = 0;
-		virtual TIMPLEMENTATION & operator*=(const TVALUE matrix) = 0;
-		virtual TIMPLEMENTATION operator+(const TIMPLEMENTATION &matrix) const = 0;
-		virtual TIMPLEMENTATION & operator+=(const TIMPLEMENTATION &matrix) = 0;
-		virtual TIMPLEMENTATION operator-(const TIMPLEMENTATION &matrix) const = 0;
-		virtual TIMPLEMENTATION & operator-=(const TIMPLEMENTATION &matrix) = 0;
-		virtual bool operator==(const TIMPLEMENTATION &matrix) = 0;
-		virtual void identity() = 0;
-		virtual void zero() = 0;
-		virtual ~IMatrix() { }
+		virtual TIMPLEMENTATION & dotProduct(const TIMPLEMENTATION &matrix) = 0;
+		virtual TIMPLEMENTATION & scalar (const TVALUE value) = 0;
+
+		virtual bool equals (const TIMPLEMENTATION &matrix) = 0;
+
+		virtual ~IMatrix () { }
 	};
 
 }
