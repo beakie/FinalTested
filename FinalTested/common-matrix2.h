@@ -33,25 +33,16 @@ namespace Common
 			set(x1y1, x2y1, x1y2, x2y2);
 		}
 
-		/// <summary>
-		/// Sets all the values to a single value [Preferred method: Assignment operator]
-		/// </summary>
 		void set(const TVALUE value)
 		{
 			operator =(value);
 		}
 
-		/// <summary>
-		/// Sets specified value [Preferred method: Setting values directly]
-		/// </summary>
 		void set(const unsigned char x, const unsigned char y, const TVALUE value)
 		{
 			values[x][y] = value;
 		}
 
-		/// <summary>
-		/// Copies values from matrix [Preferred method: Assignment operator]
-		/// </summary>
 		void set(const Matrix2<TVALUE> &matrix)
 		{
 			operator =(matrix);
@@ -68,9 +59,6 @@ namespace Common
 			values[1][1] = x2y2;
 		}
 
-		/// <summary>
-		/// Gets the value [Preferred method: Getting values directly]
-		/// </summary>
 		TVALUE get(const unsigned char x, const unsigned char y)
 		{
 			return values[x][y];
@@ -194,33 +182,21 @@ namespace Common
 			return true;
 		}
 
-		/// <summary>
-		/// Dot product multiplication [Preferred method: Multiplication assignment operator ]
-		/// </summary>
 		Matrix2<TVALUE> & multiply(const Matrix2<TVALUE> &matrix)
 		{
 			return this->operator *=(matrix);
 		}
 
-		/// <summary>
-		/// Scalar multiplication [Preferred method: Multiplication assignment operator ]
-		/// </summary>
 		Matrix2<TVALUE> & multiply(const TVALUE value)
 		{
 			return this->operator *=(value);
 		}
 
-		/// <summary>
-		/// Dot product multiplication [Preferred method: Multiplication assignment operator ]
-		/// </summary>
 		Matrix2<TVALUE> & dotProduct(const Matrix2<TVALUE> &matrix)
 		{
 			return this->operator *=(matrix);
 		}
 
-		/// <summary>
-		/// Scalar multiplication [Preferred method: Multiplication assignment operator ]
-		/// </summary>
 		Matrix2<TVALUE> & scalar(const TVALUE value)
 		{
 			return this->operator *=(value);
@@ -244,9 +220,6 @@ namespace Common
 			operator =(1);
 		}
 
-		/// <summary>
-		/// Compares the matrix [Preferred method: Relational operator ]
-		/// </summary>
 		bool equals(const Matrix2<TVALUE> &matrix)
 		{
 			return this->operator ==(matrix);
