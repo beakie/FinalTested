@@ -238,6 +238,12 @@ namespace Common
 			operator =(0);
 		}
 
+		//////////////
+		void allOnes()
+		{
+			operator =(1);
+		}
+
 		/// <summary>
 		/// Compares the matrix [Preferred method: Relational operator ]
 		/// </summary>
