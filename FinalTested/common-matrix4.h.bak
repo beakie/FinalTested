@@ -231,7 +231,9 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& operator *=(const Matrix4<TVALUE>& matrix)
 		{
-			return *this * matrix;
+			*this = *this * matrix;
+
+			return *this;
 		}
 
 		/// <summary>

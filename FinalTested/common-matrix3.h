@@ -150,14 +150,14 @@ namespace Common
 		Matrix3<TVALUE> operator -(const Matrix3<TVALUE>& matrix) const
 		{
 			return Matrix3<TVALUE>(Values[0][0] - matrix.Values[0][0],
-				Values[1][0] - matrix.Values[1][0],
-				Values[2][0] - matrix.Values[2][0],
-				Values[0][1] - matrix.Values[0][1],
-				Values[1][1] - matrix.Values[1][1],
-				Values[2][1] - matrix.Values[2][1],
-				Values[0][2] - matrix.Values[0][2],
-				Values[1][2] - matrix.Values[1][2],
-				Values[2][2] - matrix.Values[2][2]);
+									Values[1][0] - matrix.Values[1][0],
+									Values[2][0] - matrix.Values[2][0],
+									Values[0][1] - matrix.Values[0][1],
+									Values[1][1] - matrix.Values[1][1],
+									Values[2][1] - matrix.Values[2][1],
+									Values[0][2] - matrix.Values[0][2],
+									Values[1][2] - matrix.Values[1][2],
+									Values[2][2] - matrix.Values[2][2]);
 		}
 
 		/// <summary>
@@ -219,7 +219,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE>  operator /(const Matrix3<TVALUE>& matrix) const
+		Matrix3<TVALUE> operator /(const Matrix3<TVALUE>& matrix) const
 		{
 			Matrix3<TVALUE> i = Matrix3<TVALUE>(matrix).inverse();
 			TVALUE d = i.getDeterminant();
@@ -233,7 +233,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE>&  operator /=(const Matrix3<TVALUE>& matrix)
+		Matrix3<TVALUE>& operator /=(const Matrix3<TVALUE>& matrix)
 		{
 			return *this / matrix;
 		}
@@ -241,7 +241,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE>  operator /(const TVALUE value) const
+		Matrix3<TVALUE> operator /(const TVALUE value) const
 		{
 			return Matrix3<TVALUE>(Values[0][0] / value,
 									Values[1][0] / value,
@@ -257,7 +257,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE>&  operator /=(const TVALUE value)
+		Matrix3<TVALUE>& operator /=(const TVALUE value)
 		{
 			return *this / value;
 		}
@@ -320,7 +320,7 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE>& identity()
 		{
-			set(1, 0, 0, 1);
+			set(1, 0, 0, 0, 1, 0, 0, 0, 1);
 
 			return *this;
 		}
