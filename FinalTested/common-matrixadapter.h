@@ -134,7 +134,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& operator *=(const TVALUE value)
 		{
-			operator *=(value);
+			TMATRIX::operator *(value);
 
 			return *this;
 		}
@@ -164,7 +164,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX> operator /(const TVALUE value) const
 		{
-			// do manually. consider matrix size.
+			TMATRIX::operator /(value);
 
 			return *this;
 		}
