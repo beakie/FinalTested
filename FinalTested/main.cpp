@@ -19,6 +19,8 @@ int main(int argc, char *argv[])
 	
 	float d = matrix.getDeterminant();
 	
+	Common::Matrix3<float> mmm;
+
 	//Common::Matrix<Common::Matrix2<float>, float, unsigned char> x = Common::Matrix<Common::Matrix2<float>, float, unsigned char>();
 
 	return a.exec();

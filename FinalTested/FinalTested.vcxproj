@@ -79,11 +79,9 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="common-imatrix.h" />
     <ClInclude Include="common-matrix2.h" />
     <ClInclude Include="common-matrix3.h" />
     <ClInclude Include="common-matrix4.h" />
-    <ClInclude Include="common-matrix.h" />
     <ClInclude Include="common.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
