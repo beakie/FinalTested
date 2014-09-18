@@ -21,7 +21,10 @@ int main(int argc, char *argv[])
 	
 	Common::Matrix3<float> mmm;
 
-	//Common::Matrix<Common::Matrix2<float>, float, unsigned char> x = Common::Matrix<Common::Matrix2<float>, float, unsigned char>();
+	Common::MatrixF8 adapter;
+	adapter.get(0, 0);
+	adapter.inverse();
+	adapter + adapter;
 
 	return a.exec();
 }
