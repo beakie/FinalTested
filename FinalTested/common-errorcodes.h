@@ -1,0 +1,1 @@
+#define	ERR_DETERMINANT_ZERO 20;

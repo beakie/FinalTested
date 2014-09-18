@@ -79,6 +79,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common-errorcodes.h" />
     <ClInclude Include="common-imatrix.h" />
     <ClInclude Include="common-matrix2.h" />
     <ClInclude Include="common-matrix3.h" />

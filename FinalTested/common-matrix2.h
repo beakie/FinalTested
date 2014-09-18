@@ -1,6 +1,7 @@
 #ifndef MATRIX2_H
 #define MATRIX2_H
 
+#include "common-errorcodes.h"
 #include "common-imatrix.h"
 
 namespace Common
@@ -154,7 +155,7 @@ namespace Common
 			TVALUE d = i.getDeterminant();
 
 			if (d == 0)
-				throw 123;
+				throw ERR_DETERMINANT_ZERO;
 
 			return Matrix2<TVALUE>();
 		}
