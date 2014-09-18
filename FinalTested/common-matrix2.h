@@ -8,7 +8,10 @@ namespace Common
 	template <typename TVALUE>
 	struct Matrix2 : public IMatrix < TVALUE, unsigned char, Matrix2<TVALUE> >
 	{
-		TVALUE values[2][2]; // [x][y]
+		/// <summary>
+		/// The values or the matrix in [x][y] form
+		/// </summary>
+		TVALUE values[2][2];
 
 		/// <summary>
 		/// Constructs an unpopulated matrix
@@ -148,7 +151,7 @@ namespace Common
 		Matrix2<TVALUE> operator /(const Matrix2<TVALUE>& matrix) const
 		{
 			Matrix2<TVALUE> i = Matrix2<TVALUE>(matrix).inverse();
-			TVALUE d = i.determinant();
+			TVALUE d = i.getDeterminant();
 
 			if (d == 0)
 				throw 123;
@@ -237,7 +240,12 @@ namespace Common
 			return *this;
 		}
 
-		TVALUE determinant() const
+		Matrix2<TVALUE> getInverse()
+		{
+			return Matrix2<TVALUE>();
+		}
+
+		TVALUE getDeterminant() const
 		{
 			return (values[0][0] * values[1][1]) - (values[0][1] * values[1][0]);
 		}

@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 	matrix2.inverse(matrix);
 
-	float d = matrix.determinant();
+	float d = matrix.getDeterminant();
 
 	return a.exec();
 }
