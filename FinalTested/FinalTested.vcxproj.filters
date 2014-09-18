@@ -38,5 +38,11 @@
     <ClInclude Include="common-matrix4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

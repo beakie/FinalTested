@@ -6,10 +6,10 @@
 namespace Common
 {
 	template <typename TVALUE>
-	struct Matrix2 : public IMatrix < TVALUE, unsigned char, Matrix2<TVALUE> >
+	struct Matrix2
 	{
 		/// <summary>
-		/// The values or the matrix in [x][y] form
+		/// The values of the matrix stored in [x][y] form
 		/// </summary>
 		TVALUE values[2][2];
 
@@ -23,6 +23,7 @@ namespace Common
 		/// <summary>
 		/// Constructs a matrix and sets all the values to a single value
 		/// </summary>
+		/// <remarks>Equals operator</remarks>
 		Matrix2(const TVALUE value)
 		{
 			operator =(value);
@@ -36,16 +37,25 @@ namespace Common
 			set(x1y1, x2y1, x1y2, x2y2);
 		}
 
+		/// <summary>
+		/// Sets all the values to a single value
+		/// </summary>
 		void set(const TVALUE value)
 		{
 			operator =(value);
 		}
 
+		/// <summary>
+		/// Sets specified value
+		/// </summary>
 		void set(const unsigned char x, const unsigned char y, const TVALUE value)
 		{
 			values[x][y] = value;
 		}
 
+		/// <summary>
+		/// Copies values from matrix
+		/// </summary>
 		void set(const Matrix2<TVALUE>& matrix)
 		{
 			operator =(matrix);
@@ -62,6 +72,9 @@ namespace Common
 			values[1][1] = x2y2;
 		}
 
+		/// <summary>
+		/// Gets the value
+		/// </summary>
 		TVALUE get(const unsigned char x, const unsigned char y)
 		{
 			return values[x][y];
@@ -191,26 +204,49 @@ namespace Common
 			return true;
 		}
 
+		/// <summary>
+		/// Dot product multiplication
+		/// </summary>
 		Matrix2<TVALUE>& multiply(const Matrix2<TVALUE>& matrix)
 		{
 			return this->operator *=(matrix);
 		}
 
+		/// <summary>
+		/// Scalar multiplication
+		/// </summary>
 		Matrix2<TVALUE>& multiply(const TVALUE value)
 		{
 			return this->operator *=(value);
 		}
 
+		/// <summary>
+		/// Dot product multiplication
+		/// </summary>
 		Matrix2<TVALUE>& dotProduct(const Matrix2<TVALUE>& matrix)
 		{
 			return this->operator *=(matrix);
 		}
 
+		/// <summary>
+		/// Scalar multiplication
+		/// </summary>
 		Matrix2<TVALUE>& scalar(const TVALUE value)
 		{
 			return this->operator *=(value);
 		}
 
+		/// <summary>
+		/// Compares the matrix
+		/// </summary>
+		bool equals(const Matrix2<TVALUE>& matrix) const
+		{
+			return this->operator ==(matrix);
+		}
+
+		/// <summary>
+		/// Populates the matrix with an identity matrix
+		/// </summary>
 		Matrix2<TVALUE>& identity()
 		{
 			set(1, 0, 0, 1);
@@ -218,21 +254,33 @@ namespace Common
 			return *this;
 		}
 
+		/// <summary>
+		/// Populates the matrix with a zero matrix
+		/// </summary>
 		Matrix2<TVALUE>& zero()
 		{
 			return this->operator =(0);
 		}
 
+		/// <summary>
+		/// Populates the matrix with an all-ones matrix
+		/// </summary>
 		Matrix2<TVALUE>& allOnes()
 		{
 			return this->operator =(1);
 		}
 
+		/// <summary>
+		/// Inverts the matrix
+		/// </summary>
 		Matrix2<TVALUE>& inverse()
 		{
 			return this->inverse(*this);
 		}
 
+		/// <summary>
+		/// Inverts the matrix passed
+		/// </summary>
 		Matrix2<TVALUE>& inverse(const Matrix2<TVALUE>& matrix)
 		{
 			set(matrix.values[1][1], -matrix.values[1][0], -matrix.values[0][1], matrix.values[0][0]);
@@ -240,19 +288,20 @@ namespace Common
 			return *this;
 		}
 
+		/// <summary>
+		/// Returns the inverse of the matrix
+		/// </summary>
 		Matrix2<TVALUE> getInverse()
 		{
 			return Matrix2<TVALUE>();
 		}
 
+		/// <summary>
+		/// Gets the determinate of the matrix
+		/// </summary>
 		TVALUE getDeterminant() const
 		{
 			return (values[0][0] * values[1][1]) - (values[0][1] * values[1][0]);
-		}
-
-		bool equals(const Matrix2<TVALUE>& matrix) const
-		{
-			return this->operator ==(matrix);
 		}
 
 		virtual ~Matrix2()
