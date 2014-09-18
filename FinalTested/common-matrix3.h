@@ -20,7 +20,7 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Constructs a matrix and sets all the Values to a single value
+		/// Constructs a matrix and sets all the values to a single value
 		/// </summary>
 		/// <remarks>Equals operator</remarks>
 		Matrix3(const TVALUE value)
@@ -37,7 +37,7 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Sets all the Values to a single value
+		/// Sets all the values to a single value
 		/// </summary>
 		void set(const TVALUE value)
 		{
@@ -53,7 +53,7 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Copies Values from matrix
+		/// Copies values from matrix
 		/// </summary>
 		void set(const Matrix3<TVALUE>& matrix)
 		{
@@ -87,7 +87,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE>& operator=(const TVALUE& value)
+		Matrix3<TVALUE>& operator =(const TVALUE& value)
 		{
 			Values[0][0] = value;
 			Values[0][1] = value;
@@ -105,7 +105,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE>& operator=(const Matrix3<TVALUE>& matrix)
+		Matrix3<TVALUE>& operator =(const Matrix3<TVALUE>& matrix)
 		{
 			Values[0][0] = matrix.Values[0][0];
 			Values[0][1] = matrix.Values[0][1];
@@ -123,23 +123,23 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE> operator+(const Matrix3<TVALUE>& matrix) const
+		Matrix3<TVALUE> operator +(const Matrix3<TVALUE>& matrix) const
 		{
 			return Matrix3<TVALUE>(Values[0][0] + matrix.Values[0][0],
-				Values[1][0] + matrix.Values[1][0],
-				Values[2][0] + matrix.Values[2][0],
-				Values[0][1] + matrix.Values[0][1],
-				Values[1][1] + matrix.Values[1][1],
-				Values[2][1] + matrix.Values[2][1],
-				Values[0][2] + matrix.Values[0][2],
-				Values[1][2] + matrix.Values[1][2],
-				Values[2][2] + matrix.Values[2][2]);
+									Values[1][0] + matrix.Values[1][0],
+									Values[2][0] + matrix.Values[2][0],
+									Values[0][1] + matrix.Values[0][1],
+									Values[1][1] + matrix.Values[1][1],
+									Values[2][1] + matrix.Values[2][1],
+									Values[0][2] + matrix.Values[0][2],
+									Values[1][2] + matrix.Values[1][2],
+									Values[2][2] + matrix.Values[2][2]);
 		}
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE>& operator+=(const Matrix3<TVALUE>& matrix)
+		Matrix3<TVALUE>& operator +=(const Matrix3<TVALUE>& matrix)
 		{
 			return *this + matrix;
 		}
@@ -147,7 +147,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE> operator-(const Matrix3<TVALUE>& matrix) const
+		Matrix3<TVALUE> operator -(const Matrix3<TVALUE>& matrix) const
 		{
 			return Matrix3<TVALUE>(Values[0][0] - matrix.Values[0][0],
 				Values[1][0] - matrix.Values[1][0],
@@ -163,12 +163,15 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE>& operator-=(const Matrix3<TVALUE>& matrix)
+		Matrix3<TVALUE>& operator -=(const Matrix3<TVALUE>& matrix)
 		{
 			return *this - matrix;
 		}
 
-		Matrix3<TVALUE> operator*(const Matrix3<TVALUE>& matrix) const
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Matrix3<TVALUE> operator *(const Matrix3<TVALUE>& matrix) const
 		{
 			return Matrix3<TVALUE>((matrix.Values[0][0] * Values[0][0]) + (matrix.Values[0][1] * Values[1][0]) + (matrix.Values[0][2] * Values[2][0]),
 									(matrix.Values[1][0] * Values[0][0]) + (matrix.Values[1][1] * Values[1][0]) + (matrix.Values[1][2] * Values[2][0]),
@@ -181,7 +184,10 @@ namespace Common
 									(matrix.Values[2][0] * Values[0][2]) + (matrix.Values[2][1] * Values[1][2]) + (matrix.Values[2][2] * Values[2][2]));
 		}
 
-		Matrix3<TVALUE>& operator*=(const Matrix3<TVALUE>& matrix)
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Matrix3<TVALUE>& operator *=(const Matrix3<TVALUE>& matrix)
 		{
 			return *this * matrix;
 		}
@@ -213,7 +219,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE> operator /(const Matrix3<TVALUE>& matrix) const
+		Matrix3<TVALUE>  operator /(const Matrix3<TVALUE>& matrix) const
 		{
 			Matrix3<TVALUE> i = Matrix3<TVALUE>(matrix).inverse();
 			TVALUE d = i.getDeterminant();
@@ -227,7 +233,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE>& operator /=(const Matrix3<TVALUE>& matrix)
+		Matrix3<TVALUE>&  operator /=(const Matrix3<TVALUE>& matrix)
 		{
 			return *this / matrix;
 		}
@@ -235,7 +241,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE> operator /(const TVALUE value) const
+		Matrix3<TVALUE>  operator /(const TVALUE value) const
 		{
 			return Matrix3<TVALUE>(Values[0][0] / value,
 									Values[1][0] / value,
@@ -251,7 +257,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix3<TVALUE>& operator /=(const TVALUE value)
+		Matrix3<TVALUE>&  operator /=(const TVALUE value)
 		{
 			return *this / value;
 		}
@@ -259,7 +265,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		bool operator==(const Matrix3<TVALUE>& matrix)
+		bool operator ==(const Matrix3<TVALUE>& matrix) const
 		{
 			for (unsigned char x = 0; x < 3; x++)
 				for (unsigned char y = 0; y < 3; y++)

@@ -19,7 +19,7 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Constructs a matrix and sets all the Values to a single value
+		/// Constructs a matrix and sets all the values to a single value
 		/// </summary>
 		/// <remarks>Equals operator</remarks>
 		Matrix2(const TVALUE value)
@@ -36,7 +36,7 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Sets all the Values to a single value
+		/// Sets all the values to a single value
 		/// </summary>
 		void set(const TVALUE value)
 		{
@@ -52,7 +52,7 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Copies Values from matrix
+		/// Copies values from matrix
 		/// </summary>
 		void set(const Matrix2<TVALUE>& matrix)
 		{
