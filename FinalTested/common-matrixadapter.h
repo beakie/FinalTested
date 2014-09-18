@@ -32,6 +32,14 @@ namespace Common
 		}
 
 		/// <summary>
+		/// Copies values from matrix
+		/// </summary>
+		void set(const TMATRIX& matrix)
+		{
+			TMATRIX::operator = (matrix);
+		}
+
+		/// <summary>
 		/// Gets the value
 		/// </summary>
 		TVALUE get(const unsigned char x, const unsigned char y)

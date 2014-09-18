@@ -21,11 +21,15 @@ int main(int argc, char *argv[])
 	
 	Common::Matrix3<float> mmm;
 
-	Common::MatrixF8 adapter;
+	Common::MatrixAdapter2F adapter;
 	adapter.get(0, 0);
 	adapter.inverse();
 	adapter + adapter;
-	adapter.set(adapter);
+	//adapter.set(adapter); // how to do this???
+	adapter.scalar(12);
 
 	return a.exec();
 }
+
+// add functions to matrixadapter to add TMATRIX items where IMatrixAdapter is being passed.
+// make sure adapter comments are up to date with matrix vs matrixadapter name
