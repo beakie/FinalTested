@@ -3,7 +3,6 @@
 
 namespace Common
 {
-
 	template <typename TVALUE>
 	struct Matrix3
 	{
