@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
 	adapter.get(0, 0);
 	adapter.inverse();
 	adapter + adapter;
+	adapter.set(adapter);
 
 	return a.exec();
 }

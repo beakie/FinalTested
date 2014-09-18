@@ -6,7 +6,7 @@
 namespace Common
 {
 	template <typename TMATRIX, typename TVALUE, typename TINDEX>
-	struct MatrixAdapter : TMATRIX, IMatrixAdapter<TVALUE, TINDEX>
+	struct MatrixAdapter : private TMATRIX, IMatrixAdapter<TVALUE, TINDEX>
 	{
 		/// <summary>
 		/// Constructs an unpopulated matrix
@@ -28,7 +28,15 @@ namespace Common
 		/// </summary>
 		void set(const IMatrixAdapter<TVALUE, TINDEX>& matrix)
 		{
-			TMATRIX::set(matrix);
+			operator =(matrix);
+		}
+
+		/// <summary>
+		/// Gets the value
+		/// </summary>
+		TVALUE get(const unsigned char x, const unsigned char y)
+		{
+			return TMATRIX::get(x, y);
 		}
 
 		/// <summary>
@@ -46,7 +54,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& operator =(const IMatrixAdapter<TVALUE, TINDEX>& matrix)
 		{
-			TMATRIX::operator =(matrix);
+			// do manually. consider matrix size.
 
 			return *this;
 		}
@@ -56,7 +64,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX> operator +(const IMatrixAdapter<TVALUE, TINDEX>& matrix) const
 		{
-			TMATRIX::operator +(matrix);
+			// do manually. consider matrix size.
 
 			return *this;
 		}
@@ -66,7 +74,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& operator +=(const IMatrixAdapter<TVALUE, TINDEX>& matrix)
 		{
-			TMATRIX::operator +=(matrix);
+			operator +=(matrix);
 
 			return *this;
 		}
@@ -76,7 +84,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX> operator -(const IMatrixAdapter<TVALUE, TINDEX>& matrix) const
 		{
-			TMATRIX::operator -(matrix);
+			// do manually. consider matrix size.
 
 			return *this;
 		}
@@ -86,7 +94,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& operator -=(const IMatrixAdapter<TVALUE, TINDEX>& matrix)
 		{
-			TMATRIX::operator -=(matrix);
+			operator -=(matrix);
 
 			return *this;
 		}
@@ -96,7 +104,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX> operator *(const IMatrixAdapter<TVALUE, TINDEX>& matrix) const
 		{
-			TMATRIX::operator *(matrix);
+			// do manually. consider matrix size.
 
 			return *this;
 		}
@@ -106,7 +114,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& operator *=(const IMatrixAdapter<TVALUE, TINDEX>& matrix)
 		{
-			TMATRIX::operator *=(matrix);
+			operator *=(matrix);
 
 			return *this;
 		}
@@ -126,7 +134,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& operator *=(const TVALUE value)
 		{
-			TMATRIX::operator *=(value);
+			operator *=(value);
 
 			return *this;
 		}
@@ -136,7 +144,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX> operator /(const IMatrixAdapter<TVALUE, TINDEX>& matrix) const
 		{
-			TMATRIX::operator /(matrix);
+			// do manually. consider matrix size.
 
 			return *this;
 		}
@@ -146,7 +154,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& operator /=(const IMatrixAdapter<TVALUE, TINDEX>& matrix)
 		{
-			TMATRIX::operator /=(matrix);
+			operator /=(matrix);
 
 			return *this;
 		}
@@ -156,7 +164,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX> operator /(const TVALUE value) const
 		{
-			TMATRIX::operator /(value);
+			// do manually. consider matrix size.
 
 			return *this;
 		}
@@ -166,7 +174,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& operator /=(const TVALUE value)
 		{
-			TMATRIX::operator /=(value);
+			operator /=(value);
 
 			return *this;
 		}
@@ -176,7 +184,9 @@ namespace Common
 		/// </summary>
 		bool operator ==(const IMatrixAdapter<TVALUE, TINDEX>& matrix) const
 		{
-			return TMATRIX::operator ==(matrix);
+			// do manually. consider matrix size.
+
+			return false;
 		}
 
 		/// <summary>
@@ -184,9 +194,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& multiply(const IMatrixAdapter<TVALUE, TINDEX>& matrix)
 		{
-			TMATRIX::multiply(matrix);
-
-			return *this;
+			return this->operator *=(matrix);
 		}
 
 		/// <summary>
@@ -194,9 +202,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& multiply(const TVALUE value)
 		{
-			TMATRIX::multiply(value);
-
-			return *this;
+			return this->operator *=(value);
 		}
 
 		/// <summary>
@@ -204,9 +210,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& dotProduct(const IMatrixAdapter<TVALUE, TINDEX>& matrix)
 		{
-			TMATRIX::dotProduct(matrix);
-
-			return *this;
+			return this->operator *=(matrix);
 		}
 
 		/// <summary>
@@ -214,9 +218,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& scalar(const TVALUE value)
 		{
-			TMATRIX::scalar(value);
-
-			return *this;
+			return this->operator *=(value);
 		}
 
 		/// <summary>
@@ -224,7 +226,7 @@ namespace Common
 		/// </summary>
 		bool equals(const IMatrixAdapter<TVALUE, TINDEX>& matrix) const
 		{
-			return TMATRIX::equals(matrix);
+			return this->operator ==(matrix);
 		}
 
 		/// <summary>
@@ -292,9 +294,7 @@ namespace Common
 		/// </summary>
 		TVALUE getDeterminant() const
 		{
-			TMATRIX::getDeterminant();
-
-			return *this;
+			return TMATRIX::getDeterminant();
 		}
 
 		virtual ~MatrixAdapter()
