@@ -334,6 +334,16 @@ namespace Common
 			return (Values[0][0] * Values[1][1]) - (Values[0][1] * Values[1][0]);
 		}
 
+		static Matrix2<TVALUE> getIdentity();
+
+		static Matrix2<TVALUE> getZero();
+
+		static Matrix2<TVALUE> getAllOnes();
+
+		static Matrix2<TVALUE> getInverse(const TIMPLEMENTATION& matrix);
+
+		static TVALUE getDeterminant(const TIMPLEMENTATION& matrix);
+
 		virtual ~Matrix2()
 		{
 		}
