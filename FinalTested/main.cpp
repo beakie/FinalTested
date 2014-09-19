@@ -22,6 +22,8 @@ int main(int argc, char *argv[])
 	adapter.allOnes();
 	adapter.getMatrix().zero();
 
+	unsigned char rowCount = adapter.getColumnCount();
+
 	return a.exec();
 }
 

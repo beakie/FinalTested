@@ -38,6 +38,22 @@ namespace Common
 		}
 
 		/// <summary>
+		/// Returns the number of rows
+		/// </summary>
+		TINDEX getRowCount()
+		{
+			return _Matrix.getRowCount();
+		}
+
+		/// <summary>
+		/// Returns the number of columns
+		/// </summary>
+		TINDEX getColumnCount()
+		{
+			return _Matrix.getColumnCount();
+		}
+
+		/// <summary>
 		/// Copies values from matrix
 		/// </summary>
 		TMATRIX& getMatrix()

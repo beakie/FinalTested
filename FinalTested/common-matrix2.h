@@ -36,6 +36,22 @@ namespace Common
 		}
 
 		/// <summary>
+		/// Returns the number of rows
+		/// </summary>
+		unsigned char getRowCount()
+		{
+			return 2;
+		}
+
+		/// <summary>
+		/// Returns the number of columns
+		/// </summary>
+		unsigned char getColumnCount()
+		{
+			return 2;
+		}
+
+		/// <summary>
 		/// Sets all the values to a single value
 		/// </summary>
 		void set(const TVALUE value)

@@ -6,6 +6,16 @@ namespace Common
 	template <typename TVALUE, typename TINDEX>
 	struct IMatrixAdapter
 	{
+		/// <summary>
+		/// Returns the number of rows
+		/// </summary>
+		TINDEX getRowCount();
+
+		/// <summary>
+		/// Returns the number of columns
+		/// </summary>
+		TINDEX getColumnCount();
+
 		virtual ~IMatrixAdapter()
 		{
 		}
