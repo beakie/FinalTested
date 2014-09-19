@@ -331,7 +331,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& multiply(const Matrix4<TVALUE>& matrix)
 		{
-			return this->operator *=(matrix);
+			return operator *=(matrix);
 		}
 
 		/// <summary>
@@ -339,7 +339,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& multiply(const TVALUE value)
 		{
-			return this->operator *=(value);
+			return operator *=(value);
 		}
 
 		/// <summary>
@@ -347,7 +347,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& dotProduct(const Matrix4<TVALUE>& matrix)
 		{
-			return this->operator *=(matrix);
+			return operator *=(matrix);
 		}
 
 		/// <summary>
@@ -355,7 +355,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& scalar(const TVALUE value)
 		{
-			return this->operator *=(value);
+			return operator *=(value);
 		}
 
 		/// <summary>
@@ -363,7 +363,7 @@ namespace Common
 		/// </summary>
 		bool equals(const Matrix4<TVALUE>& matrix) const
 		{
-			return this->operator ==(matrix);
+			return operator ==(matrix);
 		}
 
 		/// <summary>
@@ -381,7 +381,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& zero()
 		{
-			return this->operator =(0);
+			return operator =(0);
 		}
 
 		/// <summary>
@@ -389,7 +389,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& allOnes()
 		{
-			return this->operator =(1);
+			return operator =(1);
 		}
 
 		/// <summary>
@@ -397,7 +397,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& inverse()
 		{
-			return this->inverse(*this);
+			return inverse(*this);
 		}
 
 		/// <summary>

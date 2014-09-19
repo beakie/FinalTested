@@ -19,12 +19,8 @@ int main(int argc, char *argv[])
 	Common::Matrix4<float> mmm4;
 
 	Common::MatrixA2F adapter;
-	adapter.get(0, 0);
-	adapter.inverse().inverse();
-	adapter + adapter;
-	adapter.set(adapter);
-	adapter.set(adapter.Matrix);
-	adapter.scalar(12);
+	adapter.allOnes();
+	adapter.getMatrix().zero();
 
 	return a.exec();
 }
