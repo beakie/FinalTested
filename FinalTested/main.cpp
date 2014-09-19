@@ -25,5 +25,4 @@ int main(int argc, char *argv[])
 	return a.exec();
 }
 
-// add functions to matrixadapter to add TMATRIX items where IMatrixAdapter is being passed.
 // make sure adapter comments are up to date with matrix vs matrixadapter name
