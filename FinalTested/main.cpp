@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
 	adapter.get(0, 0);
 	adapter.inverse().inverse();
 	adapter + adapter;
-	//adapter.set(adapter); // how to do this???
+	adapter.set(adapter);
+	adapter.set(adapter.Matrix);
 	adapter.scalar(12);
 
 	return a.exec();
