@@ -322,6 +322,33 @@ namespace Common
 		}
 
 		/// <summary>
+		/// Transposes the matrix
+		/// </summary>
+		Matrix2<TVALUE>& transpose()
+		{
+			return inverse(*this);
+		}
+
+		/// <summary>
+		/// Transposes the matrix passed
+		/// </summary>
+		Matrix2<TVALUE>& transpose(const Matrix2<TVALUE>& matrix)
+		{
+			//set(matrix.Values[1][1], -matrix.Values[1][0], -matrix.Values[0][1], matrix.Values[0][0]);
+
+			return *this;
+		}
+
+		/// <summary>
+		/// Returns the transpose of the matrix
+		/// </summary>
+		Matrix2<TVALUE> getTranspose()
+		{
+			//todo
+			return Matrix2<TVALUE>();
+		}
+
+		/// <summary>
 		/// Inverts the matrix
 		/// </summary>
 		Matrix2<TVALUE>& inverse()
@@ -344,6 +371,7 @@ namespace Common
 		/// </summary>
 		Matrix2<TVALUE> getInverse()
 		{
+			//todo
 			return Matrix2<TVALUE>();
 		}
 
@@ -360,6 +388,8 @@ namespace Common
 		//static Matrix2<TVALUE> getZero();
 
 		//static Matrix2<TVALUE> getAllOnes();
+
+		//static Matrix2<TVALUE> getTranspose(const TIMPLEMENTATION& matrix);
 
 		//static Matrix2<TVALUE> getInverse(const TIMPLEMENTATION& matrix);
 

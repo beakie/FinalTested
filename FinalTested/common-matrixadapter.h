@@ -438,6 +438,44 @@ namespace Common
 		}
 
 		/// <summary>
+		/// Transposes the matrix
+		/// </summary>
+		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& transpose()
+		{
+			_Matrix.transpose();
+
+			return *this;
+		}
+
+		/// <summary>
+		/// Transpose the matrix passed
+		/// </summary>
+		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& transpose(const IMatrixAdapter<TVALUE, TINDEX>& matrix)
+		{
+			_Matrix.transpose(matrix);
+
+			return *this;
+		}
+
+		/// <summary>
+		/// Transposes the matrix passed
+		/// </summary>
+		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& transpose(const TMATRIX& matrix)
+		{
+			_Matrix.transpose(matrix);
+
+			return *this;
+		}
+
+		/// <summary>
+		/// Returns the transpose of the matrix
+		/// </summary>
+		MatrixAdapter<TMATRIX, TVALUE, TINDEX> getTranspose()
+		{
+			return MatrixAdapter<TMATRIX, TVALUE, TINDEX>(_Matrix.getTranspose());
+		}
+
+		/// <summary>
 		/// Inverts the matrix
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& inverse()

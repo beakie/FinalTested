@@ -426,6 +426,32 @@ namespace Common
 		}
 
 		/// <summary>
+		/// Transposes the matrix
+		/// </summary>
+		Matrix4<TVALUE>& transpose()
+		{
+			return transpose(*this);
+		}
+
+		/// <summary>
+		/// Transposes the matrix passed
+		/// </summary>
+		Matrix4<TVALUE>& transpose(const Matrix4<TVALUE>& matrix)
+		{
+			//todo
+			return *this;
+		}
+
+		/// <summary>
+		/// Returns the transpose of the matrix
+		/// </summary>
+		Matrix4<TVALUE> getTranspose()
+		{
+			//todo
+			return Matrix4<TVALUE>();
+		}
+
+		/// <summary>
 		/// Inverts the matrix
 		/// </summary>
 		Matrix4<TVALUE>& inverse()
