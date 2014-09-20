@@ -234,9 +234,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX> operator *(const TVALUE value) const
 		{
-			_Matrix.operator *(value);
-
-			return 0;
+			return MatrixAdapter<TMATRIX, TVALUE, TINDEX>(_Matrix.operator *(value));
 		}
 
 		/// <summary>
@@ -292,9 +290,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX> operator /(const TVALUE value) const
 		{
-			_Matrix.operator /(value);
-
-			return 0;
+			return MatrixAdapter<TMATRIX, TVALUE, TINDEX>(_Matrix.operator /(value));
 		}
 
 		/// <summary>
@@ -458,9 +454,7 @@ namespace Common
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX> getInverse()
 		{
-			_Matrix.getInverse();
-
-			return 0;
+			return MatrixAdapter<TMATRIX, TVALUE, TINDEX>(_Matrix.getInverse());
 		}
 
 		/// <summary>
