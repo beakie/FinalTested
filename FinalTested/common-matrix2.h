@@ -391,6 +391,8 @@ namespace Common
 
 		//static Matrix2<TVALUE> getInversed(const TIMPLEMENTATION& matrix);
 
+		//static Matrix2<TVALUE> getAdjoint(const TIMPLEMENTATION& matrix);
+
 		//static TVALUE getDeterminant(const TIMPLEMENTATION& matrix);
 
 		virtual ~Matrix2()
