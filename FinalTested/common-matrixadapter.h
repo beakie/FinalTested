@@ -322,6 +322,24 @@ namespace Common
 		}
 
 		/// <summary>
+		/// Operator
+		/// </summary>
+		bool operator !=(const IMatrixAdapter<TVALUE, TINDEX>& matrix) const
+		{
+			// do manually. consider matrix size.
+
+			return false;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		bool operator !=(const TMATRIX& matrix) const
+		{
+			return !_Matrix.operator ==(matrix);
+		}
+
+		/// <summary>
 		/// Dot product multiplication
 		/// </summary>
 		MatrixAdapter<TMATRIX, TVALUE, TINDEX>& multiply(const IMatrixAdapter<TVALUE, TINDEX>& matrix)

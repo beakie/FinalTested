@@ -334,12 +334,30 @@ namespace Common
 
 		bool operator ==(const Matrix4<TVALUE>& matrix)
 		{
-			for (unsigned char x = 0; x < 4; x++)
-				for (unsigned char y = 0; y < 4; y++)
-					if (Values[x][y] != matrix.Values[x][y])
-						return false;
+			return (Values[0][0] == matrix.Values[0][0])
+					&& (Values[0][1] == matrix.Values[0][1])
+					&& (Values[0][2] == matrix.Values[0][2])
+					&& (Values[0][3] == matrix.Values[0][3])
+					&& (Values[1][0] == matrix.Values[1][0])
+					&& (Values[1][1] == matrix.Values[1][1])
+					&& (Values[1][2] == matrix.Values[1][2])
+					&& (Values[1][3] == matrix.Values[1][3])
+					&& (Values[2][0] == matrix.Values[2][0])
+					&& (Values[2][1] == matrix.Values[2][1])
+					&& (Values[2][2] == matrix.Values[2][2])
+					&& (Values[2][3] == matrix.Values[2][3])
+					&& (Values[3][0] == matrix.Values[3][0])
+					&& (Values[3][1] == matrix.Values[3][1])
+					&& (Values[3][2] == matrix.Values[3][2])
+					&& (Values[3][3] == matrix.Values[3][3]);
+		}
 
-			return true;
+		/// <summary>
+		/// Operator
+		/// </summary>
+		bool operator !=(const Matrix4<TVALUE>& matrix) const
+		{
+			return operator ==(matrix);
 		}
 
 		/// <summary>
