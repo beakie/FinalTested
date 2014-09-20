@@ -388,8 +388,7 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE> getTransposed()
 		{
-			//todo
-			return Matrix3<TVALUE>();
+			return Matrix3<TVALUE>(*this).transpose();
 		}
 
 		/// <summary>
@@ -414,8 +413,7 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE> getInverted()
 		{
-			//todo
-			return Matrix3<TVALUE>();
+			return Matrix3<TVALUE>(*this).inverse();
 		}
 
 		/// <summary>
