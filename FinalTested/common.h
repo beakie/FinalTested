@@ -2,9 +2,10 @@
 #define COMMON_H
 
 #include "common-image.h"
+#include "common-imagecropper.h"
 #include "common-imagefilter.h"
 #include "common-imatrixadapter.h"
-#include "common-invertimagefilter.h"
+#include "common-negativeimagefilter.h"
 #include "common-matrix2.h"
 #include "common-matrix3.h"
 #include "common-matrix4.h"
@@ -53,6 +54,19 @@ namespace Common
 	typedef Image<bool, unsigned int> Image16B;
 	typedef Image<unsigned char, unsigned int> Image16C;
 	typedef Image<unsigned int, unsigned int> Image16I;
+
+	typedef ImageFilter<bool, unsigned char> ImageFilter8B;
+	typedef ImageFilter<unsigned char, unsigned char> ImageFilter8C;
+	typedef ImageFilter<unsigned int, unsigned char> ImageFilter8I;
+	typedef ImageFilter<bool, unsigned int> ImageFilter16B;
+	typedef ImageFilter<unsigned char, unsigned int> ImageFilter16C;
+	typedef ImageFilter<unsigned int, unsigned int> ImageFilter16I;
+
+	typedef NegativeImageFilter<bool> NegativeImageFilterB;
+	typedef NegativeImageFilter<unsigned char> NegativeImageFilterC;
+	typedef NegativeImageFilter<unsigned int> NegativeImageFilterI;
+
+	//typedef Plot<unsigned char> DimensionsC;
 
 }
 

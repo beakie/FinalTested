@@ -15,9 +15,9 @@ int main(int argc, char *argv[])
 	matrix2.inverse(matrix);
 	float d = matrix.getDeterminant();
 	
-	Common::Matrix2<float> mmm2;
-	Common::Matrix3<float> mmm3;
-	Common::Matrix4<float> mmm4;
+	Common::Matrix2F mmm2;
+	Common::Matrix3F mmm3;
+	Common::Matrix4F mmm4;
 
 	Common::MatrixAdapter2F adapter;
 	adapter.allOnes();
@@ -27,12 +27,18 @@ int main(int argc, char *argv[])
 	
 	unsigned char rowCount = adapter.getColumnCount();
 
-	Common::Image<bool, unsigned char> image = Common::Image<bool, unsigned char>(3, 4);
+	Common::Image8B image = Common::Image8B(3, 4);
 	//image.Values[0][0] = false;
 
 	unsigned int z = Common::Image8C::getMaxValue();
 
-	Common::ImageFilter<bool, unsigned char>::apply(image, matrix);
+	Common::ImageFilter8B::updateValues(image, Common::NegativeImageFilterB::updateValue);
+
+	Common::ImageFilter8B::applyMatrix(image, matrix);
+
+	Common::ImageFilter8B::applyFilter<Common::NegativeImageFilterB>(image);
+
+	Common::ImageFilter8B::applyFilter(image, Common::NegativeImageFilterB());
 
 	return a.exec();
 }

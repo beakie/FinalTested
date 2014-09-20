@@ -10,9 +10,26 @@ namespace Common
 	{
 	public:
 		template <typename TMATRIX>
-		static Image<TVALUE, TINDEX> apply(Image<TVALUE, TINDEX> image, TMATRIX matrix)
+		static void applyMatrix(const Image<TVALUE, TINDEX>& image, const TMATRIX& matrix)
 		{
-			return Image<TVALUE, TINDEX>();
+			//todo
+		}
+
+		template <typename TFILTER>
+		static void applyFilter(const Image<TVALUE, TINDEX>& image)
+		{
+			//todo
+		}
+
+		template <typename TFILTER>
+		static void applyFilter(const Image<TVALUE, TINDEX>& image, const TFILTER& filter)
+		{
+			//todo
+		}
+
+		static void updateValues(const Image<TVALUE, TINDEX>& image, TVALUE(*f)(TVALUE))
+		{
+			//todo
 		}
 
 		virtual ~ImageFilter()

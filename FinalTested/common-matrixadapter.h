@@ -6,7 +6,7 @@
 namespace Common
 {
 	template <typename TMATRIX, typename TVALUE>
-	struct MatrixAdapter : IMatrixAdapter<TVALUE>
+	class MatrixAdapter : IMatrixAdapter<TVALUE>
 	{
 	private:
 		TMATRIX _Matrix;

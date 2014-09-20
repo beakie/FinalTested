@@ -1,13 +1,12 @@
 #ifndef INVERTIMAGEFILTER_H
 #define INVERTIMAGEFILTER_H
 
-#include "common-matrix4.h"
 #include "common-static.h"
 
 namespace Common
 {
 	template <typename TVALUE>
-	class InvertImageFilter
+	class NegativeImageFilter
 	{
 	public:
 		template <typename TMATRIX>
@@ -15,9 +14,13 @@ namespace Common
 		{
 		}
 
-		static TVALUE setValue(TVALUE value)
+		static TVALUE updateValue(TVALUE value)
 		{
 			return getUpperBound<TVALUE>() - value;
+		}
+
+		~NegativeImageFilter()
+		{
 		}
 	};
 }
