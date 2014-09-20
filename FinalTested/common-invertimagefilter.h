@@ -7,14 +7,14 @@
 namespace Common
 {
 	template <typename TVALUE>
-	struct InvertImageFilter
+	static struct InvertImageFilter
 	{
 		template <typename TMATRIX>
-		TMATRIX getMatrix()
+		static TMATRIX getMatrix()
 		{
 		}
 
-		TVALUE setValue(TVALUE value)
+		static TVALUE setValue(TVALUE value)
 		{
 			return getUpperBound<TVALUE>() - value;
 		}
