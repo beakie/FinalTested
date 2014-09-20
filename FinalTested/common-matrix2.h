@@ -342,7 +342,7 @@ namespace Common
 		/// <summary>
 		/// Returns the transpose of the matrix
 		/// </summary>
-		Matrix2<TVALUE> getTranspose()
+		Matrix2<TVALUE> getTransposed()
 		{
 			//todo
 			return Matrix2<TVALUE>();
@@ -369,7 +369,7 @@ namespace Common
 		/// <summary>
 		/// Returns the inverse of the matrix
 		/// </summary>
-		Matrix2<TVALUE> getInverse()
+		Matrix2<TVALUE> getInverted()
 		{
 			//todo
 			return Matrix2<TVALUE>();
@@ -389,9 +389,9 @@ namespace Common
 
 		//static Matrix2<TVALUE> getAllOnes();
 
-		//static Matrix2<TVALUE> getTranspose(const TIMPLEMENTATION& matrix);
+		//static Matrix2<TVALUE> getTransposed(const TIMPLEMENTATION& matrix);
 
-		//static Matrix2<TVALUE> getInverse(const TIMPLEMENTATION& matrix);
+		//static Matrix2<TVALUE> getInversed(const TIMPLEMENTATION& matrix);
 
 		//static TVALUE getDeterminant(const TIMPLEMENTATION& matrix);
 

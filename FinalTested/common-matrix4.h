@@ -445,7 +445,7 @@ namespace Common
 		/// <summary>
 		/// Returns the transpose of the matrix
 		/// </summary>
-		Matrix4<TVALUE> getTranspose()
+		Matrix4<TVALUE> getTransposed()
 		{
 			//todo
 			return Matrix4<TVALUE>();
@@ -471,7 +471,7 @@ namespace Common
 		/// <summary>
 		/// Returns the inverse of the matrix
 		/// </summary>
-		Matrix4<TVALUE> getInverse()
+		Matrix4<TVALUE> getInverted()
 		{
 			//todo
 			return Matrix4<TVALUE>();

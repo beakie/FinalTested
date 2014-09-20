@@ -470,9 +470,9 @@ namespace Common
 		/// <summary>
 		/// Returns the transpose of the matrix
 		/// </summary>
-		MatrixAdapter<TMATRIX, TVALUE, TINDEX> getTranspose()
+		MatrixAdapter<TMATRIX, TVALUE, TINDEX> getTransposed()
 		{
-			return MatrixAdapter<TMATRIX, TVALUE, TINDEX>(_Matrix.getTranspose());
+			return MatrixAdapter<TMATRIX, TVALUE, TINDEX>(_Matrix.getTransposed());
 		}
 
 		/// <summary>
@@ -508,9 +508,9 @@ namespace Common
 		/// <summary>
 		/// Returns the inverse of the matrix
 		/// </summary>
-		MatrixAdapter<TMATRIX, TVALUE, TINDEX> getInverse()
+		MatrixAdapter<TMATRIX, TVALUE, TINDEX> getInverted()
 		{
-			return MatrixAdapter<TMATRIX, TVALUE, TINDEX>(_Matrix.getInverse());
+			return MatrixAdapter<TMATRIX, TVALUE, TINDEX>(_Matrix.getInverted());
 		}
 
 		/// <summary>

@@ -386,7 +386,7 @@ namespace Common
 		/// <summary>
 		/// Returns the transpose of the matrix
 		/// </summary>
-		Matrix3<TVALUE> getTranspose()
+		Matrix3<TVALUE> getTransposed()
 		{
 			//todo
 			return Matrix3<TVALUE>();
@@ -412,7 +412,7 @@ namespace Common
 		/// <summary>
 		/// Returns the inverse of the matrix
 		/// </summary>
-		Matrix3<TVALUE> getInverse()
+		Matrix3<TVALUE> getInverted()
 		{
 			//todo
 			return Matrix3<TVALUE>();
