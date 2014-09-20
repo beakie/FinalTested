@@ -26,5 +26,3 @@ int main(int argc, char *argv[])
 
 	return a.exec();
 }
-
-// make sure adapter comments are up to date with matrix vs matrixadapter name
