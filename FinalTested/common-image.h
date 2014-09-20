@@ -53,20 +53,27 @@ namespace Common
 			//todo
 		}
 
-		static TVALUE getUpperBound()
+		template <typename T = TVALUE>
+		static T getUpperBound();
+
+		template <>
+		static bool getUpperBound<bool>()
 		{
-			Image<TVALUE, TINDEX>* t;
-
-			if (dynamic_cast<Image<bool, TINDEX>*> (t) != nullptr)
-				return 1;
-			if (dynamic_cast<Image<unsigned char, TINDEX>*> (t) != nullptr)
-				return 255;
-			if (dynamic_cast<Image<unsigned int, TINDEX>*> (t) != nullptr)
-				return 65535;
-
-				return 0;
+			return 1;
 		}
-		
+
+		template <>
+		static unsigned char getUpperBound<unsigned char>()
+		{
+			return 255;
+		}
+
+		template <>
+		static unsigned int getUpperBound<unsigned int>()
+		{
+			return 65535;
+		}
+
 		virtual ~Image()
 		{
 		}
@@ -74,18 +81,3 @@ namespace Common
 }
 
 #endif // IMAGE_H
-
-template <typename TVALUE>
-TVALUE getUpperBound()
-{
-	SomeStruct<TVALUE>* t = 0;
-
-	if (dynamic_cast<SomeStruct<bool>*> (t) != nullptr)
-		return 1;
-	if (dynamic_cast<SomeStruct<unsigned char>*> (t) != nullptr)
-		return 255;
-	if (dynamic_cast<SomeStruct<unsigned int>*> (t) != nullptr)
-		return 65535;
-
-	return 0;
-}
