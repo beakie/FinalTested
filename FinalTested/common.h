@@ -3,6 +3,7 @@
 #include "common-matrix3.h"
 #include "common-matrix4.h"
 #include "common-matrixadapter.h"
+#include "common-matrixnxn.h"
 
 namespace Common
 {

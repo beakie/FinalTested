@@ -432,7 +432,6 @@ namespace Common
 		}
 
 	};
-
 }
 
 #endif // MATRIX3_H

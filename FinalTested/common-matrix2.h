@@ -401,7 +401,6 @@ namespace Common
 		{
 		}
 	};
-
 }
 
 #endif // MATRIX2_H

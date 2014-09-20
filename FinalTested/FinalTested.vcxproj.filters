@@ -44,5 +44,8 @@
     <ClInclude Include="common-imatrixadapter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-matrixnxn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

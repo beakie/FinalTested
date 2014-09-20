@@ -438,7 +438,10 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& transpose(const Matrix4<TVALUE>& matrix)
 		{
-			set(matrix.Values[0][0], matrix.Values[0][1], matrix.Values[0][2], matrix.Values[0][3], matrix.Values[1][0], matrix.Values[1][1], matrix.Values[1][2], matrix.Values[1][3], matrix.Values[2][0], matrix.Values[2][1], matrix.Values[2][2], matrix.Values[2][3], matrix.Values[3][0], matrix.Values[3][1], matrix.Values[3][2], matrix.Values[3][3]);
+			set(matrix.Values[0][0], matrix.Values[0][1], matrix.Values[0][2], matrix.Values[0][3],
+				matrix.Values[1][0], matrix.Values[1][1], matrix.Values[1][2], matrix.Values[1][3],
+				matrix.Values[2][0], matrix.Values[2][1], matrix.Values[2][2], matrix.Values[2][3],
+				matrix.Values[3][0], matrix.Values[3][1], matrix.Values[3][2], matrix.Values[3][3]);
 
 			return *this;
 		}
@@ -497,7 +500,6 @@ namespace Common
 		}
 
 	};
-
 }
 
 #endif // MATRIX4_H
