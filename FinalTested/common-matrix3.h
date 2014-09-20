@@ -236,13 +236,12 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE> operator /(const Matrix3<TVALUE>& matrix) const
 		{
-			Matrix3<TVALUE> i = Matrix3<TVALUE>(matrix).inverse();
-			TVALUE d = i.getDeterminant();
+			TVALUE d = matrix.getDeterminant();
 
 			if (d == 0)
 				return 0;
 
-			return Matrix3<TVALUE>();
+			return Matrix3<TVALUE>(matrix).inverse();
 		}
 
 		/// <summary>
