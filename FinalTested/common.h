@@ -25,21 +25,21 @@ namespace Common
 	typedef Matrix3<float> Matrix3F;
 	typedef Matrix4<float> Matrix4F;
 
-	typedef MatrixAdapter<Matrix2F, bool, unsigned char> MatrixAdapter2B;
-	typedef MatrixAdapter<Matrix3F, bool, unsigned char> MatrixAdapter3B;
-	typedef MatrixAdapter<Matrix4F, bool, unsigned char> MatrixAdapter4B;
-	typedef MatrixAdapter<Matrix2F, signed char, unsigned char> MatrixAdapter2C;
-	typedef MatrixAdapter<Matrix3F, signed char, unsigned char> MatrixAdapter3C;
-	typedef MatrixAdapter<Matrix4F, signed char, unsigned char> MatrixAdapter4C;
-	typedef MatrixAdapter<Matrix2F, signed int, unsigned char> MatrixAdapter2I;
-	typedef MatrixAdapter<Matrix3F, signed int, unsigned char> MatrixAdapter3I;
-	typedef MatrixAdapter<Matrix4F, signed int, unsigned char> MatrixAdapter4I;
-	typedef MatrixAdapter<Matrix2F, double, unsigned char> MatrixAdapter2D;
-	typedef MatrixAdapter<Matrix3F, double, unsigned char> MatrixAdapter3D;
-	typedef MatrixAdapter<Matrix4F, double, unsigned char> MatrixAdapter4D;
-	typedef MatrixAdapter<Matrix2F, float, unsigned char> MatrixAdapter2F;
-	typedef MatrixAdapter<Matrix3F, float, unsigned char> MatrixAdapter3F;
-	typedef MatrixAdapter<Matrix4F, float, unsigned char> MatrixAdapter4F;
+	typedef MatrixAdapter<Matrix2F, bool> MatrixAdapter2B;
+	typedef MatrixAdapter<Matrix3F, bool> MatrixAdapter3B;
+	typedef MatrixAdapter<Matrix4F, bool> MatrixAdapter4B;
+	typedef MatrixAdapter<Matrix2F, signed char> MatrixAdapter2C;
+	typedef MatrixAdapter<Matrix3F, signed char> MatrixAdapter3C;
+	typedef MatrixAdapter<Matrix4F, signed char> MatrixAdapter4C;
+	typedef MatrixAdapter<Matrix2F, signed int> MatrixAdapter2I;
+	typedef MatrixAdapter<Matrix3F, signed int> MatrixAdapter3I;
+	typedef MatrixAdapter<Matrix4F, signed int> MatrixAdapter4I;
+	typedef MatrixAdapter<Matrix2F, double> MatrixAdapter2D;
+	typedef MatrixAdapter<Matrix3F, double> MatrixAdapter3D;
+	typedef MatrixAdapter<Matrix4F, double> MatrixAdapter4D;
+	typedef MatrixAdapter<Matrix2F, float> MatrixAdapter2F;
+	typedef MatrixAdapter<Matrix3F, float> MatrixAdapter3F;
+	typedef MatrixAdapter<Matrix4F, float> MatrixAdapter4F;
 
 	typedef Image<bool, unsigned char> Image8B;
 	typedef Image<unsigned char, unsigned char> Image8C;

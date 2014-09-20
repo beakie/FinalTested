@@ -3,18 +3,18 @@
 
 namespace Common
 {
-	template <typename TVALUE, typename TINDEX>
+	template <typename TVALUE>
 	struct IMatrixAdapter
 	{
 		/// <summary>
 		/// Returns the number of rows
 		/// </summary>
-		TINDEX getRowCount();
+		unsigned char getRowCount();
 
 		/// <summary>
 		/// Returns the number of columns
 		/// </summary>
-		TINDEX getColumnCount();
+		unsigned char getColumnCount();
 
 		virtual ~IMatrixAdapter()
 		{
