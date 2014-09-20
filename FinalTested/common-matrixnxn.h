@@ -3,6 +3,8 @@
 
 namespace Common
 {
+	//should i add build matrix method and call from constructors
+
 	template <typename TVALUE, typename TINDEX>
 	struct MatrixNxN
 	{
