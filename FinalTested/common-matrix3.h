@@ -379,7 +379,8 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE>& transpose(const Matrix3<TVALUE>& matrix)
 		{
-			//todo
+			set(matrix.Values[0][0], matrix.Values[0][1], matrix.Values[0][2], matrix.Values[1][0], matrix.Values[1][1], matrix.Values[1][2], matrix.Values[2][0], matrix.Values[2][1], matrix.Values[2][2]);
+
 			return *this;
 		}
 
