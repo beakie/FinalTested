@@ -41,4 +41,11 @@ namespace Common
 	typedef MatrixAdapter<Matrix3F, float, unsigned char> MatrixAdapter3F;
 	typedef MatrixAdapter<Matrix4F, float, unsigned char> MatrixAdapter4F;
 
+	typedef Image<bool, unsigned char> Image8B;
+	typedef Image<unsigned char, unsigned char> Image8C;
+	typedef Image<unsigned int, unsigned char> Image8I;
+	typedef Image<bool, unsigned int> Image16B;
+	typedef Image<unsigned char, unsigned int> Image16C;
+	typedef Image<unsigned int, unsigned int> Image16I;
+
 }

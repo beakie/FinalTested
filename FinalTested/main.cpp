@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	Common::Image<bool, unsigned char> image = Common::Image<bool, unsigned char>(3, 4);
 	//image.Values[0][0] = false;
 
-	unsigned int z = Common::Image<bool, unsigned char>::getUpperBound();
+	unsigned char z = Common::Image8B::getUpperBound();
 
 	return a.exec();
 }
