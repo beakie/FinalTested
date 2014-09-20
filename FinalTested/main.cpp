@@ -27,9 +27,10 @@ int main(int argc, char *argv[])
 	
 	unsigned char rowCount = adapter.getColumnCount();
 
-	Common::Image<bool, char> image = Common::Image<bool, char>(3, 4, false);
+	Common::Image<unsigned int, unsigned char> image = Common::Image<unsigned int, unsigned char>(3, 4);
 	//image.Values[0][0] = false;
-	Common::getUpperBoundInt();
+
+	unsigned int z = image.getUpperBound();
 
 	return a.exec();
 }

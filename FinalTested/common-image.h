@@ -14,6 +14,14 @@ namespace Common
 		/// <summary>
 		/// Constructs an unpopulated image
 		/// </summary>
+		Image()
+		{
+			//todo
+		}
+
+		/// <summary>
+		/// Constructs an unpopulated image
+		/// </summary>
 		Image(TINDEX rows, TINDEX columns)
 		{
 			//todo
@@ -45,6 +53,20 @@ namespace Common
 			//todo
 		}
 
+		static TVALUE getUpperBound()
+		{
+			Image<TVALUE, TINDEX>* t;
+
+			if (dynamic_cast<Image<bool, TINDEX>*> (t) != nullptr)
+				return 1;
+			if (dynamic_cast<Image<unsigned char, TINDEX>*> (t) != nullptr)
+				return 255;
+			if (dynamic_cast<Image<unsigned int, TINDEX>*> (t) != nullptr)
+				return 65535;
+
+				return 0;
+		}
+		
 		virtual ~Image()
 		{
 		}
@@ -52,3 +74,18 @@ namespace Common
 }
 
 #endif // IMAGE_H
+
+template <typename TVALUE>
+TVALUE getUpperBound()
+{
+	SomeStruct<TVALUE>* t = 0;
+
+	if (dynamic_cast<SomeStruct<bool>*> (t) != nullptr)
+		return 1;
+	if (dynamic_cast<SomeStruct<unsigned char>*> (t) != nullptr)
+		return 255;
+	if (dynamic_cast<SomeStruct<unsigned int>*> (t) != nullptr)
+		return 65535;
+
+	return 0;
+}

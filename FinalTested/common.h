@@ -41,19 +41,4 @@ namespace Common
 	typedef MatrixAdapter<Matrix3F, float, unsigned char> MatrixAdapter3F;
 	typedef MatrixAdapter<Matrix4F, float, unsigned char> MatrixAdapter4F;
 
-	bool getUpperBoundBool()
-	{
-		return true;
-	}
-
-	unsigned char getUpperBoundChar()
-	{
-		return 255;
-	}
-
-	unsigned int getUpperBoundInt()
-	{
-		return 65535;
-	}
-
 }
