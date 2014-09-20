@@ -7,8 +7,9 @@
 namespace Common
 {
 	template <typename TVALUE>
-	static struct InvertImageFilter
+	class InvertImageFilter
 	{
+	public:
 		template <typename TMATRIX>
 		static TMATRIX getMatrix()
 		{

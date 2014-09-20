@@ -56,5 +56,8 @@
     <ClInclude Include="common-static.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-imagefilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

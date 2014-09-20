@@ -2,7 +2,9 @@
 #define COMMON_H
 
 #include "common-image.h"
+#include "common-imagefilter.h"
 #include "common-imatrixadapter.h"
+#include "common-invertimagefilter.h"
 #include "common-matrix2.h"
 #include "common-matrix3.h"
 #include "common-matrix4.h"

@@ -32,5 +32,7 @@ int main(int argc, char *argv[])
 
 	unsigned int z = Common::Image8C::getMaxValue();
 
+	Common::ImageFilter<bool, unsigned char>::apply(image, matrix);
+
 	return a.exec();
 }
