@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	Common::Matrix3<float> mmm3;
 	Common::Matrix4<float> mmm4;
 
-	Common::MatrixA2F adapter;
+	Common::MatrixAdapter2F adapter;
 	adapter.allOnes();
 	adapter.getMatrix().zero();
 	Common::Matrix2F mmmmm = matrix / matrix4;
@@ -28,7 +28,8 @@ int main(int argc, char *argv[])
 	unsigned char rowCount = adapter.getColumnCount();
 
 	Common::Image<bool, char> image = Common::Image<bool, char>(3, 4, false);
-	image.Values[0][0] = false;
+	//image.Values[0][0] = false;
+	Common::getUpperBoundInt();
 
 	return a.exec();
 }

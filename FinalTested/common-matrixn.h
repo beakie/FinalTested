@@ -1,12 +1,12 @@
-#ifndef MATRIXNXN_H
-#define MATRIXNXN_H
+#ifndef MATRIXN_H
+#define MATRIXN_H
 
 namespace Common
 {
 	//should i add build matrix method and call from constructors
 
 	template <typename TVALUE, typename TINDEX>
-	struct MatrixNxN
+	struct MatrixN
 	{
 		/// <summary>
 		/// The values of the matrix stored in [x][y] form
@@ -16,7 +16,7 @@ namespace Common
 		/// <summary>
 		/// Constructs an unpopulated matrix
 		/// </summary>
-		MatrixNxN(TINDEX rows, TINDEX columns)
+		MatrixN(TINDEX rows, TINDEX columns)
 		{
 			//todo
 		}
@@ -25,8 +25,8 @@ namespace Common
 		/// Constructs a matrix and sets all the values to a single value
 		/// </summary>
 		/// <remarks>Equals operator</remarks>
-		MatrixNxN(TINDEX rows, TINDEX columns, const TVALUE value)
-			: MatrixNxN(rows, columns)
+		MatrixN(TINDEX rows, TINDEX columns, const TVALUE value)
+			: MatrixN(rows, columns)
 		{
 			operator =(value);
 		}
@@ -66,7 +66,7 @@ namespace Common
 		/// <summary>
 		/// Copies values from matrix
 		/// </summary>
-		void set(const MatrixNxN<TVALUE, TINDEX>& matrix)
+		void set(const MatrixN<TVALUE, TINDEX>& matrix)
 		{
 			operator =(matrix);
 		}
@@ -82,22 +82,22 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& operator =(const TVALUE& value);
+		MatrixN<TVALUE, TINDEX>& operator =(const TVALUE& value);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& operator =(const MatrixNxN<TVALUE, TINDEX>& matrix);
+		MatrixN<TVALUE, TINDEX>& operator =(const MatrixN<TVALUE, TINDEX>& matrix);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX> operator +(const MatrixNxN<TVALUE, TINDEX>& matrix) const;
+		MatrixN<TVALUE, TINDEX> operator +(const MatrixN<TVALUE, TINDEX>& matrix) const;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& operator +=(const MatrixNxN<TVALUE, TINDEX>& matrix)
+		MatrixN<TVALUE, TINDEX>& operator +=(const MatrixN<TVALUE, TINDEX>& matrix)
 		{
 			return *this + matrix;
 		}
@@ -105,12 +105,12 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX> operator -(const MatrixNxN<TVALUE, TINDEX>& matrix) const;
+		MatrixN<TVALUE, TINDEX> operator -(const MatrixN<TVALUE, TINDEX>& matrix) const;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& operator -=(const MatrixNxN<TVALUE, TINDEX>& matrix)
+		MatrixN<TVALUE, TINDEX>& operator -=(const MatrixN<TVALUE, TINDEX>& matrix)
 		{
 			return *this - matrix;
 		}
@@ -118,12 +118,12 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX> operator *(const MatrixNxN<TVALUE, TINDEX>& matrix) const;
+		MatrixN<TVALUE, TINDEX> operator *(const MatrixN<TVALUE, TINDEX>& matrix) const;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& operator *=(const MatrixNxN<TVALUE, TINDEX>& matrix)
+		MatrixN<TVALUE, TINDEX>& operator *=(const MatrixN<TVALUE, TINDEX>& matrix)
 		{
 			return *this * matrix;
 		}
@@ -131,12 +131,12 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX> operator *(const TVALUE value) const;
+		MatrixN<TVALUE, TINDEX> operator *(const TVALUE value) const;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& operator *=(const TVALUE value)
+		MatrixN<TVALUE, TINDEX>& operator *=(const TVALUE value)
 		{
 			return *this * value;
 		}
@@ -144,12 +144,12 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX> operator /(const MatrixNxN<TVALUE, TINDEX>& matrix) const;
+		MatrixN<TVALUE, TINDEX> operator /(const MatrixN<TVALUE, TINDEX>& matrix) const;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& operator /=(const MatrixNxN<TVALUE, TINDEX>& matrix)
+		MatrixN<TVALUE, TINDEX>& operator /=(const MatrixN<TVALUE, TINDEX>& matrix)
 		{
 			return *this / matrix;
 		}
@@ -157,12 +157,12 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX> operator /(const TVALUE value) const;
+		MatrixN<TVALUE, TINDEX> operator /(const TVALUE value) const;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& operator /=(const TVALUE value)
+		MatrixN<TVALUE, TINDEX>& operator /=(const TVALUE value)
 		{
 			return *this / value;
 		}
@@ -170,12 +170,12 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		bool operator ==(const MatrixNxN<TVALUE, TINDEX>& matrix) const;
+		bool operator ==(const MatrixN<TVALUE, TINDEX>& matrix) const;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		bool operator !=(const MatrixNxN<TVALUE, TINDEX>& matrix) const
+		bool operator !=(const MatrixN<TVALUE, TINDEX>& matrix) const
 		{
 			return operator ==(matrix);
 		}
@@ -183,7 +183,7 @@ namespace Common
 		/// <summary>
 		/// Dot product multiplication
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& multiply(const MatrixNxN<TVALUE, TINDEX>& matrix)
+		MatrixN<TVALUE, TINDEX>& multiply(const MatrixN<TVALUE, TINDEX>& matrix)
 		{
 			return operator *=(matrix);
 		}
@@ -191,7 +191,7 @@ namespace Common
 		/// <summary>
 		/// Scalar multiplication
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& multiply(const TVALUE value)
+		MatrixN<TVALUE, TINDEX>& multiply(const TVALUE value)
 		{
 			return operator *=(value);
 		}
@@ -199,7 +199,7 @@ namespace Common
 		/// <summary>
 		/// Dot product multiplication
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& dotProduct(const MatrixNxN<TVALUE, TINDEX>& matrix)
+		MatrixN<TVALUE, TINDEX>& dotProduct(const MatrixN<TVALUE, TINDEX>& matrix)
 		{
 			return operator *=(matrix);
 		}
@@ -207,7 +207,7 @@ namespace Common
 		/// <summary>
 		/// Scalar multiplication
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& scalar(const TVALUE value)
+		MatrixN<TVALUE, TINDEX>& scalar(const TVALUE value)
 		{
 			return operator *=(value);
 		}
@@ -215,7 +215,7 @@ namespace Common
 		/// <summary>
 		/// Compares the matrix
 		/// </summary>
-		bool equals(const MatrixNxN<TVALUE, TINDEX>& matrix) const
+		bool equals(const MatrixN<TVALUE, TINDEX>& matrix) const
 		{
 			return operator ==(matrix);
 		}
@@ -223,12 +223,12 @@ namespace Common
 		/// <summary>
 		/// Populates the matrix with an identity matrix
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& identity();
+		MatrixN<TVALUE, TINDEX>& identity();
 
 		/// <summary>
 		/// Populates the matrix with a zero matrix
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& zero()
+		MatrixN<TVALUE, TINDEX>& zero()
 		{
 			return operator =(0);
 		}
@@ -236,7 +236,7 @@ namespace Common
 		/// <summary>
 		/// Populates the matrix with an all-ones matrix
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& allOnes()
+		MatrixN<TVALUE, TINDEX>& allOnes()
 		{
 			return operator =(1);
 		}
@@ -244,7 +244,7 @@ namespace Common
 		/// <summary>
 		/// Transposes the matrix
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& transpose()
+		MatrixN<TVALUE, TINDEX>& transpose()
 		{
 			return transpose(*this);
 		}
@@ -252,20 +252,20 @@ namespace Common
 		/// <summary>
 		/// Transposes the matrix passed
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& transpose(const MatrixNxN<TVALUE, TINDEX>& matrix);
+		MatrixN<TVALUE, TINDEX>& transpose(const MatrixN<TVALUE, TINDEX>& matrix);
 
 		/// <summary>
 		/// Returns the transpose of the matrix
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX> getTransposed()
+		MatrixN<TVALUE, TINDEX> getTransposed()
 		{
-			return MatrixNxN<TVALUE, TINDEX>(*this).transpose();
+			return MatrixN<TVALUE, TINDEX>(*this).transpose();
 		}
 
 		/// <summary>
 		/// Inverts the matrix
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& inverse()
+		MatrixN<TVALUE, TINDEX>& inverse()
 		{
 			return inverse(*this);
 		}
@@ -273,14 +273,14 @@ namespace Common
 		/// <summary>
 		/// Inverts the matrix passed
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX>& inverse(const MatrixNxN<TVALUE, TINDEX>& matrix);
+		MatrixN<TVALUE, TINDEX>& inverse(const MatrixN<TVALUE, TINDEX>& matrix);
 
 		/// <summary>
 		/// Returns the inverse of the matrix
 		/// </summary>
-		MatrixNxN<TVALUE, TINDEX> getInverted()
+		MatrixN<TVALUE, TINDEX> getInverted()
 		{
-			return MatrixNxN<TVALUE, TINDEX>(*this).inverse();
+			return MatrixN<TVALUE, TINDEX>(*this).inverse();
 		}
 
 		/// <summary>
@@ -288,10 +288,10 @@ namespace Common
 		/// </summary>
 		TVALUE getDeterminant() const;
 
-		virtual ~MatrixNxN()
+		virtual ~MatrixN()
 		{
 		}
 	};
 
 }
-#endif // MATRIXNXN_H
+#endif // MATRIXN_H

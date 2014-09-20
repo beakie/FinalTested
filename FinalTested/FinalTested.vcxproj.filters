@@ -44,10 +44,13 @@
     <ClInclude Include="common-imatrixadapter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-matrixnxn.h">
+    <ClInclude Include="common-image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-image.h">
+    <ClInclude Include="common-invertimagefilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common-matrixn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

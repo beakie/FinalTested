@@ -9,7 +9,7 @@ namespace Common
 		/// <summary>
 		/// The values of the image stored in [x][y] form
 		/// </summary>
-		TPIXEL** Values;
+		TVALUE** Values;
 
 		/// <summary>
 		/// Constructs an unpopulated image
