@@ -1,3 +1,6 @@
+#ifndef COMMON_H
+#define COMMON_H
+
 #include "common-image.h"
 #include "common-imatrixadapter.h"
 #include "common-matrix2.h"
@@ -5,6 +8,7 @@
 #include "common-matrix4.h"
 #include "common-matrixadapter.h"
 #include "common-matrixn.h"
+#include "common-static.h"
 
 namespace Common
 {
@@ -49,3 +53,5 @@ namespace Common
 	typedef Image<unsigned int, unsigned int> Image16I;
 
 }
+
+#endif // COMMON_H

@@ -1,6 +1,8 @@
 #ifndef IMAGE_H
 #define IMAGE_H
 
+#include "common-static.h"
+
 namespace Common
 {
 	template <typename TVALUE, typename TINDEX>
@@ -53,25 +55,9 @@ namespace Common
 			//todo
 		}
 
-		template <typename T = TVALUE>
-		static T getUpperBound();
-
-		template <>
-		static bool getUpperBound<bool>()
+		static TVALUE getMaxValue()
 		{
-			return 1;
-		}
-
-		template <>
-		static unsigned char getUpperBound<unsigned char>()
-		{
-			return 255;
-		}
-
-		template <>
-		static unsigned int getUpperBound<unsigned int>()
-		{
-			return 65535;
+			return Common::getUpperBound<TVALUE>();
 		}
 
 		virtual ~Image()
