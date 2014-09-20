@@ -1,4 +1,4 @@
-#ifndef MATRIX4_H
+﻿#ifndef MATRIX4_H
 #define MATRIX4_H
 
 namespace Common
@@ -480,8 +480,14 @@ namespace Common
 		/// </summary>
 		TVALUE getDeterminant() const
 		{
-			//todo
-			return Matrix4<TVALUE>();
+			return Values[0][0] * Values[1][1] * Values[2][2] * Values[3][3] + Values[0][0] * Values[2][1] * Values[3][2] * Values[1][3] + Values[0][0] * Values[3][1] * Values[1][2] * Values[2][3]
+					+ Values[1][0] * Values[0][1] * Values[3][2] * Values[2][3] + Values[1][0] * Values[2][1] * Values[0][2] * Values[3][3] + Values[1][0] * Values[3][1] * Values[2][2] * Values[0][3]
+					+ Values[2][0] * Values[0][1] * Values[1][2] * Values[3][3] + Values[2][0] * Values[1][1] * Values[3][2] * Values[0][3] + Values[2][0] * Values[3][1] * Values[0][2] * Values[1][3]
+					+ Values[3][0] * Values[0][1] * Values[2][2] * Values[1][3] + Values[3][0] * Values[1][1] * Values[0][2] * Values[2][3] + Values[3][0] * Values[2][1] * Values[1][2] * Values[0][3]
+					− Values[0][0] * Values[1][1] * Values[3][2] * Values[2][3] − Values[0][0] * Values[2][1] * Values[1][2] * Values[3][3] − Values[0][0] * Values[3][1] * Values[2][2] * Values[1][3]
+					− Values[1][0] * Values[0][1] * Values[2][2] * Values[3][3] − Values[1][0] * Values[2][1] * Values[3][2] * Values[0][3] − Values[1][0] * Values[3][1] * Values[0][2] * Values[2][3]
+					− Values[2][0] * Values[0][1] * Values[3][2] * Values[1][3] − Values[2][0] * Values[1][1] * Values[0][2] * Values[3][3] − Values[2][0] * Values[3][1] * Values[1][2] * Values[0][3]
+					− Values[3][0] * Values[0][1] * Values[1][2] * Values[2][3] − Values[3][0] * Values[1][1] * Values[2][2] * Values[0][3] − Values[3][0] * Values[2][1] * Values[0][2] * Values[1][3];
 		}
 
 		virtual ~Matrix4()

@@ -395,6 +395,8 @@ namespace Common
 
 		//static TVALUE getDeterminant(const TIMPLEMENTATION& matrix);
 
+		//pivoting?
+
 		virtual ~Matrix2()
 		{
 		}

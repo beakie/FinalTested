@@ -404,7 +404,7 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE>& inverse(const Matrix3<TVALUE>& matrix)
 		{
-			//todo
+			// http://www.wikihow.com/Inverse-a-3X3-Matrix
 			return *this;
 		}
 
