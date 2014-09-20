@@ -7,7 +7,7 @@ namespace Common
 	struct Matrix2
 	{
 		/// <summary>
-		/// The Values of the matrix stored in [x][y] form
+		/// The values of the matrix stored in [x][y] form
 		/// </summary>
 		TVALUE Values[2][2];
 

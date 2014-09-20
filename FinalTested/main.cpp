@@ -27,5 +27,8 @@ int main(int argc, char *argv[])
 	
 	unsigned char rowCount = adapter.getColumnCount();
 
+	Common::Image<bool, char> image = Common::Image<bool, char>(3, 4, false);
+	image.Values[0][0] = false;
+
 	return a.exec();
 }
