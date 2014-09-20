@@ -122,7 +122,7 @@ namespace Common
 		{
 			// do manually. consider matrix size.
 
-			return *this;
+			return 0;
 		}
 
 		/// <summary>
@@ -160,7 +160,7 @@ namespace Common
 		{
 			// do manually. consider matrix size.
 
-			return *this;
+			return 0;
 		}
 
 		/// <summary>
@@ -198,7 +198,7 @@ namespace Common
 		{
 			// do manually. consider matrix size.
 
-			return *this;
+			return 0;
 		}
 
 		/// <summary>
@@ -236,7 +236,7 @@ namespace Common
 		{
 			_Matrix.operator *(value);
 
-			return *this;
+			return 0;
 		}
 
 		/// <summary>
@@ -256,7 +256,7 @@ namespace Common
 		{
 			// do manually. consider matrix size.
 
-			return *this;
+			return 0;
 		}
 
 		/// <summary>
@@ -294,7 +294,7 @@ namespace Common
 		{
 			_Matrix.operator /(value);
 
-			return *this;
+			return 0;
 		}
 
 		/// <summary>
@@ -460,7 +460,7 @@ namespace Common
 		{
 			_Matrix.getInverse();
 
-			return *this;
+			return 0;
 		}
 
 		/// <summary>
