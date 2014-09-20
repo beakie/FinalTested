@@ -421,8 +421,9 @@ namespace Common
 		/// </summary>
 		TVALUE getDeterminant() const
 		{
-			//todo
-			return Matrix3<TVALUE>();
+			return Values[0][0] * (Values[1][1] * Values[2][2] - Values[1][2] * Values[2][1])
+					- Values[0][1] * (Values[1][0] * Values[2][2] - Values[1][2] * Values[2][0])
+					+ Values[0][2] * (Values[1][0] * Values[2][1] - Values[1][1] * Values[2][0]);
 		}
 
 		virtual ~Matrix3()
