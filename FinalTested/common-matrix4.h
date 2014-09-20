@@ -480,6 +480,7 @@ namespace Common
 		/// </summary>
 		TVALUE getDeterminant() const
 		{
+			// Leibniz
 			return Values[0][0] * Values[1][1] * Values[2][2] * Values[3][3] + Values[0][0] * Values[2][1] * Values[3][2] * Values[1][3] + Values[0][0] * Values[3][1] * Values[1][2] * Values[2][3]
 					+ Values[1][0] * Values[0][1] * Values[3][2] * Values[2][3] + Values[1][0] * Values[2][1] * Values[0][2] * Values[3][3] + Values[1][0] * Values[3][1] * Values[2][2] * Values[0][3]
 					+ Values[2][0] * Values[0][1] * Values[1][2] * Values[3][3] + Values[2][0] * Values[1][1] * Values[3][2] * Values[0][3] + Values[2][0] * Values[3][1] * Values[0][2] * Values[1][3]
