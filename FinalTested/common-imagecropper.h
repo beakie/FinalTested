@@ -9,10 +9,6 @@ namespace Common
 	class ImageCropper
 	{
 	public:
-		ImageCropper()
-		{
-		}
-
 		ImageCropper(TINDEX x1, TINDEX y1, TINDEX x2, TINDEX y2)
 		{
 		}
