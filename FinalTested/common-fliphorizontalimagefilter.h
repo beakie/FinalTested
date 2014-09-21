@@ -21,11 +21,10 @@ namespace Common
 			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
 
 			TINDEX width = i.getWidth();
-			TINDEX height = i.getHeight();
 
 			for (TINDEX x = 0; x < width; x++)
-				for (TINDEX y = 0; y < height; y++)
-					i.Values[x][y] = image.Values[width - x][height - y];
+				for (TINDEX y = 0; y < i.getHeight(); y++)
+					i.Values[x][y] = image.Values[width - x][y];
 
 			return i;
 		}
