@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
 	Common::ImageFilter8B::applyMatrix(image, matrix);
 	Common::ImageFilter8B::applyFilter<Common::NegativeImageFilterB>(image);
 	Common::ImageFilter8B::applyFilter(image, Common::NegativeImageFilterB());
+	image = Common::NegativeImageFilterB::updateImage(image);
 
 	return a.exec();
 }
