@@ -11,7 +11,6 @@ int main(int argc, char *argv[])
 	Common::Matrix2<float> matrix2 = Common::Matrix2<float>(matrix);
 	Common::Matrix2<float> matrix3 = Common::Matrix2<float>(1);
 	Common::Matrix2<float> matrix4 = Common::Matrix2<float>().identity();
-	//matrix.inverse();
 	matrix2.inverse(matrix);
 	float d = matrix.getDeterminant();
 	
