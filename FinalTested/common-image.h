@@ -40,21 +40,40 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Returns the width
+		/// Returns ...
 		/// </summary>
-		TINDEX getWidth()
+		TINDEX getWidth() const
 		{
-			//todo
+			return X2 - x1;
 		}
 
 		/// <summary>
-		/// Returns the height
+		/// Returns ...
 		/// </summary>
-		TINDEX getHeight()
+		TINDEX getHeight() const
 		{
-			//todo
+			return Y2 - y1;
 		}
 
+		/// <summary>
+		/// Returns ...
+		/// </summary>
+		bool validateX(const TINDEX x) const
+		{
+			return (X1 >= x) && (X2 <= x);
+		}
+
+		/// <summary>
+		/// Returns ...
+		/// </summary>
+		bool validateY(const TINDEX y) const
+		{
+			return (Y1 >= y) && (Y2 <= y);
+		}
+
+		/// <summary>
+		/// Returns ...
+		/// </summary>
 		static TVALUE getMaxValue()
 		{
 			return Common::getUpperBound<TVALUE>();

@@ -27,24 +27,34 @@ namespace Common
 			Y2 = y2;
 		}
 
-		TINDEX getX(TINDEX x)
+		TINDEX getX(const TINDEX x) const
 		{
 			return X1 + x;
 		}
 
-		TINDEX getY(TINDEX y)
+		TINDEX getY(const TINDEX y) const
 		{
 			return Y1 + y;
 		}
 
-		TINDEX getWidth()
+		TINDEX getWidth() const
 		{
 			return X2 - x1;
 		}
 
-		TINDEX getHeight()
+		TINDEX getHeight() const
 		{
 			return Y2 - y1;
+		}
+
+		bool validateX(const TINDEX x) const
+		{
+			return (X1 >= x) && (X2 <= x);
+		}
+
+		bool validateY(const TINDEX y) const
+		{
+			return (Y1 >= y) && (Y2 <= y);
 		}
 
 		Image<TVALUE, TINDEX> getCroppedImage(const Image<TVALUE, TINDEX>& image)
