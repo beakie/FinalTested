@@ -1,5 +1,5 @@
-#ifndef INVERTIMAGECROP_H
-#define INVERTIMAGECROP_H
+#ifndef IMAGECROPPER_H
+#define IMAGECROPPER_H
 
 #include "common-static.h"
 
@@ -23,4 +23,4 @@ namespace Common
 	};
 }
 
-#endif // INVERTIMAGECROP_H
+#endif // IMAGECROPPER_H
