@@ -397,6 +397,10 @@ namespace Common
 
 		//pivoting?
 
+		//bool validateX(const TINDEX x) const
+
+		//bool validateY(const TINDEX y) const
+
 		virtual ~Matrix2()
 		{
 		}
