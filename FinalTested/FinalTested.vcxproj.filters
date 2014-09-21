@@ -62,5 +62,8 @@
     <ClInclude Include="common-imageprocessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-fliphorizontalimagefilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

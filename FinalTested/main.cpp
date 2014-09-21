@@ -33,5 +33,7 @@ int main(int argc, char *argv[])
 	Common::ImageFilter8B::applyFilter(image, Common::NegativeImageFilterB());
 	image = Common::NegativeImageFilterB::updateImage(image);
 
+	image = Common::FlipHorizontalImageFilterB::updateImage(image);
+
 	return a.exec();
 }

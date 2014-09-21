@@ -13,6 +13,9 @@ namespace Common
 		/// </summary>
 		TVALUE** Values;
 
+		TINDEX Width;
+		TINDEX Height;
+
 		/// <summary>
 		/// Constructs an unpopulated image
 		/// </summary>
@@ -24,17 +27,18 @@ namespace Common
 		/// <summary>
 		/// Constructs an unpopulated image
 		/// </summary>
-		Image(TINDEX rows, TINDEX columns)
+		Image(TINDEX width, TINDEX height)
 		{
-			//todo
+			Width = width;
+			Height = height;
 		}
 
 		/// <summary>
 		/// Constructs a image and sets all the values to a single value
 		/// </summary>
 		/// <remarks>Equals operator</remarks>
-		Image(TINDEX rows, TINDEX columns, const TVALUE value)
-			: Image(rows, columns)
+		Image(TINDEX width, TINDEX height, const TVALUE value)
+			: Image(width, height)
 		{
 			//todo
 		}
@@ -44,7 +48,7 @@ namespace Common
 		/// </summary>
 		TINDEX getWidth() const
 		{
-			return X2 - x1;
+			return Width;
 		}
 
 		/// <summary>
@@ -52,7 +56,7 @@ namespace Common
 		/// </summary>
 		TINDEX getHeight() const
 		{
-			return Y2 - y1;
+			return Height;
 		}
 
 		/// <summary>
@@ -60,7 +64,7 @@ namespace Common
 		/// </summary>
 		bool validateX(const TINDEX x) const
 		{
-			return (X1 >= x) && (X2 <= x);
+			return (x <= Width) && (x >= 0);
 		}
 
 		/// <summary>
@@ -68,7 +72,7 @@ namespace Common
 		/// </summary>
 		bool validateY(const TINDEX y) const
 		{
-			return (Y1 >= y) && (Y2 <= y);
+			return (y <= Height) && (y >= 0);
 		}
 
 		/// <summary>

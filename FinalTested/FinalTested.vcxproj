@@ -79,6 +79,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common-fliphorizontalimagefilter.h" />
     <ClInclude Include="common-image.h" />
     <ClInclude Include="common-imagecropper.h" />
     <ClInclude Include="common-imageprocessor.h" />

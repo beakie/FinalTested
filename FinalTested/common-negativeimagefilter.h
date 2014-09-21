@@ -1,5 +1,5 @@
-#ifndef INVERTIMAGEFILTER_H
-#define INVERTIMAGEFILTER_H
+#ifndef NEGATIVEIMAGEFILTER_H
+#define NEGATIVEIMAGEFILTER_H
 
 #include "common-image.h"
 #include "common-imageprocessor.h"
@@ -76,4 +76,4 @@ namespace Common
 	};
 }
 
-#endif // INVERTIMAGEFILTER_H
+#endif // NEGATIVEIMAGEFILTER_H
