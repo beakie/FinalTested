@@ -6,7 +6,7 @@
 namespace Common
 {
 	template <typename TVALUE, typename TINDEX>
-	class ImageFilter
+	class ImageProcessor
 	{
 	public:
 		template <typename TMATRIX>
@@ -32,7 +32,7 @@ namespace Common
 			//todo
 		}
 
-		virtual ~ImageFilter()
+		virtual ~ImageProcessor()
 		{
 		}
 	};

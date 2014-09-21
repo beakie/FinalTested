@@ -2,7 +2,7 @@
 #define INVERTIMAGEFILTER_H
 
 #include "common-image.h"
-#include "common-imagefilter.h"
+#include "common-imageprocessor.h"
 #include "common-matrix2.h"
 #include "common-matrix3.h"
 #include "common-matrix4.h"
@@ -15,6 +15,7 @@ namespace Common
 	class NegativeImageFilter
 	{
 	public:
+		// COULD USE THIS INSTEAD OF TEMPLATE SPECIALIZATION
 		//template <typename TMATRIX>
 		//static TMATRIX getMatrix()
 		//{
@@ -48,6 +49,14 @@ namespace Common
 			return 0;
 		}
 
+		template <typename TINDEX>
+		static Image<TVALUE, TINDEX> updateImage(const Image<TVALUE, TINDEX>& image)
+		{
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(image);
+			//do something
+			return i;
+		}
+
 		static TVALUE updateValue(TVALUE value)
 		{
 			return getUpperBound<TVALUE>() - value;
@@ -56,8 +65,9 @@ namespace Common
 		template <typename TINDEX>
 		static void applyFilter(const Image<TVALUE, TINDEX>& image)
 		{
-			ImageFilter<TVALUE, TINDEX>::updateValues(image, updateValue);
-			//ImageFilter<TVALUE, TINDEX>::applyMatrix(image, getMatrix<Matrix2F>());
+			ImageProcessor<TVALUE, TINDEX>::updateValues(image, updateValue);
+			//ImageProcessor<TVALUE, TINDEX>::applyMatrix(image, getMatrix<Matrix2F>());
+			//updateImage(image);
 		}
 
 		~NegativeImageFilter()
