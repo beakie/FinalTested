@@ -24,7 +24,7 @@ namespace Common
 		template <typename TFILTER>
 		static void applyFilter(const Image<TVALUE, TINDEX>& image, const TFILTER& filter)
 		{
-			//todo
+			filter.applyFilter(image);
 		}
 
 		static void updateValues(const Image<TVALUE, TINDEX>& image, TVALUE(*f)(TVALUE))
