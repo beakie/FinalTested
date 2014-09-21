@@ -40,17 +40,17 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Returns the number of rows
+		/// Returns the width
 		/// </summary>
-		TINDEX getRowCount()
+		TINDEX getWidth()
 		{
 			//todo
 		}
 
 		/// <summary>
-		/// Returns the number of columns
+		/// Returns the height
 		/// </summary>
-		TINDEX getColumnCount()
+		TINDEX getHeight()
 		{
 			//todo
 		}
