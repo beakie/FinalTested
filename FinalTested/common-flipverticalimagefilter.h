@@ -1,5 +1,5 @@
-#ifndef FLIPHORIZONTALIMAGEFILTER_H
-#define FLIPHORIZONTALIMAGEFILTER_H
+#ifndef FLIPVERTICALIMAGEFILTER_H
+#define FLIPVERTICALIMAGEFILTER_H
 
 #include "common-image.h"
 #include "common-imageprocessor.h"
@@ -12,7 +12,7 @@
 namespace Common
 {
 	template <typename TVALUE>
-	class FlipHorizontalImageFilter
+	class FlipVerticalImageFilter
 	{
 	public:
 		template <typename TINDEX>
@@ -35,10 +35,10 @@ namespace Common
 			image = updateImage(image);
 		}
 
-		~FlipHorizontalImageFilter()
+		~FlipVerticalImageFilter()
 		{
 		}
 	};
 }
 
-#endif // FLIPHORIZONTALIMAGEFILTER_H
+#endif // FLIPVERTICALIMAGEFILTER_H

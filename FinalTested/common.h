@@ -2,6 +2,7 @@
 #define COMMON_H
 
 #include "common-fliphorizontalimagefilter.h"
+#include "common-flipverticalimagefilter.h"
 #include "common-image.h"
 #include "common-imagecropper.h"
 #include "common-imageprocessor.h"
@@ -66,6 +67,10 @@ namespace Common
 	typedef FlipHorizontalImageFilter<bool> FlipHorizontalImageFilterB;
 	typedef FlipHorizontalImageFilter<unsigned char> FlipHorizontalImageFilterC;
 	typedef FlipHorizontalImageFilter<unsigned int> FlipHorizontalImageFilterI;
+
+	typedef FlipVerticalImageFilter<bool> FlipVerticalImageFilterB;
+	typedef FlipVerticalImageFilter<unsigned char> FlipVerticalImageFilterC;
+	typedef FlipVerticalImageFilter<unsigned int> FlipVerticalImageFilterI;
 
 	typedef NegativeImageFilter<bool> NegativeImageFilterB;
 	typedef NegativeImageFilter<unsigned char> NegativeImageFilterC;
