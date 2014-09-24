@@ -18,12 +18,12 @@ namespace Common
 		template <typename TINDEX>
 		static Image<TVALUE, TINDEX> updateImage(const Image<TVALUE, TINDEX>& image)
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(image.Width, image.Height);
 
-			TINDEX width = i.getWidth();
+			TINDEX width = i.Width;
 
 			for (TINDEX x = 0; x < width; x++)
-				for (TINDEX y = 0; y < i.getHeight(); y++)
+				for (TINDEX y = 0; y < i.Height; y++)
 					i.Values[x][y] = image.Values[width - x][y];
 
 			return i;

@@ -4,7 +4,6 @@
 #include "common-fliphorizontalimagefilter.h"
 #include "common-flipverticalimagefilter.h"
 #include "common-image.h"
-#include "common-imagecropper.h"
 #include "common-imageprocessor.h"
 #include "common-imatrixadapter.h"
 #include "common-negativeimagefilter.h"

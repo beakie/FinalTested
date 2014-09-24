@@ -82,7 +82,6 @@
     <ClInclude Include="common-flipverticalimagefilter.h" />
     <ClInclude Include="common-fliphorizontalimagefilter.h" />
     <ClInclude Include="common-image.h" />
-    <ClInclude Include="common-imagecropper.h" />
     <ClInclude Include="common-imageprocessor.h" />
     <ClInclude Include="common-negativeimagefilter.h" />
     <ClInclude Include="common-imatrixadapter.h" />

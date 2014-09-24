@@ -16,9 +16,9 @@ namespace Common
 		TINDEX Width;
 		TINDEX Height;
 
-		/// <summary>
-		/// Constructs an unpopulated image
-		/// </summary>
+		///// <summary>
+		///// Constructs an unpopulated image
+		///// </summary>
 		Image()
 		{
 			//todo
@@ -31,6 +31,11 @@ namespace Common
 		{
 			Width = width;
 			Height = height;
+
+			Values = new TVALUE*[Width];
+
+			for (TINDEX i = 0; i < Width; i++)
+				Values[i] = new TVALUE[Height];
 		}
 
 		/// <summary>
@@ -40,7 +45,9 @@ namespace Common
 		Image(TINDEX width, TINDEX height, const TVALUE value)
 			: Image(width, height)
 		{
-			//todo
+			for (TINDEX x = 0; x < width; x++)
+				for (TINDEX y = 0; y < height; y++)
+					Values[x][y] = value;
 		}
 
 		/// <summary>
@@ -55,6 +62,14 @@ namespace Common
 		/// Returns ...
 		/// </summary>
 		TINDEX getHeight() const
+		{
+			return Height;
+		}
+
+		/// <summary>
+		/// Returns ...
+		/// </summary>
+		TINDEX getPosition(TINDEX) const
 		{
 			return Height;
 		}
@@ -83,9 +98,53 @@ namespace Common
 			return Common::getUpperBound<TVALUE>();
 		}
 
+		static Image<TVALUE, TINDEX> getCroppedImage(const Image<TVALUE, TINDEX>& image, const TINDEX x1, const TINDEX y1, const TINDEX x2, const TINDEX y2)
+		{
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(x2 - x1, y2 - y1);
+
+			for (TINDEX x = 0; x < i.getWidth(); x++)
+				for (TINDEX y = 0; y < i.getHeight(); y++)
+					i.Values[x][y] = image.Values[x1 + x][y1 + y];
+
+			return i;
+		}
+
+		Image<TVALUE, TINDEX>& cropImage(const TINDEX x1, const TINDEX y1, const TINDEX x2, const TINDEX y2)
+		{
+			TVALUE** valuesBuffer;
+			TINDEX newWidth = x2 - x1;
+			TINDEX newHeight = y2 - y1;
+
+			valuesBuffer = new TVALUE*[newWidth];
+
+			for (TINDEX x = 0; x < newWidth; x++)
+			{
+				valuesBuffer[x] = new TVALUE[newHeight];
+
+				for (TINDEX y = 0; y < newHeight; y++)
+					valuesBuffer[x][y] = Values[x1 + x][y1 + y];
+			}
+
+			for (TINDEX x = 0; x < newWidth; x++)
+				delete[] Values[x];
+
+			delete[] Values;
+
+			Width = newWidth;
+			Height = newHeight;
+			Values = valuesBuffer;
+
+			return *this;
+		}
+
 		virtual ~Image()
 		{
+			for (TINDEX i = 0; i < Width; i++)
+				delete[] Values[i];
+
+			delete[] Values;
 		}
+
 	};
 }
 

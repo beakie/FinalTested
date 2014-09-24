@@ -56,9 +56,6 @@
     <ClInclude Include="common-negativeimagefilter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-imagecropper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="common-imageprocessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
