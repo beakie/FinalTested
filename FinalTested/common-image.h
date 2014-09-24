@@ -152,10 +152,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Image<TVALUE, TINDEX> operator +(const Image<TVALUE, TINDEX>& image) const
-		{
-			// todo
-		}
+		Image<TVALUE, TINDEX> operator +(const Image<TVALUE, TINDEX>& image) const;
 
 		/// <summary>
 		/// Operator
@@ -168,10 +165,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Image<TVALUE, TINDEX> operator -(const Image<TVALUE, TINDEX>& image) const
-		{
-			// todo
-		}
+		Image<TVALUE, TINDEX> operator -(const Image<TVALUE, TINDEX>& image) const;
 
 		/// <summary>
 		/// Operator

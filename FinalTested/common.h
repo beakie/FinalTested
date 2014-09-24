@@ -1,12 +1,8 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#include "common-fliphorizontalimagefilter.h"
-#include "common-flipverticalimagefilter.h"
 #include "common-image.h"
-#include "common-imageprocessor.h"
 #include "common-imatrixadapter.h"
-#include "common-negativeimagefilter.h"
 #include "common-matrix2.h"
 #include "common-matrix3.h"
 #include "common-matrix4.h"
@@ -55,25 +51,6 @@ namespace Common
 	typedef Image<bool, unsigned int> Image16B;
 	typedef Image<unsigned char, unsigned int> Image16C;
 	typedef Image<unsigned int, unsigned int> Image16I;
-
-	typedef ImageProcessor<bool, unsigned char> ImageFilter8B;
-	typedef ImageProcessor<unsigned char, unsigned char> ImageFilter8C;
-	typedef ImageProcessor<unsigned int, unsigned char> ImageFilter8I;
-	typedef ImageProcessor<bool, unsigned int> ImageFilter16B;
-	typedef ImageProcessor<unsigned char, unsigned int> ImageFilter16C;
-	typedef ImageProcessor<unsigned int, unsigned int> ImageFilter16I;
-
-	typedef FlipHorizontalImageFilter<bool> FlipHorizontalImageFilterB;
-	typedef FlipHorizontalImageFilter<unsigned char> FlipHorizontalImageFilterC;
-	typedef FlipHorizontalImageFilter<unsigned int> FlipHorizontalImageFilterI;
-
-	typedef FlipVerticalImageFilter<bool> FlipVerticalImageFilterB;
-	typedef FlipVerticalImageFilter<unsigned char> FlipVerticalImageFilterC;
-	typedef FlipVerticalImageFilter<unsigned int> FlipVerticalImageFilterI;
-
-	typedef NegativeImageFilter<bool> NegativeImageFilterB;
-	typedef NegativeImageFilter<unsigned char> NegativeImageFilterC;
-	typedef NegativeImageFilter<unsigned int> NegativeImageFilterI;
 
 	//typedef Plot<unsigned char> DimensionsC;
 

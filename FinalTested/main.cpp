@@ -27,14 +27,6 @@ int main(int argc, char *argv[])
 
 	unsigned int z = Common::Image8C::getMaxValue();
 
-	Common::ImageFilter8B::updateValues(image, Common::NegativeImageFilterB::updateValue);
-	Common::ImageFilter8B::applyMatrix(image, matrix);
-	Common::ImageFilter8B::applyFilter<Common::NegativeImageFilterB>(image);
-	Common::ImageFilter8B::applyFilter(image, Common::NegativeImageFilterB());
-	//image = Common::NegativeImageFilterB::updateImage(image);
-
-	//image = Common::FlipHorizontalImageFilterB::updateImage(image);
-
 	Common::Image16B img = Common::Image16B(100, 100, 1);
 
 	img.cropImage(0, 0, 10, 10);
