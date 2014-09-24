@@ -31,5 +31,7 @@ int main(int argc, char *argv[])
 
 	img.cropImage(0, 0, 10, 10);
 
+	2 < img < 4;
+
 	return a.exec();
 }

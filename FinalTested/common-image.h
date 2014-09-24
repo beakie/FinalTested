@@ -178,6 +178,32 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
+		Image<TVALUE, TINDEX> operator >(const TVALUE value) const;
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator >=(const TVALUE value)
+		{
+			return *this > value;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX> operator <(const TVALUE value) const;
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator <=(const TVALUE value)
+		{
+			return *this < value;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
 		bool operator ==(const Image<TVALUE, TINDEX>& image) const
 		{
 			if ((Width != image.Width) || (Height != image.Height))
