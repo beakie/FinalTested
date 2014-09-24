@@ -53,17 +53,5 @@
     <ClInclude Include="common-static.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-negativeimagefilter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-imageprocessor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-fliphorizontalimagefilter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-flipverticalimagefilter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

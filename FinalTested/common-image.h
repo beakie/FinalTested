@@ -137,6 +137,74 @@ namespace Common
 			return *this;
 		}
 
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator =(const Image<TVALUE, TINDEX>& image)
+		{
+			Values = image.Values; // todo: do copy properly
+			Width = image.Width;
+			Height = image.Height;
+
+			return *this;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX> operator +(const Image<TVALUE, TINDEX>& image) const
+		{
+			// todo
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator +=(const Image<TVALUE, TINDEX>& image)
+		{
+			return *this + image;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX> operator -(const Image<TVALUE, TINDEX>& image) const
+		{
+			// todo
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator -=(const Image<TVALUE, TINDEX>& image)
+		{
+			return *this - matrix;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		bool operator ==(const Image<TVALUE, TINDEX>& image) const
+		{
+			if ((Width != image.Width) || (Height != image.Height))
+				return false;
+
+			for (TINDEX x = 0; x < i.getWidth(); x++)
+				for (TINDEX y = 0; y < i.getHeight(); y++)
+					if (Values[x][y] != image.Values[x][y])
+						return false;
+
+			return true;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		bool operator !=(const Image<TVALUE, TINDEX>& image) const
+		{
+			return operator ==(matrix);
+		}
+
 		virtual ~Image()
 		{
 			for (TINDEX i = 0; i < Width; i++)
