@@ -178,27 +178,89 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Image<TVALUE, TINDEX> operator >(const TVALUE value) const;
+		Image<TVALUE, TINDEX> operator >>(const TVALUE value) const;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator >=(const TVALUE value)
+		Image<TVALUE, TINDEX> operator <<(const TVALUE value) const;
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX> operator *(const Image<TVALUE, TINDEX>& image) const;
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator *=(const Image<TVALUE, TINDEX>& image)
 		{
-			return *this > value;
+			return *this * image;
 		}
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Image<TVALUE, TINDEX> operator <(const TVALUE value) const;
+		Image<TVALUE, TINDEX> operator /(const Image<TVALUE, TINDEX>& image) const;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator <=(const TVALUE value)
+		Image<TVALUE, TINDEX>& operator /=(const Image<TVALUE, TINDEX>& image)
 		{
-			return *this < value;
+			return *this / matrix;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX> operator |(const Image<TVALUE, TINDEX>& image) const;
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator |=(const Image<TVALUE, TINDEX>& image)
+		{
+			return *this | matrix;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX> operator &(const Image<TVALUE, TINDEX>& image) const;
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator &=(const Image<TVALUE, TINDEX>& image)
+		{
+			return *this & matrix;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX> operator !(const Image<TVALUE, TINDEX>& image) const;
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator !=(const Image<TVALUE, TINDEX>& image)
+		{
+			return *this ! matrix;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX> operator ^(const Image<TVALUE, TINDEX>& image) const;
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator ^=(const Image<TVALUE, TINDEX>& image)
+		{
+			return *this ^ matrix;
 		}
 
 		/// <summary>
