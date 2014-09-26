@@ -172,7 +172,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator -=(const Image<TVALUE, TINDEX>& image)
 		{
-			return *this - matrix;
+			return *this - image;
 		}
 
 		/// <summary>
@@ -208,7 +208,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator /=(const Image<TVALUE, TINDEX>& image)
 		{
-			return *this / matrix;
+			return *this / image;
 		}
 
 		/// <summary>
@@ -221,7 +221,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator |=(const Image<TVALUE, TINDEX>& image)
 		{
-			return *this | matrix;
+			return *this | image;
 		}
 
 		/// <summary>
@@ -234,20 +234,20 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator &=(const Image<TVALUE, TINDEX>& image)
 		{
-			return *this & matrix;
+			return *this & image;
 		}
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Image<TVALUE, TINDEX> operator !(const Image<TVALUE, TINDEX>& image) const;
+		Image<TVALUE, TINDEX> operator !() const;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator !=(const Image<TVALUE, TINDEX>& image)
 		{
-			return *this ! matrix;
+			return !*this;
 		}
 
 		/// <summary>
@@ -260,7 +260,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator ^=(const Image<TVALUE, TINDEX>& image)
 		{
-			return *this ^ matrix;
+			return *this ^ image;
 		}
 
 		/// <summary>
@@ -284,7 +284,7 @@ namespace Common
 		/// </summary>
 		bool operator !=(const Image<TVALUE, TINDEX>& image) const
 		{
-			return operator ==(matrix);
+			return operator ==(image);
 		}
 
 		virtual ~Image()

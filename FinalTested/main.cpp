@@ -33,5 +33,9 @@ int main(int argc, char *argv[])
 
 	//img + img << 4 >> 2;
 
+	Common::Array<unsigned int> array;
+
+	array.addItem(123);
+
 	return a.exec();
 }

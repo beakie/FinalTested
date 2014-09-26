@@ -1,6 +1,7 @@
 #ifndef COMMON_H
 #define COMMON_H
 
+#include "common-array.h"
 #include "common-image.h"
 #include "common-imatrixadapter.h"
 #include "common-matrix2.h"
