@@ -48,12 +48,14 @@ namespace Common
 		Array<TVALUE, TINDEX>& remove(const TINDEX index)
 		{
 			if (index >= Count)
-				return;
+				return *this;
 
-			for (TINDEX i = (index + 1); i < Count; i++)
-				Items[i] = Items[i - 1];
+			for (TINDEX i = index; i < (Count - 1); i++)
+				Items[i] = Items[i + 1];
 
 			Count--;
+
+			return *this;
 		}
 
 		Array<TVALUE, TINDEX>& addItem(const TVALUE &item)

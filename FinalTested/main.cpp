@@ -35,7 +35,17 @@ int main(int argc, char *argv[])
 
 	Common::Array<unsigned int> array;
 
-	array.addItem(123);
+	array.addItem(0);
+	array.addItem(1);
+	array.addItem(2);
+	array.addItem(3);
+	array.addItem(4);
+	array.addItem(5);
+	array.addItem(6);
+	array.addItem(7);
+	array.addItem(8);
+	array.addItem(9);
+	array.remove(4);
 
 	return a.exec();
 }
