@@ -98,6 +98,14 @@ namespace Common
 			return Common::getUpperBound<TVALUE>();
 		}
 
+		/// <summary>
+		/// Returns ...
+		/// </summary>
+		Image<TVALUE, TINDEX>& clone(const Image<TVALUE, TINDEX>& image) const
+		{
+			return operator =(image);
+		}
+
 		static Image<TVALUE, TINDEX> getCroppedImage(const Image<TVALUE, TINDEX>& image, const TINDEX x1, const TINDEX y1, const TINDEX x2, const TINDEX y2)
 		{
 			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(x2 - x1, y2 - y1);

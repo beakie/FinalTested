@@ -46,6 +46,9 @@ int main(int argc, char *argv[])
 	array.addItem(8);
 	array.addItem(9);
 	array.remove(4);
+	array.addArray(array);
+	//array++;
+	//++array;
 
 	return a.exec();
 }

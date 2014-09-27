@@ -2,6 +2,7 @@
 #define COMMONARRAY_H
 
 // add insert functions
+// hide addArray in PArray
 
 namespace Common
 {
@@ -58,7 +59,7 @@ namespace Common
 			return *this;
 		}
 
-		Array<TVALUE, TINDEX>& addItem(const TVALUE &item)
+		Array<TVALUE, TINDEX>& addItem(const TVALUE item)
 		{
 			return operator +=(item);
 		}
@@ -86,7 +87,11 @@ namespace Common
 			Capacity = capacity;
 		}
 
-		void clone(); // equals operator? if not, >> could be clone out, << could be clone in
+		void clone(const Array<TVALUE, TINDEX> &array) // equals operator? if not, >> could be clone out, << could be clone in
+		{
+			delete[] Items; //any methods with this delete need to be overriden in parray so u can delete items too
+		}
+
 		TINDEX getIndex();
 
 		void clear()
@@ -99,10 +104,10 @@ namespace Common
 			Count = 0;
 		}
 
-		Array<TVALUE, TINDEX> operator+(const TVALUE &item) const;
+		Array<TVALUE, TINDEX> operator+(const TVALUE item) const;
 		Array<TVALUE, TINDEX> operator+(const Array<TVALUE, TINDEX> &array) const;
 
-		Array<TVALUE, TINDEX> & operator+=(const TVALUE &item)
+		Array<TVALUE, TINDEX> & operator+=(const TVALUE item)
 		{
 			if (Count == Capacity)
 				resize();
@@ -116,24 +121,26 @@ namespace Common
 
 		Array<TVALUE, TINDEX> & operator+=(const Array<TVALUE, TINDEX> &array)
 		{
+			TINDEX arrayCount = array.Count;
+
 			//could be more efficient if only resizes once and then copies all items into the array itself
-			for (TINDEX i = 0; i < array.Count; i++)
-				addItem(array[i]);
+			for (TINDEX i = 0; i < arrayCount; i++)
+				addItem(array.Items[i]);
 
 			return *this;
 		}
 
-		Array<TVALUE, TINDEX> & operator++(int)
-		{
-			resize(Count++);
+		//Array<TVALUE, TINDEX> & operator++(int) // whats the point?
+		//{
+		//	resize(Capacity++);
 
-			return *this;
-		}
+		//	return *this;
+		//}
 
-		Array<TVALUE, TINDEX> & operator++()
-		{
-			return this->operator ++(0);
-		}
+		//Array<TVALUE, TINDEX> & operator++() // whats the point?
+		//{
+		//	return this->operator ++(0);
+		//}
 
 		Array<TVALUE, TINDEX> & operator--(int)
 		{
@@ -154,6 +161,10 @@ namespace Common
 
 		bool exists(const TVALUE value)
 		{
+			for (TINDEX i = 0; i < Count; i++)
+				if (Items[i] == value)
+					return true;
+
 			return false;
 		}
 
