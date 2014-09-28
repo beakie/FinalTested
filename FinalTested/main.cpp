@@ -8,12 +8,12 @@ int main(int argc, char *argv[])
 {
 	QCoreApplication a(argc, argv);
 
-	Common::Matrix2<Floating> matrix = Common::Matrix2<Floating>(0, 1, 2, 3);
-	Common::Matrix2<Floating> matrix2 = Common::Matrix2<Floating>(matrix);
-	Common::Matrix2<Floating> matrix3 = Common::Matrix2<Floating>(1);
-	Common::Matrix2<Floating> matrix4 = Common::Matrix2<Floating>().identity();
+	Common::Matrix2<Float> matrix = Common::Matrix2<Float>(0, 1, 2, 3);
+	Common::Matrix2<Float> matrix2 = Common::Matrix2<Float>(matrix);
+	Common::Matrix2<Float> matrix3 = Common::Matrix2<Float>(1);
+	Common::Matrix2<Float> matrix4 = Common::Matrix2<Float>().identity();
 	matrix2.inverse(matrix);
-	Floating d = matrix.getDeterminant();
+	Float d = matrix.getDeterminant();
 	
 	Common::Matrix2Adapter_F adapter;
 	adapter.allOnes();

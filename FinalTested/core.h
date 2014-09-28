@@ -8,6 +8,6 @@ typedef unsigned int UInt_32;
 typedef signed char Int_8;
 typedef signed short Int_16;
 typedef signed int Int_32;
-typedef float Floating;
+typedef float Float;
 
 #endif // CORE_H

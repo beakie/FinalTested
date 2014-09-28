@@ -37,9 +37,9 @@ namespace Common
 	typedef Matrix2<Int_32> Matrix2_I32;
 	typedef Matrix3<Int_32> Matrix3_I32;
 	typedef Matrix4<Int_32> Matrix4_I32;
-	typedef Matrix2<Floating> Matrix2_F;
-	typedef Matrix3<Floating> Matrix3_F;
-	typedef Matrix4<Floating> Matrix4_F;
+	typedef Matrix2<Float> Matrix2_F;
+	typedef Matrix3<Float> Matrix3_F;
+	typedef Matrix4<Float> Matrix4_F;
 
 	typedef MatrixAdapter<Matrix2_2, UInt_2> Matrix2Adapter_2;
 	typedef MatrixAdapter<Matrix3_2, UInt_2> Matrix3Adapter_2;
@@ -62,9 +62,9 @@ namespace Common
 	typedef MatrixAdapter<Matrix2_32, Int_32> Matrix2Adapter_I32;
 	typedef MatrixAdapter<Matrix3_32, Int_32> Matrix3Adapter_I32;
 	typedef MatrixAdapter<Matrix4_32, Int_32> Matrix4Adapter_I32;
-	typedef MatrixAdapter<Matrix2_F, Floating> Matrix2Adapter_F;
-	typedef MatrixAdapter<Matrix3_F, Floating> Matrix3Adapter_F;
-	typedef MatrixAdapter<Matrix4_F, Floating> Matrix4Adapter_F;
+	typedef MatrixAdapter<Matrix2_F, Float> Matrix2Adapter_F;
+	typedef MatrixAdapter<Matrix3_F, Float> Matrix3Adapter_F;
+	typedef MatrixAdapter<Matrix4_F, Float> Matrix4Adapter_F;
 
 	typedef RGBPixel<UInt_8> RGBPixel_8;
 	typedef RGBPixel<UInt_16> RGBPixel_16;
