@@ -17,195 +17,195 @@
 namespace Common
 {
 	/// <summary>
-	/// Matrix of size 2 for 1 bit values
+	/// matrix of size 2 with 1 bit values
 	/// </summary>
 	typedef Matrix2<UInt_1> Matrix2_1;
 	/// <summary>
-	/// Matrix of size 3 for 1 bit values
+	/// matrix of size 3 with 1 bit values
 	/// </summary>
 	typedef Matrix3<UInt_1> Matrix3_1;
 	/// <summary>
-	/// Matrix of size 4 for 1 bit values
+	/// matrix of size 4 with 1 bit values
 	/// </summary>
 	typedef Matrix4<UInt_1> Matrix4_1;
 	/// <summary>
-	/// Matrix of size 2 for 1 byte unsigned integer values
+	/// matrix of size 2 with 1 byte unsigned integer values
 	/// </summary>
 	typedef Matrix2<UInt_8> Matrix2_8;
 	/// <summary>
-	/// Matrix of size 3 for 1 byte unsigned integer values
+	/// matrix of size 3 with 1 byte unsigned integer values
 	/// </summary>
 	typedef Matrix3<UInt_8> Matrix3_8;
 	/// <summary>
-	/// Matrix of size 4 for 1 byte unsigned integer values
+	/// matrix of size 4 with 1 byte unsigned integer values
 	/// </summary>
 	typedef Matrix4<UInt_8> Matrix4_8;
 	/// <summary>
-	/// Matrix of size 2 for 2 byte unsigned integer values
+	/// matrix of size 2 with 2 byte unsigned integer values
 	/// </summary>
 	typedef Matrix2<UInt_16> Matrix2_16;
 	/// <summary>
-	/// Matrix of size 3 for 2 byte unsigned integer values
+	/// matrix of size 3 with 2 byte unsigned integer values
 	/// </summary>
 	typedef Matrix3<UInt_16> Matrix3_16;
 	/// <summary>
-	/// Matrix of size 4 for 2 byte unsigned integer values
+	/// matrix of size 4 with 2 byte unsigned integer values
 	/// </summary>
 	typedef Matrix4<UInt_16> Matrix4_16;
 	/// <summary>
-	/// Matrix of size 2 for 4 byte unsigned integer values
+	/// matrix of size 2 with 4 byte unsigned integer values
 	/// </summary>
 	typedef Matrix2<UInt_32> Matrix2_32;
 	/// <summary>
-	/// Matrix of size 3 for 4 byte unsigned integer values
+	/// matrix of size 3 with 4 byte unsigned integer values
 	/// </summary>
 	typedef Matrix3<UInt_32> Matrix3_32;
 	/// <summary>
-	/// Matrix of size 4 for 4 byte unsigned integer values
+	/// matrix of size 4 with 4 byte unsigned integer values
 	/// </summary>
 	typedef Matrix4<UInt_32> Matrix4_32;
 	/// <summary>
-	/// Matrix of size 2 for 1 byte signed integer values
+	/// matrix of size 2 with 1 byte signed integer values
 	/// </summary>
 	typedef Matrix2<Int_8> Matrix2_I8;
 	/// <summary>
-	/// Matrix of size 3 for 1 byte signed integer values
+	/// matrix of size 3 with 1 byte signed integer values
 	/// </summary>
 	typedef Matrix3<Int_8> Matrix3_I8;
 	/// <summary>
-	/// Matrix of size 4 for 1 byte signed integer values
+	/// matrix of size 4 with 1 byte signed integer values
 	/// </summary>
 	typedef Matrix4<Int_8> Matrix4_I8;
 	/// <summary>
-	/// Matrix of size 2 for 2 byte signed integer values
+	/// matrix of size 2 with 2 byte signed integer values
 	/// </summary>
 	typedef Matrix2<Int_16> Matrix2_I16;
 	/// <summary>
-	/// Matrix of size 3 for 2 byte signed integer values
+	/// matrix of size 3 with 2 byte signed integer values
 	/// </summary>
 	typedef Matrix3<Int_16> Matrix3_I16;
 	/// <summary>
-	/// Matrix of size 4 for 2 byte signed integer values
+	/// matrix of size 4 with 2 byte signed integer values
 	/// </summary>
 	typedef Matrix4<Int_16> Matrix4_I16;
 	/// <summary>
-	/// Matrix of size 2 for 4 byte signed integer values
+	/// matrix of size 2 with 4 byte signed integer values
 	/// </summary>
 	typedef Matrix2<Int_32> Matrix2_I32;
 	/// <summary>
-	/// Matrix of size 3 for 4 byte signed integer values
+	/// matrix of size 3 with 4 byte signed integer values
 	/// </summary>
 	typedef Matrix3<Int_32> Matrix3_I32;
 	/// <summary>
-	/// Matrix of size 4 for 4 byte signed integer values
+	/// matrix of size 4 with 4 byte signed integer values
 	/// </summary>
 	typedef Matrix4<Int_32> Matrix4_I32;
 	/// <summary>
-	/// Matrix of size 2 for floating point values
+	/// matrix of size 2 with floating point values
 	/// </summary>
 	typedef Matrix2<Float> Matrix2_F;
 	/// <summary>
-	/// Matrix of size 3 for floating point values
+	/// matrix of size 3 with floating point values
 	/// </summary>
 	typedef Matrix3<Float> Matrix3_F;
 	/// <summary>
-	/// Matrix of size 4 for floating point values
+	/// matrix of size 4 with floating point values
 	/// </summary>
 	typedef Matrix4<Float> Matrix4_F;
 	/// <summary>
-	/// Adapter for matrix of size 2 for 1 bit values
+	/// Adapter for matrix of size 2 with 1 bit values
 	/// </summary>
 	typedef MatrixAdapter<Matrix2_1, UInt_1> Matrix2Adapter_1;
 	/// <summary>
-	/// Adapter for matrix of size 3 for 1 bit values
+	/// Adapter for matrix of size 3 with 1 bit values
 	/// </summary>
 	typedef MatrixAdapter<Matrix3_1, UInt_1> Matrix3Adapter_1;
 	/// <summary>
-	/// Adapter for matrix of size 4 for 1 bit values
+	/// Adapter for matrix of size 4 with 1 bit values
 	/// </summary>
 	typedef MatrixAdapter<Matrix4_1, UInt_1> Matrix4Adapter_1;
 	/// <summary>
-	/// Adapter for matrix of size 2 for 1 byte unsigned integer values
+	/// Adapter for matrix of size 2 with 1 byte unsigned integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix2_8, UInt_8> Matrix2Adapter_8;
 	/// <summary>
-	/// Adapter for matrix of size 3 for 1 byte unsigned integer values
+	/// Adapter for matrix of size 3 with 1 byte unsigned integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix3_8, UInt_8> Matrix3Adapter_8;
 	/// <summary>
-	/// Adapter for matrix of size 4 for 1 byte unsigned integer values
+	/// Adapter for matrix of size 4 with 1 byte unsigned integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix4_8, UInt_8> Matrix4Adapter_8;
 	/// <summary>
-	/// Adapter for matrix of size 2 for 2 byte unsigned integer values
+	/// Adapter for matrix of size 2 with 2 byte unsigned integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix2_16, UInt_16> Matrix2Adapter_16;
 	/// <summary>
-	/// Adapter for matrix of size 3 for 2 byte unsigned integer values
+	/// Adapter for matrix of size 3 with 2 byte unsigned integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix3_16, UInt_16> Matrix3Adapter_16;
 	/// <summary>
-	/// Adapter for matrix of size 4 for 2 byte unsigned integer values
+	/// Adapter for matrix of size 4 with 2 byte unsigned integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix4_16, UInt_16> Matrix4Adapter_16;
 	/// <summary>
-	/// Adapter for matrix of size 2 for 4 byte unsigned integer values
+	/// Adapter for matrix of size 2 with 4 byte unsigned integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix2_32, UInt_32> Matrix2Adapter_32;
 	/// <summary>
-	/// Adapter for matrix of size 3 for 4 byte unsigned integer values
+	/// Adapter for matrix of size 3 with 4 byte unsigned integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix3_32, UInt_32> Matrix3Adapter_32;
 	/// <summary>
-	/// Adapter for matrix of size 4 for 4 byte unsigned integer values
+	/// Adapter for matrix of size 4 with 4 byte unsigned integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix4_32, UInt_32> Matrix4Adapter_32;
 	/// <summary>
-	/// Adapter for matrix of size 2 for 1 byte signed integer values
+	/// Adapter for matrix of size 2 with 1 byte signed integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix2_8, Int_8> Matrix2Adapter_I8;
 	/// <summary>
-	/// Adapter for matrix of size 3 for 1 byte signed integer values
+	/// Adapter for matrix of size 3 with 1 byte signed integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix3_8, Int_8> Matrix3Adapter_I8;
 	/// <summary>
-	/// Adapter for matrix of size 4 for 1 byte signed integer values
+	/// Adapter for matrix of size 4 with 1 byte signed integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix4_8, Int_8> Matrix4Adapter_I8;
 	/// <summary>
-	/// Adapter for matrix of size 2 for 2 byte signed integer values
+	/// Adapter for matrix of size 2 with 2 byte signed integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix2_16, Int_16> Matrix2Adapter_I16;
 	/// <summary>
-	/// Adapter for matrix of size 3 for 2 byte signed integer values
+	/// Adapter for matrix of size 3 with 2 byte signed integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix3_16, Int_16> Matrix3Adapter_I16;
 	/// <summary>
-	/// Adapter for matrix of size 4 for 2 byte signed integer values
+	/// Adapter for matrix of size 4 with 2 byte signed integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix4_16, Int_16> Matrix4Adapter_I16;
 	/// <summary>
-	/// Adapter for matrix of size 2 for 4 byte signed integer values
+	/// Adapter for matrix of size 2 with 4 byte signed integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix2_32, Int_32> Matrix2Adapter_I32;
 	/// <summary>
-	/// Adapter for matrix of size 3 for 4 byte signed integer values
+	/// Adapter for matrix of size 3 with 4 byte signed integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix3_32, Int_32> Matrix3Adapter_I32;
 	/// <summary>
-	/// Adapter for matrix of size 4 for 4 byte signed integer values
+	/// Adapter for matrix of size 4 with 4 byte signed integer values
 	/// </summary>
 	typedef MatrixAdapter<Matrix4_32, Int_32> Matrix4Adapter_I32;
 	/// <summary>
-	/// Adapter for matrix of size 2 for floating point values
+	/// Adapter for matrix of size 2 with floating point values
 	/// </summary>
 	typedef MatrixAdapter<Matrix2_F, Float> Matrix2Adapter_F;
 	/// <summary>
-	/// Adapter for matrix of size 3 for floating point values
+	/// Adapter for matrix of size 3 with floating point values
 	/// </summary>
 	typedef MatrixAdapter<Matrix3_F, Float> Matrix3Adapter_F;
 	/// <summary>
-	/// Adapter for matrix of size 4 for floating point values
+	/// Adapter for matrix of size 4 with floating point values
 	/// </summary>
 	typedef MatrixAdapter<Matrix4_F, Float> Matrix4Adapter_F;
 	/// <summary>
