@@ -1,7 +1,7 @@
 #ifndef COMMONSTATIC_H
 #define COMMONSTATIC_H
 
-#include "common_types.h"
+#include "core-types.h"
 
 namespace Common
 {

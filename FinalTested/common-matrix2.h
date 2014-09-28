@@ -1,7 +1,7 @@
 #ifndef COMMONMATRIX2_H
 #define COMMONMATRIX2_H
 
-#include "common_types.h"
+#include "core-types.h"
 
 namespace Common
 {

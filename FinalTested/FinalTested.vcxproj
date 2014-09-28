@@ -90,7 +90,7 @@
     <ClInclude Include="common-matrixn.h" />
     <ClInclude Include="common-rgbpixel.h" />
     <ClInclude Include="common-static.h" />
-    <ClInclude Include="common_types.h" />
+    <ClInclude Include="core-types.h" />
     <ClInclude Include="common.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
