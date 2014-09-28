@@ -58,7 +58,7 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Copies values from matrix
+		/// Gets the matrix
 		/// </summary>
 		TMATRIX& getMatrix()
 		{
