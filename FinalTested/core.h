@@ -30,7 +30,7 @@ typedef signed short Int_16;
 /// </summary>
 typedef signed int Int_32;
 /// <summary>
-/// Floating numeric (float)
+/// Floating point numeric (float)
 /// </summary>
 typedef float Float;
 

@@ -16,63 +16,237 @@
 
 namespace Common
 {
+	/// <summary>
+	/// 2 dimensional matrix of boolean values
+	/// </summary>
 	typedef Matrix2<UInt_2> Matrix2_2;
+	/// <summary>
+	/// 3 dimensional matrix of boolean values
+	/// </summary>
 	typedef Matrix3<UInt_2> Matrix3_2;
+	/// <summary>
+	/// 4 dimensional matrix of boolean values
+	/// </summary>
 	typedef Matrix4<UInt_2> Matrix4_2;
+	/// <summary>
+	/// 2 dimensional matrix of 1 byte unsigned integer values
+	/// </summary>
 	typedef Matrix2<UInt_8> Matrix2_8;
+	/// <summary>
+	/// 3 dimensional matrix of 1 byte unsigned integer values
+	/// </summary>
 	typedef Matrix3<UInt_8> Matrix3_8;
+	/// <summary>
+	/// 4 dimensional matrix of 1 byte unsigned integer values
+	/// </summary>
 	typedef Matrix4<UInt_8> Matrix4_8;
+	/// <summary>
+	/// 2 dimensional matrix of 2 byte unsigned integer values
+	/// </summary>
 	typedef Matrix2<UInt_16> Matrix2_16;
+	/// <summary>
+	/// 3 dimensional matrix of 2 byte unsigned integer values
+	/// </summary>
 	typedef Matrix3<UInt_16> Matrix3_16;
+	/// <summary>
+	/// 4 dimensional matrix of 2 byte unsigned integer values
+	/// </summary>
 	typedef Matrix4<UInt_16> Matrix4_16;
+	/// <summary>
+	/// 2 dimensional matrix of 4 byte unsigned integer values
+	/// </summary>
 	typedef Matrix2<UInt_32> Matrix2_32;
+	/// <summary>
+	/// 3 dimensional matrix of 4 byte unsigned integer values
+	/// </summary>
 	typedef Matrix3<UInt_32> Matrix3_32;
+	/// <summary>
+	/// 4 dimensional matrix of 4 byte unsigned integer values
+	/// </summary>
 	typedef Matrix4<UInt_32> Matrix4_32;
+	/// <summary>
+	/// 2 dimensional matrix of 1 byte signed integer values
+	/// </summary>
 	typedef Matrix2<Int_8> Matrix2_I8;
+	/// <summary>
+	/// 3 dimensional matrix of 1 byte signed integer values
+	/// </summary>
 	typedef Matrix3<Int_8> Matrix3_I8;
+	/// <summary>
+	/// 4 dimensional matrix of 1 byte signed integer values
+	/// </summary>
 	typedef Matrix4<Int_8> Matrix4_I8;
+	/// <summary>
+	/// 2 dimensional matrix of 2 byte signed integer values
+	/// </summary>
 	typedef Matrix2<Int_16> Matrix2_I16;
+	/// <summary>
+	/// 3 dimensional matrix of 2 byte signed integer values
+	/// </summary>
 	typedef Matrix3<Int_16> Matrix3_I16;
+	/// <summary>
+	/// 4 dimensional matrix of 2 byte signed integer values
+	/// </summary>
 	typedef Matrix4<Int_16> Matrix4_I16;
+	/// <summary>
+	/// 2 dimensional matrix of 4 byte signed integer values
+	/// </summary>
 	typedef Matrix2<Int_32> Matrix2_I32;
+	/// <summary>
+	/// 3 dimensional matrix of 4 byte signed integer values
+	/// </summary>
 	typedef Matrix3<Int_32> Matrix3_I32;
+	/// <summary>
+	/// 4 dimensional matrix of 4 byte signed integer values
+	/// </summary>
 	typedef Matrix4<Int_32> Matrix4_I32;
+	/// <summary>
+	/// 2 dimensional matrix of floating point values
+	/// </summary>
 	typedef Matrix2<Float> Matrix2_F;
+	/// <summary>
+	/// 3 dimensional matrix of floating point values
+	/// </summary>
 	typedef Matrix3<Float> Matrix3_F;
+	/// <summary>
+	/// 4 dimensional matrix of floating point values
+	/// </summary>
 	typedef Matrix4<Float> Matrix4_F;
+	/// <summary>
+	/// Adapter for 2 dimensional matrix of boolean values
+	/// </summary>
 	typedef MatrixAdapter<Matrix2_2, UInt_2> Matrix2Adapter_2;
+	/// <summary>
+	/// Adapter for 3 dimensional matrix of boolean values
+	/// </summary>
 	typedef MatrixAdapter<Matrix3_2, UInt_2> Matrix3Adapter_2;
+	/// <summary>
+	/// Adapter for 4 dimensional matrix of boolean values
+	/// </summary>
 	typedef MatrixAdapter<Matrix4_2, UInt_2> Matrix4Adapter_2;
+	/// <summary>
+	/// Adapter for 2 dimensional matrix of 1 byte unsigned integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix2_8, UInt_8> Matrix2Adapter_8;
+	/// <summary>
+	/// Adapter for 3 dimensional matrix of 1 byte unsigned integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix3_8, UInt_8> Matrix3Adapter_8;
+	/// <summary>
+	/// Adapter for 4 dimensional matrix of 1 byte unsigned integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix4_8, UInt_8> Matrix4Adapter_8;
+	/// <summary>
+	/// Adapter for 2 dimensional matrix of 2 byte unsigned integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix2_16, UInt_16> Matrix2Adapter_16;
+	/// <summary>
+	/// Adapter for 3 dimensional matrix of 2 byte unsigned integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix3_16, UInt_16> Matrix3Adapter_16;
+	/// <summary>
+	/// Adapter for 4 dimensional matrix of 2 byte unsigned integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix4_16, UInt_16> Matrix4Adapter_16;
+	/// <summary>
+	/// Adapter for 2 dimensional matrix of 4 byte unsigned integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix2_32, UInt_32> Matrix2Adapter_32;
+	/// <summary>
+	/// Adapter for 3 dimensional matrix of 4 byte unsigned integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix3_32, UInt_32> Matrix3Adapter_32;
+	/// <summary>
+	/// Adapter for 4 dimensional matrix of 4 byte unsigned integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix4_32, UInt_32> Matrix4Adapter_32;
+	/// <summary>
+	/// Adapter for 2 dimensional matrix of 1 byte signed integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix2_8, Int_8> Matrix2Adapter_I8;
+	/// <summary>
+	/// Adapter for 3 dimensional matrix of 1 byte signed integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix3_8, Int_8> Matrix3Adapter_I8;
+	/// <summary>
+	/// Adapter for 4 dimensional matrix of 1 byte signed integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix4_8, Int_8> Matrix4Adapter_I8;
+	/// <summary>
+	/// Adapter for 2 dimensional matrix of 2 byte signed integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix2_16, Int_16> Matrix2Adapter_I16;
+	/// <summary>
+	/// Adapter for 3 dimensional matrix of 2 byte signed integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix3_16, Int_16> Matrix3Adapter_I16;
+	/// <summary>
+	/// Adapter for 4 dimensional matrix of 2 byte signed integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix4_16, Int_16> Matrix4Adapter_I16;
+	/// <summary>
+	/// Adapter for 2 dimensional matrix of 4 byte signed integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix2_32, Int_32> Matrix2Adapter_I32;
+	/// <summary>
+	/// Adapter for 3 dimensional matrix of 4 byte signed integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix3_32, Int_32> Matrix3Adapter_I32;
+	/// <summary>
+	/// Adapter for 4 dimensional matrix of 4 byte signed integer values
+	/// </summary>
 	typedef MatrixAdapter<Matrix4_32, Int_32> Matrix4Adapter_I32;
+	/// <summary>
+	/// Adapter for 2 dimensional matrix of floating point values
+	/// </summary>
 	typedef MatrixAdapter<Matrix2_F, Float> Matrix2Adapter_F;
+	/// <summary>
+	/// Adapter for 3 dimensional matrix of floating point values
+	/// </summary>
 	typedef MatrixAdapter<Matrix3_F, Float> Matrix3Adapter_F;
+	/// <summary>
+	/// Adapter for 4 dimensional matrix of floating point values
+	/// </summary>
 	typedef MatrixAdapter<Matrix4_F, Float> Matrix4Adapter_F;
+	/// <summary>
+	/// 1 byte precision RGB pixel
+	/// </summary>
 	typedef RGBPixel<UInt_8> RGBPixel_8;
+	/// <summary>
+	/// 2 byte precision RGB pixel
+	/// </summary>
 	typedef RGBPixel<UInt_16> RGBPixel_16;
+	/// <summary>
+	/// 4 byte precision RGB pixel
+	/// </summary>
 	typedef RGBPixel<UInt_32> RGBPixel_32;
+	/// <summary>
+	/// 1 byte precision HSV pixel
+	/// </summary>
 	typedef HSVPixel<UInt_8> HSVPixel_8;
+	/// <summary>
+	/// 2 byte precision HSV pixel
+	/// </summary>
 	typedef HSVPixel<UInt_16> HSVPixel_16;
+	/// <summary>
+	/// 4 byte precision HSV pixel
+	/// </summary>
 	typedef HSVPixel<UInt_32> HSVPixel_32;
+	/// <summary>
+	/// 1 byte precision greyscale pixel
+	/// </summary>
 	typedef UInt_8 GreyPixel_8;
+	/// <summary>
+	/// 2 byte precision greyscale pixel
+	/// </summary>
 	typedef UInt_16 GreyPixel_16;
+	/// <summary>
+	/// 4 byte precision greyscale pixel
+	/// </summary>
 	typedef UInt_32 GreyPixel_32;
+	/// <summary>
+	/// ...
+	/// </summary>
 	typedef Image<UInt_2, UInt_8> Image8_2;
 	typedef Image<UInt_8, UInt_8> Image8_8;
 	typedef Image<UInt_16, UInt_8> Image8_16;
