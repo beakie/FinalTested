@@ -1,6 +1,8 @@
 #ifndef COMMONIMATRIXADAPTER_H
 #define COMMONIMATRIXADAPTER_H
 
+#include "core.h"
+
 namespace Common
 {
 	template <typename TVALUE>
@@ -9,12 +11,12 @@ namespace Common
 		/// <summary>
 		/// Returns the number of rows
 		/// </summary>
-		unsigned char getRowCount();
+		UInt_8 getRowCount();
 
 		/// <summary>
 		/// Returns the number of columns
 		/// </summary>
-		unsigned char getColumnCount();
+		UInt_8 getColumnCount();
 
 		virtual ~IMatrixAdapter()
 		{

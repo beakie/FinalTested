@@ -1,6 +1,7 @@
 #ifndef COMMONMATRIXADAPTER_H
 #define COMMONMATRIXADAPTER_H
 
+#include "core.h"
 #include "common-imatrixadapter.h"
 
 namespace Common
@@ -40,7 +41,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of rows
 		/// </summary>
-		unsigned char getRowCount()
+		UInt_8 getRowCount()
 		{
 			return _Matrix.getRowCount();
 		}
@@ -48,7 +49,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of columns
 		/// </summary>
-		unsigned char getColumnCount()
+		UInt_8 getColumnCount()
 		{
 			return _Matrix.getColumnCount();
 		}
@@ -80,7 +81,7 @@ namespace Common
 		/// <summary>
 		/// Gets the value
 		/// </summary>
-		TVALUE get(const unsigned char x, const unsigned char y)
+		TVALUE get(const UInt_8 x, const UInt_8 y)
 		{
 			return _Matrix.get(x, y);
 		}

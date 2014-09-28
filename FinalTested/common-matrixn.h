@@ -1,6 +1,8 @@
 #ifndef COMMONMATRIXN_H
 #define COMMONMATRIXN_H
 
+#include "core.h"
+
 namespace Common
 {
 	//should i add build matrix method and call from constructors
@@ -16,7 +18,7 @@ namespace Common
 		/// <summary>
 		/// Constructs an unpopulated matrix
 		/// </summary>
-		MatrixN(unsigned char rows, unsigned char columns)
+		MatrixN(UInt_8 rows, UInt_8 columns)
 		{
 			//todo
 		}
@@ -25,7 +27,7 @@ namespace Common
 		/// Constructs a matrix and sets all the values to a single value
 		/// </summary>
 		/// <remarks>Equals operator</remarks>
-		MatrixN(unsigned char rows, unsigned char columns, const TVALUE value)
+		MatrixN(UInt_8 rows, UInt_8 columns, const TVALUE value)
 			: MatrixN(rows, columns)
 		{
 			operator =(value);
@@ -34,7 +36,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of rows
 		/// </summary>
-		unsigned char getRowCount()
+		UInt_8 getRowCount()
 		{
 			//todo
 		}
@@ -42,7 +44,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of columns
 		/// </summary>
-		unsigned char getColumnCount()
+		UInt_8 getColumnCount()
 		{
 			//todo
 		}
@@ -58,7 +60,7 @@ namespace Common
 		/// <summary>
 		/// Sets specified value
 		/// </summary>
-		void set(const unsigned char x, const unsigned char y, const TVALUE value)
+		void set(const UInt_8 x, const UInt_8 y, const TVALUE value)
 		{
 			Values[x][y] = value;
 		}
@@ -74,7 +76,7 @@ namespace Common
 		/// <summary>
 		/// Gets the value
 		/// </summary>
-		TVALUE get(const unsigned char x, const unsigned char y)
+		TVALUE get(const UInt_8 x, const UInt_8 y)
 		{
 			return Values[x][y];
 		}

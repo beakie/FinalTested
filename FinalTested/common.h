@@ -1,7 +1,7 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#include "core-types.h"
+#include "core.h"
 #include "common-array.h"
 #include "common-hsvpixel.h"
 #include "common-image.h"
