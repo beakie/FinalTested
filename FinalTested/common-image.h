@@ -29,13 +29,7 @@ namespace Common
 		/// </summary>
 		Image(TINDEX width, TINDEX height)
 		{
-			Width = width;
-			Height = height;
-
-			Values = new TVALUE*[Width];
-
-			for (TINDEX i = 0; i < Width; i++)
-				Values[i] = new TVALUE[Height];
+			createPixelArray(Width, Height);
 		}
 
 		/// <summary>
@@ -125,10 +119,7 @@ namespace Common
 					valuesBuffer[x][y] = Values[x1 + x][y1 + y];
 			}
 
-			for (TINDEX x = 0; x < newWidth; x++)
-				delete[] Values[x];
-
-			delete[] Values;
+			deletePixelArray();
 
 			Width = newWidth;
 			Height = newHeight;
@@ -155,7 +146,9 @@ namespace Common
 		Image<TVALUE, TINDEX> operator *(const TVALUE value) const
 		{
 			Image<TVALUE, TINDEX> i = *this;
+
 			i *= value;
+
 			return i;
 		}
 
@@ -334,12 +327,34 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& invert(const Image<TVALUE, TINDEX>& image) const;
 
-		virtual ~Image()
+		void createPixelArray(TINDEX width, TINDEX height)
 		{
-			for (TINDEX i = 0; i < Width; i++)
-				delete[] Values[i];
+			Values = new TVALUE*[width];
+
+			for (TINDEX i = 0; i < width; i++)
+				Values[i] = new TVALUE[height];
+
+			Width = width;
+			Height = height;
+		}
+
+		void deletePixelArray()
+		{
+			for (TINDEX x = 0; x < Width; x++)
+				delete[] Values[x];
 
 			delete[] Values;
+		}
+
+		void replacePixelArray(TINDEX width, TINDEX height)
+		{
+			deleteValues();
+			newValues(width, height);
+		}
+
+		virtual ~Image()
+		{
+			deletePixelArray();
 		}
 
 	};
