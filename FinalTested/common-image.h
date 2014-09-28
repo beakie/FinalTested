@@ -106,6 +106,9 @@ namespace Common
 			return i;
 		}
 
+		/// <summary>
+		/// Crops the image
+		/// </summary>
 		Image<TVALUE, TINDEX>& cropImage(const TINDEX x1, const TINDEX y1, const TINDEX x2, const TINDEX y2)
 		{
 			TVALUE** valuesBuffer;
