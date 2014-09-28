@@ -28,7 +28,9 @@ namespace Common
 		RGBPixel<TVALUE> operator *(const RGBPixel<TVALUE>& pixel) const
 		{
 			RGBPixel<TVALUE> p = *this;
+
 			p *= pixel;
+
 			return p;
 		}
 
@@ -50,7 +52,9 @@ namespace Common
 		RGBPixel<TVALUE> operator /(const RGBPixel<TVALUE>& pixel) const
 		{
 			RGBPixel<TVALUE> p = *this;
+
 			p /= pixel;
+
 			return p;
 		}
 
@@ -72,7 +76,9 @@ namespace Common
 		RGBPixel<TVALUE> operator |(const RGBPixel<TVALUE>& pixel) const
 		{
 			RGBPixel<TVALUE> p = *this;
+
 			p |= pixel;
+
 			return p;
 		}
 
@@ -94,7 +100,9 @@ namespace Common
 		RGBPixel<TVALUE> operator &(const RGBPixel<TVALUE>& pixel) const
 		{
 			RGBPixel<TVALUE> p = *this;
+
 			p &= pixel;
+
 			return p;
 		}
 
@@ -116,7 +124,9 @@ namespace Common
 		RGBPixel<TVALUE> operator !() const
 		{
 			RGBPixel<TVALUE> p = *this;
+
 			p != p;
+
 			return p;
 		}
 

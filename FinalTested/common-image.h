@@ -170,7 +170,9 @@ namespace Common
 		Image<TVALUE, TINDEX> operator /(const TVALUE value) const
 		{
 			Image<TVALUE, TINDEX> i = *this;
+
 			i /= value;
+
 			return i;
 		}
 
@@ -182,32 +184,30 @@ namespace Common
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<TVALUE, TINDEX> operator >(const Image<TVALUE, TINDEX>& image) const
+		Image<bool, TINDEX> operator >(const TVALUE value) const
 		{
-			Image<TVALUE, TINDEX> i = *this;
-			i >= image;
+			Image<bool, TINDEX> i = Image<bool, TINDEX>(Width, Height);
+
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					i.Values[x][y] = (Values[x][y] > value);
+
 			return i;
 		}
 
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator >=(const Image<TVALUE, TINDEX>& image);
-
-		/// <summary>
-		/// Threshold
-		/// </summary>
-		Image<TVALUE, TINDEX> operator <(const Image<TVALUE, TINDEX>& image) const
+		Image<bool, TINDEX> operator <(const TVALUE value) const
 		{
-			Image<TVALUE, TINDEX> i = *this;
-			i <= image;
+			Image<bool, TINDEX> i = Image<bool, TINDEX>(Width, Height);
+
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					i.Values[x][y] = (Values[x][y] < value);
+
 			return i;
 		}
-
-		/// <summary>
-		/// Threshold
-		/// </summary>
-		Image<TVALUE, TINDEX>& operator <=(const Image<TVALUE, TINDEX>& image);
 
 		/// <summary>
 		/// Logical OR
@@ -215,7 +215,9 @@ namespace Common
 		Image<TVALUE, TINDEX> operator |(const Image<TVALUE, TINDEX>& image) const
 		{
 			Image<TVALUE, TINDEX> i = *this;
+
 			i |= image;
+
 			return i;
 		}
 
@@ -237,7 +239,9 @@ namespace Common
 		Image<TVALUE, TINDEX> operator &(const Image<TVALUE, TINDEX>& image) const
 		{
 			Image<TVALUE, TINDEX> i = *this;
+
 			i &= image;
+
 			return i;
 		}
 
@@ -259,7 +263,9 @@ namespace Common
 		Image<TVALUE, TINDEX> operator !() const
 		{
 			Image<TVALUE, TINDEX> i = *this;
+
 			i != i;
+
 			return i;
 		}
 

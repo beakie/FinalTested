@@ -162,7 +162,9 @@ namespace Common
 		Matrix4<TVALUE> operator +(const Matrix4<TVALUE>& matrix) const
 		{
 			Matrix3<TVALUE> m = *this;
+
 			m += matrix;
+
 			return m;
 		}
 
@@ -197,7 +199,9 @@ namespace Common
 		Matrix4<TVALUE> operator -(const Matrix4<TVALUE>& matrix) const
 		{
 			Matrix3<TVALUE> m = *this;
+
 			m -= matrix;
+
 			return m;
 		}
 
@@ -232,7 +236,9 @@ namespace Common
 		Matrix4<TVALUE> operator *(const Matrix4<TVALUE>& matrix) const
 		{
 			Matrix3<TVALUE> m = *this;
+
 			m *= matrix;
+
 			return m;
 		}
 
@@ -267,7 +273,9 @@ namespace Common
 		Matrix4<TVALUE> operator *(const TVALUE value) const
 		{
 			Matrix3<TVALUE> m = *this;
+
 			m *= value;
+
 			return m;
 		}
 
@@ -301,7 +309,9 @@ namespace Common
 		Matrix4<TVALUE> operator /(const Matrix4<TVALUE>& matrix) const
 		{
 			Matrix3<TVALUE> m = *this;
+
 			m /= matrix;
+
 			return m;
 		}
 
@@ -326,7 +336,9 @@ namespace Common
 		Matrix4<TVALUE> operator /(const TVALUE value) const
 		{
 			Matrix3<TVALUE> m = *this;
+
 			m /= value;
+
 			return m;
 		}
 
