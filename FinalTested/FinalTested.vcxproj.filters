@@ -62,9 +62,6 @@
     <ClInclude Include="common-hsvpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core-types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
