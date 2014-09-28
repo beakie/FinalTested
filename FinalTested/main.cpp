@@ -14,20 +14,20 @@ int main(int argc, char *argv[])
 	matrix2.inverse(matrix);
 	float d = matrix.getDeterminant();
 	
-	Common::MatrixAdapter2F adapter;
+	Common::Matrix2Adapter_F adapter;
 	adapter.allOnes();
 	adapter.getMatrix().zero();
-	Common::Matrix2F mmmmm = matrix / matrix4;
-	Common::Matrix2F mmmmm2 = matrix * mmmmm;
+	Common::Matrix2_F mmmmm = matrix / matrix4;
+	Common::Matrix2_F mmmmm2 = matrix * mmmmm;
 	
 	unsigned char rowCount = adapter.getColumnCount();
 
-	Common::Image8B image = Common::Image8B(3, 4);
+	Common::Image8_2 image = Common::Image8_2(3, 4);
 	//image.Values[0][0] = false;
 
-	unsigned int z = Common::Image8C::getMaxValue();
+	unsigned int z = Common::Image8_8::getMaxValue();
 
-	Common::Image16B img = Common::Image16B(100, 100, 1);
+	Common::Image16_2 img = Common::Image16_2(100, 100, 1);
 
 	img.cropImage(0, 0, 10, 10);
 
@@ -50,11 +50,9 @@ int main(int argc, char *argv[])
 	//array++;
 	//++array;
 
-	Common::Image<Common::RGBPixel8, unsigned int> i123;
+	Common::Image<Common::RGBPixel_8, unsigned int> i123;
 
 //	i123 &= i123;
-
-	//Common::
 
 	return a.exec();
 }

@@ -15,85 +15,85 @@
 
 namespace Common
 {
-	typedef Matrix2<bool> Matrix2B;
-	typedef Matrix3<bool> Matrix3B;
-	typedef Matrix4<bool> Matrix4B;
-	typedef Matrix2<signed char> Matrix2C;
-	typedef Matrix3<signed char> Matrix3C;
-	typedef Matrix4<signed char> Matrix4C;
-	typedef Matrix2<signed short> Matrix2S;
-	typedef Matrix3<signed short> Matrix3S;
-	typedef Matrix4<signed short> Matrix4S;
-	typedef Matrix2<signed int> Matrix2I;
-	typedef Matrix3<signed int> Matrix3I;
-	typedef Matrix4<signed int> Matrix4I;
-	typedef Matrix2<double> Matrix2D;
-	typedef Matrix3<double> Matrix3D;
-	typedef Matrix4<double> Matrix4D;
-	typedef Matrix2<float> Matrix2F;
-	typedef Matrix3<float> Matrix3F;
-	typedef Matrix4<float> Matrix4F;
+	typedef Matrix2<bool> Matrix2_2;
+	typedef Matrix3<bool> Matrix3_2;
+	typedef Matrix4<bool> Matrix4_2;
+	typedef Matrix2<signed char> Matrix2_8;
+	typedef Matrix3<signed char> Matrix3_8;
+	typedef Matrix4<signed char> Matrix4_8;
+	typedef Matrix2<signed short> Matrix2_16;
+	typedef Matrix3<signed short> Matrix3_16;
+	typedef Matrix4<signed short> Matrix4_16;
+	typedef Matrix2<signed int> Matrix2_32;
+	typedef Matrix3<signed int> Matrix3_32;
+	typedef Matrix4<signed int> Matrix4_32;
+	typedef Matrix2<double> Matrix2_64;
+	typedef Matrix3<double> Matrix3_64;
+	typedef Matrix4<double> Matrix4_64;
+	typedef Matrix2<float> Matrix2_F;
+	typedef Matrix3<float> Matrix3_F;
+	typedef Matrix4<float> Matrix4_F;
 
-	typedef MatrixAdapter<Matrix2B, bool> MatrixAdapter2B;
-	typedef MatrixAdapter<Matrix3B, bool> MatrixAdapter3B;
-	typedef MatrixAdapter<Matrix4B, bool> MatrixAdapter4B;
-	typedef MatrixAdapter<Matrix2C, signed char> MatrixAdapter2C;
-	typedef MatrixAdapter<Matrix3C, signed char> MatrixAdapter3C;
-	typedef MatrixAdapter<Matrix4C, signed char> MatrixAdapter4C;
-	typedef MatrixAdapter<Matrix2S, signed short> MatrixAdapter2S;
-	typedef MatrixAdapter<Matrix3S, signed short> MatrixAdapter3S;
-	typedef MatrixAdapter<Matrix4S, signed short> MatrixAdapter4S;
-	typedef MatrixAdapter<Matrix2I, signed int> MatrixAdapter2I;
-	typedef MatrixAdapter<Matrix3I, signed int> MatrixAdapter3I;
-	typedef MatrixAdapter<Matrix4I, signed int> MatrixAdapter4I;
-	typedef MatrixAdapter<Matrix2D, double> MatrixAdapter2D;
-	typedef MatrixAdapter<Matrix3D, double> MatrixAdapter3D;
-	typedef MatrixAdapter<Matrix4D, double> MatrixAdapter4D;
-	typedef MatrixAdapter<Matrix2F, float> MatrixAdapter2F;
-	typedef MatrixAdapter<Matrix3F, float> MatrixAdapter3F;
-	typedef MatrixAdapter<Matrix4F, float> MatrixAdapter4F;
+	typedef MatrixAdapter<Matrix2_2, bool> Matrix2Adapter_2;
+	typedef MatrixAdapter<Matrix3_2, bool> Matrix3Adapter_2;
+	typedef MatrixAdapter<Matrix4_2, bool> Matrix4Adapter_2;
+	typedef MatrixAdapter<Matrix2_8, signed char> Matrix2Adapter_8;
+	typedef MatrixAdapter<Matrix3_8, signed char> Matrix3Adapter_8;
+	typedef MatrixAdapter<Matrix4_8, signed char> Matrix4Adapter_8;
+	typedef MatrixAdapter<Matrix2_16, signed short> Matrix2Adapter_16;
+	typedef MatrixAdapter<Matrix3_16, signed short> Matrix3Adapter_16;
+	typedef MatrixAdapter<Matrix4_16, signed short> Matrix4Adapter_16;
+	typedef MatrixAdapter<Matrix2_32, signed int> Matrix2Adapter_32;
+	typedef MatrixAdapter<Matrix3_32, signed int> Matrix3Adapter_32;
+	typedef MatrixAdapter<Matrix4_32, signed int> Matrix4Adapter_32;
+	typedef MatrixAdapter<Matrix2_64, double> Matrix2Adapter_64;
+	typedef MatrixAdapter<Matrix3_64, double> Matrix3Adapter_64;
+	typedef MatrixAdapter<Matrix4_64, double> Matrix4Adapter_64;
+	typedef MatrixAdapter<Matrix2_F, float> Matrix2Adapter_F;
+	typedef MatrixAdapter<Matrix3_F, float> Matrix3Adapter_F;
+	typedef MatrixAdapter<Matrix4_F, float> Matrix4Adapter_F;
 
-	typedef RGBPixel<unsigned char> RGBPixel8;
-	typedef RGBPixel<unsigned short> RGBPixel16;
-	typedef RGBPixel<unsigned int> RGBPixel32;
+	typedef RGBPixel<unsigned char> RGBPixel_8;
+	typedef RGBPixel<unsigned short> RGBPixel_16;
+	typedef RGBPixel<unsigned int> RGBPixel_32;
 
-	typedef HSVPixel<unsigned char> HSVPixel8;
-	typedef HSVPixel<unsigned short> HSVPixel16;
-	typedef HSVPixel<unsigned int> HSVPixel32;
+	typedef HSVPixel<unsigned char> HSVPixel_8;
+	typedef HSVPixel<unsigned short> HSVPixel_16;
+	typedef HSVPixel<unsigned int> HSVPixel_32;
 
-	typedef unsigned char GreyPixel8;
-	typedef unsigned short GreyPixel16;
-	typedef unsigned int GreyPixel32;
+	typedef unsigned char GreyPixel_8;
+	typedef unsigned short GreyPixel_16;
+	typedef unsigned int GreyPixel_32;
 
-	typedef Image<bool, unsigned char> Image8B;
-	typedef Image<unsigned char, unsigned char> Image8C;
-	typedef Image<unsigned short, unsigned char> Image8S;
-	typedef Image<unsigned int, unsigned char> Image8I;
-	typedef Image<bool, unsigned short> Image16B;
-	typedef Image<unsigned char, unsigned short> Image16C;
-	typedef Image<unsigned short, unsigned short> Image16S;
-	typedef Image<unsigned int, unsigned short> Image16I;
+	typedef Image<bool, unsigned char> Image8_2;
+	typedef Image<unsigned char, unsigned char> Image8_8;
+	typedef Image<unsigned short, unsigned char> Image8_16;
+	typedef Image<unsigned int, unsigned char> Image8_32;
+	typedef Image<bool, unsigned short> Image16_2;
+	typedef Image<unsigned char, unsigned short> Image16_8;
+	typedef Image<unsigned short, unsigned short> Image16_16;
+	typedef Image<unsigned int, unsigned short> Image16_32;
 
-	typedef Image<RGBPixel8, unsigned char> Image8RGB8;
-	typedef Image<RGBPixel16, unsigned char> Image8RGB16;
-	typedef Image<RGBPixel32, unsigned char> Image8RGB32;
-	typedef Image<RGBPixel8, unsigned short> Image16RGB8;
-	typedef Image<RGBPixel16, unsigned short> Image16RGB16;
-	typedef Image<RGBPixel32, unsigned short> Image16RGB32;
+	typedef Image<RGBPixel_8, unsigned char> Image8RGB_8;
+	typedef Image<RGBPixel_16, unsigned char> Image8RGB_16;
+	typedef Image<RGBPixel_32, unsigned char> Image8RGB_32;
+	typedef Image<RGBPixel_8, unsigned short> Image16RGB_8;
+	typedef Image<RGBPixel_16, unsigned short> Image16RGB_16;
+	typedef Image<RGBPixel_32, unsigned short> Image16RGB_32;
 
-	typedef Image<HSVPixel8, unsigned char> Image8HSV8;
-	typedef Image<HSVPixel16, unsigned char> Image8HSV16;
-	typedef Image<HSVPixel32, unsigned char> Image8HSV32;
-	typedef Image<HSVPixel8, unsigned short> Image16HSV8;
-	typedef Image<HSVPixel16, unsigned short> Image16HSV16;
-	typedef Image<HSVPixel32, unsigned short> Image16HSV32;
+	typedef Image<HSVPixel_8, unsigned char> Image8HSV_8;
+	typedef Image<HSVPixel_16, unsigned char> Image8HSV_16;
+	typedef Image<HSVPixel_32, unsigned char> Image8HSV_32;
+	typedef Image<HSVPixel_8, unsigned short> Image16HSV_8;
+	typedef Image<HSVPixel_16, unsigned short> Image16HSV_16;
+	typedef Image<HSVPixel_32, unsigned short> Image16HSV_32;
 
-	typedef Image<GreyPixel8, unsigned char> Image8Grey8;
-	typedef Image<GreyPixel16, unsigned char> Image8Grey16;
-	typedef Image<GreyPixel32, unsigned char> Image8Grey32;
-	typedef Image<GreyPixel8, unsigned short> Image16Grey8;
-	typedef Image<GreyPixel16, unsigned short> Image16Grey16;
-	typedef Image<GreyPixel32, unsigned short> Image16Grey32;
+	typedef Image<GreyPixel_8, unsigned char> Image8Grey_8;
+	typedef Image<GreyPixel_16, unsigned char> Image8Grey_16;
+	typedef Image<GreyPixel_32, unsigned char> Image8Grey_32;
+	typedef Image<GreyPixel_8, unsigned short> Image16Grey_8;
+	typedef Image<GreyPixel_16, unsigned short> Image16Grey_16;
+	typedef Image<GreyPixel_32, unsigned short> Image16Grey_32;
 
 }
 
