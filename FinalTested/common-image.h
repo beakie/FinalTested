@@ -302,6 +302,34 @@ namespace Common
 		}
 
 		/// <summary>
+		/// Horizontally flips the image
+		/// </summary>
+		Image<TVALUE, TINDEX>& flipHorizontally() const
+		{
+			Image<TVALUE, TINDEX> i = *this;
+
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					Values[x][y] = i.Values[Width - x][y];
+
+			return this*
+		}
+
+		/// <summary>
+		/// Vertically flips the image
+		/// </summary>
+		Image<TVALUE, TINDEX>& flipVertically() const
+		{
+			Image<TVALUE, TINDEX> i = *this;
+
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					Values[x][y] = i.Values[x][Height - y];
+
+			return this*
+		}
+
+		/// <summary>
 		/// Inverts the image
 		/// </summary>
 		Image<TVALUE, TINDEX>& invert(const Image<TVALUE, TINDEX>& image) const;
