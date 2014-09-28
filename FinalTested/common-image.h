@@ -149,76 +149,44 @@ namespace Common
 			return *this;
 		}
 
-		///// <summary>
-		///// Operator
-		///// </summary>
-		//Image<TVALUE, TINDEX> operator +(const Image<TVALUE, TINDEX>& image) const;
-
-		///// <summary>
-		///// Operator
-		///// </summary>
-		//Image<TVALUE, TINDEX>& operator +=(const Image<TVALUE, TINDEX>& image)
-		//{
-		//	return *this + image;
-		//}
-
-		///// <summary>
-		///// Operator
-		///// </summary>
-		//Image<TVALUE, TINDEX> operator -(const Image<TVALUE, TINDEX>& image) const;
-
-		///// <summary>
-		///// Operator
-		///// </summary>
-		//Image<TVALUE, TINDEX>& operator -=(const Image<TVALUE, TINDEX>& image)
-		//{
-		//	return *this - image;
-		//}
-
-		///// <summary>
-		///// Operator
-		///// </summary>
-		//Image<TVALUE, TINDEX> operator >>(const TVALUE value) const;
-
-		///// <summary>
-		///// Operator
-		///// </summary>
-		//Image<TVALUE, TINDEX> operator <<(const TVALUE value) const;
-
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		Image<TVALUE, TINDEX> operator *(const Image<TVALUE, TINDEX>& image) const;
-
-		/// <summary>
-		/// Increase contrast
-		/// </summary>
-		Image<TVALUE, TINDEX>& operator *=(const Image<TVALUE, TINDEX>& image)
+		Image<TVALUE, TINDEX> operator *(const Image<TVALUE, TINDEX>& image) const
 		{
-			return *this * image;
+			Image<TVALUE, TINDEX> i = *this;
+			i *= image;
+			return i;
+		}
+
+		/// <summary>
+		/// Increase contrast
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator *=(const Image<TVALUE, TINDEX>& image);
+
+		/// <summary>
+		/// Decrease contrast
+		/// </summary>
+		Image<TVALUE, TINDEX> operator /(const Image<TVALUE, TINDEX>& image) const
+		{
+			Image<TVALUE, TINDEX> i = *this;
+			i /= image;
+			return i;
 		}
 
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		Image<TVALUE, TINDEX> operator /(const Image<TVALUE, TINDEX>& image) const;
-
-		/// <summary>
-		/// Decrease contrast
-		/// </summary>
-		Image<TVALUE, TINDEX>& operator /=(const Image<TVALUE, TINDEX>& image)
-		{
-			return *this / image;
-		}
+		Image<TVALUE, TINDEX>& operator /=(const Image<TVALUE, TINDEX>& image);
 
 		/// <summary>
 		/// Logical OR
 		/// </summary>
 		Image<TVALUE, TINDEX> operator |(const Image<TVALUE, TINDEX>& image) const
 		{
-			for (TINDEX x = 0; x < Width; x++)
-				for (TINDEX y = 0; y < Height; y++)
-					Values[x][y] = Values[x][y] | image.Values[x][y];
+			Image<TVALUE, TINDEX> i = *this;
+			i |= image;
+			return i;
 		}
 
 		/// <summary>
@@ -226,33 +194,43 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator |=(const Image<TVALUE, TINDEX>& image)
 		{
-			return *this | image;
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					Values[x][y] |= image.Values[x][y];
+
+			return *this;
 		}
 
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		Image<TVALUE, TINDEX> operator &(const Image<TVALUE, TINDEX>& image) const;
+		Image<TVALUE, TINDEX> operator &(const Image<TVALUE, TINDEX>& image) const
+		{
+			Image<TVALUE, TINDEX> i = *this;
+			i &= image;
+			return i;
+		}
 
 		/// <summary>
 		/// Logical AND
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator &=(const Image<TVALUE, TINDEX>& image)
 		{
-			return *this & image;
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					Values[x][y] &= image.Values[x][y];
+
+			return *this;
 		}
 
 		/// <summary>
 		/// Invert
 		/// </summary>
-		Image<TVALUE, TINDEX> operator !() const;
-
-		/// <summary>
-		/// Invert
-		/// </summary>
-		Image<TVALUE, TINDEX>& operator !=(const Image<TVALUE, TINDEX>& image)
+		Image<TVALUE, TINDEX> operator !() const
 		{
-			return !*this;
+			Image<TVALUE, TINDEX> i = *this;
+			i != i;
+			return i;
 		}
 
 		/// <summary>

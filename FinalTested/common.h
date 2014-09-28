@@ -9,6 +9,7 @@
 #include "common-matrix4.h"
 #include "common-matrixadapter.h"
 #include "common-matrixn.h"
+#include "common-rgbpixel.h"
 #include "common-static.h"
 
 namespace Common
