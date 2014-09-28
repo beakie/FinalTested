@@ -1,18 +1,19 @@
 
 #include <QtCore/QCoreApplication>
 
+#include "core.h"
 #include "common.h"
 
 int main(int argc, char *argv[])
 {
 	QCoreApplication a(argc, argv);
 
-	Common::Matrix2<float> matrix = Common::Matrix2<float>(0, 1, 2, 3);
-	Common::Matrix2<float> matrix2 = Common::Matrix2<float>(matrix);
-	Common::Matrix2<float> matrix3 = Common::Matrix2<float>(1);
-	Common::Matrix2<float> matrix4 = Common::Matrix2<float>().identity();
+	Common::Matrix2<Floating> matrix = Common::Matrix2<Floating>(0, 1, 2, 3);
+	Common::Matrix2<Floating> matrix2 = Common::Matrix2<Floating>(matrix);
+	Common::Matrix2<Floating> matrix3 = Common::Matrix2<Floating>(1);
+	Common::Matrix2<Floating> matrix4 = Common::Matrix2<Floating>().identity();
 	matrix2.inverse(matrix);
-	float d = matrix.getDeterminant();
+	Floating d = matrix.getDeterminant();
 	
 	Common::Matrix2Adapter_F adapter;
 	adapter.allOnes();
@@ -20,12 +21,12 @@ int main(int argc, char *argv[])
 	Common::Matrix2_F mmmmm = matrix / matrix4;
 	Common::Matrix2_F mmmmm2 = matrix * mmmmm;
 	
-	unsigned char rowCount = adapter.getColumnCount();
+	UInt_8 rowCount = adapter.getColumnCount();
 
 	Common::Image8_2 image = Common::Image8_2(3, 4);
 	//image.Values[0][0] = false;
 
-	unsigned int z = Common::Image8_8::getMaxValue();
+	UInt_8 z = Common::Image8_8::getMaxValue();
 
 	Common::Image16_2 img = Common::Image16_2(100, 100, 1);
 
@@ -33,7 +34,7 @@ int main(int argc, char *argv[])
 
 	//img + img << 4 >> 2;
 
-	Common::Array<unsigned int> array;
+	Common::Array<UInt_16> array;
 
 	array.addItem(0);
 	array.addItem(1);
@@ -50,7 +51,7 @@ int main(int argc, char *argv[])
 	//array++;
 	//++array;
 
-	Common::Image<Common::RGBPixel_8, unsigned int> i123;
+	Common::Image<Common::RGBPixel_8, UInt_16> i123;
 
 //	i123 &= i123;
 
