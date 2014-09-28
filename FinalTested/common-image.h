@@ -327,15 +327,22 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& invert(const Image<TVALUE, TINDEX>& image) const;
 
+	private:
 		void createPixelArray(TINDEX width, TINDEX height)
 		{
-			Values = new TVALUE*[width];
+			TVALUE** values = new TVALUE*[width];
 
 			for (TINDEX i = 0; i < width; i++)
-				Values[i] = new TVALUE[height];
+				values[i] = new TVALUE[height];
 
+			setPixelArray(width, height, values);
+		}
+
+		void setPixelArray(TINDEX width, TINDEX height, TVALUE** values)
+		{
 			Width = width;
 			Height = height;
+			Values = values;
 		}
 
 		void deletePixelArray()
@@ -348,10 +355,17 @@ namespace Common
 
 		void replacePixelArray(TINDEX width, TINDEX height)
 		{
-			deleteValues();
-			newValues(width, height);
+			deletePixelArray();
+			createPixelArray(width, height);
 		}
 
+		void replacePixelArray(TINDEX width, TINDEX height, TVALUE** values)
+		{
+			deletePixelArray();
+			setPixelArray(width, height, values);
+		}
+
+	public:
 		virtual ~Image()
 		{
 			deletePixelArray();
