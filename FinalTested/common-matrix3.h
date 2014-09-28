@@ -1,5 +1,7 @@
-#ifndef MATRIX3_H
-#define MATRIX3_H
+#ifndef COMMONMATRIX3_H
+#define COMMONMATRIX3_H
+
+#include "common_types.h"
 
 namespace Common
 {
@@ -38,7 +40,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of rows
 		/// </summary>
-		unsigned char getRowCount()
+		UInt_8 getRowCount()
 		{
 			return 3;
 		}
@@ -46,7 +48,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of columns
 		/// </summary>
-		unsigned char getColumnCount()
+		UInt_8 getColumnCount()
 		{
 			return 3;
 		}
@@ -62,7 +64,7 @@ namespace Common
 		/// <summary>
 		/// Sets specified value
 		/// </summary>
-		void set(const unsigned char x, const unsigned char y, const TVALUE value)
+		void set(const UInt_8 x, const UInt_8 y, const TVALUE value)
 		{
 			Values[x][y] = value;
 		}
@@ -94,7 +96,7 @@ namespace Common
 		/// <summary>
 		/// Gets the value
 		/// </summary>
-		TVALUE get(const unsigned char x, const unsigned char y)
+		TVALUE get(const UInt_8 x, const UInt_8 y)
 		{
 			return Values[x][y];
 		}
@@ -470,4 +472,4 @@ namespace Common
 	};
 }
 
-#endif // MATRIX3_H
+#endif // COMMONMATRIX3_H

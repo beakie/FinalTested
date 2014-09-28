@@ -1,5 +1,5 @@
-#ifndef MATRIXN_H
-#define MATRIXN_H
+#ifndef COMMONMATRIXN_H
+#define COMMONMATRIXN_H
 
 namespace Common
 {
@@ -318,4 +318,4 @@ namespace Common
 	};
 
 }
-#endif // MATRIXN_H
+#endif // COMMONMATRIXN_H

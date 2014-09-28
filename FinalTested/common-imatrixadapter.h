@@ -1,5 +1,5 @@
-#ifndef IMATRIXADAPTER_H
-#define IMATRIXADAPTER_H
+#ifndef COMMONIMATRIXADAPTER_H
+#define COMMONIMATRIXADAPTER_H
 
 namespace Common
 {
@@ -22,4 +22,4 @@ namespace Common
 	};
 }
 
-#endif // IMATRIXADAPTER_H
+#endif // COMMONIMATRIXADAPTER_H

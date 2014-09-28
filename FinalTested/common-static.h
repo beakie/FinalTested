@@ -1,6 +1,8 @@
 #ifndef COMMONSTATIC_H
 #define COMMONSTATIC_H
 
+#include "common_types.h"
+
 namespace Common
 {
 	template <typename T>
@@ -10,61 +12,85 @@ namespace Common
 	static T getLowerBound();
 
 	template <>
-	static bool getLowerBound<bool>()
+	static UInt_2 getLowerBound<UInt_2>()
 	{
 		return 0;
 	}
 
 	template <>
-	static bool getUpperBound<bool>()
+	static UInt_2 getUpperBound<UInt_2>()
 	{
 		return 1;
 	}
 
 	template <>
-	static char getLowerBound<char>()
+	static Int_8 getLowerBound<Int_8>()
+	{
+		return -127;
+	}
+
+	template <>
+	static Int_8 getUpperBound<Int_8>()
 	{
 		return 127;
 	}
 
 	template <>
-	static char getUpperBound<char>()
+	static UInt_8 getLowerBound<UInt_8>()
 	{
-		return 127;
+		return 0;
 	}
 
 	template <>
-	static unsigned char getLowerBound<unsigned char>()
-	{
-		return 255;
-	}
-
-	template <>
-	static unsigned char getUpperBound<unsigned char>()
+	static UInt_8 getUpperBound<UInt_8>()
 	{
 		return 255;
 	}
 
 	template <>
-	static int getLowerBound<int>()
+	static Int_16 getLowerBound<Int_16>()
+	{
+		return -65535;
+	}
+
+	template <>
+	static Int_16 getUpperBound<Int_16>()
 	{
 		return 65535;
 	}
 
 	template <>
-	static int getUpperBound<int>()
+	static UInt_16 getLowerBound<UInt_16>()
 	{
 		return 65535;
 	}
 
 	template <>
-	static unsigned int getLowerBound<unsigned int>()
+	static UInt_16 getUpperBound<UInt_16>()
 	{
 		return 65535;
 	}
 
 	template <>
-	static unsigned int getUpperBound<unsigned int>()
+	static Int_32 getLowerBound<Int_32>()
+	{
+		return 65535;
+	}
+
+	template <>
+	static Int_32 getUpperBound<Int_32>()
+	{
+		return 65535;
+	}
+
+	template <>
+	static UInt_32 getLowerBound<UInt_32>()
+	{
+		return 65535;
+	}
+
+	template <>
+	static UInt_32 getUpperBound<UInt_32>()
 	{
 		return 65535;
 	}

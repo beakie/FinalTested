@@ -1,5 +1,5 @@
-#ifndef IMAGE_H
-#define IMAGE_H
+#ifndef COMMONIMAGE_H
+#define COMMONIMAGE_H
 
 #include "common-static.h"
 
@@ -317,4 +317,4 @@ namespace Common
 	};
 }
 
-#endif // IMAGE_H
+#endif // COMMONIMAGE_H

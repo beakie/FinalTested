@@ -1,23 +1,23 @@
-#ifndef COMMONHSVPIXEL_H
-#define COMMONHSVPIXEL_H
+#ifndef COMMONRGBPIXEL_H
+#define COMMONRGBPIXEL_H
 
 namespace Common
 {
 	template <typename TVALUE>
-	struct HSVPixel
+	struct RGBPixel
 	{
-		TVALUE R;
-		TVALUE G;
-		TVALUE B;
+		TVALUE H;
+		TVALUE S;
+		TVALUE V;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		HSVPixel<TVALUE>& operator =(const HSVPixel<TVALUE>& pixel)
+		RGBPixel<TVALUE>& operator =(const RGBPixel<TVALUE>& pixel)
 		{
 			R = pixel.R;
-			G = pixel.G;
-			B = pixel.B;
+			S = pixel.S;
+			V = pixel.V;
 
 			return *this;
 		}
@@ -25,9 +25,9 @@ namespace Common
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		HSVPixel<TVALUE> operator *(const HSVPixel<TVALUE>& pixel) const
+		RGBPixel<TVALUE> operator *(const RGBPixel<TVALUE>& pixel) const
 		{
-			HSVPixel<TVALUE> p = *this;
+			RGBPixel<TVALUE> p = *this;
 
 			p *= pixel;
 
@@ -37,11 +37,11 @@ namespace Common
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		HSVPixel<TVALUE>& operator *=(const HSVPixel<TVALUE>& pixel)
+		RGBPixel<TVALUE>& operator *=(const RGBPixel<TVALUE>& pixel)
 		{
 			R = R * pixel.R;
-			G = G * pixel.G;
-			B = B * pixel.B;
+			S = S * pixel.S;
+			V = V * pixel.V;
 
 			return *this;
 		}
@@ -49,9 +49,9 @@ namespace Common
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		HSVPixel<TVALUE> operator /(const HSVPixel<TVALUE>& pixel) const
+		RGBPixel<TVALUE> operator /(const RGBPixel<TVALUE>& pixel) const
 		{
-			HSVPixel<TVALUE> p = *this;
+			RGBPixel<TVALUE> p = *this;
 
 			p /= pixel;
 
@@ -61,11 +61,11 @@ namespace Common
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		HSVPixel<TVALUE>& operator /=(const HSVPixel<TVALUE>& pixel)
+		RGBPixel<TVALUE>& operator /=(const RGBPixel<TVALUE>& pixel)
 		{
 			R = R / pixel.R;
-			G = G / pixel.G;
-			B = B / pixel.B;
+			S = S / pixel.S;
+			V = V / pixel.V;
 
 			return *this;
 		}
@@ -73,9 +73,9 @@ namespace Common
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		HSVPixel<TVALUE> operator |(const HSVPixel<TVALUE>& pixel) const
+		RGBPixel<TVALUE> operator |(const RGBPixel<TVALUE>& pixel) const
 		{
-			HSVPixel<TVALUE> p = *this;
+			RGBPixel<TVALUE> p = *this;
 
 			p |= pixel;
 
@@ -85,11 +85,11 @@ namespace Common
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		HSVPixel<TVALUE>& operator |=(const HSVPixel<TVALUE>& pixel)
+		RGBPixel<TVALUE>& operator |=(const RGBPixel<TVALUE>& pixel)
 		{
 			R = R | pixel.R;
-			G = G | pixel.G;
-			B = B | pixel.B;
+			S = S | pixel.S;
+			V = V | pixel.V;
 
 			return *this;
 		}
@@ -97,9 +97,9 @@ namespace Common
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		HSVPixel<TVALUE> operator &(const HSVPixel<TVALUE>& pixel) const
+		RGBPixel<TVALUE> operator &(const RGBPixel<TVALUE>& pixel) const
 		{
-			HSVPixel<TVALUE> p = *this;
+			RGBPixel<TVALUE> p = *this;
 
 			p &= pixel;
 
@@ -109,11 +109,11 @@ namespace Common
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		HSVPixel<TVALUE>& operator &=(const HSVPixel<TVALUE>& pixel)
+		RGBPixel<TVALUE>& operator &=(const RGBPixel<TVALUE>& pixel)
 		{
 			R = R & pixel.R;
-			G = G & pixel.G;
-			B = B & pixel.B;
+			S = S & pixel.S;
+			V = V & pixel.V;
 
 			return *this;
 		}
@@ -121,9 +121,9 @@ namespace Common
 		/// <summary>
 		/// Invert
 		/// </summary>
-		HSVPixel<TVALUE> operator !() const
+		RGBPixel<TVALUE> operator !() const
 		{
-			HSVPixel<TVALUE> p = *this;
+			RGBPixel<TVALUE> p = *this;
 
 			p != p;
 
@@ -133,7 +133,7 @@ namespace Common
 		/// <summary>
 		/// Comparison
 		/// </summary>
-		bool operator ==(const HSVPixel<TVALUE>& pixel) const
+		bool operator ==(const RGBPixel<TVALUE>& pixel) const
 		{
 			if ((Width != pixel.Width) || (Height != pixel.Height))
 				return false;
@@ -149,11 +149,11 @@ namespace Common
 		/// <summary>
 		/// Not comparison
 		/// </summary>
-		bool operator !=(const HSVPixel<TVALUE>& pixel) const
+		bool operator !=(const RGBPixel<TVALUE>& pixel) const
 		{
 			return operator ==(pixel);
 		}
 	};
 }
 
-#endif // COMMONHSVPIXEL_H
+#endif // COMMONRGBPIXEL_H

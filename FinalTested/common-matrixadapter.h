@@ -1,5 +1,5 @@
-#ifndef MATRIXADAPTER_H
-#define MATRIXADAPTER_H
+#ifndef COMMONMATRIXADAPTER_H
+#define COMMONMATRIXADAPTER_H
 
 #include "common-imatrixadapter.h"
 
@@ -528,4 +528,4 @@ namespace Common
 	};
 }
 
-#endif // MATRIXADAPTER_H
+#endif // COMMONMATRIXADAPTER_H
