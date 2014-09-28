@@ -50,19 +50,19 @@ namespace Common
 	template <>
 	static Int_16 getLowerBound<Int_16>()
 	{
-		return -65535;
+		return -32767;
 	}
 
 	template <>
 	static Int_16 getUpperBound<Int_16>()
 	{
-		return 65535;
+		return 32767;
 	}
 
 	template <>
 	static UInt_16 getLowerBound<UInt_16>()
 	{
-		return 65535;
+		return 0;
 	}
 
 	template <>
@@ -74,25 +74,25 @@ namespace Common
 	template <>
 	static Int_32 getLowerBound<Int_32>()
 	{
-		return 65535;
+		return -2147483647;
 	}
 
 	template <>
 	static Int_32 getUpperBound<Int_32>()
 	{
-		return 65535;
+		return 2147483647;
 	}
 
 	template <>
 	static UInt_32 getLowerBound<UInt_32>()
 	{
-		return 65535;
+		return 0;
 	}
 
 	template <>
 	static UInt_32 getUpperBound<UInt_32>()
 	{
-		return 65535;
+		return 4294967295;
 	}
 }
 
