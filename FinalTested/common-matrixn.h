@@ -92,80 +92,92 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE> operator +(const MatrixN<TVALUE>& matrix) const;
-
-		/// <summary>
-		/// Operator
-		/// </summary>
-		MatrixN<TVALUE>& operator +=(const MatrixN<TVALUE>& matrix)
+		MatrixN<TVALUE> operator +(const MatrixN<TVALUE>& matrix) const
 		{
-			return *this + matrix;
+			MatrixN<TVALUE> m = *this;
+			m += matrix;
+			return m;
 		}
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE> operator -(const MatrixN<TVALUE>& matrix) const;
+		MatrixN<TVALUE>& operator +=(const MatrixN<TVALUE>& matrix);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator -=(const MatrixN<TVALUE>& matrix)
+		MatrixN<TVALUE> operator -(const MatrixN<TVALUE>& matrix) const
 		{
-			return *this - matrix;
+			MatrixN<TVALUE> m = *this;
+			m -= matrix;
+			return m;
 		}
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE> operator *(const MatrixN<TVALUE>& matrix) const;
+		MatrixN<TVALUE>& operator -=(const MatrixN<TVALUE>& matrix);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator *=(const MatrixN<TVALUE>& matrix)
+		MatrixN<TVALUE> operator *(const MatrixN<TVALUE>& matrix) const
 		{
-			return *this * matrix;
+			MatrixN<TVALUE> m = *this;
+			m *= matrix;
+			return m;
 		}
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE> operator *(const TVALUE value) const;
+		MatrixN<TVALUE>& operator *=(const MatrixN<TVALUE>& matrix);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator *=(const TVALUE value)
+		MatrixN<TVALUE> operator *(const TVALUE value) const
 		{
-			return *this * value;
+			MatrixN<TVALUE> m = *this;
+			m *= value;
+			return m;
 		}
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE> operator /(const MatrixN<TVALUE>& matrix) const;
+		MatrixN<TVALUE>& operator *=(const TVALUE value);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator /=(const MatrixN<TVALUE>& matrix)
+		MatrixN<TVALUE> operator /(const MatrixN<TVALUE>& matrix) const
 		{
-			return *this / matrix;
+			MatrixN<TVALUE> m = *this;
+			m /= matrix;
+			return m;
 		}
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE> operator /(const TVALUE value) const;
+		MatrixN<TVALUE>& operator /=(const MatrixN<TVALUE>& matrix);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator /=(const TVALUE value)
+		MatrixN<TVALUE> operator /(const TVALUE value) const
 		{
-			return *this / value;
+			MatrixN<TVALUE> m = *this;
+			m /= value;
+			return m;
 		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		MatrixN<TVALUE>& operator /=(const TVALUE value);
 
 		/// <summary>
 		/// Operator

@@ -140,15 +140,9 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE> operator +(const Matrix3<TVALUE>& matrix) const
 		{
-			return Matrix3<TVALUE>(Values[0][0] + matrix.Values[0][0],
-									Values[1][0] + matrix.Values[1][0],
-									Values[2][0] + matrix.Values[2][0],
-									Values[0][1] + matrix.Values[0][1],
-									Values[1][1] + matrix.Values[1][1],
-									Values[2][1] + matrix.Values[2][1],
-									Values[0][2] + matrix.Values[0][2],
-									Values[1][2] + matrix.Values[1][2],
-									Values[2][2] + matrix.Values[2][2]);
+			Matrix3<TVALUE> m = *this;
+			m += matrix;
+			return m;
 		}
 
 		/// <summary>
@@ -156,7 +150,17 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE>& operator +=(const Matrix3<TVALUE>& matrix)
 		{
-			return *this + matrix;
+			set(Values[0][0] + matrix.Values[0][0],
+				Values[1][0] + matrix.Values[1][0],
+				Values[2][0] + matrix.Values[2][0],
+				Values[0][1] + matrix.Values[0][1],
+				Values[1][1] + matrix.Values[1][1],
+				Values[2][1] + matrix.Values[2][1],
+				Values[0][2] + matrix.Values[0][2],
+				Values[1][2] + matrix.Values[1][2],
+				Values[2][2] + matrix.Values[2][2]);
+
+			return *this;
 		}
 
 		/// <summary>
@@ -164,15 +168,9 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE> operator -(const Matrix3<TVALUE>& matrix) const
 		{
-			return Matrix3<TVALUE>(Values[0][0] - matrix.Values[0][0],
-									Values[1][0] - matrix.Values[1][0],
-									Values[2][0] - matrix.Values[2][0],
-									Values[0][1] - matrix.Values[0][1],
-									Values[1][1] - matrix.Values[1][1],
-									Values[2][1] - matrix.Values[2][1],
-									Values[0][2] - matrix.Values[0][2],
-									Values[1][2] - matrix.Values[1][2],
-									Values[2][2] - matrix.Values[2][2]);
+			Matrix2<TVALUE> m = *this;
+			m -= matrix;
+			return m;
 		}
 
 		/// <summary>
@@ -180,7 +178,17 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE>& operator -=(const Matrix3<TVALUE>& matrix)
 		{
-			return *this - matrix;
+			set(Values[0][0] - matrix.Values[0][0],
+				Values[1][0] - matrix.Values[1][0],
+				Values[2][0] - matrix.Values[2][0],
+				Values[0][1] - matrix.Values[0][1],
+				Values[1][1] - matrix.Values[1][1],
+				Values[2][1] - matrix.Values[2][1],
+				Values[0][2] - matrix.Values[0][2],
+				Values[1][2] - matrix.Values[1][2],
+				Values[2][2] - matrix.Values[2][2]);
+
+			return *this;
 		}
 
 		/// <summary>
@@ -188,15 +196,9 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE> operator *(const Matrix3<TVALUE>& matrix) const
 		{
-			return Matrix3<TVALUE>((matrix.Values[0][0] * Values[0][0]) + (matrix.Values[0][1] * Values[1][0]) + (matrix.Values[0][2] * Values[2][0]),
-									(matrix.Values[1][0] * Values[0][0]) + (matrix.Values[1][1] * Values[1][0]) + (matrix.Values[1][2] * Values[2][0]),
-									(matrix.Values[2][0] * Values[0][0]) + (matrix.Values[2][1] * Values[1][0]) + (matrix.Values[2][2] * Values[2][0]),
-									(matrix.Values[0][0] * Values[0][1]) + (matrix.Values[0][1] * Values[1][1]) + (matrix.Values[0][2] * Values[2][1]),
-									(matrix.Values[1][0] * Values[0][1]) + (matrix.Values[1][1] * Values[1][1]) + (matrix.Values[1][2] * Values[2][1]),
-									(matrix.Values[2][0] * Values[0][1]) + (matrix.Values[2][1] * Values[1][1]) + (matrix.Values[2][2] * Values[2][1]),
-									(matrix.Values[0][0] * Values[0][2]) + (matrix.Values[0][1] * Values[1][2]) + (matrix.Values[0][2] * Values[2][2]),
-									(matrix.Values[1][0] * Values[0][2]) + (matrix.Values[1][1] * Values[1][2]) + (matrix.Values[1][2] * Values[2][2]),
-									(matrix.Values[2][0] * Values[0][2]) + (matrix.Values[2][1] * Values[1][2]) + (matrix.Values[2][2] * Values[2][2]));
+			Matrix2<TVALUE> m = *this;
+			m *= matrix;
+			return m;
 		}
 
 		/// <summary>
@@ -204,7 +206,17 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE>& operator *=(const Matrix3<TVALUE>& matrix)
 		{
-			return *this * matrix;
+			set((matrix.Values[0][0] * Values[0][0]) + (matrix.Values[0][1] * Values[1][0]) + (matrix.Values[0][2] * Values[2][0]),
+				(matrix.Values[1][0] * Values[0][0]) + (matrix.Values[1][1] * Values[1][0]) + (matrix.Values[1][2] * Values[2][0]),
+				(matrix.Values[2][0] * Values[0][0]) + (matrix.Values[2][1] * Values[1][0]) + (matrix.Values[2][2] * Values[2][0]),
+				(matrix.Values[0][0] * Values[0][1]) + (matrix.Values[0][1] * Values[1][1]) + (matrix.Values[0][2] * Values[2][1]),
+				(matrix.Values[1][0] * Values[0][1]) + (matrix.Values[1][1] * Values[1][1]) + (matrix.Values[1][2] * Values[2][1]),
+				(matrix.Values[2][0] * Values[0][1]) + (matrix.Values[2][1] * Values[1][1]) + (matrix.Values[2][2] * Values[2][1]),
+				(matrix.Values[0][0] * Values[0][2]) + (matrix.Values[0][1] * Values[1][2]) + (matrix.Values[0][2] * Values[2][2]),
+				(matrix.Values[1][0] * Values[0][2]) + (matrix.Values[1][1] * Values[1][2]) + (matrix.Values[1][2] * Values[2][2]),
+				(matrix.Values[2][0] * Values[0][2]) + (matrix.Values[2][1] * Values[1][2]) + (matrix.Values[2][2] * Values[2][2]));
+
+			return *this;
 		}
 
 		/// <summary>
@@ -212,15 +224,9 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE> operator *(const TVALUE value) const
 		{
-			return Matrix3<TVALUE>(Values[0][0] * value,
-									Values[1][0] * value,
-									Values[2][0] * value,
-									Values[0][1] * value,
-									Values[1][1] * value,
-									Values[2][1] * value,
-									Values[0][2] * value,
-									Values[1][2] * value,
-									Values[2][2] * value);
+			Matrix2<TVALUE> m = *this;
+			m *= value;
+			return m;
 		}
 
 		/// <summary>
@@ -228,7 +234,17 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE>& operator *=(const TVALUE value)
 		{
-			return *this * value;
+			set(Values[0][0] * value,
+				Values[1][0] * value,
+				Values[2][0] * value,
+				Values[0][1] * value,
+				Values[1][1] * value,
+				Values[2][1] * value,
+				Values[0][2] * value,
+				Values[1][2] * value,
+				Values[2][2] * value);
+
+			return *this;
 		}
 
 		/// <summary>
@@ -236,12 +252,9 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE> operator /(const Matrix3<TVALUE>& matrix) const
 		{
-			TVALUE d = matrix.getDeterminant();
-
-			if (d == 0)
-				return 0;
-
-			return Matrix3<TVALUE>(matrix).inverse();
+			Matrix2<TVALUE> m = *this;
+			m /= matrix;
+			return m;
 		}
 
 		/// <summary>
@@ -249,7 +262,14 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE>& operator /=(const Matrix3<TVALUE>& matrix)
 		{
-			return *this / matrix;
+			TVALUE d = matrix.getDeterminant();
+
+			//if (d == 0)
+			//	return 0;
+
+			*this = Matrix3<TVALUE>(matrix).inverse();
+
+			return *this;
 		}
 
 		/// <summary>
@@ -257,15 +277,9 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE> operator /(const TVALUE value) const
 		{
-			return Matrix3<TVALUE>(Values[0][0] / value,
-									Values[1][0] / value,
-									Values[2][0] / value,
-									Values[0][1] / value,
-									Values[1][1] / value,
-									Values[2][1] / value,
-									Values[0][2] / value,
-									Values[1][2] / value,
-									Values[2][2] / value);
+			Matrix2<TVALUE> m = *this;
+			m /= value;
+			return m;
 		}
 
 		/// <summary>
@@ -273,7 +287,17 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE>& operator /=(const TVALUE value)
 		{
-			return *this / value;
+			set(Values[0][0] / value,
+				Values[1][0] / value,
+				Values[2][0] / value,
+				Values[0][1] / value,
+				Values[1][1] / value,
+				Values[2][1] / value,
+				Values[0][2] / value,
+				Values[1][2] / value,
+				Values[2][2] / value);
+
+			return *this;
 		}
 
 		/// <summary>

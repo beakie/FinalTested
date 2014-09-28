@@ -161,7 +161,17 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE> operator +(const Matrix4<TVALUE>& matrix) const
 		{
-			return Matrix4<TVALUE>(Values[0][0] + matrix.Values[0][0],
+			Matrix3<TVALUE> m = *this;
+			m += matrix;
+			return m;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Matrix4<TVALUE>& operator +=(const Matrix4<TVALUE>& matrix)
+		{
+			set(Values[0][0] + matrix.Values[0][0],
 				Values[1][0] + matrix.Values[1][0],
 				Values[2][0] + matrix.Values[2][0],
 				Values[3][0] + matrix.Values[3][0],
@@ -177,14 +187,8 @@ namespace Common
 				Values[1][3] + matrix.Values[1][3],
 				Values[2][3] + matrix.Values[2][3],
 				Values[3][3] + matrix.Values[3][3]);
-		}
 
-		/// <summary>
-		/// Operator
-		/// </summary>
-		Matrix4<TVALUE>& operator +=(const Matrix4<TVALUE>& matrix)
-		{
-			return *this + matrix;
+			return *this;
 		}
 
 		/// <summary>
@@ -192,7 +196,17 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE> operator -(const Matrix4<TVALUE>& matrix) const
 		{
-			return Matrix4<TVALUE>(Values[0][0] - matrix.Values[0][0],
+			Matrix3<TVALUE> m = *this;
+			m -= matrix;
+			return m;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		Matrix4<TVALUE>& operator -=(const Matrix4<TVALUE>& matrix)
+		{
+			set(Values[0][0] - matrix.Values[0][0],
 				Values[1][0] - matrix.Values[1][0],
 				Values[2][0] - matrix.Values[2][0],
 				Values[3][0] - matrix.Values[3][0],
@@ -208,14 +222,8 @@ namespace Common
 				Values[1][3] - matrix.Values[1][3],
 				Values[2][3] - matrix.Values[2][3],
 				Values[3][3] - matrix.Values[3][3]);
-		}
 
-		/// <summary>
-		/// Operator
-		/// </summary>
-		Matrix4<TVALUE>& operator -=(const Matrix4<TVALUE>& matrix)
-		{
-			return *this - matrix;
+			return *this;
 		}
 
 		/// <summary>
@@ -223,22 +231,9 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE> operator *(const Matrix4<TVALUE>& matrix) const
 		{
-			return Matrix4<TVALUE>((matrix.Values[0][0] * Values[0][0]) + (matrix.Values[0][1] * Values[1][0]) + (matrix.Values[0][2] * Values[2][0]) + (matrix.Values[0][3] * Values[3][0]),
-									(matrix.Values[1][0] * Values[0][0]) + (matrix.Values[1][1] * Values[1][0]) + (matrix.Values[1][2] * Values[2][0]) + (matrix.Values[1][3] * Values[3][0]),
-									(matrix.Values[2][0] * Values[0][0]) + (matrix.Values[2][1] * Values[1][0]) + (matrix.Values[2][2] * Values[2][0]) + (matrix.Values[2][3] * Values[3][0]),
-									(matrix.Values[3][0] * Values[0][0]) + (matrix.Values[3][1] * Values[1][0]) + (matrix.Values[3][2] * Values[2][0]) + (matrix.Values[3][3] * Values[3][0]),
-									(matrix.Values[0][0] * Values[0][1]) + (matrix.Values[0][1] * Values[1][1]) + (matrix.Values[0][2] * Values[2][1]) + (matrix.Values[0][3] * Values[2][1]),
-									(matrix.Values[1][0] * Values[0][1]) + (matrix.Values[1][1] * Values[1][1]) + (matrix.Values[1][2] * Values[2][1]) + (matrix.Values[1][3] * Values[2][1]),
-									(matrix.Values[2][0] * Values[0][1]) + (matrix.Values[2][1] * Values[1][1]) + (matrix.Values[2][2] * Values[2][1]) + (matrix.Values[2][3] * Values[2][1]),
-									(matrix.Values[3][0] * Values[0][1]) + (matrix.Values[3][1] * Values[1][1]) + (matrix.Values[3][2] * Values[2][1]) + (matrix.Values[3][3] * Values[2][1]),
-									(matrix.Values[0][0] * Values[0][2]) + (matrix.Values[0][1] * Values[1][2]) + (matrix.Values[0][2] * Values[2][2]) + (matrix.Values[0][3] * Values[2][2]),
-									(matrix.Values[1][0] * Values[0][2]) + (matrix.Values[1][1] * Values[1][2]) + (matrix.Values[1][2] * Values[2][2]) + (matrix.Values[1][3] * Values[2][2]),
-									(matrix.Values[2][0] * Values[0][2]) + (matrix.Values[2][1] * Values[1][2]) + (matrix.Values[2][2] * Values[2][2]) + (matrix.Values[2][3] * Values[2][2]),
-									(matrix.Values[3][0] * Values[0][2]) + (matrix.Values[3][1] * Values[1][2]) + (matrix.Values[3][2] * Values[2][2]) + (matrix.Values[3][3] * Values[2][2]),
-									(matrix.Values[0][0] * Values[0][3]) + (matrix.Values[0][1] * Values[1][3]) + (matrix.Values[0][2] * Values[2][3]) + (matrix.Values[0][3] * Values[2][3]),
-									(matrix.Values[1][0] * Values[0][3]) + (matrix.Values[1][1] * Values[1][3]) + (matrix.Values[1][2] * Values[2][3]) + (matrix.Values[1][3] * Values[2][3]),
-									(matrix.Values[2][0] * Values[0][3]) + (matrix.Values[2][1] * Values[1][3]) + (matrix.Values[2][2] * Values[2][3]) + (matrix.Values[2][3] * Values[2][3]),
-									(matrix.Values[3][0] * Values[0][3]) + (matrix.Values[3][1] * Values[1][3]) + (matrix.Values[3][2] * Values[2][3]) + (matrix.Values[3][3] * Values[2][3]));
+			Matrix3<TVALUE> m = *this;
+			m *= matrix;
+			return m;
 		}
 
 		/// <summary>
@@ -246,7 +241,24 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& operator *=(const Matrix4<TVALUE>& matrix)
 		{
-			return *this * matrix;
+			set((matrix.Values[0][0] * Values[0][0]) + (matrix.Values[0][1] * Values[1][0]) + (matrix.Values[0][2] * Values[2][0]) + (matrix.Values[0][3] * Values[3][0]),
+				(matrix.Values[1][0] * Values[0][0]) + (matrix.Values[1][1] * Values[1][0]) + (matrix.Values[1][2] * Values[2][0]) + (matrix.Values[1][3] * Values[3][0]),
+				(matrix.Values[2][0] * Values[0][0]) + (matrix.Values[2][1] * Values[1][0]) + (matrix.Values[2][2] * Values[2][0]) + (matrix.Values[2][3] * Values[3][0]),
+				(matrix.Values[3][0] * Values[0][0]) + (matrix.Values[3][1] * Values[1][0]) + (matrix.Values[3][2] * Values[2][0]) + (matrix.Values[3][3] * Values[3][0]),
+				(matrix.Values[0][0] * Values[0][1]) + (matrix.Values[0][1] * Values[1][1]) + (matrix.Values[0][2] * Values[2][1]) + (matrix.Values[0][3] * Values[2][1]),
+				(matrix.Values[1][0] * Values[0][1]) + (matrix.Values[1][1] * Values[1][1]) + (matrix.Values[1][2] * Values[2][1]) + (matrix.Values[1][3] * Values[2][1]),
+				(matrix.Values[2][0] * Values[0][1]) + (matrix.Values[2][1] * Values[1][1]) + (matrix.Values[2][2] * Values[2][1]) + (matrix.Values[2][3] * Values[2][1]),
+				(matrix.Values[3][0] * Values[0][1]) + (matrix.Values[3][1] * Values[1][1]) + (matrix.Values[3][2] * Values[2][1]) + (matrix.Values[3][3] * Values[2][1]),
+				(matrix.Values[0][0] * Values[0][2]) + (matrix.Values[0][1] * Values[1][2]) + (matrix.Values[0][2] * Values[2][2]) + (matrix.Values[0][3] * Values[2][2]),
+				(matrix.Values[1][0] * Values[0][2]) + (matrix.Values[1][1] * Values[1][2]) + (matrix.Values[1][2] * Values[2][2]) + (matrix.Values[1][3] * Values[2][2]),
+				(matrix.Values[2][0] * Values[0][2]) + (matrix.Values[2][1] * Values[1][2]) + (matrix.Values[2][2] * Values[2][2]) + (matrix.Values[2][3] * Values[2][2]),
+				(matrix.Values[3][0] * Values[0][2]) + (matrix.Values[3][1] * Values[1][2]) + (matrix.Values[3][2] * Values[2][2]) + (matrix.Values[3][3] * Values[2][2]),
+				(matrix.Values[0][0] * Values[0][3]) + (matrix.Values[0][1] * Values[1][3]) + (matrix.Values[0][2] * Values[2][3]) + (matrix.Values[0][3] * Values[2][3]),
+				(matrix.Values[1][0] * Values[0][3]) + (matrix.Values[1][1] * Values[1][3]) + (matrix.Values[1][2] * Values[2][3]) + (matrix.Values[1][3] * Values[2][3]),
+				(matrix.Values[2][0] * Values[0][3]) + (matrix.Values[2][1] * Values[1][3]) + (matrix.Values[2][2] * Values[2][3]) + (matrix.Values[2][3] * Values[2][3]),
+				(matrix.Values[3][0] * Values[0][3]) + (matrix.Values[3][1] * Values[1][3]) + (matrix.Values[3][2] * Values[2][3]) + (matrix.Values[3][3] * Values[2][3]));
+
+			return *this;
 		}
 
 		/// <summary>
@@ -254,21 +266,9 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE> operator *(const TVALUE value) const
 		{
-			return Matrix4<TVALUE>(Values[0][0] * value,
-									Values[1][0] * value,
-									Values[2][0] * value,
-									Values[3][0] * value,
-									Values[0][1] * value,
-									Values[1][1] * value,
-									Values[2][1] * value,
-									Values[3][1] * value,
-									Values[0][2] * value,
-									Values[1][2] * value,
-									Values[2][2] * value,
-									Values[3][2] * value,
-									Values[1][3] * value,
-									Values[2][3] * value,
-									Values[3][3] * value);
+			Matrix3<TVALUE> m = *this;
+			m *= value;
+			return m;
 		}
 
 		/// <summary>
@@ -276,7 +276,23 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& operator *=(const TVALUE value)
 		{
-			return *this * value;
+			set(Values[0][0] * value,
+				Values[1][0] * value,
+				Values[2][0] * value,
+				Values[3][0] * value,
+				Values[0][1] * value,
+				Values[1][1] * value,
+				Values[2][1] * value,
+				Values[3][1] * value,
+				Values[0][2] * value,
+				Values[1][2] * value,
+				Values[2][2] * value,
+				Values[3][2] * value,
+				Values[1][3] * value,
+				Values[2][3] * value,
+				Values[3][3] * value);
+
+			return *this;
 		}
 
 		/// <summary>
@@ -284,12 +300,9 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE> operator /(const Matrix4<TVALUE>& matrix) const
 		{
-			TVALUE d = matrix.getDeterminant();
-
-			if (d == 0)
-				return 0;
-
-			return Matrix4<TVALUE>(matrix).inverse();
+			Matrix3<TVALUE> m = *this;
+			m /= matrix;
+			return m;
 		}
 
 		/// <summary>
@@ -297,7 +310,14 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& operator /=(const Matrix4<TVALUE>& matrix)
 		{
-			return *this / matrix;
+			TVALUE d = matrix.getDeterminant();
+
+			//if (d == 0)
+			//	return 0;
+
+			*this = Matrix4<TVALUE>(matrix).inverse();
+			
+			return *this;
 		}
 
 		/// <summary>
@@ -305,22 +325,9 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE> operator /(const TVALUE value) const
 		{
-			return Matrix4<TVALUE>(Values[0][0] / value,
-									Values[1][0] / value,
-									Values[2][0] / value,
-									Values[3][0] / value,
-									Values[0][1] / value,
-									Values[1][1] / value,
-									Values[2][1] / value,
-									Values[3][1] / value,
-									Values[0][2] / value,
-									Values[1][2] / value,
-									Values[2][2] / value,
-									Values[3][2] / value,
-									Values[0][3] / value,
-									Values[1][3] / value,
-									Values[2][3] / value,
-									Values[3][3] / value);
+			Matrix3<TVALUE> m = *this;
+			m /= value;
+			return m;
 		}
 
 		/// <summary>
@@ -328,7 +335,24 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>&  operator /=(const TVALUE value)
 		{
-			return *this / value;
+			set(Values[0][0] / value,
+				Values[1][0] / value,
+				Values[2][0] / value,
+				Values[3][0] / value,
+				Values[0][1] / value,
+				Values[1][1] / value,
+				Values[2][1] / value,
+				Values[3][1] / value,
+				Values[0][2] / value,
+				Values[1][2] / value,
+				Values[2][2] / value,
+				Values[3][2] / value,
+				Values[0][3] / value,
+				Values[1][3] / value,
+				Values[2][3] / value,
+				Values[3][3] / value);
+
+			return *this;
 		}
 
 		bool operator ==(const Matrix4<TVALUE>& matrix)
