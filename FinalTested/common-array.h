@@ -7,7 +7,7 @@
 namespace Common
 {
 
-	template <typename TVALUE, typename TINDEX = unsigned int>
+	template <typename TVALUE, typename TINDEX = UInt_32>
 	struct Array
 	{
 

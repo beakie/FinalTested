@@ -6,6 +6,9 @@
 namespace Common
 {
 	template <typename TVALUE>
+	/// <summary>
+	/// 2 dimensional matrix
+	/// </summary>
 	struct Matrix2
 	{
 		/// <summary>

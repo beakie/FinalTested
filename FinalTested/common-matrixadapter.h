@@ -6,6 +6,9 @@
 
 namespace Common
 {
+	/// <summary>
+	/// Adapter for fixed sized matrix
+	/// </summary>
 	template <typename TMATRIX, typename TVALUE>
 	class MatrixAdapter : IMatrixAdapter<TVALUE>
 	{
