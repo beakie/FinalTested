@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 	//array++;
 	//++array;
 
-	Common::Image<Common::RGBPixel<unsigned char>, unsigned int> i123;
+	Common::Image<Common::RGBPixel8, unsigned int> i123;
 
 //	i123 &= i123;
 

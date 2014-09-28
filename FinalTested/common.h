@@ -52,6 +52,14 @@ namespace Common
 	typedef MatrixAdapter<Matrix3F, float> MatrixAdapter3F;
 	typedef MatrixAdapter<Matrix4F, float> MatrixAdapter4F;
 
+	typedef RGBPixel<unsigned char> RGBPixel8;
+	typedef RGBPixel<unsigned short> RGBPixel16;
+	typedef RGBPixel<unsigned int> RGBPixel32;
+
+	typedef unsigned char GreyPixel8;
+	typedef unsigned short GreyPixel16;
+	typedef unsigned int GreyPixel32;
+
 	typedef Image<bool, unsigned char> Image8B;
 	typedef Image<unsigned char, unsigned char> Image8C;
 	typedef Image<unsigned short, unsigned char> Image8S;
@@ -61,17 +69,19 @@ namespace Common
 	typedef Image<unsigned short, unsigned short> Image16S;
 	typedef Image<unsigned int, unsigned short> Image16I;
 
-	typedef RGBPixel<bool> RGBPixel2;
-	typedef RGBPixel<unsigned char> RGBPixel8;
-	typedef RGBPixel<unsigned short> RGBPixel16;
-	typedef RGBPixel<unsigned int> RGBPixel32;
+	typedef Image<RGBPixel8, unsigned char> Image8RGB8;
+	typedef Image<RGBPixel16, unsigned char> Image8RGB16;
+	typedef Image<RGBPixel32, unsigned char> Image8RGB32;
+	typedef Image<RGBPixel8, unsigned short> Image16RGB8;
+	typedef Image<RGBPixel16, unsigned short> Image16RGB16;
+	typedef Image<RGBPixel32, unsigned short> Image16RGB32;
 
-	typedef bool GreyPixel2;
-	typedef unsigned char GreyPixel8;
-	typedef unsigned short GreyPixel16;
-	typedef unsigned int GreyPixel32;
-
-	//typedef Plot<unsigned char> DimensionsC;
+	typedef Image<GreyPixel8, unsigned char> Image8Grey8;
+	typedef Image<GreyPixel16, unsigned char> Image8Grey16;
+	typedef Image<GreyPixel32, unsigned char> Image8Grey32;
+	typedef Image<GreyPixel8, unsigned short> Image16Grey8;
+	typedef Image<GreyPixel16, unsigned short> Image16Grey16;
+	typedef Image<GreyPixel32, unsigned short> Image16Grey32;
 
 }
 
