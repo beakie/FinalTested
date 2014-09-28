@@ -353,7 +353,7 @@ namespace Common
 			delete[] Values;
 		}
 
-		void replacePixelArray(TINDEX width, TINDEX height)
+		void recreatePixelArray(TINDEX width, TINDEX height)
 		{
 			deletePixelArray();
 			createPixelArray(width, height);
