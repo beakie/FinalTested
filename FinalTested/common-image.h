@@ -7,7 +7,7 @@ namespace Common
 {
 	template <typename TVALUE, typename TINDEX>
 	/// <summary>
-	/// Image
+	/// 2 dimensional array of pixels
 	/// </summary>
 	struct Image
 	{
