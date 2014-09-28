@@ -1,10 +1,10 @@
-#ifndef COMMONRGBPIXEL_H
-#define COMMONRGBPIXEL_H
+#ifndef COMMONHSVPIXEL_H
+#define COMMONHSVPIXEL_H
 
 namespace Common
 {
 	template <typename TVALUE>
-	struct RGBPixel
+	struct HSVPixel
 	{
 		TVALUE R;
 		TVALUE G;
@@ -13,7 +13,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		RGBPixel<TVALUE>& operator =(const RGBPixel<TVALUE>& pixel)
+		HSVPixel<TVALUE>& operator =(const HSVPixel<TVALUE>& pixel)
 		{
 			R = pixel.R;
 			G = pixel.G;
@@ -25,9 +25,9 @@ namespace Common
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		RGBPixel<TVALUE> operator *(const RGBPixel<TVALUE>& pixel) const
+		HSVPixel<TVALUE> operator *(const HSVPixel<TVALUE>& pixel) const
 		{
-			RGBPixel<TVALUE> p = *this;
+			HSVPixel<TVALUE> p = *this;
 
 			p *= pixel;
 
@@ -37,7 +37,7 @@ namespace Common
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		RGBPixel<TVALUE>& operator *=(const RGBPixel<TVALUE>& pixel)
+		HSVPixel<TVALUE>& operator *=(const HSVPixel<TVALUE>& pixel)
 		{
 			R = R * pixel.R;
 			G = G * pixel.G;
@@ -49,9 +49,9 @@ namespace Common
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		RGBPixel<TVALUE> operator /(const RGBPixel<TVALUE>& pixel) const
+		HSVPixel<TVALUE> operator /(const HSVPixel<TVALUE>& pixel) const
 		{
-			RGBPixel<TVALUE> p = *this;
+			HSVPixel<TVALUE> p = *this;
 
 			p /= pixel;
 
@@ -61,7 +61,7 @@ namespace Common
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		RGBPixel<TVALUE>& operator /=(const RGBPixel<TVALUE>& pixel)
+		HSVPixel<TVALUE>& operator /=(const HSVPixel<TVALUE>& pixel)
 		{
 			R = R / pixel.R;
 			G = G / pixel.G;
@@ -73,9 +73,9 @@ namespace Common
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		RGBPixel<TVALUE> operator |(const RGBPixel<TVALUE>& pixel) const
+		HSVPixel<TVALUE> operator |(const HSVPixel<TVALUE>& pixel) const
 		{
-			RGBPixel<TVALUE> p = *this;
+			HSVPixel<TVALUE> p = *this;
 
 			p |= pixel;
 
@@ -85,7 +85,7 @@ namespace Common
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		RGBPixel<TVALUE>& operator |=(const RGBPixel<TVALUE>& pixel)
+		HSVPixel<TVALUE>& operator |=(const HSVPixel<TVALUE>& pixel)
 		{
 			R = R | pixel.R;
 			G = G | pixel.G;
@@ -97,9 +97,9 @@ namespace Common
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		RGBPixel<TVALUE> operator &(const RGBPixel<TVALUE>& pixel) const
+		HSVPixel<TVALUE> operator &(const HSVPixel<TVALUE>& pixel) const
 		{
-			RGBPixel<TVALUE> p = *this;
+			HSVPixel<TVALUE> p = *this;
 
 			p &= pixel;
 
@@ -109,7 +109,7 @@ namespace Common
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		RGBPixel<TVALUE>& operator &=(const RGBPixel<TVALUE>& pixel)
+		HSVPixel<TVALUE>& operator &=(const HSVPixel<TVALUE>& pixel)
 		{
 			R = R & pixel.R;
 			G = G & pixel.G;
@@ -121,9 +121,9 @@ namespace Common
 		/// <summary>
 		/// Invert
 		/// </summary>
-		RGBPixel<TVALUE> operator !() const
+		HSVPixel<TVALUE> operator !() const
 		{
-			RGBPixel<TVALUE> p = *this;
+			HSVPixel<TVALUE> p = *this;
 
 			p != p;
 
@@ -133,7 +133,7 @@ namespace Common
 		/// <summary>
 		/// Comparison
 		/// </summary>
-		bool operator ==(const RGBPixel<TVALUE>& pixel) const
+		bool operator ==(const HSVPixel<TVALUE>& pixel) const
 		{
 			if ((Width != pixel.Width) || (Height != pixel.Height))
 				return false;
@@ -149,11 +149,11 @@ namespace Common
 		/// <summary>
 		/// Not comparison
 		/// </summary>
-		bool operator !=(const RGBPixel<TVALUE>& pixel) const
+		bool operator !=(const HSVPixel<TVALUE>& pixel) const
 		{
 			return operator ==(pixel);
 		}
 	};
 }
 
-#endif // COMMONRGBPIXEL_H
+#endif // COMMONHSVPIXEL_H

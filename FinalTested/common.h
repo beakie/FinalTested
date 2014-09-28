@@ -2,6 +2,7 @@
 #define COMMON_H
 
 #include "common-array.h"
+#include "common-hsvpixel.h"
 #include "common-image.h"
 #include "common-imatrixadapter.h"
 #include "common-matrix2.h"
@@ -55,6 +56,10 @@ namespace Common
 	typedef RGBPixel<unsigned char> RGBPixel8;
 	typedef RGBPixel<unsigned short> RGBPixel16;
 	typedef RGBPixel<unsigned int> RGBPixel32;
+
+	typedef HSVPixel<unsigned char> HSVPixel8;
+	typedef HSVPixel<unsigned short> HSVPixel16;
+	typedef HSVPixel<unsigned int> HSVPixel32;
 
 	typedef unsigned char GreyPixel8;
 	typedef unsigned short GreyPixel16;
