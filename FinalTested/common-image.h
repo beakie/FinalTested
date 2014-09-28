@@ -6,6 +6,9 @@
 namespace Common
 {
 	template <typename TVALUE, typename TINDEX>
+	/// <summary>
+	/// Image
+	/// </summary>
 	struct Image
 	{
 		/// <summary>

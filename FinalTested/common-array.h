@@ -8,6 +8,9 @@ namespace Common
 {
 
 	template <typename TVALUE, typename TINDEX = UInt_32>
+	/// <summary>
+	/// Array
+	/// </summary>
 	struct Array
 	{
 

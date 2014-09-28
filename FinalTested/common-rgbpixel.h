@@ -4,6 +4,9 @@
 namespace Common
 {
 	template <typename TVALUE>
+	/// <summary>
+	/// RGB pixel
+	/// </summary>
 	struct RGBPixel
 	{
 		TVALUE H;

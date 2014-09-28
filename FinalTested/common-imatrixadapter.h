@@ -6,6 +6,9 @@
 namespace Common
 {
 	template <typename TVALUE>
+	/// <summary>
+	/// Matrix adapter interface
+	/// </summary>
 	struct IMatrixAdapter
 	{
 		/// <summary>

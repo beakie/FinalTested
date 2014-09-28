@@ -8,6 +8,9 @@ namespace Common
 	//should i add build matrix method and call from constructors
 
 	template <typename TVALUE>
+	/// <summary>
+	/// Matrix
+	/// </summary>
 	struct MatrixN
 	{
 		/// <summary>

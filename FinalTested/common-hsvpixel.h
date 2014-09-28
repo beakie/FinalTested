@@ -4,6 +4,10 @@
 namespace Common
 {
 	template <typename TVALUE>
+	template <typename TVALUE, typename TINDEX = UInt_32>
+	/// <summary>
+	/// HSV pixel
+	/// </summary>
 	struct HSVPixel
 	{
 		TVALUE R;
