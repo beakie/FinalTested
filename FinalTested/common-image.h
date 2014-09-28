@@ -152,32 +152,62 @@ namespace Common
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		Image<TVALUE, TINDEX> operator *(const Image<TVALUE, TINDEX>& image) const
+		Image<TVALUE, TINDEX> operator *(const TVALUE value) const
 		{
 			Image<TVALUE, TINDEX> i = *this;
-			i *= image;
+			i *= value;
 			return i;
 		}
 
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator *=(const Image<TVALUE, TINDEX>& image);
+		Image<TVALUE, TINDEX>& operator *=(const TVALUE value);
 
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		Image<TVALUE, TINDEX> operator /(const Image<TVALUE, TINDEX>& image) const
+		Image<TVALUE, TINDEX> operator /(const TVALUE value) const
 		{
 			Image<TVALUE, TINDEX> i = *this;
-			i /= image;
+			i /= value;
 			return i;
 		}
 
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator /=(const Image<TVALUE, TINDEX>& image);
+		Image<TVALUE, TINDEX>& operator /=(const TVALUE value);
+
+		/// <summary>
+		/// Threshold
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator >=(const Image<TVALUE, TINDEX>& image);
+
+		/// <summary>
+		/// Threshold
+		/// </summary>
+		Image<TVALUE, TINDEX> operator >(const Image<TVALUE, TINDEX>& image) const
+		{
+			Image<TVALUE, TINDEX> i = *this;
+			i >= image;
+			return i;
+		}
+
+		/// <summary>
+		/// Threshold
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator <=(const Image<TVALUE, TINDEX>& image);
+
+		/// <summary>
+		/// Threshold
+		/// </summary>
+		Image<TVALUE, TINDEX> operator <(const Image<TVALUE, TINDEX>& image) const
+		{
+			Image<TVALUE, TINDEX> i = *this;
+			i <= image;
+			return i;
+		}
 
 		/// <summary>
 		/// Logical OR
