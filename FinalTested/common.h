@@ -81,6 +81,13 @@ namespace Common
 	typedef Image<RGBPixel16, unsigned short> Image16RGB16;
 	typedef Image<RGBPixel32, unsigned short> Image16RGB32;
 
+	typedef Image<HSVPixel8, unsigned char> Image8HSV8;
+	typedef Image<HSVPixel16, unsigned char> Image8HSV16;
+	typedef Image<HSVPixel32, unsigned char> Image8HSV32;
+	typedef Image<HSVPixel8, unsigned short> Image16HSV8;
+	typedef Image<HSVPixel16, unsigned short> Image16HSV16;
+	typedef Image<HSVPixel32, unsigned short> Image16HSV32;
+
 	typedef Image<GreyPixel8, unsigned char> Image8Grey8;
 	typedef Image<GreyPixel16, unsigned char> Image8Grey16;
 	typedef Image<GreyPixel32, unsigned char> Image8Grey32;
