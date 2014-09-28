@@ -32,8 +32,6 @@ int main(int argc, char *argv[])
 
 	img.cropImage(0, 0, 10, 10);
 
-	//img + img << 4 >> 2;
-
 	Common::Array<UInt_16> array;
 
 	array.addItem(0);
