@@ -17,17 +17,17 @@
 namespace Common
 {
 	/// <summary>
-	/// Matrix of size 2 for boolean values
+	/// Matrix of size 2 for 1 bit values
 	/// </summary>
-	typedef Matrix2<UInt_2> Matrix2_2;
+	typedef Matrix2<UInt_1> Matrix2_1;
 	/// <summary>
-	/// Matrix of size 3 for boolean values
+	/// Matrix of size 3 for 1 bit values
 	/// </summary>
-	typedef Matrix3<UInt_2> Matrix3_2;
+	typedef Matrix3<UInt_1> Matrix3_1;
 	/// <summary>
-	/// Matrix of size 4 for boolean values
+	/// Matrix of size 4 for 1 bit values
 	/// </summary>
-	typedef Matrix4<UInt_2> Matrix4_2;
+	typedef Matrix4<UInt_1> Matrix4_1;
 	/// <summary>
 	/// Matrix of size 2 for 1 byte unsigned integer values
 	/// </summary>
@@ -113,17 +113,17 @@ namespace Common
 	/// </summary>
 	typedef Matrix4<Float> Matrix4_F;
 	/// <summary>
-	/// Adapter for matrix of size 2 for boolean values
+	/// Adapter for matrix of size 2 for 1 bit values
 	/// </summary>
-	typedef MatrixAdapter<Matrix2_2, UInt_2> Matrix2Adapter_2;
+	typedef MatrixAdapter<Matrix2_1, UInt_1> Matrix2Adapter_1;
 	/// <summary>
-	/// Adapter for matrix of size 3 for boolean values
+	/// Adapter for matrix of size 3 for 1 bit values
 	/// </summary>
-	typedef MatrixAdapter<Matrix3_2, UInt_2> Matrix3Adapter_2;
+	typedef MatrixAdapter<Matrix3_1, UInt_1> Matrix3Adapter_1;
 	/// <summary>
-	/// Adapter for matrix of size 4 for boolean values
+	/// Adapter for matrix of size 4 for 1 bit values
 	/// </summary>
-	typedef MatrixAdapter<Matrix4_2, UInt_2> Matrix4Adapter_2;
+	typedef MatrixAdapter<Matrix4_1, UInt_1> Matrix4Adapter_1;
 	/// <summary>
 	/// Adapter for matrix of size 2 for 1 byte unsigned integer values
 	/// </summary>
@@ -245,33 +245,108 @@ namespace Common
 	/// </summary>
 	typedef UInt_32 GreyPixel_32;
 	/// <summary>
-	/// ...
+	/// Image with 1 byte dimensions and 1 bit pixels
 	/// </summary>
-	typedef Image<UInt_2, UInt_8> Image8_2;
+	typedef Image<UInt_1, UInt_8> Image8_1;
+	/// <summary>
+	/// Image with 1 byte dimensions and 1 byte pixels
+	/// </summary>
 	typedef Image<UInt_8, UInt_8> Image8_8;
+	/// <summary>
+	/// Image with 1 byte dimensions and 2 byte pixels
+	/// </summary>
 	typedef Image<UInt_16, UInt_8> Image8_16;
+	/// <summary>
+	/// Image with 1 byte dimensions and 4 byte pixels
+	/// </summary>
 	typedef Image<UInt_32, UInt_8> Image8_32;
-	typedef Image<UInt_2, UInt_16> Image16_2;
+	/// <summary>
+	/// Image with 2 byte dimensions and 1 bit pixels
+	/// </summary>
+	typedef Image<UInt_1, UInt_16> Image16_1;
+	/// <summary>
+	/// Image with 2 byte dimensions and 1 byte pixels
+	/// </summary>
 	typedef Image<UInt_8, UInt_16> Image16_8;
+	/// <summary>
+	/// Image with 2 byte dimensions and 2 byte pixels
+	/// </summary>
 	typedef Image<UInt_16, UInt_16> Image16_16;
+	/// <summary>
+	/// Image with 2 byte dimensions and 4 byte pixels
+	/// </summary>
 	typedef Image<UInt_32, UInt_16> Image16_32;
+	/// <summary>
+	/// Image with 1 byte dimensions and 1 byte precision RGB pixels
+	/// </summary>
 	typedef Image<RGBPixel_8, UInt_8> Image8RGB_8;
+	/// <summary>
+	/// Image with 1 byte dimensions and 2 byte precision RGB pixels
+	/// </summary>
 	typedef Image<RGBPixel_16, UInt_8> Image8RGB_16;
+	/// <summary>
+	/// Image with 1 byte dimensions and 4 byte precision RGB pixels
+	/// </summary>
 	typedef Image<RGBPixel_32, UInt_8> Image8RGB_32;
+	/// <summary>
+	/// Image with 2 byte dimensions and 1 byte precision RGB pixels
+	/// </summary>
 	typedef Image<RGBPixel_8, UInt_16> Image16RGB_8;
+	/// <summary>
+	/// Image with 2 byte dimensions and 2 byte precision RGB pixels
+	/// </summary>
 	typedef Image<RGBPixel_16, UInt_16> Image16RGB_16;
+	/// <summary>
+	/// Image with 2 byte dimensions and 4 byte precision RGB pixels
+	/// </summary>
 	typedef Image<RGBPixel_32, UInt_16> Image16RGB_32;
+	/// <summary>
+	/// Image with 1 byte dimensions and 1 byte precision HSV pixels
+	/// </summary>
 	typedef Image<HSVPixel_8, UInt_8> Image8HSV_8;
+	/// <summary>
+	/// Image with 1 byte dimensions and 2 byte precision HSV pixels
+	/// </summary>
 	typedef Image<HSVPixel_16, UInt_8> Image8HSV_16;
+	/// <summary>
+	/// Image with 1 byte dimensions and 4 byte precision HSV pixels
+	/// </summary>
 	typedef Image<HSVPixel_32, UInt_8> Image8HSV_32;
+	/// <summary>
+	/// Image with 2 byte dimensions and 1 byte precision HSV pixels
+	/// </summary>
 	typedef Image<HSVPixel_8, UInt_16> Image16HSV_8;
+	/// <summary>
+	/// Image with 2 byte dimensions and 2 byte precision HSV pixels
+	/// </summary>
 	typedef Image<HSVPixel_16, UInt_16> Image16HSV_16;
+	/// <summary>
+	/// Image with 2 byte dimensions and 4 byte precision HSV pixels
+	/// </summary>
 	typedef Image<HSVPixel_32, UInt_16> Image16HSV_32;
+	/// <summary>
+	/// Image with 1 byte dimensions and 1 byte greyscale pixels
+	/// </summary>
 	typedef Image<GreyPixel_8, UInt_8> Image8Grey_8;
+	/// <summary>
+	/// Image with 1 byte dimensions and 2 byte greyscale pixels
+	/// </summary>
 	typedef Image<GreyPixel_16, UInt_8> Image8Grey_16;
+	/// <summary>
+	/// Image with 1 byte dimensions and 4 byte greyscale pixels
+	/// </summary>
 	typedef Image<GreyPixel_32, UInt_8> Image8Grey_32;
+	/// <summary>
+	/// Image with 2 byte dimensions and 1 byte greyscale pixels
+	/// </summary>
 	typedef Image<GreyPixel_8, UInt_16> Image16Grey_8;
+	/// <summary>
+	/// Image with 2 byte dimensions and 2 byte greyscale pixels
+	/// </summary>
 	typedef Image<GreyPixel_16, UInt_16> Image16Grey_16;
+	/// <summary>
+	/// Image with 2 byte dimensions and 4 byte greyscale pixels
+	/// </summary>
 	typedef Image<GreyPixel_32, UInt_16> Image16Grey_32;
 
 }

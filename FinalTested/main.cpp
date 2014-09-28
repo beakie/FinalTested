@@ -23,12 +23,12 @@ int main(int argc, char *argv[])
 	
 	UInt_8 rowCount = adapter.getColumnCount();
 
-	Common::Image8_2 image = Common::Image8_2(3, 4);
+	Common::Image8_1 image = Common::Image8_1(3, 4);
 	//image.Values[0][0] = false;
 
 	UInt_8 z = Common::Image8_8::getMaxValue();
 
-	Common::Image16_2 img = Common::Image16_2(100, 100, 1);
+	Common::Image16_1 img = Common::Image16_1(100, 100, 1);
 
 	img.cropImage(0, 0, 10, 10);
 

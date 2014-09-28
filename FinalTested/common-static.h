@@ -12,13 +12,13 @@ namespace Common
 	static T getLowerBound();
 
 	template <>
-	static UInt_2 getLowerBound<UInt_2>()
+	static UInt_1 getLowerBound<UInt_1>()
 	{
 		return 0;
 	}
 
 	template <>
-	static UInt_2 getUpperBound<UInt_2>()
+	static UInt_1 getUpperBound<UInt_1>()
 	{
 		return 1;
 	}

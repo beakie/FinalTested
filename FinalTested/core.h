@@ -4,7 +4,7 @@
 /// <summary>
 /// Boolean (bool)
 /// </summary>
-typedef bool UInt_2;
+typedef bool UInt_1;
 /// <summary>
 /// 1 byte unsigned integer (unsigned char)
 /// </summary>
