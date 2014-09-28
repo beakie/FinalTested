@@ -5,22 +5,22 @@ namespace Common
 {
 	template <typename TVALUE>
 	/// <summary>
-	/// HSV pixel
+	/// RGB pixel
 	/// </summary>
 	struct HSVPixel
 	{
-		TVALUE R;
-		TVALUE G;
-		TVALUE B;
+		TVALUE H;
+		TVALUE S;
+		TVALUE V;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
 		HSVPixel<TVALUE>& operator =(const HSVPixel<TVALUE>& pixel)
 		{
-			R = pixel.R;
-			G = pixel.G;
-			B = pixel.B;
+			H = pixel.H;
+			S = pixel.S;
+			V = pixel.V;
 
 			return *this;
 		}
@@ -42,9 +42,9 @@ namespace Common
 		/// </summary>
 		HSVPixel<TVALUE>& operator *=(const HSVPixel<TVALUE>& pixel)
 		{
-			R = R * pixel.R;
-			G = G * pixel.G;
-			B = B * pixel.B;
+			H = H * pixel.H;
+			S = S * pixel.S;
+			V = V * pixel.V;
 
 			return *this;
 		}
@@ -66,9 +66,9 @@ namespace Common
 		/// </summary>
 		HSVPixel<TVALUE>& operator /=(const HSVPixel<TVALUE>& pixel)
 		{
-			R = R / pixel.R;
-			G = G / pixel.G;
-			B = B / pixel.B;
+			H = H / pixel.H;
+			S = S / pixel.S;
+			V = V / pixel.V;
 
 			return *this;
 		}
@@ -90,9 +90,9 @@ namespace Common
 		/// </summary>
 		HSVPixel<TVALUE>& operator |=(const HSVPixel<TVALUE>& pixel)
 		{
-			R = R | pixel.R;
-			G = G | pixel.G;
-			B = B | pixel.B;
+			H = H | pixel.H;
+			S = S | pixel.S;
+			V = V | pixel.V;
 
 			return *this;
 		}
@@ -114,9 +114,9 @@ namespace Common
 		/// </summary>
 		HSVPixel<TVALUE>& operator &=(const HSVPixel<TVALUE>& pixel)
 		{
-			R = R & pixel.R;
-			G = G & pixel.G;
-			B = B & pixel.B;
+			H = H & pixel.H;
+			S = S & pixel.S;
+			V = V & pixel.V;
 
 			return *this;
 		}
