@@ -182,11 +182,6 @@ namespace Common
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator >=(const Image<TVALUE, TINDEX>& image);
-
-		/// <summary>
-		/// Threshold
-		/// </summary>
 		Image<TVALUE, TINDEX> operator >(const Image<TVALUE, TINDEX>& image) const
 		{
 			Image<TVALUE, TINDEX> i = *this;
@@ -197,7 +192,7 @@ namespace Common
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator <=(const Image<TVALUE, TINDEX>& image);
+		Image<TVALUE, TINDEX>& operator >=(const Image<TVALUE, TINDEX>& image);
 
 		/// <summary>
 		/// Threshold
@@ -208,6 +203,11 @@ namespace Common
 			i <= image;
 			return i;
 		}
+
+		/// <summary>
+		/// Threshold
+		/// </summary>
+		Image<TVALUE, TINDEX>& operator <=(const Image<TVALUE, TINDEX>& image);
 
 		/// <summary>
 		/// Logical OR
