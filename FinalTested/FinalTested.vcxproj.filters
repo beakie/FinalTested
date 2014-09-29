@@ -65,12 +65,6 @@
     <ClInclude Include="common-triplechannelpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-rgbpixel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-hsvpixel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="common-pixels.h">
       <Filter>Header Files</Filter>
     </ClInclude>

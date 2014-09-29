@@ -80,7 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common-array.h" />
-    <ClInclude Include="common-hsvpixel.h" />
     <ClInclude Include="common-image.h" />
     <ClInclude Include="common-imatrixadapter.h" />
     <ClInclude Include="common-matrix2.h" />
@@ -90,7 +89,6 @@
     <ClInclude Include="common-matrixn.h" />
     <ClInclude Include="common-pixels.h" />
     <ClInclude Include="common-quadchannelpixel.h" />
-    <ClInclude Include="common-rgbpixel.h" />
     <ClInclude Include="common-triplechannelpixel.h" />
     <ClInclude Include="common-static.h" />
     <ClInclude Include="common.h" />
