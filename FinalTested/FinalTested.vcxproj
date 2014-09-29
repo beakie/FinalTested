@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClInclude Include="common-array.h" />
     <ClInclude Include="common-image.h" />
+    <ClInclude Include="common-images.h" />
     <ClInclude Include="common-imatrixadapter.h" />
     <ClInclude Include="common-matrix2.h" />
     <ClInclude Include="common-matrix3.h" />
