@@ -11,7 +11,7 @@ namespace Common
 	{
 	private:
 		template <typename TIMAGE, typename TVALUE, typename TINDEX>
-		static Image<TVALUE, TINDEX> getChannelImage(const TIMAGE& image, TINDEX channel)
+		static Image<TVALUE, TINDEX> getChannelImage(const TIMAGE& image, const TINDEX channel)
 		{
 			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(image.Width, image.Height);
 
