@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 
 	Common::Image<Common::RGBPixel_8, UInt_16> i123;
 
-//	i123 &= i123;
+	i123.getBelowThreshold(Common::RGBPixel_8(0, 0, 0));
 
 	return a.exec();
 }

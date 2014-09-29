@@ -13,6 +13,17 @@ namespace Common
 		TVALUE S;
 		TVALUE V;
 
+		HSVPixel()
+		{
+		}
+
+		HSVPixel(TVALUE h, TVALUE s, TVALUE v)
+		{
+			H = h;
+			S = s;
+			V = v;
+		}
+
 		/// <summary>
 		/// Operator
 		/// </summary>

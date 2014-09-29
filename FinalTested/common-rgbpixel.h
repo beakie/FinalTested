@@ -22,6 +22,17 @@ namespace Common
 		/// </summary>
 		TVALUE B;
 
+		RGBPixel()
+		{
+		}
+
+		RGBPixel(TVALUE r, TVALUE g, TVALUE b)
+		{
+			R = r;
+			G = g;
+			B = b;
+		}
+
 		/// <summary>
 		/// Operator
 		/// </summary>
