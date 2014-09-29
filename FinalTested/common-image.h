@@ -183,39 +183,11 @@ namespace Common
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<bool, TINDEX> getAboveThreshold(const TVALUE value) const
-		{
-			Image<bool, TINDEX> i = Image<bool, TINDEX>(Width, Height);
-
-			for (TINDEX x = 0; x < Width; x++)
-				for (TINDEX y = 0; y < Height; y++)
-					i.Values[x][y] = (Values[x][y] >= value);
-
-			return i;
-		}
-
-		/// <summary>
-		/// Threshold
-		/// </summary>
-		Image<bool, TINDEX> getBelowThreshold(const TVALUE value) const
-		{
-			Image<bool, TINDEX> i = Image<bool, TINDEX>(Width, Height);
-
-			for (TINDEX x = 0; x < Width; x++)
-				for (TINDEX y = 0; y < Height; y++)
-					i.Values[x][y] = (Values[x][y] <= value);
-
-			return i;
-		}
-
-		/// <summary>
-		/// Threshold
-		/// </summary>
-		Image<TVALUE, TINDEX>& trimAboveThreshold(const TVALUE value) const
+		Image<TVALUE, TINDEX> operator >>(const TVALUE value) const
 		{
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					if (Values[x][y] < value) // use max function?
+					if (Values[x][y] < value)
 						Value[x][y] = value;
 
 			return *this;
@@ -224,27 +196,12 @@ namespace Common
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<TVALUE, TINDEX>& trimBelowThreshold(const TVALUE value) const
+		Image<TVALUE, TINDEX>& operator <<(const TVALUE value)
 		{
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					if (Values[x][y] > value) // use min function?
+					if (Values[x][y] > value)
 						Value[x][y] = value;
-
-			return *this;
-		}
-
-		/// <summary>
-		/// Threshold
-		/// </summary>
-		Image<TVALUE, TINDEX>& trimBetweenThresholds(const TVALUE lower, const TVALUE upper) const
-		{
-			for (TINDEX x = 0; x < Width; x++)
-				for (TINDEX y = 0; y < Height; y++)
-					if (Values[x][y] < lower) // use max function?
-						Value[x][y] = lower;
-					else if (Values[x][y] > upper) // use max function?
-						Value[x][y] = upper;
 
 			return *this;
 		}
@@ -339,6 +296,65 @@ namespace Common
 		Image<TVALUE, TINDEX>& clone(const Image<TVALUE, TINDEX>& image) const
 		{
 			return operator =(image);
+		}
+
+		/// <summary>
+		/// Threshold
+		/// </summary>
+		Image<bool, TINDEX> getAboveThreshold(const TVALUE value) const
+		{
+			Image<bool, TINDEX> i = Image<bool, TINDEX>(Width, Height);
+
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					i.Values[x][y] = (Values[x][y] >= value);
+
+			return i;
+		}
+
+		/// <summary>
+		/// Threshold
+		/// </summary>
+		Image<bool, TINDEX> getBelowThreshold(const TVALUE value) const
+		{
+			Image<bool, TINDEX> i = Image<bool, TINDEX>(Width, Height);
+
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					i.Values[x][y] = (Values[x][y] <= value);
+
+			return i;
+		}
+
+		/// <summary>
+		/// Threshold
+		/// </summary>
+		Image<TVALUE, TINDEX>& trimAboveThreshold(const TVALUE value) const
+		{
+			return operator >>(value);
+		}
+
+		/// <summary>
+		/// Threshold
+		/// </summary>
+		Image<TVALUE, TINDEX>& trimBelowThreshold(const TVALUE value) const
+		{
+			return operator <<(value);
+		}
+
+		/// <summary>
+		/// Threshold
+		/// </summary>
+		Image<TVALUE, TINDEX>& trimBetweenThresholds(const TVALUE lower, const TVALUE upper) const
+		{
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					if (Values[x][y] < lower) // use max function?
+						Value[x][y] = lower;
+					else if (Values[x][y] > upper) // use max function?
+						Value[x][y] = upper;
+
+			return *this;
 		}
 
 		/// <summary>
