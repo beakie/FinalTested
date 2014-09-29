@@ -258,18 +258,6 @@ namespace Common
 	/// </summary>
 	typedef UInt_32 GreyPixel_32;
 	/// <summary>
-	/// ........................................................................................
-	/// </summary>
-	typedef Pixels<UInt_8> Pixels_8;
-	/// <summary>
-	/// ........................................................................................
-	/// </summary>
-	typedef Pixels<UInt_16> Pixels_16;
-	/// <summary>
-	/// ........................................................................................
-	/// </summary>
-	typedef Pixels<UInt_32> Pixels_32;
-	/// <summary>
 	/// Image with 1 byte dimensions and 1 bit pixels
 	/// </summary>
 	typedef Image<UInt_1, UInt_8> Image8_1;

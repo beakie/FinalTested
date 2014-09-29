@@ -53,9 +53,7 @@ int main(int argc, char *argv[])
 
 	//i123.getBelowThreshold(Common::RGBPixel_8(0, 0, 0));
 
-	Common::RGBA_8
-
-	//Common::Pixels_8::getBlue();
+	Common::Pixels::getRGBPixelRed(i123.Values[0][0]);
 
 	return a.exec();
 }

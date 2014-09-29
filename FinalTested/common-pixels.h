@@ -6,13 +6,13 @@
 
 namespace Common
 {
-	template <typename TVALUE>
 	struct Pixels
 	{
 		/// <summary>
 		/// Returns the red from an RGB pixel
 		/// </summary>
-		static TVALUE getRed(const TripleChannelPixel<TVALUE>& rgbPixel)
+		template <typename TVALUE>
+		static TVALUE getRGBPixelRed(const TripleChannelPixel<TVALUE>& rgbPixel)
 		{
 			return rgbPixel.Channels[0];
 		}
@@ -20,7 +20,8 @@ namespace Common
 		/// <summary>
 		/// Returns the blues from an RGB pixel
 		/// </summary>
-		static TVALUE getBlue(const TripleChannelPixel<TVALUE>& rgbPixel)
+		template <typename TVALUE>
+		static TVALUE getRGBPixelBlue(const TripleChannelPixel<TVALUE>& rgbPixel)
 		{
 			return rgbPixel.Channels[1];
 		}
@@ -28,7 +29,8 @@ namespace Common
 		/// <summary>
 		/// Returns the green from an RGB pixel
 		/// </summary>
-		static TVALUE getGreen(const TripleChannelPixel<TVALUE>& rgbPixel)
+		template <typename TVALUE>
+		static TVALUE getRGBPixelGreen(const TripleChannelPixel<TVALUE>& rgbPixel)
 		{
 			return rgbPixel.Channels[2];
 		}
@@ -36,7 +38,8 @@ namespace Common
 		/// <summary>
 		/// Returns the hue value an HSV pixel
 		/// </summary>
-		static TVALUE getHue(const TripleChannelPixel<TVALUE>& hsvPixel)
+		template <typename TVALUE>
+		static TVALUE getHSVPixelHue(const TripleChannelPixel<TVALUE>& hsvPixel)
 		{
 			return hsvPixel.Channels[0];
 		}
@@ -44,7 +47,8 @@ namespace Common
 		/// <summary>
 		/// Returns the saturation from an HSV pixel
 		/// </summary>
-		static TVALUE getSaturation(const TripleChannelPixel<TVALUE>& hsvPixel)
+		template <typename TVALUE>
+		static TVALUE getHSVPixelSaturation(const TripleChannelPixel<TVALUE>& hsvPixel)
 		{
 			return hsvPixel.Channels[1];
 		}
@@ -52,7 +56,8 @@ namespace Common
 		/// <summary>
 		/// Returns the value from an HSV pixel
 		/// </summary>
-		static TVALUE getValue(const TripleChannelPixel<TVALUE>& hsvPixel)
+		template <typename TVALUE>
+		static TVALUE getHSVPixelValue(const TripleChannelPixel<TVALUE>& hsvPixel)
 		{
 			return hsvPixel.Channels[2];
 		}
@@ -60,7 +65,8 @@ namespace Common
 		/// <summary>
 		/// Returns the red from an RGBA pixel
 		/// </summary>
-		static TVALUE getRed(const QuadChannelPixel<TVALUE>& rgbaPixel)
+		template <typename TVALUE>
+		static TVALUE getRGBAPixelRed(const QuadChannelPixel<TVALUE>& rgbaPixel)
 		{
 			return rgbaPixel.Channels[0];
 		}
@@ -68,7 +74,8 @@ namespace Common
 		/// <summary>
 		/// Returns the blue from an RGBA pixel
 		/// </summary>
-		static TVALUE getBlue(const QuadChannelPixel<TVALUE>& rgbaPixel)
+		template <typename TVALUE>
+		static TVALUE getRGBAPixelBlue(const QuadChannelPixel<TVALUE>& rgbaPixel)
 		{
 			return rgbaPixel.Channels[1];
 		}
@@ -76,7 +83,8 @@ namespace Common
 		/// <summary>
 		/// Returns the green from an RGBA pixel
 		/// </summary>
-		static TVALUE getGreen(const QuadChannelPixel<TVALUE>& rgbaPixel)
+		template <typename TVALUE>
+		static TVALUE getRGBAPixelGreen(const QuadChannelPixel<TVALUE>& rgbaPixel)
 		{
 			return rgbaPixel.Channels[2];
 		}
@@ -84,9 +92,46 @@ namespace Common
 		/// <summary>
 		/// Returns the alpha from an RGBA pixel
 		/// </summary>
-		static TVALUE getAlpha(const QuadChannelPixel<TVALUE>& rgbaPixel)
+		template <typename TVALUE>
+		static TVALUE getRGBAPixelAlpha(const QuadChannelPixel<TVALUE>& rgbaPixel)
 		{
 			return rgbaPixel.Channels[3];
+		}
+
+		/// <summary>
+		/// Returns the alpha from an ARGB pixel
+		/// </summary>
+		template <typename TVALUE>
+		static TVALUE getARGBAPixelAlpha(const QuadChannelPixel<TVALUE>& argbPixel)
+		{
+			return argbPixel.Channels[0];
+		}
+
+		/// <summary>
+		/// Returns the red from an ARGB pixel
+		/// </summary>
+		template <typename TVALUE>
+		static TVALUE getARGBPixelRed(const QuadChannelPixel<TVALUE>& argbPixel)
+		{
+			return argbPixel.Channels[1];
+		}
+
+		/// <summary>
+		/// Returns the blue from an ARGB pixel
+		/// </summary>
+		template <typename TVALUE>
+		static TVALUE getARGBAPixelBlue(const QuadChannelPixel<TVALUE>& argbPixel)
+		{
+			return argbPixel.Channels[2];
+		}
+
+		/// <summary>
+		/// Returns the green from an ARGB pixel
+		/// </summary>
+		template <typename TVALUE>
+		static TVALUE getARGBAPixelGreen(const QuadChannelPixel<TVALUE>& argbPixel)
+		{
+			return argbPixel.Channels[3];
 		}
 	};
 }
