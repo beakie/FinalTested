@@ -160,9 +160,11 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator =(const Image<TVALUE, TINDEX>& image)
 		{
-			Values = image.Values; // todo: do copy properly
-			Width = image.Width;
-			Height = image.Height;
+			recreatePixelArray(image.Width, image.Height);
+
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					Values[x][y] = image.Values[x][y];
 
 			return *this;
 		}
@@ -379,7 +381,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& flipHorizontally()
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(*this);
+			Image<TVALUE, TINDEX> i = *this;
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
