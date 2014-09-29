@@ -49,14 +49,14 @@ int main(int argc, char *argv[])
 	//array++;
 	//++array;
 
-	//Common::Image<Common::RGBPixel_8, UInt_16> i123;
+	Common::Image<Common::RGBPixel_8, UInt_16> i123444;
 	Common::Image16RGBPixel_8 i123;
 
 	//i123.getBelowThreshold(Common::RGBPixel_8(0, 0, 0));
 
 	Common::Pixels::getRGBPixelRed(i123.Values[0][0]);
 
-	Common::Images::setChannel1Image(i123, Common::Images::getChannel1Image(i123));
-
+	Common::Images::setImageChannel1(i123, Common::Images::getImageChannel1(i123));
+	
 	return a.exec();
 }
