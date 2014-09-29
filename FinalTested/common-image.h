@@ -366,7 +366,7 @@ namespace Common
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<TVALUE, TINDEX>& trimBetweenThresholds(const TVALUE lower, const TVALUE upper) const
+		Image<TVALUE, TINDEX>& trimBetweenThresholds(const TVALUE lower, const TVALUE upper)
 		{
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
@@ -381,21 +381,21 @@ namespace Common
 		/// <summary>
 		/// Horizontally flips the image
 		/// </summary>
-		Image<TVALUE, TINDEX>& flipHorizontally() const
+		Image<TVALUE, TINDEX>& flipHorizontally()
 		{
-			Image<TVALUE, TINDEX> i = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(*this);
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
 					Values[x][y] = i.Values[Width - x][y];
 
-			return this*
+			return *this;
 		}
 
 		/// <summary>
 		/// Vertically flips the image
 		/// </summary>
-		Image<TVALUE, TINDEX>& flipVertically() const
+		Image<TVALUE, TINDEX>& flipVertically()
 		{
 			Image<TVALUE, TINDEX> i = *this;
 
@@ -403,7 +403,7 @@ namespace Common
 				for (TINDEX y = 0; y < Height; y++)
 					Values[x][y] = i.Values[x][Height - y];
 
-			return this*
+			return *this;
 		}
 
 		/// <summary>
