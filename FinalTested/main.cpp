@@ -56,5 +56,7 @@ int main(int argc, char *argv[])
 
 	Common::Pixels::getRGBPixelRed(i123.Values[0][0]);
 
+	Common::Images::setChannel1Image(i123, Common::Images::getChannel1Image(i123));
+
 	return a.exec();
 }
