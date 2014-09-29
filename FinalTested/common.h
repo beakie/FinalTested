@@ -3,7 +3,6 @@
 
 #include "core.h"
 #include "common-array.h"
-#include "common-hsvpixel.h"
 #include "common-image.h"
 #include "common-imatrixadapter.h"
 #include "common-matrix2.h"
@@ -11,8 +10,9 @@
 #include "common-matrix4.h"
 #include "common-matrixadapter.h"
 #include "common-matrixn.h"
-#include "common-rgbpixel.h"
+#include "common-quadchannelpixel.h"
 #include "common-static.h"
+#include "common-triplechannelpixel.h"
 
 namespace Common
 {
@@ -211,27 +211,27 @@ namespace Common
 	/// <summary>
 	/// 1 byte precision RGB pixel
 	/// </summary>
-	typedef RGBPixel<UInt_8> RGBPixel_8;
+	typedef TripleChannelPixel<UInt_8> RGBPixel_8;
 	/// <summary>
 	/// 2 byte precision RGB pixel
 	/// </summary>
-	typedef RGBPixel<UInt_16> RGBPixel_16;
+	typedef TripleChannelPixel<UInt_16> RGBPixel_16;
 	/// <summary>
 	/// 4 byte precision RGB pixel
 	/// </summary>
-	typedef RGBPixel<UInt_32> RGBPixel_32;
+	typedef TripleChannelPixel<UInt_32> RGBPixel_32;
 	/// <summary>
 	/// 1 byte precision HSV pixel
 	/// </summary>
-	typedef HSVPixel<UInt_8> HSVPixel_8;
+	typedef TripleChannelPixel<UInt_8> HSVPixel_8;
 	/// <summary>
 	/// 2 byte precision HSV pixel
 	/// </summary>
-	typedef HSVPixel<UInt_16> HSVPixel_16;
+	typedef TripleChannelPixel<UInt_16> HSVPixel_16;
 	/// <summary>
 	/// 4 byte precision HSV pixel
 	/// </summary>
-	typedef HSVPixel<UInt_32> HSVPixel_32;
+	typedef TripleChannelPixel<UInt_32> HSVPixel_32;
 	/// <summary>
 	/// 1 byte precision greyscale pixel
 	/// </summary>

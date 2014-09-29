@@ -53,5 +53,7 @@ int main(int argc, char *argv[])
 
 	//i123.getBelowThreshold(Common::RGBPixel_8(0, 0, 0));
 
+	i123.Values[0][0].
+
 	return a.exec();
 }

@@ -56,12 +56,6 @@
     <ClInclude Include="common-array.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-rgbpixel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-hsvpixel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
