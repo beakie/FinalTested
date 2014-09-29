@@ -65,10 +65,10 @@
     <ClInclude Include="core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-triplechannelpixel - Copy.h">
+    <ClInclude Include="common-quadchannelpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-quadchannelpixel.h">
+    <ClInclude Include="common-triplechannelpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
