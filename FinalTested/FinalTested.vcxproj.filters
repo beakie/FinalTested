@@ -68,5 +68,8 @@
     <ClInclude Include="common-rgbpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-hsvpixel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,6 +3,7 @@
 
 #include "core.h"
 #include "common-array.h"
+#include "common-hsvpixel.h"
 #include "common-image.h"
 #include "common-imatrixadapter.h"
 #include "common-matrix2.h"
@@ -11,6 +12,7 @@
 #include "common-matrixadapter.h"
 #include "common-matrixn.h"
 #include "common-quadchannelpixel.h"
+#include "common-rgbpixel.h"
 #include "common-static.h"
 #include "common-triplechannelpixel.h"
 

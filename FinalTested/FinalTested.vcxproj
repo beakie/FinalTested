@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common-array.h" />
+    <ClInclude Include="common-hsvpixel.h" />
     <ClInclude Include="common-image.h" />
     <ClInclude Include="common-imatrixadapter.h" />
     <ClInclude Include="common-matrix2.h" />
