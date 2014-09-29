@@ -3,6 +3,7 @@
 
 // add insert functions
 // hide addArray in PArray
+//any methods with this delete need to be overriden in parray so u can delete items too
 
 namespace Common
 {
@@ -25,7 +26,8 @@ namespace Common
 		{
 			Count = 0;
 			Capacity = 0;
-			Items = new TVALUE[0];
+
+			Items = new TVALUE[Capacity];
 		}
 
 		Array(Array<TVALUE, TINDEX> const &copy) // is this needed?
@@ -90,12 +92,19 @@ namespace Common
 			Capacity = capacity;
 		}
 
-		void clone(const Array<TVALUE, TINDEX> &array) // equals operator? if not, >> could be clone out, << could be clone in
+		void clone(const Array<TVALUE, TINDEX> &array)
 		{
-			delete[] Items; //any methods with this delete need to be overriden in parray so u can delete items too
+			operator =(array);
 		}
 
-		TINDEX getIndex();
+		TINDEX getIndex(TVALUE value)
+		{
+			for (TINDEX i = 0; i < Count; i++)
+				if (Items[i] == value)
+					return i + 1;
+
+			return 0;
+		}
 
 		void clear()
 		{
@@ -107,8 +116,19 @@ namespace Common
 			Count = 0;
 		}
 
-		Array<TVALUE, TINDEX> operator+(const TVALUE item) const;
-		Array<TVALUE, TINDEX> operator+(const Array<TVALUE, TINDEX> &array) const;
+		Array<TVALUE, TINDEX>& operator =(const Array<TVALUE, TINDEX>& array)
+		{
+			delete[] Items;
+
+			Items = new TVALUE[array.capacity];
+			Capacity = array.Capacity;
+			Count = array.Count;
+
+			for (TINDEX i = 0; i < Count; i++)
+				Items[i] = array.Items[i];
+
+			return *this;
+		}
 
 		Array<TVALUE, TINDEX> & operator+=(const TVALUE item)
 		{
@@ -133,17 +153,19 @@ namespace Common
 			return *this;
 		}
 
-		//Array<TVALUE, TINDEX> & operator++(int) // whats the point?
-		//{
-		//	resize(Capacity++);
+		Array<TVALUE, TINDEX> & operator++(int)
+		{
+			resize();
 
-		//	return *this;
-		//}
+			return *this;
+		}
 
-		//Array<TVALUE, TINDEX> & operator++() // whats the point?
-		//{
-		//	return this->operator ++(0);
-		//}
+		Array<TVALUE, TINDEX> & operator++() // whats the point?
+		{
+			resize();
+
+			return *this;
+		}
 
 		Array<TVALUE, TINDEX> & operator--(int)
 		{
@@ -154,7 +176,9 @@ namespace Common
 
 		Array<TVALUE, TINDEX> & operator--()
 		{
-			return this->operator --(0);
+			clear();
+
+			return *this;
 		}
 
 		TVALUE & operator[] (TINDEX n)
