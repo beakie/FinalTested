@@ -33,7 +33,7 @@ namespace Common
 		///// </summary>
 		Image()
 		{
-			//todo
+			createPixelArray(0, 0);
 		}
 
 		/// <summary>
@@ -41,7 +41,7 @@ namespace Common
 		/// </summary>
 		Image(TINDEX width, TINDEX height)
 		{
-			createPixelArray(Width, Height);
+			createPixelArray(width, height);
 		}
 
 		/// <summary>
@@ -280,11 +280,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator !() const
 		{
-			Image<TVALUE, TINDEX> i = *this;
-
-			i != i;
-
-			return i;
+			return Image<TVALUE, TINDEX>(*this).invert();
 		}
 
 		/// <summary>
@@ -387,7 +383,7 @@ namespace Common
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					Values[x][y] = i.Values[Width - x][y];
+					Values[x][y] = i.Values[Width - x - 1][y];
 
 			return *this;
 		}
@@ -401,7 +397,7 @@ namespace Common
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					Values[x][y] = i.Values[x][Height - y];
+					Values[x][y] = i.Values[x][Height - y - 1];
 
 			return *this;
 		}
@@ -409,7 +405,14 @@ namespace Common
 		/// <summary>
 		/// Inverts the image
 		/// </summary>
-		Image<TVALUE, TINDEX>& invert(const Image<TVALUE, TINDEX>& image) const;
+		Image<TVALUE, TINDEX>& invert(const Image<TVALUE, TINDEX>& image) const
+		{
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					Values[x][y] = getUpperBound<TVALUE>() - i.Values[x][y];
+
+			return *this;
+		}
 
 		/// <summary>
 		/// Apply 3x3 convolution matrix to image with cropped edges
