@@ -408,15 +408,22 @@ namespace Common
 
 			for (TINDEX x = 0; x < Width - 2; x++)
 				for (TINDEX y = 0; y < Height - 2; y++)
+				{
+					TINDEX x2 = x + 1;
+					TINDEX x3 = x + 2;
+					TINDEX y2 = y + 1;
+					TINDEX y3 = y + 2;
+
 					i.Values[x][y] = (Values[x][y] * matrix.Values[0][0])
-						+ (Values[x + 1][y] * matrix.Values[1][0])
-						+ (Values[x + 2][y] * matrix.Values[2][0])
-						+ (Values[x][y + 1] * matrix.Values[0][1])
-						+ (Values[x + 1][y + 1] * matrix.Values[1][1])
-						+ (Values[x + 2][y + 1] * matrix.Values[2][1])
-						+ (Values[x][y + 2] * matrix.Values[0][2])
-						+ (Values[x + 1][y + 2] * matrix.Values[1][2])
-						+ (Values[x + 2][y + 2] * matrix.Values[2][2]);
+										+ (Values[x2][y] * matrix.Values[1][0])
+										+ (Values[x3][y] * matrix.Values[2][0])
+										+ (Values[x][y2] * matrix.Values[0][1])
+										+ (Values[x2][y2] * matrix.Values[1][1])
+										+ (Values[x3][y2] * matrix.Values[2][1])
+										+ (Values[x][y3] * matrix.Values[0][2])
+										+ (Values[x2][y3] * matrix.Values[1][2])
+										+ (Values[x3][y3] * matrix.Values[2][2]);
+				}
 
 			return i;
 		}
@@ -437,14 +444,14 @@ namespace Common
 					TINDEX yAfter = (y + 1) % height;
 
 					i.Values[x][y] = (Values[xBefore][yBefore] * matrix.Values[0][0])
-						+ (Values[x][yBefore] * matrix.Values[1][0])
-						+ (Values[xAfter][yBefore] * matrix.Values[2][0])
-						+ (Values[xBefore][y] * matrix.Values[0][1])
-						+ (Values[x][y] * matrix.Values[1][1])
-						+ (Values[xAfter][y] * matrix.Values[2][1])
-						+ (Values[xBefore][yAfter] * matrix.Values[0][2])
-						+ (Values[x][yAfter] * matrix.Values[1][2])
-						+ (Values[xAfter][yAfter] * matrix.Values[2][2]);
+										+ (Values[x][yBefore] * matrix.Values[1][0])
+										+ (Values[xAfter][yBefore] * matrix.Values[2][0])
+										+ (Values[xBefore][y] * matrix.Values[0][1])
+										+ (Values[x][y] * matrix.Values[1][1])
+										+ (Values[xAfter][y] * matrix.Values[2][1])
+										+ (Values[xBefore][yAfter] * matrix.Values[0][2])
+										+ (Values[x][yAfter] * matrix.Values[1][2])
+										+ (Values[xAfter][yAfter] * matrix.Values[2][2]);
 				}
 
 			return i;
@@ -466,14 +473,14 @@ namespace Common
 					TINDEX yAfter = (y == (Height - 1) ? 0 : y);
 
 					i.Values[x][y] = (Values[xBefore][yBefore] * matrix.Values[0][0])
-						+ (Values[x][yBefore] * matrix.Values[1][0])
-						+ (Values[xAfter][yBefore] * matrix.Values[2][0])
-						+ (Values[xBefore][y] * matrix.Values[0][1])
-						+ (Values[x][y] * matrix.Values[1][1])
-						+ (Values[xAfter][y] * matrix.Values[2][1])
-						+ (Values[xBefore][yAfter] * matrix.Values[0][2])
-						+ (Values[x][yAfter] * matrix.Values[1][2])
-						+ (Values[xAfter][yAfter] * matrix.Values[2][2]);
+										+ (Values[x][yBefore] * matrix.Values[1][0])
+										+ (Values[xAfter][yBefore] * matrix.Values[2][0])
+										+ (Values[xBefore][y] * matrix.Values[0][1])
+										+ (Values[x][y] * matrix.Values[1][1])
+										+ (Values[xAfter][y] * matrix.Values[2][1])
+										+ (Values[xBefore][yAfter] * matrix.Values[0][2])
+										+ (Values[x][yAfter] * matrix.Values[1][2])
+										+ (Values[xAfter][yAfter] * matrix.Values[2][2]);
 				}
 
 			return i;
