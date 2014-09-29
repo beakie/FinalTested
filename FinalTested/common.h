@@ -293,75 +293,75 @@ namespace Common
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 byte precision RGB pixels
 	/// </summary>
-	typedef Image<RGBPixel_8, UInt_8> Image8RGB_8;
+	typedef Image<RGBPixel_8, UInt_8> Image8RGBPixel_8;
 	/// <summary>
 	/// Image with 1 byte dimensions and 2 byte precision RGB pixels
 	/// </summary>
-	typedef Image<RGBPixel_16, UInt_8> Image8RGB_16;
+	typedef Image<RGBPixel_16, UInt_8> Image8RGBPixel_16;
 	/// <summary>
 	/// Image with 1 byte dimensions and 4 byte precision RGB pixels
 	/// </summary>
-	typedef Image<RGBPixel_32, UInt_8> Image8RGB_32;
+	typedef Image<RGBPixel_32, UInt_8> Image8RGBPixel_32;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 byte precision RGB pixels
 	/// </summary>
-	typedef Image<RGBPixel_8, UInt_16> Image16RGB_8;
+	typedef Image<RGBPixel_8, UInt_16> Image16RGBPixel_8;
 	/// <summary>
 	/// Image with 2 byte dimensions and 2 byte precision RGB pixels
 	/// </summary>
-	typedef Image<RGBPixel_16, UInt_16> Image16RGB_16;
+	typedef Image<RGBPixel_16, UInt_16> Image16RGBPixel_16;
 	/// <summary>
 	/// Image with 2 byte dimensions and 4 byte precision RGB pixels
 	/// </summary>
-	typedef Image<RGBPixel_32, UInt_16> Image16RGB_32;
+	typedef Image<RGBPixel_32, UInt_16> Image16RGBPixel_32;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 byte precision HSV pixels
 	/// </summary>
-	typedef Image<HSVPixel_8, UInt_8> Image8HSV_8;
+	typedef Image<HSVPixel_8, UInt_8> Image8HSVPixel_8;
 	/// <summary>
 	/// Image with 1 byte dimensions and 2 byte precision HSV pixels
 	/// </summary>
-	typedef Image<HSVPixel_16, UInt_8> Image8HSV_16;
+	typedef Image<HSVPixel_16, UInt_8> Image8HSVPixel_16;
 	/// <summary>
 	/// Image with 1 byte dimensions and 4 byte precision HSV pixels
 	/// </summary>
-	typedef Image<HSVPixel_32, UInt_8> Image8HSV_32;
+	typedef Image<HSVPixel_32, UInt_8> Image8HSVPixel_32;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 byte precision HSV pixels
 	/// </summary>
-	typedef Image<HSVPixel_8, UInt_16> Image16HSV_8;
+	typedef Image<HSVPixel_8, UInt_16> Image16HSVPixel_8;
 	/// <summary>
 	/// Image with 2 byte dimensions and 2 byte precision HSV pixels
 	/// </summary>
-	typedef Image<HSVPixel_16, UInt_16> Image16HSV_16;
+	typedef Image<HSVPixel_16, UInt_16> Image16HSVPixel_16;
 	/// <summary>
 	/// Image with 2 byte dimensions and 4 byte precision HSV pixels
 	/// </summary>
-	typedef Image<HSVPixel_32, UInt_16> Image16HSV_32;
+	typedef Image<HSVPixel_32, UInt_16> Image16HSVPixel_32;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 byte precision RGBA pixels
 	/// </summary>
-	typedef Image<RGBAPixel_8, UInt_8> Image8RGBA_8;
+	typedef Image<RGBAPixel_8, UInt_8> Image8RGBAPixel_8;
 	/// <summary>
 	/// Image with 1 byte dimensions and 2 byte precision RGBA pixels
 	/// </summary>
-	typedef Image<RGBAPixel_16, UInt_8> Image8RGBA_16;
+	typedef Image<RGBAPixel_16, UInt_8> Image8RGBAPixel_16;
 	/// <summary>
 	/// Image with 1 byte dimensions and 4 byte precision RGBA pixels
 	/// </summary>
-	typedef Image<RGBAPixel_32, UInt_8> Image8RGBA_32;
+	typedef Image<RGBAPixel_32, UInt_8> Image8RGBAPixel_32;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 byte precision RGBA pixels
 	/// </summary>
-	typedef Image<RGBAPixel_8, UInt_16> Image16RGBA_8;
+	typedef Image<RGBAPixel_8, UInt_16> Image16RGBAPixel_8;
 	/// <summary>
 	/// Image with 2 byte dimensions and 2 byte precision RGBA pixels
 	/// </summary>
-	typedef Image<RGBAPixel_16, UInt_16> Image16RGBA_16;
+	typedef Image<RGBAPixel_16, UInt_16> Image16RGBAPixel_16;
 	/// <summary>
 	/// Image with 2 byte dimensions and 4 byte precision RGBA pixels
 	/// </summary>
-	typedef Image<RGBAPixel_32, UInt_16> Image16RGBA_32;
+	typedef Image<RGBAPixel_32, UInt_16> Image16RGBAPixel_32;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 byte greyscale pixels
 	/// </summary>
