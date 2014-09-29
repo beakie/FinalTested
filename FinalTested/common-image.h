@@ -16,7 +16,13 @@ namespace Common
 		/// </summary>
 		TVALUE** Values;
 
+		/// <summary>
+		/// The width of the image
+		/// </summary>
 		TINDEX Width;
+		/// <summary>
+		/// The height of the image
+		/// </summary>
 		TINDEX Height;
 
 		///// <summary>
