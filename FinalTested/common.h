@@ -234,6 +234,18 @@ namespace Common
 	/// </summary>
 	typedef TripleChannelPixel<UInt_32> HSVPixel_32;
 	/// <summary>
+	/// 1 byte precision RGBA pixel
+	/// </summary>
+	typedef QuadChannelPixel<UInt_8> RGBAPixel_8;
+	/// <summary>
+	/// 2 byte precision RGBA pixel
+	/// </summary>
+	typedef QuadChannelPixel<UInt_16> RGBAPixel_16;
+	/// <summary>
+	/// 4 byte precision RGBA pixel
+	/// </summary>
+	typedef QuadChannelPixel<UInt_32> RGBAPixel_32;
+	/// <summary>
 	/// 1 byte precision greyscale pixel
 	/// </summary>
 	typedef UInt_8 GreyPixel_8;
@@ -245,6 +257,18 @@ namespace Common
 	/// 4 byte precision greyscale pixel
 	/// </summary>
 	typedef UInt_32 GreyPixel_32;
+	/// <summary>
+	/// ........................................................................................
+	/// </summary>
+	typedef Pixels<UInt_8> Pixels_8;
+	/// <summary>
+	/// ........................................................................................
+	/// </summary>
+	typedef Pixels<UInt_16> Pixels_16;
+	/// <summary>
+	/// ........................................................................................
+	/// </summary>
+	typedef Pixels<UInt_32> Pixels_32;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 bit pixels
 	/// </summary>
@@ -325,6 +349,30 @@ namespace Common
 	/// Image with 2 byte dimensions and 4 byte precision HSV pixels
 	/// </summary>
 	typedef Image<HSVPixel_32, UInt_16> Image16HSV_32;
+	/// <summary>
+	/// Image with 1 byte dimensions and 1 byte precision RGBA pixels
+	/// </summary>
+	typedef Image<RGBAPixel_8, UInt_8> Image8RGBA_8;
+	/// <summary>
+	/// Image with 1 byte dimensions and 2 byte precision RGBA pixels
+	/// </summary>
+	typedef Image<RGBAPixel_16, UInt_8> Image8RGBA_16;
+	/// <summary>
+	/// Image with 1 byte dimensions and 4 byte precision RGBA pixels
+	/// </summary>
+	typedef Image<RGBAPixel_32, UInt_8> Image8RGBA_32;
+	/// <summary>
+	/// Image with 2 byte dimensions and 1 byte precision RGBA pixels
+	/// </summary>
+	typedef Image<RGBAPixel_8, UInt_16> Image16RGBA_8;
+	/// <summary>
+	/// Image with 2 byte dimensions and 2 byte precision RGBA pixels
+	/// </summary>
+	typedef Image<RGBAPixel_16, UInt_16> Image16RGBA_16;
+	/// <summary>
+	/// Image with 2 byte dimensions and 4 byte precision RGBA pixels
+	/// </summary>
+	typedef Image<RGBAPixel_32, UInt_16> Image16RGBA_32;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 byte greyscale pixels
 	/// </summary>

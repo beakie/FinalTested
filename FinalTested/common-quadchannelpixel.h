@@ -9,10 +9,7 @@ namespace Common
 	/// </summary>
 	struct QuadChannelPixel
 	{
-		TVALUE Channel1;
-		TVALUE Channel2;
-		TVALUE Channel3;
-		TVALUE Channel4;
+		TVALUE Channels[3];
 
 		QuadChannelPixel()
 		{
@@ -20,10 +17,10 @@ namespace Common
 
 		QuadChannelPixel(TVALUE channel1, TVALUE channel2, TVALUE channel3, TVALUE channel4)
 		{
-			Channel1 = channel1;
-			Channel2 = channel2;
-			Channel3 = channel3;
-			Channel4 = channel4;
+			Channels[0] = channel1;
+			Channels[1] = channel2;
+			Channels[2] = channel3;
+			Channels[3] = channel4;
 		}
 
 		/// <summary>
@@ -31,10 +28,10 @@ namespace Common
 		/// </summary>
 		QuadChannelPixel<TVALUE>& operator =(const QuadChannelPixel<TVALUE>& pixel)
 		{
-			Channel1 = pixel.Channel1;
-			Channel2 = pixel.Channel2;
-			Channel3 = pixel.Channel3;
-			Channel4 = pixel.Channel4;
+			Channels[0] = pixel.Channels[0];
+			Channels[1] = pixel.Channels[1];
+			Channels[2] = pixel.Channels[2];
+			Channels[3] = pixel.Channels[3];
 
 			return *this;
 		}
@@ -56,10 +53,10 @@ namespace Common
 		/// </summary>
 		QuadChannelPixel<TVALUE>& operator *=(const QuadChannelPixel<TVALUE>& pixel)
 		{
-			Channel1 = Channel1 * pixel.Channel1;
-			Channel2 = Channel2 * pixel.Channel2;
-			Channel3 = Channel3 * pixel.Channel3;
-			Channel4 = Channel4 * pixel.Channel4;
+			Channels[0] = Channels[0] * pixel.Channels[0];
+			Channels[1] = Channels[1] * pixel.Channels[1];
+			Channels[2] = Channels[2] * pixel.Channels[2];
+			Channels[3] = Channels[3] * pixel.Channels[3];
 
 			return *this;
 		}
@@ -81,10 +78,10 @@ namespace Common
 		/// </summary>
 		QuadChannelPixel<TVALUE>& operator /=(const QuadChannelPixel<TVALUE>& pixel)
 		{
-			Channel1 = Channel1 / pixel.Channel1;
-			Channel2 = Channel2 / pixel.Channel2;
-			Channel3 = Channel3 / pixel.Channel3;
-			Channel4 = Channel4 / pixel.Channel4;
+			Channels[0] = Channels[0] / pixel.Channels[0];
+			Channels[1] = Channels[1] / pixel.Channels[1];
+			Channels[2] = Channels[2] / pixel.Channels[2];
+			Channels[3] = Channels[3] / pixel.Channels[3];
 
 			return *this;
 		}
@@ -106,10 +103,10 @@ namespace Common
 		/// </summary>
 		QuadChannelPixel<TVALUE>& operator |=(const QuadChannelPixel<TVALUE>& pixel)
 		{
-			Channel1 = Channel1 | pixel.Channel1;
-			Channel2 = Channel2 | pixel.Channel2;
-			Channel3 = Channel3 | pixel.Channel3;
-			Channel4 = Channel4 | pixel.Channel4;
+			Channels[0] = Channels[0] | pixel.Channels[0];
+			Channels[1] = Channels[1] | pixel.Channels[1];
+			Channels[2] = Channels[2] | pixel.Channels[2];
+			Channels[3] = Channels[3] | pixel.Channels[3];
 
 			return *this;
 		}
@@ -131,10 +128,10 @@ namespace Common
 		/// </summary>
 		QuadChannelPixel<TVALUE>& operator &=(const QuadChannelPixel<TVALUE>& pixel)
 		{
-			Channel1 = Channel1 & pixel.Channel1;
-			Channel2 = Channel2 & pixel.Channel2;
-			Channel3 = Channel3 & pixel.Channel3;
-			Channel4 = Channel4 & pixel.Channel4;
+			Channels[0] = Channels[0] & pixel.Channels[0];
+			Channels[1] = Channels[1] & pixel.Channels[1];
+			Channels[2] = Channels[2] & pixel.Channels[2];
+			Channels[3] = Channels[3] & pixel.Channels[3];
 
 			return *this;
 		}

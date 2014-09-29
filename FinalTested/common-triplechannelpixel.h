@@ -9,9 +9,7 @@ namespace Common
 	/// </summary>
 	struct TripleChannelPixel
 	{
-		TVALUE Channel1;
-		TVALUE Channel2;
-		TVALUE Channel3;
+		TVALUE Channels[3];
 
 		TripleChannelPixel()
 		{
@@ -19,9 +17,9 @@ namespace Common
 
 		TripleChannelPixel(TVALUE channel1, TVALUE channel2, TVALUE channel3)
 		{
-			Channel1 = channel1;
-			Channel2 = channel2;
-			Channel3 = channel3;
+			Channels[0] = channel1;
+			Channels[1] = channel2;
+			Channels[2] = channel3;
 		}
 
 		/// <summary>
@@ -29,9 +27,9 @@ namespace Common
 		/// </summary>
 		TripleChannelPixel<TVALUE>& operator =(const TripleChannelPixel<TVALUE>& pixel)
 		{
-			Channel1 = pixel.Channel1;
-			Channel2 = pixel.Channel2;
-			Channel3 = pixel.Channel3;
+			Channels[0] = pixel.Channels[0];
+			Channels[1] = pixel.Channels[1];
+			Channels[2] = pixel.Channels[2];
 
 			return *this;
 		}
@@ -53,9 +51,9 @@ namespace Common
 		/// </summary>
 		TripleChannelPixel<TVALUE>& operator *=(const TripleChannelPixel<TVALUE>& pixel)
 		{
-			Channel1 = Channel1 * pixel.Channel1;
-			Channel2 = Channel2 * pixel.Channel2;
-			Channel3 = Channel3 * pixel.Channel3;
+			Channels[0] = Channels[0] * pixel.Channels[0];
+			Channels[1] = Channels[1] * pixel.Channels[1];
+			Channels[2] = Channels[2] * pixel.Channels[2];
 
 			return *this;
 		}
@@ -77,9 +75,9 @@ namespace Common
 		/// </summary>
 		TripleChannelPixel<TVALUE>& operator /=(const TripleChannelPixel<TVALUE>& pixel)
 		{
-			Channel1 = Channel1 / pixel.Channel1;
-			Channel2 = Channel2 / pixel.Channel2;
-			Channel3 = Channel3 / pixel.Channel3;
+			Channels[0] = Channels[0] / pixel.Channels[0];
+			Channels[1] = Channels[1] / pixel.Channels[1];
+			Channels[2] = Channels[2] / pixel.Channels[2];
 
 			return *this;
 		}
@@ -101,9 +99,9 @@ namespace Common
 		/// </summary>
 		TripleChannelPixel<TVALUE>& operator |=(const TripleChannelPixel<TVALUE>& pixel)
 		{
-			Channel1 = Channel1 | pixel.Channel1;
-			Channel2 = Channel2 | pixel.Channel2;
-			Channel3 = Channel3 | pixel.Channel3;
+			Channels[0] = Channels[0] | pixel.Channels[0];
+			Channels[1] = Channels[1] | pixel.Channels[1];
+			Channels[2] = Channels[2] | pixel.Channels[2];
 
 			return *this;
 		}
@@ -125,9 +123,9 @@ namespace Common
 		/// </summary>
 		TripleChannelPixel<TVALUE>& operator &=(const TripleChannelPixel<TVALUE>& pixel)
 		{
-			Channel1 = Channel1 & pixel.Channel1;
-			Channel2 = Channel2 & pixel.Channel2;
-			Channel3 = Channel3 & pixel.Channel3;
+			Channels[0] = Channels[0] & pixel.Channels[0];
+			Channels[1] = Channels[1] & pixel.Channels[1];
+			Channels[2] = Channels[2] & pixel.Channels[2];
 
 			return *this;
 		}
