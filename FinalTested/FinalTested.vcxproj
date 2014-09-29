@@ -88,6 +88,7 @@
     <ClInclude Include="common-matrixadapter.h" />
     <ClInclude Include="common-matrixn.h" />
     <ClInclude Include="common-quadchannelpixel.h" />
+    <ClInclude Include="common-rgbpixel.h" />
     <ClInclude Include="common-triplechannelpixel.h" />
     <ClInclude Include="common-static.h" />
     <ClInclude Include="common.h" />
