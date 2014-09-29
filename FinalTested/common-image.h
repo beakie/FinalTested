@@ -57,6 +57,18 @@ namespace Common
 		}
 
 		/// <summary>
+		/// Constructs a image and sets all the values to a single value
+		/// </summary>
+		/// <remarks>Equals operator</remarks>
+		Image(TINDEX width, TINDEX height, const TVALUE** values)
+			: Image(width, height)
+		{
+			for (TINDEX x = 0; x < width; x++)
+				for (TINDEX y = 0; y < height; y++)
+					Values[x][y] = values[x][y];
+		}
+
+		/// <summary>
 		/// Returns ...
 		/// </summary>
 		TINDEX getWidth() const
