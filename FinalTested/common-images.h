@@ -23,7 +23,7 @@ namespace Common
 		}
 
 		template <typename TIMAGE, typename TVALUE, typename TINDEX>
-		static void setImageChannel(const TIMAGE& image, const TINDEX channelIndex, const Image<TVALUE, TINDEX> channelImage)
+		static void setImageChannel(const TIMAGE& image, const TINDEX channelIndex, const Image<TVALUE, TINDEX>& channelImage)
 		{
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)

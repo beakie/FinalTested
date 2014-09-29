@@ -312,7 +312,7 @@ namespace Common
 		/// <summary>
 		/// Clones the image
 		/// </summary>
-		Image<TVALUE, TINDEX>& clone(const Image<TVALUE, TINDEX>& image) const
+		Image<TVALUE, TINDEX>& clone(const Image<TVALUE, TINDEX>& image)
 		{
 			return operator =(image);
 		}
@@ -381,7 +381,8 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& flipHorizontally()
 		{
-			Image<TVALUE, TINDEX> i = *this;
+			Image<TVALUE, TINDEX> i;
+			i.clone(*this);
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
