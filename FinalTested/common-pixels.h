@@ -6,8 +6,9 @@
 
 namespace Common
 {
-	struct Pixels
+	static class Pixels
 	{
+	public:
 		/// <summary>
 		/// Returns the red from an RGB pixel
 		/// </summary>
