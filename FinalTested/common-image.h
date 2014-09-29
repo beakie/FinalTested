@@ -1,6 +1,9 @@
 #ifndef COMMONIMAGE_H
 #define COMMONIMAGE_H
 
+#include "common-matrix2.h"
+#include "common-matrix3.h"
+#include "common-matrix4.h"
 #include "common-static.h"
 
 namespace Common
@@ -395,6 +398,86 @@ namespace Common
 		/// Inverts the image
 		/// </summary>
 		Image<TVALUE, TINDEX>& invert(const Image<TVALUE, TINDEX>& image) const;
+
+		/// <summary>
+		/// Apply 3x3 convolution matrix to image with cropped edges
+		/// </summary>
+		Image<TVALUE, TINDEX> getMatrixImageCrop(const Matrix3<TVALUE> matrix) const
+		{
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(Width - 2, Height - 2);
+
+			for (TINDEX x = 0; x < Width - 2; x++)
+				for (TINDEX y = 0; y < Height - 2; y++)
+					i.Values[x][y] = (Values[x][y] * matrix.Values[0][0])
+						+ (Values[x + 1][y] * matrix.Values[1][0])
+						+ (Values[x + 2][y] * matrix.Values[2][0])
+						+ (Values[x][y + 1] * matrix.Values[0][1])
+						+ (Values[x + 1][y + 1] * matrix.Values[1][1])
+						+ (Values[x + 2][y + 1] * matrix.Values[2][1])
+						+ (Values[x][y + 2] * matrix.Values[0][2])
+						+ (Values[x + 1][y + 2] * matrix.Values[1][2])
+						+ (Values[x + 2][y + 2] * matrix.Values[2][2]);
+
+			return i;
+		}
+
+		/// <summary>
+		/// Apply 3x3 convolution matrix to image with wrapped edges
+		/// </summary>
+		Image<TVALUE, TINDEX> getMatrixImageWrap(const Matrix3<TVALUE> matrix) const
+		{
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(Width, Height);
+
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+				{
+					TINDEX xBefore = (x - 1) % width;
+					TINDEX xAfter = (x + 1) % width;
+					TINDEX yBefore = (y - 1) % height;
+					TINDEX yAfter = (y + 1) % height;
+
+					i.Values[x][y] = (Values[xBefore][yBefore] * matrix.Values[0][0])
+						+ (Values[x][yBefore] * matrix.Values[1][0])
+						+ (Values[xAfter][yBefore] * matrix.Values[2][0])
+						+ (Values[xBefore][y] * matrix.Values[0][1])
+						+ (Values[x][y] * matrix.Values[1][1])
+						+ (Values[xAfter][y] * matrix.Values[2][1])
+						+ (Values[xBefore][yAfter] * matrix.Values[0][2])
+						+ (Values[x][yAfter] * matrix.Values[1][2])
+						+ (Values[xAfter][yAfter] * matrix.Values[2][2]);
+				}
+
+			return i;
+		}
+
+		/// <summary>
+		/// Apply 3x3 convolution matrix to image with extended edges
+		/// </summary>
+		Image<TVALUE, TINDEX> getMatrixImageExtend(const Matrix3<TVALUE> matrix) const
+		{
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(Width, Height);
+
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+				{
+					TINDEX xBefore = (x == 0 ? Width - 1 : x);
+					TINDEX xAfter = (x == (Width - 1) ? 0 : x);
+					TINDEX yBefore = (y == 0 ? Height - 1 : y);
+					TINDEX yAfter = (y == (Height - 1) ? 0 : y);
+
+					i.Values[x][y] = (Values[xBefore][yBefore] * matrix.Values[0][0])
+						+ (Values[x][yBefore] * matrix.Values[1][0])
+						+ (Values[xAfter][yBefore] * matrix.Values[2][0])
+						+ (Values[xBefore][y] * matrix.Values[0][1])
+						+ (Values[x][y] * matrix.Values[1][1])
+						+ (Values[xAfter][y] * matrix.Values[2][1])
+						+ (Values[xBefore][yAfter] * matrix.Values[0][2])
+						+ (Values[x][yAfter] * matrix.Values[1][2])
+						+ (Values[xAfter][yAfter] * matrix.Values[2][2]);
+				}
+
+			return i;
+		}
 
 	private:
 		void createPixelArray(TINDEX width, TINDEX height)
