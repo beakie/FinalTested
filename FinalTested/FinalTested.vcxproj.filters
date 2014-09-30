@@ -74,10 +74,10 @@
     <ClInclude Include="common-math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="render.h">
+    <ClInclude Include="drawing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="render-picture.h">
+    <ClInclude Include="drawing-imagerender.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

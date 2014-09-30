@@ -1,12 +1,12 @@
-#ifndef RENDERPICTURE_H
-#define RENDERPICTURE_H
+#ifndef DRAWINGIMAGERENDER_H
+#define DRAWINGIMAGERENDER_H
 
 #include "core.h"
 #include "common.h"
 
-namespace Render
+namespace Drawing
 {
-	static class Picture
+	static class ImageRender
 	{
 		/// <summary>
 		/// ...
@@ -23,4 +23,4 @@ namespace Render
 	};
 }
 
-#endif // RENDERPICTURE_H
+#endif // DRAWINGIMAGERENDER_H

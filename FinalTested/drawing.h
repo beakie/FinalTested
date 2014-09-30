@@ -4,9 +4,9 @@
 #include "core.h"
 #include "common.h"
 
-#include "render-picture.h"
+#include "drawing-imagerender.h"
 
-namespace Render
+namespace Drawing
 {
 	/// <summary>
 	/// 1 byte precision RGB pixel
