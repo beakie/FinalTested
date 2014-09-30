@@ -29,7 +29,7 @@ namespace Common
 		/// <remarks>Equals operator</remarks>
 		Matrix4(const TVALUE value)
 		{
-			operator =(value);
+			operator=(value);
 		}
 
 		/// <summary>
@@ -61,7 +61,7 @@ namespace Common
 		/// </summary>
 		void set(const TVALUE value)
 		{
-			operator =(value);
+			operator=(value);
 		}
 
 		/// <summary>
@@ -77,7 +77,7 @@ namespace Common
 		/// </summary>
 		void set(const Matrix4<TVALUE>& matrix)
 		{
-			operator =(matrix);
+			operator=(matrix);
 		}
 
 		/// <summary>
@@ -114,7 +114,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE>& operator =(const TVALUE& value)
+		Matrix4<TVALUE>& operator=(const TVALUE& value)
 		{
 			Values[0][0] = value;
 			Values[0][1] = value;
@@ -139,7 +139,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE>& operator =(const Matrix4<TVALUE>& matrix)
+		Matrix4<TVALUE>& operator=(const Matrix4<TVALUE>& matrix)
 		{
 			Values[0][0] = matrix.Values[0][0];
 			Values[0][1] = matrix.Values[0][1];
@@ -164,7 +164,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE> operator +(const Matrix4<TVALUE>& matrix) const
+		Matrix4<TVALUE> operator+(const Matrix4<TVALUE>& matrix) const
 		{
 			Matrix3<TVALUE> m = *this;
 
@@ -176,7 +176,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE>& operator +=(const Matrix4<TVALUE>& matrix)
+		Matrix4<TVALUE>& operator+=(const Matrix4<TVALUE>& matrix)
 		{
 			set(Values[0][0] + matrix.Values[0][0],
 				Values[1][0] + matrix.Values[1][0],
@@ -201,7 +201,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE> operator -(const Matrix4<TVALUE>& matrix) const
+		Matrix4<TVALUE> operator-(const Matrix4<TVALUE>& matrix) const
 		{
 			Matrix3<TVALUE> m = *this;
 
@@ -213,7 +213,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE>& operator -=(const Matrix4<TVALUE>& matrix)
+		Matrix4<TVALUE>& operator-=(const Matrix4<TVALUE>& matrix)
 		{
 			set(Values[0][0] - matrix.Values[0][0],
 				Values[1][0] - matrix.Values[1][0],
@@ -238,7 +238,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE> operator *(const Matrix4<TVALUE>& matrix) const
+		Matrix4<TVALUE> operator*(const Matrix4<TVALUE>& matrix) const
 		{
 			Matrix3<TVALUE> m = *this;
 
@@ -250,7 +250,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE>& operator *=(const Matrix4<TVALUE>& matrix)
+		Matrix4<TVALUE>& operator*=(const Matrix4<TVALUE>& matrix)
 		{
 			set((matrix.Values[0][0] * Values[0][0]) + (matrix.Values[0][1] * Values[1][0]) + (matrix.Values[0][2] * Values[2][0]) + (matrix.Values[0][3] * Values[3][0]),
 				(matrix.Values[1][0] * Values[0][0]) + (matrix.Values[1][1] * Values[1][0]) + (matrix.Values[1][2] * Values[2][0]) + (matrix.Values[1][3] * Values[3][0]),
@@ -275,7 +275,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE> operator *(const TVALUE value) const
+		Matrix4<TVALUE> operator*(const TVALUE value) const
 		{
 			Matrix3<TVALUE> m = *this;
 
@@ -287,7 +287,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE>& operator *=(const TVALUE value)
+		Matrix4<TVALUE>& operator*=(const TVALUE value)
 		{
 			set(Values[0][0] * value,
 				Values[1][0] * value,
@@ -311,7 +311,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE> operator /(const Matrix4<TVALUE>& matrix) const
+		Matrix4<TVALUE> operator/(const Matrix4<TVALUE>& matrix) const
 		{
 			Matrix3<TVALUE> m = *this;
 
@@ -323,7 +323,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE>& operator /=(const Matrix4<TVALUE>& matrix)
+		Matrix4<TVALUE>& operator/=(const Matrix4<TVALUE>& matrix)
 		{
 			TVALUE d = matrix.getDeterminant();
 
@@ -338,7 +338,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE> operator /(const TVALUE value) const
+		Matrix4<TVALUE> operator/(const TVALUE value) const
 		{
 			Matrix3<TVALUE> m = *this;
 
@@ -350,7 +350,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix4<TVALUE>&  operator /=(const TVALUE value)
+		Matrix4<TVALUE>&  operator/=(const TVALUE value)
 		{
 			set(Values[0][0] / value,
 				Values[1][0] / value,
@@ -372,7 +372,7 @@ namespace Common
 			return *this;
 		}
 
-		bool operator ==(const Matrix4<TVALUE>& matrix)
+		bool operator==(const Matrix4<TVALUE>& matrix)
 		{
 			return (Values[0][0] == matrix.Values[0][0])
 					&& (Values[0][1] == matrix.Values[0][1])
@@ -395,9 +395,9 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		bool operator !=(const Matrix4<TVALUE>& matrix) const
+		bool operator!=(const Matrix4<TVALUE>& matrix) const
 		{
-			return operator ==(matrix);
+			return operator==(matrix);
 		}
 
 		/// <summary>
@@ -405,7 +405,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& multiply(const Matrix4<TVALUE>& matrix)
 		{
-			return operator *=(matrix);
+			return operator*=(matrix);
 		}
 
 		/// <summary>
@@ -413,7 +413,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& multiply(const TVALUE value)
 		{
-			return operator *=(value);
+			return operator*=(value);
 		}
 
 		/// <summary>
@@ -421,7 +421,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& dotProduct(const Matrix4<TVALUE>& matrix)
 		{
-			return operator *=(matrix);
+			return operator*=(matrix);
 		}
 
 		/// <summary>
@@ -429,7 +429,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& scalar(const TVALUE value)
 		{
-			return operator *=(value);
+			return operator*=(value);
 		}
 
 		/// <summary>
@@ -437,7 +437,7 @@ namespace Common
 		/// </summary>
 		bool equals(const Matrix4<TVALUE>& matrix) const
 		{
-			return operator ==(matrix);
+			return operator==(matrix);
 		}
 
 		/// <summary>
@@ -455,7 +455,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& zero()
 		{
-			return operator =(0);
+			return operator=(0);
 		}
 
 		/// <summary>
@@ -463,7 +463,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE>& allOnes()
 		{
-			return operator =(1);
+			return operator=(1);
 		}
 
 		/// <summary>

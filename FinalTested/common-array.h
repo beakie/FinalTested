@@ -66,12 +66,12 @@ namespace Common
 
 		Array<TVALUE, TINDEX>& addItem(const TVALUE item)
 		{
-			return operator +=(item);
+			return operator+=(item);
 		}
 
 		Array<TVALUE, TINDEX>& addArray(const Array<TVALUE, TINDEX> &array)
 		{
-			return operator +=(array);
+			return operator+=(array);
 		}
 
 		void resize()
@@ -94,7 +94,7 @@ namespace Common
 
 		void clone(const Array<TVALUE, TINDEX> &array)
 		{
-			operator =(array);
+			operator=(array);
 		}
 
 		TINDEX getIndex(TVALUE value)
@@ -116,7 +116,7 @@ namespace Common
 			Count = 0;
 		}
 
-		Array<TVALUE, TINDEX>& operator =(const Array<TVALUE, TINDEX>& array)
+		Array<TVALUE, TINDEX>& operator=(const Array<TVALUE, TINDEX>& array)
 		{
 			TVALUE* tmp = new TVALUE[array.capacity];
 			Capacity = array.Capacity;

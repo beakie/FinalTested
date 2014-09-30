@@ -120,7 +120,7 @@ namespace Common
 		/// <summary>
 		/// Clone
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator =(const Image<TVALUE, TINDEX>& image)
+		Image<TVALUE, TINDEX>& operator=(const Image<TVALUE, TINDEX>& image)
 		{
 			TINDEX newWidth = image.Width;
 			TINDEX newHeight = image.Height;
@@ -144,7 +144,7 @@ namespace Common
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		Image<TVALUE, TINDEX> operator *(const TVALUE value) const
+		Image<TVALUE, TINDEX> operator*(const TVALUE value) const
 		{
 			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
 			i = *this;
@@ -157,7 +157,7 @@ namespace Common
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator *=(const TVALUE value)
+		Image<TVALUE, TINDEX>& operator*=(const TVALUE value)
 		{
 			TVALUE** valuesBuffer = new TVALUE*[Width];
 
@@ -180,7 +180,7 @@ namespace Common
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		Image<TVALUE, TINDEX> operator /(const TVALUE value) const
+		Image<TVALUE, TINDEX> operator/(const TVALUE value) const
 		{
 			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
 			i = *this;
@@ -193,7 +193,7 @@ namespace Common
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator /=(const TVALUE value)
+		Image<TVALUE, TINDEX>& operator/=(const TVALUE value)
 		{
 			TVALUE** valuesBuffer = new TVALUE*[Width];
 
@@ -213,7 +213,7 @@ namespace Common
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<TVALUE, TINDEX> operator >>(const TVALUE value) const
+		Image<TVALUE, TINDEX> operator>>(const TVALUE value) const
 		{
 			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(Width, Height);
 
@@ -230,7 +230,7 @@ namespace Common
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<TVALUE, TINDEX> operator <<(const TVALUE value)
+		Image<TVALUE, TINDEX> operator<<(const TVALUE value)
 		{
 			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(Width, Height);
 
@@ -247,7 +247,7 @@ namespace Common
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		Image<TVALUE, TINDEX> operator |(const Image<TVALUE, TINDEX>& image) const
+		Image<TVALUE, TINDEX> operator|(const Image<TVALUE, TINDEX>& image) const
 		{
 			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
 			i = *this;
@@ -260,7 +260,7 @@ namespace Common
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator |=(const Image<TVALUE, TINDEX>& image)
+		Image<TVALUE, TINDEX>& operator|=(const Image<TVALUE, TINDEX>& image)
 		{
 			TVALUE** valuesBuffer = new TVALUE*[Width];
 
@@ -280,7 +280,7 @@ namespace Common
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		Image<TVALUE, TINDEX> operator &(const Image<TVALUE, TINDEX>& image) const
+		Image<TVALUE, TINDEX> operator&(const Image<TVALUE, TINDEX>& image) const
 		{
 			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
 			i = *this;
@@ -293,7 +293,7 @@ namespace Common
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator &=(const Image<TVALUE, TINDEX>& image)
+		Image<TVALUE, TINDEX>& operator&=(const Image<TVALUE, TINDEX>& image)
 		{
 			TVALUE** valuesBuffer = new TVALUE*[Width];
 
@@ -313,7 +313,7 @@ namespace Common
 		/// <summary>
 		/// Invert
 		/// </summary>
-		Image<TVALUE, TINDEX> operator !() const
+		Image<TVALUE, TINDEX> operator!() const
 		{
 			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
 			i = *this;
@@ -330,7 +330,7 @@ namespace Common
 		/// <summary>
 		/// Comparison
 		/// </summary>
-		bool operator ==(const Image<TVALUE, TINDEX>& image) const
+		bool operator==(const Image<TVALUE, TINDEX>& image) const
 		{
 			if ((Width != image.Width) || (Height != image.Height))
 				return false;
@@ -346,15 +346,15 @@ namespace Common
 		/// <summary>
 		/// Not comparison
 		/// </summary>
-		bool operator !=(const Image<TVALUE, TINDEX>& image) const
+		bool operator!=(const Image<TVALUE, TINDEX>& image) const
 		{
-			return operator ==(image);
+			return operator==(image);
 		}
 
 		/// <summary>
 		/// Greater than
 		/// </summary>
-		bool operator >(const TVALUE value) const
+		bool operator>(const TVALUE value) const
 		{
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
@@ -367,7 +367,7 @@ namespace Common
 		/// <summary>
 		/// Less than
 		/// </summary>
-		bool operator <(const TVALUE value) const
+		bool operator<(const TVALUE value) const
 		{
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
@@ -382,7 +382,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& clone(const Image<TVALUE, TINDEX>& image)
 		{
-			return operator =(image);
+			return operator=(image);
 		}
 
 		static Image<TVALUE, TINDEX> getCroppedImage(const Image<TVALUE, TINDEX>& image, const TINDEX x1, const TINDEX y1, const TINDEX x2, const TINDEX y2)
@@ -451,7 +451,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& trimAboveThreshold(const TVALUE value) const
 		{
-			return operator >>(value);
+			return operator>>(value);
 		}
 
 		/// <summary>
@@ -459,7 +459,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& trimBelowThreshold(const TVALUE value) const
 		{
-			return operator <<(value);
+			return operator<<(value);
 		}
 
 		/// <summary>
@@ -572,9 +572,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& invert(const Image<TVALUE, TINDEX>& image)
 		{
-			operator =(!image);
-
-			return *this;
+			return operator=(!image.operator!());
 		}
 
 		/// <summary>
@@ -582,7 +580,15 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& invert()
 		{
-			return operator =(operator !());
+			return operator=(operator!());
+		}
+
+		/// <summary>
+		/// Gets the inverted image
+		/// </summary>
+		Image<TVALUE, TINDEX> getInverted()
+		{
+			return operator!();
 		}
 
 		/// <summary>

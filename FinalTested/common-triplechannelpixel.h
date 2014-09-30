@@ -25,7 +25,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		TripleChannelPixel<TVALUE>& operator =(const TripleChannelPixel<TVALUE>& pixel)
+		TripleChannelPixel<TVALUE>& operator=(const TripleChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = pixel.Channels[0];
 			Channels[1] = pixel.Channels[1];
@@ -37,7 +37,7 @@ namespace Common
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		TripleChannelPixel<TVALUE> operator *(const TripleChannelPixel<TVALUE>& pixel) const
+		TripleChannelPixel<TVALUE> operator*(const TripleChannelPixel<TVALUE>& pixel) const
 		{
 			TripleChannelPixel<TVALUE> p = *this;
 
@@ -49,7 +49,7 @@ namespace Common
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		TripleChannelPixel<TVALUE>& operator *=(const TripleChannelPixel<TVALUE>& pixel)
+		TripleChannelPixel<TVALUE>& operator*=(const TripleChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = Channels[0] * pixel.Channels[0];
 			Channels[1] = Channels[1] * pixel.Channels[1];
@@ -61,7 +61,7 @@ namespace Common
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		TripleChannelPixel<TVALUE> operator /(const TripleChannelPixel<TVALUE>& pixel) const
+		TripleChannelPixel<TVALUE> operator/(const TripleChannelPixel<TVALUE>& pixel) const
 		{
 			TripleChannelPixel<TVALUE> p = *this;
 
@@ -73,7 +73,7 @@ namespace Common
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		TripleChannelPixel<TVALUE>& operator /=(const TripleChannelPixel<TVALUE>& pixel)
+		TripleChannelPixel<TVALUE>& operator/=(const TripleChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = Channels[0] / pixel.Channels[0];
 			Channels[1] = Channels[1] / pixel.Channels[1];
@@ -85,7 +85,7 @@ namespace Common
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		TripleChannelPixel<TVALUE> operator |(const TripleChannelPixel<TVALUE>& pixel) const
+		TripleChannelPixel<TVALUE> operator|(const TripleChannelPixel<TVALUE>& pixel) const
 		{
 			TripleChannelPixel<TVALUE> p = *this;
 
@@ -97,7 +97,7 @@ namespace Common
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		TripleChannelPixel<TVALUE>& operator |=(const TripleChannelPixel<TVALUE>& pixel)
+		TripleChannelPixel<TVALUE>& operator|=(const TripleChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = Channels[0] | pixel.Channels[0];
 			Channels[1] = Channels[1] | pixel.Channels[1];
@@ -109,7 +109,7 @@ namespace Common
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		TripleChannelPixel<TVALUE> operator &(const TripleChannelPixel<TVALUE>& pixel) const
+		TripleChannelPixel<TVALUE> operator&(const TripleChannelPixel<TVALUE>& pixel) const
 		{
 			TripleChannelPixel<TVALUE> p = *this;
 
@@ -121,7 +121,7 @@ namespace Common
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		TripleChannelPixel<TVALUE>& operator &=(const TripleChannelPixel<TVALUE>& pixel)
+		TripleChannelPixel<TVALUE>& operator&=(const TripleChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = Channels[0] & pixel.Channels[0];
 			Channels[1] = Channels[1] & pixel.Channels[1];
@@ -133,7 +133,7 @@ namespace Common
 		/// <summary>
 		/// Invert
 		/// </summary>
-		TripleChannelPixel<TVALUE> operator !() const
+		TripleChannelPixel<TVALUE> operator!() const
 		{
 			TripleChannelPixel<TVALUE> p = *this;
 
@@ -145,7 +145,7 @@ namespace Common
 		/// <summary>
 		/// Comparison
 		/// </summary>
-		bool operator ==(const TripleChannelPixel<TVALUE>& pixel) const
+		bool operator==(const TripleChannelPixel<TVALUE>& pixel) const
 		{
 			if ((Width != pixel.Width) || (Height != pixel.Height))
 				return false;
@@ -161,9 +161,9 @@ namespace Common
 		/// <summary>
 		/// Not comparison
 		/// </summary>
-		bool operator !=(const TripleChannelPixel<TVALUE>& pixel) const
+		bool operator!=(const TripleChannelPixel<TVALUE>& pixel) const
 		{
-			return operator ==(pixel);
+			return operator==(pixel);
 		}
 	};
 }

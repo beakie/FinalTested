@@ -33,7 +33,7 @@ namespace Common
 		MatrixN(UInt_8 rows, UInt_8 columns, const TVALUE value)
 			: MatrixN(rows, columns)
 		{
-			operator =(value);
+			operator=(value);
 		}
 
 		/// <summary>
@@ -57,7 +57,7 @@ namespace Common
 		/// </summary>
 		void set(const TVALUE value)
 		{
-			operator =(value);
+			operator=(value);
 		}
 
 		/// <summary>
@@ -73,7 +73,7 @@ namespace Common
 		/// </summary>
 		void set(const MatrixN<TVALUE>& matrix)
 		{
-			operator =(matrix);
+			operator=(matrix);
 		}
 
 		/// <summary>
@@ -87,17 +87,17 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator =(const TVALUE& value);
+		MatrixN<TVALUE>& operator=(const TVALUE& value);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator =(const MatrixN<TVALUE>& matrix);
+		MatrixN<TVALUE>& operator=(const MatrixN<TVALUE>& matrix);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE> operator +(const MatrixN<TVALUE>& matrix) const
+		MatrixN<TVALUE> operator+(const MatrixN<TVALUE>& matrix) const
 		{
 			MatrixN<TVALUE> m = *this;
 
@@ -109,12 +109,12 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator +=(const MatrixN<TVALUE>& matrix);
+		MatrixN<TVALUE>& operator+=(const MatrixN<TVALUE>& matrix);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE> operator -(const MatrixN<TVALUE>& matrix) const
+		MatrixN<TVALUE> operator-(const MatrixN<TVALUE>& matrix) const
 		{
 			MatrixN<TVALUE> m = *this;
 
@@ -126,12 +126,12 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator -=(const MatrixN<TVALUE>& matrix);
+		MatrixN<TVALUE>& operator-=(const MatrixN<TVALUE>& matrix);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE> operator *(const MatrixN<TVALUE>& matrix) const
+		MatrixN<TVALUE> operator*(const MatrixN<TVALUE>& matrix) const
 		{
 			MatrixN<TVALUE> m = *this;
 
@@ -143,12 +143,12 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator *=(const MatrixN<TVALUE>& matrix);
+		MatrixN<TVALUE>& operator*=(const MatrixN<TVALUE>& matrix);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE> operator *(const TVALUE value) const
+		MatrixN<TVALUE> operator*(const TVALUE value) const
 		{
 			MatrixN<TVALUE> m = *this;
 
@@ -160,12 +160,12 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator *=(const TVALUE value);
+		MatrixN<TVALUE>& operator*=(const TVALUE value);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE> operator /(const MatrixN<TVALUE>& matrix) const
+		MatrixN<TVALUE> operator/(const MatrixN<TVALUE>& matrix) const
 		{
 			MatrixN<TVALUE> m = *this;
 
@@ -177,12 +177,12 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator /=(const MatrixN<TVALUE>& matrix);
+		MatrixN<TVALUE>& operator/=(const MatrixN<TVALUE>& matrix);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE> operator /(const TVALUE value) const
+		MatrixN<TVALUE> operator/(const TVALUE value) const
 		{
 			MatrixN<TVALUE> m = *this;
 
@@ -194,19 +194,19 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		MatrixN<TVALUE>& operator /=(const TVALUE value);
+		MatrixN<TVALUE>& operator/=(const TVALUE value);
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		bool operator ==(const MatrixN<TVALUE>& matrix) const;
+		bool operator==(const MatrixN<TVALUE>& matrix) const;
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		bool operator !=(const MatrixN<TVALUE>& matrix) const
+		bool operator!=(const MatrixN<TVALUE>& matrix) const
 		{
-			return operator ==(matrix);
+			return operator==(matrix);
 		}
 
 		/// <summary>
@@ -214,7 +214,7 @@ namespace Common
 		/// </summary>
 		MatrixN<TVALUE>& multiply(const MatrixN<TVALUE>& matrix)
 		{
-			return operator *=(matrix);
+			return operator*=(matrix);
 		}
 
 		/// <summary>
@@ -222,7 +222,7 @@ namespace Common
 		/// </summary>
 		MatrixN<TVALUE>& multiply(const TVALUE value)
 		{
-			return operator *=(value);
+			return operator*=(value);
 		}
 
 		/// <summary>
@@ -230,7 +230,7 @@ namespace Common
 		/// </summary>
 		MatrixN<TVALUE>& dotProduct(const MatrixN<TVALUE>& matrix)
 		{
-			return operator *=(matrix);
+			return operator*=(matrix);
 		}
 
 		/// <summary>
@@ -238,7 +238,7 @@ namespace Common
 		/// </summary>
 		MatrixN<TVALUE>& scalar(const TVALUE value)
 		{
-			return operator *=(value);
+			return operator*=(value);
 		}
 
 		/// <summary>
@@ -246,7 +246,7 @@ namespace Common
 		/// </summary>
 		bool equals(const MatrixN<TVALUE>& matrix) const
 		{
-			return operator ==(matrix);
+			return operator==(matrix);
 		}
 
 		/// <summary>
@@ -259,7 +259,7 @@ namespace Common
 		/// </summary>
 		MatrixN<TVALUE>& zero()
 		{
-			return operator =(0);
+			return operator=(0);
 		}
 
 		/// <summary>
@@ -267,7 +267,7 @@ namespace Common
 		/// </summary>
 		MatrixN<TVALUE>& allOnes()
 		{
-			return operator =(1);
+			return operator=(1);
 		}
 
 		/// <summary>

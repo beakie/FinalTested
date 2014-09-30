@@ -26,7 +26,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		QuadChannelPixel<TVALUE>& operator =(const QuadChannelPixel<TVALUE>& pixel)
+		QuadChannelPixel<TVALUE>& operator=(const QuadChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = pixel.Channels[0];
 			Channels[1] = pixel.Channels[1];
@@ -39,7 +39,7 @@ namespace Common
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		QuadChannelPixel<TVALUE> operator *(const QuadChannelPixel<TVALUE>& pixel) const
+		QuadChannelPixel<TVALUE> operator*(const QuadChannelPixel<TVALUE>& pixel) const
 		{
 			QuadChannelPixel<TVALUE> p = *this;
 
@@ -51,7 +51,7 @@ namespace Common
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		QuadChannelPixel<TVALUE>& operator *=(const QuadChannelPixel<TVALUE>& pixel)
+		QuadChannelPixel<TVALUE>& operator*=(const QuadChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = Channels[0] * pixel.Channels[0];
 			Channels[1] = Channels[1] * pixel.Channels[1];
@@ -64,7 +64,7 @@ namespace Common
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		QuadChannelPixel<TVALUE> operator /(const QuadChannelPixel<TVALUE>& pixel) const
+		QuadChannelPixel<TVALUE> operator/(const QuadChannelPixel<TVALUE>& pixel) const
 		{
 			QuadChannelPixel<TVALUE> p = *this;
 
@@ -76,7 +76,7 @@ namespace Common
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		QuadChannelPixel<TVALUE>& operator /=(const QuadChannelPixel<TVALUE>& pixel)
+		QuadChannelPixel<TVALUE>& operator/=(const QuadChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = Channels[0] / pixel.Channels[0];
 			Channels[1] = Channels[1] / pixel.Channels[1];
@@ -89,7 +89,7 @@ namespace Common
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		QuadChannelPixel<TVALUE> operator |(const QuadChannelPixel<TVALUE>& pixel) const
+		QuadChannelPixel<TVALUE> operator|(const QuadChannelPixel<TVALUE>& pixel) const
 		{
 			QuadChannelPixel<TVALUE> p = *this;
 
@@ -101,7 +101,7 @@ namespace Common
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		QuadChannelPixel<TVALUE>& operator |=(const QuadChannelPixel<TVALUE>& pixel)
+		QuadChannelPixel<TVALUE>& operator|=(const QuadChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = Channels[0] | pixel.Channels[0];
 			Channels[1] = Channels[1] | pixel.Channels[1];
@@ -114,7 +114,7 @@ namespace Common
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		QuadChannelPixel<TVALUE> operator &(const QuadChannelPixel<TVALUE>& pixel) const
+		QuadChannelPixel<TVALUE> operator&(const QuadChannelPixel<TVALUE>& pixel) const
 		{
 			QuadChannelPixel<TVALUE> p = *this;
 
@@ -126,7 +126,7 @@ namespace Common
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		QuadChannelPixel<TVALUE>& operator &=(const QuadChannelPixel<TVALUE>& pixel)
+		QuadChannelPixel<TVALUE>& operator&=(const QuadChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = Channels[0] & pixel.Channels[0];
 			Channels[1] = Channels[1] & pixel.Channels[1];
@@ -139,7 +139,7 @@ namespace Common
 		/// <summary>
 		/// Invert
 		/// </summary>
-		QuadChannelPixel<TVALUE> operator !() const
+		QuadChannelPixel<TVALUE> operator!() const
 		{
 			QuadChannelPixel<TVALUE> p = *this;
 
@@ -151,7 +151,7 @@ namespace Common
 		/// <summary>
 		/// Comparison
 		/// </summary>
-		bool operator ==(const QuadChannelPixel<TVALUE>& pixel) const
+		bool operator==(const QuadChannelPixel<TVALUE>& pixel) const
 		{
 			if ((Width != pixel.Width) || (Height != pixel.Height))
 				return false;
@@ -167,9 +167,9 @@ namespace Common
 		/// <summary>
 		/// Not comparison
 		/// </summary>
-		bool operator !=(const QuadChannelPixel<TVALUE>& pixel) const
+		bool operator!=(const QuadChannelPixel<TVALUE>& pixel) const
 		{
-			return operator ==(pixel);
+			return operator==(pixel);
 		}
 	};
 }

@@ -29,7 +29,7 @@ namespace Common
 		/// <remarks>Equals operator</remarks>
 		Matrix2(const TVALUE value)
 		{
-			operator =(value);
+			operator=(value);
 		}
 
 		/// <summary>
@@ -61,7 +61,7 @@ namespace Common
 		/// </summary>
 		void set(const TVALUE value)
 		{
-			operator =(value);
+			operator=(value);
 		}
 
 		/// <summary>
@@ -77,7 +77,7 @@ namespace Common
 		/// </summary>
 		void set(const Matrix2<TVALUE>& matrix)
 		{
-			operator =(matrix);
+			operator=(matrix);
 		}
 
 		/// <summary>
@@ -102,7 +102,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE>& operator =(const TVALUE& value)
+		Matrix2<TVALUE>& operator=(const TVALUE& value)
 		{
 			Values[0][0] = value;
 			Values[0][1] = value;
@@ -115,7 +115,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE>& operator =(const Matrix2<TVALUE>& matrix)
+		Matrix2<TVALUE>& operator=(const Matrix2<TVALUE>& matrix)
 		{
 			Values[0][0] = matrix.Values[0][0];
 			Values[0][1] = matrix.Values[0][1];
@@ -128,7 +128,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE> operator +(const Matrix2<TVALUE>& matrix) const
+		Matrix2<TVALUE> operator+(const Matrix2<TVALUE>& matrix) const
 		{
 			Matrix2<TVALUE> m = *this;
 
@@ -140,7 +140,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE>& operator +=(const Matrix2<TVALUE>& matrix)
+		Matrix2<TVALUE>& operator+=(const Matrix2<TVALUE>& matrix)
 		{
 			set(Values[0][0] + matrix.Values[0][0],
 				Values[1][0] + matrix.Values[1][0],
@@ -153,7 +153,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE> operator -(const Matrix2<TVALUE>& matrix) const
+		Matrix2<TVALUE> operator-(const Matrix2<TVALUE>& matrix) const
 		{
 			Matrix2<TVALUE> m = *this;
 
@@ -165,7 +165,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE>& operator -=(const Matrix2<TVALUE>& matrix)
+		Matrix2<TVALUE>& operator-=(const Matrix2<TVALUE>& matrix)
 		{
 			set(Values[0][0] - matrix.Values[0][0],
 				Values[1][0] - matrix.Values[1][0],
@@ -178,7 +178,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE> operator *(const Matrix2<TVALUE>& matrix) const
+		Matrix2<TVALUE> operator*(const Matrix2<TVALUE>& matrix) const
 		{
 			Matrix2<TVALUE> m = *this;
 
@@ -190,7 +190,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE>& operator *=(const Matrix2<TVALUE>& matrix)
+		Matrix2<TVALUE>& operator*=(const Matrix2<TVALUE>& matrix)
 		{
 			set((matrix.Values[0][0] * Values[0][0]) + (matrix.Values[0][1] * Values[1][0]),
 				(matrix.Values[1][0] * Values[0][0]) + (matrix.Values[1][1] * Values[1][0]),
@@ -203,7 +203,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE> operator *(const TVALUE value) const
+		Matrix2<TVALUE> operator*(const TVALUE value) const
 		{
 			Matrix2<TVALUE> m = *this;
 
@@ -215,7 +215,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE>& operator *=(const TVALUE value)
+		Matrix2<TVALUE>& operator*=(const TVALUE value)
 		{
 			set(Values[0][0] * value,
 				Values[1][0] * value,
@@ -228,7 +228,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE> operator /(const Matrix2<TVALUE>& matrix) const
+		Matrix2<TVALUE> operator/(const Matrix2<TVALUE>& matrix) const
 		{
 			Matrix2<TVALUE> m = *this;
 
@@ -240,7 +240,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE>& operator /=(const Matrix2<TVALUE>& matrix)
+		Matrix2<TVALUE>& operator/=(const Matrix2<TVALUE>& matrix)
 		{
 			TVALUE d = matrix.getDeterminant();
 
@@ -255,7 +255,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE> operator /(const TVALUE value) const
+		Matrix2<TVALUE> operator/(const TVALUE value) const
 		{
 			Matrix2<TVALUE> m = *this;
 
@@ -267,7 +267,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		Matrix2<TVALUE>& operator /=(const TVALUE value)
+		Matrix2<TVALUE>& operator/=(const TVALUE value)
 		{
 			set(Values[0][0] / value,
 				Values[1][0] / value,
@@ -280,7 +280,7 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		bool operator ==(const Matrix2<TVALUE>& matrix) const
+		bool operator==(const Matrix2<TVALUE>& matrix) const
 		{
 			return (Values[0][0] == matrix.Values[0][0])
 				&& (Values[0][1] == matrix.Values[0][1])
@@ -291,9 +291,9 @@ namespace Common
 		/// <summary>
 		/// Operator
 		/// </summary>
-		bool operator !=(const Matrix2<TVALUE>& matrix) const
+		bool operator!=(const Matrix2<TVALUE>& matrix) const
 		{
-			return operator ==(matrix);
+			return operator==(matrix);
 		}
 
 		/// <summary>
@@ -301,7 +301,7 @@ namespace Common
 		/// </summary>
 		Matrix2<TVALUE>& multiply(const Matrix2<TVALUE>& matrix)
 		{
-			return operator *=(matrix);
+			return operator*=(matrix);
 		}
 
 		/// <summary>
@@ -309,7 +309,7 @@ namespace Common
 		/// </summary>
 		Matrix2<TVALUE>& multiply(const TVALUE value)
 		{
-			return operator *=(value);
+			return operator*=(value);
 		}
 
 		/// <summary>
@@ -317,7 +317,7 @@ namespace Common
 		/// </summary>
 		Matrix2<TVALUE>& dotProduct(const Matrix2<TVALUE>& matrix)
 		{
-			return operator *=(matrix);
+			return operator*=(matrix);
 		}
 
 		/// <summary>
@@ -325,7 +325,7 @@ namespace Common
 		/// </summary>
 		Matrix2<TVALUE>& scalar(const TVALUE value)
 		{
-			return operator *=(value);
+			return operator*=(value);
 		}
 
 		/// <summary>
@@ -333,7 +333,7 @@ namespace Common
 		/// </summary>
 		bool equals(const Matrix2<TVALUE>& matrix) const
 		{
-			return operator ==(matrix);
+			return operator==(matrix);
 		}
 
 		/// <summary>
@@ -351,7 +351,7 @@ namespace Common
 		/// </summary>
 		Matrix2<TVALUE>& zero()
 		{
-			return operator =(0);
+			return operator=(0);
 		}
 
 		/// <summary>
@@ -359,7 +359,7 @@ namespace Common
 		/// </summary>
 		Matrix2<TVALUE>& allOnes()
 		{
-			return operator =(1);
+			return operator=(1);
 		}
 
 		/// <summary>
