@@ -4,7 +4,7 @@
 
 #include "core.h"
 #include "common.h"
-
+#include "render.h"
 
 template <typename TIMAGE>
 void renderImage(const TIMAGE& image);
