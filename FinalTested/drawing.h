@@ -7,6 +7,8 @@
 #include "drawing-imagerender.h"
 #include "drawing-pixels.h"
 
+///// MOVE THE TRIPLE, QUAD AND IMAGES CODE TO THIS NAMESPACE /////
+
 namespace Drawing
 {
 	/// <summary>
