@@ -172,7 +172,7 @@ namespace Common
 					valuesBuffer[x][y] = (Values[x][y] > overflowCheck ? upperBound : Values[x][y] * value);
 			}
 
-			replacePixelArray(newWidth, newHeight, valuesBuffer);
+			replacePixelArray(Width, Height, valuesBuffer);
 
 			return *this;
 		}
@@ -205,7 +205,7 @@ namespace Common
 					valuesBuffer[x][y] = Values[x][y] / value;
 			}
 
-			replacePixelArray(newWidth, newHeight, valuesBuffer);
+			replacePixelArray(Width, Height, valuesBuffer);
 
 			return *this;
 		}
@@ -272,7 +272,7 @@ namespace Common
 					valuesBuffer[x][y] = Values[x][y] | image.Values[x][y];
 			}
 
-			replacePixelArray(newWidth, newHeight, valuesBuffer);
+			replacePixelArray(Width, Height, valuesBuffer);
 
 			return *this;
 		}
@@ -305,7 +305,7 @@ namespace Common
 					valuesBuffer[x][y] = Values[x][y] & image.Values[x][y];
 			}
 
-			replacePixelArray(newWidth, newHeight, valuesBuffer);
+			replacePixelArray(Width, Height, valuesBuffer);
 
 			return *this;
 		}
@@ -473,6 +473,66 @@ namespace Common
 						Value[x][y] = lower;
 					else if (Values[x][y] > upper) // use max function?
 						Value[x][y] = upper;
+
+			return *this;
+		}
+
+		/// <summary>
+		/// Rotates the image 90 degrees clockwise
+		/// </summary>
+		Image<TVALUE, TINDEX>& rotate270()
+		{
+			TVALUE** valuesBuffer = new TVALUE*[Height];
+
+			for (TINDEX y = 0; y < Height; y++)
+			{
+				valuesBuffer[y] = new TVALUE[Width];
+
+				for (TINDEX x = 0; x < Width; x++)
+					valuesBuffer[y][x] = Values[Width - x - 1][y];
+			}
+
+			replacePixelArray(Height, Width, valuesBuffer);
+
+			return *this;
+		}
+
+		/// <summary>
+		/// Rotates the image 180 degrees clockwise
+		/// </summary>
+		Image<TVALUE, TINDEX>& rotate180()
+		{
+			TVALUE** valuesBuffer = new TVALUE*[Width];
+
+			for (TINDEX x = 0; x < Width; x++)
+			{
+				valuesBuffer[x] = new TVALUE[Height];
+
+				for (TINDEX y = 0; y < Height; y++)
+					valuesBuffer[x][y] = Values[Width - x - 1][Height - y - 1];
+			}
+
+			replacePixelArray(Width, Height, valuesBuffer);
+
+			return *this;
+		}
+
+		/// <summary>
+		/// Rotates the image 270 degrees clockwise
+		/// </summary>
+		Image<TVALUE, TINDEX>& rotate90()
+		{
+			TVALUE** valuesBuffer = new TVALUE*[Height];
+
+			for (TINDEX y = 0; y < Height; y++)
+			{
+				valuesBuffer[y] = new TVALUE[Width];
+
+				for (TINDEX x = 0; x < Width; x++)
+					valuesBuffer[y][x] = Values[x][Height - y - 1];
+			}
+
+			replacePixelArray(Height, Width, valuesBuffer);
 
 			return *this;
 		}

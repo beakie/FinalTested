@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	
 	//image.cropImage(0, 1, 8, 8);
 
-	image.flipHorizontally().flipVertically().cropImage(1, 1, 8, 8);
+	image.rotate180();
 
 	renderImage(image);
 
