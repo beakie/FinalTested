@@ -133,8 +133,8 @@ namespace Common
 		Image<TVALUE, TINDEX>& cropImage(const TINDEX x1, const TINDEX y1, const TINDEX x2, const TINDEX y2)
 		{
 			TVALUE** valuesBuffer;
-			TINDEX newWidth = x2 - x1;
-			TINDEX newHeight = y2 - y1;
+			TINDEX newWidth = x2 - x1 + 1;
+			TINDEX newHeight = y2 - y1 + 1;
 
 			valuesBuffer = new TVALUE*[newWidth];
 
@@ -146,11 +146,7 @@ namespace Common
 					valuesBuffer[x][y] = Values[x1 + x][y1 + y];
 			}
 
-			deletePixelArray();
-
-			Width = newWidth;
-			Height = newHeight;
-			Values = valuesBuffer;
+			replacePixelArray(newWidth, newHeight, valuesBuffer);
 
 			return *this;
 		}

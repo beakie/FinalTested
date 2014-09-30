@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
 	renderImage(image);
 	
-	image = image;
+	image.cropImage(0, 1, 8, 8);
 
 	renderImage(image);
 
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
 void renderImage(const Common::Image8_1& image)
 {
-	for (int y = 0; y < image.Width; y++)
+	for (int y = 0; y < image.Height; y++)
 	{
 		for (int x = 0; x < image.Width; x++)
 			std::cout << (image.Values[x][y] ? 1 : 0);
