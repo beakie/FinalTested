@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
 	renderImage(image);
 	
-	image.cropImage(0, 1, 8, 8);
+	//image.cropImage(0, 1, 8, 8);
 
 	renderImage(image);
 

@@ -71,5 +71,8 @@
     <ClInclude Include="common-images.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

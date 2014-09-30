@@ -1,6 +1,7 @@
 #ifndef COMMONIMAGE_H
 #define COMMONIMAGE_H
 
+#include "common-math.h"
 #include "common-matrix2.h"
 #include "common-matrix3.h"
 #include "common-matrix4.h"
@@ -87,14 +88,6 @@ namespace Common
 		/// <summary>
 		/// Returns ...
 		/// </summary>
-		TINDEX getPosition(TINDEX) const
-		{
-			return Height;
-		}
-
-		/// <summary>
-		/// Returns ...
-		/// </summary>
 		bool validateX(const TINDEX x) const
 		{
 			return (x <= Width) && (x >= 0);
@@ -111,56 +104,27 @@ namespace Common
 		/// <summary>
 		/// Returns ...
 		/// </summary>
+		static TVALUE getMinValue()
+		{
+			return Common::getLowerBound<TVALUE>();
+		}
+
+		/// <summary>
+		/// Returns ...
+		/// </summary>
 		static TVALUE getMaxValue()
 		{
-			return Common::getUpperBound<TVALUE>();
-		}
-
-		static Image<TVALUE, TINDEX> getCroppedImage(const Image<TVALUE, TINDEX>& image, const TINDEX x1, const TINDEX y1, const TINDEX x2, const TINDEX y2)
-		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(x2 - x1, y2 - y1);
-
-			for (TINDEX x = 0; x < i.getWidth(); x++)
-				for (TINDEX y = 0; y < i.getHeight(); y++)
-					i.Values[x][y] = image.Values[x1 + x][y1 + y];
-
-			return i;
+			return getUpperBound<TVALUE>();
 		}
 
 		/// <summary>
-		/// Crops the image
-		/// </summary>
-		Image<TVALUE, TINDEX>& cropImage(const TINDEX x1, const TINDEX y1, const TINDEX x2, const TINDEX y2)
-		{
-			TVALUE** valuesBuffer;
-			TINDEX newWidth = x2 - x1 + 1;
-			TINDEX newHeight = y2 - y1 + 1;
-
-			valuesBuffer = new TVALUE*[newWidth];
-
-			for (TINDEX x = 0; x < newWidth; x++)
-			{
-				valuesBuffer[x] = new TVALUE[newHeight];
-
-				for (TINDEX y = 0; y < newHeight; y++)
-					valuesBuffer[x][y] = Values[x1 + x][y1 + y];
-			}
-
-			replacePixelArray(newWidth, newHeight, valuesBuffer);
-
-			return *this;
-		}
-
-		/// <summary>
-		/// Operator
+		/// Clone
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator =(const Image<TVALUE, TINDEX>& image)
 		{
-			TVALUE** valuesBuffer;
 			TINDEX newWidth = image.Width;
 			TINDEX newHeight = image.Height;
-
-			valuesBuffer = new TVALUE*[newWidth];
+			TVALUE** valuesBuffer = new TVALUE*[newWidth];
 
 			for (TINDEX x = 0; x < newWidth; x++)
 			{
@@ -175,12 +139,15 @@ namespace Common
 			return *this;
 		}
 
+		// ************************************************************************************ // LINE OF HAPPINESS
+
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
 		Image<TVALUE, TINDEX> operator *(const TVALUE value) const
 		{
-			Image<TVALUE, TINDEX> i = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
+			i = *this;
 
 			i *= value;
 
@@ -190,14 +157,35 @@ namespace Common
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator *=(const TVALUE value);
+		Image<TVALUE, TINDEX>& operator *=(const TVALUE value)
+		{
+			TVALUE** valuesBuffer = new TVALUE*[Width];
+
+			TVALUE upperBound = getUpperBound<TVALUE>();
+			TVALUE overflowCheck = upperBound / value;
+
+			for (TINDEX x = 0; x < Width; x++)
+			{
+				valuesBuffer[x] = new TVALUE[Height];
+
+				for (TINDEX y = 0; y < Height; y++)
+				{
+					valuesBuffer[x][y] = (Values[x][y] > overflowCheck ? upperBound : Values[x][y] * value);
+				}
+			}
+
+			replacePixelArray(newWidth, newHeight, valuesBuffer);
+
+			return *this;
+		}
 
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
 		Image<TVALUE, TINDEX> operator /(const TVALUE value) const
 		{
-			Image<TVALUE, TINDEX> i = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
+			i = *this;
 
 			i /= value;
 
@@ -207,19 +195,40 @@ namespace Common
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator /=(const TVALUE value);
+		Image<TVALUE, TINDEX>& operator /=(const TVALUE value)
+		{
+			TVALUE** valuesBuffer = new TVALUE*[Width];
+
+			for (TINDEX x = 0; x < Width; x++)
+			{
+				valuesBuffer[x] = new TVALUE[Height];
+
+				for (TINDEX y = 0; y < Height; y++)
+				{
+					valuesBuffer[x][y] = Values[x][y] / value;
+				}
+			}
+
+			replacePixelArray(newWidth, newHeight, valuesBuffer);
+
+			return *this;
+		}
 
 		/// <summary>
 		/// Threshold
 		/// </summary>
 		Image<TVALUE, TINDEX> operator >>(const TVALUE value) const
 		{
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(Width, Height);
+
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
 					if (Values[x][y] < value)
-						Value[x][y] = value;
+						i.Value[x][y] = value;
+					else
+						i.Value[x][y] = Value[x][y];
 
-			return *this;
+			return i
 		}
 
 		/// <summary>
@@ -227,12 +236,16 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator <<(const TVALUE value)
 		{
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(Width, Height);
+
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
 					if (Values[x][y] > value)
-						Value[x][y] = value;
+						i.Value[x][y] = value;
+					else
+						i.Value[x][y] = Value[x][y];
 
-			return *this;
+			return i
 		}
 
 		/// <summary>
@@ -240,7 +253,8 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator |(const Image<TVALUE, TINDEX>& image) const
 		{
-			Image<TVALUE, TINDEX> i = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
+			i = *this;
 
 			i |= image;
 
@@ -264,7 +278,8 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator &(const Image<TVALUE, TINDEX>& image) const
 		{
-			Image<TVALUE, TINDEX> i = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
+			i = *this;
 
 			i &= image;
 
@@ -321,6 +336,39 @@ namespace Common
 		Image<TVALUE, TINDEX>& clone(const Image<TVALUE, TINDEX>& image)
 		{
 			return operator =(image);
+		}
+
+		static Image<TVALUE, TINDEX> getCroppedImage(const Image<TVALUE, TINDEX>& image, const TINDEX x1, const TINDEX y1, const TINDEX x2, const TINDEX y2)
+		{
+			Image<TVALUE, TINDEX> i;
+
+			i.cropImage();
+
+			return i;
+		}
+
+		/// <summary>
+		/// Crops the image
+		/// </summary>
+		Image<TVALUE, TINDEX>& cropImage(const TINDEX x1, const TINDEX y1, const TINDEX x2, const TINDEX y2)
+		{
+			TVALUE** valuesBuffer;
+			TINDEX newWidth = x2 - x1 + 1;
+			TINDEX newHeight = y2 - y1 + 1;
+
+			valuesBuffer = new TVALUE*[newWidth];
+
+			for (TINDEX x = 0; x < newWidth; x++)
+			{
+				valuesBuffer[x] = new TVALUE[newHeight];
+
+				for (TINDEX y = 0; y < newHeight; y++)
+					valuesBuffer[x][y] = Values[x1 + x][y1 + y];
+			}
+
+			replacePixelArray(newWidth, newHeight, valuesBuffer);
+
+			return *this;
 		}
 
 		/// <summary>
@@ -387,8 +435,8 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& flipHorizontally()
 		{
-			Image<TVALUE, TINDEX> i;
-			i.clone(*this);
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
+			i = *this;
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
@@ -402,8 +450,8 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& flipVertically()
 		{
-			Image<TVALUE, TINDEX> i;
-			i.clone(*this);
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
+			i = *this;
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
@@ -417,8 +465,8 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& invert(const Image<TVALUE, TINDEX>& image)
 		{
-			Image<TVALUE, TINDEX> i;
-			i.clone(image);
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
+			i = *this;
 
 			TVALUE upperBound = getUpperBound<TVALUE>();
 
