@@ -409,13 +409,26 @@ namespace Common
 		/// <summary>
 		/// Inverts the image
 		/// </summary>
-		Image<TVALUE, TINDEX>& invert(const Image<TVALUE, TINDEX>& image) const
+		Image<TVALUE, TINDEX>& invert(const Image<TVALUE, TINDEX>& image)
 		{
+			Image<TVALUE, TINDEX> i;
+			i.clone(*this);
+
+			TVALUE upperBound = getUpperBound<TVALUE>();
+
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					Values[x][y] = getUpperBound<TVALUE>() - i.Values[x][y];
+					Values[x][y] = upperBound - i.Values[x][y];
 
 			return *this;
+		}
+
+		/// <summary>
+		/// Inverts the image
+		/// </summary>
+		Image<TVALUE, TINDEX>& invert()
+		{
+			return invert(*this);
 		}
 
 		/// <summary>

@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
 	renderImage(image);
 	
-	image.flipHorizontally().flipVertically();
+	image.invert();
 
 	renderImage(image);
 
