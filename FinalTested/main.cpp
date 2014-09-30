@@ -33,9 +33,8 @@ void renderImage(const Common::Image8_1& image)
 	for (int y = 0; y < image.Width; y++)
 	{
 		for (int x = 0; x < image.Width; x++)
-		{
 			std::cout << (image.Values[x][y] ? 1 : 0);
-		}
+
 		std::cout << "\n";
 	}
 	std::cout << "\n";
