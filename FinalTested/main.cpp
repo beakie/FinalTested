@@ -39,5 +39,6 @@ void renderImage(const Common::Image8_1& image)
 
 		std::cout << "\n";
 	}
+
 	std::cout << "\n";
 }
