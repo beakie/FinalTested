@@ -5,6 +5,7 @@
 #include "common.h"
 
 #include "drawing-imagerender.h"
+#include "drawing-pixels.h"
 
 namespace Drawing
 {

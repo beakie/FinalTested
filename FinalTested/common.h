@@ -11,7 +11,6 @@
 #include "common-matrix4.h"
 #include "common-matrixadapter.h"
 #include "common-matrixn.h"
-#include "common-pixels.h"
 #include "common-quadchannelpixel.h"
 #include "common-static.h"
 #include "common-triplechannelpixel.h"
