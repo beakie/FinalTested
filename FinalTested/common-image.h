@@ -217,7 +217,7 @@ namespace Common
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<TVALUE, TINDEX> operator >>(const TVALUE value) const
+		Image<TVALUE, TINDEX> operator >(const TVALUE value) const
 		{
 			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(Width, Height);
 
@@ -234,7 +234,7 @@ namespace Common
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator <<(const TVALUE value)
+		Image<TVALUE, TINDEX>& operator <(const TVALUE value)
 		{
 			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(Width, Height);
 
