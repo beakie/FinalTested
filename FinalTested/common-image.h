@@ -352,6 +352,32 @@ namespace Common
 		}
 
 		/// <summary>
+		/// Greater than
+		/// </summary>
+		bool operator >(const TVALUE value) const
+		{
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					if (Values[x][y] > values)
+						return true;
+
+			return false;
+		}
+
+		/// <summary>
+		/// Less than
+		/// </summary>
+		bool operator <(const TVALUE value) const
+		{
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					if (Values[x][y] < values)
+						return true;
+
+			return false;
+		}
+
+		/// <summary>
 		/// Clones the image
 		/// </summary>
 		Image<TVALUE, TINDEX>& clone(const Image<TVALUE, TINDEX>& image)
