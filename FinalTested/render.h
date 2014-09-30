@@ -4,7 +4,7 @@
 #include "core.h"
 #include "common.h"
 
-#include "render-paint.h"
+#include "render-picture.h"
 
 namespace Render
 {
