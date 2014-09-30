@@ -169,9 +169,7 @@ namespace Common
 				valuesBuffer[x] = new TVALUE[Height];
 
 				for (TINDEX y = 0; y < Height; y++)
-				{
 					valuesBuffer[x][y] = (Values[x][y] > overflowCheck ? upperBound : Values[x][y] * value);
-				}
 			}
 
 			replacePixelArray(newWidth, newHeight, valuesBuffer);
@@ -204,9 +202,7 @@ namespace Common
 				valuesBuffer[x] = new TVALUE[Height];
 
 				for (TINDEX y = 0; y < Height; y++)
-				{
 					valuesBuffer[x][y] = Values[x][y] / value;
-				}
 			}
 
 			replacePixelArray(newWidth, newHeight, valuesBuffer);
@@ -266,9 +262,17 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator |=(const Image<TVALUE, TINDEX>& image)
 		{
+			TVALUE** valuesBuffer = new TVALUE*[Width];
+
 			for (TINDEX x = 0; x < Width; x++)
+			{
+				valuesBuffer[x] = new TVALUE[Height];
+
 				for (TINDEX y = 0; y < Height; y++)
-					Values[x][y] |= image.Values[x][y];
+					valuesBuffer[x][y] = Values[x][y] | image.Values[x][y];
+			}
+
+			replacePixelArray(newWidth, newHeight, valuesBuffer);
 
 			return *this;
 		}
@@ -291,9 +295,17 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator &=(const Image<TVALUE, TINDEX>& image)
 		{
+			TVALUE** valuesBuffer = new TVALUE*[Width];
+
 			for (TINDEX x = 0; x < Width; x++)
+			{
+				valuesBuffer[x] = new TVALUE[Height];
+
 				for (TINDEX y = 0; y < Height; y++)
-					Values[x][y] &= image.Values[x][y];
+					valuesBuffer[x][y] = Values[x][y] & image.Values[x][y];
+			}
+
+			replacePixelArray(newWidth, newHeight, valuesBuffer);
 
 			return *this;
 		}
@@ -303,7 +315,16 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator !() const
 		{
-			return Image<TVALUE, TINDEX>(*this).invert();
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
+			i = *this;
+
+			TVALUE upperBound = getUpperBound<TVALUE>();
+
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					Values[x][y] = upperBound - i.Values[x][y];
+
+			return i;
 		}
 
 		/// <summary>
@@ -465,14 +486,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& invert(const Image<TVALUE, TINDEX>& image)
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
-			i = *this;
-
-			TVALUE upperBound = getUpperBound<TVALUE>();
-
-			for (TINDEX x = 0; x < Width; x++)
-				for (TINDEX y = 0; y < Height; y++)
-					Values[x][y] = upperBound - i.Values[x][y];
+			operator =(!image);
 
 			return *this;
 		}
