@@ -5,7 +5,9 @@
 #include "core.h"
 #include "common.h"
 
-void renderImage(const Common::Image8_1& image);
+
+template <typename TIMAGE>
+void renderImage(const TIMAGE& image);
 
 int main(int argc, char *argv[])
 {
@@ -23,14 +25,15 @@ int main(int argc, char *argv[])
 	
 	//image.cropImage(0, 1, 8, 8);
 
-	image.rotate180();
+	image.rotate90();
 
 	renderImage(image);
 
 	return a.exec();
 }
 
-void renderImage(const Common::Image8_1& image)
+template <typename TIMAGE>
+void renderImage(const TIMAGE& image)
 {
 	for (int y = 0; y < image.Height; y++)
 	{

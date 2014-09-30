@@ -480,7 +480,7 @@ namespace Common
 		/// <summary>
 		/// Rotates the image 90 degrees clockwise
 		/// </summary>
-		Image<TVALUE, TINDEX>& rotate270()
+		Image<TVALUE, TINDEX>& rotate90()
 		{
 			TVALUE** valuesBuffer = new TVALUE*[Height];
 
@@ -489,7 +489,7 @@ namespace Common
 				valuesBuffer[y] = new TVALUE[Width];
 
 				for (TINDEX x = 0; x < Width; x++)
-					valuesBuffer[y][x] = Values[Width - x - 1][y];
+					valuesBuffer[y][x] = Values[x][Height - y - 1];
 			}
 
 			replacePixelArray(Height, Width, valuesBuffer);
@@ -498,7 +498,7 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Rotates the image 180 degrees clockwise
+		/// Rotates the image 180 degrees
 		/// </summary>
 		Image<TVALUE, TINDEX>& rotate180()
 		{
@@ -518,9 +518,9 @@ namespace Common
 		}
 
 		/// <summary>
-		/// Rotates the image 270 degrees clockwise
+		/// Rotates the image 90 degrees anticlockwise
 		/// </summary>
-		Image<TVALUE, TINDEX>& rotate90()
+		Image<TVALUE, TINDEX>& rotate270()
 		{
 			TVALUE** valuesBuffer = new TVALUE*[Height];
 
@@ -529,7 +529,7 @@ namespace Common
 				valuesBuffer[y] = new TVALUE[Width];
 
 				for (TINDEX x = 0; x < Width; x++)
-					valuesBuffer[y][x] = Values[x][Height - y - 1];
+					valuesBuffer[y][x] = Values[Width - x - 1][y];
 			}
 
 			replacePixelArray(Height, Width, valuesBuffer);
