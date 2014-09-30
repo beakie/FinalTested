@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
 	renderImage(image);
 	
-	image.invert();
+	image = image;
 
 	renderImage(image);
 

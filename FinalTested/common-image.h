@@ -160,11 +160,21 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator =(const Image<TVALUE, TINDEX>& image)
 		{
-			recreatePixelArray(image.Width, image.Height);
+			TVALUE** valuesBuffer;
+			TINDEX newWidth = image.Width;
+			TINDEX newHeight = image.Height;
 
-			for (TINDEX x = 0; x < Width; x++)
-				for (TINDEX y = 0; y < Height; y++)
-					Values[x][y] = image.Values[x][y];
+			valuesBuffer = new TVALUE*[newWidth];
+
+			for (TINDEX x = 0; x < newWidth; x++)
+			{
+				valuesBuffer[x] = new TVALUE[newHeight];
+
+				for (TINDEX y = 0; y < newHeight; y++)
+					valuesBuffer[x][y] = image.Values[x][y];
+			}
+
+			replacePixelArray(newWidth, newHeight, valuesBuffer);
 
 			return *this;
 		}
@@ -412,7 +422,7 @@ namespace Common
 		Image<TVALUE, TINDEX>& invert(const Image<TVALUE, TINDEX>& image)
 		{
 			Image<TVALUE, TINDEX> i;
-			i.clone(*this);
+			i.clone(image);
 
 			TVALUE upperBound = getUpperBound<TVALUE>();
 
