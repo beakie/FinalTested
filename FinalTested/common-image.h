@@ -396,7 +396,8 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& flipVertically()
 		{
-			Image<TVALUE, TINDEX> i = *this;
+			Image<TVALUE, TINDEX> i;
+			i.clone(*this);
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
