@@ -421,7 +421,7 @@ namespace Common
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<bool, TINDEX> getAboveThreshold(const TVALUE value) const
+		Image<bool, TINDEX> getIsAboveThreshold(const TVALUE value) const
 		{
 			Image<bool, TINDEX> i = Image<bool, TINDEX>(Width, Height);
 
@@ -435,7 +435,7 @@ namespace Common
 		/// <summary>
 		/// Threshold
 		/// </summary>
-		Image<bool, TINDEX> getBelowThreshold(const TVALUE value) const
+		Image<bool, TINDEX> getIsBelowThreshold(const TVALUE value) const
 		{
 			Image<bool, TINDEX> i = Image<bool, TINDEX>(Width, Height);
 
@@ -522,7 +522,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& invert()
 		{
-			return invert(*this);
+			return operator =(operator !());
 		}
 
 		/// <summary>
