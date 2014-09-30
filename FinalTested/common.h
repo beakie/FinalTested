@@ -226,6 +226,10 @@ namespace Common
 	/// </summary>
 	typedef Image<UInt_32, UInt_8> Image8_32;
 	/// <summary>
+	/// Image with 1 byte dimensions and floating point pixels
+	/// </summary>
+	typedef Image<Float, UInt_8> Image8_F;
+	/// <summary>
 	/// Image with 2 byte dimensions and 1 bit pixels
 	/// </summary>
 	typedef Image<UInt_1, UInt_16> Image16_1;
@@ -241,6 +245,10 @@ namespace Common
 	/// Image with 2 byte dimensions and 4 byte pixels
 	/// </summary>
 	typedef Image<UInt_32, UInt_16> Image16_32;
+	/// <summary>
+	/// Image with 2 byte dimensions and floating point pixels
+	/// </summary>
+	typedef Image<Float, UInt_16> Image16_F;
 
 }
 
