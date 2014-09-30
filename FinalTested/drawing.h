@@ -1,5 +1,5 @@
-#ifndef RENDER_H
-#define RENDER_H
+#ifndef DRAWING_H
+#define DRAWING_H
 
 #include "core.h"
 #include "common.h"
@@ -156,4 +156,4 @@ namespace Drawing
 
 }
 
-#endif // RENDER_H
+#endif // DRAWING_H
