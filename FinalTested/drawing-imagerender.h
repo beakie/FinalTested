@@ -26,14 +26,9 @@ namespace Drawing
 			return i;
 		}
 
-		static Common::TripleChannelPixel<UInt_8> convertPixelToTripleJet(const UInt_8& value)
+		static Common::TripleChannelPixel<UInt_8> convertPixelToRGBJet(const UInt_8& value)
 		{
 			return Common::TripleChannelPixel<UInt_8>(1, 1, 1);
-		}
-
-		static Common::QuadChannelPixel<UInt_8> convertPixelToQuadJet(const UInt_8& value)
-		{
-			return Common::QuadChannelPixel<UInt_8>(1, 1, 1, 1);
 		}
 	};
 }
