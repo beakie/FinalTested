@@ -34,7 +34,8 @@ int main(int argc, char *argv[])
 	//Common::Image8_8 testImage = Common::Image8_8(10, 10, 0); // Errors
 	Common::Image8_8 testImage = Common::Image8_8(10, 10, 1);
 
-	Drawing::ImageRender::renderImageAs3ChannelFalseImage(testImage, &Drawing::ImageRender::convertPixelToRGBJet);
+	Drawing::Image8RGBPixel_8 rgbImage;
+	rgbImage = Drawing::ImageRender::renderImageAs3ChannelFalseImage(testImage, &Drawing::ImageRender::convertPixelToRGBJet);
 
 	///////////////////
 

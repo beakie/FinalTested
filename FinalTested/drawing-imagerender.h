@@ -28,7 +28,7 @@ namespace Drawing
 
 		static Common::TripleChannelPixel<UInt_8> convertPixelToRGBJet(const UInt_8& value)
 		{
-			return Common::TripleChannelPixel<UInt_8>(1, 1, 1);
+			return Common::TripleChannelPixel<UInt_8>(1, 2, 3);
 		}
 	};
 }
