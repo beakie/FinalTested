@@ -36,14 +36,18 @@ struct Foo
 	Foo()
 	{
 		_BarList = new Bar[2];
+
+		_BarList[0] = Bar(0, 0);
+		_BarList[1] = Bar(0, 0);
+		_BarList[2] = Bar(0, 0);
 	}
 
 	Foo(int someParam)
 		: Foo()
 	{
-		_BarList[0] = Bar(1, 2);
-		_BarList[1] = Bar(10, 20);
-		_BarList[2] = Bar(100, 200);
+		_BarList[0] = Bar(1, someParam);
+		_BarList[1] = Bar(10, someParam);
+		_BarList[2] = Bar(100, someParam);
 	}
 
 	~Foo()
