@@ -13,8 +13,8 @@ void renderImage(const TIMAGE& image);
 
 struct Bar
 {
-	int Field1;
-	int Field2;
+	int _Field1;
+	int _Field2;
 
 	Bar()
 	{
@@ -22,6 +22,8 @@ struct Bar
 
 	Bar(int field1, int field2)
 	{
+		_Field1 = field1;
+		_Field2 = field2;
 	}
 
 	~Bar()
@@ -35,19 +37,21 @@ struct Foo
 
 	Foo()
 	{
-		_BarList = new Bar[2];
-
-		_BarList[0] = Bar(0, 0);
-		_BarList[1] = Bar(0, 0);
-		_BarList[2] = Bar(0, 0);
+		_BarList = new Bar[1];
+		_BarList[0] = Bar(10, 20);
 	}
 
-	Foo(int someParam)
-		: Foo()
+	Foo& operator=(const Foo& foo)
 	{
-		_BarList[0] = Bar(1, someParam);
-		_BarList[1] = Bar(10, someParam);
-		_BarList[2] = Bar(100, someParam);
+		Bar* tmpBarList = new Bar[1];
+
+		tmpBarList[0] = foo._BarList[0];
+
+		delete[] _BarList;
+
+		_BarList = tmpBarList;
+
+		return *this;
 	}
 
 	~Foo()
@@ -58,7 +62,7 @@ struct Foo
 
 Foo fooFunc()
 {
-	return Foo(123);
+	return Foo();
 }
 
 
