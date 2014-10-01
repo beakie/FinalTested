@@ -9,13 +9,13 @@ namespace Drawing
 	static class ImageRender
 	{
 	public:
-		typedef Common::TripleChannelPixel<UInt_8>(*PixelConverterDelegate)(const UInt_8&);
+		//typedef Common::TripleChannelPixel<UInt_8>(*PixelConverterDelegate)(const UInt_8&);
 
 		/// <summary>
 		/// ...
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<Common::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelFalseImage(const Common::Image<TVALUE, TINDEX>& image, Common::TripleChannelPixel<TVALUE>(pixelConverter)(const TVALUE&))
+		static Common::Image<Common::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Common::TripleChannelPixel<TVALUE>(pixelConverter)(const TVALUE&))
 		{
 			Common::Image<Common::TripleChannelPixel<TVALUE>, TINDEX> i = Common::Image<Common::TripleChannelPixel<TVALUE>, TINDEX>(image.Width, image.Height);
 
@@ -26,6 +26,9 @@ namespace Drawing
 			return i;
 		}
 
+		/// <summary>
+		/// ...
+		/// </summary>
 		static Common::TripleChannelPixel<UInt_8> convertPixelToRGBJet(const UInt_8& value)
 		{
 			return Common::TripleChannelPixel<UInt_8>(1, 2, 3);
