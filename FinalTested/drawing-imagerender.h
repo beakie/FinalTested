@@ -15,7 +15,7 @@ namespace Drawing
 		/// ...
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<Common::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Common::TripleChannelPixel<TVALUE>(pixelConverter)(const Float_32&))
+		static Common::Image<Common::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Common::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
 		{
 			Common::Image<Common::TripleChannelPixel<TVALUE>, TINDEX> i = Common::Image<Common::TripleChannelPixel<TVALUE>, TINDEX>(image.Width, image.Height);
 
@@ -25,7 +25,7 @@ namespace Drawing
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)
 				{
-					Float_32 f = ((Float_32)(image.Values[x][y] - lowerBound)) / boundsDiff;
+					Common::UnitInterval_32 f = (Common::UnitInterval_32)((Float_32)(image.Values[x][y] - lowerBound)) / boundsDiff;
 
 					i.Values[x][y] = pixelConverter(f);
 				}
@@ -36,8 +36,9 @@ namespace Drawing
 		/// <summary>
 		/// ...
 		/// </summary>
-		static Common::TripleChannelPixel<UInt_8> convertPixelToRGBJet(const Float_32& value)
+		static Common::TripleChannelPixel<UInt_8> convertPixelToRGBJet(const Common::UnitInterval_32& value)
 		{
+			//make this a class. it might need local variables to be efficent... or prepopulated with colourmap
 			return Common::TripleChannelPixel<UInt_8>(1, 2, 3);
 		}
 	};
