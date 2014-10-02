@@ -25,6 +25,7 @@ namespace Drawing
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)
 				{
+					//make this a class. have static and member functions to make job efficient. also custom upper and lower bounds would be nice.
 					Common::UnitInterval_32 f = (Common::UnitInterval_32)((Float_32)(image.Values[x][y] - lowerBound)) / boundsDiff;
 
 					i.Values[x][y] = pixelConverter(f);
