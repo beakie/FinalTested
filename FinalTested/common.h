@@ -104,15 +104,15 @@ namespace Common
 	/// <summary>
 	/// matrix of size 2 with floating point values
 	/// </summary>
-	typedef Matrix2<Float> Matrix2_F;
+	typedef Matrix2<Float_32> Matrix2_F;
 	/// <summary>
 	/// matrix of size 3 with floating point values
 	/// </summary>
-	typedef Matrix3<Float> Matrix3_F;
+	typedef Matrix3<Float_32> Matrix3_F;
 	/// <summary>
 	/// matrix of size 4 with floating point values
 	/// </summary>
-	typedef Matrix4<Float> Matrix4_F;
+	typedef Matrix4<Float_32> Matrix4_F;
 	/// <summary>
 	/// Adapter for matrix of size 2 with 1 bit values
 	/// </summary>
@@ -200,15 +200,15 @@ namespace Common
 	/// <summary>
 	/// Adapter for matrix of size 2 with floating point values
 	/// </summary>
-	typedef MatrixAdapter<Matrix2_F, Float> Matrix2Adapter_F;
+	typedef MatrixAdapter<Matrix2_F, Float_32> Matrix2Adapter_F;
 	/// <summary>
 	/// Adapter for matrix of size 3 with floating point values
 	/// </summary>
-	typedef MatrixAdapter<Matrix3_F, Float> Matrix3Adapter_F;
+	typedef MatrixAdapter<Matrix3_F, Float_32> Matrix3Adapter_F;
 	/// <summary>
 	/// Adapter for matrix of size 4 with floating point values
 	/// </summary>
-	typedef MatrixAdapter<Matrix4_F, Float> Matrix4Adapter_F;
+	typedef MatrixAdapter<Matrix4_F, Float_32> Matrix4Adapter_F;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 bit pixels
 	/// </summary>
@@ -228,7 +228,7 @@ namespace Common
 	/// <summary>
 	/// Image with 1 byte dimensions and floating point pixels
 	/// </summary>
-	typedef Image<Float, UInt_8> Image8_F;
+	typedef Image<Float_32, UInt_8> Image8_F;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 bit pixels
 	/// </summary>
@@ -248,7 +248,7 @@ namespace Common
 	/// <summary>
 	/// Image with 2 byte dimensions and floating point pixels
 	/// </summary>
-	typedef Image<Float, UInt_16> Image16_F;
+	typedef Image<Float_32, UInt_16> Image16_F;
 
 }
 
