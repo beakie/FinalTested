@@ -39,7 +39,7 @@ namespace Drawing
 		/// </summary>
 		static Common::TripleChannelPixel<UInt_8> convertPixelToRGBJet(const Common::UnitInterval_32& value)
 		{
-			//make this a class. it might need local variables to be efficent... or prepopulated with colourmap
+			//make this a class. it might need local variables to be efficent... or be prepopulated with colourmap
 			return Common::TripleChannelPixel<UInt_8>(1, 2, 3);
 		}
 	};
