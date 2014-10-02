@@ -37,6 +37,15 @@ namespace Common
 			createPixelArray(0, 0);
 		}
 
+		///// <summary>
+		///// Constructs an image and copies existing image into it
+		///// </summary>
+		Image(const Image<TVALUE, TINDEX>& image)
+		{
+			Values = 0;
+			operator=(image); //use a swap function instead?
+		}
+
 		/// <summary>
 		/// Constructs an unpopulated image
 		/// </summary>
@@ -120,7 +129,7 @@ namespace Common
 		/// <summary>
 		/// Clone
 		/// </summary>
-		Image<TVALUE, TINDEX>& operator=(const Image<TVALUE, TINDEX>& image)
+		Image<TVALUE, TINDEX>& operator=(const Image<TVALUE, TINDEX>& image)  //use a swap function instead?
 		{
 			TINDEX newWidth = image.Width;
 			TINDEX newHeight = image.Height;
@@ -146,8 +155,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator*(const TVALUE value) const
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
-			i = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX> = *this;
 
 			i *= value;
 
@@ -182,8 +190,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator/(const TVALUE value) const
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
-			i = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX> = *this;
 
 			i /= value;
 
@@ -249,8 +256,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator|(const Image<TVALUE, TINDEX>& image) const
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
-			i = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX> = *this;
 
 			i |= image;
 
@@ -282,8 +288,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator&(const Image<TVALUE, TINDEX>& image) const
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
-			i = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX> = *this;
 
 			i &= image;
 
@@ -315,8 +320,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator!() const
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
-			i = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX> = *this;
 
 			TVALUE upperBound = getUpperBound<TVALUE>();
 
@@ -542,8 +546,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& flipHorizontally()
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
-			i = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX> = *this;
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
@@ -557,8 +560,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& flipVertically()
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>();
-			i = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX> = *this;
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)

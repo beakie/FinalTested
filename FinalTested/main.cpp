@@ -9,64 +9,6 @@
 template <typename TIMAGE>
 void renderImage(const TIMAGE& image);
 
-
-
-struct Bar
-{
-	int _Field1;
-	int _Field2;
-
-	Bar()
-	{
-	}
-
-	Bar(int field1, int field2)
-	{
-		_Field1 = field1;
-		_Field2 = field2;
-	}
-
-	~Bar()
-	{
-	}
-};
-
-struct Foo
-{
-	Bar* _BarList;
-
-	Foo()
-	{
-		_BarList = new Bar[1];
-		_BarList[0] = Bar(10, 20);
-	}
-
-	Foo& operator=(const Foo& foo)
-	{
-		Bar* tmpBarList = new Bar[1];
-
-		tmpBarList[0] = foo._BarList[0];
-
-		delete[] _BarList;
-
-		_BarList = tmpBarList;
-
-		return *this;
-	}
-
-	~Foo()
-	{
-		delete[] _BarList;
-	}
-};
-
-Foo fooFunc()
-{
-	return Foo();
-}
-
-
-
 int main(int argc, char *argv[])
 {
 	QCoreApplication a(argc, argv);
@@ -96,9 +38,6 @@ int main(int argc, char *argv[])
 	rgbImage = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &Drawing::ImageRender::convertPixelToRGBJet);
 
 	///////////////////
-
-	Foo baz;
-	baz = fooFunc();
 
 	return a.exec();
 }

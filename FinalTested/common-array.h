@@ -27,18 +27,13 @@ namespace Common
 			Count = 0;
 			Capacity = 0;
 
-			Items = new TVALUE[Capacity];
+			Items = 0;
 		}
 
-		Array(Array<TVALUE, TINDEX> const &copy) // is this needed?
+		Array(const Array<TVALUE, TINDEX> &array)
 		{
-			Count = copy.Count;
-			Capacity = copy.Capacity;
-
-			Items = new TVALUE[Capacity];
-
-			for (TINDEX i = 0; i < Count; i++)
-				Items[i] = copy.Items[i];
+			Items = 0;
+			operator=(array);
 		}
 
 		TINDEX count() const
