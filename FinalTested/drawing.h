@@ -6,7 +6,10 @@
 
 #include "drawing-colormap.h"
 #include "drawing-imagerender.h"
+#include "drawing-images.h"
 #include "drawing-pixels.h"
+#include "drawing-quadchannelpixel.h"
+#include "drawing-triplechannelpixel.h"
 
 ///// MOVE THE TRIPLE, QUAD AND IMAGES CODE TO THIS NAMESPACE /////
 
@@ -15,39 +18,39 @@ namespace Drawing
 	/// <summary>
 	/// 1 byte precision RGB pixel
 	/// </summary>
-	typedef Common::TripleChannelPixel<UInt_8> RGBPixel_8;
+	typedef Drawing::TripleChannelPixel<UInt_8> RGBPixel_8;
 	/// <summary>
 	/// 2 byte precision RGB pixel
 	/// </summary>
-	typedef Common::TripleChannelPixel<UInt_16> RGBPixel_16;
+	typedef Drawing::TripleChannelPixel<UInt_16> RGBPixel_16;
 	/// <summary>
 	/// 4 byte precision RGB pixel
 	/// </summary>
-	typedef Common::TripleChannelPixel<UInt_32> RGBPixel_32;
+	typedef Drawing::TripleChannelPixel<UInt_32> RGBPixel_32;
 	/// <summary>
 	/// 1 byte precision HSV pixel
 	/// </summary>
-	typedef Common::TripleChannelPixel<UInt_8> HSVPixel_8;
+	typedef Drawing::TripleChannelPixel<UInt_8> HSVPixel_8;
 	/// <summary>
 	/// 2 byte precision HSV pixel
 	/// </summary>
-	typedef Common::TripleChannelPixel<UInt_16> HSVPixel_16;
+	typedef Drawing::TripleChannelPixel<UInt_16> HSVPixel_16;
 	/// <summary>
 	/// 4 byte precision HSV pixel
 	/// </summary>
-	typedef Common::TripleChannelPixel<UInt_32> HSVPixel_32;
+	typedef Drawing::TripleChannelPixel<UInt_32> HSVPixel_32;
 	/// <summary>
 	/// 1 byte precision RGBA pixel
 	/// </summary>
-	typedef Common::QuadChannelPixel<UInt_8> RGBAPixel_8;
+	typedef Drawing::QuadChannelPixel<UInt_8> RGBAPixel_8;
 	/// <summary>
 	/// 2 byte precision RGBA pixel
 	/// </summary>
-	typedef Common::QuadChannelPixel<UInt_16> RGBAPixel_16;
+	typedef Drawing::QuadChannelPixel<UInt_16> RGBAPixel_16;
 	/// <summary>
 	/// 4 byte precision RGBA pixel
 	/// </summary>
-	typedef Common::QuadChannelPixel<UInt_32> RGBAPixel_32;
+	typedef Drawing::QuadChannelPixel<UInt_32> RGBAPixel_32;
 	/// <summary>
 	/// 1 byte precision greyscale pixel
 	/// </summary>

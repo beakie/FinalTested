@@ -4,16 +4,13 @@
 #include "core.h"
 #include "common-array.h"
 #include "common-image.h"
-#include "common-images.h"
 #include "common-imatrixadapter.h"
 #include "common-matrix2.h"
 #include "common-matrix3.h"
 #include "common-matrix4.h"
 #include "common-matrixadapter.h"
 #include "common-matrixn.h"
-#include "common-quadchannelpixel.h"
 #include "common-static.h"
-#include "common-triplechannelpixel.h"
 
 namespace Common
 {

@@ -3,21 +3,22 @@
 
 #include "core.h"
 #include "common.h"
+#include "drawing-triplechannelpixel.h"
 
 namespace Drawing
 {
 	static class ImageRender
 	{
 	public:
-		//typedef Common::TripleChannelPixel<UInt_8>(*PixelConverterDelegate)(const UInt_8&);
+		//typedef Drawing::TripleChannelPixel<UInt_8>(*PixelConverterDelegate)(const UInt_8&);
 
 		/// <summary>
 		/// ...
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<Common::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Common::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
+		static Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
 		{
-			Common::Image<Common::TripleChannelPixel<TVALUE>, TINDEX> i = Common::Image<Common::TripleChannelPixel<TVALUE>, TINDEX>(image.Width, image.Height);
+			Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> i = Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX>(image.Width, image.Height);
 
 			Float_32 lowerBound = Common::getLowerBound<TVALUE>();
 			Float_32 boundsDiff = Common::getUpperBound<TVALUE>() - lowerBound;
@@ -34,14 +35,6 @@ namespace Drawing
 			return i;
 		}
 
-		/// <summary>
-		/// ...
-		/// </summary>
-		static Common::TripleChannelPixel<UInt_8> convertPixelToRGBJet(const Common::UnitInterval_32& value)
-		{
-			//make this a class. it might need local variables to be efficent... or be prepopulated with colourmap
-			return Common::TripleChannelPixel<UInt_8>(1, 2, 3);
-		}
 	};
 }
 

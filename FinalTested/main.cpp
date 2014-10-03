@@ -35,11 +35,9 @@ int main(int argc, char *argv[])
 	Common::Image8_8 testImage = Common::Image8_8(10, 10, 1);
 
 	Drawing::Image8RGBPixel_8 rgbImage = Drawing::Image8RGBPixel_8(0, 0);
-	rgbImage = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &Drawing::ImageRender::convertPixelToRGBJet);
+	Drawing::TripleChannelColorMap<Drawing::TripleChannelPixel<UInt_8>, Float_32> colorMap(10);
+	//rgbImage = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &colorMap.convertPixelToRGBJet);
 
-	///////////////////
-
-	Drawing::TripleChannelColorMap<Common::TripleChannelPixel<UInt_8>, Float_32> colorMap(10);
 
 	///////////////////
 

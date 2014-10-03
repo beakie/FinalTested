@@ -4,6 +4,8 @@
 #include "core.h"
 #include "common.h"
 
+#include "drawing-triplechannelpixel.h"
+
 namespace Drawing
 {
 	template <typename TPIXELVALUE, typename TUNITINTERVAL>
@@ -64,12 +66,12 @@ namespace Drawing
 			}
 		}
 
-		Common::TripleChannelPixel<UInt_8> convertPixelToRGBJet(const Common::UnitInterval_32& value) const
+	public:
+		Drawing::TripleChannelPixel<UInt_8> convertPixelToRGBJet(const Common::UnitInterval_32& value) const
 		{
-			return Common::TripleChannelPixel<UInt_8>(1, 2, 3);
+			return Drawing::TripleChannelPixel<UInt_8>(1, 2, 3);
 		}
 
-	public:
 		~TripleChannelColorMap()
 		{
 			deleteValues();
