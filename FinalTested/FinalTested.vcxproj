@@ -90,6 +90,7 @@
     <ClInclude Include="common-matrix4.h" />
     <ClInclude Include="common-matrixadapter.h" />
     <ClInclude Include="common-matrixn.h" />
+    <ClInclude Include="drawing-colormap.h" />
     <ClInclude Include="drawing-pixels.h" />
     <ClInclude Include="common-quadchannelpixel.h" />
     <ClInclude Include="common-triplechannelpixel.h" />

@@ -83,5 +83,8 @@
     <ClInclude Include="drawing-pixels.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="drawing-colormap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

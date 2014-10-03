@@ -18,7 +18,7 @@
 namespace Common
 {
 	/// <summary>
-	/// 4 byte unit interval (0-1)
+	/// 4 byte unit interval (0 - 1)
 	/// </summary>
 	typedef Float_32 UnitInterval_32;
 	/// <summary>
