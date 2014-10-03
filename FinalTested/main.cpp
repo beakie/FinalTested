@@ -9,9 +9,45 @@
 template <typename TIMAGE>
 void renderImage(const TIMAGE& image);
 
+struct Foo
+{
+
+};
+
+unsigned char getValue()
+{
+	return 123;
+}
+
+struct Bar
+{
+	unsigned char a;
+	unsigned char b;
+
+	unsigned char getValue()
+	{
+		return a * b;
+	}
+};
+
 int main(int argc, char *argv[])
 {
 	QCoreApplication a(argc, argv);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	Common::Image8_1 image = Common::Image8_1(10, 10, false);
 
@@ -36,7 +72,7 @@ int main(int argc, char *argv[])
 
 	Drawing::Image8RGBPixel_8 rgbImage = Drawing::Image8RGBPixel_8(0, 0);
 	Drawing::TripleChannelColorMap<Drawing::TripleChannelPixel<UInt_8>, Float_32> colorMap(10);
-	//rgbImage = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &colorMap.convertPixelToRGBJet);
+//	rgbImage = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &colorMap::convertPixelToRGBJet);
 
 	///////////////////
 
