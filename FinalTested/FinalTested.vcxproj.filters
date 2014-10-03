@@ -74,9 +74,6 @@
     <ClInclude Include="drawing-pixels.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-colormap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="drawing-quadchannelpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -87,6 +84,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="drawing-colormapbuilders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drawing-triplechannelcolormap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

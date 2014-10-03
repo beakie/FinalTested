@@ -4,11 +4,12 @@
 #include "core.h"
 #include "common.h"
 
-#include "drawing-colormap.h"
+#include "drawing-colormapbuilders.h"
 #include "drawing-imagerender.h"
 #include "drawing-images.h"
 #include "drawing-pixels.h"
 #include "drawing-quadchannelpixel.h"
+#include "drawing-triplechannelcolormap.h"
 #include "drawing-triplechannelpixel.h"
 
 ///// MOVE THE TRIPLE, QUAD AND IMAGES CODE TO THIS NAMESPACE /////
