@@ -38,7 +38,6 @@ int main(int argc, char *argv[])
 	Drawing::TripleChannelColorMap<Drawing::TripleChannelPixel<UInt_8>, Float_32> colorMap(10);
 	//rgbImage = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &colorMap.convertPixelToRGBJet);
 
-
 	///////////////////
 
 	return a.exec();
