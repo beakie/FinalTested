@@ -131,19 +131,22 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX>& operator=(const Image<TVALUE, TINDEX>& image)  //use a swap function instead?
 		{
-			TINDEX newWidth = image.Width;
-			TINDEX newHeight = image.Height;
-			TVALUE** valuesBuffer = new TVALUE*[newWidth];
-
-			for (TINDEX x = 0; x < newWidth; x++)
+			if (this != &image)
 			{
-				valuesBuffer[x] = new TVALUE[newHeight];
+				TINDEX newWidth = image.Width;
+				TINDEX newHeight = image.Height;
+				TVALUE** valuesBuffer = new TVALUE*[newWidth];
 
-				for (TINDEX y = 0; y < newHeight; y++)
-					valuesBuffer[x][y] = image.Values[x][y];
+				for (TINDEX x = 0; x < newWidth; x++)
+				{
+					valuesBuffer[x] = new TVALUE[newHeight];
+
+					for (TINDEX y = 0; y < newHeight; y++)
+						valuesBuffer[x][y] = image.Values[x][y];
+				}
+
+				replacePixelArray(newWidth, newHeight, valuesBuffer);
 			}
-
-			replacePixelArray(newWidth, newHeight, valuesBuffer);
 
 			return *this;
 		}

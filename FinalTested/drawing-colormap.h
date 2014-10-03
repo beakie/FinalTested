@@ -29,11 +29,14 @@ namespace Drawing
 
 		TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL>& operator=(const TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL>& tripleChannelColorMap)
 		{
-			deleteValues();
-			createValues(tripleChannelColorMap.Size);
-			copyValues(tripleChannelColorMap);
+			if (this != &tripleChannelColorMap)
+			{
+				deleteValues();
+				createValues(tripleChannelColorMap.Size);
+				copyValues(tripleChannelColorMap);
 
-			Size = TripleChannelColorMap.Size;
+				Size = TripleChannelColorMap.Size;
+			}
 
 			return *this;
 		}
@@ -73,7 +76,7 @@ namespace Drawing
 	public:
 		~TripleChannelColorMap()
 		{
-			delete[] Values;
+			deleteValues();
 		}
 	};
 }

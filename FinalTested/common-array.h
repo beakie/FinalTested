@@ -113,16 +113,19 @@ namespace Common
 
 		Array<TVALUE, TINDEX>& operator=(const Array<TVALUE, TINDEX>& array)
 		{
-			TVALUE* tmp = new TVALUE[array.capacity];
-			Capacity = array.Capacity;
-			Count = array.Count;
+			if (this != &array)
+			{
+				TVALUE* tmp = new TVALUE[array.capacity];
+				Capacity = array.Capacity;
+				Count = array.Count;
 
-			for (TINDEX i = 0; i < Count; i++)
-				tmp[i] = array.Items[i];
+				for (TINDEX i = 0; i < Count; i++)
+					tmp[i] = array.Items[i];
 
-			delete[] Items;
+				delete[] Items;
 
-			Items = tmp;
+				Items = tmp;
+			}
 
 			return *this;
 		}
