@@ -19,7 +19,7 @@ namespace Drawing
 			createValues(size);
 		}
 
-		TripleChannelColorMap(const TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL>& tripleChannelColorMap) : Size(TripleChannelColorMap.Size)
+		TripleChannelColorMap(const TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL>& tripleChannelColorMap) : Size(tripleChannelColorMap.Size)
 		{
 			createValues(tripleChannelColorMap.Size);
 			copyValues(tripleChannelColorMap);
