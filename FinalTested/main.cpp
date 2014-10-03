@@ -9,45 +9,14 @@
 template <typename TIMAGE>
 void renderImage(const TIMAGE& image);
 
-struct Foo
+static Drawing::TripleChannelPixel<UInt_8> convertPixelToRGBJetSTATIC(const Common::UnitInterval_32& value)
 {
-
-};
-
-unsigned char getValue()
-{
-	return 123;
+	return Drawing::TripleChannelPixel<UInt_8>(1, 2, 3);
 }
-
-struct Bar
-{
-	unsigned char a;
-	unsigned char b;
-
-	unsigned char getValue()
-	{
-		return a * b;
-	}
-};
 
 int main(int argc, char *argv[])
 {
 	QCoreApplication a(argc, argv);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	Common::Image8_1 image = Common::Image8_1(10, 10, false);
 
@@ -70,9 +39,9 @@ int main(int argc, char *argv[])
 	//Common::Image8_8 testImage = Common::Image8_8(10, 10, 0); // Errors
 	Common::Image8_8 testImage = Common::Image8_8(10, 10, 1);
 
-	Drawing::Image8RGBPixel_8 rgbImage = Drawing::Image8RGBPixel_8(0, 0);
 	Drawing::TripleChannelColorMap<Drawing::TripleChannelPixel<UInt_8>, Float_32> colorMap(10);
-//	rgbImage = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &colorMap::convertPixelToRGBJet);
+	Drawing::Image8RGBPixel_8 rgbImage1 = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &convertPixelToRGBJetSTATIC);
+	//Drawing::Image8RGBPixel_8 rgbImage1 = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &convertPixelToRGBJet);
 
 	///////////////////
 
