@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 
 	///////////////////
 
-	Drawing::TripleChannelColorMap<Common::TripleChannelPixel<UInt_8>, Float_32> colorMap;
+	Drawing::TripleChannelColorMap<Common::TripleChannelPixel<UInt_8>, Float_32> colorMap(10);
 
 	///////////////////
 

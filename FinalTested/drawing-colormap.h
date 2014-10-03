@@ -12,10 +12,6 @@ namespace Drawing
 		TUNITINTERVAL** Values;
 		UInt_8 Size;
 
-		TripleChannelColorMap() : Values(0), Size(0)
-		{
-		}
-
 		TripleChannelColorMap(UInt_8 size) : Size(size)
 		{
 			createValues(size);
