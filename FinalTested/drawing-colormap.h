@@ -68,7 +68,7 @@ namespace Drawing
 			}
 		}
 
-		Common::TripleChannelPixel<UInt_8> convertPixelToRGBJet(const Common::UnitInterval_32& value)
+		Common::TripleChannelPixel<UInt_8> convertPixelToRGBJet(const Common::UnitInterval_32& value) const
 		{
 			return Common::TripleChannelPixel<UInt_8>(1, 2, 3);
 		}
