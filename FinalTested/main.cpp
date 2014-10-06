@@ -17,6 +17,11 @@ struct SomePixelConverter
 	}
 };
 
+static Drawing::TripleChannelPixel<UInt_8> staticConvertPixel(const Common::UnitInterval_32& value)
+{
+	return Drawing::TripleChannelPixel<UInt_8>(1, 2, 3);
+}
+
 int main(int argc, char *argv[])
 {
 	QCoreApplication a(argc, argv);
@@ -46,6 +51,8 @@ int main(int argc, char *argv[])
 
 	SomePixelConverter conv;
 	Drawing::Image8RGBPixel_8 rgbImageMEMBER = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &conv);
+
+	Drawing::Image8RGBPixel_8 rgbImageSTATIC = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &staticConvertPixel);
 
 	return a.exec();
 }

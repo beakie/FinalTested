@@ -9,12 +9,25 @@ namespace Drawing
 {
 	static class ImageRender
 	{
+	private:
+		template <typename TVALUE, typename TINDEX>
+		class StaticMethodWrapper
+		{
+		public:
+			Drawing::TripleChannelPixel<TVALUE>(*convertPixel)(const Common::UnitInterval_32&);
+
+			StaticMethodWrapper(Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
+			{
+				convertPixel = &pixelConverter;
+			}
+		};
+
 	public:
 		/// <summary>
 		/// ...
 		/// </summary>
 		template <typename TVALUE, typename TINDEX, typename TCONVERTER>
-		static Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, TCONVERTER converter)
+		static Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, TCONVERTER* converter)
 		{
 			Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> i = Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX>(image.Width, image.Height);
 
@@ -33,7 +46,18 @@ namespace Drawing
 			return i;
 		}
 
+		/// <summary>
+		/// ...
+		/// </summary>
+		template <typename TVALUE, typename TINDEX>
+		static Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
+		{
+			StaticMethodWrapper<TVALUE, TINDEX> wrapper(pixelConverter);
+			return renderImageAs3ChannelImage(image, &wrapper);
+		}
+
 	};
+
 }
 
 #endif // DRAWINGIMAGERENDER_H
