@@ -47,11 +47,10 @@ int main(int argc, char *argv[])
 	//Common::Image8_8 testImage = Common::Image8_8(10, 10, 0); // Errors
 	Common::Image8_8 testImage = Common::Image8_8(10, 10, 1);
 
-	Drawing::TripleChannelColorMap<UInt_8, Float_32> colorMap = Drawing::ColorMapBuilders::getRGBColorMapJet<UInt_8, Float_32>();
-
 	Drawing::Image8RGBPixel_8 rgbImageMEMBER = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &SomePixelConverter());
 	Drawing::Image8RGBPixel_8 rgbImageSTATIC = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &staticConvertPixel);
-	Drawing::Image8RGBPixel_8 rgbImageJET = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &Drawing::ImageRender::ApplyColorMap(&colorMap));
+	Drawing::Image8RGBPixel_8 rgbImageJET = Drawing::ImageRender::renderImageAs3ChannelImage(testImage,
+																								&Drawing::ImageRender::ApplyColorMap(&Drawing::ColorMapBuilders::getRGBColorMapJet<UInt_8, Float_32>()));
 
 	return a.exec();
 }
