@@ -13,7 +13,7 @@ namespace Drawing
 
 	public:
 		template <typename TPIXELVALUE, typename TUNITINTERVAL>
-		static TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL> getJetRGBColorMap()
+		static TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL> getRGBColorMapJet()
 		{
 			TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL> map(10);
 
