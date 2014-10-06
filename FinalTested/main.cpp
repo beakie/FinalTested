@@ -9,15 +9,15 @@
 template <typename TIMAGE>
 void renderImage(const TIMAGE& image);
 
-static Drawing::TripleChannelPixel<UInt_8> convertPixelToRGBJetSTATIC(const Common::UnitInterval_32& value, void* context)
+static Drawing::TripleChannelPixel<UInt_8> convertPixelToRGBJetSTATIC(const Common::UnitInterval_32& value, void* owner)
 {
 	return Drawing::TripleChannelPixel<UInt_8>(1, 2, 3);
 }
 
 template <typename TCONTEXT>
-static Drawing::TripleChannelPixel<UInt_8> convertPixelToRGBJetFORWARD(const Common::UnitInterval_32& value, void* context)
+static Drawing::TripleChannelPixel<UInt_8> convertPixelToRGBJetFORWARD(const Common::UnitInterval_32& value, void* owner)
 {
-	return static_cast<TCONTEXT*>(context)->convertPixel(value);
+	return static_cast<TCONTEXT*>(owner)->convertPixel(value);
 }
 
 struct MemberTest
