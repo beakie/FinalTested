@@ -9,7 +9,7 @@
 template <typename TIMAGE>
 void renderImage(const TIMAGE& image);
 
-static Drawing::TripleChannelPixel<UInt_8> convertPixelToRGBJetSTATIC(const Common::UnitInterval_32& value, void* owner)
+static Drawing::TripleChannelPixel<UInt_8> convertPixelToRGBJetSTATIC(const Common::UnitInterval_32& value, void* IGNORE)
 {
 	return Drawing::TripleChannelPixel<UInt_8>(1, 2, 3);
 }
