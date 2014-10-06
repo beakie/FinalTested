@@ -51,9 +51,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
 		{
-			ImageRenderHelper<TVALUE> wrapper(pixelConverter);
-			Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> i = renderImageAs3ChannelImage(image, &wrapper);
-			return i;
+			return renderImageAs3ChannelImage(image, &ImageRenderHelper<TVALUE>(pixelConverter));
 		}
 
 	};

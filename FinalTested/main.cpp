@@ -51,7 +51,6 @@ int main(int argc, char *argv[])
 
 	SomePixelConverter conv;
 	Drawing::Image8RGBPixel_8 rgbImageMEMBER = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &conv);
-
 	Drawing::Image8RGBPixel_8 rgbImageSTATIC = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &staticConvertPixel);
 
 	return a.exec();
