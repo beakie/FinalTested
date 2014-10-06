@@ -10,7 +10,7 @@ namespace Drawing
 	static class ImageRender
 	{
 	private:
-		template <typename TVALUE, typename TINDEX>
+		template <typename TVALUE>
 		class StaticMethodWrapper
 		{
 		public:
@@ -52,7 +52,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
 		{
-			StaticMethodWrapper<TVALUE, TINDEX> wrapper(pixelConverter);
+			StaticMethodWrapper<TVALUE> wrapper(pixelConverter);
 			Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> i = renderImageAs3ChannelImage(image, &wrapper);
 			return i;
 		}
