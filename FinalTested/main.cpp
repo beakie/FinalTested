@@ -49,9 +49,9 @@ int main(int argc, char *argv[])
 
 	Drawing::TripleChannelColorMap<UInt_8, Float_32> colorMap = Drawing::ColorMapBuilders::getRGBColorMapJet<UInt_8, Float_32>();
 
-	SomePixelConverter conv;
-	Drawing::Image8RGBPixel_8 rgbImageMEMBER = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &conv);
+	Drawing::Image8RGBPixel_8 rgbImageMEMBER = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &SomePixelConverter());
 	Drawing::Image8RGBPixel_8 rgbImageSTATIC = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &staticConvertPixel);
+	Drawing::Image8RGBPixel_8 rgbImageJET = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &Drawing::ImageRender::ApplyColorMap(&colorMap));
 
 	return a.exec();
 }

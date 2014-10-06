@@ -67,11 +67,6 @@ namespace Drawing
 		}
 
 	public:
-		Drawing::TripleChannelPixel<UInt_8> convertPixelToRGBJet(const Common::UnitInterval_32& value) const
-		{
-			return Drawing::TripleChannelPixel<UInt_8>(1, 2, 3);
-		}
-
 		~TripleChannelColorMap()
 		{
 			deleteValues();

@@ -55,6 +55,23 @@ namespace Drawing
 			return renderImageAs3ChannelImage(image, &ImageRenderHelper<TVALUE>(pixelConverter));
 		}
 
+		class ApplyColorMap
+		{
+		private:
+			const Drawing::TripleChannelColorMap<UInt_8, Float_32>* _colorMap;
+
+		public:
+			ApplyColorMap(const Drawing::TripleChannelColorMap<UInt_8, Float_32>* colorMap)
+			{
+				_colorMap = colorMap;
+			}
+
+			Drawing::TripleChannelPixel<UInt_8> convertPixel(const Common::UnitInterval_32& value)
+			{
+				return Drawing::TripleChannelPixel<UInt_8>(7, 14, 21);
+			}
+		};
+
 	};
 
 }
