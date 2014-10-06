@@ -11,12 +11,12 @@ namespace Drawing
 	{
 	private:
 		template <typename TVALUE>
-		class StaticMethodWrapper
+		class ImageRenderHelper
 		{
 		public:
 			Drawing::TripleChannelPixel<TVALUE>(*convertPixel)(const Common::UnitInterval_32&);
 
-			StaticMethodWrapper(Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
+			ImageRenderHelper(Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
 			{
 				convertPixel = &pixelConverter;
 			}
@@ -37,7 +37,6 @@ namespace Drawing
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)
 				{
-					//make this a class. have static and member functions to make job efficient. also custom upper and lower bounds would be nice.
 					Common::UnitInterval_32 f = ((Float_32)image.Values[x][y] - lowerBound) / boundsDiff;
 
 					i.Values[x][y] = converter->convertPixel(f);
@@ -52,7 +51,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
 		{
-			StaticMethodWrapper<TVALUE> wrapper(pixelConverter);
+			ImageRenderHelper<TVALUE> wrapper(pixelConverter);
 			Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> i = renderImageAs3ChannelImage(image, &wrapper);
 			return i;
 		}
