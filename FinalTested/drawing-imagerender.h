@@ -9,19 +9,6 @@ namespace Drawing
 {
 	static class ImageRender
 	{
-	private:
-		template <typename TVALUE>
-		class ImageRenderHelper
-		{
-		public:
-			Drawing::TripleChannelPixel<TVALUE>(*convertPixel)(const Common::UnitInterval_32&);
-
-			ImageRenderHelper(Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
-			{
-				convertPixel = &pixelConverter;
-			}
-		};
-
 	public:
 		/// <summary>
 		/// ...
@@ -45,6 +32,20 @@ namespace Drawing
 			return i;
 		}
 
+	private:
+		template <typename TVALUE>
+		class ImageRenderHelper
+		{
+		public:
+			Drawing::TripleChannelPixel<TVALUE>(*convertPixel)(const Common::UnitInterval_32&);
+
+			ImageRenderHelper(Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
+			{
+				convertPixel = &pixelConverter;
+			}
+		};
+
+	public:
 		/// <summary>
 		/// ...
 		/// </summary>
