@@ -9,18 +9,7 @@
 template <typename TIMAGE>
 void renderImage(const TIMAGE& image);
 
-static Drawing::TripleChannelPixel<UInt_8> convertPixelToRGBJetSTATIC(const Common::UnitInterval_32& value, void* IGNORE)
-{
-	return Drawing::TripleChannelPixel<UInt_8>(1, 2, 3);
-}
-
-template <typename TCONTEXT>
-static Drawing::TripleChannelPixel<UInt_8> convertPixelToRGBJetFORWARD(const Common::UnitInterval_32& value, void* owner)
-{
-	return static_cast<TCONTEXT*>(owner)->convertPixel(value);
-}
-
-struct MemberTest
+struct SomePixelConverter
 {
 	Drawing::TripleChannelPixel<UInt_8> convertPixel(const Common::UnitInterval_32& value)
 	{
@@ -55,10 +44,8 @@ int main(int argc, char *argv[])
 
 	Drawing::TripleChannelColorMap<UInt_8, Float_32> colorMap = Drawing::ColorMapBuilders::getRGBColorMapJet<UInt_8, Float_32>();
 
-	//Drawing::Image8RGBPixel_8 rgbImageSTATIC = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &convertPixelToRGBJetSTATIC, 0);
-	Drawing::Image8RGBPixel_8 rgbImageSTATIC = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &convertPixelToRGBJetSTATIC);
-	MemberTest mem;
-	Drawing::Image8RGBPixel_8 rgbImageMEMBER = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &convertPixelToRGBJetFORWARD<MemberTest>, &mem);
+	SomePixelConverter conv;
+	Drawing::Image8RGBPixel_8 rgbImageMEMBER = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &conv);
 
 	return a.exec();
 }
