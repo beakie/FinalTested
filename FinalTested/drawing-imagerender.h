@@ -53,7 +53,8 @@ namespace Drawing
 		static Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
 		{
 			StaticMethodWrapper<TVALUE, TINDEX> wrapper(pixelConverter);
-			return renderImageAs3ChannelImage(image, &wrapper);
+			Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> i = renderImageAs3ChannelImage(image, &wrapper);
+			return i;
 		}
 
 	};

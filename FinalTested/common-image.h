@@ -43,6 +43,8 @@ namespace Common
 		Image(const Image<TVALUE, TINDEX>& image)
 		{
 			Values = 0;
+			Width = 0;
+			Height = 0;
 			operator=(image); //use a swap function instead?
 		}
 
