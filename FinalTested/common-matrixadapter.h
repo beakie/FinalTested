@@ -44,7 +44,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of rows
 		/// </summary>
-		UInt_8 getRowCount()
+		UInt8 getRowCount()
 		{
 			return _Matrix.getRowCount();
 		}
@@ -52,7 +52,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of columns
 		/// </summary>
-		UInt_8 getColumnCount()
+		UInt8 getColumnCount()
 		{
 			return _Matrix.getColumnCount();
 		}
@@ -84,7 +84,7 @@ namespace Common
 		/// <summary>
 		/// Gets the value
 		/// </summary>
-		TVALUE get(const UInt_8 x, const UInt_8 y)
+		TVALUE get(const UInt8 x, const UInt8 y)
 		{
 			return _Matrix.get(x, y);
 		}

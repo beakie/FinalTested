@@ -21,7 +21,7 @@ namespace Common
 		/// <summary>
 		/// Constructs an unpopulated matrix
 		/// </summary>
-		MatrixN(UInt_8 rows, UInt_8 columns)
+		MatrixN(UInt8 rows, UInt8 columns)
 		{
 			//todo
 		}
@@ -30,7 +30,7 @@ namespace Common
 		/// Constructs a matrix and sets all the values to a single value
 		/// </summary>
 		/// <remarks>Equals operator</remarks>
-		MatrixN(UInt_8 rows, UInt_8 columns, const TVALUE value)
+		MatrixN(UInt8 rows, UInt8 columns, const TVALUE value)
 			: MatrixN(rows, columns)
 		{
 			operator=(value);
@@ -39,7 +39,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of rows
 		/// </summary>
-		UInt_8 getRowCount()
+		UInt8 getRowCount()
 		{
 			//todo
 		}
@@ -47,7 +47,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of columns
 		/// </summary>
-		UInt_8 getColumnCount()
+		UInt8 getColumnCount()
 		{
 			//todo
 		}
@@ -63,7 +63,7 @@ namespace Common
 		/// <summary>
 		/// Sets specified value
 		/// </summary>
-		void set(const UInt_8 x, const UInt_8 y, const TVALUE value)
+		void set(const UInt8 x, const UInt8 y, const TVALUE value)
 		{
 			Values[x][y] = value;
 		}
@@ -79,7 +79,7 @@ namespace Common
 		/// <summary>
 		/// Gets the value
 		/// </summary>
-		TVALUE get(const UInt_8 x, const UInt_8 y)
+		TVALUE get(const UInt8 x, const UInt8 y)
 		{
 			return Values[x][y];
 		}

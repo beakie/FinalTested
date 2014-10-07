@@ -4,34 +4,34 @@
 /// <summary>
 /// Boolean (bool)
 /// </summary>
-typedef bool UInt_1;
+typedef bool UInt1;
 /// <summary>
 /// 1 byte unsigned integer (unsigned char)
 /// </summary>
-typedef unsigned char UInt_8;
+typedef unsigned char UInt8;
 /// <summary>
 /// 2 byte unsigned integer (unsigned short)
 /// </summary>
-typedef unsigned short UInt_16;
+typedef unsigned short UInt16;
 /// <summary>
 /// 4 byte unsigned integer (unsigned int)
 /// </summary>
-typedef unsigned int UInt_32;
+typedef unsigned int UInt32;
 /// <summary>
 /// 1 byte signed integer (signed char)
 /// </summary>
-typedef signed char Int_8;
+typedef signed char Int8;
 /// <summary>
 /// 2 byte signed integer (signed short)
 /// </summary>
-typedef signed short Int_16;
+typedef signed short Int16;
 /// <summary>
 /// 4 byte signed integer (signed int)
 /// </summary>
-typedef signed int Int_32;
+typedef signed int Int32;
 /// <summary>
 /// Floating point numeric (float)
 /// </summary>
-typedef float Float_32;
+typedef float Float32;
 
 #endif // CORE_H

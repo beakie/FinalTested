@@ -18,13 +18,13 @@ namespace Drawing
 		{
 			Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> i = Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX>(image.Width, image.Height);
 
-			Float_32 lowerBound = Common::getLowerBound<TVALUE>();
-			Float_32 boundsDiff = Common::getUpperBound<TVALUE>() - lowerBound;
+			Float32 lowerBound = Common::getLowerBound<TVALUE>();
+			Float32 boundsDiff = Common::getUpperBound<TVALUE>() - lowerBound;
 
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)
 				{
-					Common::UnitInterval_32 f = ((Float_32)image.Values[x][y] - lowerBound) / boundsDiff;
+					Common::UnitInterval32 f = ((Float32)image.Values[x][y] - lowerBound) / boundsDiff;
 
 					i.Values[x][y] = converter->convertPixel(f);
 				}
@@ -37,9 +37,9 @@ namespace Drawing
 		class ImageRenderHelper
 		{
 		public:
-			Drawing::TripleChannelPixel<TVALUE>(*convertPixel)(const Common::UnitInterval_32&);
+			Drawing::TripleChannelPixel<TVALUE>(*convertPixel)(const Common::UnitInterval32&);
 
-			ImageRenderHelper(Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
+			ImageRenderHelper(Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval32&))
 			{
 				convertPixel = &pixelConverter;
 			}
@@ -50,7 +50,7 @@ namespace Drawing
 		/// ...
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval_32&))
+		static Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval32&))
 		{
 			return renderImageAs3ChannelImage(image, &ImageRenderHelper<TVALUE>(pixelConverter));
 		}
@@ -59,10 +59,10 @@ namespace Drawing
 		class ApplyTriple8ColorMap
 		{
 		private:
-			const Drawing::TripleChannelColorMap<TUNITINTERVAL>* _colorMap;
+			const Drawing::TripleColorMap<TUNITINTERVAL>* _colorMap;
 
 		public:
-			ApplyTriple8ColorMap(const Drawing::TripleChannelColorMap<TUNITINTERVAL>* colorMap)
+			ApplyTriple8ColorMap(const Drawing::TripleColorMap<TUNITINTERVAL>* colorMap)
 			{
 				_colorMap = colorMap;
 			}
@@ -73,7 +73,7 @@ namespace Drawing
 			}
 		};
 
-		typedef ApplyTriple8ColorMap<UInt_8, Common::UnitInterval_32> ApplyTriple8ColorMap_32;
+		typedef ApplyTriple8ColorMap<UInt8, Common::UnitInterval32> ApplyTriple8ColorMap32;
 
 	};
 

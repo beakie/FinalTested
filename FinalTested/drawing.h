@@ -9,7 +9,7 @@
 #include "drawing-images.h"
 #include "drawing-pixels.h"
 #include "drawing-quadchannelpixel.h"
-#include "drawing-triplechannelcolormap.h"
+#include "drawing-TripleChannelColorMap.h"
 #include "drawing-triplechannelpixel.h"
 
 ///// MOVE THE TRIPLE, QUAD AND IMAGES CODE TO THIS NAMESPACE /////
@@ -19,148 +19,148 @@ namespace Drawing
 	/// <summary>
 	/// 1 byte precision RGB pixel
 	/// </summary>
-	typedef Drawing::TripleChannelPixel<UInt_8> RGBPixel_8;
+	typedef Drawing::TripleChannelPixel<UInt8> RGBPixel8;
 	/// <summary>
 	/// 2 byte precision RGB pixel
 	/// </summary>
-	typedef Drawing::TripleChannelPixel<UInt_16> RGBPixel_16;
+	typedef Drawing::TripleChannelPixel<UInt16> RGBPixel16;
 	/// <summary>
 	/// 4 byte precision RGB pixel
 	/// </summary>
-	typedef Drawing::TripleChannelPixel<UInt_32> RGBPixel_32;
+	typedef Drawing::TripleChannelPixel<UInt32> RGBPixel32;
 	/// <summary>
 	/// 1 byte precision HSV pixel
 	/// </summary>
-	typedef Drawing::TripleChannelPixel<UInt_8> HSVPixel_8;
+	typedef Drawing::TripleChannelPixel<UInt8> HSVPixel8;
 	/// <summary>
 	/// 2 byte precision HSV pixel
 	/// </summary>
-	typedef Drawing::TripleChannelPixel<UInt_16> HSVPixel_16;
+	typedef Drawing::TripleChannelPixel<UInt16> HSVPixel16;
 	/// <summary>
 	/// 4 byte precision HSV pixel
 	/// </summary>
-	typedef Drawing::TripleChannelPixel<UInt_32> HSVPixel_32;
+	typedef Drawing::TripleChannelPixel<UInt32> HSVPixel32;
 	/// <summary>
 	/// 1 byte precision RGBA pixel
 	/// </summary>
-	typedef Drawing::QuadChannelPixel<UInt_8> RGBAPixel_8;
+	typedef Drawing::QuadChannelPixel<UInt8> RGBAPixel8;
 	/// <summary>
 	/// 2 byte precision RGBA pixel
 	/// </summary>
-	typedef Drawing::QuadChannelPixel<UInt_16> RGBAPixel_16;
+	typedef Drawing::QuadChannelPixel<UInt16> RGBAPixel16;
 	/// <summary>
 	/// 4 byte precision RGBA pixel
 	/// </summary>
-	typedef Drawing::QuadChannelPixel<UInt_32> RGBAPixel_32;
+	typedef Drawing::QuadChannelPixel<UInt32> RGBAPixel32;
 	/// <summary>
 	/// 1 byte precision greyscale pixel
 	/// </summary>
-	typedef UInt_8 GreyPixel_8;
+	typedef UInt8 GreyPixel8;
 	/// <summary>
 	/// 2 byte precision greyscale pixel
 	/// </summary>
-	typedef UInt_16 GreyPixel_16;
+	typedef UInt16 GreyPixel16;
 	/// <summary>
 	/// 4 byte precision greyscale pixel
 	/// </summary>
-	typedef UInt_32 GreyPixel_32;
+	typedef UInt32 GreyPixel32;
 
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 byte precision RGB pixels
 	/// </summary>
-	typedef Common::Image<RGBPixel_8, UInt_8> Image8RGBPixel_8;
+	typedef Common::Image<RGBPixel8, UInt8> Image_8RGBPixel8;
 	/// <summary>
 	/// Image with 1 byte dimensions and 2 byte precision RGB pixels
 	/// </summary>
-	typedef Common::Image<RGBPixel_16, UInt_8> Image8RGBPixel_16;
+	typedef Common::Image<RGBPixel16, UInt8> Image_8RGBPixel16;
 	/// <summary>
 	/// Image with 1 byte dimensions and 4 byte precision RGB pixels
 	/// </summary>
-	typedef Common::Image<RGBPixel_32, UInt_8> Image8RGBPixel_32;
+	typedef Common::Image<RGBPixel32, UInt8> Image_8RGBPixel32;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 byte precision RGB pixels
 	/// </summary>
-	typedef Common::Image<RGBPixel_8, UInt_16> Image16RGBPixel_8;
+	typedef Common::Image<RGBPixel8, UInt16> Image_16RGBPixel8;
 	/// <summary>
 	/// Image with 2 byte dimensions and 2 byte precision RGB pixels
 	/// </summary>
-	typedef Common::Image<RGBPixel_16, UInt_16> Image16RGBPixel_16;
+	typedef Common::Image<RGBPixel16, UInt16> Image_16RGBPixel16;
 	/// <summary>
 	/// Image with 2 byte dimensions and 4 byte precision RGB pixels
 	/// </summary>
-	typedef Common::Image<RGBPixel_32, UInt_16> Image16RGBPixel_32;
+	typedef Common::Image<RGBPixel32, UInt16> Image_16RGBPixel32;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 byte precision HSV pixels
 	/// </summary>
-	typedef Common::Image<HSVPixel_8, UInt_8> Image8HSVPixel_8;
+	typedef Common::Image<HSVPixel8, UInt8> Image_8HSVPixel8;
 	/// <summary>
 	/// Image with 1 byte dimensions and 2 byte precision HSV pixels
 	/// </summary>
-	typedef Common::Image<HSVPixel_16, UInt_8> Image8HSVPixel_16;
+	typedef Common::Image<HSVPixel16, UInt8> Image_8HSVPixel16;
 	/// <summary>
 	/// Image with 1 byte dimensions and 4 byte precision HSV pixels
 	/// </summary>
-	typedef Common::Image<HSVPixel_32, UInt_8> Image8HSVPixel_32;
+	typedef Common::Image<HSVPixel32, UInt8> Image_8HSVPixel32;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 byte precision HSV pixels
 	/// </summary>
-	typedef Common::Image<HSVPixel_8, UInt_16> Image16HSVPixel_8;
+	typedef Common::Image<HSVPixel8, UInt16> Image_16HSVPixel8;
 	/// <summary>
 	/// Image with 2 byte dimensions and 2 byte precision HSV pixels
 	/// </summary>
-	typedef Common::Image<HSVPixel_16, UInt_16> Image16HSVPixel_16;
+	typedef Common::Image<HSVPixel16, UInt16> Image_16HSVPixel16;
 	/// <summary>
 	/// Image with 2 byte dimensions and 4 byte precision HSV pixels
 	/// </summary>
-	typedef Common::Image<HSVPixel_32, UInt_16> Image16HSVPixel_32;
+	typedef Common::Image<HSVPixel32, UInt16> Image_16HSVPixel32;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 byte precision RGBA pixels
 	/// </summary>
-	typedef Common::Image<RGBAPixel_8, UInt_8> Image8RGBAPixel_8;
+	typedef Common::Image<RGBAPixel8, UInt8> Image_8RGBAPixel8;
 	/// <summary>
 	/// Image with 1 byte dimensions and 2 byte precision RGBA pixels
 	/// </summary>
-	typedef Common::Image<RGBAPixel_16, UInt_8> Image8RGBAPixel_16;
+	typedef Common::Image<RGBAPixel16, UInt8> Image_8RGBAPixel16;
 	/// <summary>
 	/// Image with 1 byte dimensions and 4 byte precision RGBA pixels
 	/// </summary>
-	typedef Common::Image<RGBAPixel_32, UInt_8> Image8RGBAPixel_32;
+	typedef Common::Image<RGBAPixel32, UInt8> Image_8RGBAPixel32;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 byte precision RGBA pixels
 	/// </summary>
-	typedef Common::Image<RGBAPixel_8, UInt_16> Image16RGBAPixel_8;
+	typedef Common::Image<RGBAPixel8, UInt16> Image_16RGBAPixel8;
 	/// <summary>
 	/// Image with 2 byte dimensions and 2 byte precision RGBA pixels
 	/// </summary>
-	typedef Common::Image<RGBAPixel_16, UInt_16> Image16RGBAPixel_16;
+	typedef Common::Image<RGBAPixel16, UInt16> Image_16RGBAPixel16;
 	/// <summary>
 	/// Image with 2 byte dimensions and 4 byte precision RGBA pixels
 	/// </summary>
-	typedef Common::Image<RGBAPixel_32, UInt_16> Image16RGBAPixel_32;
+	typedef Common::Image<RGBAPixel32, UInt16> Image_16RGBAPixel32;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 byte greyscale pixels
 	/// </summary>
-	typedef Common::Image<GreyPixel_8, UInt_8> Image8Grey_8;
+	typedef Common::Image<GreyPixel8, UInt8> Image_8Grey8;
 	/// <summary>
 	/// Image with 1 byte dimensions and 2 byte greyscale pixels
 	/// </summary>
-	typedef Common::Image<GreyPixel_16, UInt_8> Image8Grey_16;
+	typedef Common::Image<GreyPixel16, UInt8> Image_8Grey16;
 	/// <summary>
 	/// Image with 1 byte dimensions and 4 byte greyscale pixels
 	/// </summary>
-	typedef Common::Image<GreyPixel_32, UInt_8> Image8Grey_32;
+	typedef Common::Image<GreyPixel32, UInt8> Image_8Grey32;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 byte greyscale pixels
 	/// </summary>
-	typedef Common::Image<GreyPixel_8, UInt_16> Image16Grey_8;
+	typedef Common::Image<GreyPixel8, UInt16> Image_16Grey8;
 	/// <summary>
 	/// Image with 2 byte dimensions and 2 byte greyscale pixels
 	/// </summary>
-	typedef Common::Image<GreyPixel_16, UInt_16> Image16Grey_16;
+	typedef Common::Image<GreyPixel16, UInt16> Image_16Grey16;
 	/// <summary>
 	/// Image with 2 byte dimensions and 4 byte greyscale pixels
 	/// </summary>
-	typedef Common::Image<GreyPixel_32, UInt_16> Image16Grey_32;
+	typedef Common::Image<GreyPixel32, UInt16> Image_16Grey32;
 
 }
 

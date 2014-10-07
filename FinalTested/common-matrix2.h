@@ -43,7 +43,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of rows
 		/// </summary>
-		UInt_8 getRowCount()
+		UInt8 getRowCount()
 		{
 			return 2;
 		}
@@ -51,7 +51,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of columns
 		/// </summary>
-		UInt_8 getColumnCount()
+		UInt8 getColumnCount()
 		{
 			return 2;
 		}
@@ -67,7 +67,7 @@ namespace Common
 		/// <summary>
 		/// Sets specified value
 		/// </summary>
-		void set(const UInt_8 x, const UInt_8 y, const TVALUE value)
+		void set(const UInt8 x, const UInt8 y, const TVALUE value)
 		{
 			Values[x][y] = value;
 		}
@@ -94,7 +94,7 @@ namespace Common
 		/// <summary>
 		/// Gets the value
 		/// </summary>
-		TVALUE get(const UInt_8 x, const UInt_8 y)
+		TVALUE get(const UInt8 x, const UInt8 y)
 		{
 			return Values[x][y];
 		}

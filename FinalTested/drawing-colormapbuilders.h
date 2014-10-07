@@ -4,7 +4,7 @@
 #include "core.h"
 #include "common.h"
 
-#include "drawing-triplechannelcolormap.h"
+#include "drawing-TripleChannelColorMap.h"
 
 namespace Drawing
 {
@@ -13,9 +13,9 @@ namespace Drawing
 	{
 
 	public:
-		static TripleChannelColorMap<TUNITINTERVAL> getRGBColorMapJet()
+		static TripleColorMap<TUNITINTERVAL> getRGBColorMapJet()
 		{
-			TripleChannelColorMap<TUNITINTERVAL> map(9);
+			TripleColorMap<TUNITINTERVAL> map(9);
 
 			map.Values[0][0] = 0.0;
 			map.Values[0][1] = 0.0;
@@ -52,7 +52,7 @@ namespace Drawing
 
 	};
 
-	typedef ColorMapBuilders<Float_32> ColorMapBuilders_32;
+	typedef ColorMapBuilders<Float32> ColorMapBuilders32;
 }
 
 #endif // DRAWINGCOLORMAPBUILDER_H

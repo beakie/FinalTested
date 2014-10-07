@@ -9,38 +9,38 @@
 namespace Drawing
 {
 	template <typename TUNITINTERVAL>
-	struct TripleChannelColorMap
+	struct TripleColorMap
 	{
 		TUNITINTERVAL** Values;
-		UInt_8 Size;
+		UInt8 Size;
 
-		TripleChannelColorMap(UInt_8 size) : Size(size)
+		TripleColorMap(UInt8 size) : Size(size)
 		{
 			createValues(size);
 		}
 
-		TripleChannelColorMap(const TripleChannelColorMap<TUNITINTERVAL>& tripleChannelColorMap) : Size(tripleChannelColorMap.Size)
+		TripleColorMap(const TripleColorMap<TUNITINTERVAL>& TripleColorMap) : Size(TripleColorMap.Size)
 		{
-			createValues(tripleChannelColorMap.Size);
-			copyValues(tripleChannelColorMap);
+			createValues(TripleColorMap.Size);
+			copyValues(TripleColorMap);
 		}
 
-		TripleChannelColorMap<TUNITINTERVAL>& operator=(const TripleChannelColorMap<TUNITINTERVAL>& tripleChannelColorMap)
+		TripleColorMap<TUNITINTERVAL>& operator=(const TripleColorMap<TUNITINTERVAL>& TripleColorMap)
 		{
-			if (this != &tripleChannelColorMap)
+			if (this != &TripleColorMap)
 			{
 				deleteValues();
-				createValues(tripleChannelColorMap.Size);
-				copyValues(tripleChannelColorMap);
+				createValues(TripleColorMap.Size);
+				copyValues(TripleColorMap);
 
-				Size = TripleChannelColorMap.Size;
+				Size = TripleColorMap.Size;
 			}
 
 			return *this;
 		}
 		
 	private:
-		void createValues(UInt_8 size)
+		void createValues(UInt8 size)
 		{
 			Values = new TUNITINTERVAL*[3];
 			Values[0] = new TUNITINTERVAL[size];
@@ -56,18 +56,18 @@ namespace Drawing
 			delete[] Values;
 		}
 
-		void copyValues(const TripleChannelColorMap<TUNITINTERVAL>& tripleChannelColorMap)
+		void copyValues(const TripleColorMap<TUNITINTERVAL>& TripleColorMap)
 		{
-			for (UInt_8 i = 0; i < tripleChannelColorMap.Size; i++)
+			for (UInt8 i = 0; i < TripleColorMap.Size; i++)
 			{
-				Values[0][i] = tripleChannelColorMap.Values[0][i];
-				Values[1][i] = tripleChannelColorMap.Values[1][i];
-				Values[2][i] = tripleChannelColorMap.Values[2][i];
+				Values[0][i] = TripleColorMap.Values[0][i];
+				Values[1][i] = TripleColorMap.Values[1][i];
+				Values[2][i] = TripleColorMap.Values[2][i];
 			}
 		}
 
 	public:
-		~TripleChannelColorMap()
+		~TripleColorMap()
 		{
 			deleteValues();
 		}

@@ -8,7 +8,7 @@
 namespace Common
 {
 
-	template <typename TVALUE, typename TINDEX = UInt_32>
+	template <typename TVALUE, typename TINDEX = UInt32>
 	/// <summary>
 	/// 1 dimensional array of values
 	/// </summary>

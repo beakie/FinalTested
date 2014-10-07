@@ -17,239 +17,239 @@ namespace Common
 	/// <summary>
 	/// 4 byte unit interval (0 - 1)
 	/// </summary>
-	typedef Float_32 UnitInterval_32;
+	typedef Float32 UnitInterval32;
 	/// <summary>
 	/// matrix of size 2 with 1 bit values
 	/// </summary>
-	typedef Matrix2<UInt_1> Matrix2_1;
+	typedef Matrix2<UInt1> Matrix2U1;
 	/// <summary>
 	/// matrix of size 3 with 1 bit values
 	/// </summary>
-	typedef Matrix3<UInt_1> Matrix3_1;
+	typedef Matrix3<UInt1> Matrix3U1;
 	/// <summary>
 	/// matrix of size 4 with 1 bit values
 	/// </summary>
-	typedef Matrix4<UInt_1> Matrix4_1;
+	typedef Matrix4<UInt1> Matrix4U1;
 	/// <summary>
 	/// matrix of size 2 with 1 byte unsigned integer values
 	/// </summary>
-	typedef Matrix2<UInt_8> Matrix2_8;
+	typedef Matrix2<UInt8> Matrix2U8;
 	/// <summary>
 	/// matrix of size 3 with 1 byte unsigned integer values
 	/// </summary>
-	typedef Matrix3<UInt_8> Matrix3_8;
+	typedef Matrix3<UInt8> Matrix3U8;
 	/// <summary>
 	/// matrix of size 4 with 1 byte unsigned integer values
 	/// </summary>
-	typedef Matrix4<UInt_8> Matrix4_8;
+	typedef Matrix4<UInt8> Matrix4U8;
 	/// <summary>
 	/// matrix of size 2 with 2 byte unsigned integer values
 	/// </summary>
-	typedef Matrix2<UInt_16> Matrix2_16;
+	typedef Matrix2<UInt16> Matrix2U16;
 	/// <summary>
 	/// matrix of size 3 with 2 byte unsigned integer values
 	/// </summary>
-	typedef Matrix3<UInt_16> Matrix3_16;
+	typedef Matrix3<UInt16> Matrix3U16;
 	/// <summary>
 	/// matrix of size 4 with 2 byte unsigned integer values
 	/// </summary>
-	typedef Matrix4<UInt_16> Matrix4_16;
+	typedef Matrix4<UInt16> Matrix4U16;
 	/// <summary>
 	/// matrix of size 2 with 4 byte unsigned integer values
 	/// </summary>
-	typedef Matrix2<UInt_32> Matrix2_32;
+	typedef Matrix2<UInt32> Matrix2U32;
 	/// <summary>
 	/// matrix of size 3 with 4 byte unsigned integer values
 	/// </summary>
-	typedef Matrix3<UInt_32> Matrix3_32;
+	typedef Matrix3<UInt32> Matrix3U32;
 	/// <summary>
 	/// matrix of size 4 with 4 byte unsigned integer values
 	/// </summary>
-	typedef Matrix4<UInt_32> Matrix4_32;
+	typedef Matrix4<UInt32> Matrix4U32;
 	/// <summary>
 	/// matrix of size 2 with 1 byte signed integer values
 	/// </summary>
-	typedef Matrix2<Int_8> Matrix2_I8;
+	typedef Matrix2<Int8> Matrix2I8;
 	/// <summary>
 	/// matrix of size 3 with 1 byte signed integer values
 	/// </summary>
-	typedef Matrix3<Int_8> Matrix3_I8;
+	typedef Matrix3<Int8> Matrix3I8;
 	/// <summary>
 	/// matrix of size 4 with 1 byte signed integer values
 	/// </summary>
-	typedef Matrix4<Int_8> Matrix4_I8;
+	typedef Matrix4<Int8> Matrix4I8;
 	/// <summary>
 	/// matrix of size 2 with 2 byte signed integer values
 	/// </summary>
-	typedef Matrix2<Int_16> Matrix2_I16;
+	typedef Matrix2<Int16> Matrix2I16;
 	/// <summary>
 	/// matrix of size 3 with 2 byte signed integer values
 	/// </summary>
-	typedef Matrix3<Int_16> Matrix3_I16;
+	typedef Matrix3<Int16> Matrix3I16;
 	/// <summary>
 	/// matrix of size 4 with 2 byte signed integer values
 	/// </summary>
-	typedef Matrix4<Int_16> Matrix4_I16;
+	typedef Matrix4<Int16> Matrix4I16;
 	/// <summary>
 	/// matrix of size 2 with 4 byte signed integer values
 	/// </summary>
-	typedef Matrix2<Int_32> Matrix2_I32;
+	typedef Matrix2<Int32> Matrix2I32;
 	/// <summary>
 	/// matrix of size 3 with 4 byte signed integer values
 	/// </summary>
-	typedef Matrix3<Int_32> Matrix3_I32;
+	typedef Matrix3<Int32> Matrix3I32;
 	/// <summary>
 	/// matrix of size 4 with 4 byte signed integer values
 	/// </summary>
-	typedef Matrix4<Int_32> Matrix4_I32;
+	typedef Matrix4<Int32> Matrix4I32;
 	/// <summary>
 	/// matrix of size 2 with floating point values
 	/// </summary>
-	typedef Matrix2<Float_32> Matrix2_F;
+	typedef Matrix2<Float32> Matrix2F;
 	/// <summary>
 	/// matrix of size 3 with floating point values
 	/// </summary>
-	typedef Matrix3<Float_32> Matrix3_F;
+	typedef Matrix3<Float32> Matrix3F;
 	/// <summary>
 	/// matrix of size 4 with floating point values
 	/// </summary>
-	typedef Matrix4<Float_32> Matrix4_F;
+	typedef Matrix4<Float32> Matrix4F;
 	/// <summary>
 	/// Adapter for matrix of size 2 with 1 bit values
 	/// </summary>
-	typedef MatrixAdapter<Matrix2_1, UInt_1> Matrix2Adapter_1;
+	typedef MatrixAdapter<Matrix2U1, UInt1> Matrix2AdapterU1;
 	/// <summary>
 	/// Adapter for matrix of size 3 with 1 bit values
 	/// </summary>
-	typedef MatrixAdapter<Matrix3_1, UInt_1> Matrix3Adapter_1;
+	typedef MatrixAdapter<Matrix3U1, UInt1> Matrix3AdapterU1;
 	/// <summary>
 	/// Adapter for matrix of size 4 with 1 bit values
 	/// </summary>
-	typedef MatrixAdapter<Matrix4_1, UInt_1> Matrix4Adapter_1;
+	typedef MatrixAdapter<Matrix4U1, UInt1> Matrix4AdapterU1;
 	/// <summary>
 	/// Adapter for matrix of size 2 with 1 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix2_8, UInt_8> Matrix2Adapter_8;
+	typedef MatrixAdapter<Matrix2U8, UInt8> Matrix2AdapterU8;
 	/// <summary>
 	/// Adapter for matrix of size 3 with 1 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix3_8, UInt_8> Matrix3Adapter_8;
+	typedef MatrixAdapter<Matrix3U8, UInt8> Matrix3AdapterU8;
 	/// <summary>
 	/// Adapter for matrix of size 4 with 1 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix4_8, UInt_8> Matrix4Adapter_8;
+	typedef MatrixAdapter<Matrix4U8, UInt8> Matrix4AdapterU8;
 	/// <summary>
 	/// Adapter for matrix of size 2 with 2 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix2_16, UInt_16> Matrix2Adapter_16;
+	typedef MatrixAdapter<Matrix2U16, UInt16> Matrix2Adapter16;
 	/// <summary>
 	/// Adapter for matrix of size 3 with 2 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix3_16, UInt_16> Matrix3Adapter_16;
+	typedef MatrixAdapter<Matrix3U16, UInt16> Matrix3Adapter16;
 	/// <summary>
 	/// Adapter for matrix of size 4 with 2 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix4_16, UInt_16> Matrix4Adapter_16;
+	typedef MatrixAdapter<Matrix4U16, UInt16> Matrix4Adapter16;
 	/// <summary>
 	/// Adapter for matrix of size 2 with 4 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix2_32, UInt_32> Matrix2Adapter_32;
+	typedef MatrixAdapter<Matrix2U32, UInt32> Matrix2Adapter32;
 	/// <summary>
 	/// Adapter for matrix of size 3 with 4 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix3_32, UInt_32> Matrix3Adapter_32;
+	typedef MatrixAdapter<Matrix3U32, UInt32> Matrix3Adapter32;
 	/// <summary>
 	/// Adapter for matrix of size 4 with 4 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix4_32, UInt_32> Matrix4Adapter_32;
+	typedef MatrixAdapter<Matrix4U32, UInt32> Matrix4Adapter32;
 	/// <summary>
 	/// Adapter for matrix of size 2 with 1 byte signed integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix2_8, Int_8> Matrix2Adapter_I8;
+	typedef MatrixAdapter<Matrix2U8, Int8> Matrix2AdapterI8;
 	/// <summary>
 	/// Adapter for matrix of size 3 with 1 byte signed integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix3_8, Int_8> Matrix3Adapter_I8;
+	typedef MatrixAdapter<Matrix3U8, Int8> Matrix3AdapterI8;
 	/// <summary>
 	/// Adapter for matrix of size 4 with 1 byte signed integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix4_8, Int_8> Matrix4Adapter_I8;
+	typedef MatrixAdapter<Matrix4U8, Int8> Matrix4AdapterI8;
 	/// <summary>
 	/// Adapter for matrix of size 2 with 2 byte signed integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix2_16, Int_16> Matrix2Adapter_I16;
+	typedef MatrixAdapter<Matrix2U16, Int16> Matrix2AdapterI16;
 	/// <summary>
 	/// Adapter for matrix of size 3 with 2 byte signed integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix3_16, Int_16> Matrix3Adapter_I16;
+	typedef MatrixAdapter<Matrix3U16, Int16> Matrix3AdapterI16;
 	/// <summary>
 	/// Adapter for matrix of size 4 with 2 byte signed integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix4_16, Int_16> Matrix4Adapter_I16;
+	typedef MatrixAdapter<Matrix4U16, Int16> Matrix4AdapterI16;
 	/// <summary>
 	/// Adapter for matrix of size 2 with 4 byte signed integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix2_32, Int_32> Matrix2Adapter_I32;
+	typedef MatrixAdapter<Matrix2U32, Int32> Matrix2AdapterI32;
 	/// <summary>
 	/// Adapter for matrix of size 3 with 4 byte signed integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix3_32, Int_32> Matrix3Adapter_I32;
+	typedef MatrixAdapter<Matrix3U32, Int32> Matrix3AdapterI32;
 	/// <summary>
 	/// Adapter for matrix of size 4 with 4 byte signed integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix4_32, Int_32> Matrix4Adapter_I32;
+	typedef MatrixAdapter<Matrix4U32, Int32> Matrix4AdapterI32;
 	/// <summary>
 	/// Adapter for matrix of size 2 with floating point values
 	/// </summary>
-	typedef MatrixAdapter<Matrix2_F, Float_32> Matrix2Adapter_F;
+	typedef MatrixAdapter<Matrix2F, Float32> Matrix2AdapterF;
 	/// <summary>
 	/// Adapter for matrix of size 3 with floating point values
 	/// </summary>
-	typedef MatrixAdapter<Matrix3_F, Float_32> Matrix3Adapter_F;
+	typedef MatrixAdapter<Matrix3F, Float32> Matrix3AdapterF;
 	/// <summary>
 	/// Adapter for matrix of size 4 with floating point values
 	/// </summary>
-	typedef MatrixAdapter<Matrix4_F, Float_32> Matrix4Adapter_F;
+	typedef MatrixAdapter<Matrix4F, Float32> Matrix4AdapterF;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 bit pixels
 	/// </summary>
-	typedef Image<UInt_1, UInt_8> Image8_1;
+	typedef Image<UInt1, UInt8> Image_8_1;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 byte pixels
 	/// </summary>
-	typedef Image<UInt_8, UInt_8> Image8_8;
+	typedef Image<UInt8, UInt8> Image_8_8;
 	/// <summary>
 	/// Image with 1 byte dimensions and 2 byte pixels
 	/// </summary>
-	typedef Image<UInt_16, UInt_8> Image8_16;
+	typedef Image<UInt16, UInt8> Image_8_16;
 	/// <summary>
 	/// Image with 1 byte dimensions and 4 byte pixels
 	/// </summary>
-	typedef Image<UInt_32, UInt_8> Image8_32;
+	typedef Image<UInt32, UInt8> Image_8_32;
 	/// <summary>
 	/// Image with 1 byte dimensions and floating point pixels
 	/// </summary>
-	typedef Image<Float_32, UInt_8> Image8_F;
+	typedef Image<Float32, UInt8> Image_8_F;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 bit pixels
 	/// </summary>
-	typedef Image<UInt_1, UInt_16> Image16_1;
+	typedef Image<UInt1, UInt16> Image_16_1;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 byte pixels
 	/// </summary>
-	typedef Image<UInt_8, UInt_16> Image16_8;
+	typedef Image<UInt8, UInt16> Image_16_8;
 	/// <summary>
 	/// Image with 2 byte dimensions and 2 byte pixels
 	/// </summary>
-	typedef Image<UInt_16, UInt_16> Image16_16;
+	typedef Image<UInt16, UInt16> Image_16_16;
 	/// <summary>
 	/// Image with 2 byte dimensions and 4 byte pixels
 	/// </summary>
-	typedef Image<UInt_32, UInt_16> Image16_32;
+	typedef Image<UInt32, UInt16> Image_16_32;
 	/// <summary>
 	/// Image with 2 byte dimensions and floating point pixels
 	/// </summary>
-	typedef Image<Float_32, UInt_16> Image16_F;
+	typedef Image<Float32, UInt16> Image_16_F;
 
 }
 

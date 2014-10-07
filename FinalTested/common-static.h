@@ -12,85 +12,85 @@ namespace Common
 	static T getLowerBound();
 
 	template <>
-	static UInt_1 getLowerBound<UInt_1>()
+	static UInt1 getLowerBound<UInt1>()
 	{
 		return 0;
 	}
 
 	template <>
-	static UInt_1 getUpperBound<UInt_1>()
+	static UInt1 getUpperBound<UInt1>()
 	{
 		return 1;
 	}
 
 	template <>
-	static Int_8 getLowerBound<Int_8>()
+	static Int8 getLowerBound<Int8>()
 	{
 		return -127;
 	}
 
 	template <>
-	static Int_8 getUpperBound<Int_8>()
+	static Int8 getUpperBound<Int8>()
 	{
 		return 127;
 	}
 
 	template <>
-	static UInt_8 getLowerBound<UInt_8>()
+	static UInt8 getLowerBound<UInt8>()
 	{
 		return 0;
 	}
 
 	template <>
-	static UInt_8 getUpperBound<UInt_8>()
+	static UInt8 getUpperBound<UInt8>()
 	{
 		return 255;
 	}
 
 	template <>
-	static Int_16 getLowerBound<Int_16>()
+	static Int16 getLowerBound<Int16>()
 	{
 		return -32767;
 	}
 
 	template <>
-	static Int_16 getUpperBound<Int_16>()
+	static Int16 getUpperBound<Int16>()
 	{
 		return 32767;
 	}
 
 	template <>
-	static UInt_16 getLowerBound<UInt_16>()
+	static UInt16 getLowerBound<UInt16>()
 	{
 		return 0;
 	}
 
 	template <>
-	static UInt_16 getUpperBound<UInt_16>()
+	static UInt16 getUpperBound<UInt16>()
 	{
 		return 65535;
 	}
 
 	template <>
-	static Int_32 getLowerBound<Int_32>()
+	static Int32 getLowerBound<Int32>()
 	{
 		return -2147483647;
 	}
 
 	template <>
-	static Int_32 getUpperBound<Int_32>()
+	static Int32 getUpperBound<Int32>()
 	{
 		return 2147483647;
 	}
 
 	template <>
-	static UInt_32 getLowerBound<UInt_32>()
+	static UInt32 getLowerBound<UInt32>()
 	{
 		return 0;
 	}
 
 	template <>
-	static UInt_32 getUpperBound<UInt_32>()
+	static UInt32 getUpperBound<UInt32>()
 	{
 		return 4294967295;
 	}

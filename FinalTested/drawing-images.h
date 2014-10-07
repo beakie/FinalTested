@@ -11,7 +11,7 @@ namespace Drawing
 	{
 	public:
 		template <typename TIMAGE, typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChannel(const TIMAGE& image, const UInt_8 channelIndex)
+		static Common::Image<TVALUE, TINDEX> getImageChannel(const TIMAGE& image, const UInt8 channelIndex)
 		{
 			Common::Image<TVALUE, TINDEX> i = Common::Image<TVALUE, TINDEX>(image.Width, image.Height);
 

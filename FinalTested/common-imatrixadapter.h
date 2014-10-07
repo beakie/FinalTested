@@ -14,12 +14,12 @@ namespace Common
 		/// <summary>
 		/// Returns the number of rows
 		/// </summary>
-		UInt_8 getRowCount();
+		UInt8 getRowCount();
 
 		/// <summary>
 		/// Returns the number of columns
 		/// </summary>
-		UInt_8 getColumnCount();
+		UInt8 getColumnCount();
 
 		virtual ~IMatrixAdapter()
 		{
