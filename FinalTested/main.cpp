@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 
 	Drawing::Image8RGBPixel_8 rgbImageMEMBER = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &SomePixelConverter());
 	Drawing::Image8RGBPixel_8 rgbImageSTATIC = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &staticConvertPixel);
-	Drawing::Image8RGBPixel_8 rgbImageJET = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &Drawing::ImageRender::ApplyColorMap(&Drawing::ColorMapBuilders_8_32::getRGBColorMapJet()));
+	Drawing::Image8RGBPixel_8 rgbImageJET = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &Drawing::ImageRender::ApplyTriple8ColorMap_32(&Drawing::ColorMapBuilders_32::getRGBColorMapJet()));
 
 	return a.exec();
 }

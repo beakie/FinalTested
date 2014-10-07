@@ -8,14 +8,14 @@
 
 namespace Drawing
 {
-	template <typename TPIXELVALUE, typename TUNITINTERVAL>
+	template <typename TUNITINTERVAL>
 	class ColorMapBuilders
 	{
 
 	public:
-		static TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL> getRGBColorMapJet()
+		static TripleChannelColorMap<TUNITINTERVAL> getRGBColorMapJet()
 		{
-			TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL> map(9);
+			TripleChannelColorMap<TUNITINTERVAL> map(9);
 
 			map.Values[0][0] = 0.0;
 			map.Values[0][1] = 0.0;
@@ -52,7 +52,7 @@ namespace Drawing
 
 	};
 
-	typedef ColorMapBuilders<UInt_8, Float_32> ColorMapBuilders_8_32;
+	typedef ColorMapBuilders<Float_32> ColorMapBuilders_32;
 }
 
 #endif // DRAWINGCOLORMAPBUILDER_H

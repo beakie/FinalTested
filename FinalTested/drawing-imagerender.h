@@ -55,22 +55,25 @@ namespace Drawing
 			return renderImageAs3ChannelImage(image, &ImageRenderHelper<TVALUE>(pixelConverter));
 		}
 
-		class ApplyColorMap
+		template <typename TPIXEL, typename TUNITINTERVAL>
+		class ApplyTriple8ColorMap
 		{
 		private:
-			const Drawing::TripleChannelColorMap<UInt_8, Float_32>* _colorMap;
+			const Drawing::TripleChannelColorMap<TUNITINTERVAL>* _colorMap;
 
 		public:
-			ApplyColorMap(const Drawing::TripleChannelColorMap<UInt_8, Float_32>* colorMap)
+			ApplyTriple8ColorMap(const Drawing::TripleChannelColorMap<TUNITINTERVAL>* colorMap)
 			{
 				_colorMap = colorMap;
 			}
 
-			Drawing::TripleChannelPixel<UInt_8> convertPixel(const Common::UnitInterval_32& value)
+			Drawing::TripleChannelPixel<TPIXEL> convertPixel(const TUNITINTERVAL& value)
 			{
-				return Drawing::TripleChannelPixel<UInt_8>(7, 14, 21);
+				return Drawing::TripleChannelPixel<TPIXEL>(7, 14, 21);
 			}
 		};
+
+		typedef ApplyTriple8ColorMap<UInt_8, Common::UnitInterval_32> ApplyTriple8ColorMap_32;
 
 	};
 

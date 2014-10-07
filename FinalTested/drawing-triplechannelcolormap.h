@@ -8,7 +8,7 @@
 
 namespace Drawing
 {
-	template <typename TPIXELVALUE, typename TUNITINTERVAL>
+	template <typename TUNITINTERVAL>
 	struct TripleChannelColorMap
 	{
 		TUNITINTERVAL** Values;
@@ -19,13 +19,13 @@ namespace Drawing
 			createValues(size);
 		}
 
-		TripleChannelColorMap(const TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL>& tripleChannelColorMap) : Size(tripleChannelColorMap.Size)
+		TripleChannelColorMap(const TripleChannelColorMap<TUNITINTERVAL>& tripleChannelColorMap) : Size(tripleChannelColorMap.Size)
 		{
 			createValues(tripleChannelColorMap.Size);
 			copyValues(tripleChannelColorMap);
 		}
 
-		TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL>& operator=(const TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL>& tripleChannelColorMap)
+		TripleChannelColorMap<TUNITINTERVAL>& operator=(const TripleChannelColorMap<TUNITINTERVAL>& tripleChannelColorMap)
 		{
 			if (this != &tripleChannelColorMap)
 			{
@@ -56,7 +56,7 @@ namespace Drawing
 			delete[] Values;
 		}
 
-		void copyValues(const TripleChannelColorMap<TPIXELVALUE, TUNITINTERVAL>& tripleChannelColorMap)
+		void copyValues(const TripleChannelColorMap<TUNITINTERVAL>& tripleChannelColorMap)
 		{
 			for (UInt_8 i = 0; i < tripleChannelColorMap.Size; i++)
 			{
