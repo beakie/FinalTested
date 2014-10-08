@@ -1,5 +1,5 @@
-#ifndef DRAWINGCOLORMAPBUILDER_H
-#define DRAWINGCOLORMAPBUILDER_H
+#ifndef DRAWINGCOLORMAPS_H
+#define DRAWINGCOLORMAPS_H
 
 #include "core.h"
 #include "common.h"
@@ -9,7 +9,7 @@
 namespace Drawing
 {
 	template <typename TUNITINTERVAL>
-	class ColorMapBuilders
+	class ColorMaps
 	{
 
 	public:
@@ -38,7 +38,7 @@ namespace Drawing
 
 	};
 
-	typedef ColorMapBuilders<Float32> ColorMapBuilders32;
+	typedef ColorMaps<Float32> ColorMaps32;
 }
 
-#endif // DRAWINGCOLORMAPBUILDER_H
+#endif // DRAWINGCOLORMAPS_H

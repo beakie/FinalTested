@@ -80,13 +80,13 @@
     <ClInclude Include="drawing-images.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-colormapbuilders.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="drawing-trichannelpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="drawing-tricolormap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drawing-colormaps.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
