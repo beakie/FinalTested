@@ -86,7 +86,7 @@
     <ClInclude Include="drawing-colormapbuilders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-triplechannelcolormap.h">
+    <ClInclude Include="drawing-triplecolormap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

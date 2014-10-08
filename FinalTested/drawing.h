@@ -9,7 +9,7 @@
 #include "drawing-images.h"
 #include "drawing-pixels.h"
 #include "drawing-quadchannelpixel.h"
-#include "drawing-TripleChannelColorMap.h"
+#include "drawing-triplecolormap.h"
 #include "drawing-triplechannelpixel.h"
 
 ///// MOVE THE TRIPLE, QUAD AND IMAGES CODE TO THIS NAMESPACE /////

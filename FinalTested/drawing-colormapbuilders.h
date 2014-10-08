@@ -4,7 +4,7 @@
 #include "core.h"
 #include "common.h"
 
-#include "drawing-TripleChannelColorMap.h"
+#include "drawing-triplecolormap.h"
 
 namespace Drawing
 {
