@@ -213,43 +213,43 @@ namespace Common
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 bit pixels
 	/// </summary>
-	typedef Image<UInt1, UInt8> Image_8_1;
+	typedef Image<UInt1, UInt8> Image8U1;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 byte pixels
 	/// </summary>
-	typedef Image<UInt8, UInt8> Image_8_8;
+	typedef Image<UInt8, UInt8> Image8U8;
 	/// <summary>
 	/// Image with 1 byte dimensions and 2 byte pixels
 	/// </summary>
-	typedef Image<UInt16, UInt8> Image_8_16;
+	typedef Image<UInt16, UInt8> Image8U16;
 	/// <summary>
 	/// Image with 1 byte dimensions and 4 byte pixels
 	/// </summary>
-	typedef Image<UInt32, UInt8> Image_8_32;
+	typedef Image<UInt32, UInt8> Image8U32;
 	/// <summary>
 	/// Image with 1 byte dimensions and floating point pixels
 	/// </summary>
-	typedef Image<Float32, UInt8> Image_8_F;
+	typedef Image<Float32, UInt8> Image8F;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 bit pixels
 	/// </summary>
-	typedef Image<UInt1, UInt16> Image_16_1;
+	typedef Image<UInt1, UInt16> Image16U1;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 byte pixels
 	/// </summary>
-	typedef Image<UInt8, UInt16> Image_16_8;
+	typedef Image<UInt8, UInt16> Image16U8;
 	/// <summary>
 	/// Image with 2 byte dimensions and 2 byte pixels
 	/// </summary>
-	typedef Image<UInt16, UInt16> Image_16_16;
+	typedef Image<UInt16, UInt16> Image16U16;
 	/// <summary>
 	/// Image with 2 byte dimensions and 4 byte pixels
 	/// </summary>
-	typedef Image<UInt32, UInt16> Image_16_32;
+	typedef Image<UInt32, UInt16> Image16U32;
 	/// <summary>
 	/// Image with 2 byte dimensions and floating point pixels
 	/// </summary>
-	typedef Image<Float32, UInt16> Image_16_F;
+	typedef Image<Float32, UInt16> Image16F;
 
 }
 

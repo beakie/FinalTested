@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 {
 	QCoreApplication a(argc, argv);
 
-	Common::Image_8_1 image = Common::Image_8_1(10, 10, false);
+	Common::Image8U1 image = Common::Image8U1(10, 10, false);
 
 	image.Values[0][0] = true;
 	image.Values[0][7] = true;
@@ -44,12 +44,12 @@ int main(int argc, char *argv[])
 
 	///////////////////
 
-	//Common::Image_8_8 testImage = Common::Image_8_8(10, 10, 0); // Errors
-	Common::Image_8_8 testImage = Common::Image_8_8(10, 10, 1);
+	//Common::Image8U8 testImage = Common::Image8U8(10, 10, 0); // Errors
+	Common::Image8U8 testImage = Common::Image8U8(10, 10, 1);
 
-	Drawing::Image_8RGBPixel8 rgbImageMEMBER = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &SomePixelConverter());
-	Drawing::Image_8RGBPixel8 rgbImageSTATIC = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &staticConvertPixel);
-	Drawing::Image_8RGBPixel8 rgbImageJET = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &Drawing::ImageRender::ApplyTriple8ColorMap32(&Drawing::ColorMapBuilders32::getRGBColorMapJet()));
+	Drawing::Image8RGBPixel8 rgbImageMEMBER = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &SomePixelConverter());
+	Drawing::Image8RGBPixel8 rgbImageSTATIC = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &staticConvertPixel);
+	Drawing::Image8RGBPixel8 rgbImageJET = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &Drawing::ImageRender::ApplyTriple8ColorMap32(&Drawing::ColorMapBuilders32::getRGBColorMapJet()));
 
 	return a.exec();
 }
