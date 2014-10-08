@@ -1,5 +1,5 @@
-#ifndef DRAWINGTRIPLECHANNELPIXEL_H
-#define DRAWINGTRIPLECHANNELPIXEL_H
+#ifndef DRAWINGTRICHANNELPIXEL_H
+#define DRAWINGTRICHANNELPIXEL_H
 
 namespace Drawing
 {
@@ -7,15 +7,15 @@ namespace Drawing
 	/// <summary>
 	/// Quadruple channel pixel
 	/// </summary>
-	struct TripleChannelPixel
+	struct TriChannelPixel
 	{
 		TVALUE Channels[3];
 
-		TripleChannelPixel()
+		TriChannelPixel()
 		{
 		}
 
-		TripleChannelPixel(TVALUE channel1, TVALUE channel2, TVALUE channel3)
+		TriChannelPixel(TVALUE channel1, TVALUE channel2, TVALUE channel3)
 		{
 			Channels[0] = channel1;
 			Channels[1] = channel2;
@@ -25,7 +25,7 @@ namespace Drawing
 		/// <summary>
 		/// Operator
 		/// </summary>
-		TripleChannelPixel<TVALUE>& operator=(const TripleChannelPixel<TVALUE>& pixel)
+		TriChannelPixel<TVALUE>& operator=(const TriChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = pixel.Channels[0];
 			Channels[1] = pixel.Channels[1];
@@ -37,9 +37,9 @@ namespace Drawing
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		TripleChannelPixel<TVALUE> operator*(const TripleChannelPixel<TVALUE>& pixel) const
+		TriChannelPixel<TVALUE> operator*(const TriChannelPixel<TVALUE>& pixel) const
 		{
-			TripleChannelPixel<TVALUE> p = *this;
+			TriChannelPixel<TVALUE> p = *this;
 
 			p *= pixel;
 
@@ -49,7 +49,7 @@ namespace Drawing
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		TripleChannelPixel<TVALUE>& operator*=(const TripleChannelPixel<TVALUE>& pixel)
+		TriChannelPixel<TVALUE>& operator*=(const TriChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = Channels[0] * pixel.Channels[0];
 			Channels[1] = Channels[1] * pixel.Channels[1];
@@ -61,9 +61,9 @@ namespace Drawing
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		TripleChannelPixel<TVALUE> operator/(const TripleChannelPixel<TVALUE>& pixel) const
+		TriChannelPixel<TVALUE> operator/(const TriChannelPixel<TVALUE>& pixel) const
 		{
-			TripleChannelPixel<TVALUE> p = *this;
+			TriChannelPixel<TVALUE> p = *this;
 
 			p /= pixel;
 
@@ -73,7 +73,7 @@ namespace Drawing
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		TripleChannelPixel<TVALUE>& operator/=(const TripleChannelPixel<TVALUE>& pixel)
+		TriChannelPixel<TVALUE>& operator/=(const TriChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = Channels[0] / pixel.Channels[0];
 			Channels[1] = Channels[1] / pixel.Channels[1];
@@ -85,9 +85,9 @@ namespace Drawing
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		TripleChannelPixel<TVALUE> operator|(const TripleChannelPixel<TVALUE>& pixel) const
+		TriChannelPixel<TVALUE> operator|(const TriChannelPixel<TVALUE>& pixel) const
 		{
-			TripleChannelPixel<TVALUE> p = *this;
+			TriChannelPixel<TVALUE> p = *this;
 
 			p |= pixel;
 
@@ -97,7 +97,7 @@ namespace Drawing
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		TripleChannelPixel<TVALUE>& operator|=(const TripleChannelPixel<TVALUE>& pixel)
+		TriChannelPixel<TVALUE>& operator|=(const TriChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = Channels[0] | pixel.Channels[0];
 			Channels[1] = Channels[1] | pixel.Channels[1];
@@ -109,9 +109,9 @@ namespace Drawing
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		TripleChannelPixel<TVALUE> operator&(const TripleChannelPixel<TVALUE>& pixel) const
+		TriChannelPixel<TVALUE> operator&(const TriChannelPixel<TVALUE>& pixel) const
 		{
-			TripleChannelPixel<TVALUE> p = *this;
+			TriChannelPixel<TVALUE> p = *this;
 
 			p &= pixel;
 
@@ -121,7 +121,7 @@ namespace Drawing
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		TripleChannelPixel<TVALUE>& operator&=(const TripleChannelPixel<TVALUE>& pixel)
+		TriChannelPixel<TVALUE>& operator&=(const TriChannelPixel<TVALUE>& pixel)
 		{
 			Channels[0] = Channels[0] & pixel.Channels[0];
 			Channels[1] = Channels[1] & pixel.Channels[1];
@@ -133,9 +133,9 @@ namespace Drawing
 		/// <summary>
 		/// Invert
 		/// </summary>
-		TripleChannelPixel<TVALUE> operator!() const
+		TriChannelPixel<TVALUE> operator!() const
 		{
-			TripleChannelPixel<TVALUE> p = *this;
+			TriChannelPixel<TVALUE> p = *this;
 
 			p != p;
 
@@ -145,7 +145,7 @@ namespace Drawing
 		/// <summary>
 		/// Comparison
 		/// </summary>
-		bool operator==(const TripleChannelPixel<TVALUE>& pixel) const
+		bool operator==(const TriChannelPixel<TVALUE>& pixel) const
 		{
 			if ((Width != pixel.Width) || (Height != pixel.Height))
 				return false;
@@ -161,11 +161,11 @@ namespace Drawing
 		/// <summary>
 		/// Not comparison
 		/// </summary>
-		bool operator!=(const TripleChannelPixel<TVALUE>& pixel) const
+		bool operator!=(const TriChannelPixel<TVALUE>& pixel) const
 		{
 			return operator==(pixel);
 		}
 	};
 }
 
-#endif // DRAWINGTRIPLECHANNELPIXEL_H
+#endif // DRAWINGTRICHANNELPIXEL_H

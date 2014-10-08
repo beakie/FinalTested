@@ -1,7 +1,7 @@
 #ifndef DRAWINGPIXELS_H
 #define DRAWINGPIXELS_H
 
-#include "drawing-triplechannelpixel.h"
+#include "drawing-trichannelpixel.h"
 #include "drawing-quadchannelpixel.h"
 
 namespace Drawing
@@ -13,7 +13,7 @@ namespace Drawing
 		/// Returns the red from an RGB pixel
 		/// </summary>
 		template <typename TVALUE>
-		static TVALUE getRGBPixelRed(const Drawing::TripleChannelPixel<TVALUE>& rgbPixel)
+		static TVALUE getRGBPixelRed(const Drawing::TriChannelPixel<TVALUE>& rgbPixel)
 		{
 			return rgbPixel.Channels[0];
 		}
@@ -22,7 +22,7 @@ namespace Drawing
 		/// Returns the blues from an RGB pixel
 		/// </summary>
 		template <typename TVALUE>
-		static TVALUE getRGBPixelBlue(const Drawing::TripleChannelPixel<TVALUE>& rgbPixel)
+		static TVALUE getRGBPixelBlue(const Drawing::TriChannelPixel<TVALUE>& rgbPixel)
 		{
 			return rgbPixel.Channels[1];
 		}
@@ -31,7 +31,7 @@ namespace Drawing
 		/// Returns the green from an RGB pixel
 		/// </summary>
 		template <typename TVALUE>
-		static TVALUE getRGBPixelGreen(const Drawing::TripleChannelPixel<TVALUE>& rgbPixel)
+		static TVALUE getRGBPixelGreen(const Drawing::TriChannelPixel<TVALUE>& rgbPixel)
 		{
 			return rgbPixel.Channels[2];
 		}
@@ -40,7 +40,7 @@ namespace Drawing
 		/// Returns the hue value an HSV pixel
 		/// </summary>
 		template <typename TVALUE>
-		static TVALUE getHSVPixelHue(const Drawing::TripleChannelPixel<TVALUE>& hsvPixel)
+		static TVALUE getHSVPixelHue(const Drawing::TriChannelPixel<TVALUE>& hsvPixel)
 		{
 			return hsvPixel.Channels[0];
 		}
@@ -49,7 +49,7 @@ namespace Drawing
 		/// Returns the saturation from an HSV pixel
 		/// </summary>
 		template <typename TVALUE>
-		static TVALUE getHSVPixelSaturation(const Drawing::TripleChannelPixel<TVALUE>& hsvPixel)
+		static TVALUE getHSVPixelSaturation(const Drawing::TriChannelPixel<TVALUE>& hsvPixel)
 		{
 			return hsvPixel.Channels[1];
 		}
@@ -58,7 +58,7 @@ namespace Drawing
 		/// Returns the value from an HSV pixel
 		/// </summary>
 		template <typename TVALUE>
-		static TVALUE getHSVPixelValue(const Drawing::TripleChannelPixel<TVALUE>& hsvPixel)
+		static TVALUE getHSVPixelValue(const Drawing::TriChannelPixel<TVALUE>& hsvPixel)
 		{
 			return hsvPixel.Channels[2];
 		}

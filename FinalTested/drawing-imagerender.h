@@ -3,7 +3,7 @@
 
 #include "core.h"
 #include "common.h"
-#include "drawing-triplechannelpixel.h"
+#include "drawing-trichannelpixel.h"
 
 namespace Drawing
 {
@@ -14,9 +14,9 @@ namespace Drawing
 		/// ...
 		/// </summary>
 		template <typename TVALUE, typename TINDEX, typename TCONVERTER>
-		static Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, TCONVERTER* converter)
+		static Common::Image<Drawing::TriChannelPixel<TVALUE>, TINDEX> renderImageAsTriChannelImage(const Common::Image<TVALUE, TINDEX>& image, TCONVERTER* converter)
 		{
-			Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> i = Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX>(image.Width, image.Height);
+			Common::Image<Drawing::TriChannelPixel<TVALUE>, TINDEX> i = Common::Image<Drawing::TriChannelPixel<TVALUE>, TINDEX>(image.Width, image.Height);
 
 			Float32 lowerBound = Common::getLowerBound<TVALUE>();
 			Float32 boundsDiff = Common::getUpperBound<TVALUE>() - lowerBound;
@@ -37,9 +37,9 @@ namespace Drawing
 		class ImageRenderHelper
 		{
 		public:
-			Drawing::TripleChannelPixel<TVALUE>(*convertPixel)(const Common::UnitInterval32&);
+			Drawing::TriChannelPixel<TVALUE>(*convertPixel)(const Common::UnitInterval32&);
 
-			ImageRenderHelper(Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval32&))
+			ImageRenderHelper(Drawing::TriChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval32&))
 			{
 				convertPixel = &pixelConverter;
 			}
@@ -50,30 +50,30 @@ namespace Drawing
 		/// ...
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<Drawing::TripleChannelPixel<TVALUE>, TINDEX> renderImageAs3ChannelImage(const Common::Image<TVALUE, TINDEX>& image, Drawing::TripleChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval32&))
+		static Common::Image<Drawing::TriChannelPixel<TVALUE>, TINDEX> renderImageAsTriChannelImage(const Common::Image<TVALUE, TINDEX>& image, Drawing::TriChannelPixel<TVALUE>(pixelConverter)(const Common::UnitInterval32&))
 		{
-			return renderImageAs3ChannelImage(image, &ImageRenderHelper<TVALUE>(pixelConverter));
+			return renderImageAsTriChannelImage(image, &ImageRenderHelper<TVALUE>(pixelConverter));
 		}
 
 		template <typename TPIXEL, typename TUNITINTERVAL>
-		class ApplyTriple8ColorMap
+		class ApplyTri8ColorMap
 		{
 		private:
-			const Drawing::TripleColorMap<TUNITINTERVAL>* _colorMap;
+			const Drawing::TriColorMap<TUNITINTERVAL>* _colorMap;
 
 		public:
-			ApplyTriple8ColorMap(const Drawing::TripleColorMap<TUNITINTERVAL>* colorMap)
+			ApplyTri8ColorMap(const Drawing::TriColorMap<TUNITINTERVAL>* colorMap)
 			{
 				_colorMap = colorMap;
 			}
 
-			Drawing::TripleChannelPixel<TPIXEL> convertPixel(const TUNITINTERVAL& value)
+			Drawing::TriChannelPixel<TPIXEL> convertPixel(const TUNITINTERVAL& value)
 			{
-				return Drawing::TripleChannelPixel<TPIXEL>(7, 14, 21);
+				return Drawing::TriChannelPixel<TPIXEL>(value, 14, 21);
 			}
 		};
 
-		typedef ApplyTriple8ColorMap<UInt8, Common::UnitInterval32> ApplyTriple8ColorMap32;
+		typedef ApplyTri8ColorMap<UInt8, Common::UnitInterval32> ApplyTri8ColorMap32;
 
 	};
 

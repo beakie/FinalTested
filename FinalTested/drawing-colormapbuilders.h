@@ -4,7 +4,7 @@
 #include "core.h"
 #include "common.h"
 
-#include "drawing-triplecolormap.h"
+#include "drawing-tricolormap.h"
 
 namespace Drawing
 {
@@ -13,9 +13,9 @@ namespace Drawing
 	{
 
 	public:
-		static TripleColorMap<TUNITINTERVAL> getRGBColorMapJet()
+		static TriColorMap<TUNITINTERVAL> getRGBColorMapJet()
 		{
-			TripleColorMap<TUNITINTERVAL> map(9);
+			TriColorMap<TUNITINTERVAL> map(9);
 
 			map.Values[0][0] = map.Values[0][1] = map.Values[0][2] = map.Values[0][3] = 0.0;
 			map.Values[0][4] = 0.5;

@@ -9,37 +9,37 @@
 #include "drawing-images.h"
 #include "drawing-pixels.h"
 #include "drawing-quadchannelpixel.h"
-#include "drawing-triplecolormap.h"
-#include "drawing-triplechannelpixel.h"
+#include "drawing-tricolormap.h"
+#include "drawing-trichannelpixel.h"
 
-///// MOVE THE TRIPLE, QUAD AND IMAGES CODE TO THIS NAMESPACE /////
+///// MOVE THE TRI, QUAD AND IMAGES CODE TO THIS NAMESPACE /////
 
 namespace Drawing
 {
 	/// <summary>
 	/// 1 byte precision RGB pixel
 	/// </summary>
-	typedef Drawing::TripleChannelPixel<UInt8> RGBPixel8;
+	typedef Drawing::TriChannelPixel<UInt8> RGBPixel8;
 	/// <summary>
 	/// 2 byte precision RGB pixel
 	/// </summary>
-	typedef Drawing::TripleChannelPixel<UInt16> RGBPixel16;
+	typedef Drawing::TriChannelPixel<UInt16> RGBPixel16;
 	/// <summary>
 	/// 4 byte precision RGB pixel
 	/// </summary>
-	typedef Drawing::TripleChannelPixel<UInt32> RGBPixel32;
+	typedef Drawing::TriChannelPixel<UInt32> RGBPixel32;
 	/// <summary>
 	/// 1 byte precision HSV pixel
 	/// </summary>
-	typedef Drawing::TripleChannelPixel<UInt8> HSVPixel8;
+	typedef Drawing::TriChannelPixel<UInt8> HSVPixel8;
 	/// <summary>
 	/// 2 byte precision HSV pixel
 	/// </summary>
-	typedef Drawing::TripleChannelPixel<UInt16> HSVPixel16;
+	typedef Drawing::TriChannelPixel<UInt16> HSVPixel16;
 	/// <summary>
 	/// 4 byte precision HSV pixel
 	/// </summary>
-	typedef Drawing::TripleChannelPixel<UInt32> HSVPixel32;
+	typedef Drawing::TriChannelPixel<UInt32> HSVPixel32;
 	/// <summary>
 	/// 1 byte precision RGBA pixel
 	/// </summary>

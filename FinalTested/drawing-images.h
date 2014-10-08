@@ -2,7 +2,7 @@
 #define DRAWINGIMAGES_H
 
 #include "common-image.h"
-#include "drawing-triplechannelpixel.h"
+#include "drawing-trichannelpixel.h"
 #include "drawing-quadchannelpixel.h"
 
 namespace Drawing
@@ -34,27 +34,27 @@ namespace Drawing
 		/// Returns the first channel from a 3 channel image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChannel1(const Common::Image<TripleChannelPixel<TVALUE>, TINDEX>& image)
+		static Common::Image<TVALUE, TINDEX> getImageChannel1(const Common::Image<TriChannelPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChannel<Image<TripleChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0);
+			return getImageChannel<Image<TriChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0);
 		}
 
 		/// <summary>
 		/// Returns the second channel from a 3 channel image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChannel2(const Common::Image<TripleChannelPixel<TVALUE>, TINDEX>& image)
+		static Common::Image<TVALUE, TINDEX> getImageChannel2(const Common::Image<TriChannelPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChannel<Image<TripleChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1);
+			return getImageChannel<Image<TriChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1);
 		}
 
 		/// <summary>
 		/// Returns the third channel from a 3 channel image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChannel3(const Common::Image<TripleChannelPixel<TVALUE>, TINDEX>& image)
+		static Common::Image<TVALUE, TINDEX> getImageChannel3(const Common::Image<TriChannelPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChannel<Image<TripleChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2);
+			return getImageChannel<Image<TriChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2);
 		}
 
 		/// <summary>
@@ -97,27 +97,27 @@ namespace Drawing
 		/// Sets the first channel of a 3 channel image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static void setImageChannel1(const Common::Image<TripleChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
+		static void setImageChannel1(const Common::Image<TriChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
 		{
-			setImageChannel<Common::Image<TripleChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0, channelImage);
+			setImageChannel<Common::Image<TriChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0, channelImage);
 		}
 
 		/// <summary>
 		/// Sets the second channel of a 3 channel image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static void setImageChannel2(const Common::Image<TripleChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
+		static void setImageChannel2(const Common::Image<TriChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
 		{
-			setImageChannel<Common::Image<TripleChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1, channelImage);
+			setImageChannel<Common::Image<TriChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1, channelImage);
 		}
 
 		/// <summary>
 		/// Sets the third channel of a 3 channel image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static void setImageChannel3(const Common::Image<TripleChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
+		static void setImageChannel3(const Common::Image<TriChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
 		{
-			setImageChannel<Common::Image<TripleChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2, channelImage);
+			setImageChannel<Common::Image<TriChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2, channelImage);
 		}
 
 		/// <summary>

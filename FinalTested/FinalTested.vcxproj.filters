@@ -77,16 +77,16 @@
     <ClInclude Include="drawing-quadchannelpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-triplechannelpixel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="drawing-images.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="drawing-colormapbuilders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-triplecolormap.h">
+    <ClInclude Include="drawing-trichannelpixel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drawing-tricolormap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
