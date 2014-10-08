@@ -29,17 +29,17 @@ namespace Common
 		/// </summary>
 		TINDEX Height;
 
-		///// <summary>
-		///// Constructs an unpopulated image
-		///// </summary>
+		/// <summary>
+		/// Constructs an unpopulated image
+		/// </summary>
 		Image()
 		{
 			createPixelArray(0, 0);
 		}
 
-		///// <summary>
-		///// Constructs an image and copies existing image into it
-		///// </summary>
+		/// <summary>
+		/// Constructs an image and copies existing image into it
+		/// </summary>
 		Image(const Image<TVALUE, TINDEX>& image)
 		{
 			Values = 0;

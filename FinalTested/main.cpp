@@ -28,11 +28,7 @@ int main(int argc, char *argv[])
 
 	Common::Image8U1 image = Common::Image8U1(10, 10, false);
 
-	image.Values[0][0] = true;
-	image.Values[0][7] = true;
-	image.Values[8][1] = true;
-	image.Values[8][2] = true;
-	image.Values[8][9] = true;
+	image.Values[0][0] = image.Values[0][7] = image.Values[8][1] = image.Values[8][2] = image.Values[8][9] = true;
 
 	renderImage(image);
 	
@@ -44,7 +40,7 @@ int main(int argc, char *argv[])
 
 	///////////////////
 
-	//Common::Image8U8 testImage = Common::Image8U8(10, 10, 0); // Errors
+	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
 	Common::Image8U8 testImage = Common::Image8U8(10, 10, 1);
 
 	Drawing::Image8RGBPixel8 rgbImageMEMBER = Drawing::ImageRender::renderImageAs3ChannelImage(testImage, &SomePixelConverter());
