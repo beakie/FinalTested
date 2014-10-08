@@ -38,7 +38,6 @@ namespace Drawing
 
 	};
 
-	typedef ColorMaps<Float32> ColorMaps32;
 }
 
 #endif // DRAWINGCOLORMAPS_H
