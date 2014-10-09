@@ -181,6 +181,10 @@ namespace Drawing
 	typedef QuadColorMapConv<Common::UnitInterval32, UInt32> QuadColorMap32Conv32;
 
 	typedef ColorMaps<Float32> ColorMaps32;
+
+	typedef ImageRender<UInt8> Image8Render;
+
+	typedef ImageRender<UInt16> Image16Render;
 }
 
 #endif // DRAWING_H

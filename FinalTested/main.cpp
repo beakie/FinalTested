@@ -41,12 +41,12 @@ int main(int argc, char *argv[])
 	///////////////////
 
 	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
-	Common::Image8U8 testImage = Common::Image8U8(10, 10, 1);
+	Common::Image8F testImage = Common::Image8F(10, 10, 0.25);
 
 	//Drawing::Image8RGBPixel8 rgbImageMEMBER = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &SomePixelConverter());
 	//Drawing::Image8RGBPixel8 rgbImageSTATIC = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &staticConvertPixel);
 	Drawing::TriColorMap32 map = Drawing::ColorMaps32::getRGBJet();
-	Drawing::Image8RGBPixel8 rgbImageJET = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &Drawing::TriColorMap32Conv8(&map));
+	Drawing::Image8RGBPixel8 testImageJET = Drawing::Image8Render::renderImageAsTriChanImage<Float32, UInt8>(testImage, 0.0, 1.0, &Drawing::TriColorMap32Conv8(&map));
 
 	return a.exec();
 }

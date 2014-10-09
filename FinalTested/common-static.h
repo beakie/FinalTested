@@ -84,15 +84,15 @@ namespace Common
 	}
 
 	template <>
-	static UInt32 getLowerBound<UInt32>()
+	static Float32 getLowerBound<Float32>()
 	{
-		return 0;
+		return -3400000000000000000;
 	}
 
 	template <>
-	static UInt32 getUpperBound<UInt32>()
+	static Float32 getUpperBound<Float32>()
 	{
-		return 4294967295;
+		return 3400000000000000000;
 	}
 }
 
