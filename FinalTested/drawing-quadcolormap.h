@@ -42,10 +42,11 @@ namespace Drawing
 	private:
 		void createValues(UInt8 size)
 		{
-			Values = new TUNITINTERVAL*[3];
+			Values = new TUNITINTERVAL*[4];
 			Values[0] = new TUNITINTERVAL[size];
 			Values[1] = new TUNITINTERVAL[size];
 			Values[2] = new TUNITINTERVAL[size];
+			Values[3] = new TUNITINTERVAL[size];
 		}
 
 		void deleteValues()
@@ -53,6 +54,7 @@ namespace Drawing
 			delete[] Values[0];
 			delete[] Values[1];
 			delete[] Values[2];
+			delete[] Values[3];
 			delete[] Values;
 		}
 
@@ -63,6 +65,7 @@ namespace Drawing
 				Values[0][i] = QuadColorMap.Values[0][i];
 				Values[1][i] = QuadColorMap.Values[1][i];
 				Values[2][i] = QuadColorMap.Values[2][i];
+				Values[3][i] = QuadColorMap.Values[3][i];
 			}
 		}
 

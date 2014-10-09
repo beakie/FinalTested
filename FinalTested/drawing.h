@@ -9,11 +9,12 @@
 #include "drawing-images.h"
 #include "drawing-pixels.h"
 #include "drawing-quadchanpixel.h"
+#include "drawing-quadchanpixel.h"
+#include "drawing-quadcolormap.h"
+#include "drawing-quadcolormapconv.h"
 #include "drawing-trichanpixel.h"
 #include "drawing-tricolormap.h"
 #include "drawing-tricolormapconv.h"
-
-///// MOVE THE TRI, QUAD AND IMAGES CODE TO THIS NAMESPACE /////
 
 namespace Drawing
 {
@@ -165,13 +166,21 @@ namespace Drawing
 
 	typedef TriColorMap<Float32> TriColorMap32;
 
-	typedef ColorMaps<Float32> ColorMaps32;
+	typedef QuadColorMap<Float32> QuadColorMap32;
 
 	typedef TriColorMapConv<Common::UnitInterval32, UInt8> TriColorMap32Conv8;
 
 	typedef TriColorMapConv<Common::UnitInterval32, UInt16> TriColorMap32Conv16;
 
 	typedef TriColorMapConv<Common::UnitInterval32, UInt32> TriColorMap32Conv32;
+
+	typedef QuadColorMapConv<Common::UnitInterval32, UInt8> QuadColorMap32Conv8;
+
+	typedef QuadColorMapConv<Common::UnitInterval32, UInt16> QuadColorMap32Conv16;
+
+	typedef QuadColorMapConv<Common::UnitInterval32, UInt32> QuadColorMap32Conv32;
+
+	typedef ColorMaps<Float32> ColorMaps32;
 }
 
 #endif // DRAWING_H
