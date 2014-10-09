@@ -167,11 +167,11 @@ namespace Drawing
 
 	typedef ColorMaps<Float32> ColorMaps32;
 
-	typedef TriColorMapConv<UInt8, Common::UnitInterval32> TriColorMapConv8;
+	typedef TriColorMapConv<UInt8, Common::UnitInterval32> TriColorMap32Conv8;
 
-	typedef TriColorMapConv<UInt16, Common::UnitInterval32> TriColorMapConv16;
+	typedef TriColorMapConv<UInt16, Common::UnitInterval32> TriColorMap32Conv16;
 
-	typedef TriColorMapConv<UInt32, Common::UnitInterval32> TriColorMapConv32;
+	typedef TriColorMapConv<UInt32, Common::UnitInterval32> TriColorMap32Conv32;
 }
 
 #endif // DRAWING_H
