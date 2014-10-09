@@ -13,27 +13,26 @@ namespace Drawing
 	{
 		TUNITINTERVAL** Values;
 		UInt8 Size;
+		TUNITINTERVAL SpacingSize;
 
-		TriColorMap(UInt8 size) : Size(size)
+		TriColorMap(UInt8 size)
 		{
 			createValues(size);
 		}
 
-		TriColorMap(const TriColorMap<TUNITINTERVAL>& TriColorMap) : Size(TriColorMap.Size)
+		TriColorMap(const TriColorMap<TUNITINTERVAL>& triColorMap)
 		{
-			createValues(TriColorMap.Size);
-			copyValues(TriColorMap);
+			createValues(triColorMap.Size);
+			copyValues(triColorMap);
 		}
 
-		TriColorMap<TUNITINTERVAL>& operator=(const TriColorMap<TUNITINTERVAL>& TriColorMap)
+		TriColorMap<TUNITINTERVAL>& operator=(const TriColorMap<TUNITINTERVAL>& triColorMap)
 		{
-			if (this != &TriColorMap)
+			if (this != &triColorMap)
 			{
 				deleteValues();
-				createValues(TriColorMap.Size);
-				copyValues(TriColorMap);
-
-				Size = TriColorMap.Size;
+				createValues(triColorMap.Size);
+				copyValues(triColorMap);
 			}
 
 			return *this;
@@ -46,6 +45,8 @@ namespace Drawing
 			Values[0] = new TUNITINTERVAL[size];
 			Values[1] = new TUNITINTERVAL[size];
 			Values[2] = new TUNITINTERVAL[size];
+			Size = size;
+			SpacingSize = (float)1 / (size - 1);
 		}
 
 		void deleteValues()
@@ -56,13 +57,13 @@ namespace Drawing
 			delete[] Values;
 		}
 
-		void copyValues(const TriColorMap<TUNITINTERVAL>& TriColorMap)
+		void copyValues(const TriColorMap<TUNITINTERVAL>& triColorMap)
 		{
-			for (UInt8 i = 0; i < TriColorMap.Size; i++)
+			for (UInt8 i = 0; i < triColorMap.Size; i++)
 			{
-				Values[0][i] = TriColorMap.Values[0][i];
-				Values[1][i] = TriColorMap.Values[1][i];
-				Values[2][i] = TriColorMap.Values[2][i];
+				Values[0][i] = triColorMap.Values[0][i];
+				Values[1][i] = triColorMap.Values[1][i];
+				Values[2][i] = triColorMap.Values[2][i];
 			}
 		}
 

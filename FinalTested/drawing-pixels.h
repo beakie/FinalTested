@@ -15,7 +15,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getRGBPixelRed(const Drawing::TriChanPixel<TVALUE>& rgbPixel)
 		{
-			return rgbPixel.Chans[0];
+			return rgbPixel.Channels[0];
 		}
 
 		/// <summary>
@@ -24,7 +24,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getRGBPixelBlue(const Drawing::TriChanPixel<TVALUE>& rgbPixel)
 		{
-			return rgbPixel.Chans[1];
+			return rgbPixel.Channels[1];
 		}
 
 		/// <summary>
@@ -33,7 +33,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getRGBPixelGreen(const Drawing::TriChanPixel<TVALUE>& rgbPixel)
 		{
-			return rgbPixel.Chans[2];
+			return rgbPixel.Channels[2];
 		}
 
 		/// <summary>
@@ -42,7 +42,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getHSVPixelHue(const Drawing::TriChanPixel<TVALUE>& hsvPixel)
 		{
-			return hsvPixel.Chans[0];
+			return hsvPixel.Channels[0];
 		}
 
 		/// <summary>
@@ -51,7 +51,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getHSVPixelSaturation(const Drawing::TriChanPixel<TVALUE>& hsvPixel)
 		{
-			return hsvPixel.Chans[1];
+			return hsvPixel.Channels[1];
 		}
 
 		/// <summary>
@@ -60,7 +60,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getHSVPixelValue(const Drawing::TriChanPixel<TVALUE>& hsvPixel)
 		{
-			return hsvPixel.Chans[2];
+			return hsvPixel.Channels[2];
 		}
 
 		/// <summary>
@@ -69,7 +69,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getRGBAPixelRed(const Drawing::QuadChanPixel<TVALUE>& rgbaPixel)
 		{
-			return rgbaPixel.Chans[0];
+			return rgbaPixel.Channels[0];
 		}
 
 		/// <summary>
@@ -78,7 +78,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getRGBAPixelBlue(const Drawing::QuadChanPixel<TVALUE>& rgbaPixel)
 		{
-			return rgbaPixel.Chans[1];
+			return rgbaPixel.Channels[1];
 		}
 
 		/// <summary>
@@ -87,7 +87,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getRGBAPixelGreen(const Drawing::QuadChanPixel<TVALUE>& rgbaPixel)
 		{
-			return rgbaPixel.Chans[2];
+			return rgbaPixel.Channels[2];
 		}
 
 		/// <summary>
@@ -96,7 +96,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getRGBAPixelAlpha(const Drawing::QuadChanPixel<TVALUE>& rgbaPixel)
 		{
-			return rgbaPixel.Chans[3];
+			return rgbaPixel.Channels[3];
 		}
 
 		/// <summary>
@@ -105,7 +105,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getARGBAPixelAlpha(const Drawing::QuadChanPixel<TVALUE>& argbPixel)
 		{
-			return argbPixel.Chans[0];
+			return argbPixel.Channels[0];
 		}
 
 		/// <summary>
@@ -114,7 +114,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getARGBPixelRed(const Drawing::QuadChanPixel<TVALUE>& argbPixel)
 		{
-			return argbPixel.Chans[1];
+			return argbPixel.Channels[1];
 		}
 
 		/// <summary>
@@ -123,7 +123,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getARGBAPixelBlue(const Drawing::QuadChanPixel<TVALUE>& argbPixel)
 		{
-			return argbPixel.Chans[2];
+			return argbPixel.Channels[2];
 		}
 
 		/// <summary>
@@ -132,7 +132,7 @@ namespace Drawing
 		template <typename TVALUE>
 		static TVALUE getARGBAPixelGreen(const Drawing::QuadChanPixel<TVALUE>& argbPixel)
 		{
-			return argbPixel.Chans[3];
+			return argbPixel.Channels[3];
 		}
 	};
 }

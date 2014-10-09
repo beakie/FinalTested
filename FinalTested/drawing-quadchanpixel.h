@@ -9,7 +9,7 @@ namespace Drawing
 	/// </summary>
 	struct QuadChanPixel
 	{
-		TVALUE Chans[3];
+		TVALUE Channels[3];
 
 		QuadChanPixel()
 		{
@@ -17,10 +17,10 @@ namespace Drawing
 
 		QuadChanPixel(TVALUE chan1, TVALUE chan2, TVALUE chan3, TVALUE chan4)
 		{
-			Chans[0] = chan1;
-			Chans[1] = chan2;
-			Chans[2] = chan3;
-			Chans[3] = chan4;
+			Channels[0] = chan1;
+			Channels[1] = chan2;
+			Channels[2] = chan3;
+			Channels[3] = chan4;
 		}
 
 		/// <summary>
@@ -28,10 +28,10 @@ namespace Drawing
 		/// </summary>
 		QuadChanPixel<TVALUE>& operator=(const QuadChanPixel<TVALUE>& pixel)
 		{
-			Chans[0] = pixel.Chans[0];
-			Chans[1] = pixel.Chans[1];
-			Chans[2] = pixel.Chans[2];
-			Chans[3] = pixel.Chans[3];
+			Channels[0] = pixel.Channels[0];
+			Channels[1] = pixel.Channels[1];
+			Channels[2] = pixel.Channels[2];
+			Channels[3] = pixel.Channels[3];
 
 			return *this;
 		}
@@ -53,10 +53,10 @@ namespace Drawing
 		/// </summary>
 		QuadChanPixel<TVALUE>& operator*=(const QuadChanPixel<TVALUE>& pixel)
 		{
-			Chans[0] = Chans[0] * pixel.Chans[0];
-			Chans[1] = Chans[1] * pixel.Chans[1];
-			Chans[2] = Chans[2] * pixel.Chans[2];
-			Chans[3] = Chans[3] * pixel.Chans[3];
+			Channels[0] = Channels[0] * pixel.Channels[0];
+			Channels[1] = Channels[1] * pixel.Channels[1];
+			Channels[2] = Channels[2] * pixel.Channels[2];
+			Channels[3] = Channels[3] * pixel.Channels[3];
 
 			return *this;
 		}
@@ -78,10 +78,10 @@ namespace Drawing
 		/// </summary>
 		QuadChanPixel<TVALUE>& operator/=(const QuadChanPixel<TVALUE>& pixel)
 		{
-			Chans[0] = Chans[0] / pixel.Chans[0];
-			Chans[1] = Chans[1] / pixel.Chans[1];
-			Chans[2] = Chans[2] / pixel.Chans[2];
-			Chans[3] = Chans[3] / pixel.Chans[3];
+			Channels[0] = Channels[0] / pixel.Channels[0];
+			Channels[1] = Channels[1] / pixel.Channels[1];
+			Channels[2] = Channels[2] / pixel.Channels[2];
+			Channels[3] = Channels[3] / pixel.Channels[3];
 
 			return *this;
 		}
@@ -103,10 +103,10 @@ namespace Drawing
 		/// </summary>
 		QuadChanPixel<TVALUE>& operator|=(const QuadChanPixel<TVALUE>& pixel)
 		{
-			Chans[0] = Chans[0] | pixel.Chans[0];
-			Chans[1] = Chans[1] | pixel.Chans[1];
-			Chans[2] = Chans[2] | pixel.Chans[2];
-			Chans[3] = Chans[3] | pixel.Chans[3];
+			Channels[0] = Channels[0] | pixel.Channels[0];
+			Channels[1] = Channels[1] | pixel.Channels[1];
+			Channels[2] = Channels[2] | pixel.Channels[2];
+			Channels[3] = Channels[3] | pixel.Channels[3];
 
 			return *this;
 		}
@@ -128,10 +128,10 @@ namespace Drawing
 		/// </summary>
 		QuadChanPixel<TVALUE>& operator&=(const QuadChanPixel<TVALUE>& pixel)
 		{
-			Chans[0] = Chans[0] & pixel.Chans[0];
-			Chans[1] = Chans[1] & pixel.Chans[1];
-			Chans[2] = Chans[2] & pixel.Chans[2];
-			Chans[3] = Chans[3] & pixel.Chans[3];
+			Channels[0] = Channels[0] & pixel.Channels[0];
+			Channels[1] = Channels[1] & pixel.Channels[1];
+			Channels[2] = Channels[2] & pixel.Channels[2];
+			Channels[3] = Channels[3] & pixel.Channels[3];
 
 			return *this;
 		}

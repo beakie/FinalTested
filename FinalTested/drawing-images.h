@@ -17,7 +17,7 @@ namespace Drawing
 
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)
-					i.Values[x][y] = image.Values[x][y].Chans[chanIndex];
+					i.Values[x][y] = image.Values[x][y].Channels[chanIndex];
 
 			return i;
 		}
@@ -27,7 +27,7 @@ namespace Drawing
 		{
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)
-					image.Values[x][y].Chans[chanIndex] = chanImage.Values[x][y];
+					image.Values[x][y].Channels[chanIndex] = chanImage.Values[x][y];
 		}
 
 		/// <summary>

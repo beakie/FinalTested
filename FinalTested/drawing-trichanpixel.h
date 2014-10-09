@@ -9,7 +9,7 @@ namespace Drawing
 	/// </summary>
 	struct TriChanPixel
 	{
-		TVALUE Chans[3];
+		TVALUE Channels[3];
 
 		TriChanPixel()
 		{
@@ -17,9 +17,9 @@ namespace Drawing
 
 		TriChanPixel(TVALUE chan1, TVALUE chan2, TVALUE chan3)
 		{
-			Chans[0] = chan1;
-			Chans[1] = chan2;
-			Chans[2] = chan3;
+			Channels[0] = chan1;
+			Channels[1] = chan2;
+			Channels[2] = chan3;
 		}
 
 		/// <summary>
@@ -27,9 +27,9 @@ namespace Drawing
 		/// </summary>
 		TriChanPixel<TVALUE>& operator=(const TriChanPixel<TVALUE>& pixel)
 		{
-			Chans[0] = pixel.Chans[0];
-			Chans[1] = pixel.Chans[1];
-			Chans[2] = pixel.Chans[2];
+			Channels[0] = pixel.Channels[0];
+			Channels[1] = pixel.Channels[1];
+			Channels[2] = pixel.Channels[2];
 
 			return *this;
 		}
@@ -51,9 +51,9 @@ namespace Drawing
 		/// </summary>
 		TriChanPixel<TVALUE>& operator*=(const TriChanPixel<TVALUE>& pixel)
 		{
-			Chans[0] = Chans[0] * pixel.Chans[0];
-			Chans[1] = Chans[1] * pixel.Chans[1];
-			Chans[2] = Chans[2] * pixel.Chans[2];
+			Channels[0] = Channels[0] * pixel.Channels[0];
+			Channels[1] = Channels[1] * pixel.Channels[1];
+			Channels[2] = Channels[2] * pixel.Channels[2];
 
 			return *this;
 		}
@@ -75,9 +75,9 @@ namespace Drawing
 		/// </summary>
 		TriChanPixel<TVALUE>& operator/=(const TriChanPixel<TVALUE>& pixel)
 		{
-			Chans[0] = Chans[0] / pixel.Chans[0];
-			Chans[1] = Chans[1] / pixel.Chans[1];
-			Chans[2] = Chans[2] / pixel.Chans[2];
+			Channels[0] = Channels[0] / pixel.Channels[0];
+			Channels[1] = Channels[1] / pixel.Channels[1];
+			Channels[2] = Channels[2] / pixel.Channels[2];
 
 			return *this;
 		}
@@ -99,9 +99,9 @@ namespace Drawing
 		/// </summary>
 		TriChanPixel<TVALUE>& operator|=(const TriChanPixel<TVALUE>& pixel)
 		{
-			Chans[0] = Chans[0] | pixel.Chans[0];
-			Chans[1] = Chans[1] | pixel.Chans[1];
-			Chans[2] = Chans[2] | pixel.Chans[2];
+			Channels[0] = Channels[0] | pixel.Channels[0];
+			Channels[1] = Channels[1] | pixel.Channels[1];
+			Channels[2] = Channels[2] | pixel.Channels[2];
 
 			return *this;
 		}
@@ -123,9 +123,9 @@ namespace Drawing
 		/// </summary>
 		TriChanPixel<TVALUE>& operator&=(const TriChanPixel<TVALUE>& pixel)
 		{
-			Chans[0] = Chans[0] & pixel.Chans[0];
-			Chans[1] = Chans[1] & pixel.Chans[1];
-			Chans[2] = Chans[2] & pixel.Chans[2];
+			Channels[0] = Channels[0] & pixel.Channels[0];
+			Channels[1] = Channels[1] & pixel.Channels[1];
+			Channels[2] = Channels[2] & pixel.Channels[2];
 
 			return *this;
 		}
