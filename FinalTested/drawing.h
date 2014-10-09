@@ -163,6 +163,8 @@ namespace Drawing
 	typedef Common::Image<GreyPixel32, UInt16> Image16Grey32;
 
 	typedef ColorMaps<Float32> ColorMaps32;
+
+	typedef TriColorMap<Float32> TriColorMap32;
 }
 
 #endif // DRAWING_H

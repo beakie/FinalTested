@@ -26,26 +26,26 @@ int main(int argc, char *argv[])
 {
 	QCoreApplication a(argc, argv);
 
-	Common::Image8U1 image = Common::Image8U1(10, 10, false);
+	//Common::Image8U1 image = Common::Image8U1(10, 10, false);
 
-	image.Values[0][0] = image.Values[0][7] = image.Values[8][1] = image.Values[8][2] = image.Values[8][9] = true;
+	//image.Values[0][0] = image.Values[0][7] = image.Values[8][1] = image.Values[8][2] = image.Values[8][9] = true;
 
-	renderImage(image);
+	//renderImage(image);
 	
 	//image.cropImage(0, 1, 8, 8);
 
-	image.rotate90();
+	//image.rotate90();
 
-	renderImage(image);
+	//renderImage(image);
 
 	///////////////////
 
 	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
 	Common::Image8U8 testImage = Common::Image8U8(10, 10, 1);
 
-	Drawing::Image8RGBPixel8 rgbImageMEMBER = Drawing::ImageRender::renderImageAsTriChannelImage(testImage, &SomePixelConverter());
-	Drawing::Image8RGBPixel8 rgbImageSTATIC = Drawing::ImageRender::renderImageAsTriChannelImage(testImage, &staticConvertPixel);
-	Drawing::TriColorMap<Float32> map = Drawing::ColorMaps32::getRGBColorMapJet();
+	//Drawing::Image8RGBPixel8 rgbImageMEMBER = Drawing::ImageRender::renderImageAsTriChannelImage(testImage, &SomePixelConverter());
+	//Drawing::Image8RGBPixel8 rgbImageSTATIC = Drawing::ImageRender::renderImageAsTriChannelImage(testImage, &staticConvertPixel);
+	Drawing::TriColorMap32 map = Drawing::ColorMaps32::getRGBColorMapJet();
 	Drawing::Image8RGBPixel8 rgbImageJET = Drawing::ImageRender::renderImageAsTriChannelImage(testImage, &Drawing::ImageRender::ApplyTri8ColorMap32(&map));
 
 	return a.exec();

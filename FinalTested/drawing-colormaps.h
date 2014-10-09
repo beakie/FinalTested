@@ -31,7 +31,7 @@ namespace Drawing
 			map.Values[2][0] = 0.5;
 			map.Values[2][1] = map.Values[2][2] = map.Values[2][3] = 1.0;
 			map.Values[2][4] = 0.5;
-			map.Values[2][5] = map.Values[2][6] = map.Values[2][7] = map.Values[2][9] = 0.0;
+			map.Values[2][5] = map.Values[2][6] = map.Values[2][7] = map.Values[2][8] = 0.0;
 
 			return map;
 		}
