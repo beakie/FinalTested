@@ -35,31 +35,28 @@ namespace Drawing
 			if (indexUnrounded == index)
 				return Drawing::TriChanPixel<TPIXEL>(_colorMap->Values[0][index], _colorMap->Values[1][index], _colorMap->Values[2][index]);
 
-			TUNITINTERVAL channel1;
-			TUNITINTERVAL channel2;
-			TUNITINTERVAL channel3;
-
 			TUNITINTERVAL fromIndexValue = index * spacing;
 			TUNITINTERVAL toIndexValue = (index + 1) * spacing;
 			TUNITINTERVAL valueDiff = (value - fromIndexValue) / (toIndexValue - fromIndexValue);
 
-			//// for each channel
+			TUNITINTERVAL channel[3];
 
-			TUNITINTERVAL fromMapping1 = _colorMap->Values[0][index];
-			TUNITINTERVAL toMapping1 = _colorMap->Values[0][index + 1];
-
-			if (fromMapping1 == toMapping1)
-				channel1 = fromMapping1;
-			else
+			for (UInt8 i = 0; i < 3; i++)
 			{
-				TUNITINTERVAL mappingDiff1 = toMapping1 - fromMapping1;
-				TUNITINTERVAL newValue1 = (mappingDiff1 * valueDiff) + fromMapping1;
-				channel1 = newValue1;
+				TUNITINTERVAL fromMapping = _colorMap->Values[i][index];
+				TUNITINTERVAL toMapping = _colorMap->Values[i][index + 1];
+
+				if (fromMapping == toMapping)
+					channel[i] = fromMapping;
+				else
+				{
+					TUNITINTERVAL mappingDiff = toMapping - fromMapping;
+					TUNITINTERVAL newValue = (mappingDiff * valueDiff) + fromMapping;
+					channel[i] = newValue;
+				}
 			}
 
-			////
-
-			return Drawing::TriChanPixel<TPIXEL>(channel1, channel2, channel3);
+			return Drawing::TriChanPixel<TPIXEL>(channel[0], channel[1], channel[2]);
 		}
 	};
 
