@@ -56,13 +56,13 @@ namespace Drawing
 		}
 
 		template <typename TPIXEL, typename TUNITINTERVAL>
-		class ApplyTri8ColorMap
+		class ApplyTriColorMap
 		{
 		private:
 			const Drawing::TriColorMap<TUNITINTERVAL>* _colorMap;
 
 		public:
-			ApplyTri8ColorMap(const Drawing::TriColorMap<TUNITINTERVAL>* colorMap)
+			ApplyTriColorMap(const Drawing::TriColorMap<TUNITINTERVAL>* colorMap)
 			{
 				_colorMap = colorMap;
 			}
@@ -81,7 +81,7 @@ namespace Drawing
 			}
 		};
 
-		typedef ApplyTri8ColorMap<UInt8, Common::UnitInterval32> ApplyTri8ColorMap32;
+		typedef ApplyTriColorMap<UInt8, Common::UnitInterval32> ApplyTriColorMap32;
 
 	};
 
