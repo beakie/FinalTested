@@ -19,6 +19,10 @@ namespace Common
 	/// </summary>
 	typedef Float32 UnitInterval32;
 	/// <summary>
+	/// 8 byte unit interval (0 - 1)
+	/// </summary>
+	typedef Float64 UnitInterval64;
+	/// <summary>
 	/// matrix of size 2 with 1 bit values
 	/// </summary>
 	typedef Matrix2<UInt1> Matrix2U1;

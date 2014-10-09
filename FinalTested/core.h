@@ -33,5 +33,9 @@ typedef signed int Int32;
 /// Floating point numeric (float)
 /// </summary>
 typedef float Float32;
+/// <summary>
+/// Floating point numeric (double)
+/// </summary>
+typedef double Float64;
 
 #endif // CORE_H
