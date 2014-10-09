@@ -74,19 +74,19 @@
     <ClInclude Include="drawing-pixels.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-quadchannelpixel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="drawing-images.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="drawing-trichannelpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="drawing-tricolormap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="drawing-colormaps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drawing-trichanpixel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drawing-quadchanpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
