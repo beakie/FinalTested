@@ -11,12 +11,12 @@ namespace Drawing
 	class TriColorMapConv
 	{
 	private:
-		const Drawing::TriColorMap<TUNITINTERVAL>* _colorMap;
+		const Drawing::TriColorMap<TUNITINTERVAL>* _colorMap; // transform this on population. lowerbound defines offset, upperbound lets calc of multiplication
 
 		//move lastIndex, spacing etc into here and constructor
 
 	public:
-		TriColorMapConv(const Drawing::TriColorMap<TUNITINTERVAL>* colorMap)
+		TriColorMapConv(const Drawing::TriColorMap<TUNITINTERVAL>* colorMap, TPIXEL lowerBound, TPIXEL upperBound) //should this be input type templates?
 		{
 			_colorMap = colorMap;
 		}
