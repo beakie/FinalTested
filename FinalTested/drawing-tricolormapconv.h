@@ -7,7 +7,7 @@
 
 namespace Drawing
 {
-	template <typename TPIXEL, typename TUNITINTERVAL>
+	template <typename TUNITINTERVAL, typename TPIXEL>
 	class TriColorMapConv
 	{
 	private:
