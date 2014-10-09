@@ -13,6 +13,8 @@ namespace Drawing
 	private:
 		const Drawing::TriColorMap<TUNITINTERVAL>* _colorMap;
 
+		//move lastIndex, spacing etc into here and constructor
+
 	public:
 		TriColorMapConv(const Drawing::TriColorMap<TUNITINTERVAL>* colorMap)
 		{
