@@ -1,37 +1,37 @@
-#ifndef DRAWINGQUADCHANNELPIXEL_H
-#define DRAWINGQUADCHANNELPIXEL_H
+#ifndef DRAWINGQUADCHANPIXEL_H
+#define DRAWINGQUADCHANPIXEL_H
 
 namespace Drawing
 {
 	template <typename TVALUE>
 	/// <summary>
-	/// Quadruple channel pixel
+	/// Quadruple chan pixel
 	/// </summary>
-	struct QuadChannelPixel
+	struct QuadChanPixel
 	{
-		TVALUE Channels[3];
+		TVALUE Chans[3];
 
-		QuadChannelPixel()
+		QuadChanPixel()
 		{
 		}
 
-		QuadChannelPixel(TVALUE channel1, TVALUE channel2, TVALUE channel3, TVALUE channel4)
+		QuadChanPixel(TVALUE chan1, TVALUE chan2, TVALUE chan3, TVALUE chan4)
 		{
-			Channels[0] = channel1;
-			Channels[1] = channel2;
-			Channels[2] = channel3;
-			Channels[3] = channel4;
+			Chans[0] = chan1;
+			Chans[1] = chan2;
+			Chans[2] = chan3;
+			Chans[3] = chan4;
 		}
 
 		/// <summary>
 		/// Operator
 		/// </summary>
-		QuadChannelPixel<TVALUE>& operator=(const QuadChannelPixel<TVALUE>& pixel)
+		QuadChanPixel<TVALUE>& operator=(const QuadChanPixel<TVALUE>& pixel)
 		{
-			Channels[0] = pixel.Channels[0];
-			Channels[1] = pixel.Channels[1];
-			Channels[2] = pixel.Channels[2];
-			Channels[3] = pixel.Channels[3];
+			Chans[0] = pixel.Chans[0];
+			Chans[1] = pixel.Chans[1];
+			Chans[2] = pixel.Chans[2];
+			Chans[3] = pixel.Chans[3];
 
 			return *this;
 		}
@@ -39,9 +39,9 @@ namespace Drawing
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		QuadChannelPixel<TVALUE> operator*(const QuadChannelPixel<TVALUE>& pixel) const
+		QuadChanPixel<TVALUE> operator*(const QuadChanPixel<TVALUE>& pixel) const
 		{
-			QuadChannelPixel<TVALUE> p = *this;
+			QuadChanPixel<TVALUE> p = *this;
 
 			p *= pixel;
 
@@ -51,12 +51,12 @@ namespace Drawing
 		/// <summary>
 		/// Increase contrast
 		/// </summary>
-		QuadChannelPixel<TVALUE>& operator*=(const QuadChannelPixel<TVALUE>& pixel)
+		QuadChanPixel<TVALUE>& operator*=(const QuadChanPixel<TVALUE>& pixel)
 		{
-			Channels[0] = Channels[0] * pixel.Channels[0];
-			Channels[1] = Channels[1] * pixel.Channels[1];
-			Channels[2] = Channels[2] * pixel.Channels[2];
-			Channels[3] = Channels[3] * pixel.Channels[3];
+			Chans[0] = Chans[0] * pixel.Chans[0];
+			Chans[1] = Chans[1] * pixel.Chans[1];
+			Chans[2] = Chans[2] * pixel.Chans[2];
+			Chans[3] = Chans[3] * pixel.Chans[3];
 
 			return *this;
 		}
@@ -64,9 +64,9 @@ namespace Drawing
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		QuadChannelPixel<TVALUE> operator/(const QuadChannelPixel<TVALUE>& pixel) const
+		QuadChanPixel<TVALUE> operator/(const QuadChanPixel<TVALUE>& pixel) const
 		{
-			QuadChannelPixel<TVALUE> p = *this;
+			QuadChanPixel<TVALUE> p = *this;
 
 			p /= pixel;
 
@@ -76,12 +76,12 @@ namespace Drawing
 		/// <summary>
 		/// Decrease contrast
 		/// </summary>
-		QuadChannelPixel<TVALUE>& operator/=(const QuadChannelPixel<TVALUE>& pixel)
+		QuadChanPixel<TVALUE>& operator/=(const QuadChanPixel<TVALUE>& pixel)
 		{
-			Channels[0] = Channels[0] / pixel.Channels[0];
-			Channels[1] = Channels[1] / pixel.Channels[1];
-			Channels[2] = Channels[2] / pixel.Channels[2];
-			Channels[3] = Channels[3] / pixel.Channels[3];
+			Chans[0] = Chans[0] / pixel.Chans[0];
+			Chans[1] = Chans[1] / pixel.Chans[1];
+			Chans[2] = Chans[2] / pixel.Chans[2];
+			Chans[3] = Chans[3] / pixel.Chans[3];
 
 			return *this;
 		}
@@ -89,9 +89,9 @@ namespace Drawing
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		QuadChannelPixel<TVALUE> operator|(const QuadChannelPixel<TVALUE>& pixel) const
+		QuadChanPixel<TVALUE> operator|(const QuadChanPixel<TVALUE>& pixel) const
 		{
-			QuadChannelPixel<TVALUE> p = *this;
+			QuadChanPixel<TVALUE> p = *this;
 
 			p |= pixel;
 
@@ -101,12 +101,12 @@ namespace Drawing
 		/// <summary>
 		/// Logical OR
 		/// </summary>
-		QuadChannelPixel<TVALUE>& operator|=(const QuadChannelPixel<TVALUE>& pixel)
+		QuadChanPixel<TVALUE>& operator|=(const QuadChanPixel<TVALUE>& pixel)
 		{
-			Channels[0] = Channels[0] | pixel.Channels[0];
-			Channels[1] = Channels[1] | pixel.Channels[1];
-			Channels[2] = Channels[2] | pixel.Channels[2];
-			Channels[3] = Channels[3] | pixel.Channels[3];
+			Chans[0] = Chans[0] | pixel.Chans[0];
+			Chans[1] = Chans[1] | pixel.Chans[1];
+			Chans[2] = Chans[2] | pixel.Chans[2];
+			Chans[3] = Chans[3] | pixel.Chans[3];
 
 			return *this;
 		}
@@ -114,9 +114,9 @@ namespace Drawing
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		QuadChannelPixel<TVALUE> operator&(const QuadChannelPixel<TVALUE>& pixel) const
+		QuadChanPixel<TVALUE> operator&(const QuadChanPixel<TVALUE>& pixel) const
 		{
-			QuadChannelPixel<TVALUE> p = *this;
+			QuadChanPixel<TVALUE> p = *this;
 
 			p &= pixel;
 
@@ -126,12 +126,12 @@ namespace Drawing
 		/// <summary>
 		/// Logical AND
 		/// </summary>
-		QuadChannelPixel<TVALUE>& operator&=(const QuadChannelPixel<TVALUE>& pixel)
+		QuadChanPixel<TVALUE>& operator&=(const QuadChanPixel<TVALUE>& pixel)
 		{
-			Channels[0] = Channels[0] & pixel.Channels[0];
-			Channels[1] = Channels[1] & pixel.Channels[1];
-			Channels[2] = Channels[2] & pixel.Channels[2];
-			Channels[3] = Channels[3] & pixel.Channels[3];
+			Chans[0] = Chans[0] & pixel.Chans[0];
+			Chans[1] = Chans[1] & pixel.Chans[1];
+			Chans[2] = Chans[2] & pixel.Chans[2];
+			Chans[3] = Chans[3] & pixel.Chans[3];
 
 			return *this;
 		}
@@ -139,9 +139,9 @@ namespace Drawing
 		/// <summary>
 		/// Invert
 		/// </summary>
-		QuadChannelPixel<TVALUE> operator!() const
+		QuadChanPixel<TVALUE> operator!() const
 		{
-			QuadChannelPixel<TVALUE> p = *this;
+			QuadChanPixel<TVALUE> p = *this;
 
 			p != p;
 
@@ -151,7 +151,7 @@ namespace Drawing
 		/// <summary>
 		/// Comparison
 		/// </summary>
-		bool operator==(const QuadChannelPixel<TVALUE>& pixel) const
+		bool operator==(const QuadChanPixel<TVALUE>& pixel) const
 		{
 			if ((Width != pixel.Width) || (Height != pixel.Height))
 				return false;
@@ -167,11 +167,11 @@ namespace Drawing
 		/// <summary>
 		/// Not comparison
 		/// </summary>
-		bool operator!=(const QuadChannelPixel<TVALUE>& pixel) const
+		bool operator!=(const QuadChanPixel<TVALUE>& pixel) const
 		{
 			return operator==(pixel);
 		}
 	};
 }
 
-#endif // DRAWINGQUADCHANNELPIXEL_H
+#endif // DRAWINGQUADCHANPIXEL_H

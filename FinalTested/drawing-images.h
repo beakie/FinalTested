@@ -2,8 +2,8 @@
 #define DRAWINGIMAGES_H
 
 #include "common-image.h"
-#include "drawing-trichannelpixel.h"
-#include "drawing-quadchannelpixel.h"
+#include "drawing-trichanpixel.h"
+#include "drawing-quadchanpixel.h"
 
 namespace Drawing
 {
@@ -11,149 +11,149 @@ namespace Drawing
 	{
 	public:
 		template <typename TIMAGE, typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChannel(const TIMAGE& image, const UInt8 channelIndex)
+		static Common::Image<TVALUE, TINDEX> getImageChan(const TIMAGE& image, const UInt8 chanIndex)
 		{
 			Common::Image<TVALUE, TINDEX> i = Common::Image<TVALUE, TINDEX>(image.Width, image.Height);
 
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)
-					i.Values[x][y] = image.Values[x][y].Channels[channelIndex];
+					i.Values[x][y] = image.Values[x][y].Chans[chanIndex];
 
 			return i;
 		}
 
 		template <typename TIMAGE, typename TVALUE, typename TINDEX>
-		static void setImageChannel(const TIMAGE& image, const TINDEX channelIndex, const Common::Image<TVALUE, TINDEX>& channelImage)
+		static void setImageChan(const TIMAGE& image, const TINDEX chanIndex, const Common::Image<TVALUE, TINDEX>& chanImage)
 		{
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)
-					image.Values[x][y].Channels[channelIndex] = channelImage.Values[x][y];
+					image.Values[x][y].Chans[chanIndex] = chanImage.Values[x][y];
 		}
 
 		/// <summary>
-		/// Returns the first channel from a 3 channel image
+		/// Returns the first chan from a 3 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChannel1(const Common::Image<TriChannelPixel<TVALUE>, TINDEX>& image)
+		static Common::Image<TVALUE, TINDEX> getImageChan1(const Common::Image<TriChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChannel<Image<TriChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0);
+			return getImageChan<Image<TriChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0);
 		}
 
 		/// <summary>
-		/// Returns the second channel from a 3 channel image
+		/// Returns the second chan from a 3 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChannel2(const Common::Image<TriChannelPixel<TVALUE>, TINDEX>& image)
+		static Common::Image<TVALUE, TINDEX> getImageChan2(const Common::Image<TriChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChannel<Image<TriChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1);
+			return getImageChan<Image<TriChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1);
 		}
 
 		/// <summary>
-		/// Returns the third channel from a 3 channel image
+		/// Returns the third chan from a 3 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChannel3(const Common::Image<TriChannelPixel<TVALUE>, TINDEX>& image)
+		static Common::Image<TVALUE, TINDEX> getImageChan3(const Common::Image<TriChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChannel<Image<TriChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2);
+			return getImageChan<Image<TriChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2);
 		}
 
 		/// <summary>
-		/// Returns the first channel from a 4 channel image
+		/// Returns the first chan from a 4 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChannel1(const Common::Image<QuadChannelPixel<TVALUE>, TINDEX>& image)
+		static Common::Image<TVALUE, TINDEX> getImageChan1(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChannel<Common::Image<QuadChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0);
+			return getImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0);
 		}
 
 		/// <summary>
-		/// Returns the second channel from a 4 channel image
+		/// Returns the second chan from a 4 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChannel2(const Common::Image<QuadChannelPixel<TVALUE>, TINDEX>& image)
+		static Common::Image<TVALUE, TINDEX> getImageChan2(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChannel<Common::Image<QuadChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1);
+			return getImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1);
 		}
 
 		/// <summary>
-		/// Returns the third channel from a 4 channel image
+		/// Returns the third chan from a 4 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChannel3(const Common::Image<QuadChannelPixel<TVALUE>, TINDEX>& image)
+		static Common::Image<TVALUE, TINDEX> getImageChan3(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChannel<Common::Image<QuadChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2);
+			return getImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2);
 		}
 
 		/// <summary>
-		/// Returns the fourth channel from a 4 channel image
+		/// Returns the fourth chan from a 4 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChannel4(const Common::Image<QuadChannelPixel<TVALUE>, TINDEX>& image)
+		static Common::Image<TVALUE, TINDEX> getImageChan4(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChannel<Common::Image<QuadChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 3);
+			return getImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 3);
 		}
 
 		/// <summary>
-		/// Sets the first channel of a 3 channel image
+		/// Sets the first chan of a 3 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static void setImageChannel1(const Common::Image<TriChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
+		static void setImageChan1(const Common::Image<TriChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChannel<Common::Image<TriChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0, channelImage);
+			setImageChan<Common::Image<TriChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0, chanImage);
 		}
 
 		/// <summary>
-		/// Sets the second channel of a 3 channel image
+		/// Sets the second chan of a 3 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static void setImageChannel2(const Common::Image<TriChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
+		static void setImageChan2(const Common::Image<TriChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChannel<Common::Image<TriChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1, channelImage);
+			setImageChan<Common::Image<TriChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1, chanImage);
 		}
 
 		/// <summary>
-		/// Sets the third channel of a 3 channel image
+		/// Sets the third chan of a 3 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static void setImageChannel3(const Common::Image<TriChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
+		static void setImageChan3(const Common::Image<TriChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChannel<Common::Image<TriChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2, channelImage);
+			setImageChan<Common::Image<TriChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2, chanImage);
 		}
 
 		/// <summary>
-		/// Sets the first channel of a 4 channel image
+		/// Sets the first chan of a 4 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static void setImageChannel1(const Common::Image<QuadChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
+		static void setImageChan1(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChannel<Common::Image<QuadChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0, channelImage);
+			setImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0, chanImage);
 		}
 
 		/// <summary>
-		/// Sets the second channel of a 4 channel image
+		/// Sets the second chan of a 4 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static void setImageChannel2(const Common::Image<QuadChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
+		static void setImageChan2(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChannel<Common::Image<QuadChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1, channelImage);
+			setImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1, chanImage);
 		}
 
 		/// <summary>
-		/// Sets the third channel of a 4 channel image
+		/// Sets the third chan of a 4 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static void setImageChannel3(const Common::Image<QuadChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
+		static void setImageChan3(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChannel<Common::Image<QuadChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2, channelImage);
+			setImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2, chanImage);
 		}
 
 		/// <summary>
-		/// Sets the fourth channel of a 4 channel image
+		/// Sets the fourth chan of a 4 chan image
 		/// </summary>
 		template <typename TVALUE, typename TINDEX>
-		static void setImageChannel4(const Common::Image<QuadChannelPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> channelImage)
+		static void setImageChan4(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChannel<Common::Image<QuadChannelPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 3, channelImage);
+			setImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 3, chanImage);
 		}
 
 	};

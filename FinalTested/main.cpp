@@ -11,42 +11,42 @@ void renderImage(const TIMAGE& image);
 
 struct SomePixelConverter
 {
-	Drawing::TriChannelPixel<UInt8> convertPixel(const Common::UnitInterval32& value)
+	Drawing::TriChanPixel<UInt8> convertPixel(const Common::UnitInterval32& value)
 	{
-		return Drawing::TriChannelPixel<UInt8>(1, 2, 3);
+		return Drawing::TriChanPixel<UInt8>(1, 2, 3);
 	}
 };
 
-static Drawing::TriChannelPixel<UInt8> staticConvertPixel(const Common::UnitInterval32& value)
+static Drawing::TriChanPixel<UInt8> staticConvertPixel(const Common::UnitInterval32& value)
 {
-	return Drawing::TriChannelPixel<UInt8>(1, 2, 3);
+	return Drawing::TriChanPixel<UInt8>(1, 2, 3);
 }
 
 int main(int argc, char *argv[])
 {
 	QCoreApplication a(argc, argv);
 
-	//Common::Image8U1 image = Common::Image8U1(10, 10, false);
+	Common::Image8U1 image = Common::Image8U1(10, 10, false);
 
-	//image.Values[0][0] = image.Values[0][7] = image.Values[8][1] = image.Values[8][2] = image.Values[8][9] = true;
+	image.Values[0][0] = image.Values[0][7] = image.Values[8][1] = image.Values[8][2] = image.Values[8][9] = true;
 
-	//renderImage(image);
+	renderImage(image);
 	
-	//image.cropImage(0, 1, 8, 8);
+	image.cropImage(0, 1, 8, 8);
 
-	//image.rotate90();
+	image.rotate90();
 
-	//renderImage(image);
+	renderImage(image);
 
 	///////////////////
 
 	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
 	Common::Image8U8 testImage = Common::Image8U8(10, 10, 1);
 
-	//Drawing::Image8RGBPixel8 rgbImageMEMBER = Drawing::ImageRender::renderImageAsTriChannelImage(testImage, &SomePixelConverter());
-	//Drawing::Image8RGBPixel8 rgbImageSTATIC = Drawing::ImageRender::renderImageAsTriChannelImage(testImage, &staticConvertPixel);
+	//Drawing::Image8RGBPixel8 rgbImageMEMBER = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &SomePixelConverter());
+	//Drawing::Image8RGBPixel8 rgbImageSTATIC = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &staticConvertPixel);
 	Drawing::TriColorMap32 map = Drawing::ColorMaps32::getRGBJet();
-	Drawing::Image8RGBPixel8 rgbImageJET = Drawing::ImageRender::renderImageAsTriChannelImage(testImage, &Drawing::ImageRender::ApplyTriColorMap32(&map));
+	Drawing::Image8RGBPixel8 rgbImageJET = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &Drawing::ImageRender::ApplyTriColorMap32(&map));
 
 	return a.exec();
 }

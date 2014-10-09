@@ -4,7 +4,7 @@
 #include "core.h"
 #include "common.h"
 
-#include "drawing-trichannelpixel.h"
+#include "drawing-trichanpixel.h"
 
 namespace Drawing
 {
