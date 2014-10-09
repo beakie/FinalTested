@@ -68,9 +68,6 @@
     <ClInclude Include="drawing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-imagerender.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="drawing-pixels.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -96,6 +93,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="drawing-quadcolormapconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common-imageconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

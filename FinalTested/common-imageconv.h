@@ -22,9 +22,7 @@ namespace Drawing
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)
 				{
-					Common::UnitInterval32 f = (Float32)image.Values[x][y];
-
-					i.Values[x][y] = converter->convertPixel(f);
+					i.Values[x][y] = converter->convertPixel(image.Values[x][y]);
 				}
 
 			return i;
@@ -35,9 +33,9 @@ namespace Drawing
 		class ImageRenderHelper
 		{
 		public:
-			Drawing::TVALUE(*convertPixel)(const Common::UnitInterval32&);
+			TVALUE(*convertPixel)(const Float32&);
 
-			ImageRenderHelper(TVALUE(pixelConverter)(const Common::UnitInterval32&))
+			ImageRenderHelper(TVALUE(pixelConverter)(const Float32&))
 			{
 				convertPixel = &pixelConverter;
 			}
@@ -48,7 +46,7 @@ namespace Drawing
 		/// ...
 		/// </summary>
 		template <typename TVALUEIN, typename TVALUEOUT>
-		static Common::Image<TVALUEOUT, TINDEX> convImageToImage(const Common::Image<TVALUEIN, TINDEX>& image, TVALUEOUT(pixelConverter)(const Common::UnitInterval32&))
+		static Common::Image<TVALUEOUT, TINDEX> convImageToImage(const Common::Image<TVALUEIN, TINDEX>& image, TVALUEOUT(pixelConverter)(const Float32&))
 		{
 			return renderImageAsTriChanImage<TVALUEIN, TVALUEOUT>(image, &ImageRenderHelper<TVALUEOUT>(pixelConverter));
 		}

@@ -5,7 +5,6 @@
 #include "common.h"
 
 #include "drawing-colormaps.h"
-#include "drawing-imagerender.h"
 #include "drawing-images.h"
 #include "drawing-pixels.h"
 #include "drawing-quadchanpixel.h"
