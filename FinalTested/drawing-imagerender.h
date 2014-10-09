@@ -15,7 +15,7 @@ namespace Drawing
 		/// ...
 		/// </summary>
 		template <typename TVALUEIN, typename TVALUEOUT, typename TCONVERTER>
-		static Common::Image<TVALUEOUT, TINDEX> convImageToTriChanImage(const Common::Image<TVALUEIN, TINDEX>& image, TCONVERTER* converter)
+		static Common::Image<TVALUEOUT, TINDEX> convImageToImage(const Common::Image<TVALUEIN, TINDEX>& image, TCONVERTER* converter)
 		{
 			Common::Image<TVALUEOUT, TINDEX> i = Common::Image<TVALUEOUT, TINDEX>(image.Width, image.Height);
 
@@ -48,7 +48,7 @@ namespace Drawing
 		/// ...
 		/// </summary>
 		template <typename TVALUEIN, typename TVALUEOUT>
-		static Common::Image<TVALUEOUT, TINDEX> convImageToTriChanImage(const Common::Image<TVALUEIN, TINDEX>& image, TVALUEOUT(pixelConverter)(const Common::UnitInterval32&))
+		static Common::Image<TVALUEOUT, TINDEX> convImageToImage(const Common::Image<TVALUEIN, TINDEX>& image, TVALUEOUT(pixelConverter)(const Common::UnitInterval32&))
 		{
 			return renderImageAsTriChanImage<TVALUEIN, TVALUEOUT>(image, &ImageRenderHelper<TVALUEOUT>(pixelConverter));
 		}
