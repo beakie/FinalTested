@@ -89,5 +89,8 @@
     <ClInclude Include="drawing-quadchanpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="drawing-tricolormapconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

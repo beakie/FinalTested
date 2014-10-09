@@ -55,34 +55,6 @@ namespace Drawing
 			return renderImageAsTriChanImage(image, &ImageRenderHelper<TVALUE>(pixelConverter));
 		}
 
-		template <typename TPIXEL, typename TUNITINTERVAL>
-		class ApplyTriColorMap
-		{
-		private:
-			const Drawing::TriColorMap<TUNITINTERVAL>* _colorMap;
-
-		public:
-			ApplyTriColorMap(const Drawing::TriColorMap<TUNITINTERVAL>* colorMap)
-			{
-				_colorMap = colorMap;
-			}
-
-			Drawing::TriChanPixel<TPIXEL> convertPixel(const TUNITINTERVAL& value)
-			{
-				UInt8 size = _colorMap->Size - 1;
-
-				if (value == 1.0)
-					return Drawing::TriChanPixel<TPIXEL>(_colorMap->Values[0][size], _colorMap->Values[1][size], _colorMap->Values[2][size]);
-
-				TUNITINTERVAL spacing = ((TUNITINTERVAL)1 / (size - 1));
-				UInt8 index = (UInt8)(value / spacing);
-
-				return Drawing::TriChanPixel<TPIXEL>(value, 14, 21);
-			}
-		};
-
-		typedef ApplyTriColorMap<UInt8, Common::UnitInterval32> ApplyTriColorMap32;
-
 	};
 
 }

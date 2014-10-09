@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 	//Drawing::Image8RGBPixel8 rgbImageMEMBER = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &SomePixelConverter());
 	//Drawing::Image8RGBPixel8 rgbImageSTATIC = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &staticConvertPixel);
 	Drawing::TriColorMap32 map = Drawing::ColorMaps32::getRGBJet();
-	Drawing::Image8RGBPixel8 rgbImageJET = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &Drawing::ImageRender::ApplyTriColorMap32(&map));
+	Drawing::Image8RGBPixel8 rgbImageJET = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &Drawing::TriColorMapConv8(&map));
 
 	return a.exec();
 }
