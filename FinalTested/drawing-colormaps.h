@@ -13,7 +13,7 @@ namespace Drawing
 	{
 
 	public:
-		static TriColorMap<TUNITINTERVAL> getRGBColorMapJet()
+		static TriColorMap<TUNITINTERVAL> getRGBJet()
 		{
 			TriColorMap<TUNITINTERVAL> map(9);
 
