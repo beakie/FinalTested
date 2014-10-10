@@ -14,6 +14,7 @@ namespace Drawing
 		const Drawing::TriColorMap<TUNITINTERVAL>* _colorMap; // transform this on population. lowerbound defines offset, upperbound lets calc of multiplication
 		TPIXELIN _inLowerBound;
 		TPIXELIN _inUpperBound;
+		TPIXELIN _inBoundDiff;
 		UInt8 _lastIndex;
 		TUNITINTERVAL _spacing;
 		TPIXELOUT _outLowerBound;
@@ -28,11 +29,17 @@ namespace Drawing
 			_colorMap = colorMap;
 			_inLowerBound = lowerBound;
 			_inUpperBound = upperBound;
+			_inBoundDiff = upperBound - lowerBound;  //?
 			_lastIndex = _colorMap->Size - 1;
 			_spacing = ((TUNITINTERVAL)1 / _lastIndex);
 			_outLowerBound = Common::getLowerBound<TPIXELOUT>();
 			_outUpperBound = Common::getUpperBound<TPIXELOUT>();
 			_outBoundDiff = _outUpperBound - _outLowerBound;
+		}
+
+		TriColorMapConv(const Drawing::TriColorMap<TUNITINTERVAL>* colorMap)
+			: TriColorMapConv(colorMap, Common::getLowerBound<TPIXELIN>(), Common::getUpperBound<TPIXELIN>())
+		{
 		}
 
 		Drawing::TriChanPixel<TPIXELOUT> convertPixel(const Float32& value)
