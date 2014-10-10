@@ -27,6 +27,8 @@ namespace Drawing
 		// you NEED to add rounding when do data conversion to TPIXELOUT or it will always round down with in!
 		// *****************
 
+		//when this is finished... copy it to quad
+
 	public:
 		TriColorMapConv(const Drawing::TriColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
 		{
