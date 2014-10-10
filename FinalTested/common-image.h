@@ -729,6 +729,49 @@ namespace Common
 			deletePixelArray();
 		}
 
+
+
+
+
+
+		/// <summary>
+		/// ...
+		/// </summary>
+		template <typename TVALUENEW, typename TCONVERTER>
+		Common::Image<TVALUENEW, TINDEX> getImage(TCONVERTER* converter)
+		{
+			Common::Image<TVALUENEW, TINDEX> i = Common::Image<TVALUENEW, TINDEX>(Width, Height);
+
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					i.Values[x][y] = converter->convertPixel(Values[x][y]);
+
+			return i;
+		}
+
+	private:
+		template <typename TVALUENEW>
+		class ImageRenderHelper
+		{
+		public:
+			TVALUENEW(*convertPixel)(const TVALUE&);
+
+			ImageRenderHelper(TVALUENEW(pixelConverter)(const TVALUE&))
+			{
+				convertPixel = &pixelConverter;
+			}
+		};
+
+	public:
+		/// <summary>
+		/// ...
+		/// </summary>
+		template <typename TVALUENEW>
+		Common::Image<TVALUENEW, TINDEX> getImage(TVALUENEW(pixelConverter)(const TVALUE&))
+		{
+			return getImage<TVALUENEW>(&ImageRenderHelper<TVALUENEW>(pixelConverter));
+		}
+
 	};
 }
 

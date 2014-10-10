@@ -95,8 +95,5 @@
     <ClInclude Include="drawing-quadcolormapconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-imageconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
