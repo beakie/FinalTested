@@ -67,3 +67,5 @@ void renderImage(const TIMAGE& image)
 
 	std::cout << "\n";
 }
+
+// http://qt-project.org/forums/viewthread/30871
