@@ -61,7 +61,7 @@ namespace Drawing
 			TUNITINTERVAL toIndexValue = (index + 1) * _spacing;
 			TUNITINTERVAL valueDiff = (value - fromIndexValue - _inLowerBound) / (toIndexValue - fromIndexValue - _inLowerBound);
 
-			TUNITINTERVAL channel[3];
+			TPIXELOUT channel[3];
 
 			for (UInt8 i = 0; i < 3; i++)
 			{
@@ -69,11 +69,11 @@ namespace Drawing
 				TUNITINTERVAL toMapping = _colorMap->Values[i][index + 1];
 
 				if (fromMapping == toMapping)
-					channel[i] = (fromMapping * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound;
+					channel[i] = ((Float32)fromMapping * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound; // round all this
 				else
 				{
 					TUNITINTERVAL newValue = ((toMapping - fromMapping) * valueDiff) + fromMapping;
-					channel[i] = ((Float32)newValue * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound;
+					channel[i] = ((Float32)newValue * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound; // round all this
 				}
 			}
 
