@@ -15,9 +15,13 @@
 namespace Common
 {
 	/// <summary>
-	/// Max available size integer
+	/// Max available size unsigned integer
 	/// </summary>
 	typedef UInt32 UIntMax;
+	/// <summary>
+	/// Max available size integer
+	/// </summary>
+	typedef Int32 IntMax;
 	/// <summary>
 	/// Max available size floating point
 	/// </summary>
@@ -30,6 +34,10 @@ namespace Common
 	/// 8 byte unit interval (0 - 1)
 	/// </summary>
 	typedef Float64 UnitInterval64;
+	/// <summary>
+	/// Max available size unit interval (0 - 1)
+	/// </summary>
+	typedef FloatMax UnitInterval;
 	/// <summary>
 	/// matrix of size 2 with 1 bit values
 	/// </summary>
@@ -79,6 +87,18 @@ namespace Common
 	/// </summary>
 	typedef Matrix4<UInt32> Matrix4U32;
 	/// <summary>
+	/// matrix of size 2 with max byte unsigned integer values
+	/// </summary>
+	typedef Matrix2<UIntMax> Matrix2U;
+	/// <summary>
+	/// matrix of size 3 with max byte unsigned integer values
+	/// </summary>
+	typedef Matrix3<UIntMax> Matrix3U;
+	/// <summary>
+	/// matrix of size 4 with max byte unsigned integer values
+	/// </summary>
+	typedef Matrix4<UIntMax> Matrix4U;
+	/// <summary>
 	/// matrix of size 2 with 1 byte signed integer values
 	/// </summary>
 	typedef Matrix2<Int8> Matrix2I8;
@@ -115,6 +135,18 @@ namespace Common
 	/// </summary>
 	typedef Matrix4<Int32> Matrix4I32;
 	/// <summary>
+	/// matrix of size 2 with max byte signed integer values
+	/// </summary>
+	typedef Matrix2<IntMax> Matrix2I;
+	/// <summary>
+	/// matrix of size 3 with max byte signed integer values
+	/// </summary>
+	typedef Matrix3<IntMax> Matrix3I;
+	/// <summary>
+	/// matrix of size 4 with max byte signed integer values
+	/// </summary>
+	typedef Matrix4<IntMax> Matrix4I;
+	/// <summary>
 	/// matrix of size 2 with 32 bit floating point values
 	/// </summary>
 	typedef Matrix2<Float32> Matrix2F32;
@@ -138,6 +170,18 @@ namespace Common
 	/// matrix of size 4 with 64 bit floating point values
 	/// </summary>
 	typedef Matrix4<Float64> Matrix4F64;
+	/// <summary>
+	/// matrix of size 2 with max bit floating point values
+	/// </summary>
+	typedef Matrix2<FloatMax> Matrix2F;
+	/// <summary>
+	/// matrix of size 3 with max bit floating point values
+	/// </summary>
+	typedef Matrix3<FloatMax> Matrix3F;
+	/// <summary>
+	/// matrix of size 4 with max bit floating point values
+	/// </summary>
+	typedef Matrix4<FloatMax> Matrix4F;
 	/// <summary>
 	/// Adapter for matrix of size 2 with 1 bit values
 	/// </summary>
@@ -165,27 +209,39 @@ namespace Common
 	/// <summary>
 	/// Adapter for matrix of size 2 with 2 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix2U16, UInt16> Matrix2Adapter16;
+	typedef MatrixAdapter<Matrix2U16, UInt16> Matrix2AdapterU16;
 	/// <summary>
 	/// Adapter for matrix of size 3 with 2 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix3U16, UInt16> Matrix3Adapter16;
+	typedef MatrixAdapter<Matrix3U16, UInt16> Matrix3AdapterU16;
 	/// <summary>
 	/// Adapter for matrix of size 4 with 2 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix4U16, UInt16> Matrix4Adapter16;
+	typedef MatrixAdapter<Matrix4U16, UInt16> Matrix4AdapterU16;
 	/// <summary>
 	/// Adapter for matrix of size 2 with 4 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix2U32, UInt32> Matrix2Adapter32;
+	typedef MatrixAdapter<Matrix2U32, UInt32> Matrix2AdapterU32;
 	/// <summary>
 	/// Adapter for matrix of size 3 with 4 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix3U32, UInt32> Matrix3Adapter32;
+	typedef MatrixAdapter<Matrix3U32, UInt32> Matrix3AdapterU32;
 	/// <summary>
 	/// Adapter for matrix of size 4 with 4 byte unsigned integer values
 	/// </summary>
-	typedef MatrixAdapter<Matrix4U32, UInt32> Matrix4Adapter32;
+	typedef MatrixAdapter<Matrix4U32, UInt32> Matrix4AdapterU32;
+	/// <summary>
+	/// Adapter for matrix of size 2 with max byte unsigned integer values
+	/// </summary>
+	typedef MatrixAdapter<Matrix2U, UIntMax> Matrix2AdapterU;
+	/// <summary>
+	/// Adapter for matrix of size 3 with max byte unsigned integer values
+	/// </summary>
+	typedef MatrixAdapter<Matrix3U, UIntMax> Matrix3AdapterU;
+	/// <summary>
+	/// Adapter for matrix of size 4 with max byte unsigned integer values
+	/// </summary>
+	typedef MatrixAdapter<Matrix4U, UIntMax> Matrix4AdapterU;
 	/// <summary>
 	/// Adapter for matrix of size 2 with 1 byte signed integer values
 	/// </summary>
@@ -223,6 +279,18 @@ namespace Common
 	/// </summary>
 	typedef MatrixAdapter<Matrix4U32, Int32> Matrix4AdapterI32;
 	/// <summary>
+	/// Adapter for matrix of size 2 with max byte signed integer values
+	/// </summary>
+	typedef MatrixAdapter<Matrix2U, IntMax> Matrix2AdapterI;
+	/// <summary>
+	/// Adapter for matrix of size 3 with max byte signed integer values
+	/// </summary>
+	typedef MatrixAdapter<Matrix3U, IntMax> Matrix3AdapterI;
+	/// <summary>
+	/// Adapter for matrix of size 4 with max byte signed integer values
+	/// </summary>
+	typedef MatrixAdapter<Matrix4U, IntMax> Matrix4AdapterI;
+	/// <summary>
 	/// Adapter for matrix of size 2 with 32 bit floating point values
 	/// </summary>
 	typedef MatrixAdapter<Matrix2F32, Float32> Matrix2AdapterF32;
@@ -247,6 +315,18 @@ namespace Common
 	/// </summary>
 	typedef MatrixAdapter<Matrix4F64, Float64> Matrix4AdapterF64;
 	/// <summary>
+	/// Adapter for matrix of size 2 with max bit floating point values
+	/// </summary>
+	typedef MatrixAdapter<Matrix2F, FloatMax> Matrix2AdapterF;
+	/// <summary>
+	/// Adapter for matrix of size 3 with max bit floating point values
+	/// </summary>
+	typedef MatrixAdapter<Matrix3F, FloatMax> Matrix3AdapterF;
+	/// <summary>
+	/// Adapter for matrix of size 4 with max bit floating point values
+	/// </summary>
+	typedef MatrixAdapter<Matrix4F, FloatMax> Matrix4AdapterF;
+	/// <summary>
 	/// Image with 1 byte dimensions and 1 bit pixels
 	/// </summary>
 	typedef Image<UInt1, UInt8> Image8U1;
@@ -263,6 +343,10 @@ namespace Common
 	/// </summary>
 	typedef Image<UInt32, UInt8> Image8U32;
 	/// <summary>
+	/// Image with 1 byte dimensions and max byte pixels
+	/// </summary>
+	typedef Image<UIntMax, UInt8> Image8U;
+	/// <summary>
 	/// Image with 1 byte dimensions and 32 bit floating point pixels
 	/// </summary>
 	typedef Image<Float32, UInt8> Image8F32;
@@ -270,6 +354,10 @@ namespace Common
 	/// Image with 1 byte dimensions and 64 bit floating point pixels
 	/// </summary>
 	typedef Image<Float64, UInt8> Image8F64;
+	/// <summary>
+	/// Image with 1 byte dimensions and max bit floating point pixels
+	/// </summary>
+	typedef Image<FloatMax, UInt8> Image8F;
 	/// <summary>
 	/// Image with 2 byte dimensions and 1 bit pixels
 	/// </summary>
@@ -287,6 +375,10 @@ namespace Common
 	/// </summary>
 	typedef Image<UInt32, UInt16> Image16U32;
 	/// <summary>
+	/// Image with 2 byte dimensions and max byte pixels
+	/// </summary>
+	typedef Image<UIntMax, UInt16> Image16U;
+	/// <summary>
 	/// Image with 2 byte dimensions and 32 bit floating point pixels
 	/// </summary>
 	typedef Image<Float32, UInt16> Image16F32;
@@ -294,6 +386,10 @@ namespace Common
 	/// Image with 2 byte dimensions and 64 bit floating point pixels
 	/// </summary>
 	typedef Image<Float64, UInt16> Image16F64;
+	/// <summary>
+	/// Image with 2 byte dimensions and max bit floating point pixels
+	/// </summary>
+	typedef Image<FloatMax, UInt16> Image16F;
 
 }
 
