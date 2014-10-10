@@ -49,6 +49,7 @@ int main(int argc, char *argv[])
 
 	Drawing::Image8RGBPixel8 testImageJet = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&Drawing::TriColorMap32Conv8(&map, 0.0, 1.0));
 	Drawing::Image8RGBPixel8 testImageJetHalf = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&Drawing::TriColorMap32Conv8(&map, 0.0, 2.0));
+	Drawing::Image8RGBPixel8 testImageJetFull = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&Drawing::TriColorMap32Conv8(&map));
 	Drawing::Image8RGBPixel8 testImageGrey = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 	Drawing::Image8RGBPixel8 testImageBlack = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&staticConvertPixel);
 
