@@ -75,6 +75,25 @@ namespace Common
 			return (value1 > value2 ? value1 : value2);
 		}
 
+		template <typename TFLOATING>
+		static TFLOATING floor(const TFLOATING value)
+		{
+			return (TFLOATING)(UIntMax)value;
+		}
+
+		template <typename TFLOATING>
+		static TFLOATING ceiling(const TFLOATING value)
+		{
+			UIntMax v = (UIntMax)(value);
+			return ((TFLOATING)v == value ? value : (TFLOATING)(v + 1));
+		}
+
+		template <typename TFLOATING>
+		static TFLOATING round(const TFLOATING value)
+		{
+			return floor(value + 0.5);
+		}
+
 		static const long double Pi; // acos(-1)
 	};
 

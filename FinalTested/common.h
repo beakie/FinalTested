@@ -16,6 +16,14 @@
 namespace Common
 {
 	/// <summary>
+	/// Max available size integer
+	/// </summary>
+	typedef UInt32 UIntMax;
+	/// <summary>
+	/// Max available size floating point
+	/// </summary>
+	typedef Float64 FloatMax;
+	/// <summary>
 	/// 4 byte unit interval (0 - 1)
 	/// </summary>
 	typedef Float32 UnitInterval32;

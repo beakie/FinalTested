@@ -71,11 +71,11 @@ namespace Drawing
 				TUNITINTERVAL toMapping = _colorMap->Values[i][index + 1];
 
 				if (fromMapping == toMapping)
-					channel[i] = ((Float32)fromMapping * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound; // round all this
+					channel[i] = (TPIXELOUT)Common::Math::round(((Float32)fromMapping * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound); // round all this
 				else
 				{
 					TUNITINTERVAL newValue = ((toMapping - fromMapping) * valueDiff) + fromMapping;
-					channel[i] = ((Float32)newValue * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound; // round all this
+					channel[i] = (TPIXELOUT)Common::Math::round(((Float32)newValue * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound); // round all this
 				}
 			}
 
