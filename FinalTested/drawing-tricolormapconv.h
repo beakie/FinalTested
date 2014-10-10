@@ -65,11 +65,11 @@ namespace Drawing
 				TUNITINTERVAL toMapping = _colorMap->Values[i][index + 1];
 
 				if (fromMapping == toMapping)
-					channel[i] = (fromMapping * _outBoundDiff) + _outLowerBound;
+					channel[i] = (fromMapping * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound;
 				else
 				{
 					TUNITINTERVAL newValue = ((toMapping - fromMapping) * valueDiff) + fromMapping;
-					channel[i] = (newValue * _outBoundDiff) + _outLowerBound;
+					channel[i] = ((Float32)newValue * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound;
 				}
 			}
 
