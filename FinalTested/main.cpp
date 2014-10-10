@@ -11,15 +11,15 @@ void renderImage(const TIMAGE& image);
 
 struct SomePixelConverter
 {
-	Drawing::TriChanPixel<UInt8> convertPixel(const Common::UnitInterval32& value)
+	Drawing::TriChanPixel<UInt8> convertPixel(const Float32& value)
 	{
-		return Drawing::TriChanPixel<UInt8>(1, 2, 3);
+		return Drawing::TriChanPixel<UInt8>(value * 255, value * 255, value * 255);
 	}
 };
 
-static Drawing::TriChanPixel<UInt8> staticConvertPixel(const Common::UnitInterval32& value)
+static Drawing::TriChanPixel<UInt8> staticConvertPixel(const Float32& value)
 {
-	return Drawing::TriChanPixel<UInt8>(1, 2, 3);
+	return Drawing::TriChanPixel<UInt8>(0, 0, 0);
 }
 
 int main(int argc, char *argv[])
@@ -46,8 +46,9 @@ int main(int argc, char *argv[])
 	//Drawing::Image8RGBPixel8 rgbImageMEMBER = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &SomePixelConverter());
 	//Drawing::Image8RGBPixel8 rgbImageSTATIC = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &staticConvertPixel);
 	Drawing::TriColorMap32 map = Drawing::ColorMaps32::getRGBJet();
-	//Drawing::Image8RGBPixel8 testImageJET = Drawing::Image8Render::convImageToImage<Float32, Drawing::TriChanPixel<UInt8>>(testImage, &Drawing::TriColorMap32Conv8(&map, 0.0, 1.0));
-	Drawing::Image8RGBPixel8 testImageJET = Drawing::Image8Render::convImageToImage<Float32, Drawing::TriChanPixel<UInt8>>(testImage, &Drawing::TriColorMap32Conv8(&map, 0.0, 2.0));
+	Drawing::Image8RGBPixel8 testImageJet = Drawing::Image8Render::convImageToImage<Float32, Drawing::TriChanPixel<UInt8>>(testImage, &Drawing::TriColorMap32Conv8(&map, 0.0, 2.0));
+	Drawing::Image8RGBPixel8 testImageGrey = Drawing::Image8Render::convImageToImage<Float32, Drawing::TriChanPixel<UInt8>>(testImage, &SomePixelConverter());
+	Drawing::Image8RGBPixel8 testImageBlack = Drawing::Image8Render::convImageToImage<Float32, Drawing::TriChanPixel<UInt8>>(testImage, &staticConvertPixel);
 
 	// 137, 255, 117
 	return a.exec();

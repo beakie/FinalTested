@@ -48,7 +48,7 @@ namespace Drawing
 		template <typename TVALUEIN, typename TVALUEOUT>
 		static Common::Image<TVALUEOUT, TINDEX> convImageToImage(const Common::Image<TVALUEIN, TINDEX>& image, TVALUEOUT(pixelConverter)(const Float32&))
 		{
-			return renderImageAsTriChanImage<TVALUEIN, TVALUEOUT>(image, &ImageRenderHelper<TVALUEOUT>(pixelConverter));
+			return convImageToImage<TVALUEIN, TVALUEOUT>(image, &ImageRenderHelper<TVALUEOUT>(pixelConverter));
 		}
 
 	};
