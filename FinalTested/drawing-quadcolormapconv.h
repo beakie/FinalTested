@@ -7,7 +7,7 @@
 
 namespace Drawing
 {
-	template <typename TUNITINTERVAL, typename TPIXEL>
+	template <typename TUNITINTERVAL, typename TPIXELIN, typename TPIXELOUT>
 	class QuadColorMapConv
 	{
 		//copy from tri

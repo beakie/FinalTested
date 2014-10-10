@@ -165,7 +165,11 @@ namespace Drawing
 
 	typedef TriColorMap<Float32> TriColorMap32;
 
+	typedef TriColorMap<Float64> TriColorMap64;
+
 	typedef QuadColorMap<Float32> QuadColorMap32;
+
+	typedef QuadColorMap<Float64> QuadColorMap64;
 
 	typedef TriColorMapConv<Common::UnitInterval32, Float32, UInt8> TriColorMap32Conv8;
 
@@ -173,12 +177,24 @@ namespace Drawing
 
 	typedef TriColorMapConv<Common::UnitInterval32, Float32, UInt32> TriColorMap32Conv32;
 
-	typedef QuadColorMapConv<Common::UnitInterval32, Float32> QuadColorMap32Conv8;
+	typedef TriColorMapConv<Common::UnitInterval64, Float64, UInt8> TriColorMap64Conv8;
 
-	typedef QuadColorMapConv<Common::UnitInterval32, Float32> QuadColorMap32Conv16;
+	typedef TriColorMapConv<Common::UnitInterval64, Float64, UInt16> TriColorMap64Conv16;
 
-	typedef QuadColorMapConv<Common::UnitInterval32, Float32> QuadColorMap32Conv32;
+	typedef TriColorMapConv<Common::UnitInterval64, Float64, UInt32> TriColorMap64Conv32;
 
+	typedef QuadColorMapConv<Common::UnitInterval32, Float32, UInt8> QuadColorMap32Conv8;
+
+	typedef QuadColorMapConv<Common::UnitInterval32, Float32, UInt16> QuadColorMap32Conv16;
+
+	typedef QuadColorMapConv<Common::UnitInterval32, Float32, UInt32> QuadColorMap32Conv32;
+
+	typedef QuadColorMapConv<Common::UnitInterval64, Float64, UInt8> QuadColorMap64Conv8;
+
+	typedef QuadColorMapConv<Common::UnitInterval64, Float64, UInt16> QuadColorMap64Conv16;
+
+	typedef QuadColorMapConv<Common::UnitInterval64, Float64, UInt32> QuadColorMap64Conv32;
+	
 	typedef ColorMaps<Float32> ColorMaps32;
 }
 
