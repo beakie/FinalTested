@@ -1,10 +1,16 @@
 
-#include <QtCore/QCoreApplication>
+#include <QApplication>
+#include <QImage>
+#include <QPixmap>
+#include <QWidget>
+#include <QPainter>
+#include <QLabel>
 #include <iostream>
 
 #include "core.h"
 #include "common.h"
 #include "drawing.h"
+#include "drawing-qt.h"
 
 template <typename TIMAGE>
 void renderImage(const TIMAGE& image);
@@ -24,7 +30,7 @@ static Drawing::TriChanPixel<UInt8> staticConvertPixel(const Float32& value)
 
 int main(int argc, char *argv[])
 {
-	QCoreApplication a(argc, argv);
+	QApplication a(argc, argv);
 
 	Common::Image8U1 image = Common::Image8U1(10, 10, false);
 
@@ -52,6 +58,20 @@ int main(int argc, char *argv[])
 	Drawing::Image8RGBPixel8 testImageJetFull = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&Drawing::TriColorMap32Conv8(&map));
 	Drawing::Image8RGBPixel8 testImageGrey = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 	Drawing::Image8RGBPixel8 testImageBlack = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&staticConvertPixel);
+
+	Drawing::Qt::ImageRender imageRender = Drawing::Qt::ImageRender("D:\\Win7Users\\Beakie\\Desktop\\Test.jpg");
+	QPixmap pixmap = imageRender.getQPixmap();
+
+	QWidget widget;
+
+	QLabel* label = new QLabel(&widget);
+	label->setPixmap(pixmap);
+	label->show();
+
+	QPainter painter;
+	widget.render(&painter);
+
+	widget.show();
 
 	// 137, 255, 117
 	return a.exec();
