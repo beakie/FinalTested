@@ -62,7 +62,8 @@ int main(int argc, char *argv[])
 
 	//**********
 	// Need to do some mutli channel to single channel image converters so that i can test all image functions.
-	// getChannel1() getImageFromIntensity()
+	// getChannel1() fromIntensity()
+	// this should prob be new toImage() func passing different function pointers
 	//**********
 
 	QWidget widget;
