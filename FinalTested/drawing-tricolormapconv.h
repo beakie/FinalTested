@@ -15,20 +15,20 @@ namespace Drawing
 		TPIXELIN _inLowerBound;
 		TPIXELIN _inUpperBound;
 		TPIXELIN _inBoundDiff;
-		UInt8 _lastIndex;
-		TUNITINTERVAL _spacing;
 		TPIXELOUT _outLowerBound;
 		TPIXELOUT _outUpperBound;
 		TPIXELOUT _outBoundDiff;
-		TUNITINTERVAL indexUnrounded;
-		UInt8 index;
-		TUNITINTERVAL fromIndexValue;
-		TUNITINTERVAL toIndexValue;
-		TUNITINTERVAL valueDiff;
-		TPIXELOUT channel[3];
-		TUNITINTERVAL fromMapping;
-		TUNITINTERVAL toMapping;
-		TUNITINTERVAL newValue;
+		UInt8 _lastIndex;
+		TUNITINTERVAL _spacing;
+		TUNITINTERVAL _indexUnrounded;
+		UInt8 _index;
+		TUNITINTERVAL _fromIndexValue;
+		TUNITINTERVAL _toIndexValue;
+		TUNITINTERVAL _valueDiff;
+		TUNITINTERVAL _fromMapping;
+		TUNITINTERVAL _toMapping;
+		TUNITINTERVAL _newValue;
+		TPIXELOUT _channel[3];
 
 		// move _lastIndex, _spacing etc into here and constructor
 
@@ -64,31 +64,31 @@ namespace Drawing
 			if (value == _inUpperBound)
 				return Drawing::TriChanPixel<TPIXELOUT>(_colorMap->Values[0][_lastIndex], _colorMap->Values[1][_lastIndex], _colorMap->Values[2][_lastIndex]);
 
-			indexUnrounded = (value - _inLowerBound) / _spacing;
-			index = (UInt8)indexUnrounded;
+			_indexUnrounded = (value - _inLowerBound) / _spacing;
+			_index = (UInt8)_indexUnrounded;
 
-			if (indexUnrounded == index)
-				return Drawing::TriChanPixel<TPIXELOUT>(_colorMap->Values[0][index], _colorMap->Values[1][index], _colorMap->Values[2][index]);
+			if (_indexUnrounded == _index)
+				return Drawing::TriChanPixel<TPIXELOUT>(_colorMap->Values[0][_index], _colorMap->Values[1][_index], _colorMap->Values[2][_index]);
 
-			fromIndexValue = index * _spacing;
-			toIndexValue = (index + 1) * _spacing;
-			valueDiff = (value - fromIndexValue - _inLowerBound) / (toIndexValue - fromIndexValue - _inLowerBound);
+			_fromIndexValue = _index * _spacing;
+			_toIndexValue = (_index + 1) * _spacing;
+			_valueDiff = (value - _fromIndexValue - _inLowerBound) / (_toIndexValue - _fromIndexValue - _inLowerBound);
 
 			for (UInt8 i = 0; i < 3; i++)
 			{
-				fromMapping = _colorMap->Values[i][index];
-				toMapping = _colorMap->Values[i][index + 1];
+				_fromMapping = _colorMap->Values[i][_index];
+				_toMapping = _colorMap->Values[i][_index + 1];
 
-				if (fromMapping == toMapping)
-					channel[i] = (TPIXELOUT)Common::Math::round(((Float32)fromMapping * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound); // round all this
+				if (_fromMapping == _toMapping)
+					_channel[i] = (TPIXELOUT)Common::Math::round(((Float32)_fromMapping * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound); // round all this
 				else
 				{
-					newValue = ((toMapping - fromMapping) * valueDiff) + fromMapping;
-					channel[i] = (TPIXELOUT)Common::Math::round(((Float32)newValue * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound); // round all this
+					_newValue = ((_toMapping - _fromMapping) * _valueDiff) + _fromMapping;
+					_channel[i] = (TPIXELOUT)Common::Math::round(((Float32)_newValue * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound); // round all this
 				}
 			}
 
-			return Drawing::TriChanPixel<TPIXELOUT>(channel[0], channel[1], channel[2]);
+			return Drawing::TriChanPixel<TPIXELOUT>(_channel[0], _channel[1], _channel[2]);
 		}
 	};
 
