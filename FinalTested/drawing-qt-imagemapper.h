@@ -19,10 +19,13 @@ namespace Drawing
 
 			static Common::Image<Drawing::RGBPixel8, TINDEX> getImage(QImage qimage)
 			{
-				Common::Image<Drawing::RGBPixel8, TINDEX> image;
+				int width = qimage.width();
+				TINDEX height = qimage.height();
 
-				for (TINDEX x = 0; x < qimage.width(); x++)
-					for (TINDEX y = 0; y < qimage.height(); y++)
+				Common::Image<Drawing::RGBPixel8, TINDEX> image = Common::Image<Drawing::RGBPixel8, TINDEX>(width, height);
+
+				for (TINDEX x = 0; x < width; x++)
+					for (TINDEX y = 0; y < height; y++)
 					{
 						QRgb pixel = qimage.pixel(x, y);
 						image.Values[x][y] = Drawing::RGBPixel8(qRed(pixel), qGreen(pixel), qBlue(pixel));
@@ -38,8 +41,8 @@ namespace Drawing
 				for (TINDEX x = 0; x < image.Width; x++)
 					for (TINDEX y = 0; y < image.Height; y++)
 					{
-					QRgb pixel = qRgb(image.Values[x][y].Channels[0], image.Values[x][y].Channels[1], image.Values[x][y].Channels[2]);
-					qimage.setPixel(x, y, pixel);
+						QRgb pixel = qRgb(image.Values[x][y].Channels[0], image.Values[x][y].Channels[1], image.Values[x][y].Channels[2]);
+						qimage.setPixel(x, y, pixel);
 					}
 
 				return qimage;

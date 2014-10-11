@@ -58,24 +58,22 @@ int main(int argc, char *argv[])
 	Drawing::Image8RGBPixel8 testImageJetFull = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&Drawing::TriColorMap32Conv8(&map));
 	Drawing::Image8RGBPixel8 testImageGrey = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 	Drawing::Image8RGBPixel8 testImageBlack = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&staticConvertPixel);
-	Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test.jpg"));
+	Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"));
 
 	//**********
 	// Need to do some mutli channel to single channel image converters so that i can test all image functions.
 	// getChannel1() getImageFromIntensity()
 	//**********
 
-	//testImageDisk.getIsAboveThreshold()
-
 	QWidget widget;
 
 	QLabel* label = new QLabel(&widget);
-	label->setPixmap(Drawing::Qt::ImageMapper8::getQPixmap(testImageBlack));
+	label->setPixmap(Drawing::Qt::ImageMapper8::getQPixmap(testImageDisk));
 	label->show();
 
 	QPainter painter;
 	widget.render(&painter);
-
+	
 	widget.show();
 
 	// 137, 255, 117
