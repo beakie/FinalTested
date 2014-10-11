@@ -95,10 +95,10 @@
     <ClInclude Include="drawing-quadcolormapconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-qt-imagerender.h">
+    <ClInclude Include="drawing-qt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-qt.h">
+    <ClInclude Include="drawing-qt-imagemapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

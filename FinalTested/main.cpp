@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 	///////////////////
 
 	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
-	Common::Image8F32 testImage = Common::Image8F32(10, 10, 0.51);
+	Common::Image8F32 testImage = Common::Image8F32(100, 100, 0.51);
 
 	//Drawing::Image8RGBPixel8 rgbImageMEMBER = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &SomePixelConverter());
 	//Drawing::Image8RGBPixel8 rgbImageSTATIC = Drawing::ImageRender::renderImageAsTriChanImage(testImage, &staticConvertPixel);
@@ -59,8 +59,7 @@ int main(int argc, char *argv[])
 	Drawing::Image8RGBPixel8 testImageGrey = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 	Drawing::Image8RGBPixel8 testImageBlack = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&staticConvertPixel);
 
-	Drawing::Qt::ImageRender imageRender = Drawing::Qt::ImageRender("D:\\Win7Users\\Beakie\\Desktop\\Test.jpg");
-	QPixmap pixmap = imageRender.getQPixmap();
+	QPixmap pixmap = Drawing::Qt::ImageMapper<UInt8>::getQPixmap(testImageBlack);
 
 	QWidget widget;
 

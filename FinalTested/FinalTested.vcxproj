@@ -91,7 +91,7 @@
     <ClInclude Include="common-matrix4.h" />
     <ClInclude Include="common-matrixadapter.h" />
     <ClInclude Include="common-matrixn.h" />
-    <ClInclude Include="drawing-qt-imagerender.h" />
+    <ClInclude Include="drawing-qt-imagemapper.h" />
     <ClInclude Include="drawing-qt.h" />
     <ClInclude Include="drawing-quadcolormap.h" />
     <ClInclude Include="drawing-tricolormap.h" />
