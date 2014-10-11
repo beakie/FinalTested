@@ -20,14 +20,25 @@ namespace Drawing
 		TPIXELOUT _outLowerBound;
 		TPIXELOUT _outUpperBound;
 		TPIXELOUT _outBoundDiff;
+		TUNITINTERVAL indexUnrounded;
+		UInt8 index;
+		TUNITINTERVAL fromIndexValue;
+		TUNITINTERVAL toIndexValue;
+		TUNITINTERVAL valueDiff;
+		TPIXELOUT channel[3];
+		TUNITINTERVAL fromMapping;
+		TUNITINTERVAL toMapping;
+		TUNITINTERVAL newValue;
 
-		//move _lastIndex, _spacing etc into here and constructor
+		// move _lastIndex, _spacing etc into here and constructor
 
 		// *****************
 		// you NEED to add rounding when do data conversion to TPIXELOUT or it will always round down with in!
 		// *****************
 
-		//when this is finished... copy it to quad
+		// when this is finished... copy it to quad
+
+		// move all variables to class so that no reallocation of memory is needed for each pixel?
 
 	public:
 		TriColorMapConv(const Drawing::TriColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
@@ -53,28 +64,26 @@ namespace Drawing
 			if (value == _inUpperBound)
 				return Drawing::TriChanPixel<TPIXELOUT>(_colorMap->Values[0][_lastIndex], _colorMap->Values[1][_lastIndex], _colorMap->Values[2][_lastIndex]);
 
-			TUNITINTERVAL indexUnrounded = (value - _inLowerBound) / _spacing;
-			UInt8 index = (UInt8)indexUnrounded;
+			indexUnrounded = (value - _inLowerBound) / _spacing;
+			index = (UInt8)indexUnrounded;
 
 			if (indexUnrounded == index)
 				return Drawing::TriChanPixel<TPIXELOUT>(_colorMap->Values[0][index], _colorMap->Values[1][index], _colorMap->Values[2][index]);
 
-			TUNITINTERVAL fromIndexValue = index * _spacing;
-			TUNITINTERVAL toIndexValue = (index + 1) * _spacing;
-			TUNITINTERVAL valueDiff = (value - fromIndexValue - _inLowerBound) / (toIndexValue - fromIndexValue - _inLowerBound);
-
-			TPIXELOUT channel[3];
+			fromIndexValue = index * _spacing;
+			toIndexValue = (index + 1) * _spacing;
+			valueDiff = (value - fromIndexValue - _inLowerBound) / (toIndexValue - fromIndexValue - _inLowerBound);
 
 			for (UInt8 i = 0; i < 3; i++)
 			{
-				TUNITINTERVAL fromMapping = _colorMap->Values[i][index];
-				TUNITINTERVAL toMapping = _colorMap->Values[i][index + 1];
+				fromMapping = _colorMap->Values[i][index];
+				toMapping = _colorMap->Values[i][index + 1];
 
 				if (fromMapping == toMapping)
 					channel[i] = (TPIXELOUT)Common::Math::round(((Float32)fromMapping * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound); // round all this
 				else
 				{
-					TUNITINTERVAL newValue = ((toMapping - fromMapping) * valueDiff) + fromMapping;
+					newValue = ((toMapping - fromMapping) * valueDiff) + fromMapping;
 					channel[i] = (TPIXELOUT)Common::Math::round(((Float32)newValue * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound); // round all this
 				}
 			}
