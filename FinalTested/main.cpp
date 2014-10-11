@@ -59,12 +59,10 @@ int main(int argc, char *argv[])
 	Drawing::Image8RGBPixel8 testImageGrey = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 	Drawing::Image8RGBPixel8 testImageBlack = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&staticConvertPixel);
 
-	QPixmap pixmap = Drawing::Qt::ImageMapper<UInt8>::getQPixmap(testImageBlack);
-
 	QWidget widget;
 
 	QLabel* label = new QLabel(&widget);
-	label->setPixmap(pixmap);
+	label->setPixmap(Drawing::Qt::ImageMapper8::getQPixmap(testImageBlack));
 	label->show();
 
 	QPainter painter;
