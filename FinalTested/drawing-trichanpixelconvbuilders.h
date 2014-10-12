@@ -2,6 +2,8 @@
 // TriChanPixelConvBuilders
 // ***********************************
 //
+//getSpreadValueTriChanPixelConv
+//
 //getSpread0TriChanPixelConv
 //getSpread1TriChanPixelConv
 //getSpread2TriChanPixelConv
