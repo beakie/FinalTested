@@ -92,9 +92,9 @@
     <ClInclude Include="common-matrixn.h" />
     <ClInclude Include="picture-qt-imagemapper.h" />
     <ClInclude Include="picture-qt.h" />
-    <ClInclude Include="picture-quadchanpixelconvbuilders.h" />
+    <ClInclude Include="picture-_quadchanpixelconvbuilders.h" />
     <ClInclude Include="picture-quadcolormap.h" />
-    <ClInclude Include="picture-rgbpixelconvbuilders.h" />
+    <ClInclude Include="picture-_rgbpixelconvbuilders.h" />
     <ClInclude Include="picture-selectchanavgquadchanpixelconv.h" />
     <ClInclude Include="picture-selectchanavgtrichanpixelconv.h" />
     <ClInclude Include="picture-selectchanquadchanpixelconv.h" />
@@ -103,12 +103,12 @@
     <ClInclude Include="picture-spreadchantrichanpixelconv.h" />
     <ClInclude Include="picture-spreadvaluequadchanpixelconv.h" />
     <ClInclude Include="picture-spreadvaluetrichanpixelconv.h" />
-    <ClInclude Include="picture-trichanpixelconvbuilders.h" />
+    <ClInclude Include="picture-_trichanpixelconvbuilders.h" />
     <ClInclude Include="picture-tricolormap.h" />
     <ClInclude Include="picture-pixels.h" />
     <ClInclude Include="picture-quadchanpixel.h" />
     <ClInclude Include="picture-trichanpixel.h" />
-    <ClInclude Include="common-static.h" />
+    <ClInclude Include="common-_static.h" />
     <ClInclude Include="common.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="picture-quadcolormapconv.h" />

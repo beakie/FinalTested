@@ -10,7 +10,7 @@
 #include "common-matrix4.h"
 #include "common-matrixadapter.h"
 #include "common-matrixn.h"
-#include "common-static.h"
+#include "common-_static.h"
 
 namespace Common
 {

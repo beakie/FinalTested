@@ -59,9 +59,6 @@
     <ClInclude Include="core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-static.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="common-math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -83,16 +80,10 @@
     <ClInclude Include="picture-quadchanpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-quadchanpixelconvbuilders.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="picture-quadcolormap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-quadcolormapconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-rgbpixelconvbuilders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-selectchanavgtrichanpixelconv.h">
@@ -105,9 +96,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-trichanpixel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-trichanpixelconvbuilders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-tricolormap.h">
@@ -129,6 +117,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-selectchanavgquadchanpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-_quadchanpixelconvbuilders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-_rgbpixelconvbuilders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common-_static.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-_trichanpixelconvbuilders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

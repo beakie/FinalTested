@@ -7,7 +7,7 @@
 #include "picture-colormaps.h"
 #include "picture-pixels.h"
 #include "picture-quadchanpixel.h"
-#include "picture-quadchanpixelconvbuilders.h"
+#include "picture-_quadchanpixelconvbuilders.h"
 #include "picture-quadcolormap.h"
 #include "picture-quadcolormapconv.h"
 #include "picture-selectchanavgquadchanpixelconv.h"
@@ -19,7 +19,7 @@
 #include "picture-spreadvaluequadchanpixelconv.h"
 #include "picture-spreadvaluetrichanpixelconv.h"
 #include "picture-trichanpixel.h"
-#include "picture-trichanpixelconvbuilders.h"
+#include "picture-_trichanpixelconvbuilders.h"
 #include "picture-tricolormap.h"
 #include "picture-tricolormapconv.h"
 
@@ -206,6 +206,6 @@ namespace Picture
 	typedef ColorMaps<Float32> ColorMaps32;
 }
 
-#include "picture-rgbpixelconvbuilders.h"
+#include "picture-_rgbpixelconvbuilders.h"
 
 #endif // PICTURE_H
