@@ -41,6 +41,25 @@ struct ImageChannelConv
 
 typedef ImageChannelConv<UInt8, UInt8> Image8ChannelConv8;
 
+template <typename TVALUE, typename TINDEX>
+struct ImageChannelExpandConv
+{
+	TINDEX _channel;
+
+	ImageChannelExpandConv(const TINDEX channel)
+	{
+		_channel = channel;
+	}
+
+	Drawing::TriChanPixel<TVALUE> convertPixel(const Drawing::TriChanPixel<TVALUE>& value)
+	{
+		TVALUE v = value.Channels[_channel];
+		return Drawing::TriChanPixel<TVALUE>(v, v, v);
+	}
+};
+
+typedef ImageChannelExpandConv<UInt8, UInt8> Image8ChannelExpandConv8;
+
 static Drawing::TriChanPixel<UInt8> staticConvertPixel(const Float32& value)
 {
 	return Drawing::TriChanPixel<UInt8>(0, 0, 0);
@@ -76,9 +95,11 @@ int main(int argc, char *argv[])
 	Drawing::Image8RGBPixel8 testImageJetFull = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&Drawing::TriColorMap32Conv8(&map));
 	Drawing::Image8RGBPixel8 testImageGrey = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 	Drawing::Image8RGBPixel8 testImageBlack = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&staticConvertPixel);
+	//Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
+	//																	.getImage<UInt8>(&Image8ChannelConv8(0))
+	//																	.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 	Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
-																	   .getImage<UInt8>(&ImageChannelConv<UInt8, UInt8>(0))
-																	   .getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
+																		.getImage<Drawing::TriChanPixel<UInt8>>(&Image8ChannelExpandConv8(0));
 
 	//**********
 	// Need to do some mutli channel to single channel image converters so that i can test all image functions.
