@@ -17,7 +17,7 @@ namespace Drawing
 
 		public:
 
-			static Common::Image<Drawing::RGBPixel8, TINDEX> getImage(QImage qimage)
+			static Common::Image<Drawing::RGBPixel8, TINDEX> getRGBImage(QImage qimage)
 			{
 				int width = qimage.width();
 				TINDEX height = qimage.height();
