@@ -110,5 +110,14 @@
     <ClInclude Include="drawing-selectchanavgtrichanpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="drawing-trichanpixelconvbuilders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drawing-quadchanpixelconvbuilders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drawing-rgbpixelconvbuilders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
