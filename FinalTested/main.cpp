@@ -59,6 +59,7 @@ int main(int argc, char *argv[])
 	Drawing::Image8RGBPixel8 testImageGrey = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 	Drawing::Image8RGBPixel8 testImageBlack = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&staticConvertPixel);
 	Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"));
+	//Drawing::Image8RGBPixel8 testImageDiskThreashold = getChannel(image, 0).getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 
 	//**********
 	// Need to do some mutli channel to single channel image converters so that i can test all image functions.
