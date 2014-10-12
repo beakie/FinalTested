@@ -13,7 +13,7 @@ namespace Picture
 	public:
 		TVALUE convertPixel(const Picture::QuadChanPixel<TVALUE>& pixel)
 		{
-			return (TVALUE)Common::Math::round((Common::FloatMax)(pixel.Channels[0] + pixel.Channels[1] + pixel.Channels[2] + pixel.Channels[3]) / 4);
+			return (TVALUE)Common::Math::round(((Common::FloatMax)pixel.Channels[0] + pixel.Channels[1] + pixel.Channels[2] + pixel.Channels[3]) / 4);
 		}
 	};
 }
