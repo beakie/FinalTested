@@ -1,5 +1,5 @@
-#ifndef DRAWINGIMAGES_H
-#define DRAWINGIMAGES_H
+#ifndef DRAWINGCHANIMAGES_H
+#define DRAWINGCHANIMAGES_H
 
 #include "common-image.h"
 #include "drawing-trichanpixel.h"
@@ -7,7 +7,7 @@
 
 namespace Drawing
 {
-	static class Images
+	static class ChanImages
 	{
 	public:
 		template <typename TCHANPIXEL, typename TVALUE, typename TINDEX>
@@ -159,4 +159,4 @@ namespace Drawing
 	};
 }
 
-#endif // DRAWINGIMAGES_H
+#endif // DRAWINGCHANIMAGES_H

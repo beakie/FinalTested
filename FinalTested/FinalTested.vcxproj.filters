@@ -71,9 +71,6 @@
     <ClInclude Include="drawing-pixels.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-images.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="drawing-tricolormap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -99,6 +96,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="drawing-qt-imagemapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drawing-chanimages.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
