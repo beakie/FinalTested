@@ -104,11 +104,11 @@ int main(int argc, char *argv[])
 	//Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
 	//																	.getImage<Float32>(&Image8ChannelExpandFloatConvU8ToF32(0))
 	//																	.getImage<Drawing::TriChanPixel<UInt8>>(&Drawing::TriColorMap32Conv8(&map, 0.0, 0.1));
-
-	Drawing::Image8RGBPixel8 testImageDisk = Drawing::ChanImages::getTriImageChanExpanded(Drawing::ChanImages::getImageChan1(Drawing::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))));
+	Drawing::Image8RGBPixel8 rgb = Drawing::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"));
+	Common::Image8U8 rgbChan1 = Drawing::ChanImages::getImageChan1(rgb);
+	Drawing::Image8RGBPixel8 testImageDisk = Drawing::ChanImages::getTriImageChanExpanded(rgbChan1);
 
 	//**********
-	// Need to do some mutli channel to single channel image converters so that i can test all image functions.
 	// getChannel1() fromIntensity()
 	// this should prob be new toImage() func passing different function pointers
 	//**********

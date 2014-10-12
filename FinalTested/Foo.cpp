@@ -1,51 +1,47 @@
-//struct Foo
-//{
-//	unsigned int Count;
-//	int* Items;
+//SpreadValueTriChanPixelConv*
 //
-//	Foo()
-//	{
-//		Count = 0;
-//		Items = 0;
-//	}
+//SelectChanTriChanPixelConv*
 //
-//	Foo(const Foo& foo)
-//	{
-//		Items = 0;
-//		swap(&foo, this); // cannot convert argument 1 from 'const Foo' to 'Foo *'
-//	}
+//SelectChanAvgTriChanPixelConv*
 //
-//	Foo(const unsigned int itemCount)
-//	{
-//		Count = itemCount;
-//		Items = new int[itemCount];
-//		for (int i = 0; i < itemCount; i++)
-//		{
-//			Items[i] = 123;
-//		}
-//	}
+// ***********************************
+// TriChanPixelConvBuilders
+// ***********************************
 //
-//	Foo& operator=(const Foo& foo)
-//	{
-//		swap(&foo, this); // cannot convert argument 1 from 'const Foo' to 'Foo *'
+//getSpread0TriChanPixelConv
+//getSpread1TriChanPixelConv
+//getSpread2TriChanPixelConv
 //
-//		return *this;
-//	}
+//getSelect0TriChanPixelConv
+//getSelect1TriChanPixelConv
+//getSelect2TriChanPixelConv
 //
-//	void swap(Foo* foo1, Foo* foo2)
-//	{
-//		unsigned int a(foo1->Count);
-//		int* b(foo1->Items);
+// ***********************************
+// QuadChanPixelConvBuilders
+// ***********************************
 //
-//		foo1->Count = foo2->Count;
-//		foo1->Items = foo2->Items;
+//getSpread0QuadChanPixelConv
+//getSpread1QuadChanPixelConv
+//getSpread2QuadChanPixelConv
+//getSpread3QuadChanPixelConv
 //
-//		foo2->Count = a;
-//		foo2->Items = b;
-//	}
+//getSelect0QuadChanPixelConv
+//getSelect1QuadChanPixelConv
+//getSelect2QuadChanPixelConv
+//getSelect3QuadChanPixelConv
 //
-//	~Foo()
-//	{
-//		delete[] Items;
-//	}
-//};
+// ***********************************
+// RGBPixelConvBuilders
+// ***********************************
+//
+//getSelectRedRGBPixelConv
+//getSelectGreenRGBPixelConv
+//getSelectBlueRGBPixelConv
+//
+//getGreySpreadValueRGBPixelConv
+//
+//getGreySpreadRedRGBPixelConv
+//getGreySpreadGreenRGBPixelConv
+//getGreySpreadBlueRGBPixelConv
+//
+//getRGBPixelIntensityConv

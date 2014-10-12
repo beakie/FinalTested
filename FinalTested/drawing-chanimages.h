@@ -7,6 +7,7 @@
 
 namespace Drawing
 {
+	//THESE SHOULD ALL BE REPLACED WITH CONVERTPIXEL FUNCTION CLASSES.
 	static class ChanImages
 	{
 	public:
@@ -31,7 +32,7 @@ namespace Drawing
 		}
 
 		template <typename TCHANPIXEL, typename TVALUE, typename TINDEX>
-		static void setImageChan(const Common::Image<TCHANPIXEL, TINDEX>& image, const Common::Image<TVALUE, TINDEX>& chanImage)
+		static void setImageChanAll(const Common::Image<TCHANPIXEL, TINDEX>& image, const Common::Image<TVALUE, TINDEX>& chanImage)
 		{
 			TVALUE value;
 			for (TINDEX x = 0; x < image.Width; x++)

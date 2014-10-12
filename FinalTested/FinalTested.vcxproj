@@ -94,6 +94,9 @@
     <ClInclude Include="drawing-qt-imagemapper.h" />
     <ClInclude Include="drawing-qt.h" />
     <ClInclude Include="drawing-quadcolormap.h" />
+    <ClInclude Include="drawing-selectchanavgtrichanpixelconv.h" />
+    <ClInclude Include="drawing-spreadchantrichanpixelconv.h" />
+    <ClInclude Include="drawing-spreadvaluetrichanpixelconv.h" />
     <ClInclude Include="drawing-tricolormap.h" />
     <ClInclude Include="drawing-pixels.h" />
     <ClInclude Include="drawing-quadchanpixel.h" />

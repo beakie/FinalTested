@@ -101,5 +101,14 @@
     <ClInclude Include="drawing-chanimages.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="drawing-spreadvaluetrichanpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drawing-spreadchantrichanpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drawing-selectchanavgtrichanpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
