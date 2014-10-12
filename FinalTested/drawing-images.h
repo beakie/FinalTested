@@ -10,8 +10,8 @@ namespace Drawing
 	static class Images
 	{
 	public:
-		template <typename TIMAGE, typename TVALUE, typename TINDEX>
-		static Common::Image<TVALUE, TINDEX> getImageChan(const TIMAGE& image, const UInt8 chanIndex)
+		template <typename TCHANPIXEL, typename TVALUE, typename TINDEX>
+		static Common::Image<TVALUE, TINDEX> getImageChan(const Common::Image<TCHANPIXEL, TINDEX>& image, const UInt8 chanIndex)
 		{
 			Common::Image<TVALUE, TINDEX> i = Common::Image<TVALUE, TINDEX>(image.Width, image.Height);
 
@@ -22,8 +22,8 @@ namespace Drawing
 			return i;
 		}
 
-		template <typename TIMAGE, typename TVALUE, typename TINDEX>
-		static void setImageChan(const TIMAGE& image, const TINDEX chanIndex, const Common::Image<TVALUE, TINDEX>& chanImage)
+		template <typename TCHANPIXEL, typename TVALUE, typename TINDEX>
+		static void setImageChan(const Common::Image<TCHANPIXEL, TINDEX>& image, const TINDEX chanIndex, const Common::Image<TVALUE, TINDEX>& chanImage)
 		{
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)
@@ -36,7 +36,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static Common::Image<TVALUE, TINDEX> getImageChan1(const Common::Image<TriChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChan<Image<TriChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0);
+			return getImageChan<TriChanPixel<TVALUE>, TVALUE, TINDEX>(image, 0);
 		}
 
 		/// <summary>
@@ -45,7 +45,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static Common::Image<TVALUE, TINDEX> getImageChan2(const Common::Image<TriChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChan<Image<TriChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1);
+			return getImageChan<TriChanPixel<TVALUE>, TVALUE, TINDEX>(image, 1);
 		}
 
 		/// <summary>
@@ -54,7 +54,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static Common::Image<TVALUE, TINDEX> getImageChan3(const Common::Image<TriChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChan<Image<TriChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2);
+			return getImageChan<TriChanPixel<TVALUE>, TVALUE, TINDEX>(image, 2);
 		}
 
 		/// <summary>
@@ -63,7 +63,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static Common::Image<TVALUE, TINDEX> getImageChan1(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0);
+			return getImageChan<QuadChanPixel<TVALUE>, TVALUE, TINDEX>(image, 0);
 		}
 
 		/// <summary>
@@ -72,7 +72,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static Common::Image<TVALUE, TINDEX> getImageChan2(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1);
+			return getImageChan<QuadChanPixel<TVALUE>, TVALUE, TINDEX>(image, 1);
 		}
 
 		/// <summary>
@@ -81,7 +81,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static Common::Image<TVALUE, TINDEX> getImageChan3(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2);
+			return getImageChan<QuadChanPixel<TVALUE>, TVALUE, TINDEX>(image, 2);
 		}
 
 		/// <summary>
@@ -90,7 +90,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static Common::Image<TVALUE, TINDEX> getImageChan4(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image)
 		{
-			return getImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 3);
+			return getImageChan<QuadChanPixel<TVALUE> TINDEX>, TVALUE, TINDEX>(image, 3);
 		}
 
 		/// <summary>
@@ -99,7 +99,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static void setImageChan1(const Common::Image<TriChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChan<Common::Image<TriChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0, chanImage);
+			setImageChan<TriChanPixel<TVALUE>, TVALUE, TINDEX>(image, 0, chanImage);
 		}
 
 		/// <summary>
@@ -108,7 +108,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static void setImageChan2(const Common::Image<TriChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChan<Common::Image<TriChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1, chanImage);
+			setImageChan<TriChanPixel<TVALUE>, TVALUE, TINDEX>(image, 1, chanImage);
 		}
 
 		/// <summary>
@@ -117,7 +117,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static void setImageChan3(const Common::Image<TriChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChan<Common::Image<TriChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2, chanImage);
+			setImageChan<TriChanPixel<TVALUE>, TVALUE, TINDEX>(image, 2, chanImage);
 		}
 
 		/// <summary>
@@ -126,7 +126,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static void setImageChan1(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 0, chanImage);
+			setImageChan<QuadChanPixel<TVALUE>, TVALUE, TINDEX>(image, 0, chanImage);
 		}
 
 		/// <summary>
@@ -135,7 +135,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static void setImageChan2(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 1, chanImage);
+			setImageChan<QuadChanPixel<TVALUE>, TVALUE, TINDEX>(image, 1, chanImage);
 		}
 
 		/// <summary>
@@ -144,7 +144,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static void setImageChan3(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 2, chanImage);
+			setImageChan<QuadChanPixel<TVALUE>, TVALUE, TINDEX>(image, 2, chanImage);
 		}
 
 		/// <summary>
@@ -153,7 +153,7 @@ namespace Drawing
 		template <typename TVALUE, typename TINDEX>
 		static void setImageChan4(const Common::Image<QuadChanPixel<TVALUE>, TINDEX>& image, const Common::Image<TVALUE, TINDEX> chanImage)
 		{
-			setImageChan<Common::Image<QuadChanPixel<TVALUE>, TINDEX>, TVALUE, TINDEX>(image, 3, chanImage);
+			setImageChan<QuadChanPixel<TVALUE>, TVALUE, TINDEX>(image, 3, chanImage);
 		}
 
 	};
