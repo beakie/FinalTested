@@ -23,7 +23,7 @@ struct GreyPixelConv
 	}
 };
 
-template <typename TINDEX>
+template <typename TVALUE, typename TINDEX>
 struct ChannelConv
 {
 	TINDEX _channel;
@@ -33,7 +33,7 @@ struct ChannelConv
 		_channel = channel;
 	}
 
-	UInt8 convertPixel(const Drawing::TriChanPixel<UInt8>& value)
+	TVALUE convertPixel(const Drawing::TriChanPixel<TVALUE>& value)
 	{
 		return value.Channels[_channel];
 	}
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 	Drawing::Image8RGBPixel8 testImageGrey = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 	Drawing::Image8RGBPixel8 testImageBlack = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&staticConvertPixel);
 	Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"));
-	Drawing::Image8RGBPixel8 testImageDiskThreashold = testImageDisk.getImage<UInt8>(&ChannelConv<UInt8>(0))
+	Drawing::Image8RGBPixel8 testImageDiskThreashold = testImageDisk.getImage<UInt8>(&ChannelConv<UInt8, UInt8>(0))
 																	  .getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 
 	//**********
