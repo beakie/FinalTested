@@ -11,9 +11,9 @@ namespace Picture
 	class SelectChanAvgTriChanPixelConv
 	{
 	public:
-		TVALUE convertPixel(const Picture::TriChanPixel<TVALUE>& value)
+		TVALUE convertPixel(const Picture::TriChanPixel<TVALUE>& pixel)
 		{
-			return (TVALUE)Common::Math::round((Common::FloatMax)(value.Channels[0] + value.Channels[0] + value.Channels[0]) / 3);
+			return (TVALUE)Common::Math::round((Common::FloatMax)(pixel.Channels[0] + pixel.Channels[0] + pixel.Channels[0]) / 3);
 		}
 	};
 }

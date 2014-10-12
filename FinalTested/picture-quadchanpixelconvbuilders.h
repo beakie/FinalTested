@@ -2,8 +2,6 @@
 // QuadChanPixelConvBuilders
 // ***********************************
 //
-//getSpreadValueQuadChanPixelConv
-//
 //getSpread0QuadChanPixelConv
 //getSpread1QuadChanPixelConv
 //getSpread2QuadChanPixelConv

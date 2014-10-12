@@ -97,6 +97,7 @@
     <ClInclude Include="picture-quadcolormap.h" />
     <ClInclude Include="picture-rgbpixelconvbuilders.h" />
     <ClInclude Include="picture-selectchanavgtrichanpixelconv.h" />
+    <ClInclude Include="picture-selectchantrichanpixelconv.h" />
     <ClInclude Include="picture-spreadchantrichanpixelconv.h" />
     <ClInclude Include="picture-spreadvaluetrichanpixelconv.h" />
     <ClInclude Include="picture-trichanpixelconvbuilders.h" />
