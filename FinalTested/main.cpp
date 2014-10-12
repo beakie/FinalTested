@@ -107,9 +107,10 @@ int main(int argc, char *argv[])
 	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
 	//																	.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
 	//																	.getImage<Picture::RGBPixel8>(&Picture::SpreadValueTriChanPixelConv<UInt8>());
+	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
+	//																	.getImage<Picture::RGBPixel8>(&Picture::getSpread0TriChanPixelConv<UInt8>());
 	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
-																		.getImage<Picture::RGBPixel8>(&Picture::getSpread0TriChanPixelConv<UInt8>());
-
+																		.getImage<Picture::RGBPixel8>(&Picture::SelectChanAvgTriChanPixelConv<UInt8>());
 
 	//**********
 	// getChannel1() fromIntensity()
