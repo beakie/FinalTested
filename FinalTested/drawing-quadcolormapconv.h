@@ -59,7 +59,7 @@ namespace Drawing
 		{
 		}
 
-		Drawing::QuadChanPixel<TPIXELOUT> convertPixel(const Float32& value)
+		Drawing::QuadChanPixel<TPIXELOUT> convertPixel(const TPIXELIN& value)
 		{
 			if (value == _inUpperBound)
 				return Drawing::QuadChanPixel<TPIXELOUT>(_colorMap->Values[0][_lastIndex], _colorMap->Values[1][_lastIndex], _colorMap->Values[2][_lastIndex], _colorMap->Values[3][_lastIndex]);

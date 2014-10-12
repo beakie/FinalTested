@@ -729,11 +729,6 @@ namespace Common
 			deletePixelArray();
 		}
 
-
-
-
-
-
 		/// <summary>
 		/// ...
 		/// </summary>
