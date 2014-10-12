@@ -104,9 +104,11 @@ int main(int argc, char *argv[])
 	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
 	//																	.getImage<Float32>(&Image8ChannelExpandFloatConvU8ToF32(0))
 	//																	.getImage<Picture::TriChanPixel<UInt8>>(&Picture::TriColorMap32Conv8(&map, 0.0, 0.1));
-	Picture::Image8RGBPixel8 rgb = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"));
-	Common::Image8U8 rgbChan1 = Picture::ChanImages::getImageChan1(rgb);
-	Picture::Image8RGBPixel8 testImageDisk = Picture::ChanImages::getTriImageChanExpanded(rgbChan1);
+	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
+	//															.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8, UInt8>())
+	//															.getImage<Picture::RGBPixel8>(&Picture::SpreadValueTriChanPixelConv<UInt8, UInt8>());
+	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
+																.getImage<Picture::RGBPixel8>(&Picture::getSpread0TriChanPixelConv<UInt8, UInt8>());
 
 	//**********
 	// getChannel1() fromIntensity()

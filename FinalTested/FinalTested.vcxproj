@@ -83,7 +83,6 @@
     <ClInclude Include="common-array.h" />
     <ClInclude Include="common-image.h" />
     <ClInclude Include="picture-colormaps.h" />
-    <ClInclude Include="picture-chanimages.h" />
     <ClInclude Include="common-imatrixadapter.h" />
     <ClInclude Include="common-math.h" />
     <ClInclude Include="common-matrix2.h" />

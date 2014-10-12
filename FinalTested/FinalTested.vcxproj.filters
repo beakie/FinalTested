@@ -68,9 +68,6 @@
     <ClInclude Include="picture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-chanimages.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="picture-colormaps.h">
       <Filter>Header Files</Filter>
     </ClInclude>

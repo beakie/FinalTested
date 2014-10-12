@@ -4,7 +4,6 @@
 #include "core.h"
 #include "common.h"
 
-#include "picture-chanimages.h"
 #include "picture-colormaps.h"
 #include "picture-pixels.h"
 #include "picture-quadchanpixel.h"
