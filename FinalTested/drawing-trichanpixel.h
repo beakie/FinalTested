@@ -35,6 +35,18 @@ namespace Drawing
 		}
 
 		/// <summary>
+		/// Operator
+		/// </summary>
+		TriChanPixel<TVALUE>& operator=(const TVALUE value)
+		{
+			Channels[0] = value;
+			Channels[1] = value;
+			Channels[2] = value;
+
+			return *this;
+		}
+
+		/// <summary>
 		/// Increase contrast
 		/// </summary>
 		TriChanPixel<TVALUE> operator*(const TriChanPixel<TVALUE>& pixel) const

@@ -30,6 +30,46 @@ namespace Drawing
 					image.Values[x][y].Channels[chanIndex] = chanImage.Values[x][y];
 		}
 
+		template <typename TCHANPIXEL, typename TVALUE, typename TINDEX>
+		static void setImageChan(const Common::Image<TCHANPIXEL, TINDEX>& image, const Common::Image<TVALUE, TINDEX>& chanImage)
+		{
+			TVALUE value;
+			for (TINDEX x = 0; x < image.Width; x++)
+				for (TINDEX y = 0; y < image.Height; y++)
+				{
+				value = chanImage.Values[x][y];
+				image.Values[x][y].Channels[0] = value;
+				image.Values[x][y].Channels[1] = value;
+				image.Values[x][y].Channels[2] = value;
+				}
+		}
+
+		template <typename TVALUE, typename TINDEX>
+		static Common::Image<Drawing::TriChanPixel<TVALUE>, TINDEX> getTriImageChanExpanded(const Common::Image<TVALUE, TINDEX>& chanImage)
+		{
+			Common::Image<Drawing::TriChanPixel<TVALUE>, TINDEX> image = Common::Image<Drawing::TriChanPixel<TVALUE>, TINDEX>(chanImage.Width, chanImage.Height);
+
+			TVALUE value;
+			for (TINDEX x = 0; x < image.Width; x++)
+				for (TINDEX y = 0; y < image.Height; y++)
+					image.Values[x][y] = chanImage.Values[x][y];
+
+			return image;
+		}
+
+		template <typename TVALUE, typename TINDEX>
+		static Common::Image<Drawing::QuadChanPixel<TVALUE>, TINDEX> getQuadImageChanExpanded(const Common::Image<TVALUE, TINDEX>& chanImage)
+		{
+			Common::Image<Drawing::QuadChanPixel<TVALUE>, TINDEX> image = Common::Image<Drawing::QuadChanPixel<TVALUE>, TINDEX>(chanImage.Width, chanImage.Height);
+
+			TVALUE value;
+			for (TINDEX x = 0; x < image.Width; x++)
+				for (TINDEX y = 0; y < image.Height; y++)
+					image.Values[x][y] = chanImage.Values[x][y];
+
+			return image;
+		}
+
 		/// <summary>
 		/// Returns the first chan from a 3 chan image
 		/// </summary>

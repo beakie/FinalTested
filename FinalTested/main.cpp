@@ -101,9 +101,11 @@ int main(int argc, char *argv[])
 	//																	.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 	//Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
 	//																	.getImage<Drawing::RGBPixel8>(&Image8ChannelExpandConv8(0));
-	Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
-																		.getImage<Float32>(&Image8ChannelExpandFloatConvU8ToF32(0))
-																		.getImage<Drawing::TriChanPixel<UInt8>>(&Drawing::TriColorMap32Conv8(&map, 0.0, 0.1));
+	//Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
+	//																	.getImage<Float32>(&Image8ChannelExpandFloatConvU8ToF32(0))
+	//																	.getImage<Drawing::TriChanPixel<UInt8>>(&Drawing::TriColorMap32Conv8(&map, 0.0, 0.1));
+
+	Drawing::Image8RGBPixel8 testImageDisk = Drawing::ChanImages::getTriImageChanExpanded(Drawing::ChanImages::getImageChan1(Drawing::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))));
 
 	//**********
 	// Need to do some mutli channel to single channel image converters so that i can test all image functions.
