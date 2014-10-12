@@ -58,7 +58,25 @@ struct ImageChannelExpandConv
 	}
 };
 
+template <typename TINTERVAL, typename TFLOATING, typename TINDEX>
+struct ImageChannelExpandFloatConv
+{
+	TINDEX _channel;
+
+	ImageChannelExpandFloatConv(const TINDEX channel)
+	{
+		_channel = channel;
+	}
+
+	TINTERVAL convertPixel(const Drawing::TriChanPixel<UInt8>& value)
+	{
+		return (TINTERVAL)((TFLOATING)value.Channels[_channel] / 255);
+	}
+};
+
 typedef ImageChannelExpandConv<UInt8, UInt8> Image8ChannelExpandConv8;
+
+typedef ImageChannelExpandFloatConv<Common::UnitInterval32, Float32, UInt8> Image8ChannelExpandFloatConvU8ToF32;
 
 static Drawing::TriChanPixel<UInt8> staticConvertPixel(const Float32& value)
 {
@@ -98,8 +116,11 @@ int main(int argc, char *argv[])
 	//Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
 	//																	.getImage<UInt8>(&Image8ChannelConv8(0))
 	//																	.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
+	//Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
+	//																	.getImage<Drawing::RGBPixel8>(&Image8ChannelExpandConv8(0));
 	Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
-																		.getImage<Drawing::TriChanPixel<UInt8>>(&Image8ChannelExpandConv8(0));
+																		.getImage<Float32>(&Image8ChannelExpandFloatConvU8ToF32(0))
+																		.getImage<Drawing::TriChanPixel<UInt8>>(&Drawing::TriColorMap32Conv8(&map, 0.0, 0.1));
 
 	//**********
 	// Need to do some mutli channel to single channel image converters so that i can test all image functions.
@@ -112,9 +133,6 @@ int main(int argc, char *argv[])
 	QLabel* label = new QLabel(&widget);
 	label->setPixmap(Drawing::Qt::ImageMapper8::getQPixmap(testImageDisk));
 	label->show();
-
-	QPainter painter;
-	widget.render(&painter);
 	
 	widget.show();
 
