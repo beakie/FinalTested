@@ -13,7 +13,7 @@ namespace Picture
 	public:
 		TVALUE convertPixel(const Picture::TriChanPixel<TVALUE>& pixel)
 		{
-			return (TVALUE)Common::Math::round((Common::FloatMax)(pixel.Channels[0] + pixel.Channels[0] + pixel.Channels[0]) / 3);
+			return (TVALUE)Common::Math::round((Common::FloatMax)(pixel.Channels[0] + pixel.Channels[1] + pixel.Channels[2]) / 3);
 		}
 	};
 }

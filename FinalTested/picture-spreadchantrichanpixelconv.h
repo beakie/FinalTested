@@ -11,7 +11,7 @@ namespace Picture
 	public:
 		TINDEX _channel;
 
-		SelectChanTriChanPixelConv(const TINDEX channel)
+		SpreadChanTriChanPixelConv(const TINDEX channel)
 		{
 			_channel = channel;
 		}

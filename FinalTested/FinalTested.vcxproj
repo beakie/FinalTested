@@ -96,9 +96,13 @@
     <ClInclude Include="picture-quadchanpixelconvbuilders.h" />
     <ClInclude Include="picture-quadcolormap.h" />
     <ClInclude Include="picture-rgbpixelconvbuilders.h" />
+    <ClInclude Include="picture-selectchanavgquadchanpixelconv.h" />
     <ClInclude Include="picture-selectchanavgtrichanpixelconv.h" />
+    <ClInclude Include="picture-selectchanquadchanpixelconv.h" />
     <ClInclude Include="picture-selectchantrichanpixelconv.h" />
+    <ClInclude Include="picture-spreadchanquadchanpixelconv.h" />
     <ClInclude Include="picture-spreadchantrichanpixelconv.h" />
+    <ClInclude Include="picture-spreadvaluequadchanpixelconv.h" />
     <ClInclude Include="picture-spreadvaluetrichanpixelconv.h" />
     <ClInclude Include="picture-trichanpixelconvbuilders.h" />
     <ClInclude Include="picture-tricolormap.h" />

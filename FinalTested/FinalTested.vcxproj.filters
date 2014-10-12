@@ -122,5 +122,17 @@
     <ClInclude Include="picture-selectchantrichanpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="picture-spreadvaluequadchanpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-spreadchanquadchanpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-selectchanquadchanpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-selectchanavgquadchanpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
