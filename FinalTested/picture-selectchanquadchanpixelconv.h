@@ -7,13 +7,13 @@
 
 namespace Picture
 {
-	template <typename TVALUE, typename TINDEX>
+	template <typename TVALUE>
 	class SelectChanQuadChanPixelConv
 	{
 	public:
-		TINDEX _channel;
+		UInt8 _channel;
 
-		SelectChanQuadChanPixelConv(const TINDEX channel)
+		SelectChanQuadChanPixelConv(const UInt8 channel)
 		{
 			_channel = channel;
 		}

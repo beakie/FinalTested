@@ -1,5 +1,5 @@
-#ifndef PICTURESELECTRGBPIXELINTENSITYCONV_H
-#define PICTURESELECTRGBPIXELINTENSITYCONV_H
+#ifndef PICTURESELECTCHANAVGQUADCHANPIXELCONV_H
+#define PICTURESELECTCHANAVGQUADCHANPIXELCONV_H
 
 #include "core.h"
 #include "common.h"
@@ -7,7 +7,7 @@
 
 namespace Picture
 {
-	template <typename TVALUE, typename TINDEX>
+	template <typename TVALUE>
 	class SelectChanAvgQuadChanPixelConv
 	{
 	public:
@@ -18,4 +18,4 @@ namespace Picture
 	};
 }
 
-#endif // PICTURESELECTRGBPIXELINTENSITYCONV_H
+#endif // PICTURESELECTCHANAVGQUADCHANPIXELCONV_H

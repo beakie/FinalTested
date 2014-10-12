@@ -5,7 +5,7 @@
 
 namespace Picture
 {
-	template <typename TVALUE, typename TINDEX>
+	template <typename TVALUE>
 	class SpreadValueTriChanPixelConv
 	{
 	public:

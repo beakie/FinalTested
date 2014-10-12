@@ -5,13 +5,13 @@
 
 namespace Picture
 {
-	template <typename TVALUE, typename TINDEX>
+	template <typename TVALUE>
 	class SpreadChanTriChanPixelConv
 	{
 	public:
-		TINDEX _channel;
+		UInt8 _channel;
 
-		SpreadChanTriChanPixelConv(const TINDEX channel)
+		SpreadChanTriChanPixelConv(const UInt8 channel)
 		{
 			_channel = channel;
 		}
