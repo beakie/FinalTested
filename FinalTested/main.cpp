@@ -23,6 +23,22 @@ struct GreyPixelConv
 	}
 };
 
+template <typename TINDEX>
+struct ChannelConv
+{
+	TINDEX _channel;
+
+	ChannelConv(const TINDEX channel)
+	{
+		_channel = channel;
+	}
+
+	UInt8 convertPixel(const Drawing::TriChanPixel<UInt8>& value)
+	{
+		return value.Channels[_channel];
+	}
+};
+
 static Drawing::TriChanPixel<UInt8> staticConvertPixel(const Float32& value)
 {
 	return Drawing::TriChanPixel<UInt8>(0, 0, 0);
@@ -59,7 +75,8 @@ int main(int argc, char *argv[])
 	Drawing::Image8RGBPixel8 testImageGrey = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 	Drawing::Image8RGBPixel8 testImageBlack = testImage.getImage<Drawing::TriChanPixel<UInt8>>(&staticConvertPixel);
 	Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"));
-	//Drawing::Image8RGBPixel8 testImageDiskThreashold = getChannel(image, 0).getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
+	Drawing::Image8RGBPixel8 testImageDiskThreashold = testImageDisk.getImage<UInt8>(&ChannelConv<UInt8>(0))
+																	  .getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
 
 	//**********
 	// Need to do some mutli channel to single channel image converters so that i can test all image functions.
@@ -70,7 +87,7 @@ int main(int argc, char *argv[])
 	QWidget widget;
 
 	QLabel* label = new QLabel(&widget);
-	label->setPixmap(Drawing::Qt::ImageMapper8::getQPixmap(testImageDisk));
+	label->setPixmap(Drawing::Qt::ImageMapper8::getQPixmap(testImageDiskThreashold));
 	label->show();
 
 	QPainter painter;
