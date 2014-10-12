@@ -15,8 +15,9 @@ template <typename TIMAGE>
 void renderImage(const TIMAGE& image);
 
 template <typename TUNITINTERVAL>
-struct GreyPixelFloatConv
+class GreyPixelFloatConv
 {
+public:
 	Drawing::TriChanPixel<UInt8> convertPixel(const TUNITINTERVAL& value)
 	{
 		return Drawing::TriChanPixel<UInt8>(value * 255, value * 255, value * 255);
@@ -24,8 +25,9 @@ struct GreyPixelFloatConv
 };
 
 template <typename TVALUE, typename TINDEX>
-struct ImageChannelConv
+class ImageChannelConv
 {
+public:
 	TINDEX _channel;
 
 	ImageChannelConv(const TINDEX channel)
@@ -42,8 +44,9 @@ struct ImageChannelConv
 typedef ImageChannelConv<UInt8, UInt8> Image8ChannelConv8;
 
 template <typename TVALUE, typename TINDEX>
-struct ImageChannelExpandConv
+class ImageChannelExpandConv
 {
+public:
 	TINDEX _channel;
 
 	ImageChannelExpandConv(const TINDEX channel)
@@ -59,8 +62,9 @@ struct ImageChannelExpandConv
 };
 
 template <typename TINTERVAL, typename TFLOATING, typename TINDEX>
-struct ImageChannelExpandFloatConv
+class ImageChannelExpandFloatConv
 {
+public:
 	TINDEX _channel;
 
 	ImageChannelExpandFloatConv(const TINDEX channel)
