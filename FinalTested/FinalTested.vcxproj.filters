@@ -65,58 +65,58 @@
     <ClInclude Include="common-math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing.h">
+    <ClInclude Include="picture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-pixels.h">
+    <ClInclude Include="picture-chanimages.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-tricolormap.h">
+    <ClInclude Include="picture-colormaps.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-colormaps.h">
+    <ClInclude Include="picture-pixels.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-trichanpixel.h">
+    <ClInclude Include="picture-qt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-quadchanpixel.h">
+    <ClInclude Include="picture-qt-imagemapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-tricolormapconv.h">
+    <ClInclude Include="picture-quadchanpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-quadcolormap.h">
+    <ClInclude Include="picture-quadchanpixelconvbuilders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-quadcolormapconv.h">
+    <ClInclude Include="picture-quadcolormap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-qt.h">
+    <ClInclude Include="picture-quadcolormapconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-qt-imagemapper.h">
+    <ClInclude Include="picture-rgbpixelconvbuilders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-chanimages.h">
+    <ClInclude Include="picture-selectchanavgtrichanpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-spreadvaluetrichanpixelconv.h">
+    <ClInclude Include="picture-spreadchantrichanpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-spreadchantrichanpixelconv.h">
+    <ClInclude Include="picture-spreadvaluetrichanpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-selectchanavgtrichanpixelconv.h">
+    <ClInclude Include="picture-trichanpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-trichanpixelconvbuilders.h">
+    <ClInclude Include="picture-trichanpixelconvbuilders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-quadchanpixelconvbuilders.h">
+    <ClInclude Include="picture-tricolormap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drawing-rgbpixelconvbuilders.h">
+    <ClInclude Include="picture-tricolormapconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

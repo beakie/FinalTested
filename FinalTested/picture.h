@@ -1,58 +1,58 @@
-#ifndef DRAWING_H
-#define DRAWING_H
+#ifndef PICTURE_H
+#define PICTURE_H
 
 #include "core.h"
 #include "common.h"
 
-#include "drawing-colormaps.h"
-#include "drawing-chanimages.h"
-#include "drawing-pixels.h"
-#include "drawing-quadchanpixel.h"
-#include "drawing-quadchanpixel.h"
-#include "drawing-quadcolormap.h"
-#include "drawing-quadcolormapconv.h"
-#include "drawing-trichanpixel.h"
-#include "drawing-tricolormap.h"
-#include "drawing-tricolormapconv.h"
+#include "picture-colormaps.h"
+#include "picture-chanimages.h"
+#include "picture-pixels.h"
+#include "picture-quadchanpixel.h"
+#include "picture-quadchanpixel.h"
+#include "picture-quadcolormap.h"
+#include "picture-quadcolormapconv.h"
+#include "picture-trichanpixel.h"
+#include "picture-tricolormap.h"
+#include "picture-tricolormapconv.h"
 
-namespace Drawing
+namespace Picture
 {
 	/// <summary>
 	/// 1 byte precision RGB pixel
 	/// </summary>
-	typedef Drawing::TriChanPixel<UInt8> RGBPixel8;
+	typedef Picture::TriChanPixel<UInt8> RGBPixel8;
 	/// <summary>
 	/// 2 byte precision RGB pixel
 	/// </summary>
-	typedef Drawing::TriChanPixel<UInt16> RGBPixel16;
+	typedef Picture::TriChanPixel<UInt16> RGBPixel16;
 	/// <summary>
 	/// 4 byte precision RGB pixel
 	/// </summary>
-	typedef Drawing::TriChanPixel<UInt32> RGBPixel32;
+	typedef Picture::TriChanPixel<UInt32> RGBPixel32;
 	/// <summary>
 	/// 1 byte precision HSV pixel
 	/// </summary>
-	typedef Drawing::TriChanPixel<UInt8> HSVPixel8;
+	typedef Picture::TriChanPixel<UInt8> HSVPixel8;
 	/// <summary>
 	/// 2 byte precision HSV pixel
 	/// </summary>
-	typedef Drawing::TriChanPixel<UInt16> HSVPixel16;
+	typedef Picture::TriChanPixel<UInt16> HSVPixel16;
 	/// <summary>
 	/// 4 byte precision HSV pixel
 	/// </summary>
-	typedef Drawing::TriChanPixel<UInt32> HSVPixel32;
+	typedef Picture::TriChanPixel<UInt32> HSVPixel32;
 	/// <summary>
 	/// 1 byte precision RGBA pixel
 	/// </summary>
-	typedef Drawing::QuadChanPixel<UInt8> RGBAPixel8;
+	typedef Picture::QuadChanPixel<UInt8> RGBAPixel8;
 	/// <summary>
 	/// 2 byte precision RGBA pixel
 	/// </summary>
-	typedef Drawing::QuadChanPixel<UInt16> RGBAPixel16;
+	typedef Picture::QuadChanPixel<UInt16> RGBAPixel16;
 	/// <summary>
 	/// 4 byte precision RGBA pixel
 	/// </summary>
-	typedef Drawing::QuadChanPixel<UInt32> RGBAPixel32;
+	typedef Picture::QuadChanPixel<UInt32> RGBAPixel32;
 	/// <summary>
 	/// 1 byte precision greyscale pixel
 	/// </summary>
@@ -198,4 +198,4 @@ namespace Drawing
 	typedef ColorMaps<Float32> ColorMaps32;
 }
 
-#endif // DRAWING_H
+#endif // PICTURE_H

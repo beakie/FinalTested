@@ -1,9 +1,9 @@
-#ifndef DRAWINGQT_H
-#define DRAWINGQT_H
+#ifndef PICTUREQT_H
+#define PICTUREQT_H
 
-#include "drawing-qt-imagemapper.h"
+#include "picture-qt-imagemapper.h"
 
-namespace Drawing
+namespace Picture
 {
 	namespace Qt
 	{
@@ -13,4 +13,4 @@ namespace Drawing
 	}
 }
 
-#endif // DRAWINGQT_H
+#endif // PICTUREQT_H

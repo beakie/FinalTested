@@ -1,13 +1,13 @@
-#ifndef DRAWINGQTIMAGEMAPPER_H
-#define DRAWINGQTIMAGEMAPPER_H
+#ifndef PICTUREQTIMAGEMAPPER_H
+#define PICTUREQTIMAGEMAPPER_H
 
 #include "common-image.h"
-#include "drawing.h"
+#include "picture.h"
 #include <QImage>
 #include <QPixmap>
 #include <QRgb>
 
-namespace Drawing
+namespace Picture
 {
 	namespace Qt
 	{
@@ -17,24 +17,24 @@ namespace Drawing
 
 		public:
 
-			static Common::Image<Drawing::RGBPixel8, TINDEX> getRGBImage(QImage qimage)
+			static Common::Image<Picture::RGBPixel8, TINDEX> getRGBImage(QImage qimage)
 			{
 				int width = qimage.width();
 				TINDEX height = qimage.height();
 
-				Common::Image<Drawing::RGBPixel8, TINDEX> image = Common::Image<Drawing::RGBPixel8, TINDEX>(width, height);
+				Common::Image<Picture::RGBPixel8, TINDEX> image = Common::Image<Picture::RGBPixel8, TINDEX>(width, height);
 
 				for (TINDEX x = 0; x < width; x++)
 					for (TINDEX y = 0; y < height; y++)
 					{
 						QRgb pixel = qimage.pixel(x, y);
-						image.Values[x][y] = Drawing::RGBPixel8(qRed(pixel), qGreen(pixel), qBlue(pixel));
+						image.Values[x][y] = Picture::RGBPixel8(qRed(pixel), qGreen(pixel), qBlue(pixel));
 					}
 
 				return image;
 			}
 
-			static QImage getQImage(Common::Image<Drawing::RGBPixel8, TINDEX> image)
+			static QImage getQImage(Common::Image<Picture::RGBPixel8, TINDEX> image)
 			{
 				QImage qimage = QImage(image.Width, image.Height, QImage::Format_RGB888);
 
@@ -48,7 +48,7 @@ namespace Drawing
 				return qimage;
 			}
 
-			static QPixmap getQPixmap(Common::Image<Drawing::RGBPixel8, TINDEX> image)
+			static QPixmap getQPixmap(Common::Image<Picture::RGBPixel8, TINDEX> image)
 			{
 				return QPixmap::fromImage(getQImage(image));
 			}
@@ -57,4 +57,4 @@ namespace Drawing
 	}
 }
 
-#endif // DRAWINGQTIMAGEMAPPER_H
+#endif // PICTUREQTIMAGEMAPPER_H

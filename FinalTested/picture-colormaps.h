@@ -1,12 +1,12 @@
-#ifndef DRAWINGCOLORMAPS_H
-#define DRAWINGCOLORMAPS_H
+#ifndef PICTURECOLORMAPS_H
+#define PICTURECOLORMAPS_H
 
 #include "core.h"
 #include "common.h"
 
-#include "drawing-tricolormap.h"
+#include "picture-tricolormap.h"
 
-namespace Drawing
+namespace Picture
 {
 	template <typename TUNITINTERVAL>
 	class ColorMaps
@@ -50,4 +50,4 @@ namespace Drawing
 
 }
 
-#endif // DRAWINGCOLORMAPS_H
+#endif // PICTURECOLORMAPS_H

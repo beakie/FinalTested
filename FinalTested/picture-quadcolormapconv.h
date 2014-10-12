@@ -1,17 +1,17 @@
-#ifndef DRAWINGQUADCOLORMAPCONV_H
-#define DRAWINGQUADCOLORMAPCONV_H
+#ifndef PICTUREQUADCOLORMAPCONV_H
+#define PICTUREQUADCOLORMAPCONV_H
 
 #include "core.h"
 #include "common.h"
-#include "drawing-quadchanpixel.h"
+#include "picture-quadchanpixel.h"
 
-namespace Drawing
+namespace Picture
 {
 	template <typename TUNITINTERVAL, typename TPIXELIN, typename TPIXELOUT>
 	class QuadColorMapConv
 	{
 	private:
-		const Drawing::QuadColorMap<TUNITINTERVAL>* _colorMap; // transform this on population. lowerbound defines offset, upperbound lets calc of multiplication
+		const Picture::QuadColorMap<TUNITINTERVAL>* _colorMap; // transform this on population. lowerbound defines offset, upperbound lets calc of multiplication
 		TPIXELIN _inLowerBound;
 		TPIXELIN _inUpperBound;
 		TPIXELIN _inBoundDiff;
@@ -41,7 +41,7 @@ namespace Drawing
 		// move all variables to class so that no reallocation of memory is needed for each pixel?
 
 	public:
-		QuadColorMapConv(const Drawing::QuadColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
+		QuadColorMapConv(const Picture::QuadColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
 		{
 			_colorMap = colorMap;
 			_inLowerBound = lowerBound;
@@ -54,21 +54,21 @@ namespace Drawing
 			_outBoundDiff = _outUpperBound - _outLowerBound;
 		}
 
-		QuadColorMapConv(const Drawing::QuadColorMap<TUNITINTERVAL>* colorMap)
+		QuadColorMapConv(const Picture::QuadColorMap<TUNITINTERVAL>* colorMap)
 			: QuadColorMapConv(colorMap, Common::getLowerBound<TPIXELIN>(), Common::getUpperBound<TPIXELIN>())
 		{
 		}
 
-		Drawing::QuadChanPixel<TPIXELOUT> convertPixel(const TPIXELIN& value)
+		Picture::QuadChanPixel<TPIXELOUT> convertPixel(const TPIXELIN& value)
 		{
 			if (value == _inUpperBound)
-				return Drawing::QuadChanPixel<TPIXELOUT>(_colorMap->Values[0][_lastIndex], _colorMap->Values[1][_lastIndex], _colorMap->Values[2][_lastIndex], _colorMap->Values[3][_lastIndex]);
+				return Picture::QuadChanPixel<TPIXELOUT>(_colorMap->Values[0][_lastIndex], _colorMap->Values[1][_lastIndex], _colorMap->Values[2][_lastIndex], _colorMap->Values[3][_lastIndex]);
 
 			_indexUnrounded = (value - _inLowerBound) / _spacing;
 			_index = (UInt8)_indexUnrounded;
 
 			if (_indexUnrounded == _index)
-				return Drawing::QuadChanPixel<TPIXELOUT>(_colorMap->Values[0][_index], _colorMap->Values[1][_index], _colorMap->Values[2][_index], _colorMap->Values[3][_index]);
+				return Picture::QuadChanPixel<TPIXELOUT>(_colorMap->Values[0][_index], _colorMap->Values[1][_index], _colorMap->Values[2][_index], _colorMap->Values[3][_index]);
 
 			_fromIndexValue = _index * _spacing;
 			_toIndexValue = (_index + 1) * _spacing;
@@ -88,10 +88,10 @@ namespace Drawing
 				}
 			}
 
-			return Drawing::QuadChanPixel<TPIXELOUT>(_channel[0], _channel[1], _channel[2], _channel[3]);
+			return Picture::QuadChanPixel<TPIXELOUT>(_channel[0], _channel[1], _channel[2], _channel[3]);
 		}
 	};
 
 }
 
-#endif // DRAWINGQUADCOLORMAPCONV_H
+#endif // PICTUREQUADCOLORMAPCONV_H

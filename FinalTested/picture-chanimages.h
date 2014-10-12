@@ -1,11 +1,11 @@
-#ifndef DRAWINGCHANIMAGES_H
-#define DRAWINGCHANIMAGES_H
+#ifndef PICTURECHANIMAGES_H
+#define PICTURECHANIMAGES_H
 
 #include "common-image.h"
-#include "drawing-trichanpixel.h"
-#include "drawing-quadchanpixel.h"
+#include "picture-trichanpixel.h"
+#include "picture-quadchanpixel.h"
 
-namespace Drawing
+namespace Picture
 {
 	//THESE SHOULD ALL BE REPLACED WITH CONVERTPIXEL FUNCTION CLASSES.
 	static class ChanImages
@@ -46,9 +46,9 @@ namespace Drawing
 		}
 
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<Drawing::TriChanPixel<TVALUE>, TINDEX> getTriImageChanExpanded(const Common::Image<TVALUE, TINDEX>& chanImage)
+		static Common::Image<Picture::TriChanPixel<TVALUE>, TINDEX> getTriImageChanExpanded(const Common::Image<TVALUE, TINDEX>& chanImage)
 		{
-			Common::Image<Drawing::TriChanPixel<TVALUE>, TINDEX> image = Common::Image<Drawing::TriChanPixel<TVALUE>, TINDEX>(chanImage.Width, chanImage.Height);
+			Common::Image<Picture::TriChanPixel<TVALUE>, TINDEX> image = Common::Image<Picture::TriChanPixel<TVALUE>, TINDEX>(chanImage.Width, chanImage.Height);
 
 			TVALUE value;
 			for (TINDEX x = 0; x < image.Width; x++)
@@ -59,9 +59,9 @@ namespace Drawing
 		}
 
 		template <typename TVALUE, typename TINDEX>
-		static Common::Image<Drawing::QuadChanPixel<TVALUE>, TINDEX> getQuadImageChanExpanded(const Common::Image<TVALUE, TINDEX>& chanImage)
+		static Common::Image<Picture::QuadChanPixel<TVALUE>, TINDEX> getQuadImageChanExpanded(const Common::Image<TVALUE, TINDEX>& chanImage)
 		{
-			Common::Image<Drawing::QuadChanPixel<TVALUE>, TINDEX> image = Common::Image<Drawing::QuadChanPixel<TVALUE>, TINDEX>(chanImage.Width, chanImage.Height);
+			Common::Image<Picture::QuadChanPixel<TVALUE>, TINDEX> image = Common::Image<Picture::QuadChanPixel<TVALUE>, TINDEX>(chanImage.Width, chanImage.Height);
 
 			TVALUE value;
 			for (TINDEX x = 0; x < image.Width; x++)
@@ -200,4 +200,4 @@ namespace Drawing
 	};
 }
 
-#endif // DRAWINGCHANIMAGES_H
+#endif // PICTURECHANIMAGES_H

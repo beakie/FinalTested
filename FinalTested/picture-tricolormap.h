@@ -1,12 +1,12 @@
-#ifndef DRAWINGTRICOLORMAP_H
-#define DRAWINGTRICOLORMAP_H
+#ifndef PICTURETRICOLORMAP_H
+#define PICTURETRICOLORMAP_H
 
 #include "core.h"
 #include "common.h"
 
-#include "drawing-trichanpixel.h"
+#include "picture-trichanpixel.h"
 
-namespace Drawing
+namespace Picture
 {
 	template <typename TUNITINTERVAL>
 	struct TriColorMap
@@ -75,4 +75,4 @@ namespace Drawing
 	};
 }
 
-#endif // DRAWINGTRICOLORMAP_H
+#endif // PICTURETRICOLORMAP_H

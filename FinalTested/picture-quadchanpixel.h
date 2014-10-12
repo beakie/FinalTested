@@ -1,7 +1,7 @@
-#ifndef DRAWINGQUADCHANPIXEL_H
-#define DRAWINGQUADCHANPIXEL_H
+#ifndef PICTUREQUADCHANPIXEL_H
+#define PICTUREQUADCHANPIXEL_H
 
-namespace Drawing
+namespace Picture
 {
 	template <typename TVALUE>
 	/// <summary>
@@ -174,4 +174,4 @@ namespace Drawing
 	};
 }
 
-#endif // DRAWINGQUADCHANPIXEL_H
+#endif // PICTUREQUADCHANPIXEL_H

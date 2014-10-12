@@ -8,8 +8,8 @@
 
 #include "core.h"
 #include "common.h"
-#include "drawing.h"
-#include "drawing-qt.h"
+#include "picture.h"
+#include "picture-qt.h"
 
 template <typename TIMAGE>
 void renderImage(const TIMAGE& image);
@@ -18,9 +18,9 @@ template <typename TUNITINTERVAL>
 class GreyPixelFloatConv
 {
 public:
-	Drawing::TriChanPixel<UInt8> convertPixel(const TUNITINTERVAL& value)
+	Picture::TriChanPixel<UInt8> convertPixel(const TUNITINTERVAL& value)
 	{
-		return Drawing::TriChanPixel<UInt8>(value * 255, value * 255, value * 255);
+		return Picture::TriChanPixel<UInt8>(value * 255, value * 255, value * 255);
 	}
 };
 
@@ -35,7 +35,7 @@ public:
 		_channel = channel;
 	}
 
-	TVALUE convertPixel(const Drawing::TriChanPixel<TVALUE>& value)
+	TVALUE convertPixel(const Picture::TriChanPixel<TVALUE>& value)
 	{
 		return value.Channels[_channel];
 	}
@@ -54,10 +54,10 @@ public:
 		_channel = channel;
 	}
 
-	Drawing::TriChanPixel<TVALUE> convertPixel(const Drawing::TriChanPixel<TVALUE>& value)
+	Picture::TriChanPixel<TVALUE> convertPixel(const Picture::TriChanPixel<TVALUE>& value)
 	{
 		TVALUE v = value.Channels[_channel];
-		return Drawing::TriChanPixel<TVALUE>(v, v, v);
+		return Picture::TriChanPixel<TVALUE>(v, v, v);
 	}
 };
 
@@ -72,7 +72,7 @@ public:
 		_channel = channel;
 	}
 
-	TINTERVAL convertPixel(const Drawing::TriChanPixel<UInt8>& value)
+	TINTERVAL convertPixel(const Picture::TriChanPixel<UInt8>& value)
 	{
 		return (TINTERVAL)((TFLOATING)value.Channels[_channel] / 255);
 	}
@@ -82,9 +82,9 @@ typedef ImageChannelExpandConv<UInt8, UInt8> Image8ChannelExpandConv8;
 
 typedef ImageChannelExpandFloatConv<Common::UnitInterval32, Float32, UInt8> Image8ChannelExpandFloatConvU8ToF32;
 
-static Drawing::TriChanPixel<UInt8> staticConvertPixel(const Float32& value)
+static Picture::TriChanPixel<UInt8> staticConvertPixel(const Float32& value)
 {
-	return Drawing::TriChanPixel<UInt8>(0, 0, 0);
+	return Picture::TriChanPixel<UInt8>(0, 0, 0);
 }
 
 int main(int argc, char *argv[])
@@ -94,19 +94,19 @@ int main(int argc, char *argv[])
 	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
 	Common::Image8F32 testImage = Common::Image8F32(100, 100, 0.51);
 
-	Drawing::TriColorMap32 map = Drawing::ColorMaps32::getRGBJet();
+	Picture::TriColorMap32 map = Picture::ColorMaps32::getRGBJet();
 
-	//Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
+	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
 	//																	.getImage<UInt8>(&Image8ChannelConv8(0))
-	//																	.getImage<Drawing::TriChanPixel<UInt8>>(&GreyPixelConv());
-	//Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
-	//																	.getImage<Drawing::RGBPixel8>(&Image8ChannelExpandConv8(0));
-	//Drawing::Image8RGBPixel8 testImageDisk = Drawing::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
+	//																	.getImage<Picture::TriChanPixel<UInt8>>(&GreyPixelConv());
+	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
+	//																	.getImage<Picture::RGBPixel8>(&Image8ChannelExpandConv8(0));
+	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
 	//																	.getImage<Float32>(&Image8ChannelExpandFloatConvU8ToF32(0))
-	//																	.getImage<Drawing::TriChanPixel<UInt8>>(&Drawing::TriColorMap32Conv8(&map, 0.0, 0.1));
-	Drawing::Image8RGBPixel8 rgb = Drawing::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"));
-	Common::Image8U8 rgbChan1 = Drawing::ChanImages::getImageChan1(rgb);
-	Drawing::Image8RGBPixel8 testImageDisk = Drawing::ChanImages::getTriImageChanExpanded(rgbChan1);
+	//																	.getImage<Picture::TriChanPixel<UInt8>>(&Picture::TriColorMap32Conv8(&map, 0.0, 0.1));
+	Picture::Image8RGBPixel8 rgb = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"));
+	Common::Image8U8 rgbChan1 = Picture::ChanImages::getImageChan1(rgb);
+	Picture::Image8RGBPixel8 testImageDisk = Picture::ChanImages::getTriImageChanExpanded(rgbChan1);
 
 	//**********
 	// getChannel1() fromIntensity()
@@ -116,7 +116,7 @@ int main(int argc, char *argv[])
 	QWidget widget;
 
 	QLabel* label = new QLabel(&widget);
-	label->setPixmap(Drawing::Qt::ImageMapper8::getQPixmap(testImageDisk));
+	label->setPixmap(Picture::Qt::ImageMapper8::getQPixmap(testImageDisk));
 	label->show();
 	
 	widget.show();

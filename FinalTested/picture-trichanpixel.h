@@ -1,7 +1,7 @@
-#ifndef DRAWINGTRICHANPIXEL_H
-#define DRAWINGTRICHANPIXEL_H
+#ifndef PICTURETRICHANPIXEL_H
+#define PICTURETRICHANPIXEL_H
 
-namespace Drawing
+namespace Picture
 {
 	template <typename TVALUE>
 	/// <summary>
@@ -180,4 +180,4 @@ namespace Drawing
 	};
 }
 
-#endif // DRAWINGTRICHANPIXEL_H
+#endif // PICTURETRICHANPIXEL_H

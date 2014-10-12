@@ -1,12 +1,12 @@
-#ifndef DRAWINGQUADCOLORMAP_H
-#define DRAWINGQUADCOLORMAP_H
+#ifndef PICTUREQUADCOLORMAP_H
+#define PICTUREQUADCOLORMAP_H
 
 #include "core.h"
 #include "common.h"
 
-#include "drawing-quadchanpixel.h"
+#include "picture-quadchanpixel.h"
 
-namespace Drawing
+namespace Picture
 {
 	template <typename TUNITINTERVAL>
 	struct QuadColorMap
@@ -77,4 +77,4 @@ namespace Drawing
 	};
 }
 
-#endif // DRAWINGQUADCOLORMAP_H
+#endif // PICTUREQUADCOLORMAP_H
