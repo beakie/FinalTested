@@ -90,7 +90,7 @@
     <ClInclude Include="common-matrix4.h" />
     <ClInclude Include="common-matrixadapter.h" />
     <ClInclude Include="common-matrixn.h" />
-    <ClInclude Include="picture-qt-imagemapper.h" />
+    <ClInclude Include="picture-qt-imagemapper_.h" />
     <ClInclude Include="picture-qt.h" />
     <ClInclude Include="picture-quadchanpixelconvbuilders_.h" />
     <ClInclude Include="picture-quadcolormap.h" />

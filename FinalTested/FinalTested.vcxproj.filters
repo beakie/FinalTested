@@ -68,9 +68,6 @@
     <ClInclude Include="picture-qt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-qt-imagemapper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="picture-quadchanpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -129,6 +126,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-colormaps_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-qt-imagemapper_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
