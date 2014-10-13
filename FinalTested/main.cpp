@@ -43,8 +43,12 @@ int main(int argc, char *argv[])
 	//														.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
 	//														.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, UInt8, UInt8>(&map));
 
-	Picture::Image8RGBPixel8 testImageDisk = Common::Image8U8(10, 10, 180)
-															.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, UInt8, UInt8>(&map));
+	//Picture::Image8RGBPixel8 testImageDisk = Common::Image<Int8, UInt8>(10, 10, 0.1)
+	//													.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, Int8, UInt8>(&map));
+
+	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBImage<UInt8>(QImage("c:\\Test8.jpg"))
+																.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
+																.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, Int8, UInt8>(&map));
 
 	QWidget widget;
 	QLabel* label = new QLabel(&widget);
