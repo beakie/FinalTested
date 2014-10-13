@@ -137,5 +137,8 @@
     <ClInclude Include="common-math_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-types_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

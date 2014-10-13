@@ -13,21 +13,10 @@
 #include "common-matrixn.h"
 #include "common-scalecastpixelconv.h"
 #include "common-static_.h"
+#include "common-types_.h"
 
 namespace Common
 {
-	/// <summary>
-	/// 4 byte unit interval (0 - 1)
-	/// </summary>
-	typedef Float32 UnitInterval32;
-	/// <summary>
-	/// 8 byte unit interval (0 - 1)
-	/// </summary>
-	typedef Float64 UnitInterval64;
-	/// <summary>
-	/// Max available size unit interval (0 - 1)
-	/// </summary>
-	typedef FloatMax UnitIntervalMax;
 	/// <summary>
 	/// matrix of size 2 with 1 bit values
 	/// </summary>
