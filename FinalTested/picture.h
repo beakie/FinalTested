@@ -180,6 +180,8 @@ namespace Picture
 
 	typedef QuadColorMap<Float64> QuadColorMap64;
 
+	//add the rest of these functions. relying entirly on floats sucks.
+
 	typedef TriColorMapConv<Common::UnitInterval32, Float32, UInt8> TriColorMap32Conv8;
 
 	typedef TriColorMapConv<Common::UnitInterval32, Float32, UInt16> TriColorMap32Conv16;
