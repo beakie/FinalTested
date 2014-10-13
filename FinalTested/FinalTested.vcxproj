@@ -81,7 +81,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common-array.h" />
+    <ClInclude Include="common-dumbcastpixelconv.h" />
     <ClInclude Include="common-image.h" />
+    <ClInclude Include="common-scalecastpixelconv.h" />
     <ClInclude Include="picture-colormaps_.h" />
     <ClInclude Include="common-imatrixadapter.h" />
     <ClInclude Include="common-math.h" />

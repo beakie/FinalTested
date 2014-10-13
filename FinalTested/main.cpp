@@ -25,37 +25,6 @@ public:
 	}
 };
 
-template <typename TIN, typename TOUT>
-class CastPixelConv
-{
-public:
-	TOUT convertPixel(const TIN& pixel)
-	{
-		return (TOUT)pixel;
-	}
-};
-
-template <typename TIN, typename TOUT>
-class ScalePixelConv
-{
-private:
-	//Common::FloatMax offset;
-	//Common::FloatMax scale;
-public:
-	ScalePixelConv()
-	{
-		Common::FloatMax inLower = Common::getLowerBound<TIN>(); //0
-		Common::FloatMax inUpper = Common::getUpperBound<TIN>(); //255
-		Common::FloatMax outLower = Common::getLowerBound<TOUT>(); //-32767
-		Common::FloatMax outUpper = Common::getUpperBound<TOUT>();//32767
-	}
-
-	TOUT convertPixel(const TIN& pixel)
-	{
-		return (TOUT)pixel;
-	}
-};
-
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
@@ -68,7 +37,7 @@ int main(int argc, char *argv[])
 	Picture::TriColorMap32 map = Picture::getRGBJetColorMap<Common::UnitInterval32>();
 	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBImage<UInt8>(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
 														 .getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
-														 .getImage<Float32>(&ScalePixelConv<UInt8, Float32>())
+														 .getImage<Float32>(&Common::ScaleCastPixelConv<UInt8, Float32>())
 														 .getImage<Picture::RGBPixel8>(&Picture::TriColorMap32Conv8(&map, 0.0, 0.1));
 
 	QWidget widget;

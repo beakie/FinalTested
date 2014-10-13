@@ -30,16 +30,6 @@ namespace Picture
 		TUNITINTERVAL _newValue;
 		TPIXELOUT _channel[3];
 
-		// move _lastIndex, _spacing etc into here and constructor
-
-		// *****************
-		// you NEED to add rounding when do data conversion to TPIXELOUT or it will always round down with in!
-		// *****************
-
-		// when this is finished... copy it to quad
-
-		// move all variables to class so that no reallocation of memory is needed for each pixel?
-
 	public:
 		TriColorMapConv(const Picture::TriColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
 		{

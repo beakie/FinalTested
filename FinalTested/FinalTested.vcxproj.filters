@@ -131,5 +131,11 @@
     <ClInclude Include="picture-qt-imagemapper_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-dumbcastpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common-scalecastpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
