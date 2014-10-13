@@ -94,23 +94,10 @@ int main(int argc, char *argv[])
 	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
 	Common::Image8F32 testImage = Common::Image8F32(100, 100, 0.51);
 
-	Picture::TriColorMap64 map = Picture::getRGBJetColorMap();
-
-	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
-	//																	.getImage<UInt8>(&Image8ChannelConv8(0))
-	//																	.getImage<Picture::TriChanPixel<UInt8>>(&GreyPixelConv());
-	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
-	//																	.getImage<Picture::RGBPixel8>(&Image8ChannelExpandConv8(0));
-	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
-	//																	.getImage<Float32>(&Image8ChannelExpandFloatConvU8ToF32(0))
-	//																	.getImage<Picture::TriChanPixel<UInt8>>(&Picture::TriColorMap32Conv8(&map, 0.0, 0.1));
-	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
-	//																	.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
-	//																	.getImage<Picture::RGBPixel8>(&Picture::SpreadValueTriChanPixelConv<UInt8>());
-	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
-	//																	.getImage<Picture::RGBPixel8>(&Picture::getSpread0TriChanPixelConv<UInt8>());
+	Picture::TriColorMap32 map = Picture::getRGBJetColorMap<Common::UnitInterval32>();
 	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getRGBImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
-																		.getImage<Picture::RGBPixel8>(&Picture::SelectChanAvgTriChanPixelConv<UInt8>());
+																		.getImage<Float32>(&Image8ChannelExpandFloatConvU8ToF32(0))
+																		.getImage<Picture::TriChanPixel<UInt8>>(&Picture::TriColorMap32Conv8(&map, 0.0, 0.1));
 
 	//**********
 	// getChannel1() fromIntensity()
