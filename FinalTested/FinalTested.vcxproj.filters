@@ -137,7 +137,7 @@
     <ClInclude Include="common-math_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-types_.h">
+    <ClInclude Include="common-unitinterval.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

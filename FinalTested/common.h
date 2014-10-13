@@ -13,7 +13,7 @@
 #include "common-matrixn.h"
 #include "common-scalecastpixelconv.h"
 #include "common-static_.h"
-#include "common-types_.h"
+#include "common-unitinterval.h"
 
 namespace Common
 {
