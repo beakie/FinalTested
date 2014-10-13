@@ -65,12 +65,6 @@
     <ClInclude Include="picture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-colormaps.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-pixels.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="picture-qt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -129,6 +123,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-_trichanpixelconvbuilders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-_rgbpixelhelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-colormaps.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

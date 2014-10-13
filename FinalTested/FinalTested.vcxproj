@@ -105,7 +105,7 @@
     <ClInclude Include="picture-spreadvaluetrichanpixelconv.h" />
     <ClInclude Include="picture-_trichanpixelconvbuilders.h" />
     <ClInclude Include="picture-tricolormap.h" />
-    <ClInclude Include="picture-pixels.h" />
+    <ClInclude Include="picture-_rgbpixelhelpers.h" />
     <ClInclude Include="picture-quadchanpixel.h" />
     <ClInclude Include="picture-trichanpixel.h" />
     <ClInclude Include="common-_static.h" />
