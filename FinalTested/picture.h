@@ -29,39 +29,39 @@ namespace Picture
 	/// <summary>
 	/// 1 byte precision RGB pixel
 	/// </summary>
-	typedef Picture::TriChanPixel<UInt8> RGBPixel8;
+	typedef TriChanPixel<UInt8> RGBPixel8;
 	/// <summary>
 	/// 2 byte precision RGB pixel
 	/// </summary>
-	typedef Picture::TriChanPixel<UInt16> RGBPixel16;
+	typedef TriChanPixel<UInt16> RGBPixel16;
 	/// <summary>
 	/// 4 byte precision RGB pixel
 	/// </summary>
-	typedef Picture::TriChanPixel<UInt32> RGBPixel32;
+	typedef TriChanPixel<UInt32> RGBPixel32;
 	/// <summary>
 	/// 1 byte precision HSV pixel
 	/// </summary>
-	typedef Picture::TriChanPixel<UInt8> HSVPixel8;
+	typedef TriChanPixel<UInt8> HSVPixel8;
 	/// <summary>
 	/// 2 byte precision HSV pixel
 	/// </summary>
-	typedef Picture::TriChanPixel<UInt16> HSVPixel16;
+	typedef TriChanPixel<UInt16> HSVPixel16;
 	/// <summary>
 	/// 4 byte precision HSV pixel
 	/// </summary>
-	typedef Picture::TriChanPixel<UInt32> HSVPixel32;
+	typedef TriChanPixel<UInt32> HSVPixel32;
 	/// <summary>
 	/// 1 byte precision RGBA pixel
 	/// </summary>
-	typedef Picture::QuadChanPixel<UInt8> RGBAPixel8;
+	typedef QuadChanPixel<UInt8> RGBAPixel8;
 	/// <summary>
 	/// 2 byte precision RGBA pixel
 	/// </summary>
-	typedef Picture::QuadChanPixel<UInt16> RGBAPixel16;
+	typedef QuadChanPixel<UInt16> RGBAPixel16;
 	/// <summary>
 	/// 4 byte precision RGBA pixel
 	/// </summary>
-	typedef Picture::QuadChanPixel<UInt32> RGBAPixel32;
+	typedef QuadChanPixel<UInt32> RGBAPixel32;
 	/// <summary>
 	/// 1 byte precision greyscale pixel
 	/// </summary>
