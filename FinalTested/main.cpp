@@ -35,10 +35,14 @@ int main(int argc, char *argv[])
 	Common::Image8F32 testImage = Common::Image8F32(100, 100, 0.51);
 
 	Picture::TriColorMap32 map = Picture::getRGBJetColorMap<Common::UnitInterval32>();
-	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBImage<UInt8>(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
-														 .getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
-														 .getImage<Float32>(&Common::ScaleCastPixelConv<UInt8, Float32>())
-														 .getImage<Picture::RGBPixel8>(&Picture::TriColorMap32Conv8(&map, 0.0, 0.1));
+	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBImage<UInt8>(QImage("c:\\Test8.jpg"))
+	//													 .getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
+	//													 .getImage<Float32>(&Common::ScaleCastPixelConv<UInt8, Float32>())
+	//													 .getImage<Picture::RGBPixel8>(&Picture::TriColorMap32Conv8(&map, 0.0, 0.1));
+
+	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBImage<UInt8>(QImage("c:\\Test8.jpg"))
+															.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
+															.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, UInt8, UInt8>(&map));
 
 	QWidget widget;
 	QLabel* label = new QLabel(&widget);
