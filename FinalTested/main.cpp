@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
 	Picture::TriColorMap32 map = Picture::getRGBJetColorMap<Common::UnitInterval32>();
 	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBImage<UInt8>(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
 																		.getImage<Float32>(&Image8ChannelExpandFloatConvU8ToF32(0))
-																		.getImage<Picture::TriChanPixel<UInt8>>(&Picture::TriColorMap32Conv8(&map, 0.0, 0.1));
+																		.getImage<Picture::RGBPixel8>(&Picture::TriColorMap32Conv8(&map, 0.0, 0.1));
 
 	//**********
 	// getChannel1() fromIntensity()
