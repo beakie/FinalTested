@@ -4,11 +4,11 @@
 #include "core.h"
 #include "common.h"
 
+#include "picture-_colormaps.h"
 #include "picture-_quadchanpixelconvbuilders.h"
 #include "picture-_rgbpixelconvbuilders.h"
 #include "picture-_rgbpixelhelpers.h"
 #include "picture-_trichanpixelconvbuilders.h"
-#include "picture-colormaps.h"
 #include "picture-quadchanpixel.h"
 #include "picture-quadcolormap.h"
 #include "picture-quadcolormapconv.h"
@@ -203,8 +203,6 @@ namespace Picture
 	typedef QuadColorMapConv<Common::UnitInterval64, Float64, UInt16> QuadColorMap64Conv16;
 
 	typedef QuadColorMapConv<Common::UnitInterval64, Float64, UInt32> QuadColorMap64Conv32;
-	
-	typedef ColorMaps<Float32> ColorMaps32;
-}
+	}
 
 #endif // PICTURE_H

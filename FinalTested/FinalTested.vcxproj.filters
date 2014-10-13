@@ -128,7 +128,7 @@
     <ClInclude Include="picture-_rgbpixelhelpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-colormaps.h">
+    <ClInclude Include="picture-_colormaps.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
