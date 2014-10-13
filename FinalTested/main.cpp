@@ -12,7 +12,18 @@
 #include "picture-qt.h"
 
 template <typename TIMAGE>
-void renderImage(const TIMAGE& image);
+void renderImage(const TIMAGE& image)
+{
+	for (int y = 0; y < image.Height; y++)
+	{
+		for (int x = 0; x < image.Width; x++)
+			std::cout << (image.Values[x][y] ? 1 : 0);
+
+		std::cout << "\n";
+	}
+
+	std::cout << "\n";
+}
 
 template <typename TINTERVAL, typename TFLOATING, typename TINDEX>
 class ImageChannelExpandFloatConv
@@ -37,6 +48,10 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 
+	// ************
+	// Add RescaleConv with template specialization
+	// ************
+
 	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
 	Common::Image8F32 testImage = Common::Image8F32(100, 100, 0.51);
 
@@ -45,35 +60,11 @@ int main(int argc, char *argv[])
 																		.getImage<Float32>(&Image8ChannelExpandFloatConvU8ToF32(0))
 																		.getImage<Picture::RGBPixel8>(&Picture::TriColorMap32Conv8(&map, 0.0, 0.1));
 
-	//**********
-	// getChannel1() fromIntensity()
-	// this should prob be new toImage() func passing different function pointers
-	//**********
-
 	QWidget widget;
-
 	QLabel* label = new QLabel(&widget);
 	label->setPixmap(Picture::Qt::getQPixmap<UInt8>(testImageDisk));
 	label->show();
-	
 	widget.show();
 
-	// 137, 255, 117
 	return a.exec();
 }
-
-template <typename TIMAGE>
-void renderImage(const TIMAGE& image)
-{
-	for (int y = 0; y < image.Height; y++)
-	{
-		for (int x = 0; x < image.Width; x++)
-			std::cout << (image.Values[x][y] ? 1 : 0);
-
-		std::cout << "\n";
-	}
-
-	std::cout << "\n";
-}
-
-// http://qt-project.org/forums/viewthread/30871
