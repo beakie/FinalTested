@@ -14,53 +14,6 @@
 template <typename TIMAGE>
 void renderImage(const TIMAGE& image);
 
-template <typename TUNITINTERVAL>
-class GreyPixelFloatConv
-{
-public:
-	Picture::TriChanPixel<UInt8> convertPixel(const TUNITINTERVAL& value)
-	{
-		return Picture::TriChanPixel<UInt8>(value * 255, value * 255, value * 255);
-	}
-};
-
-template <typename TVALUE, typename TINDEX>
-class ImageChannelConv
-{
-public:
-	TINDEX _channel;
-
-	ImageChannelConv(const TINDEX channel)
-	{
-		_channel = channel;
-	}
-
-	TVALUE convertPixel(const Picture::TriChanPixel<TVALUE>& value)
-	{
-		return value.Channels[_channel];
-	}
-};
-
-typedef ImageChannelConv<UInt8, UInt8> Image8ChannelConv8;
-
-template <typename TVALUE, typename TINDEX>
-class ImageChannelExpandConv
-{
-public:
-	TINDEX _channel;
-
-	ImageChannelExpandConv(const TINDEX channel)
-	{
-		_channel = channel;
-	}
-
-	Picture::TriChanPixel<TVALUE> convertPixel(const Picture::TriChanPixel<TVALUE>& value)
-	{
-		TVALUE v = value.Channels[_channel];
-		return Picture::TriChanPixel<TVALUE>(v, v, v);
-	}
-};
-
 template <typename TINTERVAL, typename TFLOATING, typename TINDEX>
 class ImageChannelExpandFloatConv
 {
@@ -78,14 +31,7 @@ public:
 	}
 };
 
-typedef ImageChannelExpandConv<UInt8, UInt8> Image8ChannelExpandConv8;
-
 typedef ImageChannelExpandFloatConv<Common::UnitInterval32, Float32, UInt8> Image8ChannelExpandFloatConvU8ToF32;
-
-static Picture::TriChanPixel<UInt8> staticConvertPixel(const Float32& value)
-{
-	return Picture::TriChanPixel<UInt8>(0, 0, 0);
-}
 
 int main(int argc, char *argv[])
 {
