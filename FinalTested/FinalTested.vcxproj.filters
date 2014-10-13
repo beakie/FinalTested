@@ -113,22 +113,22 @@
     <ClInclude Include="picture-selectchanavgquadchanpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-_quadchanpixelconvbuilders.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-_rgbpixelconvbuilders.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="common-_static.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-_trichanpixelconvbuilders.h">
+    <ClInclude Include="picture-quadchanpixelconvbuilders_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-_rgbpixelhelpers.h">
+    <ClInclude Include="picture-rgbpixelconvbuilders_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-_colormaps.h">
+    <ClInclude Include="picture-rgbpixelhelpers_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-trichanpixelconvbuilders_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-colormaps_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
