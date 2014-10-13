@@ -70,11 +70,11 @@ namespace Picture
 				_toMapping = _colorMap->Values[i][_index + 1];
 
 				if (_fromMapping == _toMapping)
-					_channel[i] = (TPIXELOUT)Common::Math::round(((Float32)_fromMapping * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound); // round all this
+					_channel[i] = (TPIXELOUT)Common::round(((Float32)_fromMapping * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound); // round all this
 				else
 				{
 					_newValue = ((_toMapping - _fromMapping) * _valueDiff) + _fromMapping;
-					_channel[i] = (TPIXELOUT)Common::Math::round(((Float32)_newValue * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound); // round all this
+					_channel[i] = (TPIXELOUT)Common::round(((Float32)_newValue * (1 / _inBoundDiff) * _outBoundDiff) + _outLowerBound); // round all this
 				}
 			}
 

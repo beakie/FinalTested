@@ -59,9 +59,6 @@
     <ClInclude Include="core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-math.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="picture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -138,6 +135,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="common-static_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common-math_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

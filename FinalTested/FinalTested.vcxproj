@@ -87,7 +87,7 @@
     <ClInclude Include="common-types_.h" />
     <ClInclude Include="picture-colormaps_.h" />
     <ClInclude Include="common-imatrixadapter.h" />
-    <ClInclude Include="common-math.h" />
+    <ClInclude Include="common-math_.h" />
     <ClInclude Include="common-matrix2.h" />
     <ClInclude Include="common-matrix3.h" />
     <ClInclude Include="common-matrix4.h" />
