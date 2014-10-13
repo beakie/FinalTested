@@ -51,6 +51,8 @@ int main(int argc, char *argv[])
 	// ************
 	// Add RescaleConv with template specialization
 	// ************
+	// Add ConvertPixelChainConv (TVALUEIN, TVALUE1), (TVALUE1, TVALUE2), (TVALUE2, TVALUEOUT) -- overloads
+	// ************
 
 	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
 	Common::Image8F32 testImage = Common::Image8F32(100, 100, 0.51);
