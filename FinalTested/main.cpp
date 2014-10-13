@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
 	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
 	Common::Image8F32 testImage = Common::Image8F32(100, 100, 0.51);
 
-	Picture::TriColorMap32 map = Picture::getRGBJetColorMap<Common::UnitInterval32>();
+	Picture::TriColorMap64 map = Picture::getRGBJetColorMap();
 
 	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::ImageMapper8::getImage(QImage("D:\\Win7Users\\Beakie\\Desktop\\Test8.jpg"))
 	//																	.getImage<UInt8>(&Image8ChannelConv8(0))

@@ -37,7 +37,7 @@ namespace Common
 	/// <summary>
 	/// Max available size unit interval (0 - 1)
 	/// </summary>
-	typedef FloatMax UnitInterval;
+	typedef FloatMax UnitIntervalMax;
 	/// <summary>
 	/// matrix of size 2 with 1 bit values
 	/// </summary>

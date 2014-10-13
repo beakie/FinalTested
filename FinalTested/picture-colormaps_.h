@@ -9,7 +9,7 @@
 namespace Picture
 {
 
-	template <typename TUNITINTERVAL>
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
 	TriColorMap<TUNITINTERVAL> getRGBJetColorMap()
 	{
 		TriColorMap<TUNITINTERVAL> map(9);
@@ -33,7 +33,7 @@ namespace Picture
 		return map;
 	}
 
-	template <typename TUNITINTERVAL>
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
 	static TriColorMap<TUNITINTERVAL> getRGBGreyColorMap()
 	{
 		TriColorMap<TUNITINTERVAL> map(2);
