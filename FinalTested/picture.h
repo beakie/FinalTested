@@ -203,6 +203,7 @@ namespace Picture
 	typedef QuadColorMapConv<Common::UnitInterval64, Float64, UInt16> QuadColorMap64Conv16;
 
 	typedef QuadColorMapConv<Common::UnitInterval64, Float64, UInt32> QuadColorMap64Conv32;
-	}
+
+}
 
 #endif // PICTURE_H
