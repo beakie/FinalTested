@@ -37,5 +37,17 @@ typedef float Float32;
 /// Floating point numeric (double)
 /// </summary>
 typedef double Float64;
+/// <summary>
+/// Max available size unsigned integer
+/// </summary>
+typedef UInt32 UIntMax;
+/// <summary>
+/// Max available size integer
+/// </summary>
+typedef Int32 IntMax;
+/// <summary>
+/// Max available size floating point
+/// </summary>
+typedef Float64 FloatMax;
 
 #endif // CORE_H
