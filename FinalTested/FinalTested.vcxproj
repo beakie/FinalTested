@@ -83,6 +83,7 @@
     <ClInclude Include="common-array.h" />
     <ClInclude Include="common-dumbcastpixelconv.h" />
     <ClInclude Include="common-image.h" />
+    <ClInclude Include="common-ipixelconverter.h" />
     <ClInclude Include="common-scalecastpixelconv.h" />
     <ClInclude Include="common-unitinterval.h" />
     <ClInclude Include="picture-colormaps_.h" />

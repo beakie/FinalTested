@@ -140,5 +140,8 @@
     <ClInclude Include="common-unitinterval.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-ipixelconverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
