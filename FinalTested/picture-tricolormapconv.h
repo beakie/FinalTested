@@ -22,7 +22,7 @@ namespace Picture
 		FloatMax _outBoundDiff;
 		UInt8 _lastIndex;
 		TUNITINTERVAL _spacing;
-		TUNITINTERVAL _indexUnrounded;
+		TUNITINTERVAL _indexUnfloored;
 		UInt8 _index;
 		TUNITINTERVAL _fromMapping;
 		TUNITINTERVAL _toMapping;
@@ -55,16 +55,19 @@ namespace Picture
 														(_colorMap->Values[1][_lastIndex] * _outBoundDiff) + _outLowerBound,
 														(_colorMap->Values[2][_lastIndex] * _outBoundDiff) + _outLowerBound);
 
-			_indexUnrounded = ((FloatMax)value - _inLowerBound) / _inBoundDiff / _spacing;
-			_index = (UInt8)_indexUnrounded;
+			_indexUnfloored = ((FloatMax)value - _inLowerBound) / _inBoundDiff / _spacing;
+			_index = (UInt8)_indexUnfloored;
 
-			if (_indexUnrounded == _index)
+			if (_indexUnfloored == _index)
 				return Picture::TriChanPixel<TPIXELOUT>((_colorMap->Values[0][_index] * _outBoundDiff) + _outLowerBound,
 														(_colorMap->Values[1][_index] * _outBoundDiff) + _outLowerBound,
 														(_colorMap->Values[2][_index] * _outBoundDiff) + _outLowerBound);
 
 
-			FloatMax _unitIntervalValue = (value - _inLowerBound) / _inBoundDiff;
+			FloatMax _valueUnitInterval = ((FloatMax)value - _inLowerBound) / _inBoundDiff;
+			FloatMax _fromUnitInterval = _index * _spacing;
+			FloatMax _toUnitInterval = (_index + 1) * _spacing;
+			FloatMax _diffUnitInterval = (_valueUnitInterval - _fromUnitInterval) / (_toUnitInterval - _fromUnitInterval);
 
 			for (UInt8 i = 0; i < 3; i++)
 			{
@@ -74,7 +77,7 @@ namespace Picture
 				if (_fromMapping == _toMapping)
 					_newValue = _fromMapping;
 				else
-					_newValue = (_unitIntervalValue - _fromMapping) / (_toMapping - _fromMapping);
+					_newValue = ((_toMapping - _fromMapping) * _diffUnitInterval) + _fromMapping;
 
 				_channel[i] = (TPIXELOUT)Common::round(((Float32)_newValue * _outBoundDiff) + _outLowerBound); // round all this (as will always be out going int?)
 			}

@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 	//Picture::Image8RGBPixel8 testImageDisk = Common::Image<Int8, UInt8>(10, 10, 0.1)
 	//													.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, Int8, UInt8>(&map));
 
-	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBImage<UInt8>(QImage("c:\\Grey.jpg")) //(QImage("c:\\Test8.jpg"))
+	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBImage<UInt8>(QImage("c:\\Test8.jpg")) //(QImage("c:\\Grey.jpg"))
 																.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
 																.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, UInt8, UInt8>(&map));
 
