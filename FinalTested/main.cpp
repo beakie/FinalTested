@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 	//Picture::Image8RGBPixel8 testImageDisk = Common::Image<Int8, UInt8>(10, 10, 0.1)
 	//													.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, Int8, UInt8>(&map));
 
-	if (true)
+	if (false)
 	{
 		Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBImage<UInt8>(QImage("c:\\Test8.jpg"))
 			.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
 			for (int n = 0; n < 3; n++)
 			{
 				std::cout << (int)testImageDisk.Values[x][0].Channels[n];
-				std::cout << "\n";
+				std::cout << "\t";
 			}
 			std::cout << "\n";
 		}
@@ -83,6 +83,6 @@ int main(int argc, char *argv[])
 		//label->show();
 		//widget.show();
 
-		return a.exec();
+		//return a.exec();
 	}
 }

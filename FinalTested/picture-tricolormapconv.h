@@ -13,7 +13,7 @@ namespace Picture
 	class TriColorMapConv
 	{
 	private:
-		const Picture::TriColorMap<TUNITINTERVAL>* _colorMap; // transform this on population. lowerbound defines offset, upperbound lets calc of multiplication
+		const TriColorMap<TUNITINTERVAL>* _colorMap; // transform this on population. lowerbound defines offset, upperbound lets calc of multiplication
 		FloatMax _inLowerBound;
 		FloatMax _inUpperBound;
 		FloatMax _inBoundDiff;
@@ -27,10 +27,14 @@ namespace Picture
 		TUNITINTERVAL _fromMapping;
 		TUNITINTERVAL _toMapping;
 		TUNITINTERVAL _newValue;
+		FloatMax _valueUnitInterval;
+		FloatMax _fromUnitInterval;
+		FloatMax _toUnitInterval;
+		FloatMax _diffUnitInterval;
 		FloatMax _channel[3];
 
 	public:
-		TriColorMapConv(const Picture::TriColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
+		TriColorMapConv(const TriColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
 		{
 			_colorMap = colorMap;
 			_inLowerBound = lowerBound;
@@ -43,31 +47,31 @@ namespace Picture
 			_outBoundDiff = _outUpperBound - _outLowerBound;
 		}
 
-		TriColorMapConv(const Picture::TriColorMap<TUNITINTERVAL>* colorMap)
+		TriColorMapConv(const TriColorMap<TUNITINTERVAL>* colorMap)
 			: TriColorMapConv(colorMap, Common::getLowerBound<TPIXELIN>(), Common::getUpperBound<TPIXELIN>())
 		{
 		}
 
-		Picture::TriChanPixel<TPIXELOUT> convertPixel(const TPIXELIN& value)
+		TriChanPixel<TPIXELOUT> convertPixel(const TPIXELIN& value)
 		{
 			if (value == _inUpperBound)
-				return Picture::TriChanPixel<TPIXELOUT>((_colorMap->Values[0][_lastIndex] * _outBoundDiff) + _outLowerBound,
-														(_colorMap->Values[1][_lastIndex] * _outBoundDiff) + _outLowerBound,
-														(_colorMap->Values[2][_lastIndex] * _outBoundDiff) + _outLowerBound);
+				return TriChanPixel<TPIXELOUT>((_colorMap->Values[0][_lastIndex] * _outBoundDiff) + _outLowerBound,
+												(_colorMap->Values[1][_lastIndex] * _outBoundDiff) + _outLowerBound,
+												(_colorMap->Values[2][_lastIndex] * _outBoundDiff) + _outLowerBound);
 
 			_indexUnfloored = ((FloatMax)value - _inLowerBound) / _inBoundDiff / _spacing;
 			_index = (UInt8)_indexUnfloored;
 
 			if (_indexUnfloored == _index)
-				return Picture::TriChanPixel<TPIXELOUT>((_colorMap->Values[0][_index] * _outBoundDiff) + _outLowerBound,
-														(_colorMap->Values[1][_index] * _outBoundDiff) + _outLowerBound,
-														(_colorMap->Values[2][_index] * _outBoundDiff) + _outLowerBound);
+				return TriChanPixel<TPIXELOUT>((_colorMap->Values[0][_index] * _outBoundDiff) + _outLowerBound,
+												(_colorMap->Values[1][_index] * _outBoundDiff) + _outLowerBound,
+												(_colorMap->Values[2][_index] * _outBoundDiff) + _outLowerBound);
 
 
-			FloatMax _valueUnitInterval = ((FloatMax)value - _inLowerBound) / _inBoundDiff;
-			FloatMax _fromUnitInterval = _index * _spacing;
-			FloatMax _toUnitInterval = (_index + 1) * _spacing;
-			FloatMax _diffUnitInterval = (1 - (_valueUnitInterval - _fromUnitInterval) / (_toUnitInterval - _fromUnitInterval));
+			_valueUnitInterval = ((FloatMax)value - _inLowerBound) / _inBoundDiff;
+			_fromUnitInterval = _index * _spacing;
+			_toUnitInterval = (_index + 1) * _spacing;
+			_diffUnitInterval = (1 - (_valueUnitInterval - _fromUnitInterval) / (_toUnitInterval - _fromUnitInterval));
 
 			for (UInt8 i = 0; i < 3; i++)
 			{
@@ -80,9 +84,9 @@ namespace Picture
 					_channel[i] = ((_toMapping - _fromMapping) * _diffUnitInterval) + _fromMapping;
 			}
 
-			return Picture::TriChanPixel<TPIXELOUT>((_channel[0] * _outBoundDiff) + _outLowerBound,
-													(_channel[1] * _outBoundDiff) + _outLowerBound,
-													(_channel[2] * _outBoundDiff) + _outLowerBound);
+			return TriChanPixel<TPIXELOUT>((_channel[0] * _outBoundDiff) + _outLowerBound,
+											(_channel[1] * _outBoundDiff) + _outLowerBound,
+											(_channel[2] * _outBoundDiff) + _outLowerBound);
 		}
 	};
 
