@@ -697,6 +697,16 @@ namespace Common
 			return i;
 		}
 
+		template <typename TCONVERTER>
+		Common::Image<TVALUE, TINDEX> convImage(TCONVERTER* converter)
+		{
+			for (TINDEX x = 0; x < Width; x++)
+				for (TINDEX y = 0; y < Height; y++)
+					Values[x][y] = converter->convertPixel(Values[x][y]);
+
+			return i;
+		}
+
 	private:
 		void createPixelArray(TINDEX width, TINDEX height)
 		{
