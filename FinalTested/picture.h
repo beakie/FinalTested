@@ -4,6 +4,20 @@
 #include "core.h"
 #include "common.h"
 
+// todo
+// picture-rgbtohsvpixelconv
+// picture-hsvtorgbpixelconv
+//..and the rest
+
+//http://en.wikipedia.org/wiki/List_of_color_spaces_and_their_uses
+//color spaces
+//rgba
+//cmyk
+//rgb
+//hsv
+//yuv
+
+
 #include "picture-colormaps_.h"
 #include "picture-quadchanpixel.h"
 #include "picture-quadchanpixelconvbuilders_.h"
