@@ -12,7 +12,7 @@ namespace Picture
 	namespace Qt
 	{
 		template <typename TINDEX>
-		Common::Image<Picture::RGBPixel8, TINDEX> getRGBImage(QImage qimage)
+		Common::Image<Picture::RGBPixel8, TINDEX> getRGBPixel8Image(QImage qimage)
 		{
 			int width = qimage.width();
 			TINDEX height = qimage.height();
