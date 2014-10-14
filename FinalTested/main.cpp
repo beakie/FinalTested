@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 	//													.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, Int8, UInt8>(&map));
 
 	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBPixel8Image<UInt8>(QImage("c:\\Test8.jpg"))
-															.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
+															.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>()).invert()
 															.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, UInt8, UInt8>(&map));
 
 	QWidget widget;

@@ -325,13 +325,13 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator!() const
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX> = *this;
+			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX>(*this);
 
 			TVALUE upperBound = getUpperBound<TVALUE>();
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					Values[x][y] = upperBound - i.Values[x][y];
+					i.Values[x][y] = upperBound - Values[x][y];
 
 			return i;
 		}
