@@ -47,40 +47,18 @@ int main(int argc, char *argv[])
 	//Picture::Image8RGBPixel8 testImageDisk = Common::Image<Int8, UInt8>(10, 10, 0.1)
 	//													.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, Int8, UInt8>(&map));
 
-	if (true)
-	{
-		Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBImage<UInt8>(QImage("c:\\Test8.jpg"))
-			.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
-			.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, UInt8, UInt8>(&map));
+	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBImage<UInt8>(QImage("c:\\Test8.jpg"))
+	.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
+	.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, UInt8, UInt8>(&map));
 
-		QWidget widget;
-		QLabel* label = new QLabel(&widget);
-		label->setPixmap(Picture::Qt::getQPixmap<UInt8>(testImageDisk));
-		label->show();
-		widget.show();
+	QWidget widget;
+	QLabel* label = new QLabel(&widget);
+	label->setPixmap(Picture::Qt::getQPixmap<UInt8>(testImageDisk));
+	label->show();
+	widget.show();
 
-		return a.exec();
-	}
-	else
-	{
-		Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBImage<UInt8>(QImage("c:\\Grey.jpg"))
-			.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>())
-			.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, UInt8, UInt8>(&map));
+	std::cout << "Finished\n";
 
-		for (int x = 0; x < testImageDisk.Width; x++)
-		{
-			for (int n = 0; n < 3; n++)
-				std::cout << (int)testImageDisk.Values[x][0].Channels[n] << "\t";
+	return a.exec();
 
-			std::cout << "\n";
-		}
-
-		//QWidget widget;
-		//QLabel* label = new QLabel(&widget);
-		//label->setPixmap(Picture::Qt::getQPixmap<UInt8>(testImageDisk));
-		//label->show();
-		//widget.show();
-
-		//return a.exec();
-	}
 }
