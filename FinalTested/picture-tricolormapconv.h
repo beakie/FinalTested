@@ -22,13 +22,10 @@ namespace Picture
 		FloatMax _outBoundDiff;
 		UInt8 _lastIndex;
 		TUNITINTERVAL _spacing;
-		TUNITINTERVAL _indexUnfloored;
+		FloatMax _indexUnfloored;
 		UInt8 _index;
 		TUNITINTERVAL _fromMapping;
 		TUNITINTERVAL _toMapping;
-		TUNITINTERVAL _newValue;
-		FloatMax _valueUnitInterval;
-		FloatMax _fromUnitInterval;
 		FloatMax _toUnitInterval;
 		FloatMax _diffUnitInterval;
 		FloatMax _channel[3];
@@ -68,10 +65,8 @@ namespace Picture
 												(_colorMap->Values[2][_index] * _outBoundDiff) + _outLowerBound);
 
 
-			_valueUnitInterval = ((FloatMax)value - _inLowerBound) / _inBoundDiff;
-			_fromUnitInterval = _index * _spacing;
 			_toUnitInterval = (_index + 1) * _spacing;
-			_diffUnitInterval = 1 - ((_toUnitInterval - _valueUnitInterval) / (_toUnitInterval - _fromUnitInterval));
+			_diffUnitInterval = 1 - ((_toUnitInterval - (((FloatMax)value - _inLowerBound) / _inBoundDiff)) / (_toUnitInterval - (_index * _spacing)));
 
 			for (UInt8 i = 0; i < 3; i++)
 			{
