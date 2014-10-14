@@ -71,7 +71,7 @@ namespace Picture
 			_valueUnitInterval = ((FloatMax)value - _inLowerBound) / _inBoundDiff;
 			_fromUnitInterval = _index * _spacing;
 			_toUnitInterval = (_index + 1) * _spacing;
-			_diffUnitInterval = (1 - (_valueUnitInterval - _fromUnitInterval) / (_toUnitInterval - _fromUnitInterval));
+			_diffUnitInterval = 1 - ((_toUnitInterval - _valueUnitInterval) / (_toUnitInterval - _fromUnitInterval));
 
 			for (UInt8 i = 0; i < 3; i++)
 			{
