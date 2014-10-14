@@ -58,6 +58,27 @@ namespace Picture
 		return map;
 	}
 
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static TriColorMap<TUNITINTERVAL> getRGBHotColorMap()
+	{
+		TriColorMap<TUNITINTERVAL> map(6);
+
+		//black red yellow white
+
+		map.Values[0][0] = 0.0;
+		map.Values[0][1] = 0.5;
+		map.Values[0][2] = map.Values[0][3] = map.Values[0][4] = map.Values[0][5] = 1.0;
+
+		map.Values[1][0] = map.Values[1][1] = map.Values[1][2] = 0.0;
+		map.Values[1][3] = 0.5;
+		map.Values[1][4] = map.Values[1][5] = 1.0;
+
+		map.Values[2][0] = map.Values[2][1] = map.Values[2][2] = map.Values[2][3] = map.Values[2][4] = 0.0;
+		map.Values[2][5] = 1.0;
+
+		return map;
+	}
+
 }
 
 #endif // PICTURECOLORMAPS_H

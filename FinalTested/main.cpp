@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
 	Common::Image8F32 testImage = Common::Image8F32(100, 100, 0.51);
 
-	Picture::TriColorMap32 map = Picture::getRGBCoolColorMap<Common::UnitInterval32>();
+	Picture::TriColorMap32 map = Picture::getRGBHotColorMap<Common::UnitInterval32>();
 	//Picture::TriColorMap32 map = Picture::getRGBGreyColorMap<Common::UnitInterval32>();
 
 	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBPixel8Image<UInt8>(QImage("c:\\Test8.jpg"))
