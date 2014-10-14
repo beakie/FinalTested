@@ -39,7 +39,7 @@ namespace Picture
 		TriColorMap<TUNITINTERVAL> map(2);
 
 		map.Values[0][0] = map.Values[1][0] = map.Values[2][0] = 0.0;
-		map.Values[0][1] = map.Values[1][1] = map.Values[1][1] = 1.0;
+		map.Values[0][1] = map.Values[1][1] = map.Values[2][1] = 1.0;
 
 		return map;
 	}
