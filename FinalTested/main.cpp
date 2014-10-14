@@ -70,10 +70,8 @@ int main(int argc, char *argv[])
 		for (int x = 0; x < testImageDisk.Width; x++)
 		{
 			for (int n = 0; n < 3; n++)
-			{
-				std::cout << (int)testImageDisk.Values[x][0].Channels[n];
-				std::cout << "\t";
-			}
+				std::cout << (int)testImageDisk.Values[x][0].Channels[n] << "\t";
+
 			std::cout << "\n";
 		}
 
