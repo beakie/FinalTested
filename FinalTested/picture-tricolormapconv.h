@@ -27,7 +27,7 @@ namespace Picture
 		TUNITINTERVAL _fromMapping;
 		TUNITINTERVAL _toMapping;
 		TUNITINTERVAL _newValue;
-		TPIXELOUT _channel[3];
+		FloatMax _channel[3];
 
 	public:
 		TriColorMapConv(const Picture::TriColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
@@ -75,11 +75,9 @@ namespace Picture
 				_toMapping = _colorMap->Values[i][_index + 1];
 
 				if (_fromMapping == _toMapping)
-					_newValue = _fromMapping;
+					_channel[i] = _fromMapping;
 				else
-					_newValue = ((_toMapping - _fromMapping) * _diffUnitInterval) + _fromMapping;
-
-				_channel[i] = (TPIXELOUT)Common::round(((Float32)_newValue * _outBoundDiff) + _outLowerBound); // round all this (as will always be out going int?)
+					_channel[i] = ((_toMapping - _fromMapping) * _diffUnitInterval) + _fromMapping;
 			}
 
 			return Picture::TriChanPixel<TPIXELOUT>((_channel[0] * _outBoundDiff) + _outLowerBound,
