@@ -14,6 +14,7 @@
 #include "common-matrixn.h"
 #include "common-scalecastpixelconv.h"
 #include "common-static_.h"
+#include "common-tuple.h"
 #include "common-unitinterval.h"
 
 namespace Common
