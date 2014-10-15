@@ -85,6 +85,7 @@
     <ClInclude Include="common-image.h" />
     <ClInclude Include="common-ipixelconverter.h" />
     <ClInclude Include="common-scalecastpixelconv.h" />
+    <ClInclude Include="common-tuple.h" />
     <ClInclude Include="common-unitinterval.h" />
     <ClInclude Include="picture-colormaps_.h" />
     <ClInclude Include="common-imatrixadapter.h" />

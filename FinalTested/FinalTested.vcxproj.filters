@@ -143,5 +143,8 @@
     <ClInclude Include="common-ipixelconverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-tuple.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
