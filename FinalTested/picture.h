@@ -233,29 +233,29 @@ namespace Picture
 
 	//add the rest of these functions. relying entirly on floats sucks.
 
-	typedef TriColorMapPixelConv<Common::UnitInterval32, Float32, UInt8> TriColorMap32Conv8;
+	typedef TriColorMapPixelConv<Common::UnitInterval32, Float32, UInt8> TriColorMap32PixelConv8;
 
-	typedef TriColorMapPixelConv<Common::UnitInterval32, Float32, UInt16> TriColorMap32Conv16;
+	typedef TriColorMapPixelConv<Common::UnitInterval32, Float32, UInt16> TriColorMap32PixelConv16;
 
-	typedef TriColorMapPixelConv<Common::UnitInterval32, Float32, UInt32> TriColorMap32Conv32;
+	typedef TriColorMapPixelConv<Common::UnitInterval32, Float32, UInt32> TriColorMap32PixelConv32;
 
-	typedef TriColorMapPixelConv<Common::UnitInterval64, Float64, UInt8> TriColorMap64Conv8;
+	typedef TriColorMapPixelConv<Common::UnitInterval64, Float64, UInt8> TriColorMap64PixelConv8;
 
-	typedef TriColorMapPixelConv<Common::UnitInterval64, Float64, UInt16> TriColorMap64Conv16;
+	typedef TriColorMapPixelConv<Common::UnitInterval64, Float64, UInt16> TriColorMap64PixelConv16;
 
-	typedef TriColorMapPixelConv<Common::UnitInterval64, Float64, UInt32> TriColorMap64Conv32;
+	typedef TriColorMapPixelConv<Common::UnitInterval64, Float64, UInt32> TriColorMap64PixelConv32;
 
-	typedef QuadColorMapConv<Common::UnitInterval32, Float32, UInt8> QuadColorMap32Conv8;
+	typedef QuadColorMapPixelConv<Common::UnitInterval32, Float32, UInt8> QuadColorMap32PixelConv8;
 
-	typedef QuadColorMapConv<Common::UnitInterval32, Float32, UInt16> QuadColorMap32Conv16;
+	typedef QuadColorMapPixelConv<Common::UnitInterval32, Float32, UInt16> QuadColorMap32PixelConv16;
 
-	typedef QuadColorMapConv<Common::UnitInterval32, Float32, UInt32> QuadColorMap32Conv32;
+	typedef QuadColorMapPixelConv<Common::UnitInterval32, Float32, UInt32> QuadColorMap32PixelConv32;
 
-	typedef QuadColorMapConv<Common::UnitInterval64, Float64, UInt8> QuadColorMap64Conv8;
+	typedef QuadColorMapPixelConv<Common::UnitInterval64, Float64, UInt8> QuadColorMap64PixelConv8;
 
-	typedef QuadColorMapConv<Common::UnitInterval64, Float64, UInt16> QuadColorMap64Conv16;
+	typedef QuadColorMapPixelConv<Common::UnitInterval64, Float64, UInt16> QuadColorMap64PixelConv16;
 
-	typedef QuadColorMapConv<Common::UnitInterval64, Float64, UInt32> QuadColorMap64Conv32;
+	typedef QuadColorMapPixelConv<Common::UnitInterval64, Float64, UInt32> QuadColorMap64PixelConv32;
 
 }
 

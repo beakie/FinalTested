@@ -13,32 +13,31 @@ namespace Picture
 	{
 		TUNITINTERVAL** Values;
 		UInt8 Size;
+		TUNITINTERVAL SpacingSize;
 
-		QuadColorMap(UInt8 size) : Size(size)
+		QuadColorMap(UInt8 size)
 		{
 			createValues(size);
 		}
 
-		QuadColorMap(const QuadColorMap<TUNITINTERVAL>& QuadColorMap) : Size(QuadColorMap.Size)
+		QuadColorMap(const QuadColorMap<TUNITINTERVAL>& quadColorMap)
 		{
-			createValues(QuadColorMap.Size);
-			copyValues(QuadColorMap);
+			createValues(quadColorMap.Size);
+			copyValues(quadColorMap);
 		}
 
-		QuadColorMap<TUNITINTERVAL>& operator=(const QuadColorMap<TUNITINTERVAL>& QuadColorMap)
+		QuadColorMap<TUNITINTERVAL>& operator=(const QuadColorMap<TUNITINTERVAL>& quadColorMap)
 		{
-			if (this != &QuadColorMap)
+			if (this != &quadColorMap)
 			{
 				deleteValues();
-				createValues(QuadColorMap.Size);
-				copyValues(QuadColorMap);
-
-				Size = QuadColorMap.Size;
+				createValues(quadColorMap.Size);
+				copyValues(quadColorMap);
 			}
 
 			return *this;
 		}
-		
+
 	private:
 		void createValues(UInt8 size)
 		{
@@ -47,6 +46,8 @@ namespace Picture
 			Values[1] = new TUNITINTERVAL[size];
 			Values[2] = new TUNITINTERVAL[size];
 			Values[3] = new TUNITINTERVAL[size];
+			Size = size;
+			SpacingSize = (float)1 / (size - 1);
 		}
 
 		void deleteValues()
@@ -58,14 +59,14 @@ namespace Picture
 			delete[] Values;
 		}
 
-		void copyValues(const QuadColorMap<TUNITINTERVAL>& QuadColorMap)
+		void copyValues(const QuadColorMap<TUNITINTERVAL>& quadColorMap)
 		{
-			for (UInt8 i = 0; i < QuadColorMap.Size; i++)
+			for (UInt8 i = 0; i < quadColorMap.Size; i++)
 			{
-				Values[0][i] = QuadColorMap.Values[0][i];
-				Values[1][i] = QuadColorMap.Values[1][i];
-				Values[2][i] = QuadColorMap.Values[2][i];
-				Values[3][i] = QuadColorMap.Values[3][i];
+				Values[0][i] = quadColorMap.Values[0][i];
+				Values[1][i] = quadColorMap.Values[1][i];
+				Values[2][i] = quadColorMap.Values[2][i];
+				Values[3][i] = quadColorMap.Values[3][i];
 			}
 		}
 
