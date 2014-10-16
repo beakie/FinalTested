@@ -19,12 +19,13 @@
 
 
 #include "picture-colormaps_.h"
+#include "picture-colormodelconvbuilders_.h"
+#include "picture-colormodelhelpers_.h"
 #include "picture-quadchanpixel.h"
 #include "picture-quadchanpixelconvbuilders_.h"
 #include "picture-quadcolormap.h"
-#include "picture-quadcolormapconv.h"
-#include "picture-colormodelconvbuilders_.h"
-#include "picture-colormodelhelpers_.h"
+#include "picture-quadcolormappixelconv.h"
+#include "picture-rgbhsvpixelconv.h"
 #include "picture-selectchanavgquadchanpixelconv.h"
 #include "picture-selectchanavgtrichanpixelconv.h"
 #include "picture-selectchanquadchanpixelconv.h"
@@ -36,7 +37,7 @@
 #include "picture-trichanpixel.h"
 #include "picture-trichanpixelconvbuilders_.h"
 #include "picture-tricolormap.h"
-#include "picture-tricolormapconv.h"
+#include "picture-tricolormappixelconv.h"
 
 namespace Picture
 {
@@ -232,17 +233,17 @@ namespace Picture
 
 	//add the rest of these functions. relying entirly on floats sucks.
 
-	typedef TriColorMapConv<Common::UnitInterval32, Float32, UInt8> TriColorMap32Conv8;
+	typedef TriColorMapPixelConv<Common::UnitInterval32, Float32, UInt8> TriColorMap32Conv8;
 
-	typedef TriColorMapConv<Common::UnitInterval32, Float32, UInt16> TriColorMap32Conv16;
+	typedef TriColorMapPixelConv<Common::UnitInterval32, Float32, UInt16> TriColorMap32Conv16;
 
-	typedef TriColorMapConv<Common::UnitInterval32, Float32, UInt32> TriColorMap32Conv32;
+	typedef TriColorMapPixelConv<Common::UnitInterval32, Float32, UInt32> TriColorMap32Conv32;
 
-	typedef TriColorMapConv<Common::UnitInterval64, Float64, UInt8> TriColorMap64Conv8;
+	typedef TriColorMapPixelConv<Common::UnitInterval64, Float64, UInt8> TriColorMap64Conv8;
 
-	typedef TriColorMapConv<Common::UnitInterval64, Float64, UInt16> TriColorMap64Conv16;
+	typedef TriColorMapPixelConv<Common::UnitInterval64, Float64, UInt16> TriColorMap64Conv16;
 
-	typedef TriColorMapConv<Common::UnitInterval64, Float64, UInt32> TriColorMap64Conv32;
+	typedef TriColorMapPixelConv<Common::UnitInterval64, Float64, UInt32> TriColorMap64Conv32;
 
 	typedef QuadColorMapConv<Common::UnitInterval32, Float32, UInt8> QuadColorMap32Conv8;
 

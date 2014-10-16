@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 
 	Picture::Image8RgbPixel8 testImageDisk = Picture::Qt::getRgbPixel8Image<UInt8>(QImage("c:\\Test8.jpg"))
 															.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>()).invert()
-															.getImage<Picture::RgbPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, UInt8, UInt8>(&map));
+															.getImage<Picture::RgbPixel8>(&Picture::TriColorMapPixelConv<Common::UnitInterval32, UInt8, UInt8>(&map));
 
 	QWidget widget;
 	QLabel* label = new QLabel(&widget);

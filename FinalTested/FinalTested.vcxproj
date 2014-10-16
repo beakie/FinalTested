@@ -117,8 +117,8 @@
     <ClInclude Include="common-static_.h" />
     <ClInclude Include="common.h" />
     <ClInclude Include="core.h" />
-    <ClInclude Include="picture-quadcolormapconv.h" />
-    <ClInclude Include="picture-tricolormapconv.h" />
+    <ClInclude Include="picture-quadcolormappixelconv.h" />
+    <ClInclude Include="picture-tricolormappixelconv.h" />
     <ClInclude Include="picture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

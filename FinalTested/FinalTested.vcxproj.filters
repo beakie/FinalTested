@@ -71,9 +71,6 @@
     <ClInclude Include="picture-quadcolormap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-quadcolormapconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="picture-selectchanavgtrichanpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -87,9 +84,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-tricolormap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-tricolormapconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-selectchantrichanpixelconv.h">
@@ -146,7 +140,13 @@
     <ClInclude Include="picture-colormodelhelpers_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="picture-tricolormappixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="picture-rgbhsvpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-quadcolormappixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
