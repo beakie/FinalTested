@@ -1,10 +1,12 @@
-#ifndef PICTURERGBPIXELCONVBUILDERSCONV_H
-#define PICTURERGBPIXELCONVBUILDERSCONV_H
+#ifndef PICTURECOLORMODELCONVBUILDERS_H
+#define PICTURECOLORMODELCONVBUILDERS_H
 
-#include "picture-trichanpixel.h"
+#include "picture-quadchanpixel.h"
+#include "picture-rgbtohsvpixelconv.h"
 #include "picture-spreadchantrichanpixelconv.h"
 #include "picture-selectchantrichanpixelconv.h"
 #include "picture-selectchanavgtrichanpixelconv.h"
+#include "picture-trichanpixel.h"
 
 namespace Picture
 {
@@ -51,6 +53,12 @@ namespace Picture
 		return SelectChanAvgTriChanPixelConv<TVALUE>();
 	}
 
+	template <typename TVALUE>
+	RgbToHsvPixelConv<TVALUE> getRgbToHsvPixelConv()
+	{
+		return RgbToHsvPixelConv<TVALUE>();
+	}
+
 }
 
-#endif // PICTURERGBPIXELCONVBUILDERSCONV_H
+#endif // PICTURECOLORMODELCONVBUILDERS_H

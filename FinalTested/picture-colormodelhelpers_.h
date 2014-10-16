@@ -1,5 +1,5 @@
-#ifndef PICTUREPIXELS_H
-#define PICTUREPIXELS_H
+#ifndef PICTURECOLORMODELHELPERS_H
+#define PICTURECOLORMODELHELPERS_H
 
 #include "picture-trichanpixel.h"
 #include "picture-quadchanpixel.h"
@@ -133,4 +133,4 @@ namespace Picture
 	}
 }
 
-#endif // PICTUREPIXELS_H
+#endif // PICTURECOLORMODELHELPERS_H
