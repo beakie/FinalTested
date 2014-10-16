@@ -5,7 +5,7 @@ namespace Picture
 {
 	template <typename TVALUE>
 	/// <summary>
-	/// Quadruple chan pixel
+	/// Quadple channel pixel
 	/// </summary>
 	struct QuadChanPixel
 	{
@@ -15,12 +15,12 @@ namespace Picture
 		{
 		}
 
-		QuadChanPixel(TVALUE chan1, TVALUE chan2, TVALUE chan3, TVALUE chan4)
+		QuadChanPixel(TVALUE channel1, TVALUE channel2, TVALUE channel3, TVALUE channel4)
 		{
-			Channels[0] = chan1;
-			Channels[1] = chan2;
-			Channels[2] = chan3;
-			Channels[3] = chan4;
+			Channels[0] = channel1;
+			Channels[1] = channel2;
+			Channels[2] = channel3;
+			Channels[3] = channel4;
 		}
 
 		/// <summary>
@@ -32,6 +32,19 @@ namespace Picture
 			Channels[1] = pixel.Channels[1];
 			Channels[2] = pixel.Channels[2];
 			Channels[3] = pixel.Channels[3];
+
+			return *this;
+		}
+
+		/// <summary>
+		/// Operator
+		/// </summary>
+		QuadChanPixel<TVALUE>& operator=(const TVALUE value)
+		{
+			Channels[0] = value;
+			Channels[1] = value;
+			Channels[2] = value;
+			Channels[3] = value;
 
 			return *this;
 		}

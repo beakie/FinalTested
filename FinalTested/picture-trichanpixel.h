@@ -15,11 +15,11 @@ namespace Picture
 		{
 		}
 
-		TriChanPixel(TVALUE chan1, TVALUE chan2, TVALUE chan3)
+		TriChanPixel(TVALUE channel1, TVALUE channel2, TVALUE channel3)
 		{
-			Channels[0] = chan1;
-			Channels[1] = chan2;
-			Channels[2] = chan3;
+			Channels[0] = channel1;
+			Channels[1] = channel2;
+			Channels[2] = channel3;
 		}
 
 		/// <summary>
