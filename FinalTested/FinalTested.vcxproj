@@ -99,7 +99,7 @@
     <ClInclude Include="picture-qt.h" />
     <ClInclude Include="picture-quadchanpixelconvbuilders_.h" />
     <ClInclude Include="picture-quadcolormap.h" />
-    <ClInclude Include="picture-rgbpixelconvbuilders_.h" />
+    <ClInclude Include="picture-colormodelconvbuilders_.h" />
     <ClInclude Include="picture-selectchanavgquadchanpixelconv.h" />
     <ClInclude Include="picture-selectchanavgtrichanpixelconv.h" />
     <ClInclude Include="picture-selectchanquadchanpixelconv.h" />
@@ -110,7 +110,7 @@
     <ClInclude Include="picture-spreadvaluetrichanpixelconv.h" />
     <ClInclude Include="picture-trichanpixelconvbuilders_.h" />
     <ClInclude Include="picture-tricolormap.h" />
-    <ClInclude Include="picture-rgbpixelhelpers_.h" />
+    <ClInclude Include="picture-colormodelhelpers_.h" />
     <ClInclude Include="picture-quadchanpixel.h" />
     <ClInclude Include="picture-trichanpixel.h" />
     <ClInclude Include="common-static_.h" />
