@@ -6,6 +6,8 @@
 namespace Common
 {
 
+	static const long double Pi = acos(-1.0);
+
 	template <typename T>
 	static T sin(const T value)
 	{
@@ -60,18 +62,6 @@ namespace Common
 		return std::pow(value, p);
 	}
 
-	template <typename T>
-	static T min(const T value1, const T value2)
-	{
-		return (value1 < value2 ? value1 : value2);
-	}
-
-	template <typename T>
-	static T max(const T value1, const T value2)
-	{
-		return (value1 > value2 ? value1 : value2);
-	}
-
 	template <typename TFLOATING>
 	static TFLOATING floor(const TFLOATING value)
 	{
@@ -91,7 +81,41 @@ namespace Common
 		return floor(value + 0.5);
 	}
 
-	static const long double Pi = acos(-1.0);
+	template <typename T>
+	static T min(const T value1, const T value2)
+	{
+		return (value1 < value2 ? value1 : value2);
+	}
+
+	template <typename T>
+	static T min(const T value1, const T value2, const T value3)
+	{
+		return min(min(value1, value2), value3);
+	}
+
+	template <typename T>
+	static T min(const T value1, const T value2, const T value3, const T value4)
+	{
+		return min(min(min(value1, value2), value3), value4);
+	}
+
+	template <typename T>
+	static T max(const T value1, const T value2)
+	{
+		return (value1 > value2 ? value1 : value2);
+	}
+
+	template <typename T>
+	static T max(const T value1, const T value2, const T value3)
+	{
+		return min(min(value1, value2), value3);
+	}
+
+	template <typename T>
+	static T max(const T value1, const T value2, const T value3, const T value4)
+	{
+		return min(min(min(value1, value2), value3), value4);
+	}
 
 }
 
