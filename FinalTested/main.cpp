@@ -12,7 +12,7 @@
 #include "picture-qt.h"
 
 template <typename TIN, typename TCHAIN1, typename TCHAIN2, typename TOUT>
-class ChainPixelConv //could this be done with mixin?
+class Chain3PixelConv //could this be done with mixin?
 {
 private:
 	TCHAIN1(*convertPixel1)(const TIN&);
