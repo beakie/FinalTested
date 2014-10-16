@@ -149,5 +149,8 @@
     <ClInclude Include="picture-rgbtohsvpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="picture-hsvtorgbpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
