@@ -100,6 +100,7 @@
     <ClInclude Include="picture-quadchanpixelconvbuilders_.h" />
     <ClInclude Include="picture-quadcolormap.h" />
     <ClInclude Include="picture-colormodelconvbuilders_.h" />
+    <ClInclude Include="picture-rgbhsvpixelconv.h" />
     <ClInclude Include="picture-selectchanavgquadchanpixelconv.h" />
     <ClInclude Include="picture-selectchanavgtrichanpixelconv.h" />
     <ClInclude Include="picture-selectchanquadchanpixelconv.h" />

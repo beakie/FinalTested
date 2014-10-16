@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
 	Common::Image8F32 testImage = Common::Image8F32(100, 100, 0.51);
 
-	Picture::TriColorMap32 map = Picture::getRGBHotColorMap<Common::UnitInterval32>();
+	Picture::TriColorMap32 map = Picture::getRgbHotColorMap<Common::UnitInterval32>();
 	//Picture::TriColorMap32 map = Picture::getRGBGreyColorMap<Common::UnitInterval32>();
 
 	//Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBPixel8Image<UInt8>(QImage("c:\\Test8.jpg"))
@@ -49,9 +49,9 @@ int main(int argc, char *argv[])
 	//Picture::Image8RGBPixel8 testImageDisk = Common::Image<Int8, UInt8>(10, 10, 0.1)
 	//													.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, Int8, UInt8>(&map));
 
-	Picture::Image8RGBPixel8 testImageDisk = Picture::Qt::getRGBPixel8Image<UInt8>(QImage("c:\\Test8.jpg"))
+	Picture::Image8RgbPixel8 testImageDisk = Picture::Qt::getRgbPixel8Image<UInt8>(QImage("c:\\Test8.jpg"))
 															.getImage<UInt8>(&Picture::getSelect0TriChanPixelConv<UInt8>()).invert()
-															.getImage<Picture::RGBPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, UInt8, UInt8>(&map));
+															.getImage<Picture::RgbPixel8>(&Picture::TriColorMapConv<Common::UnitInterval32, UInt8, UInt8>(&map));
 
 	QWidget widget;
 	QLabel* label = new QLabel(&widget);

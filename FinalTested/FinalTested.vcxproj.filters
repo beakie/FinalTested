@@ -146,5 +146,8 @@
     <ClInclude Include="picture-colormodelhelpers_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="picture-rgbhsvpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

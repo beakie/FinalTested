@@ -10,7 +10,7 @@ namespace Picture
 {
 
 	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
-	TriColorMap<TUNITINTERVAL> getRGBJetColorMap()
+	TriColorMap<TUNITINTERVAL> getRgbJetColorMap()
 	{
 		TriColorMap<TUNITINTERVAL> map(9);
 
@@ -22,7 +22,7 @@ namespace Picture
 	}
 
 	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
-	static TriColorMap<TUNITINTERVAL> getRGBGreyColorMap()
+	static TriColorMap<TUNITINTERVAL> getRgbGreyColorMap()
 	{
 		TriColorMap<TUNITINTERVAL> map(2);
 
@@ -33,7 +33,7 @@ namespace Picture
 	}
 
 	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
-	static TriColorMap<TUNITINTERVAL> getRGBCoolColorMap()
+	static TriColorMap<TUNITINTERVAL> getRgbCoolColorMap()
 	{
 		TriColorMap<TUNITINTERVAL> map(2);
 
@@ -44,7 +44,7 @@ namespace Picture
 	}
 
 	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
-	static TriColorMap<TUNITINTERVAL> getRGBHotColorMap()
+	static TriColorMap<TUNITINTERVAL> getRgbHotColorMap()
 	{
 		TriColorMap<TUNITINTERVAL> map(6);
 
