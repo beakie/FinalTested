@@ -1,8 +1,6 @@
 #include <QApplication>
 #include <QImage>
-#include <QPixmap>
 #include <QWidget>
-#include <QPainter>
 #include <QLabel>
 #include <iostream>
 
