@@ -1,9 +1,8 @@
 #include <QApplication>
-#include <QImage>
 #include <QWidget>
 #include <QLabel>
+#include <QImage>
 #include <iostream>
-
 #include "core.h"
 #include "common.h"
 #include "picture.h"
