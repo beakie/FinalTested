@@ -20,3 +20,5 @@ namespace Picture
 }
 
 #endif // PICTUREHSVTORGBPIXELCONV_H
+
+//http://www.cs.rit.edu/~ncs/color/t_convert.html#RGB%20to%20HSV%20&%20HSV%20to%20RGB
