@@ -3,7 +3,7 @@
 
 #include "core.h"
 #include "common-array.h"
-#include "common-dumbcastpixelconv.h"
+#include "common-castpixelconv.h"
 #include "common-image.h"
 #include "common-imatrixadapter.h"
 #include "common-ipixelconverter.h"

@@ -1,12 +1,12 @@
-#ifndef COMMONDUMBCASTPIXELCONV_H
-#define COMMONDUMBCASTPIXELCONV_H
+#ifndef COMMONCASTPIXELCONV_H
+#define COMMONCASTPIXELCONV_H
 
 #include "core.h"
 
 namespace Common
 {
 	template <typename TIN, typename TOUT>
-	class DumbCastPixelConv
+	class CastPixelConv
 	{
 	public:
 		TOUT convertPixel(const TIN& pixel)
@@ -16,4 +16,4 @@ namespace Common
 	};
 }
 
-#endif // COMMONDUMBCASTPIXELCONV_H
+#endif // COMMONCASTPIXELCONV_H
