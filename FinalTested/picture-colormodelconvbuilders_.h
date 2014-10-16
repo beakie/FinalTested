@@ -1,6 +1,7 @@
 #ifndef PICTURECOLORMODELCONVBUILDERS_H
 #define PICTURECOLORMODELCONVBUILDERS_H
 
+#include "picture-hsvtorgbpixelconv.h"
 #include "picture-quadchanpixel.h"
 #include "picture-rgbtohsvpixelconv.h"
 #include "picture-spreadchantrichanpixelconv.h"
@@ -57,6 +58,12 @@ namespace Picture
 	RgbToHsvPixelConv<TVALUE> getRgbToHsvPixelConv()
 	{
 		return RgbToHsvPixelConv<TVALUE>();
+	}
+
+	template <typename TVALUE>
+	HsvToRgbPixelConv<TVALUE> getHsvToRgbPixelConv()
+	{
+		return HsvToRgbPixelConv<TVALUE>();
 	}
 
 }
