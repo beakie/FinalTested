@@ -4,6 +4,7 @@
 #include "core.h"
 #include "common-array.h"
 #include "common-castpixelconv.h"
+#include "common-chainpixelconv.h"
 #include "common-image.h"
 #include "common-imatrixadapter.h"
 #include "common-ipixelconverter.h"

@@ -87,7 +87,7 @@
     <ClInclude Include="common-scalecastpixelconv.h" />
     <ClInclude Include="common-tuple.h" />
     <ClInclude Include="common-unitinterval.h" />
-    <ClInclude Include="picture-chain3pixelconv.h" />
+    <ClInclude Include="common-chain3pixelconv.h" />
     <ClInclude Include="picture-colormaps_.h" />
     <ClInclude Include="common-imatrixadapter.h" />
     <ClInclude Include="common-math_.h" />

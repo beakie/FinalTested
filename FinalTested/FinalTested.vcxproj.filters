@@ -152,7 +152,7 @@
     <ClInclude Include="picture-hsvtorgbpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-chain3pixelconv.h">
+    <ClInclude Include="common-chain3pixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
