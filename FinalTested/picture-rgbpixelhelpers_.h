@@ -97,39 +97,39 @@ namespace Picture
 	}
 
 	/// <summary>
-	/// Returns the alpha from an ARGB pixel
+	/// Returns the red from an CMYK pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getARGBAPixelAlpha(const Picture::QuadChanPixel<TVALUE>& argbPixel)
+	static TVALUE getCMYKPixelCyan(const Picture::QuadChanPixel<TVALUE>& cmykPixel)
 	{
-		return argbPixel.Channels[0];
+		return cmykPixel.Channels[0];
 	}
 
 	/// <summary>
-	/// Returns the red from an ARGB pixel
+	/// Returns the blue from an CMYK pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getARGBPixelRed(const Picture::QuadChanPixel<TVALUE>& argbPixel)
+	static TVALUE getCMYKPixelMagenta(const Picture::QuadChanPixel<TVALUE>& cmykPixel)
 	{
-		return argbPixel.Channels[1];
+		return cmykPixel.Channels[1];
 	}
 
 	/// <summary>
-	/// Returns the blue from an ARGB pixel
+	/// Returns the green from an CMYK pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getARGBAPixelBlue(const Picture::QuadChanPixel<TVALUE>& argbPixel)
+	static TVALUE getCMYKPixelYellow(const Picture::QuadChanPixel<TVALUE>& cmykPixel)
 	{
-		return argbPixel.Channels[2];
+		return cmykPixel.Channels[2];
 	}
 
 	/// <summary>
-	/// Returns the green from an ARGB pixel
+	/// Returns the alpha from an CMYK pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getARGBAPixelGreen(const Picture::QuadChanPixel<TVALUE>& argbPixel)
+	static TVALUE getCMYKPixelKey(const Picture::QuadChanPixel<TVALUE>& cmykPixel)
 	{
-		return argbPixel.Channels[3];
+		return cmykPixel.Channels[3];
 	}
 }
 

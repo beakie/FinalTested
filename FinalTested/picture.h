@@ -77,6 +77,18 @@ namespace Picture
 	/// </summary>
 	typedef QuadChanPixel<UInt32> RGBAPixel32;
 	/// <summary>
+	/// 1 byte precision CMYK pixel
+	/// </summary>
+	typedef QuadChanPixel<UInt8> CMYKPixel8;
+	/// <summary>
+	/// 2 byte precision CMYK pixel
+	/// </summary>
+	typedef QuadChanPixel<UInt16> CMYKPixel16;
+	/// <summary>
+	/// 4 byte precision CMYK pixel
+	/// </summary>
+	typedef QuadChanPixel<UInt32> CMYKPixel32;
+	/// <summary>
 	/// 1 byte precision greyscale pixel
 	/// </summary>
 	typedef UInt8 GreyPixel8;
@@ -161,6 +173,30 @@ namespace Picture
 	/// Image with 2 byte dimensions and 4 byte precision RGBA pixels
 	/// </summary>
 	typedef Common::Image<RGBAPixel32, UInt16> Image16RGBAPixel32;
+	/// <summary>
+	/// Image with 1 byte dimensions and 1 byte precision CMYK pixels
+	/// </summary>
+	typedef Common::Image<RGBAPixel8, UInt8> Image8CMYKPixel8;
+	/// <summary>
+	/// Image with 1 byte dimensions and 2 byte precision CMYK pixels
+	/// </summary>
+	typedef Common::Image<RGBAPixel16, UInt8> Image8CMYKPixel16;
+	/// <summary>
+	/// Image with 1 byte dimensions and 4 byte precision CMYK pixels
+	/// </summary>
+	typedef Common::Image<RGBAPixel32, UInt8> Image8CMYKPixel32;
+	/// <summary>
+	/// Image with 2 byte dimensions and 1 byte precision CMYK pixels
+	/// </summary>
+	typedef Common::Image<RGBAPixel8, UInt16> Image16CMYKPixel8;
+	/// <summary>
+	/// Image with 2 byte dimensions and 2 byte precision CMYK pixels
+	/// </summary>
+	typedef Common::Image<RGBAPixel16, UInt16> Image16CMYKPixel16;
+	/// <summary>
+	/// Image with 2 byte dimensions and 4 byte precision CMYK pixels
+	/// </summary>
+	typedef Common::Image<RGBAPixel32, UInt16> Image16CMYKPixel32;
 	/// <summary>
 	/// Image with 1 byte dimensions and 1 byte greyscale pixels
 	/// </summary>
