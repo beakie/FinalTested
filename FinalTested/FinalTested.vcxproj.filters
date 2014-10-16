@@ -143,10 +143,10 @@
     <ClInclude Include="picture-tricolormappixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-rgbhsvpixelconv.h">
+    <ClInclude Include="picture-quadcolormappixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-quadcolormappixelconv.h">
+    <ClInclude Include="picture-rgbtohsvpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
