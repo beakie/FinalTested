@@ -5,7 +5,7 @@
 #include "common.h"
 #include "picture-trichanpixel.h"
 
-namespace Picture
+namespace Common
 {
 	template <typename TVALUEOUT, typename TCONVERTER1, typename TCONVERTER2, typename TVALUEIN>
 	class Chain2PixelConv
