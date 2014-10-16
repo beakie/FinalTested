@@ -11,20 +11,6 @@
 #include "picture.h"
 #include "picture-qt.h"
 
-template <typename TIN, typename TCHAIN1, typename TCHAIN2, typename TOUT>
-class Chain3PixelConv //could this be done with mixin?
-{
-private:
-	TCHAIN1(*convertPixel1)(const TIN&);
-	TCHAIN2(*convertPixel2)(const TCHAIN1&);
-	TOUT(*convertPixel3)(const TCHAIN2&);
-public:
-	TOUT convertPixel(const TIN& pixel)
-	{
-		return convertPixel3(convertPixel2(convertPixel1(pixel)));
-	}
-};
-
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
