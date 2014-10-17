@@ -7,5 +7,7 @@
 5) Change pixel to color for colormodel stuff?
 6) Create color convert functions (and call them from the pixel convert code?)
 7) Make UnitInterval class instead of float... should do a mod 1 on assignment operator
+8) Change colormap stuff to use vector3
+9) Rename colormap linearcolormap?
 
 */
