@@ -17,6 +17,9 @@
 #include "common-static_.h"
 #include "common-tuple.h"
 #include "common-unitinterval.h"
+#include "common-vector2.h"
+#include "common-vector3.h"
+#include "common-vector4.h"
 
 namespace Common
 {

@@ -31,12 +31,12 @@ struct Vector4
         values[3] = z;
     }
 
-    TVALUE dotProduct(const Vector4<TVALUE> &v)
+	TVALUE dotProduct(const Vector4<TVALUE> &vector)
     {
-        return (values[0] * v.values[0] + values[1] * v.values[1] + values[2] * v.values[2] + values[3] * v.values[3]);
+		return (values[0] * vector.values[0] + values[1] * vector.values[1] + values[2] * vector.values[2] + values[3] * vector.values[3]);
     }
 
-    Vector4<TVALUE> crossProduct(const Vector4<TVALUE> &v)
+	Vector4<TVALUE> crossProduct(const Vector4<TVALUE> &vector)
     {
         // todo
         Vector4<TVALUE> vector;
