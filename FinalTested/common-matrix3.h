@@ -23,6 +23,11 @@ namespace Common
 		{
 		}
 
+		Matrix3(const Matrix3<TVALUE>& matrix)
+		{
+			operator=(matrix);
+		}
+
 		/// <summary>
 		/// Constructs a matrix and sets all the values to a single value
 		/// </summary>

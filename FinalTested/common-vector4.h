@@ -23,12 +23,20 @@ struct Vector4
 		values[3] = vector.values[3];
 	}
 
-	Vector4(TVALUE w, TVALUE x, TVALUE y, TVALUE z)
+	Vector4(TVALUE value)
+	{
+		values[0] = value;
+		values[1] = value;
+		values[2] = value;
+		values[3] = value;
+	}
+
+	Vector4(TVALUE value1, TVALUE value2, TVALUE value3, TVALUE value4)
     {
-        values[0] = w;
-        values[1] = x;
-        values[2] = y;
-        values[3] = z;
+		values[0] = value1;
+		values[1] = value2;
+		values[2] = value3;
+		values[3] = value4;
     }
 
 	TVALUE dotProduct(const Vector4<TVALUE> &vector)
@@ -43,53 +51,50 @@ struct Vector4
         return vector;
     }
 
-    Vector4<TVALUE> operator+(const Vector4<TVALUE> &vector) const
-    {
-		Vector4<TVALUE> v;
-		
-		v.values[0] = values[0] + vector.values[0];
-		v.values[1] = values[1] + vector.values[1];
-		v.values[2] = values[2] + vector.values[2];
-		v.values[3] = values[3] + vector.values[3];
+	Vector4<TVALUE> operator+(const Vector4<TVALUE>& vector) const
+	{
+		Vector4<TVALUE> v = *this;
 
-         return v;
-    }
+		v += vector;
 
-    Vector4<TVALUE> operator-(const Vector4<TVALUE> &vector) const
-    {
-		Vector4<TVALUE> v;
+		return v;
+	}
 
-        v.values[0] = values[0] - vector.values[0];
-		v.values[1] = values[1] - vector.values[1];
-		v.values[2] = values[2] - vector.values[2];
-		v.values[3] = values[3] - vector.values[3];
+	Vector4<TVALUE>& operator+=(const Vector4<TVALUE>& vector)
+	{
+		values[0] += vector.values[0];
+		values[1] += vector.values[1];
+		values[2] += vector.values[2];
+		values[3] += vector.values[3];
 
-         return v;
-    }
+		return *this;
+	}
 
-    Vector4<TVALUE> & operator=(const Vector4<TVALUE> &vector)
-    {
-        values[0] = vector.values[0];
-        values[1] = vector.values[1];
-        values[2] = vector.values[2];
-        values[3] = vector.values[3];
+	Vector4<TVALUE> operator-(const Vector4<TVALUE>& vector) const
+	{
+		Vector4<TVALUE> v = *this;
 
-        return *this;
-    }
+		v -= vector;
 
-    bool operator==(const Vector4<TVALUE> &vector)
-    {
-        return (vector.values[0] == values[0]) && (vector.values[1] == values[1]) && (vector.values[2] == values[2]) && (vector.values[3] == values[3]);
-    }
+		return v;
+	}
+
+	Vector4<TVALUE> operator-=(const Vector4<TVALUE>& vector) const
+	{
+		values[0] -= vector.values[0];
+		values[1] -= vector.values[1];
+		values[2] -= vector.values[2];
+		values[3] -= vector.values[3];
+
+		return *this;
+	}
+
+	bool operator==(const Vector4<TVALUE>& vector)
+	{
+		return (vector.values[0] == values[0]) && (vector.values[1] == values[1]) && (vector.values[2] == values[2]) && (vector.values[3] == values[3]);
+	}
 
     virtual ~Vector4() { }
-
-    Vector4<TVALUE> operator*(const Matrix4<TVALUE> &matrix) const
-    {
-        // todo
-
-		return Vector4<TVALUE>();
-    }
 };
 
 }

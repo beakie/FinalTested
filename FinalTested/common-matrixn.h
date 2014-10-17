@@ -26,6 +26,11 @@ namespace Common
 			//todo
 		}
 
+		MatrixN(const MatrixN<TVALUE>& matrix)
+		{
+			operator=(matrix);
+		}
+
 		/// <summary>
 		/// Constructs a matrix and sets all the values to a single value
 		/// </summary>

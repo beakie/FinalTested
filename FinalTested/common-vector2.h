@@ -19,10 +19,16 @@ struct Vector2
 		values[1] = vector.values[1];
 	}
 
-    Vector2(TVALUE a, TVALUE b)
+	Vector2(TVALUE value)
+	{
+		values[0] = value;
+		values[1] = value;
+	}
+
+    Vector2(TVALUE value1, TVALUE value2)
     {
-        values[0] = a;
-        values[1] = b;
+		values[0] = value1;
+		values[1] = value2;
     }
 
     TVALUE dotProduct(const Vector2<TVALUE>& vector)
@@ -35,33 +41,47 @@ struct Vector2
 		return (values[0] * vector.values[1]) - (values[1] * vector.values[0]);
     }
 
-    Vector2<TVALUE> operator+(const Vector2<TVALUE>& vector) const
+	Vector2<TVALUE>& operator=(const Vector2<TVALUE>& vector)
+	{
+		values[0] = vector.values[0];
+		values[1] = vector.values[1];
+
+		return *this;
+	}
+
+	Vector2<TVALUE> operator+(const Vector2<TVALUE>& vector) const
+	{
+		Vector2<TVALUE> v = *this;
+
+		v += vector;
+
+		return v;
+	}
+
+	Vector2<TVALUE>& operator+=(const Vector2<TVALUE>& vector)
+	{
+		values[0] += vector.values[0];
+		values[1] += vector.values[1];
+
+		return *this;
+	}
+
+	Vector2<TVALUE> operator-(const Vector2<TVALUE>& vector) const
+	{
+		Vector2<TVALUE> v = *this;
+
+		v -= vector;
+
+		return v;
+	}
+
+    Vector2<TVALUE> operator-=(const Vector2<TVALUE>& vector) const
     {
-		Vector2<TVALUE> v = Vector2<TVALUE>(vector);
-        
-		v.values[0] = vector.values[0] + values[0];
-		v.values[1] = vector.values[1] + values[1];
+		values[0] -= vector.values[0];
+		values[1] -= vector.values[1];
 
-        return v;
-    }
-
-    Vector2<TVALUE> operator-(const Vector2<TVALUE>& vector) const
-    {
-		Vector2<TVALUE> v;
-
-		v.values[0] = vector.values[0] - values[0];
-		v.values[1] = vector.values[1] - values[1];
-
-         return v;
-    }
-
-    Vector2<TVALUE> & operator=(const Vector2<TVALUE>& vector)
-    {
-        values[0] = vector.values[0];
-        values[1] = vector.values[1];
-
-        return *this;
-    }
+		return *this;
+	}
 
     bool operator==(const Vector2<TVALUE>& vector)
     {
