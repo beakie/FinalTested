@@ -18,6 +18,7 @@
 //yuv
 
 
+#include "picture-colorhelpers_.h"
 #include "picture-colormaps_.h"
 #include "picture-colormodelconvbuilders_.h"
 #include "picture-colormodelhelpers_.h"
