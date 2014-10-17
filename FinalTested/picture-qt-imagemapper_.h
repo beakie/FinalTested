@@ -12,25 +12,25 @@ namespace Picture
 	namespace Qt
 	{
 		template <typename TINDEX>
-		Common::Image<Picture::RgbPixel8, TINDEX> getRgbPixel8Image(QImage qimage)
+		Common::Image<Picture::Rgb8, TINDEX> getRgb8Image(QImage qimage)
 		{
 			int width = qimage.width();
 			TINDEX height = qimage.height();
 
-			Common::Image<Picture::RgbPixel8, TINDEX> image = Common::Image<Picture::RgbPixel8, TINDEX>(width, height);
+			Common::Image<Picture::Rgb8, TINDEX> image = Common::Image<Picture::Rgb8, TINDEX>(width, height);
 
 			for (TINDEX x = 0; x < width; x++)
 				for (TINDEX y = 0; y < height; y++)
 				{
 					QRgb pixel = qimage.pixel(x, y);
-					image.Pixels[x][y] = Picture::RgbPixel8(qRed(pixel), qGreen(pixel), qBlue(pixel));
+					image.Pixels[x][y] = Picture::Rgb8(qRed(pixel), qGreen(pixel), qBlue(pixel));
 				}
 
 			return image;
 		}
 
 		template <typename TINDEX>
-		QImage getQImage(Common::Image<Picture::RgbPixel8, TINDEX> image)
+		QImage getQImage(Common::Image<Picture::Rgb8, TINDEX> image)
 		{
 			QImage qimage = QImage(image.Width, image.Height, QImage::Format_RGB888);
 
@@ -45,7 +45,7 @@ namespace Picture
 		}
 
 		template <typename TINDEX>
-		QPixmap getQPixmap(Common::Image<Picture::RgbPixel8, TINDEX> image)
+		QPixmap getQPixmap(Common::Image<Picture::Rgb8, TINDEX> image)
 		{
 			return QPixmap::fromImage(getQImage(image));
 		}

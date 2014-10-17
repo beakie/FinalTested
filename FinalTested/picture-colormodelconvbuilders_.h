@@ -12,57 +12,57 @@ namespace Picture
 {
 
 	template <typename TVALUE>
-	SpreadChanTriChanPixelConv<TVALUE> getGreySpreadRedRgbPixelConv()
+	SpreadChanTriChanPixelConv<TVALUE> getGreySpreadRedRgbConv()
 	{
 		return SpreadChanTriChanPixelConv<TVALUE>(0);
 	}
 
 	template <typename TVALUE>
-	SpreadChanTriChanPixelConv<TVALUE> getGreySpreadGreenRgbPixelConv()
+	SpreadChanTriChanPixelConv<TVALUE> getGreySpreadGreenRgbConv()
 	{
 		return SpreadChanTriChanPixelConv<TVALUE>(1);
 	}
 
 	template <typename TVALUE>
-	SpreadChanTriChanPixelConv<TVALUE> getGreySpreadBlueRgbPixelConv()
+	SpreadChanTriChanPixelConv<TVALUE> getGreySpreadBlueRgbConv()
 	{
 		return SpreadChanTriChanPixelConv<TVALUE>(2);
 	}
 
 	template <typename TVALUE>
-	SelectChanTriChanPixelConv<TVALUE> getSelectRedRgbPixelConv()
+	SelectChanTriChanPixelConv<TVALUE> getSelectRedRgbConv()
 	{
 		return SelectChanTriChanPixelConv<TVALUE>(0);
 	}
 
 	template <typename TVALUE>
-	SelectChanTriChanPixelConv<TVALUE> getSelectGreenRgbPixelConv()
+	SelectChanTriChanPixelConv<TVALUE> getSelectGreenRgbConv()
 	{
 		return SelectChanTriChanPixelConv<TVALUE>(1);
 	}
 
 	template <typename TVALUE>
-	SelectChanTriChanPixelConv<TVALUE> getSelectBlueRgbPixelConv()
+	SelectChanTriChanPixelConv<TVALUE> getSelectBlueRgbConv()
 	{
 		return SelectChanTriChanPixelConv<TVALUE>(2);
 	}
 
 	template <typename TVALUE>
-	SelectChanAvgTriChanPixelConv<TVALUE> getRgbPixelIntensityConv()
+	SelectChanAvgTriChanPixelConv<TVALUE> getRgbIntensityConv()
 	{
 		return SelectChanAvgTriChanPixelConv<TVALUE>();
 	}
 
 	template <typename TVALUE>
-	RgbToHsvPixelConv<TVALUE> getRgbToHsvPixelConv()
+	RgbToHsvConv<TVALUE> getRgbToHsvConv()
 	{
-		return RgbToHsvPixelConv<TVALUE>();
+		return RgbToHsvConv<TVALUE>();
 	}
 
 	template <typename TVALUE>
-	HsvToRgbPixelConv<TVALUE> getHsvToRgbPixelConv()
+	HsvToRgbConv<TVALUE> getHsvToRgbConv()
 	{
-		return HsvToRgbPixelConv<TVALUE>();
+		return HsvToRgbConv<TVALUE>();
 	}
 
 }
