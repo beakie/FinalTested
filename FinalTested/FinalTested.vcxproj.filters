@@ -104,9 +104,6 @@
     <ClInclude Include="common-scalecastpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-static_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="common-math_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -156,6 +153,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-colorhelpers_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common-bounds_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

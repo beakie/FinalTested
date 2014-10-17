@@ -1,11 +1,11 @@
 #ifndef COMMONIMAGE_H
 #define COMMONIMAGE_H
 
+#include "common-bounds_.h"
 #include "common-math_.h"
 #include "common-matrix2.h"
 #include "common-matrix3.h"
 #include "common-matrix4.h"
-#include "common-static_.h"
 
 namespace Common
 {

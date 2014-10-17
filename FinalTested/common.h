@@ -3,6 +3,7 @@
 
 #include "core.h"
 #include "common-array.h"
+#include "common-bounds_.h"
 #include "common-castpixelconv.h"
 #include "common-chainpixelconv.h"
 #include "common-image.h"
@@ -13,7 +14,6 @@
 #include "common-matrix4.h"
 #include "common-matrixn.h"
 #include "common-scalecastpixelconv.h"
-#include "common-static_.h"
 #include "common-tuple.h"
 #include "common-unitinterval.h"
 #include "common-vector2.h"

@@ -27,6 +27,10 @@ int main(int argc, char *argv[])
 
 	std::cout << "Finished\n";
 
+	Picture::Rgb8 rg = Picture::getGreenRgb<UInt8>();
+
+	Common::Vector3<Common::UnitIntervalMax> ui = Picture::getGreenRgb();
+
 	return a.exec();
 
 }
