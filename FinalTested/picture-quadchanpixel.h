@@ -9,7 +9,7 @@ namespace Picture
 	/// </summary>
 	struct QuadChanPixel
 	{
-		TVALUE Channels[3];
+		TVALUE Channels[4];
 
 		QuadChanPixel()
 		{
