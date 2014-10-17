@@ -282,10 +282,17 @@ struct Vector3
 
 	bool operator==(const Vector3<TVALUE>& vector)
 	{
-		return (vector.Values[0] == Values[0]) && (vector.Values[1] == Values[1]) && (vector.Values[2] == Values[2]);
+		return (Values[0] == vector.Values[0]) && (Values[1] == vector.Values[1]) && (Values[2] == vector.Values[2]);
 	}
 
-    virtual ~Vector3() { }
+	bool operator==(const TVALUE value)
+	{
+		return (Values[0] == value) && (Values[1] == value) && (Values[2] == value);
+	}
+
+    virtual ~Vector3()
+	{
+	}
 };
 
 }
