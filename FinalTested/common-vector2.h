@@ -66,6 +66,23 @@ struct Vector2
 		return *this;
 	}
 
+	Vector2<TVALUE> operator+(const TVALUE value) const
+	{
+		Vector2<TVALUE> v = *this;
+
+		v += value;
+
+		return v;
+	}
+
+	Vector2<TVALUE>& operator+=(const TVALUE value)
+	{
+		Values[0] += value;
+		Values[1] += value;
+
+		return *this;
+	}
+
 	Vector2<TVALUE> operator-(const Vector2<TVALUE>& vector) const
 	{
 		Vector2<TVALUE> v = *this;
@@ -75,18 +92,103 @@ struct Vector2
 		return v;
 	}
 
-    Vector2<TVALUE> operator-=(const Vector2<TVALUE>& vector) const
-    {
+	Vector2<TVALUE>& operator-=(const Vector2<TVALUE>& vector) const
+	{
 		Values[0] -= vector.Values[0];
 		Values[1] -= vector.Values[1];
 
 		return *this;
 	}
 
-    bool operator==(const Vector2<TVALUE>& vector)
-    {
-        return (vector.Values[0] == Values[0]) && (vector.Values[1] == Values[1]);
-    }
+	Vector2<TVALUE> operator-(const TVALUE value) const
+	{
+		Vector2<TVALUE> v = *this;
+
+		v -= value;
+
+		return v;
+	}
+
+	Vector2<TVALUE>& operator-=(const TVALUE value) const
+	{
+		Values[0] -= value;
+		Values[1] -= value;
+
+		return *this;
+	}
+
+	Vector2<TVALUE> operator*(const TVALUE value) const
+	{
+		Vector2<TVALUE> v = *this;
+
+		v *= value;
+
+		return v;
+	}
+
+	Vector2<TVALUE>& operator*=(const TVALUE value) const
+	{
+		Values[0] *= value;
+		Values[1] *= value;
+
+		return *this;
+	}
+
+	Vector2<TVALUE> operator/(const TVALUE value) const
+	{
+		Vector2<TVALUE> v = *this;
+
+		v /= value;
+
+		return v;
+	}
+
+	Vector2<TVALUE>& operator/=(const TVALUE value) const
+	{
+		Values[0] /= value;
+		Values[1] /= value;
+
+		return *this;
+	}
+
+	Vector2<TVALUE> operator&(const TVALUE value) const
+	{
+		Vector2<TVALUE> v = *this;
+
+		v /= value;
+
+		return v;
+	}
+
+	Vector2<TVALUE>& operator&=(const TVALUE value) const
+	{
+		Values[0] &= value;
+		Values[1] &= value;
+
+		return *this;
+	}
+
+	Vector2<TVALUE> operator|(const TVALUE value) const
+	{
+		Vector2<TVALUE> v = *this;
+
+		v |= value;
+
+		return v;
+	}
+
+	Vector2<TVALUE>& operator|=(const TVALUE value) const
+	{
+		Values[0] |= value;
+		Values[1] |= value;
+
+		return *this;
+	}
+
+	bool operator==(const Vector2<TVALUE>& vector)
+	{
+		return (vector.Values[0] == Values[0]) && (vector.Values[1] == Values[1]);
+	}
 
     virtual ~Vector2() { }
 };
