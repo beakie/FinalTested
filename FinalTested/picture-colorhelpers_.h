@@ -5,84 +5,100 @@
 
 namespace Picture
 {
-	static Common::Vector3<Common::UnitIntervalMax> getWhiteRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getWhiteRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(1, 1, 1);
+		return Common::Vector3<TUNITINTERVAL>(1, 1, 1);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getSilverRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getSilverRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(0.75, 0.75, 0.75);
+		return Common::Vector3<TUNITINTERVAL>(0.75, 0.75, 0.75);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getGreyRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getGreyRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(0.5, 0.5, 0.5);
+		return Common::Vector3<TUNITINTERVAL>(0.5, 0.5, 0.5);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getBlackRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getBlackRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(0, 0, 0);
+		return Common::Vector3<TUNITINTERVAL>(0, 0, 0);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getRedRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getRedRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(1, 0, 0);
+		return Common::Vector3<TUNITINTERVAL>(1, 0, 0);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getMaroonRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getMaroonRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(0.5, 0, 0);
+		return Common::Vector3<TUNITINTERVAL>(0.5, 0, 0);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getYellowRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getYellowRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(1, 1, 0);
+		return Common::Vector3<TUNITINTERVAL>(1, 1, 0);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getOliveRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getOliveRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(0.5, 0.5, 0);
+		return Common::Vector3<TUNITINTERVAL>(0.5, 0.5, 0);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getLimeRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getLimeRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(0, 1, 0);
+		return Common::Vector3<TUNITINTERVAL>(0, 1, 0);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getGreenRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getGreenRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(0, 0.5, 0);
+		return Common::Vector3<TUNITINTERVAL>(0, 0.5, 0);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getAquaRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getAquaRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(0, 1, 1);
+		return Common::Vector3<TUNITINTERVAL>(0, 1, 1);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getTealRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getTealRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(0, 0.5, 0.5);
+		return Common::Vector3<TUNITINTERVAL>(0, 0.5, 0.5);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getBlueRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getBlueRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(0, 0, 1);
+		return Common::Vector3<TUNITINTERVAL>(0, 0, 1);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getNavyRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getNavyRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(0, 0, 0.5);
+		return Common::Vector3<TUNITINTERVAL>(0, 0, 0.5);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getFuchsiaRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getFuchsiaRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(1, 0, 1);
+		return Common::Vector3<TUNITINTERVAL>(1, 0, 1);
 	}
 
-	static Common::Vector3<Common::UnitIntervalMax> getPurpleRgb()
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
+	static Common::Vector3<TUNITINTERVAL> getPurpleRgb()
 	{
-		return Common::Vector3<Common::UnitIntervalMax>(0.5, 0, 0.5);
+		return Common::Vector3<TUNITINTERVAL>(0.5, 0, 0.5);
 	}
 }
 
