@@ -52,16 +52,16 @@ namespace Picture
 		{
 			if (value == _inUpperBound)
 				return Common::Vector3<TPIXELOUT>((_colorMap->Values[0][_lastIndex] * _outBoundDiff) + _outLowerBound,
-												(_colorMap->Values[1][_lastIndex] * _outBoundDiff) + _outLowerBound,
-												(_colorMap->Values[2][_lastIndex] * _outBoundDiff) + _outLowerBound);
+													(_colorMap->Values[1][_lastIndex] * _outBoundDiff) + _outLowerBound,
+													(_colorMap->Values[2][_lastIndex] * _outBoundDiff) + _outLowerBound);
 
 			_indexUnfloored = ((FloatMax)value - _inLowerBound) / _inBoundDiff / _spacing;
 			_index = (UInt8)_indexUnfloored;
 
 			if (_indexUnfloored == _index)
 				return Common::Vector3<TPIXELOUT>((_colorMap->Values[0][_index] * _outBoundDiff) + _outLowerBound,
-												(_colorMap->Values[1][_index] * _outBoundDiff) + _outLowerBound,
-												(_colorMap->Values[2][_index] * _outBoundDiff) + _outLowerBound);
+													(_colorMap->Values[1][_index] * _outBoundDiff) + _outLowerBound,
+													(_colorMap->Values[2][_index] * _outBoundDiff) + _outLowerBound);
 
 
 			_toUnitInterval = (_index + 1) * _spacing;
@@ -79,8 +79,8 @@ namespace Picture
 			}
 
 			return Common::Vector3<TPIXELOUT>((_channel[0] * _outBoundDiff) + _outLowerBound,
-											(_channel[1] * _outBoundDiff) + _outLowerBound,
-											(_channel[2] * _outBoundDiff) + _outLowerBound);
+												(_channel[1] * _outBoundDiff) + _outLowerBound,
+												(_channel[2] * _outBoundDiff) + _outLowerBound);
 		}
 	};
 
