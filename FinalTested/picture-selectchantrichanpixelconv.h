@@ -19,7 +19,7 @@ namespace Picture
 
 		TVALUE convertPixel(const Common::Vector3<TVALUE>& pixel)
 		{
-			return pixel.values[_channel];
+			return pixel.Values[_channel];
 		}
 	};
 }

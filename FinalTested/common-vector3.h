@@ -7,7 +7,7 @@ namespace Common
 template <typename TVALUE>
 struct Vector3
 {
-    TVALUE values[3];
+    TVALUE Values[3];
 
     Vector3()
     {
@@ -15,36 +15,36 @@ struct Vector3
 
 	Vector3(const Vector3<TVALUE>& vector)
 	{
-		values[0] = vector.values[0];
-		values[1] = vector.values[1];
-		values[2] = vector.values[2];
+		Values[0] = vector.Values[0];
+		Values[1] = vector.Values[1];
+		Values[2] = vector.Values[2];
 	}
 
 	Vector3(TVALUE value)
 	{
-		values[0] = value;
-		values[1] = value;
-		values[2] = value;
+		Values[0] = value;
+		Values[1] = value;
+		Values[2] = value;
 	}
 
 	Vector3(TVALUE value1, TVALUE value2, TVALUE value3)
 	{
-		values[0] = value1;
-		values[1] = value2;
-		values[2] = value3;
+		Values[0] = value1;
+		Values[1] = value2;
+		Values[2] = value3;
 	}
 
 	TVALUE dotProduct(const Vector3<TVALUE>& vector)
     {
-		return (values[0] * vector.values[0] + values[1] * vector.values[1] + values[2] * vector.values[2]);
+		return (Values[0] * vector.Values[0] + Values[1] * vector.Values[1] + Values[2] * vector.Values[2]);
     }
 
 	Vector3<TVALUE> crossProduct(const Vector3<TVALUE>& vector)
     {
 		Vector3<TVALUE> v = Vector3<TVALUE>();
-		v.values[0] = (values[1] * vector.values[2] - values[2] * vector.values[1]);
-		v.values[1] = (values[2] * vector.values[0] - values[0] * vector.values[2]);
-		v.values[2] = (values[0] * vector.values[1] - values[1] * vector.values[0]);
+		v.Values[0] = (Values[1] * vector.Values[2] - Values[2] * vector.Values[1]);
+		v.Values[1] = (Values[2] * vector.Values[0] - Values[0] * vector.Values[2]);
+		v.Values[2] = (Values[0] * vector.Values[1] - Values[1] * vector.Values[0]);
         return vector;
     }
 
@@ -59,9 +59,9 @@ struct Vector3
 
 	Vector3<TVALUE>& operator+=(const Vector3<TVALUE>& vector)
 	{
-		values[0] += vector.values[0];
-		values[1] += vector.values[1];
-		values[2] += vector.values[2];
+		Values[0] += vector.Values[0];
+		Values[1] += vector.Values[1];
+		Values[2] += vector.Values[2];
 
 		return *this;
 	}
@@ -77,16 +77,16 @@ struct Vector3
 
 	Vector3<TVALUE> operator-=(const Vector3<TVALUE>& vector) const
 	{
-		values[0] -= vector.values[0];
-		values[1] -= vector.values[1];
-		values[2] -= vector.values[2];
+		Values[0] -= vector.Values[0];
+		Values[1] -= vector.Values[1];
+		Values[2] -= vector.Values[2];
 
 		return *this;
 	}
 
 	bool operator==(const Vector3<TVALUE>& vector)
 	{
-		return (vector.values[0] == values[0]) && (vector.values[1] == values[1]) && (vector.values[2] == values[2]);
+		return (vector.Values[0] == Values[0]) && (vector.Values[1] == Values[1]) && (vector.Values[2] == Values[2]);
 	}
 
     virtual ~Vector3() { }

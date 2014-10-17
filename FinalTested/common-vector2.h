@@ -7,7 +7,7 @@ namespace Common
 template <typename TVALUE>
 struct Vector2
 {
-    TVALUE values[2];
+    TVALUE Values[2];
 
 	Vector2()
 	{
@@ -15,36 +15,36 @@ struct Vector2
 
 	Vector2(const Vector2<TVALUE>& vector)
 	{
-		values[0] = vector.values[0];
-		values[1] = vector.values[1];
+		Values[0] = vector.Values[0];
+		Values[1] = vector.Values[1];
 	}
 
 	Vector2(TVALUE value)
 	{
-		values[0] = value;
-		values[1] = value;
+		Values[0] = value;
+		Values[1] = value;
 	}
 
     Vector2(TVALUE value1, TVALUE value2)
     {
-		values[0] = value1;
-		values[1] = value2;
+		Values[0] = value1;
+		Values[1] = value2;
     }
 
     TVALUE dotProduct(const Vector2<TVALUE>& vector)
     {
-		return (values[0] * vector.values[0] + values[1] * vector.values[1]);
+		return (Values[0] * vector.Values[0] + Values[1] * vector.Values[1]);
     }
 
 	TVALUE crossProduct(const Vector2<TVALUE>& vector)
     {
-		return (values[0] * vector.values[1]) - (values[1] * vector.values[0]);
+		return (Values[0] * vector.Values[1]) - (Values[1] * vector.Values[0]);
     }
 
 	Vector2<TVALUE>& operator=(const Vector2<TVALUE>& vector)
 	{
-		values[0] = vector.values[0];
-		values[1] = vector.values[1];
+		Values[0] = vector.Values[0];
+		Values[1] = vector.Values[1];
 
 		return *this;
 	}
@@ -60,8 +60,8 @@ struct Vector2
 
 	Vector2<TVALUE>& operator+=(const Vector2<TVALUE>& vector)
 	{
-		values[0] += vector.values[0];
-		values[1] += vector.values[1];
+		Values[0] += vector.Values[0];
+		Values[1] += vector.Values[1];
 
 		return *this;
 	}
@@ -77,15 +77,15 @@ struct Vector2
 
     Vector2<TVALUE> operator-=(const Vector2<TVALUE>& vector) const
     {
-		values[0] -= vector.values[0];
-		values[1] -= vector.values[1];
+		Values[0] -= vector.Values[0];
+		Values[1] -= vector.Values[1];
 
 		return *this;
 	}
 
     bool operator==(const Vector2<TVALUE>& vector)
     {
-        return (vector.values[0] == values[0]) && (vector.values[1] == values[1]);
+        return (vector.Values[0] == Values[0]) && (vector.Values[1] == Values[1]);
     }
 
     virtual ~Vector2() { }

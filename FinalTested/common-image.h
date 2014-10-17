@@ -18,7 +18,7 @@ namespace Common
 		/// <summary>
 		/// The values of the image stored in [x][y] form
 		/// </summary>
-		TVALUE** Values;
+		TVALUE** Pixels;
 
 		/// <summary>
 		/// The width of the image
@@ -42,7 +42,7 @@ namespace Common
 		/// </summary>
 		Image(const Image<TVALUE, TINDEX>& image)
 		{
-			Values = 0;
+			Pixels = 0;
 			Width = 0;
 			Height = 0;
 			operator=(image); //use a swap function instead?
@@ -60,24 +60,24 @@ namespace Common
 		/// Constructs a image and sets all the values to a single value
 		/// </summary>
 		/// <remarks>Equals operator</remarks>
-		Image(TINDEX width, TINDEX height, const TVALUE value)
+		Image(TINDEX width, TINDEX height, const TVALUE pixel)
 			: Image(width, height)
 		{
 			for (TINDEX x = 0; x < width; x++)
 				for (TINDEX y = 0; y < height; y++)
-					Values[x][y] = value;
+					Pixels[x][y] = pixel;
 		}
 
 		/// <summary>
 		/// Constructs a image and sets all the values to a single value
 		/// </summary>
 		/// <remarks>Equals operator</remarks>
-		Image(TINDEX width, TINDEX height, const TVALUE** values)
+		Image(TINDEX width, TINDEX height, const TVALUE** pixels)
 			: Image(width, height)
 		{
 			for (TINDEX x = 0; x < width; x++)
 				for (TINDEX y = 0; y < height; y++)
-					Values[x][y] = values[x][y];
+					Pixels[x][y] = pixels[x][y];
 		}
 
 		/// <summary>
@@ -137,17 +137,17 @@ namespace Common
 			{
 				TINDEX newWidth = image.Width;
 				TINDEX newHeight = image.Height;
-				TVALUE** valuesBuffer = new TVALUE*[newWidth];
+				TVALUE** pixelsBuffer = new TVALUE*[newWidth];
 
 				for (TINDEX x = 0; x < newWidth; x++)
 				{
-					valuesBuffer[x] = new TVALUE[newHeight];
+					pixelsBuffer[x] = new TVALUE[newHeight];
 
 					for (TINDEX y = 0; y < newHeight; y++)
-						valuesBuffer[x][y] = image.Values[x][y];
+						pixelsBuffer[x][y] = image.Pixels[x][y];
 				}
 
-				replacePixelArray(newWidth, newHeight, valuesBuffer);
+				replacePixelArray(newWidth, newHeight, pixelsBuffer);
 			}
 
 			return *this;
@@ -182,7 +182,7 @@ namespace Common
 				valuesBuffer[x] = new TVALUE[Height];
 
 				for (TINDEX y = 0; y < Height; y++)
-					valuesBuffer[x][y] = (Values[x][y] > overflowCheck ? upperBound : Values[x][y] * value);
+					valuesBuffer[x][y] = (Pixels[x][y] > overflowCheck ? upperBound : Pixels[x][y] * value);
 			}
 
 			replacePixelArray(Width, Height, valuesBuffer);
@@ -214,7 +214,7 @@ namespace Common
 				valuesBuffer[x] = new TVALUE[Height];
 
 				for (TINDEX y = 0; y < Height; y++)
-					valuesBuffer[x][y] = Values[x][y] / value;
+					valuesBuffer[x][y] = Pixels[x][y] / value;
 			}
 
 			replacePixelArray(Width, Height, valuesBuffer);
@@ -231,10 +231,10 @@ namespace Common
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					if (Values[x][y] < value)
-						i.Value[x][y] = value;
+					if (Pixels[x][y] < value)
+						i.Pixels[x][y] = value;
 					else
-						i.Value[x][y] = Value[x][y];
+						i.Pixels[x][y] = Pixels[x][y];
 
 			return i
 		}
@@ -248,10 +248,10 @@ namespace Common
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					if (Values[x][y] > value)
-						i.Value[x][y] = value;
+					if (Pixels[x][y] > value)
+						i.Pixels[x][y] = value;
 					else
-						i.Value[x][y] = Value[x][y];
+						i.Pixels[x][y] = Pixels[x][y];
 
 			return i
 		}
@@ -280,7 +280,7 @@ namespace Common
 				valuesBuffer[x] = new TVALUE[Height];
 
 				for (TINDEX y = 0; y < Height; y++)
-					valuesBuffer[x][y] = Values[x][y] | image.Values[x][y];
+					valuesBuffer[x][y] = Pixels[x][y] | image.Pixels[x][y];
 			}
 
 			replacePixelArray(Width, Height, valuesBuffer);
@@ -312,7 +312,7 @@ namespace Common
 				valuesBuffer[x] = new TVALUE[Height];
 
 				for (TINDEX y = 0; y < Height; y++)
-					valuesBuffer[x][y] = Values[x][y] & image.Values[x][y];
+					valuesBuffer[x][y] = Pixels[x][y] & image.Pixels[x][y];
 			}
 
 			replacePixelArray(Width, Height, valuesBuffer);
@@ -331,7 +331,7 @@ namespace Common
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					i.Values[x][y] = upperBound - Values[x][y];
+					i.Pixels[x][y] = upperBound - Pixels[x][y];
 
 			return i;
 		}
@@ -346,7 +346,7 @@ namespace Common
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					if (Values[x][y] != image.Values[x][y])
+					if (Pixels[x][y] != image.Pixels[x][y])
 						return false;
 
 			return true;
@@ -367,7 +367,7 @@ namespace Common
 		{
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					if (Values[x][y] > values)
+					if (Pixels[x][y] > values)
 						return true;
 
 			return false;
@@ -380,7 +380,7 @@ namespace Common
 		{
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					if (Values[x][y] < values)
+					if (Pixels[x][y] < values)
 						return true;
 
 			return false;
@@ -419,7 +419,7 @@ namespace Common
 				valuesBuffer[x] = new TVALUE[newHeight];
 
 				for (TINDEX y = 0; y < newHeight; y++)
-					valuesBuffer[x][y] = Values[x1 + x][y1 + y];
+					valuesBuffer[x][y] = Pixels[x1 + x][y1 + y];
 			}
 
 			replacePixelArray(newWidth, newHeight, valuesBuffer);
@@ -436,7 +436,7 @@ namespace Common
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					i.Values[x][y] = (Values[x][y] >= value);
+					i.Pixels[x][y] = (Pixels[x][y] >= value);
 
 			return i;
 		}
@@ -450,7 +450,7 @@ namespace Common
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					i.Values[x][y] = (Values[x][y] <= value);
+					i.Pixels[x][y] = (Pixels[x][y] <= value);
 
 			return i;
 		}
@@ -478,9 +478,9 @@ namespace Common
 		{
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					if (Values[x][y] < lower) // use max function?
+					if (Pixels[x][y] < lower) // use max function?
 						Value[x][y] = lower;
-					else if (Values[x][y] > upper) // use max function?
+					else if (Pixels[x][y] > upper) // use max function?
 						Value[x][y] = upper;
 
 			return *this;
@@ -498,7 +498,7 @@ namespace Common
 				valuesBuffer[y] = new TVALUE[Width];
 
 				for (TINDEX x = 0; x < Width; x++)
-					valuesBuffer[y][x] = Values[x][Height - y - 1];
+					valuesBuffer[y][x] = Pixels[x][Height - y - 1];
 			}
 
 			replacePixelArray(Height, Width, valuesBuffer);
@@ -518,7 +518,7 @@ namespace Common
 				valuesBuffer[x] = new TVALUE[Height];
 
 				for (TINDEX y = 0; y < Height; y++)
-					valuesBuffer[x][y] = Values[Width - x - 1][Height - y - 1];
+					valuesBuffer[x][y] = Pixels[Width - x - 1][Height - y - 1];
 			}
 
 			replacePixelArray(Width, Height, valuesBuffer);
@@ -538,7 +538,7 @@ namespace Common
 				valuesBuffer[y] = new TVALUE[Width];
 
 				for (TINDEX x = 0; x < Width; x++)
-					valuesBuffer[y][x] = Values[Width - x - 1][y];
+					valuesBuffer[y][x] = Pixels[Width - x - 1][y];
 			}
 
 			replacePixelArray(Height, Width, valuesBuffer);
@@ -555,7 +555,7 @@ namespace Common
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					Values[x][y] = i.Values[Width - x - 1][y];
+					Pixels[x][y] = i.Pixels[Width - x - 1][y];
 
 			return *this;
 		}
@@ -569,7 +569,7 @@ namespace Common
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					Values[x][y] = i.Values[x][Height - y - 1];
+					Pixels[x][y] = i.Pixels[x][Height - y - 1];
 
 			return *this;
 		}
@@ -613,15 +613,15 @@ namespace Common
 					TINDEX y2 = y + 1;
 					TINDEX y3 = y + 2;
 
-					i.Values[x][y] = (Values[x][y] * matrix.Values[0][0])
-										+ (Values[x2][y] * matrix.Values[1][0])
-										+ (Values[x3][y] * matrix.Values[2][0])
-										+ (Values[x][y2] * matrix.Values[0][1])
-										+ (Values[x2][y2] * matrix.Values[1][1])
-										+ (Values[x3][y2] * matrix.Values[2][1])
-										+ (Values[x][y3] * matrix.Values[0][2])
-										+ (Values[x2][y3] * matrix.Values[1][2])
-										+ (Values[x3][y3] * matrix.Values[2][2]);
+					i.Pixels[x][y] = (Pixels[x][y] * matrix.Pixels[0][0])
+										+ (Pixels[x2][y] * matrix.Pixels[1][0])
+										+ (Pixels[x3][y] * matrix.Pixels[2][0])
+										+ (Pixels[x][y2] * matrix.Pixels[0][1])
+										+ (Pixels[x2][y2] * matrix.Pixels[1][1])
+										+ (Pixels[x3][y2] * matrix.Pixels[2][1])
+										+ (Pixels[x][y3] * matrix.Pixels[0][2])
+										+ (Pixels[x2][y3] * matrix.Pixels[1][2])
+										+ (Pixels[x3][y3] * matrix.Pixels[2][2]);
 				}
 
 			return i;
@@ -642,15 +642,15 @@ namespace Common
 					TINDEX yBefore = (y - 1) % height;
 					TINDEX yAfter = (y + 1) % height;
 
-					i.Values[x][y] = (Values[xBefore][yBefore] * matrix.Values[0][0])
-										+ (Values[x][yBefore] * matrix.Values[1][0])
-										+ (Values[xAfter][yBefore] * matrix.Values[2][0])
-										+ (Values[xBefore][y] * matrix.Values[0][1])
-										+ (Values[x][y] * matrix.Values[1][1])
-										+ (Values[xAfter][y] * matrix.Values[2][1])
-										+ (Values[xBefore][yAfter] * matrix.Values[0][2])
-										+ (Values[x][yAfter] * matrix.Values[1][2])
-										+ (Values[xAfter][yAfter] * matrix.Values[2][2]);
+					i.Pixels[x][y] = (Pixels[xBefore][yBefore] * matrix.Pixels[0][0])
+										+ (Pixels[x][yBefore] * matrix.Pixels[1][0])
+										+ (Pixels[xAfter][yBefore] * matrix.Pixels[2][0])
+										+ (Pixels[xBefore][y] * matrix.Pixels[0][1])
+										+ (Pixels[x][y] * matrix.Pixels[1][1])
+										+ (Pixels[xAfter][y] * matrix.Pixels[2][1])
+										+ (Pixels[xBefore][yAfter] * matrix.Pixels[0][2])
+										+ (Pixels[x][yAfter] * matrix.Pixels[1][2])
+										+ (Pixels[xAfter][yAfter] * matrix.Pixels[2][2]);
 				}
 
 			return i;
@@ -671,15 +671,15 @@ namespace Common
 					TINDEX yBefore = (y == 0 ? Height - 1 : y);
 					TINDEX yAfter = (y == (Height - 1) ? 0 : y);
 
-					i.Values[x][y] = (Values[xBefore][yBefore] * matrix.Values[0][0])
-										+ (Values[x][yBefore] * matrix.Values[1][0])
-										+ (Values[xAfter][yBefore] * matrix.Values[2][0])
-										+ (Values[xBefore][y] * matrix.Values[0][1])
-										+ (Values[x][y] * matrix.Values[1][1])
-										+ (Values[xAfter][y] * matrix.Values[2][1])
-										+ (Values[xBefore][yAfter] * matrix.Values[0][2])
-										+ (Values[x][yAfter] * matrix.Values[1][2])
-										+ (Values[xAfter][yAfter] * matrix.Values[2][2]);
+					i.Pixels[x][y] = (Pixels[xBefore][yBefore] * matrix.Pixels[0][0])
+										+ (Pixels[x][yBefore] * matrix.Pixels[1][0])
+										+ (Pixels[xAfter][yBefore] * matrix.Pixels[2][0])
+										+ (Pixels[xBefore][y] * matrix.Pixels[0][1])
+										+ (Pixels[x][y] * matrix.Pixels[1][1])
+										+ (Pixels[xAfter][y] * matrix.Pixels[2][1])
+										+ (Pixels[xBefore][yAfter] * matrix.Pixels[0][2])
+										+ (Pixels[x][yAfter] * matrix.Pixels[1][2])
+										+ (Pixels[xAfter][yAfter] * matrix.Pixels[2][2]);
 				}
 
 			return i;
@@ -692,7 +692,7 @@ namespace Common
 
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					i.Values[x][y] = converter->convertPixel(Values[x][y]);
+					i.Pixels[x][y] = converter->convertPixel(Pixels[x][y]);
 
 			return i;
 		}
@@ -702,7 +702,7 @@ namespace Common
 		{
 			for (TINDEX x = 0; x < Width; x++)
 				for (TINDEX y = 0; y < Height; y++)
-					Values[x][y] = converter->convertPixel(Values[x][y]);
+					Pixels[x][y] = converter->convertPixel(Pixels[x][y]);
 
 			return i;
 		}
@@ -722,15 +722,15 @@ namespace Common
 		{
 			Width = width;
 			Height = height;
-			Values = values;
+			Pixels = values;
 		}
 
 		void deletePixelArray()
 		{
 			for (TINDEX x = 0; x < Width; x++)
-				delete[] Values[x];
+				delete[] Pixels[x];
 
-			delete[] Values;
+			delete[] Pixels;
 		}
 
 		void recreatePixelArray(TINDEX width, TINDEX height)

@@ -23,7 +23,7 @@ namespace Picture
 				for (TINDEX y = 0; y < height; y++)
 				{
 					QRgb pixel = qimage.pixel(x, y);
-					image.Values[x][y] = Picture::RgbPixel8(qRed(pixel), qGreen(pixel), qBlue(pixel));
+					image.Pixels[x][y] = Picture::RgbPixel8(qRed(pixel), qGreen(pixel), qBlue(pixel));
 				}
 
 			return image;
@@ -37,7 +37,7 @@ namespace Picture
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)
 				{
-					QRgb pixel = qRgb(image.Values[x][y].values[0], image.Values[x][y].values[1], image.Values[x][y].values[2]);
+					QRgb pixel = qRgb(image.Pixels[x][y].Values[0], image.Pixels[x][y].Values[1], image.Pixels[x][y].Values[2]);
 					qimage.setPixel(x, y, pixel);
 				}
 
