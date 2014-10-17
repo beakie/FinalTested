@@ -27,8 +27,6 @@ int main(int argc, char *argv[])
 
 	std::cout << "Finished\n";
 
-	Common::Vector3<UInt8> red = Picture::getRedRgb<UInt8>();
-
 	return a.exec();
 
 }
