@@ -91,6 +91,7 @@
     <ClInclude Include="common-vector2.h" />
     <ClInclude Include="common-vector3.h" />
     <ClInclude Include="common-vector4.h" />
+    <ClInclude Include="picture-colorhelpers_.h" />
     <ClInclude Include="picture-colormaps_.h" />
     <ClInclude Include="common-imatrixadapter.h" />
     <ClInclude Include="common-math_.h" />
