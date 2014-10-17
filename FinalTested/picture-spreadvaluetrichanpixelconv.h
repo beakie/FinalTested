@@ -1,7 +1,7 @@
 #ifndef PICTURESPREADVALUETRICHANPIXELCONV_H
 #define PICTURESPREADVALUETRICHANPIXELCONV_H
 
-#include "picture-trichanpixel.h"
+#include "common.h"
 
 namespace Picture
 {
@@ -9,9 +9,9 @@ namespace Picture
 	class SpreadValueTriChanPixelConv
 	{
 	public:
-		Picture::TriChanPixel<TVALUE> convertPixel(const TVALUE value)
+		Common::Vector3<TVALUE> convertPixel(const TVALUE value)
 		{
-			return Picture::TriChanPixel<TVALUE>(value, value, value);
+			return Common::Vector3<TVALUE>(value, value, value);
 		}
 	};
 }

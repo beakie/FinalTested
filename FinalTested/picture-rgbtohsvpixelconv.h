@@ -3,7 +3,6 @@
 
 #include "core.h"
 #include "common.h"
-#include "picture-trichanpixel.h"
 
 namespace Picture
 {
@@ -11,7 +10,7 @@ namespace Picture
 	class RgbToHsvPixelConv
 	{
 	public:
-		Picture::TriChanPixel<TVALUE> convertPixel(const Picture::TriChanPixel<TVALUE>& pixel)
+		Common::Vector3<TVALUE> convertPixel(const Common::Vector3<TVALUE>& pixel)
 		{
 
 		}

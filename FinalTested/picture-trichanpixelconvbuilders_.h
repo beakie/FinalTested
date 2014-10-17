@@ -1,7 +1,7 @@
 #ifndef PICTURETRICHANPIXELCONVBUILDERSCONV_H
 #define PICTURETRICHANPIXELCONVBUILDERSCONV_H
 
-#include "picture-trichanpixel.h"
+#include "common.h"
 #include "picture-spreadchantrichanpixelconv.h"
 #include "picture-selectchantrichanpixelconv.h"
 

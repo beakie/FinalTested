@@ -1,7 +1,7 @@
 #ifndef PICTURESPREADVALUEQUADCHANPIXELCONV_H
 #define PICTURESPREADVALUEQUADCHANPIXELCONV_H
 
-#include "picture-quadchanpixel.h"
+#include "common.h"
 
 namespace Picture
 {
@@ -9,9 +9,9 @@ namespace Picture
 	class SpreadValueQuadChanPixelConv
 	{
 	public:
-		Picture::QuadChanPixel<TVALUE> convertPixel(const TVALUE value)
+		Common::Vector4<TVALUE> convertPixel(const TVALUE value)
 		{
-			return Picture::QuadChanPixel<TVALUE>(value, value, value, value);
+			return Common::Vector4<TVALUE>(value, value, value, value);
 		}
 	};
 }

@@ -4,8 +4,6 @@
 #include "core.h"
 #include "common.h"
 
-#include "picture-trichanpixel.h"
-
 namespace Picture
 {
 	template <typename TUNITINTERVAL>

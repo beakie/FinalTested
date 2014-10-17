@@ -3,7 +3,6 @@
 
 #include "core.h"
 #include "common.h"
-#include "picture-trichanpixel.h"
 
 namespace Picture
 {
@@ -49,10 +48,10 @@ namespace Picture
 		{
 		}
 
-		TriChanPixel<TPIXELOUT> convertPixel(const TPIXELIN& value)
+		Common::Vector3<TPIXELOUT> convertPixel(const TPIXELIN& value)
 		{
 			if (value == _inUpperBound)
-				return TriChanPixel<TPIXELOUT>((_colorMap->Values[0][_lastIndex] * _outBoundDiff) + _outLowerBound,
+				return Common::Vector3<TPIXELOUT>((_colorMap->Values[0][_lastIndex] * _outBoundDiff) + _outLowerBound,
 												(_colorMap->Values[1][_lastIndex] * _outBoundDiff) + _outLowerBound,
 												(_colorMap->Values[2][_lastIndex] * _outBoundDiff) + _outLowerBound);
 
@@ -60,7 +59,7 @@ namespace Picture
 			_index = (UInt8)_indexUnfloored;
 
 			if (_indexUnfloored == _index)
-				return TriChanPixel<TPIXELOUT>((_colorMap->Values[0][_index] * _outBoundDiff) + _outLowerBound,
+				return Common::Vector3<TPIXELOUT>((_colorMap->Values[0][_index] * _outBoundDiff) + _outLowerBound,
 												(_colorMap->Values[1][_index] * _outBoundDiff) + _outLowerBound,
 												(_colorMap->Values[2][_index] * _outBoundDiff) + _outLowerBound);
 
@@ -79,7 +78,7 @@ namespace Picture
 					_channel[i] = ((_toMapping - _fromMapping) * _diffUnitInterval) + _fromMapping;
 			}
 
-			return TriChanPixel<TPIXELOUT>((_channel[0] * _outBoundDiff) + _outLowerBound,
+			return Common::Vector3<TPIXELOUT>((_channel[0] * _outBoundDiff) + _outLowerBound,
 											(_channel[1] * _outBoundDiff) + _outLowerBound,
 											(_channel[2] * _outBoundDiff) + _outLowerBound);
 		}

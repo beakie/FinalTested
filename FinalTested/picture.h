@@ -21,7 +21,6 @@
 #include "picture-colormaps_.h"
 #include "picture-colormodelconvbuilders_.h"
 #include "picture-colormodelhelpers_.h"
-#include "picture-quadchanpixel.h"
 #include "picture-quadchanpixelconvbuilders_.h"
 #include "picture-quadcolormap.h"
 #include "picture-quadcolormappixelconv.h"
@@ -34,7 +33,6 @@
 #include "picture-spreadchantrichanpixelconv.h"
 #include "picture-spreadvaluequadchanpixelconv.h"
 #include "picture-spreadvaluetrichanpixelconv.h"
-#include "picture-trichanpixel.h"
 #include "picture-trichanpixelconvbuilders_.h"
 #include "picture-tricolormap.h"
 #include "picture-tricolormappixelconv.h"
@@ -44,51 +42,51 @@ namespace Picture
 	/// <summary>
 	/// 1 byte precision RGB pixel
 	/// </summary>
-	typedef TriChanPixel<UInt8> RgbPixel8;
+	typedef Common::Vector3<UInt8> RgbPixel8;
 	/// <summary>
 	/// 2 byte precision RGB pixel
 	/// </summary>
-	typedef TriChanPixel<UInt16> RgbPixel16;
+	typedef Common::Vector3<UInt16> RgbPixel16;
 	/// <summary>
 	/// 4 byte precision RGB pixel
 	/// </summary>
-	typedef TriChanPixel<UInt32> RgbPixel32;
+	typedef Common::Vector3<UInt32> RgbPixel32;
 	/// <summary>
 	/// 1 byte precision HSV pixel
 	/// </summary>
-	typedef TriChanPixel<UInt8> HsvPixel8;
+	typedef Common::Vector3<UInt8> HsvPixel8;
 	/// <summary>
 	/// 2 byte precision HSV pixel
 	/// </summary>
-	typedef TriChanPixel<UInt16> HsvPixel16;
+	typedef Common::Vector3<UInt16> HsvPixel16;
 	/// <summary>
 	/// 4 byte precision HSV pixel
 	/// </summary>
-	typedef TriChanPixel<UInt32> HsvPixel32;
+	typedef Common::Vector3<UInt32> HsvPixel32;
 	/// <summary>
 	/// 1 byte precision RGBA pixel
 	/// </summary>
-	typedef QuadChanPixel<UInt8> RgbaPixel8;
+	typedef Common::Vector4<UInt8> RgbaPixel8;
 	/// <summary>
 	/// 2 byte precision RGBA pixel
 	/// </summary>
-	typedef QuadChanPixel<UInt16> RgbaPixel16;
+	typedef Common::Vector4<UInt16> RgbaPixel16;
 	/// <summary>
 	/// 4 byte precision RGBA pixel
 	/// </summary>
-	typedef QuadChanPixel<UInt32> RgbaPixel32;
+	typedef Common::Vector4<UInt32> RgbaPixel32;
 	/// <summary>
 	/// 1 byte precision CMYK pixel
 	/// </summary>
-	typedef QuadChanPixel<UInt8> CmykPixel8;
+	typedef Common::Vector4<UInt8> CmykPixel8;
 	/// <summary>
 	/// 2 byte precision CMYK pixel
 	/// </summary>
-	typedef QuadChanPixel<UInt16> CmykPixel16;
+	typedef Common::Vector4<UInt16> CmykPixel16;
 	/// <summary>
 	/// 4 byte precision CMYK pixel
 	/// </summary>
-	typedef QuadChanPixel<UInt32> CmykPixel32;
+	typedef Common::Vector4<UInt32> CmykPixel32;
 	/// <summary>
 	/// 1 byte precision greyscale pixel
 	/// </summary>

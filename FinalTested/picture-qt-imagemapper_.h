@@ -37,7 +37,7 @@ namespace Picture
 			for (TINDEX x = 0; x < image.Width; x++)
 				for (TINDEX y = 0; y < image.Height; y++)
 				{
-					QRgb pixel = qRgb(image.Values[x][y].Channels[0], image.Values[x][y].Channels[1], image.Values[x][y].Channels[2]);
+					QRgb pixel = qRgb(image.Values[x][y].values[0], image.Values[x][y].values[1], image.Values[x][y].values[2]);
 					qimage.setPixel(x, y, pixel);
 				}
 

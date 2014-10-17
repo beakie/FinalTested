@@ -1,7 +1,7 @@
 #ifndef PICTURESPREADCHANTRICHANPIXELCONV_H
 #define PICTURESPREADCHANTRICHANPIXELCONV_H
 
-#include "picture-trichanpixel.h"
+#include "common.h"
 
 namespace Picture
 {
@@ -16,10 +16,10 @@ namespace Picture
 			_channel = channel;
 		}
 
-		Picture::TriChanPixel<TVALUE> convertPixel(const Picture::TriChanPixel<TVALUE>& pixel)
+		Common::Vector3<TVALUE> convertPixel(const Common::Vector3<TVALUE>& pixel)
 		{
 			TVALUE value = pixel.Channels[_channel];
-			return Picture::TriChanPixel<TVALUE>(value, value, value);
+			return Common::Vector3<TVALUE>(value, value, value);
 		}
 	};
 }

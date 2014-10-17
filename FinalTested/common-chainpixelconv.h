@@ -2,8 +2,6 @@
 #define PICTURECHAIN3PIXELCONV_H
 
 #include "core.h"
-#include "common.h"
-#include "picture-trichanpixel.h"
 
 namespace Common
 {

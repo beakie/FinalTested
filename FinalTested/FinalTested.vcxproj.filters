@@ -65,9 +65,6 @@
     <ClInclude Include="picture-qt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-quadchanpixel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="picture-quadcolormap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -78,9 +75,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-spreadvaluetrichanpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-trichanpixel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-tricolormap.h">

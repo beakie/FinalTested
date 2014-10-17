@@ -3,7 +3,6 @@
 
 #include "core.h"
 #include "common.h"
-#include "picture-trichanpixel.h"
 
 namespace Picture
 {
@@ -11,7 +10,7 @@ namespace Picture
 	class SelectChanAvgTriChanPixelConv
 	{
 	public:
-		TVALUE convertPixel(const Picture::TriChanPixel<TVALUE>& pixel)
+		TVALUE convertPixel(const Common::Vector3<TVALUE>& pixel)
 		{
 			return (TVALUE)Common::round(((Common::FloatMax)pixel.Channels[0] + pixel.Channels[1] + pixel.Channels[2]) / 3);
 		}

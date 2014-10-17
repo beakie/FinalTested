@@ -3,7 +3,6 @@
 
 #include "core.h"
 #include "common.h"
-#include "picture-quadchanpixel.h"
 
 namespace Picture
 {
@@ -11,7 +10,7 @@ namespace Picture
 	class SelectChanAvgQuadChanPixelConv
 	{
 	public:
-		TVALUE convertPixel(const Picture::QuadChanPixel<TVALUE>& pixel)
+		TVALUE convertPixel(const Common::Vector4<TVALUE>& pixel)
 		{
 			return (TVALUE)Common::round(((Common::FloatMax)pixel.Channels[0] + pixel.Channels[1] + pixel.Channels[2] + pixel.Channels[3]) / 4);
 		}

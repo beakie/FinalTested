@@ -1,7 +1,6 @@
 #ifndef PICTUREQUADCHANPIXELCONVBUILDERS_H
 #define PICTUREQUADCHANPIXELCONVBUILDERS_H
 
-#include "picture-quadchanpixel.h"
 #include "picture-spreadchanquadchanpixelconv.h"
 #include "picture-selectchanquadchanpixelconv.h"
 

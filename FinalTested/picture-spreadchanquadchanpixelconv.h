@@ -1,7 +1,7 @@
 #ifndef PICTURESPREADCHANQUADCHANPIXELCONV_H
 #define PICTURESPREADCHANQUADCHANPIXELCONV_H
 
-#include "picture-quadchanpixel.h"
+#include "common.h"
 
 namespace Picture
 {
@@ -16,10 +16,10 @@ namespace Picture
 			_channel = channel;
 		}
 
-		Picture::QuadChanPixel<TVALUE> convertPixel(const Picture::QuadChanPixel<TVALUE>& pixel)
+		Common::Vector4<TVALUE> convertPixel(const Common::Vector4<TVALUE>& pixel)
 		{
 			TVALUE value = pixel.Channels[_channel];
-			return Picture::QuadChanPixel<TVALUE>(value, value, value, value);
+			return Common::Vector4<TVALUE>(value, value, value, value);
 		}
 	};
 }

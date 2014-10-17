@@ -3,7 +3,6 @@
 
 #include "core.h"
 #include "common.h"
-#include "picture-quadchanpixel.h"
 
 namespace Picture
 {
@@ -49,10 +48,10 @@ namespace Picture
 		{
 		}
 
-		QuadChanPixel<TPIXELOUT> convertPixel(const TPIXELIN& value)
+		Common::Vector4<TPIXELOUT> convertPixel(const TPIXELIN& value)
 		{
 			if (value == _inUpperBound)
-				return QuadChanPixel<TPIXELOUT>((_colorMap->Values[0][_lastIndex] * _outBoundDiff) + _outLowerBound,
+				return Common::Vector4<TPIXELOUT>((_colorMap->Values[0][_lastIndex] * _outBoundDiff) + _outLowerBound,
 												(_colorMap->Values[1][_lastIndex] * _outBoundDiff) + _outLowerBound,
 												(_colorMap->Values[2][_lastIndex] * _outBoundDiff) + _outLowerBound,
 												(_colorMap->Values[3][_lastIndex] * _outBoundDiff) + _outLowerBound);
@@ -61,7 +60,7 @@ namespace Picture
 			_index = (UInt8)_indexUnfloored;
 
 			if (_indexUnfloored == _index)
-				return QuadChanPixel<TPIXELOUT>((_colorMap->Values[0][_index] * _outBoundDiff) + _outLowerBound,
+				return Common::Vector4<TPIXELOUT>((_colorMap->Values[0][_index] * _outBoundDiff) + _outLowerBound,
 												(_colorMap->Values[1][_index] * _outBoundDiff) + _outLowerBound,
 												(_colorMap->Values[2][_index] * _outBoundDiff) + _outLowerBound,
 												(_colorMap->Values[3][_index] * _outBoundDiff) + _outLowerBound);
@@ -81,7 +80,7 @@ namespace Picture
 					_channel[i] = ((_toMapping - _fromMapping) * _diffUnitInterval) + _fromMapping;
 			}
 
-			return QuadChanPixel<TPIXELOUT>((_channel[0] * _outBoundDiff) + _outLowerBound,
+			return Common::Vector4<TPIXELOUT>((_channel[0] * _outBoundDiff) + _outLowerBound,
 											(_channel[1] * _outBoundDiff) + _outLowerBound,
 											(_channel[2] * _outBoundDiff) + _outLowerBound,
 											(_channel[3] * _outBoundDiff) + _outLowerBound);

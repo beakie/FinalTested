@@ -1,8 +1,7 @@
 #ifndef PICTURECOLORMODELHELPERS_H
 #define PICTURECOLORMODELHELPERS_H
 
-#include "picture-trichanpixel.h"
-#include "picture-quadchanpixel.h"
+#include "common.h"
 
 namespace Picture
 {
@@ -10,7 +9,7 @@ namespace Picture
 	/// Returns the red from an RGB pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getRgbPixelRed(const Picture::TriChanPixel<TVALUE>& rgbPixel)
+	static TVALUE getRgbPixelRed(const Common::Vector3<TVALUE>& rgbPixel)
 	{
 		return rgbPixel.Channels[0];
 	}
@@ -19,7 +18,7 @@ namespace Picture
 	/// Returns the blues from an RGB pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getRgbPixelBlue(const Picture::TriChanPixel<TVALUE>& rgbPixel)
+	static TVALUE getRgbPixelBlue(const Common::Vector3<TVALUE>& rgbPixel)
 	{
 		return rgbPixel.Channels[1];
 	}
@@ -28,7 +27,7 @@ namespace Picture
 	/// Returns the green from an RGB pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getRgbPixelGreen(const Picture::TriChanPixel<TVALUE>& rgbPixel)
+	static TVALUE getRgbPixelGreen(const Common::Vector3<TVALUE>& rgbPixel)
 	{
 		return rgbPixel.Channels[2];
 	}
@@ -37,7 +36,7 @@ namespace Picture
 	/// Returns the hue value an HSV pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getHsvPixelHue(const Picture::TriChanPixel<TVALUE>& hsvPixel)
+	static TVALUE getHsvPixelHue(const Common::Vector3<TVALUE>& hsvPixel)
 	{
 		return hsvPixel.Channels[0];
 	}
@@ -46,7 +45,7 @@ namespace Picture
 	/// Returns the saturation from an HSV pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getHsvPixelSaturation(const Picture::TriChanPixel<TVALUE>& hsvPixel)
+	static TVALUE getHsvPixelSaturation(const Common::Vector3<TVALUE>& hsvPixel)
 	{
 		return hsvPixel.Channels[1];
 	}
@@ -55,7 +54,7 @@ namespace Picture
 	/// Returns the value from an HSV pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getHsvPixelValue(const Picture::TriChanPixel<TVALUE>& hsvPixel)
+	static TVALUE getHsvPixelValue(const Common::Vector3<TVALUE>& hsvPixel)
 	{
 		return hsvPixel.Channels[2];
 	}
@@ -64,7 +63,7 @@ namespace Picture
 	/// Returns the red from an RGBA pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getRgbaPixelRed(const Picture::QuadChanPixel<TVALUE>& rgbaPixel)
+	static TVALUE getRgbaPixelRed(const Common::Vector4<TVALUE>& rgbaPixel)
 	{
 		return rgbaPixel.Channels[0];
 	}
@@ -73,7 +72,7 @@ namespace Picture
 	/// Returns the blue from an RGBA pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getRgbaPixelBlue(const Picture::QuadChanPixel<TVALUE>& rgbaPixel)
+	static TVALUE getRgbaPixelBlue(const Common::Vector4<TVALUE>& rgbaPixel)
 	{
 		return rgbaPixel.Channels[1];
 	}
@@ -82,7 +81,7 @@ namespace Picture
 	/// Returns the green from an RGBA pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getRgbaPixelGreen(const Picture::QuadChanPixel<TVALUE>& rgbaPixel)
+	static TVALUE getRgbaPixelGreen(const Common::Vector4<TVALUE>& rgbaPixel)
 	{
 		return rgbaPixel.Channels[2];
 	}
@@ -91,7 +90,7 @@ namespace Picture
 	/// Returns the alpha from an RGBA pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getRgbaPixelAlpha(const Picture::QuadChanPixel<TVALUE>& rgbaPixel)
+	static TVALUE getRgbaPixelAlpha(const Common::Vector4<TVALUE>& rgbaPixel)
 	{
 		return rgbaPixel.Channels[3];
 	}
@@ -100,7 +99,7 @@ namespace Picture
 	/// Returns the red from an CMYK pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getCmykPixelCyan(const Picture::QuadChanPixel<TVALUE>& cmykPixel)
+	static TVALUE getCmykPixelCyan(const Common::Vector4<TVALUE>& cmykPixel)
 	{
 		return cmykPixel.Channels[0];
 	}
@@ -109,7 +108,7 @@ namespace Picture
 	/// Returns the blue from an CMYK pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getCmykPixelMagenta(const Picture::QuadChanPixel<TVALUE>& cmykPixel)
+	static TVALUE getCmykPixelMagenta(const Common::Vector4<TVALUE>& cmykPixel)
 	{
 		return cmykPixel.Channels[1];
 	}
@@ -118,7 +117,7 @@ namespace Picture
 	/// Returns the green from an CMYK pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getCmykPixelYellow(const Picture::QuadChanPixel<TVALUE>& cmykPixel)
+	static TVALUE getCmykPixelYellow(const Common::Vector4<TVALUE>& cmykPixel)
 	{
 		return cmykPixel.Channels[2];
 	}
@@ -127,7 +126,7 @@ namespace Picture
 	/// Returns the alpha from an CMYK pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getCmykPixelKey(const Picture::QuadChanPixel<TVALUE>& cmykPixel)
+	static TVALUE getCmykPixelKey(const Common::Vector4<TVALUE>& cmykPixel)
 	{
 		return cmykPixel.Channels[3];
 	}

@@ -3,7 +3,6 @@
 
 #include "core.h"
 #include "common.h"
-#include "picture-quadchanpixel.h"
 
 namespace Picture
 {
@@ -18,7 +17,7 @@ namespace Picture
 			_channel = channel;
 		}
 
-		TVALUE convertPixel(const Picture::QuadChanPixel<TVALUE>& pixel)
+		TVALUE convertPixel(const Common::Vector4<TVALUE>& pixel)
 		{
 			return pixel.Channels[_channel];
 		}
