@@ -7,7 +7,7 @@
 namespace Picture
 {
 	template <typename TVALUE>
-	class RgbToHsvConv
+	class RgbToHsvPixelConv
 	{
 		// move function variables to here
 
