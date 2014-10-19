@@ -51,19 +51,19 @@ namespace Picture
 		Common::Vector4<TPIXELOUT> convertPixel(const TPIXELIN& value)
 		{
 			if (value == _inUpperBound)
-				return Common::Vector4<TPIXELOUT>((_colorMap->Values[0][_lastIndex] * _outBoundDiff) + _outLowerBound,
-												(_colorMap->Values[1][_lastIndex] * _outBoundDiff) + _outLowerBound,
-												(_colorMap->Values[2][_lastIndex] * _outBoundDiff) + _outLowerBound,
-												(_colorMap->Values[3][_lastIndex] * _outBoundDiff) + _outLowerBound);
+				return Common::Vector4<TPIXELOUT>((_colorMap->Values[_lastIndex].Values[0] * _outBoundDiff) + _outLowerBound,
+													(_colorMap->Values[_lastIndex].Values[1] * _outBoundDiff) + _outLowerBound,
+													(_colorMap->Values[_lastIndex].Values[2] * _outBoundDiff) + _outLowerBound,
+													(_colorMap->Values[_lastIndex].Values[3] * _outBoundDiff) + _outLowerBound);
 
 			_indexUnfloored = ((FloatMax)value - _inLowerBound) / _inBoundDiff / _spacing;
 			_index = (UInt8)_indexUnfloored;
 
 			if (_indexUnfloored == _index)
-				return Common::Vector4<TPIXELOUT>((_colorMap->Values[0][_index] * _outBoundDiff) + _outLowerBound,
-												(_colorMap->Values[1][_index] * _outBoundDiff) + _outLowerBound,
-												(_colorMap->Values[2][_index] * _outBoundDiff) + _outLowerBound,
-												(_colorMap->Values[3][_index] * _outBoundDiff) + _outLowerBound);
+				return Common::Vector4<TPIXELOUT>((_colorMap->Values[_index].Values[0] * _outBoundDiff) + _outLowerBound,
+													(_colorMap->Values[_index].Values[1] * _outBoundDiff) + _outLowerBound,
+													(_colorMap->Values[_index].Values[2] * _outBoundDiff) + _outLowerBound,
+													(_colorMap->Values[_index].Values[3] * _outBoundDiff) + _outLowerBound);
 
 
 			_toUnitInterval = (_index + 1) * _spacing;
@@ -71,8 +71,8 @@ namespace Picture
 
 			for (UInt8 i = 0; i < 4; i++)
 			{
-				_fromMapping = _colorMap->Values[i][_index];
-				_toMapping = _colorMap->Values[i][_index + 1];
+				_fromMapping = _colorMap->Values[_index].Values[i];
+				_toMapping = _colorMap->Values[_index + 1].Values[i];
 
 				if (_fromMapping == _toMapping)
 					_channel[i] = _fromMapping;
@@ -81,9 +81,9 @@ namespace Picture
 			}
 
 			return Common::Vector4<TPIXELOUT>((_channel[0] * _outBoundDiff) + _outLowerBound,
-											(_channel[1] * _outBoundDiff) + _outLowerBound,
-											(_channel[2] * _outBoundDiff) + _outLowerBound,
-											(_channel[3] * _outBoundDiff) + _outLowerBound);
+												(_channel[1] * _outBoundDiff) + _outLowerBound,
+												(_channel[2] * _outBoundDiff) + _outLowerBound,
+												(_channel[3] * _outBoundDiff) + _outLowerBound);
 		}
 	};
 

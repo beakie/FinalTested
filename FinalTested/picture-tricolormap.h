@@ -54,8 +54,6 @@ namespace Picture
 			for (UInt8 i = 0; i < triColorMap.Size; i++)
 			{
 				Values[i] = triColorMap.Values[i];
-				Values[i] = triColorMap.Values[i];
-				Values[i] = triColorMap.Values[i];
 			}
 		}
 
