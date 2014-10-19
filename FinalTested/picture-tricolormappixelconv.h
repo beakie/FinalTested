@@ -27,7 +27,7 @@ namespace Picture
 		TUNITINTERVAL _toMapping;
 		FloatMax _toUnitInterval;
 		FloatMax _diffUnitInterval;
-		FloatMax _channel[3];
+		FloatMax _channel[3]; // this should be color not [3]
 
 	public:
 		TriColorMapPixelConv(const TriColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
