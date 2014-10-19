@@ -9,7 +9,7 @@ namespace Picture
 	template <typename TUNITINTERVAL>
 	struct TriColorMap
 	{
-		TUNITINTERVAL** Values;
+		Common::Vector3<TUNITINTERVAL>* Values;
 		UInt8 Size;
 		TUNITINTERVAL SpacingSize;
 
@@ -39,19 +39,13 @@ namespace Picture
 	private:
 		void createValues(UInt8 size)
 		{
-			Values = new TUNITINTERVAL*[3];
-			Values[0] = new TUNITINTERVAL[size];
-			Values[1] = new TUNITINTERVAL[size];
-			Values[2] = new TUNITINTERVAL[size];
+			Values = new Common::Vector3<TUNITINTERVAL>[size];
 			Size = size;
 			SpacingSize = (float)1 / (size - 1);
 		}
 
 		void deleteValues()
 		{
-			delete[] Values[0];
-			delete[] Values[1];
-			delete[] Values[2];
 			delete[] Values;
 		}
 
@@ -59,9 +53,9 @@ namespace Picture
 		{
 			for (UInt8 i = 0; i < triColorMap.Size; i++)
 			{
-				Values[0][i] = triColorMap.Values[0][i];
-				Values[1][i] = triColorMap.Values[1][i];
-				Values[2][i] = triColorMap.Values[2][i];
+				Values[i] = triColorMap.Values[i];
+				Values[i] = triColorMap.Values[i];
+				Values[i] = triColorMap.Values[i];
 			}
 		}
 
