@@ -51,7 +51,7 @@ namespace Picture
 		Common::Vector3<TPIXELOUT> convertPixel(const TPIXELIN& value)
 		{
 			if (value == _inUpperBound)
-				return Common::Vector3<TPIXELOUT>((_colorMap->Values[_lastIndex].Values[0] * _outBoundDiff) + _outLowerBound, //this should be straight sum on original vector
+				return Common::Vector3<TPIXELOUT>((_colorMap->Values[_lastIndex].Values[0] * _outBoundDiff) + _outLowerBound,
 													(_colorMap->Values[_lastIndex].Values[1] * _outBoundDiff) + _outLowerBound,
 													(_colorMap->Values[_lastIndex].Values[2] * _outBoundDiff) + _outLowerBound);
 
@@ -59,7 +59,7 @@ namespace Picture
 			_index = (UInt8)_indexUnfloored;
 
 			if (_indexUnfloored == _index)
-				return Common::Vector3<TPIXELOUT>((_colorMap->Values[_index].Values[0] * _outBoundDiff) + _outLowerBound, //this should be straight sum on original vector
+				return Common::Vector3<TPIXELOUT>((_colorMap->Values[_index].Values[0] * _outBoundDiff) + _outLowerBound,
 													(_colorMap->Values[_index].Values[1] * _outBoundDiff) + _outLowerBound,
 													(_colorMap->Values[_index].Values[2] * _outBoundDiff) + _outLowerBound);
 
