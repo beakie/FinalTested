@@ -125,9 +125,6 @@
     <ClInclude Include="picture-colormodelhelpers_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-tricolormappixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="picture-rgbtohsvpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -156,6 +153,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="picture-quadcolormapscaledpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-tricolormapscaledpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

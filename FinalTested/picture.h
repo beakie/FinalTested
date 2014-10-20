@@ -36,7 +36,7 @@
 #include "picture-spreadvaluetrichanpixelconv.h"
 #include "picture-trichanpixelconvbuilders_.h"
 #include "picture-tricolormap.h"
-#include "picture-tricolormappixelconv.h"
+#include "picture-tricolormapscaledpixelconv.h"
 
 namespace Picture
 {
