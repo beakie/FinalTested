@@ -10,5 +10,6 @@
  8) Change colormap stuff to use vector3
  9) Rename colormap linearcolormap?
 10) Maybe make a unit interval wrapper class that could be put around a basic data float variable
+11) Add a non linear color map. Add the color map variable to a new NonLinearColorMap class. Write a new TriColorMapNonLinearPixelConv (and quad)
 
 */
