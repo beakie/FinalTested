@@ -99,7 +99,19 @@ namespace Picture
 		}
 
 		template <typename TINDEX>
+		QPixmap getQPixmap(Common::Image<UInt1, TINDEX> image)
+		{
+			return QPixmap::fromImage(getQImage(image));
+		}
+
+		template <typename TINDEX>
 		QPixmap getQPixmap(Common::Image<Picture::Rgb8, TINDEX> image)
+		{
+			return QPixmap::fromImage(getQImage(image));
+		}
+
+		template <typename TINDEX>
+		QPixmap getQPixmap(Common::Image<Picture::Argb8, TINDEX> image)
 		{
 			return QPixmap::fromImage(getQImage(image));
 		}
