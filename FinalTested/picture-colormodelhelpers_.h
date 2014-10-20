@@ -60,39 +60,40 @@ namespace Picture
 	}
 
 	/// <summary>
-	/// Returns the red from an RGBA pixel
+	/// Returns the alpha from an ARGB pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getRgbaRed(const Common::Vector4<TVALUE>& rgbaColor)
+	static TVALUE getArgbAlpha(const Common::Vector4<TVALUE>& argbColor)
 	{
-		return rgbaColor.Channels[0];
+		return argbColor.Channels[0];
+	}
+
+
+	/// <summary>
+	/// Returns the red from an ARGB pixel
+	/// </summary>
+	template <typename TVALUE>
+	static TVALUE getArgbRed(const Common::Vector4<TVALUE>& argbColor)
+	{
+		return argbColor.Channels[1];
 	}
 
 	/// <summary>
-	/// Returns the blue from an RGBA pixel
+	/// Returns the blue from an ARGB pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getRgbaBlue(const Common::Vector4<TVALUE>& rgbaColor)
+	static TVALUE getArgbBlue(const Common::Vector4<TVALUE>& argbColor)
 	{
-		return rgbaColor.Channels[1];
+		return argbColor.Channels[2];
 	}
 
 	/// <summary>
-	/// Returns the green from an RGBA pixel
+	/// Returns the green from an ARGB pixel
 	/// </summary>
 	template <typename TVALUE>
-	static TVALUE getRgbaGreen(const Common::Vector4<TVALUE>& rgbaColor)
+	static TVALUE getArgbGreen(const Common::Vector4<TVALUE>& argbColor)
 	{
-		return rgbaColor.Channels[2];
-	}
-
-	/// <summary>
-	/// Returns the alpha from an RGBA pixel
-	/// </summary>
-	template <typename TVALUE>
-	static TVALUE getRgbaAlpha(const Common::Vector4<TVALUE>& rgbaColor)
-	{
-		return rgbaColor.Channels[3];
+		return argbColor.Channels[3];
 	}
 
 	/// <summary>
