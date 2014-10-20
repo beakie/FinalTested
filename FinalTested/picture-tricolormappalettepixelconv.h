@@ -1,5 +1,5 @@
-#ifndef PICTURETRICOLORMAPTABLEPIXELCONV_H
-#define PICTURETRICOLORMAPTABLEPIXELCONV_H
+#ifndef PICTURETRICOLORMAPPALETTEPIXELCONV_H
+#define PICTURETRICOLORMAPPALETTEPIXELCONV_H
 
 #include "core.h"
 #include "common.h"
@@ -9,7 +9,7 @@ namespace Picture
 	//template specialization the main function. will be quicker, and end resulting would be the same... code base is bigger but worth every bytes
 
 	template <typename TUNITINTERVAL, typename TPIXELIN, typename TPIXELOUT>
-	class TriColorMapTablePixelConv
+	class TriColorMapPalettePixelConv
 	{
 	private:
 		const TriColorMap<TUNITINTERVAL>* _colorMap; // transform this on population. lowerbound defines offset, upperbound lets calc of multiplication
@@ -22,7 +22,7 @@ namespace Picture
 		FloatMax _channel[3]; // this should be color not [3]
 
 	public:
-		TriColorMapTablePixelConv(const TriColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
+		TriColorMapPalettePixelConv(const TriColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
 		{
 			_colorMap = colorMap;
 			_inLowerBound = lowerBound;
@@ -33,8 +33,8 @@ namespace Picture
 			_outBoundDiff = _outUpperBound - _outLowerBound;
 		}
 
-		TriColorMapTablePixelConv(const TriColorMap<TUNITINTERVAL>* colorMap)
-			: TriColorMapTablePixelConv(colorMap, Common::getLowerBound<TPIXELIN>(), Common::getUpperBound<TPIXELIN>())
+		TriColorMapPalettePixelConv(const TriColorMap<TUNITINTERVAL>* colorMap)
+			: TriColorMapPalettePixelConv(colorMap, Common::getLowerBound<TPIXELIN>(), Common::getUpperBound<TPIXELIN>())
 		{
 		}
 
@@ -48,4 +48,4 @@ namespace Picture
 
 }
 
-#endif // PICTURETRICOLORMAPTABLEPIXELCONV_H
+#endif // PICTURETRICOLORMAPPALETTEPIXELCONV_H

@@ -158,7 +158,7 @@
     <ClInclude Include="picture-tricolormapscaledpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture-tricolormaptablepixelconv.h">
+    <ClInclude Include="picture-tricolormappalettepixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
