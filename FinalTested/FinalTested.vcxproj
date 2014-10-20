@@ -122,6 +122,7 @@
     <ClInclude Include="common.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="picture-tricolormapscaledpixelconv.h" />
+    <ClInclude Include="picture-tricolormaptablepixelconv.h" />
     <ClInclude Include="picture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
