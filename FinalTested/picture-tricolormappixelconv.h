@@ -9,7 +9,7 @@ namespace Picture
 	//template specialization the main function. will be quicker, and end resulting would be the same... code base is bigger but worth every bytes
 
 	template <typename TUNITINTERVAL, typename TPIXELIN, typename TPIXELOUT>
-	class TriColorMapPixelConv
+	class TriColorMapScaledPixelConv
 	{
 	private:
 		const TriColorMap<TUNITINTERVAL>* _colorMap; // transform this on population. lowerbound defines offset, upperbound lets calc of multiplication
@@ -30,7 +30,7 @@ namespace Picture
 		FloatMax _channel[3]; // this should be color not [3]
 
 	public:
-		TriColorMapPixelConv(const TriColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
+		TriColorMapScaledPixelConv(const TriColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
 		{
 			_colorMap = colorMap;
 			_inLowerBound = lowerBound;
@@ -43,8 +43,8 @@ namespace Picture
 			_outBoundDiff = _outUpperBound - _outLowerBound;
 		}
 
-		TriColorMapPixelConv(const TriColorMap<TUNITINTERVAL>* colorMap)
-			: TriColorMapPixelConv(colorMap, Common::getLowerBound<TPIXELIN>(), Common::getUpperBound<TPIXELIN>())
+		TriColorMapScaledPixelConv(const TriColorMap<TUNITINTERVAL>* colorMap)
+			: TriColorMapScaledPixelConv(colorMap, Common::getLowerBound<TPIXELIN>(), Common::getUpperBound<TPIXELIN>())
 		{
 		}
 

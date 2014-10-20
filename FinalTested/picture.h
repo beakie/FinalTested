@@ -24,7 +24,7 @@
 #include "picture-colormodelhelpers_.h"
 #include "picture-quadchanpixelconvbuilders_.h"
 #include "picture-quadcolormap.h"
-#include "picture-quadcolormappixelconv.h"
+#include "picture-quadcolormapscaledpixelconv.h"
 #include "picture-rgbtohsvpixelconv.h"
 #include "picture-selectchanavgquadchanpixelconv.h"
 #include "picture-selectchanavgtrichanpixelconv.h"
@@ -232,29 +232,29 @@ namespace Picture
 
 	//add the rest of these functions. relying entirly on floats sucks.
 
-	typedef TriColorMapPixelConv<Common::UnitInterval32, Float32, UInt8> TriColorMap32PixelConv8;
+	typedef TriColorMapScaledPixelConv<Common::UnitInterval32, Float32, UInt8> TriColorMap32PixelConv8;
 
-	typedef TriColorMapPixelConv<Common::UnitInterval32, Float32, UInt16> TriColorMap32PixelConv16;
+	typedef TriColorMapScaledPixelConv<Common::UnitInterval32, Float32, UInt16> TriColorMap32PixelConv16;
 
-	typedef TriColorMapPixelConv<Common::UnitInterval32, Float32, UInt32> TriColorMap32PixelConv32;
+	typedef TriColorMapScaledPixelConv<Common::UnitInterval32, Float32, UInt32> TriColorMap32PixelConv32;
 
-	typedef TriColorMapPixelConv<Common::UnitInterval64, Float64, UInt8> TriColorMap64PixelConv8;
+	typedef TriColorMapScaledPixelConv<Common::UnitInterval64, Float64, UInt8> TriColorMap64PixelConv8;
 
-	typedef TriColorMapPixelConv<Common::UnitInterval64, Float64, UInt16> TriColorMap64PixelConv16;
+	typedef TriColorMapScaledPixelConv<Common::UnitInterval64, Float64, UInt16> TriColorMap64PixelConv16;
 
-	typedef TriColorMapPixelConv<Common::UnitInterval64, Float64, UInt32> TriColorMap64PixelConv32;
+	typedef TriColorMapScaledPixelConv<Common::UnitInterval64, Float64, UInt32> TriColorMap64PixelConv32;
 
-	typedef QuadColorMapPixelConv<Common::UnitInterval32, Float32, UInt8> QuadColorMap32PixelConv8;
+	typedef QuadColorMapScaledPixelConv<Common::UnitInterval32, Float32, UInt8> QuadColorMap32PixelConv8;
 
-	typedef QuadColorMapPixelConv<Common::UnitInterval32, Float32, UInt16> QuadColorMap32PixelConv16;
+	typedef QuadColorMapScaledPixelConv<Common::UnitInterval32, Float32, UInt16> QuadColorMap32PixelConv16;
 
-	typedef QuadColorMapPixelConv<Common::UnitInterval32, Float32, UInt32> QuadColorMap32PixelConv32;
+	typedef QuadColorMapScaledPixelConv<Common::UnitInterval32, Float32, UInt32> QuadColorMap32PixelConv32;
 
-	typedef QuadColorMapPixelConv<Common::UnitInterval64, Float64, UInt8> QuadColorMap64PixelConv8;
+	typedef QuadColorMapScaledPixelConv<Common::UnitInterval64, Float64, UInt8> QuadColorMap64PixelConv8;
 
-	typedef QuadColorMapPixelConv<Common::UnitInterval64, Float64, UInt16> QuadColorMap64PixelConv16;
+	typedef QuadColorMapScaledPixelConv<Common::UnitInterval64, Float64, UInt16> QuadColorMap64PixelConv16;
 
-	typedef QuadColorMapPixelConv<Common::UnitInterval64, Float64, UInt32> QuadColorMap64PixelConv32;
+	typedef QuadColorMapScaledPixelConv<Common::UnitInterval64, Float64, UInt32> QuadColorMap64PixelConv32;
 
 }
 

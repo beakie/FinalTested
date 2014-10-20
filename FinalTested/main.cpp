@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 
 	Picture::Image8Rgb8 testImageDisk = Picture::Qt::getArgb8Image<UInt8>(QImage("c:\\Test8.jpg"))
 															.getImage<UInt8>(&Picture::getSelect1QuadChanPixelConv<UInt8>()).invert()
-															.getImage<Picture::Rgb8>(&Picture::TriColorMapPixelConv<Common::UnitInterval32, UInt8, UInt8>(&Picture::getRgbJetColorMap<Common::UnitInterval32>()));
+															.getImage<Picture::Rgb8>(&Picture::TriColorMapScaledPixelConv<Common::UnitInterval32, UInt8, UInt8>(&Picture::getRgbJetColorMap<Common::UnitInterval32>()));
 
 	QWidget widget;
 	QLabel* label = new QLabel(&widget);
