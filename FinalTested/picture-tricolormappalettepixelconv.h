@@ -8,7 +8,7 @@ namespace Picture
 {
 	//template specialization the main function. will be quicker, and end resulting would be the same... code base is bigger but worth every bytes
 
-	template <typename TUNITINTERVAL, typename TPIXELIN, typename TPIXELOUT>
+	template <typename TUNITINTERVAL, typename TPIXELIN, typename TPIXELOUT> // TPIXELIN should be UInt values only. how to specify this?
 	class TriColorMapPalettePixelConv
 	{
 	private:
