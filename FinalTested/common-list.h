@@ -2,8 +2,6 @@
 #define COMMONLIST_H
 
 // add insert functions
-// hide addList in PList
-//any methods with this delete need to be overriden in plist so u can delete items too
 
 namespace Common
 {
@@ -149,34 +147,6 @@ namespace Common
 			//could be more efficient if only resizes once and then copies all items into the list itself
 			for (TINDEX i = 0; i < listCount; i++)
 				addItem(list.Items[i]);
-
-			return *this;
-		}
-
-		List<TVALUE, TINDEX> & operator++(int)
-		{
-			resize();
-
-			return *this;
-		}
-
-		List<TVALUE, TINDEX> & operator++() // whats the point?
-		{
-			resize();
-
-			return *this;
-		}
-
-		List<TVALUE, TINDEX> & operator--(int)
-		{
-			clear();
-
-			return *this;
-		}
-
-		List<TVALUE, TINDEX> & operator--()
-		{
-			clear();
 
 			return *this;
 		}
