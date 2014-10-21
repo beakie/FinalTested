@@ -3,7 +3,9 @@
 
 namespace Common
 {
-	static struct Null
+	// make singleton
+
+	struct Null
 	{
 	};
 
