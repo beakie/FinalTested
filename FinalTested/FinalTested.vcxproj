@@ -84,6 +84,7 @@
     <ClInclude Include="common-castpixelconv.h" />
     <ClInclude Include="common-image.h" />
     <ClInclude Include="common-ipixelconverter.h" />
+    <ClInclude Include="common-null.h" />
     <ClInclude Include="common-nullable.h" />
     <ClInclude Include="common-scalecastpixelconv.h" />
     <ClInclude Include="common-tuple.h" />
