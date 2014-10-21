@@ -1,10 +1,13 @@
-#ifndef COMMONTYPES_H
-#define COMMONTYPES_H
+#ifndef COMMONNULLABLE_H
+#define COMMONNULLABLE_H
 
 #include "common-math_.h"
 
 namespace Common
 {
+	static struct Null
+	{
+	};
 
 	template <typename T>
 	struct Nullable
@@ -28,6 +31,11 @@ namespace Common
 			HasValue = true;
 		}
 
+		Nullable(const Null null)
+		{
+			HasValue = false;
+		}
+
 		Nullable<T>& operator=(const T value)
 		{
 			Value = value;
@@ -40,6 +48,13 @@ namespace Common
 		{
 			Value = nullable.Value;
 			HasValue = nullable.HasValue;
+
+			return *this;
+		}
+
+		Nullable<T>& operator=(const Null& null)
+		{
+			HasValue = false;
 
 			return *this;
 		}
@@ -284,6 +299,11 @@ namespace Common
 			return HasValue && (Value == value);
 		}
 
+		bool operator==(const Null& null) const
+		{
+			return false;
+		}
+
 		// !=
 
 		bool operator!=(const Nullable<T>& nullable) const
@@ -296,6 +316,11 @@ namespace Common
 			return !operator==(value);
 		}
 
+		bool operator!=(const Null& null) const
+		{
+			return false;
+		}
+
 		~Nullable()
 		{
 		}
@@ -303,4 +328,4 @@ namespace Common
 
 }
 
-#endif // COMMONTYPES_H
+#endif // COMMONNULLABLE_H

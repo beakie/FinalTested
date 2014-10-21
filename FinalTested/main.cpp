@@ -37,6 +37,8 @@ int main(int argc, char *argv[])
 	bool x = Common::isValidUnitInterval(ppp);
 	Common::UnitInterval64 qqq = Common::trimUnitInterval(ppp);
 
+	Common::Nullable<UInt8> kkk = 1;
+
 	return a.exec();
 
 }
