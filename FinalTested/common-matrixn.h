@@ -211,7 +211,7 @@ namespace Common
 		/// </summary>
 		bool operator!=(const MatrixN<TVALUE>& matrix) const
 		{
-			return operator==(matrix);
+			return !operator==(matrix);
 		}
 
 		/// <summary>

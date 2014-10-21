@@ -357,7 +357,7 @@ namespace Common
 		/// </summary>
 		bool operator!=(const Image<TVALUE, TINDEX>& image) const
 		{
-			return operator==(image);
+			return !operator==(image);
 		}
 
 		/// <summary>

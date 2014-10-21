@@ -402,7 +402,7 @@ namespace Common
 		/// </summary>
 		bool operator!=(const Matrix4<TVALUE>& matrix) const
 		{
-			return operator==(matrix);
+			return !operator==(matrix);
 		}
 
 		/// <summary>
