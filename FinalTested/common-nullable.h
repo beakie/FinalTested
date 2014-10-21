@@ -1,8 +1,6 @@
 #ifndef COMMONNULLABLE_H
 #define COMMONNULLABLE_H
 
-#include "common-null.h"
-
 // add getValueOrDefault()
 
 namespace Common
