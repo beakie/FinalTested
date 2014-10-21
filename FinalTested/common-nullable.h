@@ -1,13 +1,10 @@
 #ifndef COMMONNULLABLE_H
 #define COMMONNULLABLE_H
 
-#include "common-math_.h"
+#include "common-null.h"
 
 namespace Common
 {
-	static struct Null
-	{
-	};
 
 	template <typename T>
 	struct Nullable
