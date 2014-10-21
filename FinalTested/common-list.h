@@ -1,18 +1,18 @@
-#ifndef COMMONARRAY_H
-#define COMMONARRAY_H
+#ifndef COMMONLIST_H
+#define COMMONLIST_H
 
 // add insert functions
-// hide addArray in PArray
-//any methods with this delete need to be overriden in parray so u can delete items too
+// hide addList in PList
+//any methods with this delete need to be overriden in plist so u can delete items too
 
 namespace Common
 {
 
 	template <typename TVALUE, typename TINDEX = UInt32>
 	/// <summary>
-	/// 1 dimensional array of values
+	/// 1 dimensional list of values
 	/// </summary>
-	struct Array
+	struct List
 	{
 
 	protected:
@@ -22,7 +22,7 @@ namespace Common
 	public:
 		TVALUE *Items;
 
-		Array()
+		List()
 		{
 			Count = 0;
 			Capacity = 0;
@@ -30,10 +30,10 @@ namespace Common
 			Items = 0;
 		}
 
-		Array(const Array<TVALUE, TINDEX> &array)
+		List(const List<TVALUE, TINDEX> &list)
 		{
 			Items = 0;
-			operator=(array);
+			operator=(list);
 		}
 
 		TINDEX count() const
@@ -46,7 +46,7 @@ namespace Common
 			return Capacity;
 		}
 
-		Array<TVALUE, TINDEX>& remove(const TINDEX index)
+		List<TVALUE, TINDEX>& remove(const TINDEX index)
 		{
 			if (index >= Count)
 				return *this;
@@ -59,14 +59,14 @@ namespace Common
 			return *this;
 		}
 
-		Array<TVALUE, TINDEX>& addItem(const TVALUE item)
+		List<TVALUE, TINDEX>& addItem(const TVALUE item)
 		{
 			return operator+=(item);
 		}
 
-		Array<TVALUE, TINDEX>& addArray(const Array<TVALUE, TINDEX> &array)
+		List<TVALUE, TINDEX>& addArray(const List<TVALUE, TINDEX> &list)
 		{
-			return operator+=(array);
+			return operator+=(list);
 		}
 
 		void resize()
@@ -87,9 +87,9 @@ namespace Common
 			Capacity = capacity;
 		}
 
-		void clone(const Array<TVALUE, TINDEX> &array)
+		void clone(const List<TVALUE, TINDEX> &list)
 		{
-			operator=(array);
+			operator=(list);
 		}
 
 		TINDEX getIndex(TVALUE value)
@@ -111,16 +111,16 @@ namespace Common
 			Count = 0;
 		}
 
-		Array<TVALUE, TINDEX>& operator=(const Array<TVALUE, TINDEX>& array)
+		List<TVALUE, TINDEX>& operator=(const List<TVALUE, TINDEX>& list)
 		{
-			if (this != &array)
+			if (this != &list)
 			{
-				TVALUE* tmp = new TVALUE[array.capacity];
-				Capacity = array.Capacity;
-				Count = array.Count;
+				TVALUE* tmp = new TVALUE[list.capacity];
+				Capacity = list.Capacity;
+				Count = list.Count;
 
 				for (TINDEX i = 0; i < Count; i++)
-					tmp[i] = array.Items[i];
+					tmp[i] = list.Items[i];
 
 				delete[] Items;
 
@@ -130,7 +130,7 @@ namespace Common
 			return *this;
 		}
 
-		Array<TVALUE, TINDEX> & operator+=(const TVALUE item)
+		List<TVALUE, TINDEX> & operator+=(const TVALUE item)
 		{
 			if (Count == Capacity)
 				resize();
@@ -142,39 +142,39 @@ namespace Common
 			return *this;
 		}
 
-		Array<TVALUE, TINDEX> & operator+=(const Array<TVALUE, TINDEX> &array)
+		List<TVALUE, TINDEX> & operator+=(const List<TVALUE, TINDEX> &list)
 		{
-			TINDEX arrayCount = array.Count;
+			TINDEX listCount = list.Count;
 
-			//could be more efficient if only resizes once and then copies all items into the array itself
-			for (TINDEX i = 0; i < arrayCount; i++)
-				addItem(array.Items[i]);
+			//could be more efficient if only resizes once and then copies all items into the list itself
+			for (TINDEX i = 0; i < listCount; i++)
+				addItem(list.Items[i]);
 
 			return *this;
 		}
 
-		Array<TVALUE, TINDEX> & operator++(int)
-		{
-			resize();
-
-			return *this;
-		}
-
-		Array<TVALUE, TINDEX> & operator++() // whats the point?
+		List<TVALUE, TINDEX> & operator++(int)
 		{
 			resize();
 
 			return *this;
 		}
 
-		Array<TVALUE, TINDEX> & operator--(int)
+		List<TVALUE, TINDEX> & operator++() // whats the point?
+		{
+			resize();
+
+			return *this;
+		}
+
+		List<TVALUE, TINDEX> & operator--(int)
 		{
 			clear();
 
 			return *this;
 		}
 
-		Array<TVALUE, TINDEX> & operator--()
+		List<TVALUE, TINDEX> & operator--()
 		{
 			clear();
 
@@ -195,11 +195,11 @@ namespace Common
 			return false;
 		}
 
-		~Array() {
+		~List() {
 			delete[] Items;
 		}
 	};
 
 }
 
-#endif // COMMONARRAY_H
+#endif // COMMONLIST_H
