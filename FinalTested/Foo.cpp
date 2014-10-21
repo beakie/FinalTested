@@ -13,5 +13,6 @@
 11) Add a non linear color map. Add the color map variable to a new NonLinearColorMap class. Write a new TriColorMapNonLinearPixelConv (and quad)
 12) Do some arduino tests
 13) Does the first colormapper code really need bounds? Bounds are only needed with floats (?) will i be doing this with floats? Instead make a seperate converter just for floats. Will make c/m faster for non float.
+14) Migrate list Items stuff into small methods like image does?
 
 */
