@@ -333,6 +333,11 @@ namespace Common
 			return !HasValue;
 		}
 
+		bool isNotNull() const
+		{
+			return HasValue;
+		}
+
 		Nullable<T>& null()
 		{
 			HasValue = false;
