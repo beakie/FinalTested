@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
 
 	Common::Nullable<UInt8> kkk = 1;
 	kkk = Common::Null;
+	UInt8 oooi = kkk.getValueOrDefault();
 
 	return a.exec();
 

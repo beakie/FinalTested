@@ -1,7 +1,7 @@
 #ifndef COMMONNULLABLE_H
 #define COMMONNULLABLE_H
 
-// add getValueOrDefault()
+#include "common-bounds_.h"
 
 namespace Common
 {
@@ -320,6 +320,14 @@ namespace Common
 		bool operator!=(const NullableNull& null) const
 		{
 			return false;
+		}
+
+		T getValueOrDefault() const
+		{
+			if (HasValue)
+				return Value;
+			else
+				return getDefault<T>();
 		}
 
 		~Nullable()
