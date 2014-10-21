@@ -164,5 +164,8 @@
     <ClInclude Include="common-list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-nullablenull.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

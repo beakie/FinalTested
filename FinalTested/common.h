@@ -14,6 +14,7 @@
 #include "common-matrix4.h"
 #include "common-matrixn.h"
 #include "common-nullable.h"
+#include "common-nullablenull.h"
 #include "common-scalecastpixelconv.h"
 #include "common-tuple.h"
 #include "common-unitinterval.h"
@@ -23,6 +24,8 @@
 
 namespace Common
 {
+	static NullableNull Null;
+
 	/// <summary>
 	/// matrix of size 2 with 1 bit values
 	/// </summary>

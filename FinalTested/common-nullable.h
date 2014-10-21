@@ -2,6 +2,7 @@
 #define COMMONNULLABLE_H
 
 #include "common-bounds_.h"
+#include "common-nullablenull.h"
 
 namespace Common
 {
@@ -19,13 +20,19 @@ namespace Common
 
 		Nullable(const Nullable<T>& nullable)
 		{
-			operator=(nullable);
+			Value = nullable.Value;
+			HasValue = nullable.HasValue;
 		}
 
 		Nullable(const T value)
 		{
 			Value = value;
 			HasValue = true;
+		}
+
+		Nullable(const NullableNull& null)
+		{
+			HasValue = false;
 		}
 
 		Nullable<T>& operator=(const T value)
@@ -40,6 +47,13 @@ namespace Common
 		{
 			Value = nullable.Value;
 			HasValue = nullable.HasValue;
+
+			return *this;
+		}
+
+		Nullable<T>& operator=(const NullableNull& null)
+		{
+			HasValue = false;
 
 			return *this;
 		}
@@ -284,6 +298,11 @@ namespace Common
 			return HasValue && (Value == value);
 		}
 
+		bool operator==(const NullableNull& null) const
+		{
+			return false;
+		}
+
 		// !=
 
 		bool operator!=(const Nullable<T>& nullable) const
@@ -294,6 +313,11 @@ namespace Common
 		bool operator!=(const T& value) const
 		{
 			return !operator==(value);
+		}
+
+		bool operator!=(const NullableNull& null) const
+		{
+			return false;
 		}
 
 		T getValueOrDefault() const
