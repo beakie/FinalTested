@@ -49,6 +49,11 @@ int main(int argc, char *argv[])
 	Common::Nullable<Picture::Rgb8> r111 = 1;
 	Picture::Rgb8 r222 = r111.getValueOrDefault();
 
+	Common::List<Common::Nullable<int>> l = Common::List<Common::Nullable<int>>();
+	l.addItem(Common::Nullable<int>());
+	l.addItem(2);
+	l.addItem(Common::Nullable<int>(1));
+
 	return a.exec();
 
 }
