@@ -8,6 +8,12 @@
 #include "picture.h"
 #include "picture-qt.h"
 
+template <>
+static Picture::Rgb8 Common::getDefault<Picture::Rgb8>()
+{
+	return Picture::Rgb8(0, 0, 0);
+}
+
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
@@ -38,8 +44,10 @@ int main(int argc, char *argv[])
 	Common::UnitInterval64 qqq = Common::trimUnitInterval(ppp);
 
 	Common::Nullable<UInt8> kkk = 1;
-	kkk = Common::Null;
 	UInt8 oooi = kkk.getValueOrDefault();
+
+	Common::Nullable<Picture::Rgb8> r111 = 1;
+	Picture::Rgb8 r222 = r111.getValueOrDefault();
 
 	return a.exec();
 

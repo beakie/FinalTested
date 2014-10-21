@@ -6,10 +6,6 @@
 namespace Common
 {
 
-	struct NullableNull
-	{
-	};
-
 	template <typename T>
 	struct Nullable
 	{
@@ -32,11 +28,6 @@ namespace Common
 			HasValue = true;
 		}
 
-		Nullable(const NullableNull null)
-		{
-			HasValue = false;
-		}
-
 		Nullable<T>& operator=(const T value)
 		{
 			Value = value;
@@ -49,13 +40,6 @@ namespace Common
 		{
 			Value = nullable.Value;
 			HasValue = nullable.HasValue;
-
-			return *this;
-		}
-
-		Nullable<T>& operator=(const NullableNull& null)
-		{
-			HasValue = false;
 
 			return *this;
 		}
@@ -300,11 +284,6 @@ namespace Common
 			return HasValue && (Value == value);
 		}
 
-		bool operator==(const NullableNull& null) const
-		{
-			return false;
-		}
-
 		// !=
 
 		bool operator!=(const Nullable<T>& nullable) const
@@ -317,17 +296,24 @@ namespace Common
 			return !operator==(value);
 		}
 
-		bool operator!=(const NullableNull& null) const
-		{
-			return false;
-		}
-
 		T getValueOrDefault() const
 		{
 			if (HasValue)
 				return Value;
 			else
 				return getDefault<T>();
+		}
+
+		bool isNull() const
+		{
+			return !HasValue;
+		}
+
+		Nullable<T>& null()
+		{
+			HasValue = false;
+
+			return *this;
 		}
 
 		~Nullable()
