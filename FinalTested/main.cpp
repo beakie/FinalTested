@@ -50,11 +50,11 @@ int main(int argc, char *argv[])
 	Picture::Rgb8 r222 = r111;
 
 	Common::List<Common::Nullable<int>> l = Common::List<Common::Nullable<int>>();
-	l.addItem(2);
-	l.addItem(Common::Nullable<int>(1));
-	l.addItem(Common::Nullable<int>());
-	l.addItem(Common::NullableNull());
-	l.addItem(Common::Null);
+	l.add(2);
+	l.add(Common::Nullable<int>(1));
+	l.add(Common::Nullable<int>());
+	l.add(Common::NullableNull());
+	l.add(Common::Null);
 
 	return a.exec();
 

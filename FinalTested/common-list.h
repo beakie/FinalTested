@@ -57,12 +57,12 @@ namespace Common
 			return *this;
 		}
 
-		List<TVALUE, TINDEX>& addItem(const TVALUE item)
+		List<TVALUE, TINDEX>& add(const TVALUE item)
 		{
 			return operator+=(item);
 		}
 
-		List<TVALUE, TINDEX>& addArray(const List<TVALUE, TINDEX> &list)
+		List<TVALUE, TINDEX>& add(const List<TVALUE, TINDEX> &list)
 		{
 			return operator+=(list);
 		}
