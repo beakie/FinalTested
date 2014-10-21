@@ -18,8 +18,8 @@ int main(int argc, char *argv[])
 	Common::Image8F32 testImage = Common::Image8F32(100, 100, 0.51);
 
 	Picture::Image8Rgb8 testImageDisk = Picture::Qt::getArgb8Image<UInt8>(QImage("c:\\Test8.jpg"))
-															.getImage<UInt8>(&Picture::getSelect1QuadChanPixelConv<UInt8>()).invert()
-															.getImage<Picture::Rgb8>(&Picture::TriColorMapScaledPixelConv<Common::UnitInterval32, UInt8, UInt8>(&Picture::getRgbJetColorMap<Common::UnitInterval32>()));
+										.getImage<UInt8>(&Picture::getSelect1QuadChanPixelConv<UInt8>()).invert()
+										.getImage<Picture::Rgb8>(&Picture::TriColorMapScaledPixelConv<Common::UnitInterval32, UInt8, UInt8>(&Picture::getRgbJetColorMap<Common::UnitInterval32>()));
 
 	QWidget widget;
 	QLabel* label = new QLabel(&widget);
@@ -32,6 +32,10 @@ int main(int argc, char *argv[])
 	Picture::Rgb8 rg = Picture::getGreenRgb<UInt8>();
 
 	Common::Vector3<Common::UnitIntervalMax> ui = Picture::getGreenRgb();
+
+	Common::UnitInterval64 ppp = 0.99;
+	bool x = Common::isValidUnitInterval(ppp);
+	Common::UnitInterval64 qqq = Common::trimUnitInterval(ppp);
 
 	return a.exec();
 

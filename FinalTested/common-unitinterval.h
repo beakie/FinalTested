@@ -1,6 +1,8 @@
 #ifndef COMMONTYPES_H
 #define COMMONTYPES_H
 
+#include "common-math_.h"
+
 namespace Common
 {
 	/// <summary>
@@ -15,6 +17,18 @@ namespace Common
 	/// Max available size unit interval (0 - 1)
 	/// </summary>
 	typedef FloatMax UnitIntervalMax;
+
+	template <typename TUNITINTERVAL>
+	bool isValidUnitInterval(TUNITINTERVAL value)
+	{
+		return (value >= 0) && (value <= 1);
+	}
+
+	template <typename TUNITINTERVAL>
+	TUNITINTERVAL trimUnitInterval(TUNITINTERVAL value)
+	{
+		return min<TUNITINTERVAL>(max<TUNITINTERVAL>(value, 0.0), 1.0);
+	}
 
 }
 

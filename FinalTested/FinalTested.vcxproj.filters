@@ -161,5 +161,8 @@
     <ClInclude Include="picture-tricolormappalettepixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-nullable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
