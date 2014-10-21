@@ -345,6 +345,11 @@ namespace Common
 			return *this;
 		}
 
+		operator T()
+		{
+			return getValueOrDefault();
+		}
+
 		~Nullable()
 		{
 		}

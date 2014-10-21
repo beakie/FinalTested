@@ -11,7 +11,7 @@
 template <>
 static Picture::Rgb8 Common::getDefault<Picture::Rgb8>()
 {
-	return Picture::Rgb8(0, 0, 0);
+	return Picture::Rgb8(1, 2, 3);
 }
 
 int main(int argc, char *argv[])
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 	UInt8 oooi = kkk.getValueOrDefault();
 
 	Common::Nullable<Picture::Rgb8> r111 = 1;
-	Picture::Rgb8 r222 = r111.getValueOrDefault();
+	Picture::Rgb8 r222 = r111;
 
 	Common::List<Common::Nullable<int>> l = Common::List<Common::Nullable<int>>();
 	l.addItem(Common::Null);
