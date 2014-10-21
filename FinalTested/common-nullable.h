@@ -345,7 +345,7 @@ namespace Common
 			return *this;
 		}
 
-		operator T()
+		operator T() const
 		{
 			return getValueOrDefault();
 		}
