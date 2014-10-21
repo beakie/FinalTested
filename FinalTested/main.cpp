@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
 	Common::UnitInterval64 qqq = Common::trimUnitInterval(ppp);
 
 	Common::Nullable<UInt8> kkk = 1;
+	kkk = Common::Null;
 
 	return a.exec();
 

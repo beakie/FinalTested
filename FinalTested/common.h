@@ -24,6 +24,8 @@
 
 namespace Common
 {
+	static NullableNull Null;
+
 	/// <summary>
 	/// matrix of size 2 with 1 bit values
 	/// </summary>

@@ -3,8 +3,14 @@
 
 #include "common-null.h"
 
+// add getValueOrDefault()
+
 namespace Common
 {
+
+	struct NullableNull
+	{
+	};
 
 	template <typename T>
 	struct Nullable
@@ -28,7 +34,7 @@ namespace Common
 			HasValue = true;
 		}
 
-		Nullable(const Null null)
+		Nullable(const NullableNull null)
 		{
 			HasValue = false;
 		}
@@ -49,7 +55,7 @@ namespace Common
 			return *this;
 		}
 
-		Nullable<T>& operator=(const Null& null)
+		Nullable<T>& operator=(const NullableNull& null)
 		{
 			HasValue = false;
 
@@ -296,7 +302,7 @@ namespace Common
 			return HasValue && (Value == value);
 		}
 
-		bool operator==(const Null& null) const
+		bool operator==(const NullableNull& null) const
 		{
 			return false;
 		}
@@ -313,7 +319,7 @@ namespace Common
 			return !operator==(value);
 		}
 
-		bool operator!=(const Null& null) const
+		bool operator!=(const NullableNull& null) const
 		{
 			return false;
 		}

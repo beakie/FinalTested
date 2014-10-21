@@ -3,11 +3,7 @@
 
 namespace Common
 {
-	// make singleton
 
-	struct Null
-	{
-	};
 
 }
 
