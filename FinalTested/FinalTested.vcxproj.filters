@@ -173,5 +173,14 @@
     <ClInclude Include="space3d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="space3d-coordinate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="space2d-plot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="space2d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -39,18 +39,6 @@ struct Vector4
 		Values[3] = value4;
     }
 
-	TVALUE dotProduct(const Vector4<TVALUE> &vector)
-    {
-		return (Values[0] * vector.Values[0] + Values[1] * vector.Values[1] + Values[2] * vector.Values[2] + Values[3] * vector.Values[3]);
-    }
-
-	Vector4<TVALUE> crossProduct(const Vector4<TVALUE> &vector)
-    {
-        // todo
-        Vector4<TVALUE> vector;
-        return vector;
-    }
-
 	Vector4<TVALUE>& operator=(const Vector4<TVALUE>& vector)
 	{
 		Values[0] = vector.Values[0];
@@ -307,6 +295,18 @@ struct Vector4
 	bool operator==(const TVALUE value)
 	{
 		return (Values[0] == value) && (Values[1] == value) && (Values[2] == value) && (Values[3] == value);
+	}
+
+	TVALUE dotProduct(const Vector4<TVALUE> &vector)
+	{
+		return (Values[0] * vector.Values[0] + Values[1] * vector.Values[1] + Values[2] * vector.Values[2] + Values[3] * vector.Values[3]);
+	}
+
+	Vector4<TVALUE> crossProduct(const Vector4<TVALUE> &vector)
+	{
+		// todo
+		Vector4<TVALUE> vector;
+		return vector;
 	}
 
     virtual ~Vector4()

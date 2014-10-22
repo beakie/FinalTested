@@ -3,7 +3,7 @@
 
 #include "common.h"
 
-//#include "picture-colorhelpers_.h"
+#include "space3d-coordinate.h"
 
 namespace Space3d
 {
