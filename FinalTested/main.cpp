@@ -3,10 +3,13 @@
 #include <QLabel>
 #include <QImage>
 #include <iostream>
+
 #include "core.h"
 #include "common.h"
 #include "picture.h"
 #include "picture-qt.h"
+#include "space2d.h"
+#include "space3d.h"
 
 template <>
 static Picture::Rgb8 Common::getDefault<Picture::Rgb8>()

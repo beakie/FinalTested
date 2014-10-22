@@ -3,7 +3,8 @@
 
 #include "common.h"
 
-//#include "picture-colorhelpers_.h"
+#include "space2d-common_.h"
+#include "space2d-plot.h"
 
 namespace Space3d
 {

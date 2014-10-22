@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+#include "space3d-common_.h"
 #include "space3d-coordinate.h"
 
 namespace Space3d

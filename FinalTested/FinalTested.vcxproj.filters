@@ -182,5 +182,11 @@
     <ClInclude Include="space2d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="space3d-common_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="space2d-common_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -60,11 +60,6 @@ namespace Space3d
 	/// max byte precision floating number coordinate
 	/// </summary>
 	typedef Common::Vector3<FloatMax> CoordinateF;
-
-	float distanceBetweenCoordinates(const Common::Vector3<FloatMax> &coordinate1, const Common::Vector3<FloatMax> &coordinate2)
-	{
-		return power(power(coordinate1.Values[0] - coordinate2.Values[0], 2) + power(coordinate1.Values[1] - coordinate2.Values[1], 2) + power(coordinate1.Values[2] - coordinate2.Values[2], 2), 0.5);
-	}
 }
 
 #endif // SPACE3DCOORDINATE_H
