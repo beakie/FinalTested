@@ -16,5 +16,6 @@
 14) Migrate list Items stuff into small methods like image does?
 15) Should the color stuff of picture actually be in common? .NET keeps it in system.drawing... do i?
 16) Make sure vector stuff is finished and tested. crossproduct of vector4 needs working out, add const, generally check its all good.
+17) Default all maths classes to float, where appropriate.
 
 */
