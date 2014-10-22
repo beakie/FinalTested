@@ -86,6 +86,7 @@
     <ClInclude Include="common-ipixelconverter.h" />
     <ClInclude Include="common-nullablenull.h" />
     <ClInclude Include="common-nullable.h" />
+    <ClInclude Include="common-quaternion.h" />
     <ClInclude Include="common-scalecastpixelconv.h" />
     <ClInclude Include="common-tuple.h" />
     <ClInclude Include="common-unitinterval.h" />

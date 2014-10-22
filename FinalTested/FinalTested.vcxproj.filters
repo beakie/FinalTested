@@ -188,5 +188,8 @@
     <ClInclude Include="space3d-common_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-quaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
