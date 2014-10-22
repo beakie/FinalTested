@@ -48,7 +48,7 @@ namespace Common
 	{
 		FloatMax magnitude = power(power(vector.Values[0], 2) + power(vector.Values[1], 2), 0.5);
 
-		return Vector2<TFLOATING>(vector.Values[0] / magnitude, vector.Values[1] / magnitude)
+		return Vector2<TFLOATING>(vector.Values[0] / magnitude, vector.Values[1] / magnitude);
 	}
 
 	template <typename TVALUE, typename TFLOATING = FloatMax>
@@ -56,7 +56,7 @@ namespace Common
 	{
 		FloatMax magnitude = power(power(vector.Values[0], 2) + power(vector.Values[1], 2) + power(vector.Values[2], 2), 0.5);
 
-		return Vector3<TFLOATING>(vector.Values[0] / magnitude, vector.Values[1] / magnitude, vector.Values[2] / magnitude)
+		return Vector3<TFLOATING>(vector.Values[0] / magnitude, vector.Values[1] / magnitude, vector.Values[2] / magnitude);
 	}
 
 	template <typename TVALUE, typename TFLOATING = FloatMax>
@@ -64,7 +64,7 @@ namespace Common
 	{
 		FloatMax magnitude = power(power(vector.Values[0], 2) + power(vector.Values[1], 2) + power(vector.Values[2], 2) + power(vector.Values[3], 2), 0.5);
 
-		return Vector4<TFLOATING>(vector.Values[0] / magnitude, vector.Values[1] / magnitude, vector.Values[2] / magnitude, vector.Values[3] / magnitude)
+		return Vector4<TFLOATING>(vector.Values[0] / magnitude, vector.Values[1] / magnitude, vector.Values[2] / magnitude, vector.Values[3] / magnitude);
 	}
 }
 

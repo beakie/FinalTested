@@ -56,6 +56,8 @@ int main(int argc, char *argv[])
 	l.add(Common::NullableNull());
 	l.add(Common::Null);
 
+	Common::UnitVector3 uv3 = Common::getUnitVector(Common::Vector3<UInt8>(0, 1, 86)); // wrong?!
+
 	return a.exec();
 
 }
