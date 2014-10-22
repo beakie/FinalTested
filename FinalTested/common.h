@@ -18,6 +18,7 @@
 #include "common-scalecastpixelconv.h"
 #include "common-tuple.h"
 #include "common-unitinterval.h"
+#include "common-unitvector.h"
 #include "common-vector2.h"
 #include "common-vector3.h"
 #include "common-vector4.h"

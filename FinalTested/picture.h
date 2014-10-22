@@ -1,7 +1,6 @@
 #ifndef PICTURE_H
 #define PICTURE_H
 
-#include "core.h"
 #include "common.h"
 
 // todo
