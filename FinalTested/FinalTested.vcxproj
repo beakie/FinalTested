@@ -90,6 +90,7 @@
     <ClInclude Include="common-tuple.h" />
     <ClInclude Include="common-unitinterval.h" />
     <ClInclude Include="common-chainpixelconv.h" />
+    <ClInclude Include="common-unitvector.h" />
     <ClInclude Include="common-vector2.h" />
     <ClInclude Include="common-vector3.h" />
     <ClInclude Include="common-vector4.h" />
