@@ -59,7 +59,10 @@ int main(int argc, char *argv[])
 	l.add(Common::NullableNull());
 	l.add(Common::Null);
 
-	Common::UnitVector3 uv3 = Common::getUnitVector(Common::Vector3<UInt8>(0, 1, 86)); // wrong?!
+	Common::UnitVector3 uv3 = Common::getUnitVector(Common::Vector3<FloatMax>(0, 1, 86)); // wrong?!
+
+	Common::UnitVector2 uv2 = Common::getUnitVector(Common::Vector2<FloatMax>(-2, 1)); // wrong?!
+	FloatMax test2 = pow(pow(uv2.Values[0], 2) + pow(uv2.Values[1], 2), 0.5);
 
 	return a.exec();
 
