@@ -9,7 +9,7 @@ namespace Common
 	template <typename TVALUE = FloatMax>
 	struct Quaternion
 	{
-		Vector3<TVALUE> Vector;
+		Vector3<TVALUE> V;
 		TVALUE W;
 
 		Quaternion()
@@ -21,23 +21,23 @@ namespace Common
 			operator=(quaternion);
 		}
 
-		Quaternion(const Vector3<TVALUE>& vector, const TVALUE w)
+		Quaternion(const Vector3<TVALUE>& v, const TVALUE w)
 		{
-			Vector = vector;
+			V = v;
 			W = w;
 		}
 
 		Quaternion(const TVALUE x, const TVALUE y, const TVALUE z, const TVALUE w)
 		{
-			Vector.Values[0] = x;
-			Vector.Values[1] = y;
-			Vector.Values[2] = z;
+			V.Values[0] = x;
+			V.Values[1] = y;
+			V.Values[2] = z;
 			W = w;
 		}
 
 		Quaternion<TVALUE>& operator=(const Quaternion<TVALUE>& quaternion)
 		{
-			Vector = quaternion.Vector;
+			V = quaternion.V;
 			W = quaternion.W;
 
 			return *this;
