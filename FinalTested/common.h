@@ -15,6 +15,7 @@
 #include "common-matrixn.h"
 #include "common-nullable.h"
 #include "common-nullablenull.h"
+#include "common-quaternion.h"
 #include "common-scalecastpixelconv.h"
 #include "common-tuple.h"
 #include "common-unitinterval.h"
@@ -286,6 +287,12 @@ namespace Common
 	/// Image with 2 byte dimensions and max bit floating point pixels
 	/// </summary>
 	typedef Image<FloatMax, UInt16> Image16F;
+
+	typedef Quaternion<Float32> QuaternionF32;
+
+	typedef Quaternion<Float64> QuaternionF64;
+
+	typedef Quaternion<FloatMax> QuaternionF;
 
 }
 
