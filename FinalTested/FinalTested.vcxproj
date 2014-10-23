@@ -134,6 +134,7 @@
     <ClInclude Include="space3d-common_.h" />
     <ClInclude Include="space3d-coordinate.h" />
     <ClInclude Include="space3d.h" />
+    <ClInclude Include="studio.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,6 @@
+#include "core.h"
+#include "common.h"
+#include "picture.h"
+#include "picture-qt.h"
+#include "space2d.h"
+#include "space3d.h"
