@@ -9,6 +9,12 @@ namespace Common
 	static const long double Pi = acos(-1.0);
 
 	template <typename T>
+	static T abs(const T value)
+	{
+		return std::abs(value);
+	}
+
+	template <typename T>
 	static T sin(const T value)
 	{
 		return std::sin(value);

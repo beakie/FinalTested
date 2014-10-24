@@ -20,6 +20,12 @@ namespace Space2d
 		return plot2 - plot1;
 	}
 
+	template <typename T>
+	Common::Vector2<T> getPlotDiff(const Common::Vector2<T> &plot1, const Common::Vector2<T> &plot2)
+	{
+		return Common::Vector2<T>(Common::abs(plot1.Values[0] - plot2.Values[0]), Common::abs(plot1.Values[1] - plot2.Values[1]));
+	}
+
 }
 
 #endif // SPACE2DCOMMON_H
