@@ -61,11 +61,7 @@ struct Vector4
 
 	Vector4<TVALUE> operator+(const Vector4<TVALUE>& vector) const
 	{
-		Vector4<TVALUE> v = *this;
-
-		v += vector;
-
-		return v;
+		return Vector4<TVALUE>(*this) += vector;
 	}
 
 	Vector4<TVALUE>& operator+=(const Vector4<TVALUE>& vector)
@@ -80,11 +76,7 @@ struct Vector4
 
 	Vector4<TVALUE> operator+(const TVALUE value) const
 	{
-		Vector4<TVALUE> v = *this;
-
-		v += value;
-
-		return v;
+		return Vector4<TVALUE>(*this) += value;
 	}
 
 	Vector4<TVALUE>& operator+=(const TVALUE value)
@@ -99,11 +91,7 @@ struct Vector4
 
 	Vector4<TVALUE> operator-(const Vector4<TVALUE>& vector) const
 	{
-		Vector4<TVALUE> v = *this;
-
-		v -= vector;
-
-		return v;
+		return Vector4<TVALUE>(*this) -= vector;
 	}
 
 	Vector4<TVALUE>& operator-=(const Vector4<TVALUE>& vector)
@@ -118,11 +106,7 @@ struct Vector4
 
 	Vector4<TVALUE> operator-(const TVALUE value) const
 	{
-		Vector4<TVALUE> v = *this;
-
-		v -= value;
-
-		return v;
+		return Vector4<TVALUE>(*this) -= value;
 	}
 
 	Vector4<TVALUE>& operator-=(const TVALUE value)
@@ -137,11 +121,7 @@ struct Vector4
 
 	Vector4<TVALUE> operator*(const Vector4<TVALUE>& vector) const
 	{
-		Vector4<TVALUE> v = *this;
-
-		v *= vector;
-
-		return v;
+		return Vector4<TVALUE>(*this) *= vector;
 	}
 
 	Vector4<TVALUE>& operator*=(const Vector4<TVALUE>& vector)
@@ -156,11 +136,7 @@ struct Vector4
 
 	Vector4<TVALUE> operator*(const TVALUE value) const
 	{
-		Vector4<TVALUE> v = *this;
-
-		v *= value;
-
-		return v;
+		return Vector4<TVALUE>(*this) *= value;
 	}
 
 	Vector4<TVALUE>& operator*=(const TVALUE value)
@@ -175,11 +151,7 @@ struct Vector4
 
 	Vector4<TVALUE> operator/(const Vector4<TVALUE>& vector) const
 	{
-		Vector4<TVALUE> v = *this;
-
-		v /= vector;
-
-		return v;
+		return Vector4<TVALUE>(*this) /= vector;
 	}
 
 	Vector4<TVALUE>& operator/=(const Vector4<TVALUE>& vector)
@@ -194,11 +166,7 @@ struct Vector4
 
 	Vector4<TVALUE> operator/(const TVALUE value) const
 	{
-		Vector4<TVALUE> v = *this;
-
-		v /= value;
-
-		return v;
+		return Vector4<TVALUE>(*this) /= value;
 	}
 
 	Vector4<TVALUE>& operator/=(const TVALUE value)
@@ -213,11 +181,7 @@ struct Vector4
 
 	Vector4<TVALUE> operator&(const Vector4<TVALUE>& vector) const
 	{
-		Vector4<TVALUE> v = *this;
-
-		v &= vector;
-
-		return v;
+		return Vector4<TVALUE>(*this) &= vector;
 	}
 
 	Vector4<TVALUE>& operator&=(const Vector4<TVALUE>& vector)
@@ -232,11 +196,7 @@ struct Vector4
 
 	Vector4<TVALUE> operator&(const TVALUE value) const
 	{
-		Vector4<TVALUE> v = *this;
-
-		v &= value;
-
-		return v;
+		return Vector4<TVALUE>(*this) &= value;
 	}
 
 	Vector4<TVALUE>& operator&=(const TVALUE value)
@@ -251,11 +211,7 @@ struct Vector4
 
 	Vector4<TVALUE> operator|(const Vector4<TVALUE>& vector) const
 	{
-		Vector4<TVALUE> v = *this;
-
-		v |= vector;
-
-		return v;
+		return Vector4<TVALUE>(*this) |= vector;
 	}
 
 	Vector4<TVALUE>& operator|=(const Vector4<TVALUE>& vector)
@@ -270,11 +226,7 @@ struct Vector4
 
 	Vector4<TVALUE> operator|(const TVALUE value) const
 	{
-		Vector4<TVALUE> v = *this;
-
-		v |= value;
-
-		return v;
+		return Vector4<TVALUE>(*this) |= value;
 	}
 
 	Vector4<TVALUE>& operator|=(const TVALUE value) const

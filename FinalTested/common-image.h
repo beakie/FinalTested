@@ -160,11 +160,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator*(const TVALUE value) const
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX> = *this;
-
-			i *= value;
-
-			return i;
+			return Image<TVALUE, TINDEX>(*this) *= value;
 		}
 
 		/// <summary>
@@ -195,11 +191,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator/(const TVALUE value) const
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX> = *this;
-
-			i /= value;
-
-			return i;
+			return Image<TVALUE, TINDEX>(*this) /= value;
 		}
 
 		/// <summary>
@@ -261,11 +253,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator|(const Image<TVALUE, TINDEX>& image) const
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX> = *this;
-
-			i |= image;
-
-			return i;
+			return Image<TVALUE, TINDEX>(*this) |= image;
 		}
 
 		/// <summary>
@@ -293,11 +281,7 @@ namespace Common
 		/// </summary>
 		Image<TVALUE, TINDEX> operator&(const Image<TVALUE, TINDEX>& image) const
 		{
-			Image<TVALUE, TINDEX> i = Image<TVALUE, TINDEX> = *this;
-
-			i &= image;
-
-			return i;
+			return Image<TVALUE, TINDEX>(*this) &= image;
 		}
 
 		/// <summary>

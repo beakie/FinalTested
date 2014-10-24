@@ -62,11 +62,7 @@ namespace Common
 
 		Nullable<T> operator+(const Nullable<T>& nullable) const
 		{
-			Nullable<T> n = *this;
-
-			n += nullable;
-
-			return n;
+			return Nullable<T>(*this) += nullable;
 		}
 
 		Nullable<T>& operator+=(const Nullable<T>& nullable)
@@ -81,11 +77,7 @@ namespace Common
 
 		Nullable<T> operator+(const T value) const
 		{
-			Nullable<T> n = *this;
-
-			n += value;
-
-			return n;
+			return Nullable<T>(*this) += value;
 		}
 
 		Nullable<T>& operator+=(const T value)
@@ -100,11 +92,7 @@ namespace Common
 
 		Nullable<T> operator-(const Nullable<T>& nullable) const
 		{
-			Nullable<T> n = *this;
-
-			n -= nullable;
-
-			return n;
+			return Nullable<T>(*this) -= nullable;
 		}
 
 		Nullable<T>& operator-=(const Nullable<T>& nullable)
@@ -119,11 +107,7 @@ namespace Common
 
 		Nullable<T> operator-(const T value) const
 		{
-			Nullable<T> n = *this;
-
-			n -= value;
-
-			return n;
+			return Nullable<T>(*this) -= value;
 		}
 
 		Nullable<T>& operator-=(const T value)
@@ -138,11 +122,7 @@ namespace Common
 
 		Nullable<T> operator*(const Nullable<T>& nullable) const
 		{
-			Nullable<T> n = *this;
-
-			n *= nullable;
-
-			return n;
+			return Nullable<T>(*this) *= nullable;
 		}
 
 		Nullable<T>& operator*=(const Nullable<T>& nullable)
@@ -157,11 +137,7 @@ namespace Common
 
 		Nullable<T> operator*(const T value) const
 		{
-			Nullable<T> n = *this;
-
-			n *= value;
-
-			return n;
+			return Nullable<T>(*this) *= value;
 		}
 
 		Nullable<T>& operator*=(const T value)
@@ -176,11 +152,7 @@ namespace Common
 
 		Nullable<T> operator/(const Nullable<T>& nullable) const
 		{
-			Nullable<T> n = *this;
-
-			n /= nullable;
-
-			return n;
+			return Nullable<T>(*this) /= nullable;
 		}
 
 		Nullable<T>& operator/=(const Nullable<T>& nullable)
@@ -195,11 +167,7 @@ namespace Common
 
 		Nullable<T> operator/(const T value) const
 		{
-			Nullable<T> n = *this;
-
-			n /= value;
-
-			return n;
+			return Nullable<T>(*this) /= value;
 		}
 
 		Nullable<T>& operator/=(const T value)
@@ -214,11 +182,7 @@ namespace Common
 
 		Nullable<T> operator&(const Nullable<T>& nullable) const
 		{
-			Nullable<T> n = *this;
-
-			n &= nullable;
-
-			return n;
+			return Nullable<T>(*this) &= nullable;
 		}
 
 		Nullable<T>& operator&=(const Nullable<T>& nullable)
@@ -233,11 +197,7 @@ namespace Common
 
 		Nullable<T> operator&(const T value) const
 		{
-			Nullable<T> n = *this;
-
-			n &= value;
-
-			return n;
+			return Nullable<T>(*this) &= value;
 		}
 
 		Nullable<T>& operator&=(const T value)
@@ -252,11 +212,7 @@ namespace Common
 
 		Nullable<T> operator|(const Nullable<T>& nullable) const
 		{
-			Nullable<T> n = *this;
-
-			n |= nullable;
-
-			return n;
+			return Nullable<T>(*this) |= nullable;
 		}
 
 		Nullable<T>& operator|=(const Nullable<T>& nullable)
@@ -271,11 +227,7 @@ namespace Common
 
 		Nullable<T> operator|(const T value) const
 		{
-			Nullable<T> n = *this;
-
-			n |= value;
-
-			return n;
+			return Nullable<T>(*this) |= value;
 		}
 
 		Nullable<T>& operator|=(const T value)

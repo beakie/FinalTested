@@ -45,11 +45,7 @@ namespace Common
 
 		Quaternion<TVALUE> operator*(const Quaternion<TVALUE>& quaternion) const
 		{
-			Quaternion<TVALUE> m = *this;
-
-			m *= quaternion;
-
-			return m;
+			return Quaternion<TVALUE>(*this) *= quaternion;
 		}
 
 		Quaternion<TVALUE>& operator*=(const Quaternion<TVALUE>& quaternion)

@@ -49,11 +49,7 @@ struct Vector2
 
 	Vector2<TVALUE> operator+(const Vector2<TVALUE>& vector) const
 	{
-		Vector2<TVALUE> v = *this;
-
-		v += vector;
-
-		return v;
+		return Vector2<TVALUE>(*this) += vector;
 	}
 
 	Vector2<TVALUE>& operator+=(const Vector2<TVALUE>& vector)
@@ -66,11 +62,7 @@ struct Vector2
 
 	Vector2<TVALUE> operator+(const TVALUE value) const
 	{
-		Vector2<TVALUE> v = *this;
-
-		v += value;
-
-		return v;
+		return Vector2<TVALUE>(*this) += value;
 	}
 
 	Vector2<TVALUE>& operator+=(const TVALUE value)
@@ -83,11 +75,7 @@ struct Vector2
 
 	Vector2<TVALUE> operator-(const Vector2<TVALUE>& vector) const
 	{
-		Vector2<TVALUE> v = *this;
-
-		v -= vector;
-
-		return v;
+		return Vector2<TVALUE>(*this) -= vector;
 	}
 
 	Vector2<TVALUE>& operator-=(const Vector2<TVALUE>& vector)
@@ -100,11 +88,7 @@ struct Vector2
 
 	Vector2<TVALUE> operator-(const TVALUE value) const
 	{
-		Vector2<TVALUE> v = *this;
-
-		v -= value;
-
-		return v;
+		return Vector2<TVALUE>(*this) -= value;
 	}
 
 	Vector2<TVALUE>& operator-=(const TVALUE value)
@@ -117,11 +101,7 @@ struct Vector2
 
 	Vector2<TVALUE> operator*(const Vector2<TVALUE>& vector) const
 	{
-		Vector2<TVALUE> v = *this;
-
-		v *= vector;
-
-		return v;
+		return Vector2<TVALUE>(*this) *= vector;
 	}
 
 	Vector2<TVALUE>& operator*=(const Vector2<TVALUE>& vector)
@@ -134,11 +114,7 @@ struct Vector2
 
 	Vector2<TVALUE> operator*(const TVALUE value) const
 	{
-		Vector2<TVALUE> v = *this;
-
-		v *= value;
-
-		return v;
+		return Vector2<TVALUE>(*this) *= value;
 	}
 
 	Vector2<TVALUE>& operator*=(const TVALUE value)
@@ -151,11 +127,7 @@ struct Vector2
 
 	Vector2<TVALUE> operator/(const Vector2<TVALUE>& vector) const
 	{
-		Vector2<TVALUE> v = *this;
-
-		v /= vector;
-
-		return v;
+		return Vector2<TVALUE>(*this) /= vector;
 	}
 
 	Vector2<TVALUE>& operator/=(const Vector2<TVALUE>& vector)
@@ -168,11 +140,7 @@ struct Vector2
 
 	Vector2<TVALUE> operator/(const TVALUE value) const
 	{
-		Vector2<TVALUE> v = *this;
-
-		v /= value;
-
-		return v;
+		return Vector2<TVALUE>(*this) /= value;
 	}
 
 	Vector2<TVALUE>& operator/=(const TVALUE value)
@@ -185,11 +153,7 @@ struct Vector2
 
 	Vector2<TVALUE> operator&(const Vector2<TVALUE>& vector) const
 	{
-		Vector2<TVALUE> v = *this;
-
-		v &= vector;
-
-		return v;
+		return Vector2<TVALUE>(*this) &= vector;
 	}
 
 	Vector2<TVALUE>& operator&=(const Vector2<TVALUE>& vector)
@@ -202,11 +166,7 @@ struct Vector2
 
 	Vector2<TVALUE> operator&(const TVALUE value) const
 	{
-		Vector2<TVALUE> v = *this;
-
-		v &= value;
-
-		return v;
+		return Vector2<TVALUE>(*this) &= value;
 	}
 
 	Vector2<TVALUE>& operator&=(const TVALUE value)
@@ -219,11 +179,7 @@ struct Vector2
 
 	Vector2<TVALUE> operator|(const Vector2<TVALUE>& vector) const
 	{
-		Vector2<TVALUE> v = *this;
-
-		v |= vector;
-
-		return v;
+		return Vector2<TVALUE>(*this) |= vector;
 	}
 
 	Vector2<TVALUE>& operator|=(const Vector2<TVALUE>& vector)
@@ -236,11 +192,7 @@ struct Vector2
 
 	Vector2<TVALUE> operator|(const TVALUE value) const
 	{
-		Vector2<TVALUE> v = *this;
-
-		v |= value;
-
-		return v;
+		return Vector2<TVALUE>(*this) |= value;
 	}
 
 	Vector2<TVALUE>& operator|=(const TVALUE value)
@@ -274,6 +226,19 @@ struct Vector2
 	bool isZero()
 	{
 		return (Values[0] * vector.Values[0] + Values[1] * vector.Values[1]);
+	}
+
+	Vector2<TVALUE>& abs()
+	{
+		Values[0] = Common::abs(Values[0]);
+		Values[1] = Common::abs(Values[1]);
+
+		return *this;
+	}
+
+	Vector2<TVALUE> getAbs()
+	{
+		return Vector2<TVALUE>(*this).abs();
 	}
 
     virtual ~Vector2()

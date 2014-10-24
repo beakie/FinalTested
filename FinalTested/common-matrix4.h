@@ -171,11 +171,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE> operator+(const Matrix4<TVALUE>& matrix) const
 		{
-			Matrix3<TVALUE> m = *this;
-
-			m += matrix;
-
-			return m;
+			return Matrix4<TVALUE>(*this) += matrix;
 		}
 
 		/// <summary>
@@ -208,11 +204,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE> operator-(const Matrix4<TVALUE>& matrix) const
 		{
-			Matrix3<TVALUE> m = *this;
-
-			m -= matrix;
-
-			return m;
+			return Matrix4<TVALUE>(*this) -= matrix;
 		}
 
 		/// <summary>
@@ -245,11 +237,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE> operator*(const Matrix4<TVALUE>& matrix) const
 		{
-			Matrix3<TVALUE> m = *this;
-
-			m *= matrix;
-
-			return m;
+			return Matrix4<TVALUE>(*this) *= matrix;
 		}
 
 		/// <summary>
@@ -282,11 +270,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE> operator*(const TVALUE value) const
 		{
-			Matrix3<TVALUE> m = *this;
-
-			m *= value;
-
-			return m;
+			return Matrix4<TVALUE>(*this) *= value;
 		}
 
 		/// <summary>
@@ -318,11 +302,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE> operator/(const Matrix4<TVALUE>& matrix) const
 		{
-			Matrix3<TVALUE> m = *this;
-
-			m /= matrix;
-
-			return m;
+			return Matrix4<TVALUE>(*this) /= matrix;
 		}
 
 		/// <summary>
@@ -345,11 +325,7 @@ namespace Common
 		/// </summary>
 		Matrix4<TVALUE> operator/(const TVALUE value) const
 		{
-			Matrix3<TVALUE> m = *this;
-
-			m /= value;
-
-			return m;
+			return Matrix4<TVALUE>(*this) /= value;
 		}
 
 		/// <summary>
