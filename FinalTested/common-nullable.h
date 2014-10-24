@@ -328,6 +328,14 @@ namespace Common
 				return getDefault<T>();
 		}
 
+		T getValueOrDefault(T defaultValue) const
+		{
+			if (HasValue)
+				return Value;
+			else
+				return defaultValue;
+		}
+
 		bool isNull() const
 		{
 			return !HasValue;
