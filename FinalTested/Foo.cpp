@@ -20,5 +20,6 @@
 18) If boredom kicks in, have a go at trying to get .NET to implement this code. Wrappers n stuff?
 19) Vector norm
 20) Tuple operators
+21) Static matrix functions. Look at end of Matrix2 for the list.
 
 */
