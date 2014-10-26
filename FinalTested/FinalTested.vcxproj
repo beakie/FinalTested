@@ -133,6 +133,7 @@
     <ClInclude Include="space2d.h" />
     <ClInclude Include="space3d-common_.h" />
     <ClInclude Include="space3d-coordinate.h" />
+    <ClInclude Include="space3d-transformmatrixbuilders_.h" />
     <ClInclude Include="space3d.h" />
     <ClInclude Include="studio.h" />
   </ItemGroup>

@@ -21,5 +21,6 @@
 19) Vector norm
 20) Tuple operators
 21) Static matrix functions. Look at end of Matrix2 for the list.
+22) Matrix transformation builders
 
 */
