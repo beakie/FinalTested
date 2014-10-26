@@ -197,5 +197,8 @@
     <ClInclude Include="space3d-transformmatrixbuilders_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="space2d-transformmatrixbuilders_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
