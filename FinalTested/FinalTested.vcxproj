@@ -81,6 +81,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bar.h" />
     <ClInclude Include="common-list.h" />
     <ClInclude Include="common-castpixelconv.h" />
     <ClInclude Include="common-image.h" />
@@ -96,6 +97,7 @@
     <ClInclude Include="common-vector2.h" />
     <ClInclude Include="common-vector3.h" />
     <ClInclude Include="common-vector4.h" />
+    <ClInclude Include="foo.h" />
     <ClInclude Include="picture-colorhelpers_.h" />
     <ClInclude Include="picture-colormaps_.h" />
     <ClInclude Include="common-imatrixadapter.h" />

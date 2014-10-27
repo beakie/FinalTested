@@ -24,3 +24,17 @@
 22) Matrix transformation builders
 
 */
+
+	//#include "foo.h"
+	//#include "bar.h"
+
+	//Foo<T>::multiply(const Bar<T>& bar) const
+	//{
+	//	return t * bar.t;
+	//}
+
+	//Bar<T>::multiply(const Foo<T>& foo) const
+	//{
+	//	return t * foo.t;
+	//}
+
