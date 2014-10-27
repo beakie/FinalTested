@@ -25,6 +25,33 @@ namespace Space3d
 	}
 
 	template <typename TVALUE>
+	Common::Matrix4<TVALUE> getScalingMatrixScaleX(const TVALUE scale)
+	{
+		return Common::Matrix4<TVALUE>(scale,  0.0,  0.0,  0.0,
+										 0.0,  1.0,  0.0,  0.0,
+										 0.0,  0.0,  1.0,  0.0,
+										 0.0,  0.0,  0.0,  1.0);
+	}
+
+	template <typename TVALUE>
+	Common::Matrix4<TVALUE> getScalingMatrixScaleY(const TVALUE scale)
+	{
+		return Common::Matrix4<TVALUE>(  1.0,  0.0,  0.0,  0.0,
+										 0.0, scale, 0.0,  0.0,
+										 0.0,  0.0,  1.0,  0.0,
+										 0.0,  0.0,  0.0,  1.0);
+	}
+
+	template <typename TVALUE>
+	Common::Matrix4<TVALUE> getScalingMatrixScaleZ(const TVALUE scale)
+	{
+		return Common::Matrix4<TVALUE>(  1.0,  0.0,  0.0,  0.0,
+										 0.0,  1.0,  0.0,  0.0,
+										 0.0,  0.0, scale, 0.0,
+										 0.0,  0.0,  0.0,  1.0);
+	}
+
+	template <typename TVALUE>
 	Common::Matrix4<TVALUE> getRotationMatrix(const TVALUE rotation)
 	{
 		TVALUE c = Common::cos(rotation);
