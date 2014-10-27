@@ -16,6 +16,33 @@ namespace Space3d
 	}
 
 	template <typename TVALUE>
+	Common::Matrix4<TVALUE> getTranslationMatrixTranslateX(const TVALUE translation)
+	{
+		return Common::Matrix4<TVALUE>(  1.0,  0.0,  0.0,  translation,
+										 0.0,  1.0,  0.0,  1.0,
+										 0.0,  0.0,  1.0,  1.0,
+										 0.0,  0.0,  0.0,  1.0);
+	}
+
+	template <typename TVALUE>
+	Common::Matrix4<TVALUE> getTranslationMatrixTranslateY(const TVALUE translation)
+	{
+		return Common::Matrix4<TVALUE>(  1.0,  0.0,  0.0,  1.0,
+										 0.0,  1.0,  0.0,  translation,
+										 0.0,  0.0,  1.0,  1.0,
+										 0.0,  0.0,  0.0,  1.0);
+	}
+
+	template <typename TVALUE>
+	Common::Matrix4<TVALUE> getTranslationMatrixTranslateZ(const TVALUE translation)
+	{
+		return Common::Matrix4<TVALUE>(  1.0,  0.0,  0.0,  1.0,
+										 0.0,  1.0,  0.0,  1.0,
+										 0.0,  0.0,  1.0,  translation,
+										 0.0,  0.0,  0.0,  1.0);
+	}
+
+	template <typename TVALUE>
 	Common::Matrix4<TVALUE> getScalingMatrix(const TVALUE x, const TVALUE y, const TVALUE z)
 	{
 		return Common::Matrix4<TVALUE>(    x,  0.0,  0.0,  0.0,

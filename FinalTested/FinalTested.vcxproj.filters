@@ -27,6 +27,9 @@
     <ClCompile Include="Foo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="common-math_.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common-matrix3.h">
