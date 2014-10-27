@@ -3,8 +3,10 @@
 
 #include "common.h"
 
+#include "space2d-axis.h"
 #include "space2d-common_.h"
 #include "space2d-plot.h"
+#include "space2d-transformmatrixbuilders_.h"
 
 namespace Space3d
 {
