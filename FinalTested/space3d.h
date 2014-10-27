@@ -6,6 +6,7 @@
 #include "space3d-common_.h"
 #include "space3d-coordinate.h"
 #include "space3d-transformmatrixbuilders_.h"
+#include "space3d-transformquaternionbuilders_.h"
 
 namespace Space3d
 {
