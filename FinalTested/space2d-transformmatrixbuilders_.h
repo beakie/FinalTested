@@ -20,6 +20,46 @@ namespace Space3d
 										 0.0,    y,  0.0,
 										 0.0,  0.0,  1.0);
 	}
+
+	template <typename TVALUE>
+	Common::Matrix3<TVALUE> getRotationMatrix(const TVALUE x, const TVALUE y, const TVALUE rotation)
+	{
+		return Common::Matrix3<TVALUE>(    x,  0.0,  0.0,
+										 0.0,    y,  0.0,
+										 0.0,  0.0,  1.0);
+	}
+
+	template <typename TVALUE>
+	Common::Matrix3<TVALUE> getReflectionMatrixAxisX()
+	{
+		return Common::Matrix3<TVALUE>(  1.0,  0.0,  0.0,
+										 0.0, -1.0,  0.0,
+										 0.0,  0.0,  1.0);
+	}
+
+	template <typename TVALUE>
+	Common::Matrix3<TVALUE> getReflectionMatrixAxisY()
+	{
+		return Common::Matrix3<TVALUE>( -1.0,  0.0,  0.0,
+										 0.0,  1.0,  0.0,
+										 0.0,  0.0,  1.0);
+	}
+
+	template <typename TVALUE>
+	Common::Matrix3<TVALUE> getReflectionMatrixAxisXY()
+	{
+		return Common::Matrix3<TVALUE>(  0.0,  1.0,  0.0,
+										 1.0,  0.0,  0.0,
+										 0.0,  0.0,  1.0);
+	}
+
+	template <typename TVALUE>
+	Common::Matrix3<TVALUE> getReflectionMatrixAxisYX()
+	{
+		return Common::Matrix3<TVALUE>(  0.0, -1.0,  0.0,
+										-1.0,  0.0,  0.0,
+										 0.0,  0.0,  1.0);
+	}
 }
 
 #endif // SPACE2DTRANSFORMMATRIXBUILDERS_H
