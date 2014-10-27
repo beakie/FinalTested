@@ -212,11 +212,5 @@
     <ClInclude Include="space2d-axis.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="foo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

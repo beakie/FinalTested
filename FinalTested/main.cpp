@@ -6,9 +6,6 @@
 
 #include "studio.h"
 
-#include "foo.h"
-#include "bar.h"
-
 template <>
 static Picture::Rgb8 Common::getDefault<Picture::Rgb8>()
 {
