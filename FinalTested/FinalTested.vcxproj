@@ -128,6 +128,7 @@
     <ClInclude Include="picture-tricolormapscaledpixelconv.h" />
     <ClInclude Include="picture-tricolormappalettepixelconv.h" />
     <ClInclude Include="picture.h" />
+    <ClInclude Include="space2d-axis.h" />
     <ClInclude Include="space2d-common_.h" />
     <ClInclude Include="space2d-plot.h" />
     <ClInclude Include="space2d-transformmatrixbuilders_.h" />

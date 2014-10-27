@@ -6,6 +6,15 @@
 namespace Space3d
 {
 
+	struct Axis
+	{
+		enum Enum
+		{
+			X = 1,
+			Y = 2,
+			Z = 3
+		};
+	};
 
 }
 

@@ -206,5 +206,8 @@
     <ClInclude Include="space3d-axis.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="space2d-axis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
