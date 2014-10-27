@@ -59,7 +59,9 @@ int main(int argc, char *argv[])
 	Common::UnitVector2 uv2 = Common::getUnitVector(Common::Vector2<FloatMax>(-2, 1)); // wrong?!
 	FloatMax test2 = pow(pow(uv2.Values[0], 2) + pow(uv2.Values[1], 2), 0.5);
 
-	Common::Matrix4<FloatMax> rotation = Space3d::getAxisAngleFixedZRotation(1.34);
+	//Common::Matrix4<FloatMax> rotation = Common::
+
+	//Common::abs(Common::Vector2<float>(0, 0));
 
 	return a.exec();
 

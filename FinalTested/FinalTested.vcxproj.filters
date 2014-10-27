@@ -27,6 +27,9 @@
     <ClCompile Include="Foo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="common-math_.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common-matrix3.h">
@@ -198,6 +201,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="space2d-transformmatrixbuilders_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="space3d-transformquaternionbuilders_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="space3d-axis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="space2d-axis.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
