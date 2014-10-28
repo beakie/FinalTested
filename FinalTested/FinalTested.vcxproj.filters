@@ -215,5 +215,8 @@
     <ClInclude Include="render3d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="render3d-perspective.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
