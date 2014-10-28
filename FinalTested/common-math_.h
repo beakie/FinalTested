@@ -51,15 +51,15 @@ namespace Common
 	}
 
 	template <typename T>
-	static T degreeToRadian(const T value)
+	static T radian(const T degree)
 	{
-		return (T)(Pi * value / 180.0);
+		return (T)(Pi * degree / 180.0);
 	}
 
 	template <typename T>
-	static T radianToDegree(const T value)
+	static T degree(const T radian)
 	{
-		return (T)(value * (180.0 / Pi));
+		return (T)(radian * (180.0 / Pi));
 	}
 
 	template <typename T1, typename T2>
