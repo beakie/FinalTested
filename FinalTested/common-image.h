@@ -9,7 +9,7 @@
 
 namespace Common
 {
-	template <typename TVALUE = FloatMax, typename TINDEX = UInt32>
+	template <typename TVALUE = FloatMax, typename TINDEX = UIntMax>
 	/// <summary>
 	/// 2 dimensional array of pixels
 	/// </summary>
