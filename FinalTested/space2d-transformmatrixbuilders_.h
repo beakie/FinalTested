@@ -22,10 +22,13 @@ namespace Space3d
 	}
 
 	template <typename TVALUE>
-	Common::Matrix3<TVALUE> getRotationMatrix(const TVALUE x, const TVALUE y, const TVALUE rotation)
+	Common::Matrix3<TVALUE> getRotationMatrix(const TVALUE rotation)
 	{
-		return Common::Matrix3<TVALUE>(    x,  0.0,  0.0,
-										 0.0,    y,  0.0,
+		TVALUE c = Common::cos(rotation);
+		TVALUE s = Common::sin(rotation);
+
+		return Common::Matrix3<TVALUE>(    c,    s,  0.0,
+										  -s,    c,  0.0,
 										 0.0,  0.0,  1.0);
 	}
 
