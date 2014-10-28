@@ -6,7 +6,7 @@
 
 namespace Picture
 {
-	template <typename TUNITINTERVAL>
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
 	struct TriColorMap
 	{
 		Common::Vector3<TUNITINTERVAL>* Values;

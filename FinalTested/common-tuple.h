@@ -5,7 +5,7 @@
 
 namespace Common
 {
-	template <typename T1>
+	template <typename T1 = FloatMax>
 	struct Tuple1
 	{
 		T1 Item1;
@@ -16,7 +16,7 @@ namespace Common
 		}
 	};
 
-	template <typename T1, typename T2>
+	template <typename T1 = FloatMax, typename T2 = FloatMax>
 	struct Tuple2
 	{
 		T1 Item1;
@@ -29,7 +29,7 @@ namespace Common
 		}
 	};
 
-	template <typename T1, typename T2, typename T3>
+	template <typename T1 = FloatMax, typename T2 = FloatMax, typename T3 = FloatMax>
 	struct Tuple3
 	{
 		T1 Item1;
@@ -44,7 +44,7 @@ namespace Common
 		}
 	};
 
-	template <typename T1, typename T2, typename T3, typename T4>
+	template <typename T1 = FloatMax, typename T2 = FloatMax, typename T3 = FloatMax, typename T4 = FloatMax>
 	struct Tuple4
 	{
 		T1 Item1;
@@ -61,7 +61,7 @@ namespace Common
 		}
 	};
 
-	template <typename T1, typename T2, typename T3, typename T4, typename T5>
+	template <typename T1 = FloatMax, typename T2 = FloatMax, typename T3 = FloatMax, typename T4 = FloatMax, typename T5 = FloatMax>
 	struct Tuple5
 	{
 		T1 Item1;
@@ -80,7 +80,7 @@ namespace Common
 		}
 	};
 
-	template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6>
+	template <typename T1 = FloatMax, typename T2 = FloatMax, typename T3 = FloatMax, typename T4 = FloatMax, typename T5 = FloatMax, typename T6 = FloatMax>
 	struct Tuple6
 	{
 		T1 Item1;
@@ -101,7 +101,7 @@ namespace Common
 		}
 	};
 
-	template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7>
+	template <typename T1 = FloatMax, typename T2 = FloatMax, typename T3 = FloatMax, typename T4 = FloatMax, typename T5 = FloatMax, typename T6 = FloatMax, typename T7 = FloatMax>
 	struct Tuple7
 	{
 		T1 Item1;
@@ -124,7 +124,7 @@ namespace Common
 		}
 	};
 
-	template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8>
+	template <typename T1 = FloatMax, typename T2 = FloatMax, typename T3 = FloatMax, typename T4 = FloatMax, typename T5 = FloatMax, typename T6 = FloatMax, typename T7 = FloatMax, typename T8 = FloatMax>
 	struct Tuple8
 	{
 		T1 Item1;

@@ -5,7 +5,7 @@
 
 namespace Common
 {
-	template <typename TVALUE>
+	template <typename TVALUE = FloatMax>
 	/// <summary>
 	/// 4 dimensional matrix
 	/// </summary>

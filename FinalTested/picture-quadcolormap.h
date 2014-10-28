@@ -6,7 +6,7 @@
 
 namespace Picture
 {
-	template <typename TUNITINTERVAL>
+	template <typename TUNITINTERVAL = Common::UnitIntervalMax>
 	struct QuadColorMap
 	{
 		Common::Vector4<TUNITINTERVAL>* Values;
