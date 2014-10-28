@@ -16,6 +16,12 @@ namespace Space3d
 	}
 
 	template <typename TVALUE>
+	Common::Matrix4<TVALUE> getTranslationMatrix(const Common::Vector3<TVALUE>& coordinate)
+	{
+		return getTranslationMatrix<TVALUE>(coordinate.Values[0], coordinate.Values[1], coordinate.Values[2]);
+	}
+
+	template <typename TVALUE>
 	Common::Matrix4<TVALUE> getTranslationMatrixTranslateX(const TVALUE translation)
 	{
 		return Common::Matrix4<TVALUE>(  1.0,  0.0,  0.0,  translation,
@@ -81,8 +87,8 @@ namespace Space3d
 	template <typename TVALUE>
 	Common::Matrix4<TVALUE> getRotationMatrix(const TVALUE rotation)
 	{
-		TVALUE c = Common::cos(rotation);
-		TVALUE s = Common::sin(rotation);
+		TVALUE c = Common::cos<TVALUE>(rotation);
+		TVALUE s = Common::sin<TVALUE>(rotation);
 
 		return Common::Matrix4<TVALUE>(   c,     s,  0.0,  0.0,
 										  -s,    c,  0.0,  0.0,
@@ -91,18 +97,30 @@ namespace Space3d
 	}
 
 	template <typename TVALUE>
+	Common::Matrix4<TVALUE> getRotationMatrix(const TVALUE x, const TVALUE y, const TVALUE z, const TVALUE rotation)
+	{
+		return getTranslationMatrix<TVALUE>(-x, -y, -z) * getRotationMatrix<TVALUE>(rotation) * getTranslationMatrix<TVALUE>(x, y, Z);
+	}
+
+	template <typename TVALUE>
+	Common::Matrix4<TVALUE> getRotationMatrix(const Common::Vector3<TVALUE>& coordinate, const TVALUE rotation)
+	{
+		return getTranslationMatrix<TVALUE>(-plot.Values[0], -plot.Values[1], -plot.Values[2]) * getRotationMatrix<TVALUE>(rotation) * getTranslationMatrix<TVALUE>(plot.Values[0], plot.Values[1], plot.Values[2]);
+	}
+
+	template <typename TVALUE>
 	Common::Matrix4<TVALUE> getRotationMatrix(Axis::Enum axis, const TVALUE rotation)
 	{
 		switch (axis)
 		{
 		case Axis::X:
-			return getRotationMatrixAxisX(rotation);
+			return getRotationMatrixAxisX<TVALUE>(rotation);
 			break;
 		case Axis::Y:
-			return getRotationMatrixAxisY(rotation);
+			return getRotationMatrixAxisY<TVALUE>(rotation);
 			break;
 		case Axis::Z:
-			return getRotationMatrixAxisZ(rotation);
+			return getRotationMatrixAxisZ<TVALUE>(rotation);
 			break;
 		}
 	}
@@ -110,8 +128,8 @@ namespace Space3d
 	template <typename TVALUE>
 	Common::Matrix4<TVALUE> getRotationMatrixAxisX(const TVALUE rotation)
 	{
-		TVALUE c = Common::cos(rotation);
-		TVALUE s = Common::sin(rotation);
+		TVALUE c = Common::cos<TVALUE>(rotation);
+		TVALUE s = Common::sin<TVALUE>(rotation);
 
 		return Common::Matrix4<TVALUE>(  1.0,  0.0,  0.0,  0.0,
 										 0.0,    c,    s,  0.0,
@@ -122,8 +140,8 @@ namespace Space3d
 	template <typename TVALUE>
 	Common::Matrix4<TVALUE> getRotationMatrixAxisY(const TVALUE rotation)
 	{
-		TVALUE c = Common::cos(rotation);
-		TVALUE s = Common::sin(rotation);
+		TVALUE c = Common::cos<TVALUE>(rotation);
+		TVALUE s = Common::sin<TVALUE>(rotation);
 
 		return Common::Matrix4<TVALUE>(    c,  0.0,   -s,  0.0,
 										 0.0,  1.0,  0.0,  0.0,
@@ -134,8 +152,8 @@ namespace Space3d
 	template <typename TVALUE>
 	Common::Matrix4<TVALUE> getRotationMatrixAxisZ(const TVALUE rotation)
 	{
-		TVALUE c = Common::cos(rotation);
-		TVALUE s = Common::sin(rotation);
+		TVALUE c = Common::cos<TVALUE>(rotation);
+		TVALUE s = Common::sin<TVALUE>(rotation);
 
 		return Common::Matrix4<TVALUE>(   c,     s,  0.0,  0.0,
 										  -s,    c,  0.0,  0.0,
