@@ -5,12 +5,6 @@
 #include "space2d.h"
 #include "space3d.h"
 
-#include "render3d-perspective.h"
-
-namespace Render3d
-{
-
-
-}
+#include "render3d-orthographic.h"
 
 #endif // RENDER3D_H
