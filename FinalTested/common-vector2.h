@@ -228,7 +228,7 @@ struct Vector2
 		return (Values[0] * vector.Values[0] + Values[1] * vector.Values[1]);
 	}
 
-	Vector2<TVALUE>& abs()
+	Vector2<TVALUE>& absolute()
 	{
 		Values[0] = Common::abs(Values[0]);
 		Values[1] = Common::abs(Values[1]);
@@ -236,9 +236,22 @@ struct Vector2
 		return *this;
 	}
 
-	Vector2<TVALUE> getAbs()
+	Vector2<TVALUE> getAbsolute()
 	{
-		return Vector2<TVALUE>(*this).abs();
+		return Vector2<TVALUE>(*this).absolute();
+	}
+
+	Vector2<TVALUE>& negative()
+	{
+		Values[0] = -Values[0];
+		Values[1] = -Values[1];
+
+		return *this;
+	}
+
+	Vector2<TVALUE> getNegative()
+	{
+		return Vector2<TVALUE>(*this).negative();
 	}
 
     virtual ~Vector2()

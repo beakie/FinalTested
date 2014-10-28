@@ -3,7 +3,7 @@
 
 #include "common.h"
 
-namespace Space3d
+namespace Space2d
 {
 	template <typename TVALUE>
 	Common::Matrix3<TVALUE> getTranslationMatrix(const TVALUE x, const TVALUE y)
@@ -11,6 +11,12 @@ namespace Space3d
 		return Common::Matrix3<TVALUE>(  1.0,  0.0,    x,
 										 0.0,  1.0,    y,
 										 0.0,  0.0,  1.0);
+	}
+
+	template <typename TVALUE>
+	Common::Matrix3<TVALUE> getTranslationMatrix(const Common::Vector2<TVALUE>& plot)
+	{
+		return getTranslationMatrix(plot.Values[0], plot.Values[1]);
 	}
 
 	template <typename TVALUE>
@@ -30,6 +36,18 @@ namespace Space3d
 		return Common::Matrix3<TVALUE>(    c,    s,  0.0,
 										  -s,    c,  0.0,
 										 0.0,  0.0,  1.0);
+	}
+
+	template <typename TVALUE>
+	Common::Matrix3<TVALUE> getRotationMatrix(const TVALUE x, const TVALUE y, const TVALUE rotation)
+	{
+		return getTranslationMatrix(-x, -y) * getRotationMatrix(rotation) * getTranslationMatrix(x, y);
+	}
+
+	template <typename TVALUE>
+	Common::Matrix3<TVALUE> getRotationMatrix(const Common::Vector2<TVALUE>& plot, const TVALUE rotation)
+	{
+		return getTranslationMatrix(-plot.Values[0], -plot.Values[1]) * getRotationMatrix(rotation) * getTranslationMatrix(plot.Values[0], plot.Values[1]);
 	}
 
 	template <typename TVALUE>

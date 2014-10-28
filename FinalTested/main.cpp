@@ -63,6 +63,8 @@ int main(int argc, char *argv[])
 
 	//Common::abs(Common::Vector2<float>(0, 0));
 
+	Common::Matrix3<FloatMax> rot = Space2d::getRotationMatrix(Common::Vector2<FloatMax>(10.0, 20.0), 1.25);
+
 	return a.exec();
 
 }
