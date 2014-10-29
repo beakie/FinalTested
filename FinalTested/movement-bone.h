@@ -11,18 +11,27 @@ namespace Movement
 	struct Bone
 	{
 		Bone<TVALUE>* ParentBone;
-		Bone<TVALUE>** ChildrenBones; //should this be list? if so, probably should be private to stop direct add/remove
+		UInt8 ChildrenBoneCount;
+		Bone<TVALUE>** ChildrenBones;
 		Common::Matrix4<TVALUE> JointTransformMatrix;
 
 		Bone()
+			: ParentBone(nullptr),
+			  ChildrenBoneCount(0),
+			  ChildrenBones(0)
 		{
-			//todo
-			//do i need to set nullptr?
+		}
+
+		Bone(const Bone<TVALUE>* parentBone)
+			: ParentBone(parentBone),
+			  ChildrenBoneCount(0),
+			  ChildrenBones(0)
+		{
 		}
 
 		Bone(const Bone<TVALUE>& bone)
 		{
-			//todo
+			// todo
 		}
 
 		Common::Matrix4<TVALUE> getArmTransformMatrix()
@@ -35,22 +44,24 @@ namespace Movement
 
 		void addBone()
 		{
+			Bone<TVALUE>** tmpChildrenBones = new Bone<TVALUE>[ChildBoneCount + 1];
 
-			ChildrenBones = new Bone<TVALUE>();
-		}
+			for (UInt8 i = 0; i < ChildBoneCount; i++)
+				tmpChildBones[i] = ChildrenBones[i];
 
-		UInt8 getChildBoneCount()
-		{
-			if (ParentBone == nullptr)
-				return JointTransformMatrix;
-			else
-				return ParentBone->getArmTransformMatrix() * JointTransformMatrix;
+			tmpChildBones[ChildBoneCount] = new Bone<TVALUE>(*this);
+
+			delete[] ChildrenBones;
+
+			ChildrenBones = tmpChildBones;
+
+			ChildBoneCount++;
 		}
 
 		~Bone()
 		{
-			if (ParentBone != nullptr)
-				delete ParentBone;
+			for (UInt8 i = 0; i < ChildBoneCount; i++)
+				delete ChildrenBones[i];
 		}
 	};
 }
