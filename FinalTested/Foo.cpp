@@ -22,19 +22,7 @@
 20) Tuple operators
 21) Static matrix functions. Look at end of Matrix2 for the list.
 22) Matrix transformation builders
+23) Servo classes which work like pixelconverters pointing at the bone joint matrix
+24) Controller class which manages the skeletal add/remove/move etc
 
 */
-
-	//#include "foo.h"
-	//#include "bar.h"
-
-	//Foo<T>::multiply(const Bar<T>& bar) const
-	//{
-	//	return t * bar.t;
-	//}
-
-	//Bar<T>::multiply(const Foo<T>& foo) const
-	//{
-	//	return t * foo.t;
-	//}
-
