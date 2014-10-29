@@ -218,5 +218,14 @@
     <ClInclude Include="render3d-orthographic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="movement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="movement-bone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="movement-skeletal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
