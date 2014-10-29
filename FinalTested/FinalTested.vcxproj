@@ -98,6 +98,7 @@
     <ClInclude Include="common-vector4.h" />
     <ClInclude Include="movement-bone.h" />
     <ClInclude Include="movement-actuatorcontroller.h" />
+    <ClInclude Include="movement-iactuator.h" />
     <ClInclude Include="movement-servoactuator.h" />
     <ClInclude Include="movement-skeletal.h" />
     <ClInclude Include="movement.h" />

@@ -233,5 +233,8 @@
     <ClInclude Include="movement-actuatorcontroller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="movement-iactuator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
