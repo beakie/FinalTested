@@ -11,7 +11,7 @@ namespace Movement
 	struct Bone
 	{
 		Bone<TVALUE>* ParentBone;
-		Bone<TVALUE>** ChildrenBones; //should this be list?
+		Bone<TVALUE>** ChildrenBones; //should this be list? if so, probably should be private to stop direct add/remove
 		Common::Matrix4<TVALUE> JointTransformMatrix;
 
 		Bone()
