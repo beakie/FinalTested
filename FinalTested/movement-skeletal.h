@@ -7,6 +7,8 @@
 
 #include "movement-bone.h"
 
+//idea: if i add relative matrix to 0,0,0 to this code can I calculate the matrix required to go from one arm to the next/distance between to end effectors
+
 namespace Movement
 {
 	template <typename TVALUE>
