@@ -42,25 +42,27 @@ namespace Movement
 				return ParentBone->getArmTransformMatrix() * JointTransformMatrix;
 		}
 
-		void addBone()
+		Bone<TVALUE>& addBone()
 		{
-			Bone<TVALUE>** tmpChildrenBones = new Bone<TVALUE>[ChildBoneCount + 1];
+			Bone<TVALUE>** tmpChildrenBones = new Bone<TVALUE>*[ChildrenBoneCount + 1];
 
-			for (UInt8 i = 0; i < ChildBoneCount; i++)
-				tmpChildBones[i] = ChildrenBones[i];
+			for (UInt8 i = 0; i < ChildrenBoneCount; i++)
+				tmpChildrenBones[i] = ChildrenBones[i];
 
-			tmpChildBones[ChildBoneCount] = new Bone<TVALUE>(*this);
+			tmpChildrenBones[ChildrenBoneCount] = new Bone<TVALUE>(*this);
 
 			delete[] ChildrenBones;
 
-			ChildrenBones = tmpChildBones;
+			ChildrenBones = tmpChildrenBones;
 
-			ChildBoneCount++;
+			ChildrenBoneCount++;
+
+			return *ChildrenBones[ChildrenBoneCount - 1];
 		}
 
 		~Bone()
 		{
-			for (UInt8 i = 0; i < ChildBoneCount; i++)
+			for (UInt8 i = 0; i < ChildrenBoneCount; i++)
 				delete ChildrenBones[i];
 		}
 	};

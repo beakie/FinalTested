@@ -26,23 +26,25 @@ namespace Movement
 			// todo
 		}
 
-		void addArm()
+		Bone<TVALUE>& addArm()
 		{
-			Bone<TVALUE>** tmpArms = new Bone<TVALUE>[ArmCount + 1];
+			Bone<TVALUE>** tmpArms = new Bone<TVALUE>*[ArmCount + 1];
 
 			for (UInt8 i = 0; i < ArmCount; i++)
 				tmpArms[i] = Arms[i];
 
-			tmpArms[ArmCount] = new Bone<TVALUE>(*this);
+			tmpArms[ArmCount] = new Bone<TVALUE>();
 
 			delete[] Arms;
 
 			Arms = tmpArms;
 
 			ArmCount++;
+
+			return *Arms[ArmCount - 1];
 		}
 
-		~Bone()
+		~Skeletal()
 		{
 			for (UInt8 i = 0; i < ArmCount; i++)
 				delete Arms[i];

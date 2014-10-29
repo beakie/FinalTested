@@ -63,6 +63,9 @@ int main(int argc, char *argv[])
 
 	Common::Matrix3<FloatMax> rot = Space2d::getRotationMatrix(Common::radian(46.0), Common::Vector2<FloatMax>(10.0, 20.0));
 
+	Movement::Skeletal<FloatMax> skeletal;
+	skeletal.addArm().addBone();
+
 	return a.exec();
 
 }
