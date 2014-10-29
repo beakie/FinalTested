@@ -12,13 +12,13 @@ namespace Common
 		TCONVERTER1* _Converter1;
 		TCONVERTER2* _Converter2;
 
+	public:
 		Chain2PixelConv(TCONVERTER1* converter1, TCONVERTER2* converter2)
 		{
 			_Converter1 = converter1;
 			_Converter2 = converter2;
 		}
 
-	public:
 		TVALUEOUT convertPixel(const TVALUEIN& pixel)
 		{
 			return _Converter2->convertPixel(_Converter1->convertPixel(pixel));
@@ -33,6 +33,7 @@ namespace Common
 		TCONVERTER2* _Converter2;
 		TCONVERTER3* _Converter3;
 
+	public:
 		Chain3PixelConv(TCONVERTER1* converter1, TCONVERTER2* converter2, TCONVERTER3* converter3)
 		{
 			_Converter1 = converter1;
@@ -40,7 +41,6 @@ namespace Common
 			_Converter3 = converter3;
 		}
 
-	public:
 		TVALUEOUT convertPixel(const TVALUEIN& pixel)
 		{
 			return _Converter3->convertPixel(_Converter2->convertPixel(_Converter1->convertPixel(pixel)));
@@ -56,6 +56,7 @@ namespace Common
 		TCONVERTER3* _Converter3;
 		TCONVERTER4* _Converter4;
 
+	public:
 		Chain4PixelConv(TCONVERTER1* converter1, TCONVERTER2* converter2, TCONVERTER3* converter3, TCONVERTER4* converter4)
 		{
 			_Converter1 = converter1;
@@ -64,7 +65,6 @@ namespace Common
 			_Converter4 = converter4;
 		}
 
-	public:
 		TVALUEOUT convertPixel(const TVALUEIN& pixel)
 		{
 			return _Converter4->convertPixel(_Converter3->convertPixel(_Converter2->convertPixel(_Converter1->convertPixel(pixel))));
