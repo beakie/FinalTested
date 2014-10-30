@@ -16,12 +16,14 @@ namespace Movement
 		IActuator<TVALUE>** Actuators;
 		UInt8 ActuatorCount;
 
-		Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>** BoneLinks;
+		Common::Tuple2<const IActuator<TVALUE>*, const Bone<TVALUE>*>** BoneLinks;
 		UInt8 BoneLinkCount;
 
 		ActuatorManager()
 			: Actuators(0),
-			  ActuatorCount(0)
+			  ActuatorCount(0),
+			  BoneLinks(0),
+			  BoneLinkCount(0)
 		{
 		}
 
@@ -42,14 +44,14 @@ namespace Movement
 			ActuatorCount++;
 		}
 
-		void addBoneLink(const Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>& boneLink)
+		void addBoneLink(const Common::Tuple2<const IActuator<TVALUE>*, const Bone<TVALUE>*>& boneLink)
 		{
-			Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>** tmpBoneLinks = new Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>*[BoneLinkCount + 1];
+			Common::Tuple2<const IActuator<TVALUE>*, const Bone<TVALUE>*>** tmpBoneLinks = new Common::Tuple2<const IActuator<TVALUE>*, const Bone<TVALUE>*>*[BoneLinkCount + 1];
 
 			for (UInt8 i = 0; i < BoneLinkCount; i++)
 				tmpBoneLinks[i] = BoneLinks[i];
 
-			tmpBoneLinks[BoneLinkCount] = new Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>(boneLink);
+			tmpBoneLinks[BoneLinkCount] = new Common::Tuple2<const IActuator<TVALUE>*, const Bone<TVALUE>*>(boneLink);
 
 			delete[] BoneLinks;
 
@@ -60,7 +62,7 @@ namespace Movement
 
 		void addBoneLink(const IActuator<TVALUE>* actuator, const Bone<TVALUE>* bone)
 		{
-			addBoneLink(Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>(actuator, bone));
+			addBoneLink(Common::Tuple2<const IActuator<TVALUE>*, const Bone<TVALUE>*>(actuator, bone));
 		}
 
 		~ActuatorManager()

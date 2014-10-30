@@ -76,7 +76,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="common-math_.cpp" />
     <ClCompile Include="Foo.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
