@@ -23,6 +23,22 @@ namespace Movement
 
 		}
 
+		LinearActuator(const LinearActuator<TVALUE>& linearActuator)
+			: PreTransformMatrix(linearActuator.PreTransformMatrix),
+			  PostTransformMatrix(linearActuator.PostTransformMatrix),
+			  Movement(linearActuator.Movement)
+		{
+		}
+
+		LinearActuator<TVALUE>& operator=(const LinearActuator<TVALUE>& linearActuator)
+		{
+			PreTransformMatrix = linearActuator.PreTransformMatrix;
+			PostTransformMatrix = linearActuator.PostTransformMatrix;
+			Movement = linearActuator.Movement;
+
+			return *this;
+		}
+
 		Common::Matrix4<TVALUE> getTransformMatrix() const
 		{
 			return PreTransformMatrix * Space3d::getTranslationMatrix() * PostTransformMatrix;
