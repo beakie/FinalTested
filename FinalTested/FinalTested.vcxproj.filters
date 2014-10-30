@@ -30,6 +30,9 @@
     <ClCompile Include="common-math_.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="movement-linearactuator.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common-matrix3.h">

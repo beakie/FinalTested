@@ -79,6 +79,7 @@
     <ClCompile Include="common-math_.cpp" />
     <ClCompile Include="Foo.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="movement-linearactuator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common-list.h" />
