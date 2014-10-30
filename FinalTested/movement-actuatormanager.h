@@ -5,6 +5,7 @@
 #include "common.h"
 
 #include "movement-iactuator.h"
+#include "movement-bone.h"
 
 namespace Movement
 {
@@ -14,6 +15,9 @@ namespace Movement
 	public:
 		IActuator<TVALUE>** Actuators;
 		UInt8 ActuatorCount;
+
+		Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>** BoneLinks;
+		UInt8 BoneLinkCount;
 
 		ActuatorManager()
 			: Actuators(0),
@@ -38,12 +42,35 @@ namespace Movement
 			ActuatorCount++;
 		}
 
+		void addBoneLink(const Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>& boneLink)
+		{
+			Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>** tmpBoneLinks = new Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>*[BoneLinkCount + 1];
+
+			for (UInt8 i = 0; i < BoneLinkCount; i++)
+				tmpBoneLinks[i] = BoneLinks[i];
+
+			tmpBoneLinks[BoneLinkCount] = new Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>(boneLink);
+
+			delete[] BoneLinks;
+
+			BoneLinks = tmpBoneLinks;
+
+			BoneLinkCount++;
+		}
+
+		void addBoneLink(const IActuator<TVALUE>* actuator, const Bone<TVALUE>* bone)
+		{
+			addBoneLink(Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>(actuator, bone));
+		}
+
 		~ActuatorManager()
 		{
 			for (UInt8 i = 0; i < ActuatorCount; i++)
 				delete Actuators[i];
 
 			delete[] Actuators;
+
+			delete[] BoneLinks;
 		}
 	};
 

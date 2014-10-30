@@ -68,6 +68,7 @@ int main(int argc, char *argv[])
 
 	Movement::ActuatorManager<> actuatorManager = Movement::ActuatorManager<>();
 	actuatorManager.addActuator(Movement::RotatingActuator<>(Common::Vector3<>(0.0, 0.0, 0.0), Common::Vector3<>(10.0, 10.0, 10.0)));
+	actuatorManager.addBoneLink(actuatorManager.Actuators[0], skeletal.Arms[0]);
 
 	return a.exec();
 
