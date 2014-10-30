@@ -261,7 +261,7 @@ namespace Common
 			return vector;
 		}
 
-		virtual ~Vector4()
+		~Vector4()
 		{
 		}
 	};

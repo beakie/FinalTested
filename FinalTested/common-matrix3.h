@@ -449,7 +449,7 @@ namespace Common
 					+ Values[0][2] * (Values[1][0] * Values[2][1] - Values[1][1] * Values[2][0]);
 		}
 
-		virtual ~Matrix3()
+		~Matrix3()
 		{
 		}
 

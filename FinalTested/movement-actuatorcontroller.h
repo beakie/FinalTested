@@ -9,6 +9,8 @@ namespace Movement
 	template <typename TVALUE>
 	class ActuatorController
 	{
+	public:
+
 	};
 
 }

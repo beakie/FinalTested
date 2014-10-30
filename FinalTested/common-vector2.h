@@ -254,7 +254,7 @@ namespace Common
 			return Vector2<TVALUE>(*this).negative();
 		}
 
-		virtual ~Vector2()
+		~Vector2()
 		{
 		}
 	};

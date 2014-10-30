@@ -730,7 +730,7 @@ namespace Common
 		}
 
 	public:
-		virtual ~Image()
+		~Image()
 		{
 			deletePixelArray();
 		}

@@ -56,7 +56,7 @@ namespace Common
 								((W * quaternion.Z) + (X * quaternion.Y) - (Y * quaternion.X) + (Z * quaternion.W)))
 		}
 
-		virtual ~Quaternion()
+		~Quaternion()
 		{
 		}
 	};

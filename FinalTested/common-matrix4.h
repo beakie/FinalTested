@@ -517,7 +517,7 @@ namespace Common
 					− Values[3][0] * Values[0][1] * Values[1][2] * Values[2][3] − Values[3][0] * Values[1][1] * Values[2][2] * Values[0][3] − Values[3][0] * Values[2][1] * Values[0][2] * Values[1][3];
 		}
 
-		virtual ~Matrix4()
+		~Matrix4()
 		{
 		}
 

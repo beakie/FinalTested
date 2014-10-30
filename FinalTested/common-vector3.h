@@ -242,7 +242,7 @@ namespace Common
 				(Values[0] * vector.Values[1] - Values[1] * vector.Values[0]));
 		}
 
-		virtual ~Vector3()
+		~Vector3()
 		{
 		}
 	};

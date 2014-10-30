@@ -423,7 +423,7 @@ namespace Common
 
 		//bool validateY(const TINDEX y) const
 
-		virtual ~Matrix2()
+		~Matrix2()
 		{
 		}
 	};

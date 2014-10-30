@@ -322,7 +322,7 @@ namespace Common
 		/// </summary>
 		TVALUE getDeterminant() const;
 
-		virtual ~MatrixN()
+		~MatrixN()
 		{
 		}
 	};
