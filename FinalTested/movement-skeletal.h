@@ -50,6 +50,8 @@ namespace Movement
 		{
 			for (UInt8 i = 0; i < ArmCount; i++)
 				delete Arms[i];
+
+			delete[] Arms;
 		}
 	};
 }

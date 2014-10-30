@@ -64,6 +64,8 @@ namespace Movement
 		{
 			for (UInt8 i = 0; i < ChildrenBoneCount; i++)
 				delete ChildrenBones[i];
+
+			delete[] ChildrenBones;
 		}
 	};
 }
