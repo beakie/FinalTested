@@ -58,6 +58,8 @@
 		template <typename T>
 		void setFoo(const T& foo)
 		{
+			delete fooItem;
+
 			fooItem = new T(foo); // this will add the item to the array
 		}
 
