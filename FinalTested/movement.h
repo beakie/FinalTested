@@ -4,7 +4,7 @@
 #include "movement-bone.h"
 #include "movement-actuatorcontroller.h"
 #include "movement-iactuator.h"
-#include "movement-servoactuator.h"
+#include "movement-rotatingactuator.h"
 #include "movement-skeletal.h"
 
 namespace Movement

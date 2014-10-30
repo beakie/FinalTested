@@ -1,5 +1,5 @@
-#ifndef MOVEMENTSERVOACTUATOR_H
-#define MOVEMENTSERVOACTUATOR_H
+#ifndef MOVEMENTROTATINGACTUATOR_H
+#define MOVEMENTROTATINGACTUATOR_H
 
 #include "core.h"
 #include "common.h"
@@ -9,14 +9,14 @@
 namespace Movement
 {
 	template <typename TVALUE>
-	class ServoActuator : IActuator<TVALUE>
+	class RotatingActuator : IActuator<TVALUE>
 	{
 	public:
 		Common::Vector3<TVALUE> Position;
 		Common::Vector3<TVALUE> AxisAlignment;
 		TVALUE Rotation;
 
-		ServoActuator(const Common::Vector3<TVALUE>& position, const Common::Vector3<TVALUE>& axisAlignment, const TVALUE rotation)
+		RotatingActuator(const Common::Vector3<TVALUE>& position, const Common::Vector3<TVALUE>& axisAlignment, const TVALUE rotation)
 		{
 			Position = position;
 			AxisAlignment = axisAlignment;
@@ -28,11 +28,11 @@ namespace Movement
 			return Common::Matrix4<TVALUE>();
 		}
 
-		~ServoActuator()
+		~RotatingActuator()
 		{
 		}
 	};
 
 }
 
-#endif // MOVEMENTSERVOACTUATOR_H
+#endif // MOVEMENTROTATINGACTUATOR_H
