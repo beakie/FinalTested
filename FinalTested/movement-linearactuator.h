@@ -28,7 +28,7 @@ namespace Movement
 			return PreTransformMatrix * Space3d::getTranslationMatrix() * PostTransformMatrix;
 		}
 
-		~LinearActuator()
+		virtual ~LinearActuator()
 		{
 		}
 	};

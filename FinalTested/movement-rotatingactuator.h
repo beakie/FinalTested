@@ -38,7 +38,7 @@ namespace Movement
 			setRadians(Common::radian(degrees));
 		}
 
-		~RotatingActuator()
+		virtual ~RotatingActuator()
 		{
 		}
 	};
