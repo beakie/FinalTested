@@ -16,7 +16,7 @@ namespace Movement
 		Common::Matrix4<TVALUE> PostTransformMatrix;
 		TVALUE Rotation;
 
-		RotatingActuator(const Common::Vector3<TVALUE>& position, const Common::Vector3<TVALUE>& axisAlignment)
+		RotatingActuator(const Common::Vector3<TVALUE>& axisFrom, const Common::Vector3<TVALUE>& axisTo)
 			: Rotation(0)
 		{
 			// Calc pre and post matrices

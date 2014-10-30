@@ -16,7 +16,7 @@ namespace Movement
 		Common::Matrix4<TVALUE> PostTransformMatrix;
 		TVALUE Movement;
 
-		LinearActuator(const Common::Vector3<TVALUE>& position, const Common::Vector3<TVALUE>& axisAlignment)
+		LinearActuator(const Common::Vector3<TVALUE>& position, const Common::Vector3<TVALUE>& alignment)
 			: Movement(0)
 		{
 			// Calc pre and post matrices
@@ -26,16 +26,6 @@ namespace Movement
 		Common::Matrix4<TVALUE> getTransformMatrix() const
 		{
 			return PreTransformMatrix * Space3d::getTranslationMatrix() * PostTransformMatrix;
-		}
-
-		void setRadians(const TVALUE radians)
-		{
-			Rotation = radians;
-		}
-
-		void setDegrees(const TVALUE degrees)
-		{
-			setRadians(Common::radian(degrees));
 		}
 
 		~LinearActuator()
