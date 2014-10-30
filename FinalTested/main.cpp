@@ -6,6 +6,67 @@
 
 #include "studio.h"
 
+
+	struct IFoo
+	{
+		void someFunc();
+
+		virtual ~IFoo()
+		{
+		}
+	};
+
+	struct FooA : IFoo
+	{
+		FooA(int i1, int i2)
+		{
+		}
+
+		void someFunc()
+		{
+		}
+
+		~FooA()
+		{
+		}
+	};
+
+	struct FooB : IFoo
+	{
+		FooB(int i)
+		{
+		}
+
+		void someFunc()
+		{
+		}
+
+		~FooB()
+		{
+		}
+	};
+
+	struct FooContainer
+	{
+		IFoo* fooItem; // this will be an array of ifoo pointers in actual code
+
+		FooContainer()
+			: fooItem(0)
+		{
+		}
+
+		template <typename T>
+		void setFoo(const T& foo)
+		{
+			fooItem = new T(foo); // this will add the item to the array
+		}
+
+		~FooContainer()
+		{
+			delete fooItem;
+		}
+	};
+
 template <>
 static Picture::Rgb8 Common::getDefault<Picture::Rgb8>()
 {
@@ -65,6 +126,9 @@ int main(int argc, char *argv[])
 
 	Movement::Skeletal<FloatMax> skeletal;
 	skeletal.addArm().addBone();
+
+	FooContainer fooContainer = FooContainer();
+	fooContainer.setFoo(FooA(1, 1));
 
 	return a.exec();
 
