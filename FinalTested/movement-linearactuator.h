@@ -8,7 +8,7 @@
 
 namespace Movement
 {
-	template <typename TVALUE>
+	template <typename TVALUE = FloatMax>
 	class LinearActuator : IActuator<TVALUE>
 	{
 	public:

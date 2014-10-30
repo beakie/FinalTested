@@ -66,6 +66,8 @@ int main(int argc, char *argv[])
 	Movement::Skeletal<FloatMax> skeletal;
 	skeletal.addArm().addBone();
 
+	Movement::ActuatorManager<FloatMax> actuatorManager;
+
 	return a.exec();
 
 }

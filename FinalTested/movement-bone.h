@@ -7,7 +7,7 @@
 
 namespace Movement
 {
-	template <typename TVALUE>
+	template <typename TVALUE = FloatMax>
 	struct Bone
 	{
 		Bone<TVALUE>* ParentBone;

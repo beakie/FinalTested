@@ -6,7 +6,7 @@
 
 namespace Movement
 {
-	template <typename TVALUE>
+	template <typename TVALUE = FloatMax>
 	class IActuator
 	{
 		Common::Matrix4<TVALUE> getTransformMatrix();
