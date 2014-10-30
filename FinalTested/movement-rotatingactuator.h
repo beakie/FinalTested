@@ -9,7 +9,7 @@
 namespace Movement
 {
 	template <typename TVALUE = FloatMax>
-	class RotatingActuator : IActuator<TVALUE>
+	class RotatingActuator : public IActuator<TVALUE>
 	{
 	public:
 		Common::Matrix4<TVALUE> PreTransformMatrix;
