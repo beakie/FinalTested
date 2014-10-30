@@ -12,20 +12,30 @@ namespace Movement
 	class RotatingActuator : IActuator<TVALUE>
 	{
 	public:
-		Common::Vector3<TVALUE> Position;
-		Common::Vector3<TVALUE> AxisAlignment;
+		Common::Matrix4<TVALUE> PreTransformMatrix;
+		Common::Matrix4<TVALUE> PostTransformMatrix;
 		TVALUE Rotation;
 
-		RotatingActuator(const Common::Vector3<TVALUE>& position, const Common::Vector3<TVALUE>& axisAlignment, const TVALUE rotation)
+		RotatingActuator(const Common::Vector3<TVALUE>& position, const Common::Vector3<TVALUE>& axisAlignment)
+			: Rotation(0)
 		{
-			Position = position;
-			AxisAlignment = axisAlignment;
-			Rotation = rotation;
+			// Calc matrices
+
 		}
 
 		Common::Matrix4<TVALUE> getTransformMatrix() const
 		{
-			return Common::Matrix4<TVALUE>();
+			return PreTransformMatrix * Space3d::getRotationMatrix(rotation) * PostTransformMatrix;
+		}
+
+		void setRadians(const TVALUE radians)
+		{
+			Rotation = radians;
+		}
+
+		void setDegrees(const TVALUE degrees)
+		{
+			setRadians(Common::radian(degrees));
 		}
 
 		~RotatingActuator()

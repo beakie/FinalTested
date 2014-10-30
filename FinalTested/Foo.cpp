@@ -24,5 +24,6 @@
 22) Matrix transformation builders
 23) Servo classes which work like pixelconverters pointing at the bone joint matrix
 24) Controller class which manages the skeletal add/remove/move etc
+25) Standardise the T names across all code. Define a list of T names.
 
 */
