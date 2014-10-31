@@ -66,10 +66,17 @@ namespace Movement
 			addBoneLink(Common::Tuple2<IActuator<TVALUE, TUNITINTERVAL>*, Bone<TVALUE>*>(actuator, bone));
 		}
 
-		template <typename TUNITINTERVAL>
-		IActuator<TVALUE, TUNITINTERVAL>& setPosition(UInt8 actuatorIndex, TUNITINTERVAL unitInterval)
+		Common::Matrix4<TVALUE> getTransformMatrix(UInt8 actuatorIndex) const
 		{
-			return Actuators[actuatorIndex]->setPosition(unitInterval);
+			return Actuators[actuatorIndex]->getTransformMatrix();
+		}
+
+		template <typename TUNITINTERVAL> const // is this const right?
+		ActuatorManager<TVALUE, TUNITINTERVAL>& setPosition(UInt8 actuatorIndex, TUNITINTERVAL unitInterval)
+		{
+			Actuators[actuatorIndex]->setPosition(unitInterval);
+
+			return *this;
 		}
 
 		~ActuatorManager()

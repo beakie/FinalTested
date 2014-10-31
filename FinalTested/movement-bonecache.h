@@ -12,6 +12,11 @@ namespace Movement
 	class BoneCache
 		: Bone<TVALUE>
 	{
+		// Bones are not linear
+		// If I am caching, it would be more efficient to offer some code that overrides getArmTransformMatrix and caches each bit along each arm. Do a version that only caches the item explicitly specified
+
+		bool* Cached;
+		Common::Matrix4<TVALUE>** TransformMatrix;
 	};
 }
 
