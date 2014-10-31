@@ -41,7 +41,7 @@ namespace Movement
 
 		Common::Matrix4<TVALUE> getTransformMatrix() const
 		{
-			return PreTransformMatrix * Space3d::getTranslationMatrix() * PostTransformMatrix;
+			return PreTransformMatrix * Space3d::getTranslationMatrixAxisX(Movement) * PostTransformMatrix;
 		}
 
 		IActuator<TVALUE, TUNITINTERVAL>& setPosition(TUNITINTERVAL unitInterval)
