@@ -1,9 +1,9 @@
 #ifndef MOVEMENT_H
 #define MOVEMENT_H
 
-#include "movement-bone.h"
 #include "movement-actuatormanager.h"
-#include "movement-cachedactuator.h"
+#include "movement-bone.h"
+#include "movement-bonecache.h"
 #include "movement-iactuator.h"
 #include "movement-linearactuator.h"
 #include "movement-rotatingactuator.h"
