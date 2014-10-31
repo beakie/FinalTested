@@ -12,7 +12,7 @@ namespace Movement
 	class BoneCache
 		: Bone<TVALUE>
 	{
-		// Bones are not linear
+		// Bones are not linear. If I just hold bone pointers I can make it linear in this class.
 		// If I am caching, it would be more efficient to offer some code that overrides getArmTransformMatrix and caches each bit along each arm. Do a version that only caches the item explicitly specified
 
 		bool* Cached;
