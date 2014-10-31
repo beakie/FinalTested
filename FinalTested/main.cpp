@@ -16,6 +16,8 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 
+	/*
+
 	std::cout << "Starting\n";
 
 	//Common::Image16U8 testImageb = Common::Image16U8(10, 10, 0); // Errors
@@ -62,6 +64,8 @@ int main(int argc, char *argv[])
 	//Common::abs(Common::Vector2<float>(0, 0));
 
 	Common::Matrix3F rot = Space2d::getRotationMatrix(Common::radian(46.0), Common::Vector2F(10.0, 20.0));
+
+	*/
 
 	Movement::Skeletal<FloatMax> skeletal;
 	skeletal.addArm().addBone();
