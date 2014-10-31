@@ -3,6 +3,7 @@
 
 #include "movement-bone.h"
 #include "movement-actuatormanager.h"
+#include "movement-cachedactuator.h"
 #include "movement-iactuator.h"
 #include "movement-linearactuator.h"
 #include "movement-rotatingactuator.h"
