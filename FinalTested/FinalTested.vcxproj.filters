@@ -239,8 +239,5 @@
     <ClInclude Include="movement-bonecache.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement-jointlist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
