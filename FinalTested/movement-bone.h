@@ -11,8 +11,8 @@ namespace Movement
 	struct Bone
 	{
 		Bone<TVALUE>* ParentBone;
-		UInt8 ChildrenBoneCount;
 		Bone<TVALUE>** ChildrenBones;
+		UInt8 ChildrenBoneCount;
 		Common::Matrix4<TVALUE>* JointTransformMatrix;
 
 		Bone(Common::Matrix4<TVALUE>* jointTransformMatrix)
