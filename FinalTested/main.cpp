@@ -54,20 +54,20 @@ int main(int argc, char *argv[])
 	l.add(Common::NullableNull());
 	l.add(Common::Null);
 
-	Common::UnitVector3 uv3 = Common::getUnitVector(Common::Vector3<FloatMax>(0, 1, 86)); // wrong?!
+	Common::UnitVector3 uv3 = Common::getUnitVector(Common::Vector3F(0, 1, 86)); // wrong?!
 
-	Common::UnitVector2 uv2 = Common::getUnitVector(Common::Vector2<FloatMax>(-2, 1)); // wrong?!
+	Common::UnitVector2 uv2 = Common::getUnitVector(Common::Vector2F(-2, 1)); // wrong?!
 	FloatMax test2 = pow(pow(uv2.Values[0], 2) + pow(uv2.Values[1], 2), 0.5);
 
 	//Common::abs(Common::Vector2<float>(0, 0));
 
-	Common::Matrix3<FloatMax> rot = Space2d::getRotationMatrix(Common::radian(46.0), Common::Vector2<FloatMax>(10.0, 20.0));
+	Common::Matrix3F rot = Space2d::getRotationMatrix(Common::radian(46.0), Common::Vector2F(10.0, 20.0));
 
 	Movement::Skeletal<FloatMax> skeletal;
 	skeletal.addArm().addBone();
 
 	Movement::ActuatorManager<> actuatorManager = Movement::ActuatorManager<>();
-	actuatorManager.addActuator(Movement::RotatingActuator<>(Common::Vector3<>(0.0, 0.0, 0.0), Common::Vector3<>(10.0, 10.0, 10.0)));
+	actuatorManager.addActuator(Movement::RotatingActuator<>(Common::Vector3F(0.0, 0.0, 0.0), Common::Vector3F(10.0, 10.0, 10.0)));
 	actuatorManager.addBoneLink(actuatorManager.Actuators[0], skeletal.Arms[0]);
 
 	return a.exec();

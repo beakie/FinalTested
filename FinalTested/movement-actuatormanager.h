@@ -15,7 +15,6 @@ namespace Movement
 	public:
 		IActuator<TVALUE>** Actuators;
 		UInt8 ActuatorCount;
-
 		Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>** BoneLinks;
 		UInt8 BoneLinkCount;
 

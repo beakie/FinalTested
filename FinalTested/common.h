@@ -294,6 +294,186 @@ namespace Common
 
 	typedef Quaternion<FloatMax> QuaternionF;
 
+	/// <summary>
+	/// vector of size 2 with 1 bit values
+	/// </summary>
+	typedef Vector2<UInt1> Vector2U1;
+
+	/// <summary>
+	/// vector of size 3 with 1 bit values
+	/// </summary>
+	typedef Vector3<UInt1> Vector3U1;
+
+	/// <summary>
+	/// vector of size 4 with 1 bit values
+	/// </summary>
+	typedef Vector4<UInt1> Vector4U1;
+
+	/// <summary>
+	/// vector of size 2 with 1 byte unsigned integer values
+	/// </summary>
+	typedef Vector2<UInt8> Vector2U8;
+
+	/// <summary>
+	/// vector of size 3 with 1 byte unsigned integer values
+	/// </summary>
+	typedef Vector3<UInt8> Vector3U8;
+
+	/// <summary>
+	/// vector of size 4 with 1 byte unsigned integer values
+	/// </summary>
+	typedef Vector4<UInt8> Vector4U8;
+
+	/// <summary>
+	/// vector of size 2 with 2 byte unsigned integer values
+	/// </summary>
+	typedef Vector2<UInt16> Vector2U16;
+
+	/// <summary>
+	/// vector of size 3 with 2 byte unsigned integer values
+	/// </summary>
+	typedef Vector3<UInt16> Vector3U16;
+
+	/// <summary>
+	/// vector of size 4 with 2 byte unsigned integer values
+	/// </summary>
+	typedef Vector4<UInt16> Vector4U16;
+
+	/// <summary>
+	/// vector of size 2 with 4 byte unsigned integer values
+	/// </summary>
+	typedef Vector2<UInt32> Vector2U32;
+
+	/// <summary>
+	/// vector of size 3 with 4 byte unsigned integer values
+	/// </summary>
+	typedef Vector3<UInt32> Vector3U32;
+
+	/// <summary>
+	/// vector of size 4 with 4 byte unsigned integer values
+	/// </summary>
+	typedef Vector4<UInt32> Vector4U32;
+
+	/// <summary>
+	/// vector of size 2 with max byte unsigned integer values
+	/// </summary>
+	typedef Vector2<UIntMax> Vector2U;
+
+	/// <summary>
+	/// vector of size 3 with max byte unsigned integer values
+	/// </summary>
+	typedef Vector3<UIntMax> Vector3U;
+
+	/// <summary>
+	/// vector of size 4 with max byte unsigned integer values
+	/// </summary>
+	typedef Vector4<UIntMax> Vector4U;
+
+	/// <summary>
+	/// vector of size 2 with 1 byte signed integer values
+	/// </summary>
+	typedef Vector2<Int8> Vector2I8;
+
+	/// <summary>
+	/// vector of size 3 with 1 byte signed integer values
+	/// </summary>
+	typedef Vector3<Int8> Vector3I8;
+
+	/// <summary>
+	/// vector of size 4 with 1 byte signed integer values
+	/// </summary>
+	typedef Vector4<Int8> Vector4I8;
+
+	/// <summary>
+	/// vector of size 2 with 2 byte signed integer values
+	/// </summary>
+	typedef Vector2<Int16> Vector2I16;
+
+	/// <summary>
+	/// vector of size 3 with 2 byte signed integer values
+	/// </summary>
+	typedef Vector3<Int16> Vector3I16;
+
+	/// <summary>
+	/// vector of size 4 with 2 byte signed integer values
+	/// </summary>
+	typedef Vector4<Int16> Vector4I16;
+
+	/// <summary>
+	/// vector of size 2 with 4 byte signed integer values
+	/// </summary>
+	typedef Vector2<Int32> Vector2I32;
+
+	/// <summary>
+	/// vector of size 3 with 4 byte signed integer values
+	/// </summary>
+	typedef Vector3<Int32> Vector3I32;
+
+	/// <summary>
+	/// vector of size 4 with 4 byte signed integer values
+	/// </summary>
+	typedef Vector4<Int32> Vector4I32;
+
+	/// <summary>
+	/// vector of size 2 with max byte signed integer values
+	/// </summary>
+	typedef Vector2<IntMax> Vector2I;
+
+	/// <summary>
+	/// vector of size 3 with max byte signed integer values
+	/// </summary>
+	typedef Vector3<IntMax> Vector3I;
+
+	/// <summary>
+	/// vector of size 4 with max byte signed integer values
+	/// </summary>
+	typedef Vector4<IntMax> Vector4I;
+
+	/// <summary>
+	/// vector of size 2 with 32 bit floating point values
+	/// </summary>
+	typedef Vector2<Float32> Vector2F32;
+
+	/// <summary>
+	/// vector of size 3 with 32 bit floating point values
+	/// </summary>
+	typedef Vector3<Float32> Vector3F32;
+
+	/// <summary>
+	/// vector of size 4 with 32 bit floating point values
+	/// </summary>
+	typedef Vector4<Float32> Vector4F32;
+
+	/// <summary>
+	/// vector of size 2 with 64 bit floating point values
+	/// </summary>
+	typedef Vector2<Float64> Vector2F64;
+
+	/// <summary>
+	/// vector of size 3 with 64 bit floating point values
+	/// </summary>
+	typedef Vector3<Float64> Vector3F64;
+
+	/// <summary>
+	/// vector of size 4 with 64 bit floating point values
+	/// </summary>
+	typedef Vector4<Float64> Vector4F64;
+
+	/// <summary>
+	/// vector of size 2 with max bit floating point values
+	/// </summary>
+	typedef Vector2<FloatMax> Vector2F;
+
+	/// <summary>
+	/// vector of size 3 with max bit floating point values
+	/// </summary>
+	typedef Vector3<FloatMax> Vector3F;
+
+	/// <summary>
+	/// vector of size 4 with max bit floating point values
+	/// </summary>
+	typedef Vector4<FloatMax> Vector4F;
+
 }
 
 #endif // COMMON_H
