@@ -236,5 +236,8 @@
     <ClInclude Include="movement-actuatormanager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="movement-cachedactuator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
