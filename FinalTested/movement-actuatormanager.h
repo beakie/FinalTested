@@ -63,7 +63,7 @@ namespace Movement
 
 		void addBoneLink(IActuator<TVALUE, TUNITINTERVAL>* actuator, Bone<TVALUE>* bone)
 		{
-			addBoneLink(Common::Tuple2<IActuator<TVALUE, TUNITINTERVAL>*, Bone<TVALUE>*>(actuator, bone));
+			addBoneLink(Common::Tuple2<IActuator<TVALUE, TUNITINTERVAL>*, Bone<TVALUE>*> { actuator, bone });
 		}
 
 		Common::Matrix4<TVALUE> getTransformMatrix(UInt8 actuatorIndex) const
