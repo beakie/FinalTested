@@ -69,17 +69,13 @@ int main(int argc, char *argv[])
 
 	Movement::JointList<> jointList = Movement::JointList<>(); // build this into skeletal?
 	Movement::Skeletal<> skeletal;
-	skeletal.addArm(jointList.addJoint())
-			.addBone(jointList.addJoint())
-			.addBone(jointList.addJoint());
-
+	skeletal.addArm(&jointList.addJoint())
+			.addBone(&jointList.addJoint())
+			.addBone(&jointList.addJoint());
 	Movement::ActuatorManager64 actuatorManager = Movement::ActuatorManager64();
-
 	actuatorManager.addActuator(Movement::RotatingActuator64(Common::Vector3F(0.0, 0.0, 0.0), Common::Vector3F(10.0, 10.0, 10.0)));
 	actuatorManager.addBoneLink(actuatorManager.Actuators[0], skeletal.Arms[0]);
-
-	actuatorManager.addBoneLink(actuatorManager.addActuator(Movement::LinearActuator64(Common::Vector3F(0.0, 0.0, 0.0), Common::Vector3F(10.0, 10.0, 10.0))), skeletal.Arms[0]->ChildrenBones[0]);
-
+	actuatorManager.addBoneLink(&actuatorManager.addActuator(Movement::LinearActuator64(Common::Vector3F(0.0, 0.0, 0.0), Common::Vector3F(10.0, 10.0, 10.0))), skeletal.Arms[0]->ChildrenBones[0]);
 	Common::Matrix4F transformMatrix = actuatorManager.setPosition(0, 0.5).getTransformMatrix(0);
 
 	return a.exec();

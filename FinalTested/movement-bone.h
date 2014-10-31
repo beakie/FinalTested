@@ -44,7 +44,7 @@ namespace Movement
 				return ParentBone->getArmTransformMatrix() * *JointTransformMatrix;
 		}
 
-		Bone<TVALUE>& addBone(const Common::Matrix4<TVALUE>& jointTransformMatrix)
+		Bone<TVALUE>& addBone(Common::Matrix4<TVALUE>* jointTransformMatrix)
 		{
 			Bone<TVALUE>** tmpChildrenBones = new Bone<TVALUE>*[ChildrenBoneCount + 1];
 

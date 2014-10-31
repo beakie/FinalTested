@@ -12,6 +12,12 @@ namespace Movement
 		Common::Matrix4<TVALUE>** JointMatrices;
 		UInt8 JointCount;
 
+		JointList()
+			: JointMatrices(0),
+			  JointCount(0)
+		{
+		}
+
 		Common::Matrix4<TVALUE>& addJoint()
 		{
 			Common::Matrix4<TVALUE>** tmpJointMatrices = new Common::Matrix4<TVALUE>*[JointCount + 1];
@@ -19,7 +25,7 @@ namespace Movement
 			for (UInt8 i = 0; i < JointCount; i++)
 				tmpJointMatrices[i] = JointMatrices[i];
 
-			tmpJointMatrices[JointCount] = new Common::Matrix4<TVALUE>(Common::Matrix4<TVALUE>().identity());
+			tmpJointMatrices[JointCount] = new Common::Matrix4<TVALUE>();
 
 			delete[] JointMatrices;
 

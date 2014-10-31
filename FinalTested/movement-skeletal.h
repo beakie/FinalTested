@@ -14,12 +14,12 @@ namespace Movement
 	template <typename TVALUE = FloatMax>
 	struct Skeletal
 	{
-		UInt8 ArmCount;
 		Bone<TVALUE>** Arms;
+		UInt8 ArmCount;
 
 		Skeletal()
-			: ArmCount(0),
-			  Arms(0)
+			: Arms(0),
+			  ArmCount(0)
 		{
 		}
 
@@ -28,14 +28,14 @@ namespace Movement
 			// todo
 		}
 
-		Bone<TVALUE>& addArm(const Common::Matrix4<TVALUE>& jointTransformMatrix)
+		Bone<TVALUE>& addArm(Common::Matrix4<TVALUE>* jointTransformMatrix)
 		{
 			Bone<TVALUE>** tmpArms = new Bone<TVALUE>*[ArmCount + 1];
 
 			for (UInt8 i = 0; i < ArmCount; i++)
 				tmpArms[i] = Arms[i];
 
-			tmpArms[ArmCount] = new Bone<TVALUE>(&jointTransformMatrix);
+			tmpArms[ArmCount] = new Bone<TVALUE>(jointTransformMatrix);
 
 			delete[] Arms;
 
