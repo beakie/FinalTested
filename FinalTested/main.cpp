@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 
 	skeletal.addArm(&jointList.addJoint())
 			.addBone(&jointList.addJoint())
-			.addBone(&jointList.addJoint());;
+			.addBone(&jointList.addJoint());
 
 	Movement::ActuatorManager64 actuatorManager = Movement::ActuatorManager64();
 

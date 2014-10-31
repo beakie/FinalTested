@@ -12,8 +12,8 @@ namespace Movement
 	class LinearActuator : public IActuator<TVALUE, TUNITINTERVAL>
 	{
 	public:
-		Common::Matrix4<TVALUE> PreTransformMatrix;
-		Common::Matrix4<TVALUE> PostTransformMatrix;
+		Common::Matrix4<TVALUE> AxisAlignmentTransformMatrix;
+		Common::Matrix4<TVALUE> InverseAxisAlignmentTransformMatrix;
 		TVALUE Movement;
 
 		LinearActuator(const Common::Vector3<TVALUE>& position, const Common::Vector3<TVALUE>& alignment)
@@ -24,16 +24,16 @@ namespace Movement
 		}
 
 		LinearActuator(const LinearActuator<TVALUE>& linearActuator)
-			: PreTransformMatrix(linearActuator.PreTransformMatrix),
-			  PostTransformMatrix(linearActuator.PostTransformMatrix),
+			: AxisAlignmentTransformMatrix(linearActuator.AxisAlignmentTransformMatrix),
+			  InverseAxisAlignmentTransformMatrix(linearActuator.InverseAxisAlignmentTransformMatrix),
 			  Movement(linearActuator.Movement)
 		{
 		}
 
 		LinearActuator<TVALUE>& operator=(const LinearActuator<TVALUE>& linearActuator)
 		{
-			PreTransformMatrix = linearActuator.PreTransformMatrix;
-			PostTransformMatrix = linearActuator.PostTransformMatrix;
+			AxisAlignmentTransformMatrix = linearActuator.AxisAlignmentTransformMatrix;
+			InverseAxisAlignmentTransformMatrix = linearActuator.InverseAxisAlignmentTransformMatrix;
 			Movement = linearActuator.Movement;
 
 			return *this;
@@ -41,7 +41,7 @@ namespace Movement
 
 		Common::Matrix4<TVALUE> getTransformMatrix() const
 		{
-			return PreTransformMatrix * Space3d::getTranslationMatrixAxisX(Movement) * PostTransformMatrix;
+			return AxisAlignmentTransformMatrix * Space3d::getTranslationMatrixAxisX(Movement) * InverseAxisAlignmentTransformMatrix;
 		}
 
 		IActuator<TVALUE, TUNITINTERVAL>& setPosition(TUNITINTERVAL unitInterval)

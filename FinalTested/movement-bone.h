@@ -5,6 +5,8 @@
 #include "common.h"
 #include "space3d.h"
 
+#include "movement-joint.h"
+
 namespace Movement
 {
 	template <typename TVALUE = FloatMax>
@@ -13,21 +15,21 @@ namespace Movement
 		Bone<TVALUE>* ParentBone;
 		Bone<TVALUE>** ChildrenBones;
 		UInt8 ChildrenBoneCount;
-		Common::Matrix4<TVALUE>* JointTransformMatrix;
+		Joint<TVALUE>* Joint_;
 
-		Bone(Common::Matrix4<TVALUE>* jointTransformMatrix)
+		Bone(Joint<TVALUE>* joint)
 			: ParentBone(nullptr),
 			  ChildrenBoneCount(0),
 			  ChildrenBones(0),
-			  JointTransformMatrix(jointTransformMatrix)
+			  Joint_(joint)
 		{
 		}
 
-		Bone(Bone<TVALUE>* parentBone, Common::Matrix4<TVALUE>* jointTransformMatrix)
+		Bone(Bone<TVALUE>* parentBone, Joint<TVALUE>* joint)
 			: ParentBone(parentBone),
 			  ChildrenBoneCount(0),
 			  ChildrenBones(0),
-			  JointTransformMatrix(jointTransformMatrix)
+			  Joint_(joint)
 		{
 		}
 
@@ -39,19 +41,19 @@ namespace Movement
 		Common::Matrix4<TVALUE> getArmTransformMatrix()
 		{
 			if (ParentBone == nullptr)
-				return *JointTransformMatrix;
+				return *Joint;
 			else
-				return ParentBone->getArmTransformMatrix() * *JointTransformMatrix;
+				return ParentBone->getArmTransformMatrix() * *Joint_;
 		}
 
-		Bone<TVALUE>& addBone(Common::Matrix4<TVALUE>* jointTransformMatrix)
+		Bone<TVALUE>& addBone(Joint<TVALUE>* joint)
 		{
 			Bone<TVALUE>** tmpChildrenBones = new Bone<TVALUE>*[ChildrenBoneCount + 1];
 
 			for (UInt8 i = 0; i < ChildrenBoneCount; i++)
 				tmpChildrenBones[i] = ChildrenBones[i];
 
-			tmpChildrenBones[ChildrenBoneCount] = new Bone<TVALUE>(this, jointTransformMatrix);
+			tmpChildrenBones[ChildrenBoneCount] = new Bone<TVALUE>(this, joint);
 
 			delete[] ChildrenBones;
 

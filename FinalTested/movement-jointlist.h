@@ -4,44 +4,46 @@
 #include "core.h"
 #include "common.h"
 
+#include "movement-joint.h"
+
 namespace Movement
 {
 	template <typename TVALUE = FloatMax>
 	struct JointList
 	{
-		Common::Matrix4<TVALUE>** JointMatrices;
+		Joint<TVALUE>** Joints;
 		UInt8 JointCount;
 
 		JointList()
-			: JointMatrices(0),
+			: Joints(0),
 			  JointCount(0)
 		{
 		}
 
-		Common::Matrix4<TVALUE>& addJoint()
+		Joint<TVALUE>& addJoint()
 		{
-			Common::Matrix4<TVALUE>** tmpJointMatrices = new Common::Matrix4<TVALUE>*[JointCount + 1];
+			Joint<TVALUE>** tmpJoints = new Joint<TVALUE>*[JointCount + 1];
 
 			for (UInt8 i = 0; i < JointCount; i++)
-				tmpJointMatrices[i] = JointMatrices[i];
+				tmpJoints[i] = Joints[i];
 
-			tmpJointMatrices[JointCount] = new Common::Matrix4<TVALUE>();
+			tmpJoints[JointCount] = new Joint<TVALUE>();
 
-			delete[] JointMatrices;
+			delete[] Joints;
 
-			JointMatrices = tmpJointMatrices;
+			Joints = tmpJoints;
 
 			JointCount++;
 
-			return *JointMatrices[JointCount - 1];
+			return *Joints[JointCount - 1];
 		}
 
 		~JointList()
 		{
 			for (UInt8 i = 0; i < JointCount; i++)
-				delete JointMatrices[i];
+				delete Joints[i];
 
-			delete[] JointMatrices;
+			delete[] Joints;
 		}
 
 	};

@@ -23,14 +23,14 @@ namespace Movement
 		{
 		}
 
-		Bone<TVALUE>& addArm(Common::Matrix4<TVALUE>* jointTransformMatrix)
+		Bone<TVALUE>& addArm(Joint<TVALUE>* joint)
 		{
 			Bone<TVALUE>** tmpArms = new Bone<TVALUE>*[ArmCount + 1];
 
 			for (UInt8 i = 0; i < ArmCount; i++)
 				tmpArms[i] = Arms[i];
 
-			tmpArms[ArmCount] = new Bone<TVALUE>(jointTransformMatrix);
+			tmpArms[ArmCount] = new Bone<TVALUE>(joint);
 
 			delete[] Arms;
 
