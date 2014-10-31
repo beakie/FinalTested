@@ -23,11 +23,6 @@ namespace Movement
 		{
 		}
 
-		Skeletal(const Skeletal<TVALUE>& skeletal)
-		{
-			// todo
-		}
-
 		Bone<TVALUE>& addArm(Common::Matrix4<TVALUE>* jointTransformMatrix)
 		{
 			Bone<TVALUE>** tmpArms = new Bone<TVALUE>*[ArmCount + 1];
