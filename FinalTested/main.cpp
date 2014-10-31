@@ -67,8 +67,7 @@ int main(int argc, char *argv[])
 	skeletal.addArm().addBone();
 
 	Movement::ActuatorManager<> actuatorManager = Movement::ActuatorManager<>();
-	actuatorManager.addActuator(Movement::RotatingActuator<>(Common::Vector3F(0.0, 0.0, 0.0), Common::Vector3F(10.0, 10.0, 10.0)));
-	actuatorManager.addBoneLink(actuatorManager.Actuators[0], skeletal.Arms[0]);
+	actuatorManager.addBoneLink(actuatorManager.addActuator(Movement::RotatingActuator<>(Common::Vector3F(0.0, 0.0, 0.0), Common::Vector3F(10.0, 10.0, 10.0))), skeletal.Arms[0]);
 	Common::Matrix4F transformMatrix = actuatorManager.setPosition(0, 0.5).getTransformMatrix();
 
 	return a.exec();

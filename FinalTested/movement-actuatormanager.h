@@ -27,7 +27,7 @@ namespace Movement
 		}
 
 		template <typename TACTUATOR>
-		void addActuator(const TACTUATOR& actuator)
+		IActuator<TVALUE, TUNITINTERVAL>* addActuator(const TACTUATOR& actuator)
 		{
 			IActuator<TVALUE, TUNITINTERVAL>** tmpActuators = new IActuator<TVALUE, TUNITINTERVAL>*[ActuatorCount + 1];
 
@@ -41,6 +41,8 @@ namespace Movement
 			Actuators = tmpActuators;
 
 			ActuatorCount++;
+
+			return Actuators[ActuatorCount - 1];
 		}
 
 		void addBoneLink(const Common::Tuple2<IActuator<TVALUE, TUNITINTERVAL>*, Bone<TVALUE>*>& boneLink)
