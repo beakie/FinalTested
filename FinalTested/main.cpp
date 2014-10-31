@@ -69,9 +69,11 @@ int main(int argc, char *argv[])
 
 	Movement::Skeletal<> skeletal = Movement::Skeletal<>();
 
-	skeletal.addArm(&skeletal.addJoint())
-			.addBone(&skeletal.addJoint())
-			.addBone(&skeletal.addJoint());;
+	Movement::JointList<> jointList = Movement::JointList<>();
+
+	skeletal.addArm(&jointList.addJoint())
+			.addBone(&jointList.addJoint())
+			.addBone(&jointList.addJoint());;
 
 	Movement::ActuatorManager64 actuatorManager = Movement::ActuatorManager64();
 

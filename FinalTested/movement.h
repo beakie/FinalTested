@@ -5,6 +5,7 @@
 #include "movement-bone.h"
 #include "movement-bonecache.h"
 #include "movement-iactuator.h"
+#include "movement-jointlist.h"
 #include "movement-linearactuator.h"
 #include "movement-rotatingactuator.h"
 #include "movement-skeletal.h"
