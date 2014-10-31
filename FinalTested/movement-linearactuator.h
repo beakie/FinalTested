@@ -8,8 +8,8 @@
 
 namespace Movement
 {
-	template <typename TVALUE = FloatMax>
-	class LinearActuator : public IActuator<TVALUE>
+	template <typename TVALUE = FloatMax, typename TUNITINTERVAL = Common::UnitIntervalMax>
+	class LinearActuator : public IActuator<TVALUE, TUNITINTERVAL>
 	{
 	public:
 		Common::Matrix4<TVALUE> PreTransformMatrix;
@@ -42,6 +42,13 @@ namespace Movement
 		Common::Matrix4<TVALUE> getTransformMatrix() const
 		{
 			return PreTransformMatrix * Space3d::getTranslationMatrix() * PostTransformMatrix;
+		}
+
+		IActuator<TVALUE, TUNITINTERVAL>& setPosition(TUNITINTERVAL unitInterval)
+		{
+			//Movement = ??; // This should be the maximum amount of distance the linear actuator can extend
+
+			return *this;
 		}
 
 		virtual ~LinearActuator()

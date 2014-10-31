@@ -9,13 +9,13 @@
 
 namespace Movement
 {
-	template <typename TVALUE = FloatMax>
+	template <typename TVALUE = FloatMax, typename TUNITINTERVAL = Common::UnitIntervalMax>
 	class ActuatorManager
 	{
 	public:
-		IActuator<TVALUE>** Actuators;
+		IActuator<TVALUE, TUNITINTERVAL>** Actuators;
 		UInt8 ActuatorCount;
-		Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>** BoneLinks;
+		Common::Tuple2<IActuator<TVALUE, TUNITINTERVAL>*, Bone<TVALUE>*>** BoneLinks;
 		UInt8 BoneLinkCount;
 
 		ActuatorManager()
@@ -29,7 +29,7 @@ namespace Movement
 		template <typename TACTUATOR>
 		void addActuator(const TACTUATOR& actuator)
 		{
-			IActuator<TVALUE>** tmpActuators = new IActuator<TVALUE>*[ActuatorCount + 1];
+			IActuator<TVALUE, TUNITINTERVAL>** tmpActuators = new IActuator<TVALUE, TUNITINTERVAL>*[ActuatorCount + 1];
 
 			for (UInt8 i = 0; i < ActuatorCount; i++)
 				tmpActuators[i] = Actuators[i];
@@ -43,14 +43,14 @@ namespace Movement
 			ActuatorCount++;
 		}
 
-		void addBoneLink(const Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>& boneLink)
+		void addBoneLink(const Common::Tuple2<IActuator<TVALUE, TUNITINTERVAL>*, Bone<TVALUE>*>& boneLink)
 		{
-			Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>** tmpBoneLinks = new Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>*[BoneLinkCount + 1];
+			Common::Tuple2<IActuator<TVALUE, TUNITINTERVAL>*, Bone<TVALUE>*>** tmpBoneLinks = new Common::Tuple2<IActuator<TVALUE, TUNITINTERVAL>*, Bone<TVALUE>*>*[BoneLinkCount + 1];
 
 			for (UInt8 i = 0; i < BoneLinkCount; i++)
 				tmpBoneLinks[i] = BoneLinks[i];
 
-			tmpBoneLinks[BoneLinkCount] = new Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>(boneLink);
+			tmpBoneLinks[BoneLinkCount] = new Common::Tuple2<IActuator<TVALUE, TUNITINTERVAL>*, Bone<TVALUE>*>(boneLink);
 
 			delete[] BoneLinks;
 
@@ -59,9 +59,15 @@ namespace Movement
 			BoneLinkCount++;
 		}
 
-		void addBoneLink(IActuator<TVALUE>* actuator, Bone<TVALUE>* bone)
+		void addBoneLink(IActuator<TVALUE, TUNITINTERVAL>* actuator, Bone<TVALUE>* bone)
 		{
-			addBoneLink(Common::Tuple2<IActuator<TVALUE>*, Bone<TVALUE>*>(actuator, bone));
+			addBoneLink(Common::Tuple2<IActuator<TVALUE, TUNITINTERVAL>*, Bone<TVALUE>*>(actuator, bone));
+		}
+
+		template <typename TUNITINTERVAL>
+		IActuator<TVALUE, TUNITINTERVAL>& setPosition(UInt8 actuatorIndex, TUNITINTERVAL unitInterval)
+		{
+			return Actuators[actuatorIndex]->setPosition(unitInterval);
 		}
 
 		~ActuatorManager()

@@ -85,19 +85,7 @@ namespace Space3d
 	}
 
 	template <typename TVALUE>
-	Common::Matrix4<TVALUE> getRotationMatrix(const TVALUE rotation)
-	{
-		TVALUE c = Common::cos<TVALUE>(rotation);
-		TVALUE s = Common::sin<TVALUE>(rotation);
-
-		return Common::Matrix4<TVALUE>(   c,     s,  0.0,  0.0,
-										  -s,    c,  0.0,  0.0,
-										 0.0,  0.0,  1.0,  0.0,
-										 0.0,  0.0,  0.0,  1.0);
-	}
-
-	template <typename TVALUE>
-	Common::Matrix4<TVALUE> getRotationMatrix(const TVALUE x, const TVALUE y, const TVALUE z, const TVALUE rotation)
+	Common::Matrix4<TVALUE> getRotationMatrix(const TVALUE x, const TVALUE y, const TVALUE z, const TVALUE rotation) // this is wrong. this needs changing. what axis am i rotating around? arbitrary? 
 	{
 		return getTranslationMatrix<TVALUE>(-x, -y, -z) * getRotationMatrix<TVALUE>(rotation) * getTranslationMatrix<TVALUE>(x, y, Z);
 	}

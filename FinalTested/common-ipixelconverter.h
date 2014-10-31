@@ -8,7 +8,7 @@ namespace Common
 	template <typename TVALUEIN, typename TVALUEOUT>
 	class IPixelConverter
 	{
-		TVALUEOUT convertPixel(const TVALUEIN& pixel);
+		virtual TVALUEOUT convertPixel(const TVALUEIN& pixel) = 0;
 
 		virtual ~IPixelConverter()
 		{

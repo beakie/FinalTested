@@ -8,8 +8,8 @@
 
 namespace Movement
 {
-	template <typename TVALUE = FloatMax>
-	class RotatingActuator : public IActuator<TVALUE>
+	template <typename TVALUE = FloatMax, typename TUNITINTERVAL = Common::UnitIntervalMax>
+	class RotatingActuator : public IActuator<TVALUE, TUNITINTERVAL>
 	{
 	public:
 		Common::Matrix4<TVALUE> PreTransformMatrix;
@@ -41,7 +41,14 @@ namespace Movement
 
 		Common::Matrix4<TVALUE> getTransformMatrix() const
 		{
-			return PreTransformMatrix * Space3d::getRotationMatrix(rotation) * PostTransformMatrix;
+			return PreTransformMatrix * Space3d::getRotationMatrixAxisX(Rotation) * PostTransformMatrix;
+		}
+
+		IActuator<TVALUE, TUNITINTERVAL>& setPosition(TUNITINTERVAL unitInterval)
+		{
+			Rotation = (TVALUE)unitInterval * 2;
+
+			return *this;
 		}
 
 		void setRadians(const TVALUE radians)
