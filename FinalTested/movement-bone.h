@@ -13,19 +13,21 @@ namespace Movement
 		Bone<TVALUE>* ParentBone;
 		UInt8 ChildrenBoneCount;
 		Bone<TVALUE>** ChildrenBones;
-		Common::Matrix4<TVALUE> JointTransformMatrix;
+		Common::Matrix4<TVALUE>* JointTransformMatrix;
 
-		Bone()
+		Bone(Common::Matrix4<TVALUE>* jointTransformMatrix)
 			: ParentBone(nullptr),
 			  ChildrenBoneCount(0),
-			  ChildrenBones(0)
+			  ChildrenBones(0),
+			  JointTransformMatrix(jointTransformMatrix)
 		{
 		}
 
-		Bone(const Bone<TVALUE>* parentBone)
+		Bone(Bone<TVALUE>* parentBone, Common::Matrix4<TVALUE>* jointTransformMatrix)
 			: ParentBone(parentBone),
 			  ChildrenBoneCount(0),
-			  ChildrenBones(0)
+			  ChildrenBones(0),
+			  JointTransformMatrix(jointTransformMatrix)
 		{
 		}
 
@@ -37,19 +39,19 @@ namespace Movement
 		Common::Matrix4<TVALUE> getArmTransformMatrix()
 		{
 			if (ParentBone == nullptr)
-				return JointTransformMatrix;
+				return *JointTransformMatrix;
 			else
-				return ParentBone->getArmTransformMatrix() * JointTransformMatrix;
+				return ParentBone->getArmTransformMatrix() * *JointTransformMatrix;
 		}
 
-		Bone<TVALUE>& addBone()
+		Bone<TVALUE>& addBone(const Common::Matrix4<TVALUE>& jointTransformMatrix)
 		{
 			Bone<TVALUE>** tmpChildrenBones = new Bone<TVALUE>*[ChildrenBoneCount + 1];
 
 			for (UInt8 i = 0; i < ChildrenBoneCount; i++)
 				tmpChildrenBones[i] = ChildrenBones[i];
 
-			tmpChildrenBones[ChildrenBoneCount] = new Bone<TVALUE>(*this);
+			tmpChildrenBones[ChildrenBoneCount] = new Bone<TVALUE>(this, jointTransformMatrix);
 
 			delete[] ChildrenBones;
 

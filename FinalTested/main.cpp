@@ -67,8 +67,11 @@ int main(int argc, char *argv[])
 
 	*/
 
-	Movement::Skeletal<FloatMax> skeletal;
-	skeletal.addArm().addBone();
+	Movement::JointList<> jointList = Movement::JointList<>(); // build this into skeletal?
+	Movement::Skeletal<> skeletal;
+	skeletal.addArm(jointList.addJoint())
+			.addBone(jointList.addJoint())
+			.addBone(jointList.addJoint());
 
 	Movement::ActuatorManager64 actuatorManager = Movement::ActuatorManager64();
 

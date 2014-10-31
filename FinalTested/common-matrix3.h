@@ -449,6 +449,21 @@ namespace Common
 					+ Values[0][2] * (Values[1][0] * Values[2][1] - Values[1][1] * Values[2][0]);
 		}
 
+		static Matrix3<TVALUE> getIdentity()
+		{
+			return Matrix3<TVALUE>().identity();
+		}
+
+		static Matrix3<TVALUE> getZero()
+		{
+			return Matrix3<TVALUE>(0);
+		}
+
+		static Matrix3<TVALUE> getAllOnes()
+		{
+			return Matrix3<TVALUE>(1);
+		}
+
 		~Matrix3()
 		{
 		}
