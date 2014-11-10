@@ -87,6 +87,8 @@ int main(int argc, char *argv[])
 	Common::Matrix4F transformMatrix = actuatorManager.setPosition(0, 0.5).getTransformMatrix(0);
 	*/
 
+	Movement::JointList<> jointList(10);
+
 	return a.exec();
 
 }

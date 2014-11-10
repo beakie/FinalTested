@@ -33,7 +33,7 @@ namespace Movement
 		{
 			Joints = new Common::Matrix4<TVALUE>*[size];
 
-			for (UInt i = 0; i < size; i++)
+			for (UInt8 i = 0; i < size; i++)
 				Joints[JointCount] = new Common::Matrix4<TVALUE>();
 		}
 
