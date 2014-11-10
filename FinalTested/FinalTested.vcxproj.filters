@@ -215,21 +215,6 @@
     <ClInclude Include="render3d-orthographic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement-actuatormanager.h.old">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-iactuator.h.old">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-linearactuator.h.old">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-rotatingactuator.h.old">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-skeletal.h.old">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="movement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -239,13 +224,28 @@
     <ClInclude Include="movement-treebone.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement-chainskeletal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-treeskeletal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="movement-bone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bak\movement-actuatormanager.h.old">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bak\movement-linearactuator.h.old">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bak\movement-rotatingactuator.h.old">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bak\movement-skeletal.h.old">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bak\movement-iactuator.h.old">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bak\movement-chainskeletal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bak\movement-treeskeletal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
