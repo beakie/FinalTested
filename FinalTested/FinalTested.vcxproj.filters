@@ -218,19 +218,7 @@
     <ClInclude Include="movement-actuatormanager.h.old">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement-bone.h.old">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-bonecache.h.old">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="movement-iactuator.h.old">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-joint.h.old">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-jointlist.h.old">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="movement-linearactuator.h.old">
@@ -240,9 +228,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="movement-skeletal.h.old">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement.h.old">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="movement.h">
