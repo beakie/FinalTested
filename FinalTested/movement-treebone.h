@@ -44,7 +44,7 @@ namespace Movement
 				return ParentTreeBone->getArmTransformMatrix() * *Joint;
 		}
 
-		TreeBone<TVALUE>& addTreeBone(Common::Matrix4<TVALUE>* joint)
+		TreeBone<TVALUE>& addBone(Common::Matrix4<TVALUE>* joint)
 		{
 			TreeBone<TVALUE>** tmpChildrenTreeBones = new TreeBone<TVALUE>*[ChildrenTreeBoneCount + 1];
 

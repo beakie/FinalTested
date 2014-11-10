@@ -1,8 +1,9 @@
 #ifndef MOVEMENT_H
 #define MOVEMENT_H
 
-#include "movement-treebone.h"
+#include "movement-chainbone.h"
 #include "movement-jointlist.h"
+#include "movement-treebone.h"
 
 namespace Movement
 {

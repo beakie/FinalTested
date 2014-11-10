@@ -96,6 +96,7 @@
     <ClInclude Include="common-vector3.h" />
     <ClInclude Include="common-vector4.h" />
     <ClInclude Include="movement-actuatormanager.h.old" />
+    <ClInclude Include="movement-chainbone.h" />
     <ClInclude Include="movement-treebone.h" />
     <ClInclude Include="movement-bone.h.old" />
     <ClInclude Include="movement-bonecache.h.old" />

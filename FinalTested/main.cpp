@@ -90,6 +90,9 @@ int main(int argc, char *argv[])
 	Movement::JointList<> jointList(10);
 	//jointList.Joints[0]->set(Common::Matrix4F(12));
 
+	Movement::TreeBone<> treeBone(jointList.Joints[0]);
+	Movement::ChainBone<> chainBone(jointList.Joints[0]);
+
 	return a.exec();
 
 }

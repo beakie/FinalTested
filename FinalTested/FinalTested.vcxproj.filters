@@ -254,5 +254,8 @@
     <ClInclude Include="movement-treebone.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="movement-chainbone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
