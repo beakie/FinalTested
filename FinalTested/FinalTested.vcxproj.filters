@@ -251,7 +251,7 @@
     <ClInclude Include="movement-jointlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement-bone.h">
+    <ClInclude Include="movement-treebone.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
