@@ -5,8 +5,6 @@
 #include "common.h"
 #include "space3d.h"
 
-#include "movement-joint.h"
-
 namespace Movement
 {
 	template <typename TVALUE = FloatMax>
@@ -17,19 +15,19 @@ namespace Movement
 		UInt8 ChildrenBoneCount;
 		Common::Matrix4<TVALUE>* Joint;
 
-		Bone(Joint<TVALUE>* joint)
+		Bone(Common::Matrix4<TVALUE>* joint)
 			: ParentBone(nullptr),
-			ChildrenBoneCount(0),
-			ChildrenBones(0),
-			Joint(joint)
+			  ChildrenBoneCount(0),
+			  ChildrenBones(0),
+			  Joint(joint)
 		{
 		}
 
 		Bone(Bone<TVALUE>* parentBone, Common::Matrix4<TVALUE>* joint)
 			: ParentBone(parentBone),
-			ChildrenBoneCount(0),
-			ChildrenBones(0),
-			Joint(joint)
+			  ChildrenBoneCount(0),
+			  ChildrenBones(0),
+			  Joint(joint)
 		{
 		}
 
