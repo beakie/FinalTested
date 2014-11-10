@@ -34,7 +34,7 @@ namespace Movement
 			Joints = new Common::Matrix4<TVALUE>*[size];
 
 			for (UInt8 i = 0; i < size; i++)
-				Joints[JointCount] = new Common::Matrix4<TVALUE>();
+				Joints[i] = new Common::Matrix4<TVALUE>();
 		}
 
 		JointList<TVALUE>& operator=(const JointList<TVALUE>& jointList)
