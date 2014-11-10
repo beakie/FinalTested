@@ -1,5 +1,5 @@
-#ifndef MOVEMENTCHAINBONE_H
-#define MOVEMENTCHAINBONE_H
+#ifndef MOVEMENTBONE_H
+#define MOVEMENTBONE_H
 
 #include "core.h"
 #include "common.h"
@@ -8,40 +8,40 @@
 namespace Movement
 {
 	template <typename TVALUE = FloatMax>
-	struct ChainBone
+	struct Bone
 	{
-		ChainBone<TVALUE>* ParentChainBone;
+		Bone<TVALUE>* ParentBone;
 		Common::Matrix4<TVALUE>* Joint;
 
-		ChainBone(Common::Matrix4<TVALUE>* joint)
-			: ParentChainBone(nullptr),
+		Bone(Common::Matrix4<TVALUE>* joint)
+			: ParentBone(nullptr),
 			  Joint(joint)
 		{
 		}
 
-		ChainBone(ChainBone<TVALUE>* parentChainBone, Common::Matrix4<TVALUE>* joint)
-			: ParentChainBone(parentChainBone),
+		Bone(Bone<TVALUE>* parentBone, Common::Matrix4<TVALUE>* joint)
+			: ParentBone(parentBone),
 			  Joint(joint)
 		{
 		}
 
-		ChainBone(const ChainBone<TVALUE>& bone)
+		Bone(const Bone<TVALUE>& bone)
 		{
 			// todo
 		}
 
 		Common::Matrix4<TVALUE> getArmTransformMatrix()
 		{
-			if (ParentChainBone == nullptr)
+			if (ParentBone == nullptr)
 				return *Joint;
 			else
-				return ParentChainBone->getArmTransformMatrix() * *Joint;
+				return ParentBone->getArmTransformMatrix() * *Joint;
 		}
 
-		~ChainBone()
+		~Bone()
 		{
 		}
 	};
 }
 
-#endif // MOVEMENTCHAINBONE_H
+#endif // MOVEMENTBONE_H
