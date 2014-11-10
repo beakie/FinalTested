@@ -257,5 +257,11 @@
     <ClInclude Include="movement-chainbone.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="movement-chainskeletal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="movement-treeskeletal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

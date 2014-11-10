@@ -97,6 +97,7 @@
     <ClInclude Include="common-vector4.h" />
     <ClInclude Include="movement-actuatormanager.h.old" />
     <ClInclude Include="movement-chainbone.h" />
+    <ClInclude Include="movement-chainskeletal.h" />
     <ClInclude Include="movement-treebone.h" />
     <ClInclude Include="movement-bone.h.old" />
     <ClInclude Include="movement-bonecache.h.old" />
@@ -107,6 +108,7 @@
     <ClInclude Include="movement-linearactuator.h.old" />
     <ClInclude Include="movement-rotatingactuator.h.old" />
     <ClInclude Include="movement-skeletal.h.old" />
+    <ClInclude Include="movement-treeskeletal.h" />
     <ClInclude Include="movement.h" />
     <ClInclude Include="movement.h.old" />
     <ClInclude Include="picture-colorhelpers_.h" />
