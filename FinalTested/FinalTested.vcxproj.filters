@@ -245,10 +245,10 @@
     <ClInclude Include="movement.h.old">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement-joint.h">
+    <ClInclude Include="movement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement.h">
+    <ClInclude Include="movement-joint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
