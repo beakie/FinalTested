@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 	*/
 
 	Movement::JointList<> jointList(10);
-	jointList.Joints[0]->set(Common::Matrix4F(12));
+	//jointList.Joints[0]->set(Common::Matrix4F(12));
 
 	return a.exec();
 
