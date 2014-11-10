@@ -1,5 +1,5 @@
-#ifndef MOVEMENTBONE_H
-#define MOVEMENTBONE_H
+#ifndef MOVEMENTTREEBONE_H
+#define MOVEMENTTREEBONE_H
 
 #include "core.h"
 #include "common.h"
@@ -8,68 +8,68 @@
 namespace Movement
 {
 	template <typename TVALUE = FloatMax>
-	struct Bone
+	struct TreeBone
 	{
-		Bone<TVALUE>* ParentBone;
-		Bone<TVALUE>** ChildrenBones;
-		UInt8 ChildrenBoneCount;
+		TreeBone<TVALUE>* ParentTreeBone;
+		TreeBone<TVALUE>** ChildrenTreeBones;
+		UInt8 ChildrenTreeBoneCount;
 		Common::Matrix4<TVALUE>* Joint;
 
-		Bone(Common::Matrix4<TVALUE>* joint)
-			: ParentBone(nullptr),
-			  ChildrenBoneCount(0),
-			  ChildrenBones(0),
+		TreeBone(Common::Matrix4<TVALUE>* joint)
+			: ParentTreeBone(nullptr),
+			  ChildrenTreeBoneCount(0),
+			  ChildrenTreeBones(0),
 			  Joint(joint)
 		{
 		}
 
-		Bone(Bone<TVALUE>* parentBone, Common::Matrix4<TVALUE>* joint)
-			: ParentBone(parentBone),
-			  ChildrenBoneCount(0),
-			  ChildrenBones(0),
+		TreeBone(TreeBone<TVALUE>* parentTreeBone, Common::Matrix4<TVALUE>* joint)
+			: ParentTreeBone(parentTreeBone),
+			  ChildrenTreeBoneCount(0),
+			  ChildrenTreeBones(0),
 			  Joint(joint)
 		{
 		}
 
-		Bone(const Bone<TVALUE>& bone)
+		TreeBone(const TreeBone<TVALUE>& bone)
 		{
 			// todo
 		}
 
 		Common::Matrix4<TVALUE> getArmTransformMatrix()
 		{
-			if (ParentBone == nullptr)
+			if (ParentTreeBone == nullptr)
 				return *Joint;
 			else
-				return ParentBone->getArmTransformMatrix() * *Joint;
+				return ParentTreeBone->getArmTransformMatrix() * *Joint;
 		}
 
-		Bone<TVALUE>& addBone(Common::Matrix4<TVALUE>* joint)
+		TreeBone<TVALUE>& addTreeBone(Common::Matrix4<TVALUE>* joint)
 		{
-			Bone<TVALUE>** tmpChildrenBones = new Bone<TVALUE>*[ChildrenBoneCount + 1];
+			TreeBone<TVALUE>** tmpChildrenTreeBones = new TreeBone<TVALUE>*[ChildrenTreeBoneCount + 1];
 
-			for (UInt8 i = 0; i < ChildrenBoneCount; i++)
-				tmpChildrenBones[i] = ChildrenBones[i];
+			for (UInt8 i = 0; i < ChildrenTreeBoneCount; i++)
+				tmpChildrenTreeBones[i] = ChildrenTreeBones[i];
 
-			tmpChildrenBones[ChildrenBoneCount] = new Bone<TVALUE>(this, joint);
+			tmpChildrenTreeBones[ChildrenTreeBoneCount] = new TreeBone<TVALUE>(this, joint);
 
-			delete[] ChildrenBones;
+			delete[] ChildrenTreeBones;
 
-			ChildrenBones = tmpChildrenBones;
+			ChildrenTreeBones = tmpChildrenTreeBones;
 
-			ChildrenBoneCount++;
+			ChildrenTreeBoneCount++;
 
-			return *ChildrenBones[ChildrenBoneCount - 1];
+			return *ChildrenTreeBones[ChildrenTreeBoneCount - 1];
 		}
 
-		~Bone()
+		~TreeBone()
 		{
-			for (UInt8 i = 0; i < ChildrenBoneCount; i++)
-				delete ChildrenBones[i];
+			for (UInt8 i = 0; i < ChildrenTreeBoneCount; i++)
+				delete ChildrenTreeBones[i];
 
-			delete[] ChildrenBones;
+			delete[] ChildrenTreeBones;
 		}
 	};
 }
 
-#endif // MOVEMENTBONE_H
+#endif // MOVEMENTTREEBONE_H
