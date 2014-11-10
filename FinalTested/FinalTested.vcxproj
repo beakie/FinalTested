@@ -99,11 +99,13 @@
     <ClInclude Include="movement-bone.h.old" />
     <ClInclude Include="movement-bonecache.h.old" />
     <ClInclude Include="movement-iactuator.h.old" />
+    <ClInclude Include="movement-joint.h" />
     <ClInclude Include="movement-joint.h.old" />
     <ClInclude Include="movement-jointlist.h.old" />
     <ClInclude Include="movement-linearactuator.h.old" />
     <ClInclude Include="movement-rotatingactuator.h.old" />
     <ClInclude Include="movement-skeletal.h.old" />
+    <ClInclude Include="movement.h" />
     <ClInclude Include="movement.h.old" />
     <ClInclude Include="picture-colorhelpers_.h" />
     <ClInclude Include="picture-colormaps_.h" />

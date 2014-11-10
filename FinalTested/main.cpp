@@ -67,6 +67,8 @@ int main(int argc, char *argv[])
 
 	*/
 
+	/*
+	// OLD STUFF
 	Movement::Skeletal<> skeletal = Movement::Skeletal<>();
 
 	Movement::JointList<> jointList = Movement::JointList<>();
@@ -83,6 +85,7 @@ int main(int argc, char *argv[])
 	actuatorManager.addBoneLink(&actuatorManager.addActuator(Movement::LinearActuator64(Common::Vector3F(0.0, 0.0, 0.0), Common::Vector3F(10.0, 10.0, 10.0))), skeletal.Arms[0]->ChildrenBones[0]);
 
 	Common::Matrix4F transformMatrix = actuatorManager.setPosition(0, 0.5).getTransformMatrix(0);
+	*/
 
 	return a.exec();
 
