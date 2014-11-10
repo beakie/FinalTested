@@ -28,6 +28,15 @@ namespace Movement
 			JointCount = jointList.JointCount;
 		}
 
+		JointList(UInt8 size)
+			: JointCount(size)
+		{
+			Joints = new Common::Matrix4<TVALUE>*[size];
+
+			for (UInt i = 0; i < size; i++)
+				Joints[JointCount] = new Common::Matrix4<TVALUE>();
+		}
+
 		JointList<TVALUE>& operator=(const JointList<TVALUE>& jointList)
 		{
 			Common::Matrix4<TVALUE>** tmpJoints = new Common::Matrix4<TVALUE>*[jointList.JointCount + 1];
