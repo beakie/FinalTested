@@ -15,21 +15,21 @@ namespace Movement
 		Bone<TVALUE>* ParentBone;
 		Bone<TVALUE>** ChildrenBones;
 		UInt8 ChildrenBoneCount;
-		Joint<TVALUE>* Joint_;
+		Common::Matrix4<TVALUE>* Joint;
 
 		Bone(Joint<TVALUE>* joint)
 			: ParentBone(nullptr),
 			ChildrenBoneCount(0),
 			ChildrenBones(0),
-			Joint_(joint)
+			Joint(joint)
 		{
 		}
 
-		Bone(Bone<TVALUE>* parentBone, Joint<TVALUE>* joint)
+		Bone(Bone<TVALUE>* parentBone, Common::Matrix4<TVALUE>* joint)
 			: ParentBone(parentBone),
 			ChildrenBoneCount(0),
 			ChildrenBones(0),
-			Joint_(joint)
+			Joint(joint)
 		{
 		}
 
@@ -43,10 +43,10 @@ namespace Movement
 			if (ParentBone == nullptr)
 				return *Joint;
 			else
-				return ParentBone->getArmTransformMatrix() * *Joint_;
+				return ParentBone->getArmTransformMatrix() * *Joint;
 		}
 
-		Bone<TVALUE>& addBone(Joint<TVALUE>* joint)
+		Bone<TVALUE>& addBone(Common::Matrix4<TVALUE>* joint)
 		{
 			Bone<TVALUE>** tmpChildrenBones = new Bone<TVALUE>*[ChildrenBoneCount + 1];
 
