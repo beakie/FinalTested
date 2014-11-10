@@ -12,7 +12,7 @@ namespace Movement
 	{
 		TreeBone<TVALUE>* ParentTreeBone;
 		TreeBone<TVALUE>** ChildrenTreeBones;
-		UInt8 ChildrenTreeBoneCount;
+		UInt8 ChildrenTreeBoneCount; // should this be here or in skeletal?
 		Common::Matrix4<TVALUE>* Joint;
 
 		TreeBone(Common::Matrix4<TVALUE>* joint)
