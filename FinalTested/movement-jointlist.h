@@ -18,6 +18,32 @@ namespace Movement
 		{
 		}
 
+		JointList(const JointList<TVALUE>& jointList)
+		{
+			Joints = new Common::Matrix4<TVALUE>*[jointList.JointCount];
+
+			for (UInt8 i = 0; i < jointList.JointCount; i++)
+				Joints[i] = jointList.Joints[i];
+
+			JointCount = jointList.JointCount;
+		}
+
+		JointList<TVALUE>& operator=(const JointList<TVALUE>& jointList)
+		{
+			Common::Matrix4<TVALUE>** tmpJoints = new Common::Matrix4<TVALUE>*[jointList.JointCount + 1];
+
+			for (UInt8 i = 0; i < jointList.JointCount; i++)
+				tmpJoints[i] = jointList.Joints[i];
+
+			delete[] Joints;
+
+			Joints = tmpJoints;
+
+			JointCount = jointList.JointCount;
+
+			return *this;
+		}
+
 		Common::Matrix4<TVALUE>& addJoint()
 		{
 			Common::Matrix4<TVALUE>** tmpJoints = new Common::Matrix4<TVALUE>*[JointCount + 1];
