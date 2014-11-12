@@ -58,7 +58,7 @@ namespace Movement
 			return *this;
 		}
 
-		Bone<TVALUE>& addJoint()
+		Bone<TVALUE>& addBone()
 		{
 			Bone<TVALUE>** tmpBones = new Bone<TVALUE>*[BoneCount + 1];
 
