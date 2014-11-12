@@ -18,7 +18,7 @@ namespace Common
 		TINDEX Count;
 
 	public:
-		TVALUE *Items;
+		TVALUE* Items;
 
 		List()
 		{
