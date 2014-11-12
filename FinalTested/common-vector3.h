@@ -242,6 +242,44 @@ namespace Common
 				(Values[0] * vector.Values[1] - Values[1] * vector.Values[0]));
 		}
 
+		bool isZero()
+		{
+			return (Values[0] == 0) && (Values[1] == 0) && (Values[2] == 0);
+		}
+
+		Vector3<TVALUE>& absolute()
+		{
+			Values[0] = Common::abs(Values[0]);
+			Values[1] = Common::abs(Values[1]);
+			Values[2] = Common::abs(Values[2]);
+
+			return *this;
+		}
+
+		Vector3<TVALUE> getAbsolute()
+		{
+			return Vector3<TVALUE>(*this).absolute();
+		}
+
+		Vector3<TVALUE>& negative()
+		{
+			Values[0] = -Values[0];
+			Values[1] = -Values[1];
+			Values[2] = -Values[2];
+
+			return *this;
+		}
+
+		Vector3<TVALUE> getNegative()
+		{
+			return Vector3<TVALUE>(*this).negative();
+		}
+
+		static Vector3<TVALUE> getZero()
+		{
+			return Vector3<TVALUE>(0);
+		}
+
 		~Vector3()
 		{
 		}

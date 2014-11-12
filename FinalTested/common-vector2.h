@@ -225,7 +225,7 @@ namespace Common
 
 		bool isZero()
 		{
-			return (Values[0] * vector.Values[0] + Values[1] * vector.Values[1]);
+			return (Values[0] == 0) && (Values[1] == 0);
 		}
 
 		Vector2<TVALUE>& absolute()
@@ -252,6 +252,11 @@ namespace Common
 		Vector2<TVALUE> getNegative()
 		{
 			return Vector2<TVALUE>(*this).negative();
+		}
+
+		static Vector2<TVALUE> getZero()
+		{
+			return Vector2<TVALUE>(0);
 		}
 
 		~Vector2()

@@ -261,6 +261,46 @@ namespace Common
 			return vector;
 		}
 
+		bool isZero()
+		{
+			return (Values[0] == 0) && (Values[1] == 0) && (Values[2] == 0) && (Values[3] == 0);
+		}
+
+		Vector4<TVALUE>& absolute()
+		{
+			Values[0] = Common::abs(Values[0]);
+			Values[1] = Common::abs(Values[1]);
+			Values[2] = Common::abs(Values[2]);
+			Values[3] = Common::abs(Values[3]);
+
+			return *this;
+		}
+
+		Vector4<TVALUE> getAbsolute()
+		{
+			return Vector4<TVALUE>(*this).absolute();
+		}
+
+		Vector4<TVALUE>& negative()
+		{
+			Values[0] = -Values[0];
+			Values[1] = -Values[1];
+			Values[2] = -Values[2];
+			Values[3] = -Values[3];
+
+			return *this;
+		}
+
+		Vector4<TVALUE> getNegative()
+		{
+			return Vector4<TVALUE>(*this).negative();
+		}
+
+		static Vector4<TVALUE> getZero()
+		{
+			return Vector4<TVALUE>(0);
+		}
+
 		~Vector4()
 		{
 		}
