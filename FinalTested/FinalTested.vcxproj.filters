@@ -47,9 +47,6 @@
     <ClInclude Include="common-image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common-matrixn.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="core.h">
       <Filter>Header Files</Filter>
     </ClInclude>

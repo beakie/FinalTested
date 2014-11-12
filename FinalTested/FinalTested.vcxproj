@@ -108,7 +108,6 @@
     <ClInclude Include="common-matrix2.h" />
     <ClInclude Include="common-matrix3.h" />
     <ClInclude Include="common-matrix4.h" />
-    <ClInclude Include="common-matrixn.h" />
     <ClInclude Include="picture-hsvtorgbpixelconv.h" />
     <ClInclude Include="picture-qt-imagemapper_.h" />
     <ClInclude Include="picture-qt.h" />
