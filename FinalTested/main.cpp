@@ -87,11 +87,7 @@ int main(int argc, char *argv[])
 	Common::Matrix4F transformMatrix = actuatorManager.setPosition(0, 0.5).getTransformMatrix(0);
 	*/
 
-	Movement::JointList<Common::Matrix4F> jointList = 4;
-	Movement::Skeletal<> skeletal = jointList;
-	Common::Nullable<UInt8> childIndex = skeletal.Map.findChild(1);
-
-	Movement::Body3d body = Movement::Body3d();
+	Movement::Body3d body = Movement::Body3d(4);
 
 	return a.exec();
 

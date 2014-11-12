@@ -15,6 +15,16 @@ namespace Movement
 	{
 		JointList<TMATRIX> Joints;
 		Skeletal<TVALUE> Skeletal;
+
+		Body()
+		{
+		}
+
+		Body(UInt8 chainedBoneCount)
+			: Joints(chainedBoneCount),
+			  Skeletal(chainedBoneCount)
+		{
+		}
 	};
 }
 
