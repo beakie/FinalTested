@@ -2,8 +2,8 @@
 #define MOVEMENT_H
 
 #include "movement-bone.h"
+#include "movement-chainskeletal.h"
 #include "movement-jointlist.h"
-#include "movement-treebone.h"
 
 namespace Movement
 {
