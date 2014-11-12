@@ -80,8 +80,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="movement-skeletal.h" />
-    <ClInclude Include="movement-chainskeletal.h" />
+    <ClInclude Include="movement-bonelist.h" />
     <ClInclude Include="common-list.h" />
     <ClInclude Include="common-castpixelconv.h" />
     <ClInclude Include="common-image.h" />
@@ -97,9 +96,7 @@
     <ClInclude Include="common-vector2.h" />
     <ClInclude Include="common-vector3.h" />
     <ClInclude Include="common-vector4.h" />
-    <ClInclude Include="movement-bone.h" />
     <ClInclude Include="movement-jointlist.h" />
-    <ClInclude Include="movement-treeskeletal.h" />
     <ClInclude Include="movement.h" />
     <ClInclude Include="picture-colorhelpers_.h" />
     <ClInclude Include="picture-colormaps_.h" />

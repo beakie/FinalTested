@@ -88,8 +88,10 @@ int main(int argc, char *argv[])
 	*/
 
 	Movement::JointList<> jointList = 4;
-	Movement::ChainSkeletal<> chainSkeletal = jointList;
-	Movement::TreeSkeletal<> treeSkeletal = jointList;
+	//Movement::BoneList<> boneList = jointList;
+	Movement::BoneList<> boneList = jointList;
+
+	Common::Nullable<UInt8> childIndex = boneList.findChild(1);
 
 	return a.exec();
 

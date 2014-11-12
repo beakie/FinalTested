@@ -215,22 +215,13 @@
     <ClInclude Include="movement-jointlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement-bone.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-chainskeletal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="space3d-axis3d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="space2d-axis2d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement-treeskeletal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-skeletal.h">
+    <ClInclude Include="movement-bonelist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
