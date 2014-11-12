@@ -8,17 +8,18 @@
 
 namespace Movement
 {
-	template <typename TVALUE = FloatMax>
+	template <typename TPOINT>
 	struct Skeletal
 	{
 		BoneMap Map;
+		TPOINT** Positions;
 
 		Skeletal()
 			: Map()
 		{
 		}
 
-		Skeletal(const Skeletal<TVALUE>& skeletal)
+		Skeletal(const Skeletal<TPOINT>& skeletal)
 			: Map(skeletal.BoneMap)
 		{
 		}
@@ -33,7 +34,7 @@ namespace Movement
 		{
 		}
 
-		Skeletal<TVALUE>& operator=(const Skeletal<TVALUE>& skeletal)
+		Skeletal<TPOINT>& operator=(const Skeletal<TPOINT>& skeletal)
 		{
 			Map = skeletal.BoneMap;
 		}

@@ -10,11 +10,11 @@
 
 namespace Movement
 {
-	template <typename TVALUE, typename TMATRIX>
+	template <typename TPOINT, typename TMATRIX>
 	struct Body
 	{
 		JointList<TMATRIX> Joints;
-		Skeletal<TVALUE> Skeletal;
+		Skeletal<TPOINT> Skeletal;
 
 		Body()
 		{
