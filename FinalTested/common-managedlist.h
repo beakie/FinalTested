@@ -6,7 +6,7 @@
 namespace Common
 {
 
-	template <typename TVALUE = FloatMax, typename TINDEX = UIntMax>
+	template <typename TVALUE, typename TINDEX = UIntMax>
 	struct ManagedList
 	{
 
@@ -73,7 +73,7 @@ namespace Common
 
 		void resize(const TINDEX capacity)
 		{
-			TVALUE *x = new TVALUE[capacity];
+			TVALUE** x = new TVALUE*[capacity];
 
 			for (TINDEX i = 0; i < Count; i++)
 				x[i] = Items[i];
@@ -115,7 +115,7 @@ namespace Common
 		{
 			if (this != &list)
 			{
-				TVALUE* tmp = new TVALUE[list.capacity];
+				TVALUE** tmp = new TVALUE*[list.capacity];
 				Capacity = list.Capacity;
 				Count = list.Count;
 
@@ -130,7 +130,7 @@ namespace Common
 			return *this;
 		}
 
-		ManagedList<TVALUE, TINDEX> & operator+=(const TVALUE& item)
+		ManagedList<TVALUE, TINDEX>& operator+=(const TVALUE& item)
 		{
 			if (Count == Capacity)
 				resize();
@@ -142,7 +142,7 @@ namespace Common
 			return *this;
 		}
 
-		ManagedList<TVALUE, TINDEX> & operator+=(const ManagedList<TVALUE, TINDEX>& list)
+		ManagedList<TVALUE, TINDEX>& operator+=(const ManagedList<TVALUE, TINDEX>& list)
 		{
 			TINDEX listCount = list.Count;
 
@@ -153,7 +153,7 @@ namespace Common
 			return *this;
 		}
 
-		TVALUE & operator[] (TINDEX n)
+		TVALUE& operator[] (TINDEX n)
 		{
 			return Items[n];
 		}

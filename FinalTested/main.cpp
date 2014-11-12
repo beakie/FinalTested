@@ -89,6 +89,11 @@ int main(int argc, char *argv[])
 
 	Movement::Body3d body = Movement::Body3d(4);
 
+	Common::ManagedList<Movement::BoneMap> test = Common::ManagedList<Movement::BoneMap>();
+	test.add(body.Skeletal.Map);
+	test.add(body.Skeletal.Map);
+	test.add(body.Skeletal.Map);
+
 	return a.exec();
 
 }
