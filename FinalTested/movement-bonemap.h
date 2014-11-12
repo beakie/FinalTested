@@ -19,6 +19,7 @@ namespace Movement
 
 		BoneMap()
 			: ParentBones(0),
+			  BoneEnds(0),
 			  BoneCount(0)
 		{
 		}
@@ -27,18 +28,26 @@ namespace Movement
 			: BoneCount(boneMap.BoneCount)
 		{
 			ParentBones = new UInt8[boneMap.BoneCount];
+			BoneEnds = new TPOINT*[boneMap.BoneCount];
 
 			for (UInt8 i = 0; i < boneMap.BoneCount; i++)
+			{
 				ParentBones[i] = boneMap.ParentBones[i];
+				BoneEnds[i] = new TPOINT(boneMap.BoneEnds[i]);
+			}
 		}
 
 		BoneMap(UInt8 chainedBoneCount)
 			: BoneCount(chainedBoneCount)
 		{
 			ParentBones = new UInt8[chainedBoneCount];
+			BoneEnds = new TPOINT*[chainedBoneCount];
 
 			for (UInt8 i = 0; i < chainedBoneCount; i++)
+			{
 				ParentBones[i] = (i == 0 ? 0 : i - 1);
+				BoneEnds = new TPOINT(TPOINT::getZero());
+			}
 		}
 
 		template <typename TVALUE>
@@ -50,13 +59,19 @@ namespace Movement
 		BoneMap& operator=(const BoneMap& boneMap)
 		{
 			UInt8* tmpParentBones = new UInt8[boneMap.BoneCount + 1];
+			TPOINT** tmpBoneEnds = new TPOINT*[boneMap.BoneCount + 1];
 
 			for (UInt8 i = 0; i < boneMap.BoneCount; i++)
+			{
 				tmpParentBones[i] = boneMap.ParentBones[i];
+				tmpBoneEnds[i] = new TPOINT(*boneMap.BoneEnds[i]);
+			}
 
 			delete[] ParentBones;
+			delete[] BoneEnds;
 
 			ParentBones = tmpParentBones;
+			BoneEnds = tmpBoneEnds;
 
 			BoneCount = boneMap.BoneCount;
 
@@ -66,15 +81,22 @@ namespace Movement
 		UInt8 addBone(UInt8 parent)
 		{
 			UInt8* tmpParentBones = new UInt8[BoneCount + 1];
+			TPOINT** tmpBoneEnds = new TPOINT*[BoneCount + 1];
 
 			for (UInt8 i = 0; i < BoneCount; i++)
+			{
 				tmpParentBones[i] = ParentBones[i];
+				tmpBoneEnds[i] = new TPOINT(*BoneEnds[i]);
+			}
 
 			tmpParentBones[BoneCount] = parent;
+			tmpBoneEnds[BoneCount] = new TPOINT(TPOINT::getZero());
 
 			delete[] ParentBones;
+			delete[] BoneEnds;
 
 			ParentBones = tmpParentBones;
+			BoneEnds = tmpBoneEnds;
 
 			BoneCount++;
 
@@ -124,6 +146,11 @@ namespace Movement
 		~BoneMap()
 		{
 			delete[] ParentBones;
+
+			for (UInt8 i = 0; i < BoneCount; i++)
+				delete BoneEnds[i];
+
+			delete[] BoneEnds;
 		}
 
 	};

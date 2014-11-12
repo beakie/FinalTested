@@ -87,9 +87,13 @@ int main(int argc, char *argv[])
 	Common::Matrix4F transformMatrix = actuatorManager.setPosition(0, 0.5).getTransformMatrix(0);
 	*/
 
-	Movement::Body3d body = Movement::Body3d(4);
+	//Common::ManagedList<Movement::BoneMap3d> test = Common::ManagedList<Movement::BoneMap3d>();
 
-	Common::ManagedList<Movement::BoneMap3d> test = Common::ManagedList<Movement::BoneMap3d>();
+	Movement::Body3d body = Movement::Body3d(4);
+	body.BoneMap.addBone();
+	body.BoneMap.addBone();
+	body.BoneMap.addBone();
+	body.BoneMap.addBone();
 
 	return a.exec();
 
