@@ -1,5 +1,5 @@
-#ifndef COMMONLIST_H
-#define COMMONLIST_H
+#ifndef COMMONMANAGEDLIST_H
+#define COMMONMANAGEDLIST_H
 
 // add insert functions
 
@@ -7,10 +7,7 @@ namespace Common
 {
 
 	template <typename TVALUE = FloatMax, typename TINDEX = UIntMax>
-	/// <summary>
-	/// 1 dimensional list of values
-	/// </summary>
-	struct List
+	struct ManagedList
 	{
 
 	protected:
@@ -18,9 +15,9 @@ namespace Common
 		TINDEX Count;
 
 	public:
-		TVALUE *Items;
+		TVALUE **Items;
 
-		List()
+		ManagedList()
 		{
 			Count = 0;
 			Capacity = 0;
@@ -28,7 +25,7 @@ namespace Common
 			Items = 0;
 		}
 
-		List(const List<TVALUE, TINDEX>& list)
+		ManagedList(const ManagedList<TVALUE, TINDEX>& list)
 		{
 			Items = 0;
 			operator=(list);
@@ -44,10 +41,12 @@ namespace Common
 			return Capacity;
 		}
 
-		List<TVALUE, TINDEX>& remove(const TINDEX index)
+		ManagedList<TVALUE, TINDEX>& remove(const TINDEX index)
 		{
 			if (index >= Count)
 				return *this;
+
+			delete Items[index];
 
 			for (TINDEX i = index; i < (Count - 1); i++)
 				Items[i] = Items[i + 1];
@@ -57,12 +56,12 @@ namespace Common
 			return *this;
 		}
 
-		List<TVALUE, TINDEX>& add(const TVALUE item)
+		ManagedList<TVALUE, TINDEX>& add(const TVALUE& item)
 		{
 			return operator+=(item);
 		}
 
-		List<TVALUE, TINDEX>& add(const List<TVALUE, TINDEX>& list)
+		ManagedList<TVALUE, TINDEX>& add(const ManagedList<TVALUE, TINDEX>& list)
 		{
 			return operator+=(list);
 		}
@@ -85,12 +84,12 @@ namespace Common
 			Capacity = capacity;
 		}
 
-		void clone(const List<TVALUE, TINDEX>& list)
+		void clone(const ManagedList<TVALUE, TINDEX>& list)
 		{
 			operator=(list);
 		}
 
-		TINDEX getIndex(const TVALUE value)
+		TINDEX getIndex(const TVALUE& value)
 		{
 			for (TINDEX i = 0; i < Count; i++)
 				if (Items[i] == value)
@@ -101,6 +100,9 @@ namespace Common
 
 		void clear()
 		{
+			for (TINDEX i = 0; i < Count; i++)
+				delete Items[i];
+
 			delete[] Items;
 
 			Items = new TVALUE[0];
@@ -109,7 +111,7 @@ namespace Common
 			Count = 0;
 		}
 
-		List<TVALUE, TINDEX>& operator=(const List<TVALUE, TINDEX> &list)
+		ManagedList<TVALUE, TINDEX>& operator=(const ManagedList<TVALUE, TINDEX>& list)
 		{
 			if (this != &list)
 			{
@@ -128,25 +130,25 @@ namespace Common
 			return *this;
 		}
 
-		List<TVALUE, TINDEX> & operator+=(const TVALUE item)
+		ManagedList<TVALUE, TINDEX> & operator+=(const TVALUE& item)
 		{
 			if (Count == Capacity)
 				resize();
 
-			Items[Count] = item;
+			Items[Count] = new TVALUE(item);
 
 			Count++;
 
 			return *this;
 		}
 
-		List<TVALUE, TINDEX> & operator+=(const List<TVALUE, TINDEX>& list)
+		ManagedList<TVALUE, TINDEX> & operator+=(const ManagedList<TVALUE, TINDEX>& list)
 		{
 			TINDEX listCount = list.Count;
 
 			//could be more efficient if only resizes once and then copies all items into the list itself
 			for (TINDEX i = 0; i < listCount; i++)
-				addItem(list.Items[i]);
+				operator+=(list.Items[i]);
 
 			return *this;
 		}
@@ -165,11 +167,14 @@ namespace Common
 			return false;
 		}
 
-		~List() {
+		~ManagedList() {
+			for (TINDEX i = 0; i < Count; i++)
+				delete Items[i];
+
 			delete[] Items;
 		}
 	};
 
 }
 
-#endif // COMMONLIST_H
+#endif // COMMONMANAGEDLIST_H
