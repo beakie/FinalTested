@@ -14,15 +14,14 @@ namespace Movement
 	struct Body
 	{
 		JointList<TMATRIX> Joints;
-		Skeletal<TPOINT> Skeletal;
+		BoneMap<TPOINT> BoneMap;
 
 		Body()
 		{
 		}
 
 		Body(UInt8 chainedBoneCount)
-			: Joints(chainedBoneCount),
-			  Skeletal(chainedBoneCount)
+			: Joints(chainedBoneCount)
 		{
 		}
 	};

@@ -10,13 +10,15 @@
 
 namespace Movement
 {
+	template <typename TPOINT>
 	struct BoneMap
 	{
-		UInt8* Bones;
+		UInt8* ParentBones;
+		TPOINT** BoneEnds;
 		UInt8 BoneCount;
 
 		BoneMap()
-			: Bones(0),
+			: ParentBones(0),
 			  BoneCount(0)
 		{
 		}
@@ -24,19 +26,19 @@ namespace Movement
 		BoneMap(const BoneMap& boneMap)
 			: BoneCount(boneMap.BoneCount)
 		{
-			Bones = new UInt8[boneMap.BoneCount];
+			ParentBones = new UInt8[boneMap.BoneCount];
 
 			for (UInt8 i = 0; i < boneMap.BoneCount; i++)
-				Bones[i] = boneMap.Bones[i];
+				ParentBones[i] = boneMap.ParentBones[i];
 		}
 
 		BoneMap(UInt8 chainedBoneCount)
 			: BoneCount(chainedBoneCount)
 		{
-			Bones = new UInt8[chainedBoneCount];
+			ParentBones = new UInt8[chainedBoneCount];
 
 			for (UInt8 i = 0; i < chainedBoneCount; i++)
-				Bones[i] = (i == 0 ? 0 : i - 1);
+				ParentBones[i] = (i == 0 ? 0 : i - 1);
 		}
 
 		template <typename TVALUE>
@@ -47,14 +49,14 @@ namespace Movement
 
 		BoneMap& operator=(const BoneMap& boneMap)
 		{
-			UInt8* tmpBones = new UInt8[boneMap.BoneCount + 1];
+			UInt8* tmpParentBones = new UInt8[boneMap.BoneCount + 1];
 
 			for (UInt8 i = 0; i < boneMap.BoneCount; i++)
-				tmpBones[i] = boneMap.Bones[i];
+				tmpParentBones[i] = boneMap.ParentBones[i];
 
-			delete[] Bones;
+			delete[] ParentBones;
 
-			Bones = tmpBones;
+			ParentBones = tmpParentBones;
 
 			BoneCount = boneMap.BoneCount;
 
@@ -63,20 +65,20 @@ namespace Movement
 
 		UInt8 addBone(UInt8 parent)
 		{
-			UInt8* tmpBones = new UInt8[BoneCount + 1];
+			UInt8* tmpParentBones = new UInt8[BoneCount + 1];
 
 			for (UInt8 i = 0; i < BoneCount; i++)
-				tmpBones[i] = Bones[i];
+				tmpParentBones[i] = ParentBones[i];
 
-			tmpBones[BoneCount] = parent;
+			tmpParentBones[BoneCount] = parent;
 
-			delete[] Bones;
+			delete[] ParentBones;
 
-			Bones = tmpBones;
+			ParentBones = tmpParentBones;
 
 			BoneCount++;
 
-			return Bones[BoneCount - 1];
+			return ParentBones[BoneCount - 1];
 		}
 
 		UInt8 addBone()
@@ -87,7 +89,7 @@ namespace Movement
 		bool isParent(const UInt8 index) const
 		{
 			for (UInt8 i = 0; i < BoneCount; i++)
-				if ((Bones[i] == index) && (i != index))
+				if ((ParentBones[i] == index) && (i != index))
 					return true;
 
 			return false;
@@ -95,7 +97,7 @@ namespace Movement
 
 		bool isChild(const UInt8 index) const
 		{
-			return Bones[index] == index;
+			return ParentBones[index] == index;
 		}
 
 		Common::Nullable<UInt8> findChild(const UInt8 parentIndex, const Common::Nullable<UInt8> lastChildIndex = Common::Null) const
@@ -108,7 +110,7 @@ namespace Movement
 				fromIndex = lastChildIndex.Value + 1;
 
 			for (UInt8 i = fromIndex; i < BoneCount; i++)
-				if ((Bones[i] == parentIndex) && (i != parentIndex))
+				if ((ParentBones[i] == parentIndex) && (i != parentIndex))
 					return i;
 
 			return Common::Null;
@@ -121,7 +123,7 @@ namespace Movement
 
 		~BoneMap()
 		{
-			delete[] Bones;
+			delete[] ParentBones;
 		}
 
 	};
