@@ -25,11 +25,6 @@ namespace Movement
 		{
 		}
 
-		Bone(const Bone<TVALUE>& bone)
-		{
-			// todo
-		}
-
 		Common::Matrix4<TVALUE> getArmTransformMatrix()
 		{
 			if (ParentBone == nullptr)

@@ -88,10 +88,8 @@ int main(int argc, char *argv[])
 	*/
 
 	Movement::JointList<> jointList(10);
-	//jointList.Joints[0]->set(Common::Matrix4F(12));
 
-//	Movement::TreeSkeletal<> treeSkeletal = Movement::TreeSkeletal<>();
-//	treeSkeletal.addBone(0, jointList.Joints[0]);
+	Movement::ChainSkeletal<> chainSkeletal = Movement::ChainSkeletal<>(jointList);
 
 	return a.exec();
 

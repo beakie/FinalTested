@@ -5,6 +5,7 @@
 #include "common.h"
 
 #include "movement-bone.h"
+#include "movement-jointlist.h"
 
 namespace Movement
 {
@@ -30,16 +31,13 @@ namespace Movement
 			BoneCount = chainSkeletal.BoneCount;
 		}
 
-		ChainSkeletal(UInt8 size)
-			: BoneCount(size)
+		ChainSkeletal(const JointList<TVALUE>& jointList)
+			: BoneCount(jointList.JointCount)
 		{
-			Bones = new Bone<TVALUE>*[size];
+			Bones = new Bone<TVALUE>*[jointList.JointCount];
 
-			for (UInt8 i = 0; i < size; i++)
-			{
-				Bones[i] = new Bone<TVALUE>();
-				Bones[i]->identity();
-			}
+			for (UInt8 i = 0; i < jointList.JointCount; i++)
+				Bones[i] = new Bone<TVALUE>(i == 0 ? nullptr : Bones[i - 1], jointList.Joints[i]);
 		}
 
 		ChainSkeletal<TVALUE>& operator=(const ChainSkeletal<TVALUE>& chainSkeletal)
@@ -58,15 +56,14 @@ namespace Movement
 			return *this;
 		}
 
-		Bone<TVALUE>& addBone()
+		Bone<TVALUE>& addBone(Common::Matrix4<TVALUE>* joint)
 		{
 			Bone<TVALUE>** tmpBones = new Bone<TVALUE>*[BoneCount + 1];
 
 			for (UInt8 i = 0; i < BoneCount; i++)
 				tmpBones[i] = Bones[i];
 
-			tmpBones[BoneCount] = new Bone<TVALUE>();
-			tmpBones[BoneCount]->identity();
+			tmpBones[BoneCount] = new Bone<TVALUE>(tmpBones[BoneCount - 1], joint);
 
 			delete[] Bones;
 
