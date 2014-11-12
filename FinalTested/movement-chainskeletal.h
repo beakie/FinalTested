@@ -21,7 +21,7 @@ namespace Movement
 		{
 		}
 
-		ChainSkeletal(const ChainSkeletal<TVALUE>& chainSkeletal)
+		ChainSkeletal(const ChainSkeletal<TVALUE>& chainSkeletal) //?
 		{
 			Bones = new Bone<TVALUE>*[chainSkeletal.BoneCount];
 
@@ -31,17 +31,18 @@ namespace Movement
 			BoneCount = chainSkeletal.BoneCount;
 		}
 
-		ChainSkeletal(const Common::Matrix4<TVALUE>* jointList, UInt8 count)
+		ChainSkeletal(Common::Matrix4<TVALUE>** jointList, UInt8 jointCount)
+			: BoneCount(jointCount)
 		{
+			Bones = new Bone<TVALUE>*[jointCount];
+
+			for (UInt8 i = 0; i < jointCount; i++)
+				Bones[i] = new Bone<TVALUE>(i == 0 ? nullptr : Bones[i - 1], jointList[i]);
 		}
 
 		ChainSkeletal(const JointList<TVALUE>& jointList)
-			: BoneCount(jointList.JointCount)
+			: ChainSkeletal(jointList.Joints, jointList.JointCount)
 		{
-			Bones = new Bone<TVALUE>*[jointList.JointCount];
-
-			for (UInt8 i = 0; i < jointList.JointCount; i++)
-				Bones[i] = new Bone<TVALUE>(i == 0 ? nullptr : Bones[i - 1], jointList.Joints[i]);
 		}
 
 		ChainSkeletal<TVALUE>& operator=(const ChainSkeletal<TVALUE>& chainSkeletal)
