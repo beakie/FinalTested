@@ -6,10 +6,10 @@
 
 namespace Movement
 {
-	template <typename TVALUE = FloatMax>
+	template <typename TMATRIX>
 	struct JointList
 	{
-		Common::Matrix4<TVALUE>** Joints;
+		TMATRIX** Joints;
 		UInt8 JointCount;
 
 		JointList()
@@ -18,9 +18,10 @@ namespace Movement
 		{
 		}
 
-		JointList(const JointList<TVALUE>& jointList)
+		template <typename TVALUE = FloatMax>
+		JointList(const JointList<TMATRIX>& jointList)
 		{
-			Joints = new Common::Matrix4<TVALUE>*[jointList.JointCount];
+			Joints = new TMATRIX*[jointList.JointCount];
 
 			for (UInt8 i = 0; i < jointList.JointCount; i++)
 				Joints[i] = jointList.Joints[i];
@@ -31,15 +32,15 @@ namespace Movement
 		JointList(UInt8 size)
 			: JointCount(size)
 		{
-			Joints = new Common::Matrix4<TVALUE>*[size];
+			Joints = new TMATRIX*[size];
 
 			for (UInt8 i = 0; i < size; i++)
-				Joints[i] = new Common::Matrix4<TVALUE>(Common::Matrix4<TVALUE>::getIdentity());
+				Joints[i] = new TMATRIX(TMATRIX::getIdentity());
 		}
 
-		JointList<TVALUE>& operator=(const JointList<TVALUE>& jointList)
+		JointList<TMATRIX>& operator=(const JointList<TMATRIX>& jointList)
 		{
-			Common::Matrix4<TVALUE>** tmpJoints = new Common::Matrix4<TVALUE>*[jointList.JointCount + 1];
+			TMATRIX** tmpJoints = new TMATRIX*[jointList.JointCount + 1];
 
 			for (UInt8 i = 0; i < jointList.JointCount; i++)
 				tmpJoints[i] = jointList.Joints[i];
@@ -53,14 +54,14 @@ namespace Movement
 			return *this;
 		}
 
-		Common::Matrix4<TVALUE>& addJoint()
+		TMATRIX& addJoint()
 		{
-			Common::Matrix4<TVALUE>** tmpJoints = new Common::Matrix4<TVALUE>*[JointCount + 1];
+			TMATRIX** tmpJoints = new TMATRIX*[JointCount + 1];
 
 			for (UInt8 i = 0; i < JointCount; i++)
 				tmpJoints[i] = Joints[i];
 
-			tmpJoints[JointCount] = new Common::Matrix4<TVALUE>(Common::Matrix4<TVALUE>::getIdentity());
+			tmpJoints[JointCount] = new TMATRIX(TMATRIX::getIdentity());
 
 			delete[] Joints;
 

@@ -8,6 +8,14 @@
 namespace Movement
 {
 
+	typedef JointList<Common::Matrix4<Float32>> JointList3d32;
+	typedef JointList<Common::Matrix4<Float64>> JointList3d64;
+	typedef JointList<Common::Matrix4<FloatMax>> JointList3d;
+
+	typedef JointList<Common::Matrix3<Float32>> JointList2d32;
+	typedef JointList<Common::Matrix3<Float64>> JointList2d64;
+	typedef JointList<Common::Matrix3<FloatMax>> JointList2d;
+
 }
 
 #endif // MOVEMENT_H
