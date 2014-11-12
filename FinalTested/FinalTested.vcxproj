@@ -80,6 +80,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="movement-chainskeletal.h" />
     <ClInclude Include="common-list.h" />
     <ClInclude Include="common-castpixelconv.h" />
     <ClInclude Include="common-image.h" />
@@ -97,7 +98,6 @@
     <ClInclude Include="common-vector4.h" />
     <ClInclude Include="Bak\movement-actuatormanager.h.old" />
     <ClInclude Include="movement-bone.h" />
-    <ClInclude Include="Bak\movement-chainskeletal.h" />
     <ClInclude Include="Bak\movement-treebone.h" />
     <ClInclude Include="Bak\movement-iactuator.h.old" />
     <ClInclude Include="movement-jointlist.h" />

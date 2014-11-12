@@ -239,13 +239,13 @@
     <ClInclude Include="Bak\movement-iactuator.h.old">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Bak\movement-chainskeletal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Bak\movement-treeskeletal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Bak\movement-treebone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="movement-chainskeletal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
