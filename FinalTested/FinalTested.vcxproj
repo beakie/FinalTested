@@ -98,6 +98,7 @@
     <ClInclude Include="common-vector4.h" />
     <ClInclude Include="movement-bone.h" />
     <ClInclude Include="movement-jointlist.h" />
+    <ClInclude Include="movement-treeskeletal.h" />
     <ClInclude Include="movement.h" />
     <ClInclude Include="picture-colorhelpers_.h" />
     <ClInclude Include="picture-colormaps_.h" />

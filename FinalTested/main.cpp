@@ -87,10 +87,8 @@ int main(int argc, char *argv[])
 	Common::Matrix4F transformMatrix = actuatorManager.setPosition(0, 0.5).getTransformMatrix(0);
 	*/
 
-	Movement::JointList<> jointList(10);
-
-	Movement::ChainSkeletal<> chainSkeletal1 = { jointList.Joints, jointList.JointCount };
-	Movement::ChainSkeletal<> chainSkeletal2 = jointList;
+	Movement::JointList<> jointList = 4;
+	Movement::ChainSkeletal<> chainSkeletal = jointList;
 
 	return a.exec();
 
