@@ -90,7 +90,7 @@ namespace Common
 			operator=(list);
 		}
 
-		TINDEX getIndex(TVALUE value)
+		TINDEX getIndex(const TVALUE value)
 		{
 			for (TINDEX i = 0; i < Count; i++)
 				if (Items[i] == value)

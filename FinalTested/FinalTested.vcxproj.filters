@@ -230,5 +230,8 @@
     <ClInclude Include="movement-body.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="common-managedlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
