@@ -10,7 +10,6 @@
 
 namespace Movement
 {
-	template <typename TVALUE = FloatMax>
 	struct BoneMap
 	{
 		UInt8* Bones;
@@ -22,7 +21,7 @@ namespace Movement
 		{
 		}
 
-		BoneMap(const BoneMap<TVALUE>& boneMap)
+		BoneMap(const BoneMap& boneMap)
 			: BoneCount(boneMap.BoneCount)
 		{
 			Bones = new UInt8[boneMap.BoneCount];
@@ -40,12 +39,13 @@ namespace Movement
 				Bones[i] = (i == 0 ? 0 : i - 1);
 		}
 
+		template <typename TVALUE>
 		BoneMap(const JointList<TVALUE>& jointList)
 			: BoneMap(jointList.JointCount)
 		{
 		}
 
-		BoneMap<TVALUE>& operator=(const BoneMap<TVALUE>& boneMap)
+		BoneMap& operator=(const BoneMap& boneMap)
 		{
 			UInt8* tmpBones = new UInt8[boneMap.BoneCount + 1];
 

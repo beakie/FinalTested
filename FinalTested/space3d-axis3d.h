@@ -1,5 +1,5 @@
-#ifndef SPACE3DAXIS_H
-#define SPACE3DAXIS_H
+#ifndef SPACE3DAXIS3D_H
+#define SPACE3DAXIS3D_H
 
 #include "common.h"
 
@@ -18,4 +18,4 @@ namespace Space3d
 
 }
 
-#endif // SPACE3DAXIS_H
+#endif // SPACE3DAXIS3D_H
