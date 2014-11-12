@@ -89,6 +89,7 @@ int main(int argc, char *argv[])
 
 	Movement::JointList<> jointList = 4;
 	Movement::ChainSkeletal<> chainSkeletal = jointList;
+	Movement::TreeSkeletal<> treeSkeletal = jointList;
 
 	return a.exec();
 

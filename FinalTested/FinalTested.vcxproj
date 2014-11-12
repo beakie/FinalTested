@@ -80,6 +80,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="movement-skeletal.h" />
     <ClInclude Include="movement-chainskeletal.h" />
     <ClInclude Include="common-list.h" />
     <ClInclude Include="common-castpixelconv.h" />
