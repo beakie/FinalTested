@@ -23,8 +23,8 @@ namespace Movement
 		{
 		}
 
-		Skeletal(UInt8 size)
-			: Map(size)
+		Skeletal(UInt8 chainedBoneCount)
+			: Map(chainedBoneCount)
 		{
 		}
 

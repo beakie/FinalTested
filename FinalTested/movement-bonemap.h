@@ -30,12 +30,12 @@ namespace Movement
 				Bones[i] = boneMap.Bones[i];
 		}
 
-		BoneMap(UInt8 size)
-			: BoneCount(size)
+		BoneMap(UInt8 chainedBoneCount)
+			: BoneCount(chainedBoneCount)
 		{
-			Bones = new UInt8[size];
+			Bones = new UInt8[chainedBoneCount];
 
-			for (UInt8 i = 0; i < size; i++)
+			for (UInt8 i = 0; i < chainedBoneCount; i++)
 				Bones[i] = (i == 0 ? 0 : i - 1);
 		}
 
