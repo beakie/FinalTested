@@ -12,7 +12,7 @@ namespace Movement
 	struct Skeletal
 	{
 		BoneMap Map;
-		TPOINT** Positions;
+		TPOINT** ZeroPositions;
 
 		Skeletal()
 			: Map()
