@@ -91,6 +91,8 @@ int main(int argc, char *argv[])
 	Movement::Skeletal<> skeletal = jointList;
 	Common::Nullable<UInt8> childIndex = skeletal.Map.findChild(1);
 
+	Movement::Body3d body = Movement::Body3d();
+
 	return a.exec();
 
 }

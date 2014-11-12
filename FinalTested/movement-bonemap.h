@@ -79,6 +79,11 @@ namespace Movement
 			return Bones[BoneCount - 1];
 		}
 
+		UInt8 addBone()
+		{
+			return addBone(BoneCount);
+		}
+
 		bool isParent(const UInt8 index) const
 		{
 			for (UInt8 i = 0; i < BoneCount; i++)
