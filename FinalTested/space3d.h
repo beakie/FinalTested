@@ -3,7 +3,7 @@
 
 #include "common.h"
 
-#include "space3d-axis.h"
+#include "space3d-axis3d.h"
 #include "space3d-common_.h"
 #include "space3d-coordinate.h"
 #include "space3d-transformmatrixbuilders_.h"

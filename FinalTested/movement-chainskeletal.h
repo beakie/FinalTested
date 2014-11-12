@@ -31,6 +31,10 @@ namespace Movement
 			BoneCount = chainSkeletal.BoneCount;
 		}
 
+		ChainSkeletal(const Common::Matrix4<TVALUE>* jointList, UInt8 count)
+		{
+		}
+
 		ChainSkeletal(const JointList<TVALUE>& jointList)
 			: BoneCount(jointList.JointCount)
 		{

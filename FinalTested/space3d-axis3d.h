@@ -6,7 +6,7 @@
 namespace Space3d
 {
 
-	struct Axis
+	struct Axis3d
 	{
 		enum Enum
 		{

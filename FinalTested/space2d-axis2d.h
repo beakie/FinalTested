@@ -6,7 +6,7 @@
 namespace Space2d
 {
 
-	struct Axis
+	struct Axis2d
 	{
 		enum Enum
 		{

@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
 
 	Movement::JointList<> jointList(10);
 
-	Movement::ChainSkeletal<> chainSkeletal = Movement::ChainSkeletal<>(jointList);
+	Movement::ChainSkeletal<> chainSkeletal = { jointList.Joints[0], 1 };
 
 	return a.exec();
 

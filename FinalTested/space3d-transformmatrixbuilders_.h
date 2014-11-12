@@ -2,7 +2,7 @@
 #define SPACE3DTRANSFORMMATRIXBUILDERS_H
 
 #include "common.h"
-#include "space3d-axis.h"
+#include "space3d-axis3d.h"
 
 namespace Space3d
 {
@@ -97,17 +97,17 @@ namespace Space3d
 	}
 
 	template <typename TVALUE>
-	Common::Matrix4<TVALUE> getRotationMatrix(Axis::Enum axis, const TVALUE rotation)
+	Common::Matrix4<TVALUE> getRotationMatrix(Axis3d::Enum axis, const TVALUE rotation)
 	{
 		switch (axis)
 		{
-		case Axis::X:
+		case Axis3d::X:
 			return getRotationMatrixAxisX<TVALUE>(rotation);
 			break;
-		case Axis::Y:
+		case Axis3d::Y:
 			return getRotationMatrixAxisY<TVALUE>(rotation);
 			break;
-		case Axis::Z:
+		case Axis3d::Z:
 			return getRotationMatrixAxisZ<TVALUE>(rotation);
 			break;
 		}
