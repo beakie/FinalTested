@@ -221,7 +221,7 @@
     <ClInclude Include="space2d-axis2d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement-bonelist.h">
+    <ClInclude Include="movement-bonemap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

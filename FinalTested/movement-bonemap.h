@@ -1,5 +1,5 @@
-#ifndef MOVEMENTBONELIST_H
-#define MOVEMENTBONELIST_H
+#ifndef MOVEMENTBONEMAP_H
+#define MOVEMENTBONEMAP_H
 
 #include "core.h"
 #include "common.h"
@@ -11,27 +11,27 @@
 namespace Movement
 {
 	template <typename TVALUE = FloatMax>
-	struct BoneList
+	struct BoneMap
 	{
 		UInt8* Bones;
 		UInt8 BoneCount;
 
-		BoneList()
+		BoneMap()
 			: Bones(0),
 			  BoneCount(0)
 		{
 		}
 
-		BoneList(const BoneList<TVALUE>& boneList)
-			: BoneCount(boneList.BoneCount)
+		BoneMap(const BoneMap<TVALUE>& boneMap)
+			: BoneCount(boneMap.BoneCount)
 		{
-			Bones = new UInt8[boneList.BoneCount];
+			Bones = new UInt8[boneMap.BoneCount];
 
-			for (UInt8 i = 0; i < boneList.BoneCount; i++)
-				Bones[i] = boneList.Bones[i];
+			for (UInt8 i = 0; i < boneMap.BoneCount; i++)
+				Bones[i] = boneMap.Bones[i];
 		}
 
-		BoneList(UInt8 size)
+		BoneMap(UInt8 size)
 			: BoneCount(size)
 		{
 			Bones = new UInt8[size];
@@ -40,23 +40,23 @@ namespace Movement
 				Bones[i] = (i == 0 ? 0 : i - 1);
 		}
 
-		BoneList(const JointList<TVALUE>& jointList)
-			: BoneList(jointList.JointCount)
+		BoneMap(const JointList<TVALUE>& jointList)
+			: BoneMap(jointList.JointCount)
 		{
 		}
 
-		BoneList<TVALUE>& operator=(const BoneList<TVALUE>& boneList)
+		BoneMap<TVALUE>& operator=(const BoneMap<TVALUE>& boneMap)
 		{
-			UInt8* tmpBones = new UInt8[boneList.BoneCount + 1];
+			UInt8* tmpBones = new UInt8[boneMap.BoneCount + 1];
 
-			for (UInt8 i = 0; i < boneList.BoneCount; i++)
-				tmpBones[i] = boneList.Bones[i];
+			for (UInt8 i = 0; i < boneMap.BoneCount; i++)
+				tmpBones[i] = boneMap.Bones[i];
 
 			delete[] Bones;
 
 			Bones = tmpBones;
 
-			BoneCount = boneList.BoneCount;
+			BoneCount = boneMap.BoneCount;
 
 			return *this;
 		}
@@ -79,7 +79,16 @@ namespace Movement
 			return Bones[BoneCount - 1];
 		}
 
-		bool isRootBone(const UInt8 index) const
+		bool isParent(const UInt8 index) const
+		{
+			for (UInt8 i = 0; i < BoneCount; i++)
+				if ((Bones[i] == index) && (i != index))
+					return true;
+
+			return false;
+		}
+
+		bool isChild(const UInt8 index) const
 		{
 			return Bones[index] == index;
 		}
@@ -105,7 +114,7 @@ namespace Movement
 
 		}
 
-		~BoneList()
+		~BoneMap()
 		{
 			delete[] Bones;
 		}
@@ -113,4 +122,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENTBONELIST_H
+#endif // MOVEMENTBONEMAP_H
