@@ -90,10 +90,6 @@ int main(int argc, char *argv[])
 	//Common::ManagedList<Movement::BoneMap3d> test = Common::ManagedList<Movement::BoneMap3d>();
 
 	Movement::Skeletal3d skeletal = Movement::Skeletal3d(4);
-	skeletal.BoneMap.addBone();
-	skeletal.BoneMap.addBone();
-	skeletal.BoneMap.addBone();
-	skeletal.BoneMap.addBone();
 
 	return a.exec();
 
