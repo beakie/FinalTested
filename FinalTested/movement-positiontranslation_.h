@@ -70,7 +70,7 @@ namespace Movement
 	template <typename TPOINT, typename TMATRIX, typename TPOSITIONLIST>
 	SinglePositionList<TPOINT> getTranslatedJoints(Skeletal<TPOINT, TMATRIX, TPOSITIONLIST> skeletal)
 	{
-		return getTranslatedJoints<TPOINT, TMATRIX>(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions);
+		return getTranslatedJoints<TPOINT, TMATRIX>(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions); //these should go direct to the top methods
 	}
 
 	template <typename TPOINT, typename TMATRIX, typename TPOSITIONLIST>

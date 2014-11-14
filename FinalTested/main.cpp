@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
 	Movement::Skeletal3d skeletal = Movement::Skeletal3d(4);
 
 	Movement::getTranslatedBones(skeletal);
-	//Movement::getTranslatedBones3d(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions);
+	Movement::getTranslatedBones(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions);
 
 	return a.exec();
 
