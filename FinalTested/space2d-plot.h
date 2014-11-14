@@ -62,9 +62,9 @@ namespace Space2d
 	typedef Common::Vector2<FloatMax> PlotF;
 
 	template <typename TVALUE>
-	Common::Vector2<TVALUE> multiplyCoordinateByMatrix(const Common::Vector2<TVALUE>& coordinate, const Common::Matrix3<TVALUE>& matrix)
+	Common::Vector2<TVALUE> multiplyCoordinateByMatrix(const Common::Vector2<TVALUE>& plot, const Common::Matrix3<TVALUE>& matrix)
 	{
-		Common::Vector3<TVALUE> vector3 = Common::Vector3<TVALUE>(coordinate.Values[0], coordinate.Values[1], 1) * matrix;
+		Common::Vector3<TVALUE> vector3 = Common::Vector3<TVALUE>(plot.Values[0], plot.Values[1], 1) * matrix;
 
 		return Common::Vector2<TVALUE>(vector3.Values[0], vector4.Values[1]) // dont just link this to vector3... make it more efficient
 	}
