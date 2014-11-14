@@ -4,10 +4,11 @@
 #include "space2d.h"
 #include "space3d.h"
 
-#include "movement-skeletal.h"
 #include "movement-bonemap.h"
-#include "movement-jointlist.h"
 #include "movement-bonezerolist.h"
+#include "movement-jointlist.h"
+#include "movement-jointzerolist.h"
+#include "movement-skeletal.h"
 
 namespace Movement
 {
@@ -19,6 +20,14 @@ namespace Movement
 	typedef JointList<Common::Matrix4F32> JointList3d32;
 	typedef JointList<Common::Matrix4F64> JointList3d64;
 	typedef JointList<Common::Matrix4F> JointList3d;
+
+	typedef JointZeroList<Space2d::PlotF32> JointZeroList2d32;
+	typedef JointZeroList<Space2d::PlotF64> JointZeroList2d64;
+	typedef JointZeroList<Space2d::PlotF> JointZeroList2d;
+
+	typedef JointZeroList<Space3d::CoordinateF32> JointZeroList3d32;
+	typedef JointZeroList<Space3d::CoordinateF64> JointZeroList3d64;
+	typedef JointZeroList<Space3d::CoordinateF> JointZeroList3d;
 
 	typedef BoneZeroList<Space2d::PlotF32> BoneZeroList2d32;
 	typedef BoneZeroList<Space2d::PlotF64> BoneZeroList2d64;
