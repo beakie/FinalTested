@@ -136,20 +136,6 @@ namespace Common
 			return *this;
 		}
 
-		Vector3<TVALUE> operator*(const Matrix3<TVALUE>& matrix) const
-		{
-			return Vector3<TVALUE>(*this) *= matrix;
-		}
-
-		Vector3<TVALUE>& operator*=(const Matrix3<TVALUE>& matrix)
-		{
-			//Values[0] *= vector.Values[0];
-			//Values[1] *= vector.Values[1];
-			//Values[2] *= vector.Values[2];
-
-			return *this;
-		}
-
 		Vector3<TVALUE> operator/(const Vector3<TVALUE>& vector) const
 		{
 			return Vector3<TVALUE>(*this) /= vector;
