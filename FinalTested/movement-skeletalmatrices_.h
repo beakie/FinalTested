@@ -18,15 +18,10 @@ namespace Movement
 	{
 		Common::Matrix3<TVALUE> matrix = jointList.Joints[index];
 
-		UInt8 currentIndex = index;
-
-		while (boneMap.ParentBones[currentIndex] != currentIndex)
-		{
-			currentIndex = boneMap.ParentBones[currentIndex];
-			matrix *= jointList[currentIndex]; // !!! this should be in ascending order not descending !!!
-		}
-
-		return matrix;
+		if (boneMap.ParentBones[index] != index)
+			return get2d(jointList, boneMap, boneMap.ParentBones[index]) * matrix;
+		else
+			return matrix;
 	}
 
 }
