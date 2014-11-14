@@ -66,7 +66,7 @@ namespace Space2d
 	{
 		Common::Vector3<TVALUE> vector3 = Common::Vector3<TVALUE>(plot.Values[0], plot.Values[1], 1) * matrix;
 
-		return Common::Vector2<TVALUE>(vector3.Values[0], vector4.Values[1]) // dont just link this to vector3... make it more efficient
+		return Common::Vector2<TVALUE>(vector3.Values[0], vector3.Values[1]) // dont just link this to vector3... make it more efficient
 	}
 
 }
