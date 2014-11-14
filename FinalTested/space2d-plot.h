@@ -61,6 +61,14 @@ namespace Space2d
 	/// </summary>
 	typedef Common::Vector2<FloatMax> PlotF;
 
+	template <typename TVALUE>
+	Common::Vector2<TVALUE> multiplyPlotByMatrix(const Common::Vector2<TVALUE>& coordinate, const Common::Matrix3<TVALUE>& matrix)
+	{
+		//todo
+
+		return Common::Vector2<TVALUE>() // dont just link this to vector4... make it more efficient
+	}
+
 }
 
 #endif // SPACE2DPLOT_H

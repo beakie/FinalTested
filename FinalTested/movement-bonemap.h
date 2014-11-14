@@ -120,7 +120,7 @@ namespace Movement
 		}
 
 		template <typename TMATRIX>
-		TMATRIX getBoneTransformMatrix(const JointList<TMATRIX>& jointList, const UInt8 index)
+		TMATRIX getBoneTransformMatrix(const JointList<TMATRIX>& jointList, const UInt8 index) const
 		{
 			if (ParentBones[index] != index)
 				return getBoneTransformMatrix(jointList, ParentBones[index]) * *jointList.Joints[index];

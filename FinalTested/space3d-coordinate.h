@@ -60,6 +60,14 @@ namespace Space3d
 	/// max byte precision floating number coordinate
 	/// </summary>
 	typedef Common::Vector3<FloatMax> CoordinateF;
+
+	template <typename TVALUE>
+	Common::Vector3<TVALUE> multiplyCoordinateByMatrix(const Common::Vector3<TVALUE>& coordinate, const Common::Matrix4<TVALUE>& matrix)
+	{
+		//todo
+
+		return Common::Vector3<TVALUE>() // dont just link this to vector4... make it more efficient
+	}
 }
 
 #endif // SPACE3DCOORDINATE_H
