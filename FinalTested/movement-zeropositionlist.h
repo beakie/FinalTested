@@ -9,11 +9,13 @@ namespace Movement
 	template <typename TPOINT>
 	struct ZeroPositionList
 	{
-		TPOINT** Positions;
+		TPOINT** FromPositions;
+		TPOINT** ToPositions;
 		UInt8 PositionCount;
 
 		ZeroPositionList()
-			: Positions(0),
+			: FromPositions(0),
+			  ToPositions(0),
 			  PositionCount(0)
 		{
 		}
@@ -21,10 +23,14 @@ namespace Movement
 		template <typename TVALUE = FloatMax>
 		ZeroPositionList(const ZeroPositionList<TPOINT>& jointList)
 		{
-			Positions = new TPOINT*[jointList.PositionCount];
+			FromPositions = new TPOINT*[jointList.PositionCount];
+			ToPositions = new TPOINT*[jointList.PositionCount];
 
 			for (UInt8 i = 0; i < jointList.PositionCount; i++)
-				Positions[i] = jointList.Positions[i];
+			{
+				FromPositions[i] = jointList.FromPositions[i];
+				ToPositions[i] = jointList.ToPositions[i];
+			}
 
 			PositionCount = jointList.PositionCount;
 		}
@@ -32,52 +38,73 @@ namespace Movement
 		ZeroPositionList(UInt8 size)
 			: PositionCount(size)
 		{
-			Positions = new TPOINT*[size];
+			FromPositions = new TPOINT*[size];
+			ToPositions = new TPOINT*[size];
 
 			for (UInt8 i = 0; i < size; i++)
-				Positions[i] = new TPOINT(TPOINT::getZero());
+			{
+				FromPositions[i] = new TPOINT(TPOINT::getZero());
+				ToPositions[i] = new TPOINT(TPOINT::getZero());
+			}
 		}
 
 		ZeroPositionList<TPOINT>& operator=(const ZeroPositionList<TPOINT>& jointList)
 		{
-			TPOINT** tmpPositions = new TPOINT*[jointList.PositionCount + 1];
+			TPOINT** tmpFromPositions = new TPOINT*[jointList.PositionCount + 1];
+			TPOINT** tmpToPositions = new TPOINT*[jointList.PositionCount + 1];
 
 			for (UInt8 i = 0; i < jointList.PositionCount; i++)
-				tmpPositions[i] = jointList.Positions[i];
+			{
+				tmpFromPositions[i] = jointList.FromPositions[i];
+				tmpToPositions[i] = jointList.ToPositions[i];
+			}
 
-			delete[] Positions;
+			delete[] FromPositions;
+			delete[] ToPositions;
 
-			Positions = tmpPositions;
+			FromPositions = tmpFromPositions;
+			ToPositions = tmpToPositions;
 
 			PositionCount = jointList.PositionCount;
 
 			return *this;
 		}
 
-		TPOINT& addJoint()
+		UInt8 addJoint()
 		{
-			TPOINT** tmpPositions = new TPOINT*[PositionCount + 1];
+			TPOINT** tmpFromPositions = new TPOINT*[PositionCount + 1];
+			TPOINT** tmpToPositions = new TPOINT*[PositionCount + 1];
 
 			for (UInt8 i = 0; i < PositionCount; i++)
-				tmpPositions[i] = Positions[i];
+			{
+				tmpFromPositions[i] = FromPositions[i];
+				tmpToPositions[i] = ToPositions[i];
+			}
 
-			tmpPositions[PositionCount] = new TPOINT(TPOINT::getZero());
+			tmpFromPositions[PositionCount] = new TPOINT(TPOINT::getZero());
+			tmpToPositions[PositionCount] = new TPOINT(TPOINT::getZero());
 
-			delete[] Positions;
+			delete[] FromPositions;
+			delete[] ToPositions;
 
-			Positions = tmpPositions;
+			FromPositions = tmpFromPositions;
+			ToPositions = tmpToPositions;
 
 			PositionCount++;
 
-			return *Positions[PositionCount - 1];
+			return PositionCount - 1;
 		}
 
 		~ZeroPositionList()
 		{
 			for (UInt8 i = 0; i < PositionCount; i++)
-				delete Positions[i];
+			{
+				delete FromPositions[i];
+				delete ToPositions[i];
+			}
 
-			delete[] Positions;
+			delete[] FromPositions;
+			delete[] ToPositions;
 		}
 
 	};
