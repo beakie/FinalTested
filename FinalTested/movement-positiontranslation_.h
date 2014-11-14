@@ -67,16 +67,40 @@ namespace Movement
 		return getTranslatedBones<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>>(jointList, boneMap, zeroBonePositions);
 	}
 	
-	template <typename TPOINT, typename TMATRIX, typename TPOSITIONLIST>
-	SinglePositionList<TPOINT> getTranslatedJoints(Skeletal<TPOINT, TMATRIX, TPOSITIONLIST> skeletal)
+	template <typename TVALUE>
+	SinglePositionList<Common::Vector2<TVALUE>> getTranslatedJoints(Skeletal<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>, SinglePositionList<Common::Vector2<TVALUE>>> skeletal)
 	{
-		return getTranslatedJoints<TPOINT, TMATRIX>(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions); //these should go direct to the top methods
+		return getTranslatedJoints<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>>(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions);
 	}
 
-	template <typename TPOINT, typename TMATRIX, typename TPOSITIONLIST>
-	DoublePositionList<TPOINT> getTranslatedBones(Skeletal<TPOINT, TMATRIX, TPOSITIONLIST> skeletal)
+	template <typename TVALUE>
+	DoublePositionList<Common::Vector2<TVALUE>> getTranslatedBones(Skeletal<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>, SinglePositionList<Common::Vector2<TVALUE>>> skeletal)
 	{
-		return getTranslatedBones<TPOINT, TMATRIX>(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions);
+		return getTranslatedBones<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>>(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions);
+	}
+
+	template <typename TVALUE>
+	DoublePositionList<Common::Vector2<TVALUE>> getTranslatedBones(Skeletal<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>, DoublePositionList<Common::Vector2<TVALUE>>> skeletal)
+	{
+		return getTranslatedBones<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>>(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions);
+	}
+
+	template <typename TVALUE>
+	SinglePositionList<Common::Vector3<TVALUE>> getTranslatedJoints(Skeletal<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>, SinglePositionList<Common::Vector3<TVALUE>>> skeletal)
+	{
+		return getTranslatedJoints<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>>(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions);
+	}
+
+	template <typename TVALUE>
+	DoublePositionList<Common::Vector3<TVALUE>> getTranslatedBones(Skeletal<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>, SinglePositionList<Common::Vector3<TVALUE>>> skeletal)
+	{
+		return getTranslatedBones<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>>(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions);
+	}
+
+	template <typename TVALUE>
+	DoublePositionList<Common::Vector3<TVALUE>> getTranslatedBones(Skeletal<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>, DoublePositionList<Common::Vector3<TVALUE>>> skeletal)
+	{
+		return getTranslatedBones<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>>(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions);
 	}
 
 }
