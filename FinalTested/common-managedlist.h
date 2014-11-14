@@ -120,7 +120,7 @@ namespace Common
 				Count = list.Count;
 
 				for (TINDEX i = 0; i < Count; i++)
-					tmp[i] = list.Items[i];
+					tmp[i] = new TVALUE(list.Items[i]);
 
 				delete[] Items;
 
