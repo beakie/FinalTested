@@ -1,5 +1,5 @@
-#ifndef MOVEMENTBONEPOSITIONLIST_H
-#define MOVEMENTBONEPOSITIONLIST_H
+#ifndef MOVEMENTDOUBLEPOSITIONLIST_H
+#define MOVEMENTDOUBLEPOSITIONLIST_H
 
 #include "core.h"
 #include "common.h"
@@ -7,13 +7,13 @@
 namespace Movement
 {
 	template <typename TPOINT>
-	struct BonePositionList
+	struct DoublePositionList
 	{
 		TPOINT** FromPositions;
 		TPOINT** ToPositions;
 		UInt8 PositionCount;
 
-		BonePositionList()
+		DoublePositionList()
 			: FromPositions(0),
 			  ToPositions(0),
 			  PositionCount(0)
@@ -21,7 +21,7 @@ namespace Movement
 		}
 
 		template <typename TVALUE = FloatMax>
-		BonePositionList(const BonePositionList<TPOINT>& jointList)
+		DoublePositionList(const DoublePositionList<TPOINT>& jointList)
 		{
 			FromPositions = new TPOINT*[jointList.PositionCount];
 			ToPositions = new TPOINT*[jointList.PositionCount];
@@ -35,7 +35,7 @@ namespace Movement
 			PositionCount = jointList.PositionCount;
 		}
 
-		BonePositionList(UInt8 size)
+		DoublePositionList(UInt8 size)
 			: PositionCount(size)
 		{
 			FromPositions = new TPOINT*[size];
@@ -48,7 +48,7 @@ namespace Movement
 			}
 		}
 
-		BonePositionList<TPOINT>& operator=(const BonePositionList<TPOINT>& jointList)
+		DoublePositionList<TPOINT>& operator=(const DoublePositionList<TPOINT>& jointList)
 		{
 			TPOINT** tmpFromPositions = new TPOINT*[jointList.PositionCount + 1];
 			TPOINT** tmpToPositions = new TPOINT*[jointList.PositionCount + 1];
@@ -95,7 +95,7 @@ namespace Movement
 			return PositionCount - 1;
 		}
 
-		~BonePositionList()
+		~DoublePositionList()
 		{
 			for (UInt8 i = 0; i < PositionCount; i++)
 			{
@@ -110,4 +110,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENTBONEPOSITIONLIST_H
+#endif // MOVEMENTDOUBLEPOSITIONLIST_H
