@@ -28,9 +28,7 @@ namespace Movement
 			ParentBones = new UInt8[boneMap.BoneCount];
 
 			for (UInt8 i = 0; i < boneMap.BoneCount; i++)
-			{
 				ParentBones[i] = boneMap.ParentBones[i];
-			}
 		}
 
 		BoneMap(UInt8 chainedBoneCount)
