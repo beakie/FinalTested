@@ -21,18 +21,18 @@ namespace Movement
 		}
 
 		template <typename TVALUE = FloatMax>
-		DoublePositionList(const DoublePositionList<TPOINT>& jointList)
+		DoublePositionList(const DoublePositionList<TPOINT>& positionList)
 		{
-			FromPositions = new TPOINT*[jointList.PositionCount];
-			ToPositions = new TPOINT*[jointList.PositionCount];
+			FromPositions = new TPOINT*[positionList.PositionCount];
+			ToPositions = new TPOINT*[positionList.PositionCount];
 
-			for (UInt8 i = 0; i < jointList.PositionCount; i++)
+			for (UInt8 i = 0; i < positionList.PositionCount; i++)
 			{
-				FromPositions[i] = new TPOINT(*jointList.FromPositions[i]);
-				ToPositions[i] = new TPOINT(*jointList.ToPositions[i]);
+				FromPositions[i] = new TPOINT(*positionList.FromPositions[i]);
+				ToPositions[i] = new TPOINT(*positionList.ToPositions[i]);
 			}
 
-			PositionCount = jointList.PositionCount;
+			PositionCount = positionList.PositionCount;
 		}
 
 		DoublePositionList(UInt8 size)
@@ -48,15 +48,15 @@ namespace Movement
 			}
 		}
 
-		DoublePositionList<TPOINT>& operator=(const DoublePositionList<TPOINT>& jointList)
+		DoublePositionList<TPOINT>& operator=(const DoublePositionList<TPOINT>& positionList)
 		{
-			TPOINT** tmpFromPositions = new TPOINT*[jointList.PositionCount + 1];
-			TPOINT** tmpToPositions = new TPOINT*[jointList.PositionCount + 1];
+			TPOINT** tmpFromPositions = new TPOINT*[positionList.PositionCount + 1];
+			TPOINT** tmpToPositions = new TPOINT*[positionList.PositionCount + 1];
 
-			for (UInt8 i = 0; i < jointList.PositionCount; i++)
+			for (UInt8 i = 0; i < positionList.PositionCount; i++)
 			{
-				tmpFromPositions[i] = new TPOINT(*jointList.FromPositions[i]);
-				tmpToPositions[i] = new TPOINT(*jointList.ToPositions[i]);
+				tmpFromPositions[i] = new TPOINT(*positionList.FromPositions[i]);
+				tmpToPositions[i] = new TPOINT(*positionList.ToPositions[i]);
 			}
 
 			delete[] FromPositions;
@@ -65,7 +65,7 @@ namespace Movement
 			FromPositions = tmpFromPositions;
 			ToPositions = tmpToPositions;
 
-			PositionCount = jointList.PositionCount;
+			PositionCount = positionList.PositionCount;
 
 			return *this;
 		}

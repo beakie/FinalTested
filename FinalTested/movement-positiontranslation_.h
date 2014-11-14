@@ -14,63 +14,74 @@ namespace Movement
 {
 
 	template <typename TPOINT, typename TMATRIX>
-	SinglePositionList<TPOINT> getTranslatedJoints(const JointList<TMATRIX>& jointList, const BoneMap& boneMap, const SinglePositionList<TPOINT>& zeroJointPositions)
+	SinglePositionList<TPOINT> getTranslatedJoints(const JointList<TMATRIX>& jointList, const BoneMap& boneMap, const SinglePositionList<TPOINT>& jointPositions)
 	{
-		SinglePositionList<TPOINT> translatedJoints = SinglePositionList<TPOINT>(zeroJointPositions.PositionCount);
+		SinglePositionList<TPOINT> translatedJoints = SinglePositionList<TPOINT>(jointPositions.PositionCount);
+
+		for (UInt8 i = 0; i < jointPositions.PositionCount; i++)
+			translatedJoints.Positions[i] = jointPositions.Positions[i] * boneMap.getBoneTransformMatrix(jointList, i);
 
 		return translatedJoints;
 	}
 
 	template <typename TPOINT, typename TMATRIX>
-	DoublePositionList<TPOINT> getTranslatedBones(const JointList<TMATRIX>& jointList, const BoneMap& boneMap, const SinglePositionList<TPOINT>& zeroJointPositions)
+	DoublePositionList<TPOINT> getTranslatedBones(const JointList<TMATRIX>& jointList, const BoneMap& boneMap, const SinglePositionList<TPOINT>& jointPositions)
 	{
-		DoublePositionList<TPOINT> translatedBones = DoublePositionList<TPOINT>(zeroJointPositions.PositionCount);
+		DoublePositionList<TPOINT> translatedBones = DoublePositionList<TPOINT>(jointPositions.PositionCount);
 
 		return translatedBones;
 	}
 
 	template <typename TPOINT, typename TMATRIX>
-	DoublePositionList<TPOINT> getTranslatedBones(const JointList<TMATRIX>& jointList, const BoneMap& boneMap, const DoublePositionList<TPOINT>& zeroBonePositions)
+	DoublePositionList<TPOINT> getTranslatedBones(const JointList<TMATRIX>& jointList, const BoneMap& boneMap, const DoublePositionList<TPOINT>& bonePositions)
 	{
-		DoublePositionList<TPOINT> translatedBones = DoublePositionList<TPOINT>(zeroBonePositions.PositionCount);
+		DoublePositionList<TPOINT> translatedBones = DoublePositionList<TPOINT>(bonePositions.PositionCount);
+
+		for (UInt8 i = 0; i < bonePositions.PositionCount; i++)
+		{
+			//TMATRIX matrix = boneMap.getBoneTransformMatrix(jointList, i);
+
+			//translatedBones.FromPositions[i] = bonePositions.FromPositions[i] * matrix;
+			//translatedBones.ToPositions[i] = bonePositions.ToPositions[i] * matrix;
+		}
 
 		return translatedBones;
 	}
 
 	template <typename TVALUE>
-	SinglePositionList<Common::Vector2<TVALUE>> getTranslatedJoints(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const SinglePositionList<Common::Vector2<TVALUE>>& zeroJointPositions)
+	SinglePositionList<Common::Vector2<TVALUE>> getTranslatedJoints(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const SinglePositionList<Common::Vector2<TVALUE>>& jointPositions)
 	{
-		return getTranslatedJoints<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>>(jointList, boneMap, zeroJointPositions);
+		return getTranslatedJoints<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>>(jointList, boneMap, jointPositions);
 	}
 
 	template <typename TVALUE>
-	SinglePositionList<Common::Vector3<TVALUE>> getTranslatedJoints(const JointList<Common::Matrix4<TVALUE>>& jointList, const BoneMap& boneMap, const SinglePositionList<Common::Vector3<TVALUE>>& zeroJointPositions)
+	SinglePositionList<Common::Vector3<TVALUE>> getTranslatedJoints(const JointList<Common::Matrix4<TVALUE>>& jointList, const BoneMap& boneMap, const SinglePositionList<Common::Vector3<TVALUE>>& jointPositions)
 	{
-		return getTranslatedJoints<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>>(jointList, boneMap, zeroJointPositions);
+		return getTranslatedJoints<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>>(jointList, boneMap, jointPositions);
 	}
 
 	template <typename TVALUE>
-	DoublePositionList<Common::Vector2<TVALUE>> getTranslatedBones(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const SinglePositionList<Common::Vector2<TVALUE>>& zeroJointPositions)
+	DoublePositionList<Common::Vector2<TVALUE>> getTranslatedBones(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const SinglePositionList<Common::Vector2<TVALUE>>& jointPositions)
 	{
-		return getTranslatedBones<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>>(jointList, boneMap, zeroJointPositions);
+		return getTranslatedBones<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>>(jointList, boneMap, jointPositions);
 	}
 
 	template <typename TVALUE>
-	DoublePositionList<Common::Vector3<TVALUE>> getTranslatedBones(const JointList<Common::Matrix4<TVALUE>>& jointList, const BoneMap& boneMap, const SinglePositionList<Common::Vector3<TVALUE>>& zeroJointPositions)
+	DoublePositionList<Common::Vector3<TVALUE>> getTranslatedBones(const JointList<Common::Matrix4<TVALUE>>& jointList, const BoneMap& boneMap, const SinglePositionList<Common::Vector3<TVALUE>>& jointPositions)
 	{
-		return getTranslatedBones<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>>(jointList, boneMap, zeroJointPositions);
+		return getTranslatedBones<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>>(jointList, boneMap, jointPositions);
 	}
 
 	template <typename TVALUE>
-	DoublePositionList<Common::Vector2<TVALUE>> getTranslatedBones(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const DoublePositionList<Common::Vector2<TVALUE>>& zeroBonePositions)
+	DoublePositionList<Common::Vector2<TVALUE>> getTranslatedBones(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const DoublePositionList<Common::Vector2<TVALUE>>& bonePositions)
 	{
-		return getTranslatedBones<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>>(jointList, boneMap, zeroBonePositions);
+		return getTranslatedBones<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>>(jointList, boneMap, bonePositions);
 	}
 
 	template <typename TVALUE>
-	DoublePositionList<Common::Vector3<TVALUE>> getTranslatedBones(const JointList<Common::Matrix4<TVALUE>>& jointList, const BoneMap& boneMap, const DoublePositionList<Common::Vector3<TVALUE>>& zeroBonePositions)
+	DoublePositionList<Common::Vector3<TVALUE>> getTranslatedBones(const JointList<Common::Matrix4<TVALUE>>& jointList, const BoneMap& boneMap, const DoublePositionList<Common::Vector3<TVALUE>>& bonePositions)
 	{
-		return getTranslatedBones<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>>(jointList, boneMap, zeroBonePositions);
+		return getTranslatedBones<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>>(jointList, boneMap, bonePositions);
 	}
 	
 	template <typename TVALUE>

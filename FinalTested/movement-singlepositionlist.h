@@ -19,14 +19,14 @@ namespace Movement
 		}
 
 		template <typename TVALUE = FloatMax>
-		SinglePositionList(const SinglePositionList<TPOINT>& jointList)
+		SinglePositionList(const SinglePositionList<TPOINT>& positionList)
 		{
-			Positions = new TPOINT*[jointList.PositionCount];
+			Positions = new TPOINT*[positionList.PositionCount];
 
-			for (UInt8 i = 0; i < jointList.PositionCount; i++)
-				Positions[i] = new TPOINT(jointList.Positions[i]);
+			for (UInt8 i = 0; i < positionList.PositionCount; i++)
+				Positions[i] = new TPOINT(positionList.Positions[i]);
 
-			PositionCount = jointList.PositionCount;
+			PositionCount = positionList.PositionCount;
 		}
 
 		SinglePositionList(UInt8 size)
@@ -38,18 +38,18 @@ namespace Movement
 				Positions[i] = new TPOINT(TPOINT::getZero());
 		}
 
-		SinglePositionList<TPOINT>& operator=(const SinglePositionList<TPOINT>& jointList)
+		SinglePositionList<TPOINT>& operator=(const SinglePositionList<TPOINT>& positionList)
 		{
-			TPOINT** tmpPositions = new TPOINT*[jointList.PositionCount + 1];
+			TPOINT** tmpPositions = new TPOINT*[positionList.PositionCount + 1];
 
-			for (UInt8 i = 0; i < jointList.PositionCount; i++)
-				tmpPositions[i] = new TPOINT(jointList.Positions[i]);
+			for (UInt8 i = 0; i < positionList.PositionCount; i++)
+				tmpPositions[i] = new TPOINT(positionList.Positions[i]);
 
 			delete[] Positions;
 
 			Positions = tmpPositions;
 
-			PositionCount = jointList.PositionCount;
+			PositionCount = positionList.PositionCount;
 
 			return *this;
 		}
