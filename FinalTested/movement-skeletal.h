@@ -10,12 +10,12 @@
 
 namespace Movement
 {
-	template <typename TPOINT, typename TMATRIX>
+	template <typename TPOINT, typename TMATRIX, typename TPOSITIONLIST>
 	struct Skeletal
 	{
 		JointList<TMATRIX> Joints;
 		BoneMap BoneMap;
-		DoublePositionList<TPOINT> ZeroPositions;
+		TPOSITIONLIST ZeroPositions;
 
 		Skeletal()
 		{
