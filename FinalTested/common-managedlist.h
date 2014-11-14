@@ -117,12 +117,12 @@ namespace Common
 			{
 				TVALUE** tmp = new TVALUE*[list.capacity];
 				Capacity = list.Capacity;
-				Count = list.Count;
+				Count = list.Count; // this should be moved to end in case it fails during execution.
 
 				for (TINDEX i = 0; i < Count; i++)
 					tmp[i] = new TVALUE(list.Items[i]);
 
-				delete[] Items;
+				delete[] Items; // should this have also deleted items? (yes me thinks)
 
 				Items = tmp;
 			}
