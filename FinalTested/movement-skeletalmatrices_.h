@@ -13,15 +13,13 @@
 namespace Movement
 {
 
-	template <typename TVALUE>
-	Common::Matrix3<TVALUE> get2d(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const UInt8 index)
+	template <typename TMATRIX>
+	TMATRIX get2d(const JointList<TMATRIX>& jointList, const BoneMap& boneMap, const UInt8 index)
 	{
-		Common::Matrix3<TVALUE> matrix = jointList.Joints[index];
-
 		if (boneMap.ParentBones[index] != index)
-			return get2d(jointList, boneMap, boneMap.ParentBones[index]) * matrix;
+			return get2d(jointList, boneMap, boneMap.ParentBones[index]) * *jointList.Joints[index];
 		else
-			return matrix;
+			return *jointList.Joints[index];
 	}
 
 }
