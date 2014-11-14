@@ -1,5 +1,5 @@
-#ifndef MOVEMENTZEROPOSITIONLIST_H
-#define MOVEMENTZEROPOSITIONLIST_H
+#ifndef MOVEMENTBONEZEROLIST_H
+#define MOVEMENTBONEZEROLIST_H
 
 #include "core.h"
 #include "common.h"
@@ -7,13 +7,13 @@
 namespace Movement
 {
 	template <typename TPOINT>
-	struct ZeroPositionList
+	struct BoneZeroList
 	{
 		TPOINT** FromPositions;
 		TPOINT** ToPositions;
 		UInt8 PositionCount;
 
-		ZeroPositionList()
+		BoneZeroList()
 			: FromPositions(0),
 			  ToPositions(0),
 			  PositionCount(0)
@@ -21,7 +21,7 @@ namespace Movement
 		}
 
 		template <typename TVALUE = FloatMax>
-		ZeroPositionList(const ZeroPositionList<TPOINT>& jointList)
+		BoneZeroList(const BoneZeroList<TPOINT>& jointList)
 		{
 			FromPositions = new TPOINT*[jointList.PositionCount];
 			ToPositions = new TPOINT*[jointList.PositionCount];
@@ -35,7 +35,7 @@ namespace Movement
 			PositionCount = jointList.PositionCount;
 		}
 
-		ZeroPositionList(UInt8 size)
+		BoneZeroList(UInt8 size)
 			: PositionCount(size)
 		{
 			FromPositions = new TPOINT*[size];
@@ -48,7 +48,7 @@ namespace Movement
 			}
 		}
 
-		ZeroPositionList<TPOINT>& operator=(const ZeroPositionList<TPOINT>& jointList)
+		BoneZeroList<TPOINT>& operator=(const BoneZeroList<TPOINT>& jointList)
 		{
 			TPOINT** tmpFromPositions = new TPOINT*[jointList.PositionCount + 1];
 			TPOINT** tmpToPositions = new TPOINT*[jointList.PositionCount + 1];
@@ -95,7 +95,7 @@ namespace Movement
 			return PositionCount - 1;
 		}
 
-		~ZeroPositionList()
+		~BoneZeroList()
 		{
 			for (UInt8 i = 0; i < PositionCount; i++)
 			{
@@ -110,4 +110,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENTZEROPOSITIONLIST_H
+#endif // MOVEMENTBONEZEROLIST_H

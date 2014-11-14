@@ -5,8 +5,8 @@
 #include "common.h"
 
 #include "movement-bonemap.h"
+#include "movement-bonezerolist.h"
 #include "movement-jointlist.h"
-#include "movement-zeropositionlist.h"
 
 namespace Movement
 {
@@ -15,7 +15,7 @@ namespace Movement
 	{
 		JointList<TMATRIX> Joints;
 		BoneMap BoneMap;
-		ZeroPositionList<TPOINT> ZeroPositions;
+		BoneZeroList<TPOINT> ZeroPositions;
 
 		Skeletal()
 		{

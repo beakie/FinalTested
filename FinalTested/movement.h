@@ -7,7 +7,7 @@
 #include "movement-skeletal.h"
 #include "movement-bonemap.h"
 #include "movement-jointlist.h"
-#include "movement-zeropositionlist.h"
+#include "movement-bonezerolist.h"
 
 namespace Movement
 {
@@ -20,13 +20,13 @@ namespace Movement
 	typedef JointList<Common::Matrix4F64> JointList3d64;
 	typedef JointList<Common::Matrix4F> JointList3d;
 
-	typedef ZeroPositionList<Space2d::PlotF32> ZeroPositionList2d32;
-	typedef ZeroPositionList<Space2d::PlotF64> ZeroPositionList2d64;
-	typedef ZeroPositionList<Space2d::PlotF> ZeroPositionList2d;
+	typedef BoneZeroList<Space2d::PlotF32> BoneZeroList2d32;
+	typedef BoneZeroList<Space2d::PlotF64> BoneZeroList2d64;
+	typedef BoneZeroList<Space2d::PlotF> BoneZeroList2d;
 
-	typedef ZeroPositionList<Space3d::CoordinateF32> ZeroPositionList3d32;
-	typedef ZeroPositionList<Space3d::CoordinateF64> ZeroPositionList3d64;
-	typedef ZeroPositionList<Space3d::CoordinateF> ZeroPositionList3d;
+	typedef BoneZeroList<Space3d::CoordinateF32> BoneZeroList3d32;
+	typedef BoneZeroList<Space3d::CoordinateF64> BoneZeroList3d64;
+	typedef BoneZeroList<Space3d::CoordinateF> BoneZeroList3d;
 
 	typedef Skeletal<Space2d::PlotF32, Common::Matrix3F32> Skeletal2d32;
 	typedef Skeletal<Space2d::PlotF64, Common::Matrix3F64> Skeletal2d64;
