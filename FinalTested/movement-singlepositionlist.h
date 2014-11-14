@@ -1,5 +1,5 @@
-#ifndef MOVEMENTJOINTPOSITIONLIST_H
-#define MOVEMENTJOINTPOSITIONLIST_H
+#ifndef MOVEMENTSINGLEPOSITIONLIST_H
+#define MOVEMENTSINGLEPOSITIONLIST_H
 
 #include "core.h"
 #include "common.h"
@@ -7,19 +7,19 @@
 namespace Movement
 {
 	template <typename TPOINT>
-	struct JointPositionList
+	struct SinglePositionList
 	{
 		TPOINT** Positions;
 		UInt8 PositionCount;
 
-		JointPositionList()
+		SinglePositionList()
 			: Positions(0),
 			  PositionCount(0)
 		{
 		}
 
 		template <typename TVALUE = FloatMax>
-		JointPositionList(const JointPositionList<TPOINT>& jointList)
+		SinglePositionList(const SinglePositionList<TPOINT>& jointList)
 		{
 			Positions = new TPOINT*[jointList.PositionCount];
 
@@ -29,16 +29,16 @@ namespace Movement
 			PositionCount = jointList.PositionCount;
 		}
 
-		JointPositionList(UInt8 size)
+		SinglePositionList(UInt8 size)
 			: PositionCount(size)
 		{
 			Positions = new TPOINT*[size];
 
 			for (UInt8 i = 0; i < size; i++)
-				Positions[i] = new TPOINT(TPOINT::getPosition());
+				Positions[i] = new TPOINT(TPOINT::getZero());
 		}
 
-		JointPositionList<TPOINT>& operator=(const JointPositionList<TPOINT>& jointList)
+		SinglePositionList<TPOINT>& operator=(const SinglePositionList<TPOINT>& jointList)
 		{
 			TPOINT** tmpPositions = new TPOINT*[jointList.PositionCount + 1];
 
@@ -55,7 +55,7 @@ namespace Movement
 			return *this;
 		}
 
-		UInt8 addJoint()
+		UInt8 addSingle()
 		{
 			TPOINT** tmpPositions = new TPOINT*[PositionCount + 1];
 
@@ -64,7 +64,7 @@ namespace Movement
 				tmpPositions[i] = Positions[i];
 			}
 
-			tmpPositions[PositionCount] = new TPOINT(TPOINT::getPosition());
+			tmpPositions[PositionCount] = new TPOINT(TPOINT::getZero());
 
 			delete[] Positions;
 
@@ -75,7 +75,7 @@ namespace Movement
 			return PositionCount - 1;
 		}
 
-		~JointPositionList()
+		~SinglePositionList()
 		{
 			for (UInt8 i = 0; i < PositionCount; i++)
 				delete Positions[i];
@@ -86,4 +86,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENTJOINTPOSITIONLIST_H
+#endif // MOVEMENTSINGLEPOSITIONLIST_H

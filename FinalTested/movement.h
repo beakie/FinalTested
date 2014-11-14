@@ -5,9 +5,9 @@
 #include "space3d.h"
 
 #include "movement-bonemap.h"
-#include "movement-bonezerolist.h"
+#include "movement-doublepositionlist.h"
 #include "movement-jointlist.h"
-#include "movement-jointzerolist.h"
+#include "movement-singlepositionlist.h"
 #include "movement-skeletal.h"
 
 namespace Movement
@@ -21,21 +21,21 @@ namespace Movement
 	typedef JointList<Common::Matrix4F64> JointList3d64;
 	typedef JointList<Common::Matrix4F> JointList3d;
 
-	typedef JointZeroList<Space2d::PlotF32> JointZeroList2d32;
-	typedef JointZeroList<Space2d::PlotF64> JointZeroList2d64;
-	typedef JointZeroList<Space2d::PlotF> JointZeroList2d;
+	typedef DoublePositionList<Space2d::PlotF32> DoublePositionList2d32;
+	typedef DoublePositionList<Space2d::PlotF64> DoublePositionList2d64;
+	typedef DoublePositionList<Space2d::PlotF> DoublePositionList2d;
 
-	typedef JointZeroList<Space3d::CoordinateF32> JointZeroList3d32;
-	typedef JointZeroList<Space3d::CoordinateF64> JointZeroList3d64;
-	typedef JointZeroList<Space3d::CoordinateF> JointZeroList3d;
+	typedef DoublePositionList<Space3d::CoordinateF32> DoublePositionList3d32;
+	typedef DoublePositionList<Space3d::CoordinateF64> DoublePositionList3d64;
+	typedef DoublePositionList<Space3d::CoordinateF> DoublePositionList3d;
 
-	typedef BoneZeroList<Space2d::PlotF32> BoneZeroList2d32;
-	typedef BoneZeroList<Space2d::PlotF64> BoneZeroList2d64;
-	typedef BoneZeroList<Space2d::PlotF> BoneZeroList2d;
+	typedef SinglePositionList<Space2d::PlotF32> SinglePositionList2d32;
+	typedef SinglePositionList<Space2d::PlotF64> SinglePositionList2d64;
+	typedef SinglePositionList<Space2d::PlotF> SinglePositionList2d;
 
-	typedef BoneZeroList<Space3d::CoordinateF32> BoneZeroList3d32;
-	typedef BoneZeroList<Space3d::CoordinateF64> BoneZeroList3d64;
-	typedef BoneZeroList<Space3d::CoordinateF> BoneZeroList3d;
+	typedef SinglePositionList<Space3d::CoordinateF32> SinglePositionList3d32;
+	typedef SinglePositionList<Space3d::CoordinateF64> SinglePositionList3d64;
+	typedef SinglePositionList<Space3d::CoordinateF> SinglePositionList3d;
 
 	typedef Skeletal<Space2d::PlotF32, Common::Matrix3F32> Skeletal2d32;
 	typedef Skeletal<Space2d::PlotF64, Common::Matrix3F64> Skeletal2d64;

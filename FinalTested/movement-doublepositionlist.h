@@ -43,8 +43,8 @@ namespace Movement
 
 			for (UInt8 i = 0; i < size; i++)
 			{
-				FromPositions[i] = new TPOINT(TPOINT::getPosition());
-				ToPositions[i] = new TPOINT(TPOINT::getPosition());
+				FromPositions[i] = new TPOINT(TPOINT::getZero());
+				ToPositions[i] = new TPOINT(TPOINT::getZero());
 			}
 		}
 
@@ -81,8 +81,8 @@ namespace Movement
 				tmpToPositions[i] = ToPositions[i];
 			}
 
-			tmpFromPositions[PositionCount] = new TPOINT(TPOINT::getPosition());
-			tmpToPositions[PositionCount] = new TPOINT(TPOINT::getPosition());
+			tmpFromPositions[PositionCount] = new TPOINT(TPOINT::getZero());
+			tmpToPositions[PositionCount] = new TPOINT(TPOINT::getZero());
 
 			delete[] FromPositions;
 			delete[] ToPositions;
