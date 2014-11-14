@@ -14,10 +14,10 @@ namespace Movement
 {
 
 	template <typename TMATRIX>
-	TMATRIX getTranslatedJoint(const JointList<TMATRIX>& jointList, const BoneMap& boneMap, const UInt8 index)
+	TMATRIX getBoneTranslation(const JointList<TMATRIX>& jointList, const BoneMap& boneMap, const UInt8 index)
 	{
 		if (boneMap.ParentBones[index] != index)
-			return getTranslatedJoint(jointList, boneMap, boneMap.ParentBones[index]) * *jointList.Joints[index];
+			return getBoneTranslation(jointList, boneMap, boneMap.ParentBones[index]) * *jointList.Joints[index];
 		else
 			return *jointList.Joints[index];
 	}
