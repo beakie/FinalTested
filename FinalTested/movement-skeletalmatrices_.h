@@ -14,9 +14,17 @@ namespace Movement
 {
 
 	template <typename TVALUE>
-	Common::Matrix3<TVALUE> get2d(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap)
+	Common::Matrix3<TVALUE> get2d(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const UInt8 index)
 	{
-		Common::Matrix3<TVALUE> matrix = Common::Matrix3<TVALUE>();
+		Common::Matrix3<TVALUE> matrix = jointList.Joints[index];
+
+		UInt8 currentIndex = index;
+
+		while (boneMap.ParentBones[currentIndex] != currentIndex)
+		{
+			currentIndex = boneMap.ParentBones[currentIndex];
+			matrix *= jointList[currentIndex]; // !!! this should be in ascending order not descending !!!
+		}
 
 		return matrix;
 	}
