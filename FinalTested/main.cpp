@@ -89,13 +89,9 @@ int main(int argc, char *argv[])
 
 	//Common::ManagedList<Movement::BoneMap3d> test = Common::ManagedList<Movement::BoneMap3d>();
 
-	Movement::Skeletal3d skeletal = Movement::Skeletal3d(4);
-
+	Movement::Skeletal3d skeletal(4);
 	Movement::getTranslatedBones(skeletal);
-	Movement::getTranslatedBones(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions);
-
 	skeletal.BoneMap.getBoneTransformMatrix(skeletal.Joints, 3);
 
 	return a.exec();
-
 }
