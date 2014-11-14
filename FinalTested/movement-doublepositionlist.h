@@ -28,8 +28,8 @@ namespace Movement
 
 			for (UInt8 i = 0; i < jointList.PositionCount; i++)
 			{
-				FromPositions[i] = jointList.FromPositions[i];
-				ToPositions[i] = jointList.ToPositions[i];
+				FromPositions[i] = new TPOINT(*jointList.FromPositions[i]);
+				ToPositions[i] = new TPOINT(*jointList.ToPositions[i]);
 			}
 
 			PositionCount = jointList.PositionCount;
@@ -55,8 +55,8 @@ namespace Movement
 
 			for (UInt8 i = 0; i < jointList.PositionCount; i++)
 			{
-				tmpFromPositions[i] = jointList.FromPositions[i];
-				tmpToPositions[i] = jointList.ToPositions[i];
+				tmpFromPositions[i] = new TPOINT(*jointList.FromPositions[i]);
+				tmpToPositions[i] = new TPOINT(*jointList.ToPositions[i]);
 			}
 
 			delete[] FromPositions;

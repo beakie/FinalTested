@@ -24,7 +24,7 @@ namespace Movement
 			Positions = new TPOINT*[jointList.PositionCount];
 
 			for (UInt8 i = 0; i < jointList.PositionCount; i++)
-				Positions[i] = jointList.Positions[i];
+				Positions[i] = new TPOINT(jointList.Positions[i]);
 
 			PositionCount = jointList.PositionCount;
 		}
@@ -43,10 +43,9 @@ namespace Movement
 			TPOINT** tmpPositions = new TPOINT*[jointList.PositionCount + 1];
 
 			for (UInt8 i = 0; i < jointList.PositionCount; i++)
-				tmpPositions[i] = jointList.Positions[i];
+				tmpPositions[i] = new TPOINT(jointList.Positions[i]);
 
 			delete[] Positions;
-			delete[] ToPositions;
 
 			Positions = tmpPositions;
 
@@ -60,9 +59,7 @@ namespace Movement
 			TPOINT** tmpPositions = new TPOINT*[PositionCount + 1];
 
 			for (UInt8 i = 0; i < PositionCount; i++)
-			{
 				tmpPositions[i] = Positions[i];
-			}
 
 			tmpPositions[PositionCount] = new TPOINT(TPOINT::getZero());
 
