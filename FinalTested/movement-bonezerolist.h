@@ -1,5 +1,5 @@
-#ifndef MOVEMENTBONEZEROLIST_H
-#define MOVEMENTBONEZEROLIST_H
+#ifndef MOVEMENTBONEPOSITIONLIST_H
+#define MOVEMENTBONEPOSITIONLIST_H
 
 #include "core.h"
 #include "common.h"
@@ -7,13 +7,13 @@
 namespace Movement
 {
 	template <typename TPOINT>
-	struct BoneZeroList
+	struct BonePositionList
 	{
 		TPOINT** FromPositions;
 		TPOINT** ToPositions;
 		UInt8 PositionCount;
 
-		BoneZeroList()
+		BonePositionList()
 			: FromPositions(0),
 			  ToPositions(0),
 			  PositionCount(0)
@@ -21,7 +21,7 @@ namespace Movement
 		}
 
 		template <typename TVALUE = FloatMax>
-		BoneZeroList(const BoneZeroList<TPOINT>& jointList)
+		BonePositionList(const BonePositionList<TPOINT>& jointList)
 		{
 			FromPositions = new TPOINT*[jointList.PositionCount];
 			ToPositions = new TPOINT*[jointList.PositionCount];
@@ -35,7 +35,7 @@ namespace Movement
 			PositionCount = jointList.PositionCount;
 		}
 
-		BoneZeroList(UInt8 size)
+		BonePositionList(UInt8 size)
 			: PositionCount(size)
 		{
 			FromPositions = new TPOINT*[size];
@@ -43,12 +43,12 @@ namespace Movement
 
 			for (UInt8 i = 0; i < size; i++)
 			{
-				FromPositions[i] = new TPOINT(TPOINT::getZero());
-				ToPositions[i] = new TPOINT(TPOINT::getZero());
+				FromPositions[i] = new TPOINT(TPOINT::getPosition());
+				ToPositions[i] = new TPOINT(TPOINT::getPosition());
 			}
 		}
 
-		BoneZeroList<TPOINT>& operator=(const BoneZeroList<TPOINT>& jointList)
+		BonePositionList<TPOINT>& operator=(const BonePositionList<TPOINT>& jointList)
 		{
 			TPOINT** tmpFromPositions = new TPOINT*[jointList.PositionCount + 1];
 			TPOINT** tmpToPositions = new TPOINT*[jointList.PositionCount + 1];
@@ -81,8 +81,8 @@ namespace Movement
 				tmpToPositions[i] = ToPositions[i];
 			}
 
-			tmpFromPositions[PositionCount] = new TPOINT(TPOINT::getZero());
-			tmpToPositions[PositionCount] = new TPOINT(TPOINT::getZero());
+			tmpFromPositions[PositionCount] = new TPOINT(TPOINT::getPosition());
+			tmpToPositions[PositionCount] = new TPOINT(TPOINT::getPosition());
 
 			delete[] FromPositions;
 			delete[] ToPositions;
@@ -95,7 +95,7 @@ namespace Movement
 			return PositionCount - 1;
 		}
 
-		~BoneZeroList()
+		~BonePositionList()
 		{
 			for (UInt8 i = 0; i < PositionCount; i++)
 			{
@@ -110,4 +110,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENTBONEZEROLIST_H
+#endif // MOVEMENTBONEPOSITIONLIST_H

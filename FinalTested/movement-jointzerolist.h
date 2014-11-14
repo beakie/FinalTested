@@ -1,5 +1,5 @@
-#ifndef MOVEMENTJOINTZEROLIST_H
-#define MOVEMENTJOINTZEROLIST_H
+#ifndef MOVEMENTJOINTPOSITIONLIST_H
+#define MOVEMENTJOINTPOSITIONLIST_H
 
 #include "core.h"
 #include "common.h"
@@ -7,19 +7,19 @@
 namespace Movement
 {
 	template <typename TPOINT>
-	struct JointZeroList
+	struct JointPositionList
 	{
 		TPOINT** Positions;
 		UInt8 PositionCount;
 
-		JointZeroList()
+		JointPositionList()
 			: Positions(0),
 			  PositionCount(0)
 		{
 		}
 
 		template <typename TVALUE = FloatMax>
-		JointZeroList(const JointZeroList<TPOINT>& jointList)
+		JointPositionList(const JointPositionList<TPOINT>& jointList)
 		{
 			Positions = new TPOINT*[jointList.PositionCount];
 
@@ -29,16 +29,16 @@ namespace Movement
 			PositionCount = jointList.PositionCount;
 		}
 
-		JointZeroList(UInt8 size)
+		JointPositionList(UInt8 size)
 			: PositionCount(size)
 		{
 			Positions = new TPOINT*[size];
 
 			for (UInt8 i = 0; i < size; i++)
-				Positions[i] = new TPOINT(TPOINT::getZero());
+				Positions[i] = new TPOINT(TPOINT::getPosition());
 		}
 
-		JointZeroList<TPOINT>& operator=(const JointZeroList<TPOINT>& jointList)
+		JointPositionList<TPOINT>& operator=(const JointPositionList<TPOINT>& jointList)
 		{
 			TPOINT** tmpPositions = new TPOINT*[jointList.PositionCount + 1];
 
@@ -64,7 +64,7 @@ namespace Movement
 				tmpPositions[i] = Positions[i];
 			}
 
-			tmpPositions[PositionCount] = new TPOINT(TPOINT::getZero());
+			tmpPositions[PositionCount] = new TPOINT(TPOINT::getPosition());
 
 			delete[] Positions;
 
@@ -75,7 +75,7 @@ namespace Movement
 			return PositionCount - 1;
 		}
 
-		~JointZeroList()
+		~JointPositionList()
 		{
 			for (UInt8 i = 0; i < PositionCount; i++)
 				delete Positions[i];
@@ -86,4 +86,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENTJOINTZEROLIST_H
+#endif // MOVEMENTJOINTPOSITIONLIST_H
