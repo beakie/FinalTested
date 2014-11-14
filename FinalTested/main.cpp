@@ -91,6 +91,8 @@ int main(int argc, char *argv[])
 
 	Movement::Skeletal3d skeletal = Movement::Skeletal3d(4);
 
+	Movement::getTranslatedJoints3d<FloatMax>();
+
 	return a.exec();
 
 }

@@ -7,6 +7,7 @@
 #include "movement-bonemap.h"
 #include "movement-doublepositionlist.h"
 #include "movement-jointlist.h"
+#include "movement-positiontranslation_.h"
 #include "movement-singlepositionlist.h"
 #include "movement-skeletal.h"
 
