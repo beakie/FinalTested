@@ -10,7 +10,6 @@
 #include "movement-positiontranslation_.h"
 #include "movement-singlepositionlist.h"
 #include "movement-skeletal.h"
-#include "movement-skeletalmatrices_.h"
 
 namespace Movement
 {

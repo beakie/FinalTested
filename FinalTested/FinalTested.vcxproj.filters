@@ -236,8 +236,5 @@
     <ClInclude Include="movement-positiontranslation_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement-skeletalmatrices_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

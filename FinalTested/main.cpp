@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
 	Movement::getTranslatedBones(skeletal);
 	Movement::getTranslatedBones(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions);
 
-	Movement::getBoneTranslation(skeletal.Joints, skeletal.BoneMap, 3);
+	skeletal.BoneMap.getBoneTransformMatrix(skeletal.Joints, 3);
 
 	return a.exec();
 
