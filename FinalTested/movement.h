@@ -4,7 +4,7 @@
 #include "space2d.h"
 #include "space3d.h"
 
-#include "movement-body.h"
+#include "movement-skeletal.h"
 #include "movement-bonemap.h"
 #include "movement-jointlist.h"
 
@@ -27,13 +27,13 @@ namespace Movement
 	typedef BoneMap<Space3d::CoordinateF64> BoneMap3d64;
 	typedef BoneMap<Space3d::CoordinateF> BoneMap3d;
 
-	typedef Body<Space2d::PlotF32, Common::Matrix3F32> Body2d32;
-	typedef Body<Space2d::PlotF64, Common::Matrix3F64> Body2d64;
-	typedef Body<Space2d::PlotF, Common::Matrix3F> Body2d;
+	typedef Skeletal<Space2d::PlotF32, Common::Matrix3F32> Skeletal2d32;
+	typedef Skeletal<Space2d::PlotF64, Common::Matrix3F64> Skeletal2d64;
+	typedef Skeletal<Space2d::PlotF, Common::Matrix3F> Skeletal2d;
 
-	typedef Body<Space3d::CoordinateF32, Common::Matrix4F32> Body3d32;
-	typedef Body<Space3d::CoordinateF64, Common::Matrix4F64> Body3d64;
-	typedef Body<Space3d::CoordinateF, Common::Matrix4F> Body3d;
+	typedef Skeletal<Space3d::CoordinateF32, Common::Matrix4F32> Skeletal3d32;
+	typedef Skeletal<Space3d::CoordinateF64, Common::Matrix4F64> Skeletal3d64;
+	typedef Skeletal<Space3d::CoordinateF, Common::Matrix4F> Skeletal3d;
 
 }
 

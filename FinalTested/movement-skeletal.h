@@ -1,5 +1,5 @@
-#ifndef MOVEMENTBODY_H
-#define MOVEMENTBODY_H
+#ifndef MOVEMENTSKELETAL_H
+#define MOVEMENTSKELETAL_H
 
 #include "core.h"
 #include "common.h"
@@ -11,20 +11,21 @@
 namespace Movement
 {
 	template <typename TPOINT, typename TMATRIX>
-	struct Body
+	struct Skeletal
 	{
 		JointList<TMATRIX> Joints;
 		BoneMap<TPOINT> BoneMap;
 
-		Body()
+		Skeletal()
 		{
 		}
 
-		Body(UInt8 chainedBoneCount)
-			: Joints(chainedBoneCount)
+		Skeletal(UInt8 chainedBoneCount)
+			: Joints(chainedBoneCount),
+			  BoneMap(chainedBoneCount)
 		{
 		}
 	};
 }
 
-#endif // MOVEMENTBODY_H
+#endif // MOVEMENTSKELETAL_H

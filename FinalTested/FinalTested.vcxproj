@@ -81,7 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common-managedlist.h" />
-    <ClInclude Include="movement-body.h" />
+    <ClInclude Include="movement-skeletal.h" />
     <ClInclude Include="movement-bonemap.h" />
     <ClInclude Include="common-list.h" />
     <ClInclude Include="common-castpixelconv.h" />
