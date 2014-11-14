@@ -10,7 +10,6 @@
 
 namespace Movement
 {
-	template <typename TPOINT>
 	struct BoneMap
 	{
 		UInt8* ParentBones;

@@ -6,7 +6,7 @@
 
 #include "movement-bonemap.h"
 #include "movement-jointlist.h"
-#include "movement-skeletal.h"
+#include "movement-zeropositionlist.h"
 
 namespace Movement
 {
@@ -14,7 +14,8 @@ namespace Movement
 	struct Skeletal
 	{
 		JointList<TMATRIX> Joints;
-		BoneMap<TPOINT> BoneMap;
+		BoneMap BoneMap;
+		ZeroPositionList<TPOINT> ZeroPositions;
 
 		Skeletal()
 		{
@@ -22,7 +23,8 @@ namespace Movement
 
 		Skeletal(UInt8 chainedBoneCount)
 			: Joints(chainedBoneCount),
-			  BoneMap(chainedBoneCount)
+			  BoneMap(chainedBoneCount),
+			  ZeroPositions(chainedBoneCount)
 		{
 		}
 	};
