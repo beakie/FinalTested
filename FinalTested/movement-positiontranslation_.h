@@ -18,8 +18,8 @@ namespace Movement
 	{
 		SinglePositionList<TPOINT> translatedJoints = SinglePositionList<TPOINT>(jointPositions.PositionCount);
 
-		//for (UInt8 i = 0; i < jointPositions.PositionCount; i++)
-		//	translatedJoints.Positions[i] = jointPositions.Positions[i] * boneMap.getBoneTransformMatrix(jointList, i);
+		for (UInt8 i = 0; i < jointPositions.PositionCount; i++)
+			translatedJoints.Positions[i] = jointPositions.Positions[i] * boneMap.getBoneTransformMatrix(jointList, i);
 
 		return translatedJoints;
 	}
@@ -28,6 +28,17 @@ namespace Movement
 	DoublePositionList<TPOINT> getTranslatedBones(const JointList<TMATRIX>& jointList, const BoneMap& boneMap, const SinglePositionList<TPOINT>& jointPositions)
 	{
 		DoublePositionList<TPOINT> translatedBones = DoublePositionList<TPOINT>(jointPositions.PositionCount);
+
+		for (UInt8 i = 0; i < jointPositions.PositionCount; i++)
+		{
+			translatedBones.FromPositions[i] = jointPositions.Positions[i] * boneMap.getBoneTransformMatrix(jointList, i);
+
+			if (i == 0)
+				translatedBones.ToPositions[i] = TPOINT::getZero();
+			else
+				translatedBones.ToPositions[i] = translatedBones.FromPositions[i - 1];
+
+		}
 
 		return translatedBones;
 	}
@@ -40,11 +51,12 @@ namespace Movement
 		for (UInt8 i = 0; i < bonePositions.PositionCount; i++)
 		{
 			TMATRIX matrix = boneMap.getBoneTransformMatrix(jointList, i);
-			
+
+			translatedBones.FromPositions[i] = bonePositions.FromPositions[i] * matrix;
+			translatedBones.ToPositions[i] = bonePositions.ToPositions[i] * matrix;
+
 			// this needs to deal with matrix4. use Space3d::multiplyCoordinateByMatrix() or Space2d::multiplyPlotByMatrix()
 			// this (and above) will probably need splitting into 2 sets of 3 seperate functions.
-			//translatedBones.FromPositions[i] = bonePositions.FromPositions[i]->operator*(matrix);
-			//translatedBones.ToPositions[i] = bonePositions.ToPositions[i]->operator*(matrix);
 		}
 
 		return translatedBones;
