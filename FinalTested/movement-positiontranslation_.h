@@ -48,15 +48,14 @@ namespace Movement
 	{
 		DoublePositionList<TPOINT> translatedBones = DoublePositionList<TPOINT>(bonePositions.PositionCount);
 
+		TMATRIX matrix;
+
 		for (UInt8 i = 0; i < bonePositions.PositionCount; i++)
 		{
-			TMATRIX matrix = boneMap.getBoneTransformMatrix(jointList, i);
+			matrix = boneMap.getBoneTransformMatrix(jointList, i);
 
 			translatedBones.FromPositions[i] = bonePositions.FromPositions[i] * matrix;
 			translatedBones.ToPositions[i] = bonePositions.ToPositions[i] * matrix;
-
-			// this needs to deal with matrix4. use Space3d::multiplyCoordinateByMatrix() or Space2d::multiplyPlotByMatrix()
-			// this (and above) will probably need splitting into 2 sets of 3 seperate functions.
 		}
 
 		return translatedBones;
