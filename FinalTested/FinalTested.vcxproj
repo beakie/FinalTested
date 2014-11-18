@@ -134,6 +134,7 @@
     <ClInclude Include="picture-tricolormapscaledpixelconv.h" />
     <ClInclude Include="picture-tricolormappalettepixelconv.h" />
     <ClInclude Include="picture.h" />
+    <ClInclude Include="render2d.h" />
     <ClInclude Include="render3d-orthographic_.h" />
     <ClInclude Include="render3d.h" />
     <ClInclude Include="space2d-axis2d.h" />
