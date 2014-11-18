@@ -19,7 +19,7 @@ namespace Space3d
 
 		TVALUE getLength() const
 		{
-			return Common::power(Common::power(PlotTo.Values[0] - PlotFrom.Values[0], 2) + Common::power(PlotTo.Values[1] - PlotFrom.Values[1], 2) + Common::power(PlotTo.Values[2] - PlotFrom.Values[2], 2), 0.5);
+			return Common::power(Common::power(CoordinateTo.Values[0] - CoordinateFrom.Values[0], 2) + Common::power(CoordinateTo.Values[1] - CoordinateFrom.Values[1], 2) + Common::power(CoordinateTo.Values[2] - CoordinateFrom.Values[2], 2), 0.5);
 		}
 	};
 
