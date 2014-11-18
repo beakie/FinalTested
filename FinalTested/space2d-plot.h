@@ -62,6 +62,12 @@ namespace Space2d
 	typedef Common::Vector2<FloatMax> PlotF;
 
 	template <typename TVALUE>
+	Common::Vector2<TVALUE> multiplyPlotByMatrix(const Common::Vector2<TVALUE>& plot, const Common::Matrix2<TVALUE>& matrix)
+	{
+		return plot * matrix;
+	}
+
+	template <typename TVALUE>
 	Common::Vector2<TVALUE> multiplyPlotByMatrix(const Common::Vector2<TVALUE>& plot, const Common::Matrix3<TVALUE>& matrix)
 	{
 		Common::Vector3<TVALUE> vector3 = Common::Vector3<TVALUE>(plot.Values[0], plot.Values[1], 1) * matrix;

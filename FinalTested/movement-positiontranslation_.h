@@ -17,8 +17,8 @@ namespace Movement
 	{
 		PositionList<Common::Vector2<TVALUE>> translatedJoints = PositionList<Common::Vector2<TVALUE>>(jointPositions.PositionCount);
 
-		for (UInt8 i = 0; i < jointPositions.PositionCount; i++)
-			translatedJoints.Positions[i] = Space2d::multiplyPlotByMatrix(*jointPositions.Positions[i], boneMap.getBoneTransformMatrix(jointList, i));
+		//for (UInt8 i = 0; i < jointPositions.PositionCount; i++)
+		//	translatedJoints.Positions[i] = Space2d::multiplyPlotByMatrix(*jointPositions.Positions[i], boneMap.getBoneTransformMatrix(jointList, i));
 
 		return translatedJoints;
 	}
@@ -28,8 +28,8 @@ namespace Movement
 	{
 		PositionList<Common::Vector3<TVALUE>> translatedJoints = PositionList<Common::Vector3<TVALUE>>(jointPositions.PositionCount);
 
-		for (UInt8 i = 0; i < jointPositions.PositionCount; i++)
-			translatedJoints.Positions[i] = Space3d::multiplyCoordinateByMatrix(*jointPositions.Positions[i], boneMap.getBoneTransformMatrix(jointList, i));
+		//for (UInt8 i = 0; i < jointPositions.PositionCount; i++)
+		//	translatedJoints.Positions[i] = Space3d::multiplyCoordinateByMatrix(*jointPositions.Positions[i], boneMap.getBoneTransformMatrix(jointList, i));
 
 		return translatedJoints;
 	}

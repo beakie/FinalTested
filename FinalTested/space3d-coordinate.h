@@ -62,6 +62,12 @@ namespace Space3d
 	typedef Common::Vector3<FloatMax> CoordinateF;
 
 	template <typename TVALUE>
+	Common::Vector3<TVALUE> multiplyCoordinateByMatrix(const Common::Vector3<TVALUE>& coordinate, const Common::Matrix3<TVALUE>& matrix)
+	{
+		return matrix * coordinate;
+	}
+
+	template <typename TVALUE>
 	Common::Vector3<TVALUE> multiplyCoordinateByMatrix(const Common::Vector3<TVALUE>& coordinate, const Common::Matrix4<TVALUE>& matrix)
 	{
 		Common::Vector4<TVALUE> vector4 = Common::Vector4<TVALUE>(coordinate.Values[0], coordinate.Values[1], coordinate.Values[2], 1) * matrix;
