@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 	Movement::getTranslatedJoints(skeletal);
 	skeletal.BoneMap.getBoneTransformMatrix(skeletal.Joints, 3);
 
-	BodyRender::getJointToJointBones(skeletal);
+	Common::ManagedList<Space3d::LineSegment3d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
 
 	return a.exec();
 }

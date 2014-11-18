@@ -22,6 +22,12 @@ namespace BodyRender
 	{
 		Common::ManagedList<Space2d::LineSegment2d<TVALUE>, UInt8> boneList = Common::ManagedList<Space2d::LineSegment2d<TVALUE>, UInt8>();
 
+		for (UInt8 i = 0; i < boneMap.BoneCount; i++)
+			if (boneMap.ParentBones[i] == i)
+				boneList.add({ *positionList.Positions[i], Common::Vector2<TVALUE>::getZero() });
+			else
+				boneList.add({ *positionList.Positions[i], *positionList.Positions[boneMap.ParentBones[i]] });
+
 		return boneList;
 	}
 
@@ -29,6 +35,12 @@ namespace BodyRender
 	Common::ManagedList<Space3d::LineSegment3d<TVALUE>, UInt8> getJointToJointBones(Movement::PositionList<Common::Vector3<TVALUE>> positionList, Movement::BoneMap boneMap)
 	{
 		Common::ManagedList<Space3d::LineSegment3d<TVALUE>, UInt8> boneList = Common::ManagedList<Space3d::LineSegment3d<TVALUE>, UInt8>();
+
+		for (UInt8 i = 0; i < boneMap.BoneCount; i++)
+			if (boneMap.ParentBones[i] == i)
+				boneList.add({ *positionList.Positions[i], Common::Vector3<TVALUE>::getZero() });
+			else
+				boneList.add({ *positionList.Positions[i], *positionList.Positions[boneMap.ParentBones[i]] });
 
 		return boneList;
 	}
