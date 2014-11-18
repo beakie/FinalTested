@@ -54,7 +54,7 @@ namespace Movement
 			return *this;
 		}
 
-		UInt8 addSingle()
+		UInt8 addPoint()
 		{
 			TPOINT** tmpPositions = new TPOINT*[PositionCount + 1];
 
