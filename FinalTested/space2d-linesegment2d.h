@@ -2,7 +2,6 @@
 #define SPACE2DLINESEGMENT_H
 
 #include "common.h"
-#include "space2d-plot.h"
 
 namespace Space2d
 {
@@ -10,8 +9,8 @@ namespace Space2d
 	template <typename TVALUE = FloatMax>
 	struct LineSegment2d
 	{
-		Common::Vector2<TVALUE> PlotFrom;
-		Common::Vector2<TVALUE> PlotTo;
+		Common::Vector2<TVALUE> From;
+		Common::Vector2<TVALUE> To;
 	};
 
 }
