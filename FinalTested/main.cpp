@@ -87,13 +87,13 @@ int main(int argc, char *argv[])
 	Common::Matrix4F transformMatrix = actuatorManager.setPosition(0, 0.5).getTransformMatrix(0);
 	*/
 
-	//Common::ManagedList<Movement::BoneMap3d> test = Common::ManagedList<Movement::BoneMap3d>();
-
 	Movement::Skeletal3d skeletal(4);
-	Movement::getTranslatedJoints(skeletal);
-	skeletal.BoneMap.getBoneTransformMatrix(skeletal.Joints, 3);
 
-	Common::ManagedList<Space3d::LineSegment3d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
+	skeletal.ZeroPositions.Positions[1]->operator=({ 100, 0, 0 });
+	skeletal.ZeroPositions.Positions[2]->operator=({ 200, 0, 0 });
+	skeletal.ZeroPositions.Positions[3]->operator=({ 300, 0, 0 });
+
+	//Common::ManagedList<Space3d::LineSegment3d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
 
 	return a.exec();
 }
