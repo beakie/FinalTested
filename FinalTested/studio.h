@@ -1,3 +1,4 @@
+#include "bodyrender.h"
 #include "core.h"
 #include "common.h"
 #include "picture.h"
