@@ -70,9 +70,12 @@ namespace Space3d
 	template <typename TVALUE>
 	Common::Vector3<TVALUE> multiplyCoordinateByMatrix(const Common::Vector3<TVALUE>& coordinate, const Common::Matrix4<TVALUE>& matrix)
 	{
-		Common::Vector4<TVALUE> vector4 = Common::Vector4<TVALUE>(coordinate.Values[0], coordinate.Values[1], coordinate.Values[2], 1) * matrix;
+		Common::Vector4<TVALUE> result;
 
-		return Common::Vector3<TVALUE>(vector4.Values[0], vector4.Values[1], vector4.Values[2]) // dont just link this to vector4... make it more efficient
+		for (UInt8 i = 0; i < 4; ++i)
+			result.Values[i] = (coordinate.Values[0] * matrix.Values[0][i]) + (coordinate.Values[1] * matrix.Values[1][i]) + (coordinate.Values[2] + matrix.Values[2][i]) + matrix.Values[3][i];
+
+		return Common::Vector3<TVALUE>(result.Values[0] / result.Values[3], result.Values[1] / result.Values[3], result.Values[2] / result.Values[3]);
 	}
 }
 

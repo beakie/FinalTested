@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 	skeletal.ZeroPositions.Positions[2]->operator=({ 200, 0, 0 });
 	skeletal.ZeroPositions.Positions[3]->operator=({ 300, 0, 0 });
 
-	//Common::ManagedList<Space3d::LineSegment3d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
+	Common::ManagedList<Space3d::LineSegment3d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
 
 	return a.exec();
 }

@@ -70,9 +70,12 @@ namespace Space2d
 	template <typename TVALUE>
 	Common::Vector2<TVALUE> multiplyPlotByMatrix(const Common::Vector2<TVALUE>& plot, const Common::Matrix3<TVALUE>& matrix)
 	{
-		Common::Vector3<TVALUE> vector3 = Common::Vector3<TVALUE>(plot.Values[0], plot.Values[1], 1) * matrix;
+		Common::Vector3<TVALUE> result;
 
-		return Common::Vector2<TVALUE>(vector3.Values[0], vector3.Values[1]) // dont just link this to vector3... make it more efficient
+		for (UInt8 i = 0; i < 3; ++i)
+			result.Values[i] = (coordinate.Values[0] * matrix.Values[0][i]) + (coordinate.Values[1] * matrix.Values[1][i]) + matrix.Values[2][i];
+
+		return Common::Vector2<TVALUE>(result.Values[0] / result.Values[3], result.Values[1] / result.Values[3]);
 	}
 
 }

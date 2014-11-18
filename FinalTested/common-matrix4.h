@@ -262,6 +262,8 @@ namespace Common
 				(matrix.Values[2][0] * Values[0][3]) + (matrix.Values[2][1] * Values[1][3]) + (matrix.Values[2][2] * Values[2][3]) + (matrix.Values[2][3] * Values[2][3]),
 				(matrix.Values[3][0] * Values[0][3]) + (matrix.Values[3][1] * Values[1][3]) + (matrix.Values[3][2] * Values[2][3]) + (matrix.Values[3][3] * Values[2][3]));
 
+			//is this really more efficient than looping?
+
 			return *this;
 		}
 
