@@ -3,7 +3,6 @@
 #include "picture.h"
 #include "picture-qt.h"
 #include "movement.h"
-#include "render2d.h"
 #include "render3d.h"
 #include "space2d.h"
 #include "space3d.h"
