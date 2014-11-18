@@ -43,7 +43,7 @@ namespace Movement
 			TPOINT** tmpPositions = new TPOINT*[positionList.PositionCount + 1];
 
 			for (UInt8 i = 0; i < positionList.PositionCount; i++)
-				tmpPositions[i] = new TPOINT(positionList.Positions[i]);
+				tmpPositions[i] = new TPOINT(*positionList.Positions[i]);
 
 			delete[] Positions;
 

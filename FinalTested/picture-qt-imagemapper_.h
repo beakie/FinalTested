@@ -1,8 +1,8 @@
 #ifndef PICTUREQTIMAGEMAPPER_H
 #define PICTUREQTIMAGEMAPPER_H
 
-#include "common-image.h"
 #include "picture.h"
+
 #include <QImage>
 #include <QPixmap>
 #include <QRgb>

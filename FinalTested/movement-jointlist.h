@@ -24,7 +24,7 @@ namespace Movement
 			Joints = new TMATRIX*[jointList.JointCount];
 
 			for (UInt8 i = 0; i < jointList.JointCount; i++)
-				Joints[i] = new TMATRIX(jointList.Joints[i]);
+				Joints[i] = new TMATRIX(*jointList.Joints[i]);
 
 			JointCount = jointList.JointCount;
 		}
@@ -43,7 +43,7 @@ namespace Movement
 			TMATRIX** tmpJoints = new TMATRIX*[jointList.JointCount + 1];
 
 			for (UInt8 i = 0; i < jointList.JointCount; i++)
-				tmpJoints[i] = new TMATRIX(jointList.Joints[i]);
+				tmpJoints[i] = new TMATRIX(*jointList.Joints[i]);
 
 			delete[] Joints;
 
