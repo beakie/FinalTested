@@ -1,5 +1,5 @@
-#ifndef COMMONSTATIC_H
-#define COMMONSTATIC_H
+#ifndef COMMONBOUNDS_H
+#define COMMONBOUNDS_H
 
 #include "core.h"
 
@@ -141,4 +141,4 @@ namespace Common
 	}
 }
 
-#endif // COMMONSTATIC_H
+#endif // COMMONBOUNDS_H
