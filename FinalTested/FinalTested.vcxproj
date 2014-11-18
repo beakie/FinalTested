@@ -80,7 +80,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bodyrender-renderbones_.h" />
+    <ClInclude Include="bodyrender-jointtojointbones_.h" />
     <ClInclude Include="bodyrender.h" />
     <ClInclude Include="common-managedlist.h" />
     <ClInclude Include="movement-positiontranslation_.h" />

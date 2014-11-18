@@ -242,7 +242,7 @@
     <ClInclude Include="bodyrender.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="bodyrender-renderbones_.h">
+    <ClInclude Include="bodyrender-jointtojointbones_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

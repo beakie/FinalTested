@@ -1,6 +1,6 @@
 #include "movement.h"
 
-#include "bodyrender-renderbones_.h"
+#include "bodyrender-jointtojointbones_.h"
 
 namespace BodyRender
 {
