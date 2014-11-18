@@ -5,17 +5,17 @@
 #include "common.h"
 
 #include "movement-bonemap.h"
-#include "movement-doublepositionlist.h"
+#include "movement-positionlist.h"
 #include "movement-jointlist.h"
 
 namespace Movement
 {
-	template <typename TPOINT, typename TMATRIX, typename TPOSITIONLIST>
+	template <typename TPOINT, typename TMATRIX>
 	struct Skeletal
 	{
 		JointList<TMATRIX> Joints;
 		BoneMap BoneMap;
-		TPOSITIONLIST ZeroPositions;
+		PositionList<TPOINT> ZeroPositions;
 
 		Skeletal()
 		{

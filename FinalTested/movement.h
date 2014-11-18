@@ -54,29 +54,13 @@ namespace Movement
 	typedef DoublePositionList<Space3d::CoordinateF64> BonePositionList3d64;
 	typedef DoublePositionList<Space3d::CoordinateF> BonePositionList3d;
 
-	typedef Skeletal<Space2d::PlotF32, Common::Matrix3F32, PositionList<Space2d::PlotF32>> SkeletalJ2d32;
-	typedef Skeletal<Space2d::PlotF64, Common::Matrix3F64, PositionList<Space2d::PlotF64>> SkeletalJ2d64;
-	typedef Skeletal<Space2d::PlotF, Common::Matrix3F, PositionList<Space2d::PlotF>> SkeletalJ2d;
+	typedef Skeletal<Space2d::PlotF32, Common::Matrix3F32> Skeletal2d32;
+	typedef Skeletal<Space2d::PlotF64, Common::Matrix3F64> Skeletal2d64;
+	typedef Skeletal<Space2d::PlotF, Common::Matrix3F> Skeletal2d;
 
-	typedef Skeletal<Space3d::CoordinateF32, Common::Matrix4F32, PositionList<Space3d::CoordinateF32>> SkeletalJ3d32;
-	typedef Skeletal<Space3d::CoordinateF64, Common::Matrix4F64, PositionList<Space3d::CoordinateF64>> SkeletalJ3d64;
-	typedef Skeletal<Space3d::CoordinateF, Common::Matrix4F, PositionList<Space3d::CoordinateF>> SkeletalJ3d;
-
-	typedef Skeletal<Space2d::PlotF32, Common::Matrix3F32, DoublePositionList<Space2d::PlotF32>> SkeletalB2d32;
-	typedef Skeletal<Space2d::PlotF64, Common::Matrix3F64, DoublePositionList<Space2d::PlotF64>> SkeletalB2d64;
-	typedef Skeletal<Space2d::PlotF, Common::Matrix3F, DoublePositionList<Space2d::PlotF>> SkeletalB2d;
-
-	typedef Skeletal<Space3d::CoordinateF32, Common::Matrix4F32, DoublePositionList<Space3d::CoordinateF32>> SkeletalB3d32;
-	typedef Skeletal<Space3d::CoordinateF64, Common::Matrix4F64, DoublePositionList<Space3d::CoordinateF64>> SkeletalB3d64;
-	typedef Skeletal<Space3d::CoordinateF, Common::Matrix4F, DoublePositionList<Space3d::CoordinateF>> SkeletalB3d;
-
-	typedef SkeletalB2d32 Skeletal2d32;
-	typedef SkeletalB2d64 Skeletal2d64;
-	typedef SkeletalB2d Skeletal2d;
-
-	typedef SkeletalB3d32 Skeletal3d32;
-	typedef SkeletalB3d64 Skeletal3d64;
-	typedef SkeletalB3d Skeletal3d;
+	typedef Skeletal<Space3d::CoordinateF32, Common::Matrix4F32> Skeletal3d32;
+	typedef Skeletal<Space3d::CoordinateF64, Common::Matrix4F64> Skeletal3d64;
+	typedef Skeletal<Space3d::CoordinateF, Common::Matrix4F> Skeletal3d;
 
 }
 

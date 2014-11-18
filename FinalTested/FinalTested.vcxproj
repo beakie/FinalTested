@@ -81,7 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common-managedlist.h" />
-    <ClInclude Include="movement-doublepositionlist.h" />
     <ClInclude Include="movement-positiontranslation_.h" />
     <ClInclude Include="movement-positionlist.h" />
     <ClInclude Include="movement-skeletal.h" />

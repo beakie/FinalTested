@@ -24,7 +24,7 @@ namespace Movement
 			Positions = new TPOINT*[positionList.PositionCount];
 
 			for (UInt8 i = 0; i < positionList.PositionCount; i++)
-				Positions[i] = new TPOINT(positionList.Positions[i]);
+				Positions[i] = new TPOINT(*positionList.Positions[i]);
 
 			PositionCount = positionList.PositionCount;
 		}

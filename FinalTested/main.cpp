@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
 	//Common::ManagedList<Movement::BoneMap3d> test = Common::ManagedList<Movement::BoneMap3d>();
 
 	Movement::Skeletal3d skeletal(4);
-	Movement::getTranslatedBones(skeletal);
+	Movement::getTranslatedJoints(skeletal);
 	skeletal.BoneMap.getBoneTransformMatrix(skeletal.Joints, 3);
 
 	return a.exec();
