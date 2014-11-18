@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 	Movement::getTranslatedJoints(skeletal);
 	skeletal.BoneMap.getBoneTransformMatrix(skeletal.Joints, 3);
 
-	BodyRender::render(skeletal);
+	BodyRender::getJointToJointBones(skeletal);
 
 	return a.exec();
 }

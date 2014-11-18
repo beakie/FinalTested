@@ -5,6 +5,7 @@
 
 #include "space2d-axis2d.h"
 #include "space2d-common_.h"
+#include "space2d-linesegment2d.h"
 #include "space2d-plot.h"
 #include "space2d-transformmatrixbuilders_.h"
 

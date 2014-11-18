@@ -113,7 +113,7 @@ namespace Common
 		{
 			if (this != &list)
 			{
-				TVALUE* tmp = new TVALUE[list.capacity];
+				TVALUE* tmp = new TVALUE[list.Capacity];
 				Capacity = list.Capacity;
 				Count = list.Count;
 
