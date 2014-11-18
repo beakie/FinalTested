@@ -139,14 +139,14 @@
     <ClInclude Include="render3d.h" />
     <ClInclude Include="space2d-axis2d.h" />
     <ClInclude Include="space2d-common_.h" />
-    <ClInclude Include="space2d-linesegment.h" />
+    <ClInclude Include="space2d-linesegment2d.h" />
     <ClInclude Include="space2d-plot.h" />
     <ClInclude Include="space2d-transformmatrixbuilders_.h" />
     <ClInclude Include="space2d.h" />
     <ClInclude Include="space3d-axis3d.h" />
     <ClInclude Include="space3d-common_.h" />
     <ClInclude Include="space3d-coordinate.h" />
-    <ClInclude Include="space3d-linesegment.h" />
+    <ClInclude Include="space3d-linesegment3d.h" />
     <ClInclude Include="space3d-transformmatrixbuilders_.h" />
     <ClInclude Include="space3d-transformquaternionbuilders_.h" />
     <ClInclude Include="space3d.h" />

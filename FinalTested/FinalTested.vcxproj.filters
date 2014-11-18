@@ -236,10 +236,10 @@
     <ClInclude Include="movement-positionlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="space3d-linesegment.h">
+    <ClInclude Include="space3d-linesegment3d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="space2d-linesegment.h">
+    <ClInclude Include="space2d-linesegment2d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
