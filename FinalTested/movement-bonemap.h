@@ -6,8 +6,6 @@
 
 #include "movement-jointlist.h"
 
-// This IS NOT a skeletal. A skeletal should be a 3d representation of the bone structure. this is simply to show connections between joints.
-
 namespace Movement
 {
 	struct BoneMap

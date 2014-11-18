@@ -1,5 +1,5 @@
-#ifndef MOVEMENTSINGLEPOSITIONLIST_H
-#define MOVEMENTSINGLEPOSITIONLIST_H
+#ifndef MOVEMENTPOSITIONLIST_H
+#define MOVEMENTPOSITIONLIST_H
 
 #include "core.h"
 #include "common.h"
@@ -7,19 +7,19 @@
 namespace Movement
 {
 	template <typename TPOINT>
-	struct SinglePositionList
+	struct PositionList
 	{
 		TPOINT** Positions;
 		UInt8 PositionCount;
 
-		SinglePositionList()
+		PositionList()
 			: Positions(0),
 			  PositionCount(0)
 		{
 		}
 
 		template <typename TVALUE = FloatMax>
-		SinglePositionList(const SinglePositionList<TPOINT>& positionList)
+		PositionList(const PositionList<TPOINT>& positionList)
 		{
 			Positions = new TPOINT*[positionList.PositionCount];
 
@@ -29,7 +29,7 @@ namespace Movement
 			PositionCount = positionList.PositionCount;
 		}
 
-		SinglePositionList(UInt8 size)
+		PositionList(UInt8 size)
 			: PositionCount(size)
 		{
 			Positions = new TPOINT*[size];
@@ -38,7 +38,7 @@ namespace Movement
 				Positions[i] = new TPOINT(TPOINT::getZero());
 		}
 
-		SinglePositionList<TPOINT>& operator=(const SinglePositionList<TPOINT>& positionList)
+		PositionList<TPOINT>& operator=(const PositionList<TPOINT>& positionList)
 		{
 			TPOINT** tmpPositions = new TPOINT*[positionList.PositionCount + 1];
 
@@ -72,7 +72,7 @@ namespace Movement
 			return PositionCount - 1;
 		}
 
-		~SinglePositionList()
+		~PositionList()
 		{
 			for (UInt8 i = 0; i < PositionCount; i++)
 				delete Positions[i];
@@ -83,4 +83,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENTSINGLEPOSITIONLIST_H
+#endif // MOVEMENTPOSITIONLIST_H

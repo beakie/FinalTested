@@ -227,13 +227,13 @@
     <ClInclude Include="movement-doublepositionlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement-singlepositionlist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="movement-positiontranslation_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="render3d-orthographic_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="movement-positionlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

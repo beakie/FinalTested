@@ -8,7 +8,7 @@
 #include "movement-doublepositionlist.h"
 #include "movement-jointlist.h"
 #include "movement-positiontranslation_.h"
-#include "movement-singlepositionlist.h"
+#include "movement-positionlist.h"
 #include "movement-skeletal.h"
 
 namespace Movement
@@ -30,21 +30,21 @@ namespace Movement
 	typedef DoublePositionList<Space3d::CoordinateF64> DoublePositionList3d64;
 	typedef DoublePositionList<Space3d::CoordinateF> DoublePositionList3d;
 
-	typedef SinglePositionList<Space2d::PlotF32> SinglePositionList2d32;
-	typedef SinglePositionList<Space2d::PlotF64> SinglePositionList2d64;
-	typedef SinglePositionList<Space2d::PlotF> SinglePositionList2d;
+	typedef PositionList<Space2d::PlotF32> PositionList2d32;
+	typedef PositionList<Space2d::PlotF64> PositionList2d64;
+	typedef PositionList<Space2d::PlotF> PositionList2d;
 
-	typedef SinglePositionList<Space3d::CoordinateF32> SinglePositionList3d32;
-	typedef SinglePositionList<Space3d::CoordinateF64> SinglePositionList3d64;
-	typedef SinglePositionList<Space3d::CoordinateF> SinglePositionList3d;
+	typedef PositionList<Space3d::CoordinateF32> PositionList3d32;
+	typedef PositionList<Space3d::CoordinateF64> PositionList3d64;
+	typedef PositionList<Space3d::CoordinateF> PositionList3d;
 
-	typedef SinglePositionList<Space2d::PlotF32> JointPositionList2d32;
-	typedef SinglePositionList<Space2d::PlotF64> JointPositionList2d64;
-	typedef SinglePositionList<Space2d::PlotF> JointPositionList2d;
+	typedef PositionList<Space2d::PlotF32> JointPositionList2d32;
+	typedef PositionList<Space2d::PlotF64> JointPositionList2d64;
+	typedef PositionList<Space2d::PlotF> JointPositionList2d;
 
-	typedef SinglePositionList<Space3d::CoordinateF32> JointPositionList3d32;
-	typedef SinglePositionList<Space3d::CoordinateF64> JointPositionList3d64;
-	typedef SinglePositionList<Space3d::CoordinateF> JointPositionList3d;
+	typedef PositionList<Space3d::CoordinateF32> JointPositionList3d32;
+	typedef PositionList<Space3d::CoordinateF64> JointPositionList3d64;
+	typedef PositionList<Space3d::CoordinateF> JointPositionList3d;
 
 	typedef DoublePositionList<Space2d::PlotF32> BonePositionList2d32;
 	typedef DoublePositionList<Space2d::PlotF64> BonePositionList2d64;
@@ -54,13 +54,13 @@ namespace Movement
 	typedef DoublePositionList<Space3d::CoordinateF64> BonePositionList3d64;
 	typedef DoublePositionList<Space3d::CoordinateF> BonePositionList3d;
 
-	typedef Skeletal<Space2d::PlotF32, Common::Matrix3F32, SinglePositionList<Space2d::PlotF32>> SkeletalJ2d32;
-	typedef Skeletal<Space2d::PlotF64, Common::Matrix3F64, SinglePositionList<Space2d::PlotF64>> SkeletalJ2d64;
-	typedef Skeletal<Space2d::PlotF, Common::Matrix3F, SinglePositionList<Space2d::PlotF>> SkeletalJ2d;
+	typedef Skeletal<Space2d::PlotF32, Common::Matrix3F32, PositionList<Space2d::PlotF32>> SkeletalJ2d32;
+	typedef Skeletal<Space2d::PlotF64, Common::Matrix3F64, PositionList<Space2d::PlotF64>> SkeletalJ2d64;
+	typedef Skeletal<Space2d::PlotF, Common::Matrix3F, PositionList<Space2d::PlotF>> SkeletalJ2d;
 
-	typedef Skeletal<Space3d::CoordinateF32, Common::Matrix4F32, SinglePositionList<Space3d::CoordinateF32>> SkeletalJ3d32;
-	typedef Skeletal<Space3d::CoordinateF64, Common::Matrix4F64, SinglePositionList<Space3d::CoordinateF64>> SkeletalJ3d64;
-	typedef Skeletal<Space3d::CoordinateF, Common::Matrix4F, SinglePositionList<Space3d::CoordinateF>> SkeletalJ3d;
+	typedef Skeletal<Space3d::CoordinateF32, Common::Matrix4F32, PositionList<Space3d::CoordinateF32>> SkeletalJ3d32;
+	typedef Skeletal<Space3d::CoordinateF64, Common::Matrix4F64, PositionList<Space3d::CoordinateF64>> SkeletalJ3d64;
+	typedef Skeletal<Space3d::CoordinateF, Common::Matrix4F, PositionList<Space3d::CoordinateF>> SkeletalJ3d;
 
 	typedef Skeletal<Space2d::PlotF32, Common::Matrix3F32, DoublePositionList<Space2d::PlotF32>> SkeletalB2d32;
 	typedef Skeletal<Space2d::PlotF64, Common::Matrix3F64, DoublePositionList<Space2d::PlotF64>> SkeletalB2d64;
