@@ -54,8 +54,8 @@ namespace Movement
 		{
 			matrix = boneMap.getBoneTransformMatrix(jointList, i);
 
-			translatedBones.FromPositions[i] = bonePositions.FromPositions[i] * matrix;
-			translatedBones.ToPositions[i] = bonePositions.ToPositions[i] * matrix;
+			//translatedBones.FromPositions[i] = bonePositions.FromPositions[i] * matrix;
+			//translatedBones.ToPositions[i] = bonePositions.ToPositions[i] * matrix;
 		}
 
 		return translatedBones;
