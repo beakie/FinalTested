@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
 
 	Movement::Skeletal3d skeletal(4);
 
-	skeletal.ZeroPositions.Positions[1]->operator=({ 100, 0, 0 });
+	skeletal.ZeroPositions.Positions[1]->operator=({ 100, 0, 0 }); // Should these be decimal? What space coordinates am i using? Does it matter if I'm just applying to matrices?
 	skeletal.ZeroPositions.Positions[2]->operator=({ 200, 0, 0 });
 	skeletal.ZeroPositions.Positions[3]->operator=({ 300, 0, 0 });
 
