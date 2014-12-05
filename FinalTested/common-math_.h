@@ -114,13 +114,13 @@ namespace Common
 	template <typename T>
 	static T max(const T value1, const T value2, const T value3)
 	{
-		return min(min(value1, value2), value3);
+		return max(max(value1, value2), value3);
 	}
 
 	template <typename T>
 	static T max(const T value1, const T value2, const T value3, const T value4)
 	{
-		return min(min(min(value1, value2), value3), value4);
+		return max(max(max(value1, value2), value3), value4);
 	}
 
 }

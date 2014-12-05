@@ -6,37 +6,63 @@
 
 namespace Picture
 {
-	template <typename TVALUE>
+	template <typename TUNSIGNEDINT>
 	class RgbToHsvPixelConv
 	{
 		// move function variables to here
 
 	public:
-		Common::Vector3<TVALUE> convertPixel(const Common::Vector3<TVALUE>& pixel)
+		Common::Vector3<TUNSIGNEDINT> convertPixel(const Common::Vector3<TUNSIGNEDINT>& pixel)
 		{
-			float h, s, v;
+			FloatMax h, s, v;
 
-			float minChannel = Common::min(pixel.Values[0], pixel.Values[1], pixel.Values[2]);
-			float maxChannel = Common::max(pixel.Values[0], pixel.Values[1], pixel.Values[2]);
-			v = maxChannel;				// v
-			float delta = maxChannel - minChannel;
-			if (maxChannel != 0)
-				s = delta / maxChannel;		// s
-			else {
-				// r = g = b = 0		// s = 0, v is undefined
-				s = 0;
-				h = -1;
-				return;
-			}
-			if (r == maxChannel)
-				h = (g - b) / delta;		// between yellow & magenta
-			else if (g == maxChannel)
-				h = 2 + (b - r) / delta;	// between cyan & yellow
+			TUNSIGNEDINT upperBound = 255;
+
+			//r = document.calcform.r.value;
+			FloatMax r = pixel.Values[0];
+			//g = document.calcform.g.value;
+			FloatMax g = pixel.Values[1];
+			//b = document.calcform.b.value;
+			FloatMax b = pixel.Values[2];
+			//r /= 255;
+			r /= upperBound;
+			//g /= 255;
+			g /= upperBound;
+			//b /= 255;
+			b /= upperBound;
+			//M = Math.max(r, g, b);
+			FloatMax max = Common::max(r, g, b);
+			//m = Math.min(r, g, b);
+			FloatMax min = Common::min(r, g, b);
+			//C = M - m;
+			FloatMax range = max - min;
+			//if (C == 0) h = 0;
+			if (range == 0) h = 0;
+			//else if (M == r) h = ((g - b) / C) % 6;
+			else if (max == r) h = (TUNSIGNEDINT)((g - b) / range) % 6;
+			//else if (M == g) h = (b - r) / C + 2;
+			else if (max == g) h = (b - r) / range + 2;
+			//else h = (r - g) / C + 4;
+			else h = (r - g) / range + 4;
+			//h *= 60;
+			h *= 60;
+			//if (h<0) h += 360;
+			if (h < 0) h += 360;
+			//v = M;
+			v = max;
+			//if (v == 0)
+			if (v == 0)
+			//s = 0;
+			s = 0;
+			//else
 			else
-				*h = 4 + (r - g) / delta;	// between magenta & cyan
-			h *= 60;				// degrees
-			if (h < 0)
-				h += 360;
+			//s = C / v;
+			s = range / v;
+			//s *= 100;
+			s *= 100;
+			//v *= 100;
+			v *= 100;
+			return Common::Vector3<TUNSIGNEDINT>(h, s, v);
 		}
 	};
 
@@ -44,4 +70,4 @@ namespace Picture
 
 #endif // PICTURERGBTOHSVPIXELCONV_H
 
-//http://www.cs.rit.edu/~ncs/color/t_convert.html#RGB%20to%20HSV%20&%20HSV%20to%20RGB
+// view-source:http://www.rapidtables.com/convert/color/rgb-to-hsv.htm
