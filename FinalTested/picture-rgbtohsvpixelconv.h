@@ -57,3 +57,4 @@ namespace Picture
 }
 
 #endif // PICTURERGBTOHSVPIXELCONV_H
+
