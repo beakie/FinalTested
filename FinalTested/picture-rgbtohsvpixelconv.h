@@ -92,3 +92,4 @@ namespace Picture
 
 #endif // PICTURERGBTOHSVPIXELCONV_H
 
+// http://www.cs.rit.edu/~ncs/color/t_convert.html
