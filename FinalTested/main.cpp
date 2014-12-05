@@ -95,11 +95,11 @@ int main(int argc, char *argv[])
 
 	//Common::ManagedList<Space3d::LineSegment3d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
 
-	//Picture::RgbToHsvPixelConv<UInt8> conv = Picture::RgbToHsvPixelConv<UInt8>();
-	//Common::Vector3<UInt8> pixel = conv.convertPixel(Common::Vector3<UInt8>(10, 20, 30));
+	Picture::RgbToHsvPixelConv<UInt8> conv = Picture::RgbToHsvPixelConv<UInt8>();
+	Common::Vector3<UInt8> pixel = conv.convertPixel(Common::Vector3<UInt8>(10, 20, 30));
 
-	Picture::RgbToHsvPixelConv<FloatMax> conv = Picture::RgbToHsvPixelConv<FloatMax>();
-	Common::Vector3<FloatMax> pixel = conv.convertPixel(Common::Vector3<FloatMax>(10, 20, 30));
+	//Picture::RgbToHsvPixelConv<FloatMax> conv = Picture::RgbToHsvPixelConv<FloatMax>();
+	//Common::Vector3<FloatMax> pixel = conv.convertPixel(Common::Vector3<FloatMax>(10, 20, 30));
 
 	return a.exec();
 }

@@ -16,15 +16,15 @@ namespace Picture
 		{
 			TUNSIGNEDINT upperBound = Common::getUpperBound<TUNSIGNEDINT>();
 
-			FloatMax r = pixel.Values[0] / upperBound;
-			FloatMax g = pixel.Values[1] / upperBound;
-			FloatMax b = pixel.Values[2] / upperBound;
+			FloatMax r = (FloatMax)pixel.Values[0] / upperBound;
+			FloatMax g = (FloatMax)pixel.Values[1] / upperBound;
+			FloatMax b = (FloatMax)pixel.Values[2] / upperBound;
 
 			FloatMax max = Common::max(r, g, b);
 			FloatMax min = Common::min(r, g, b);
 			FloatMax delta = max - min;
 
-			TUNSIGNEDINT h, s, v;
+			FloatMax h, s, v;
 
 			if (delta == 0)
 				h = 0;
