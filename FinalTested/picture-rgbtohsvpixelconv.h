@@ -24,7 +24,7 @@ namespace Picture
 			FloatMax min = Common::min(r, g, b);
 			FloatMax delta = max - min;
 
-			FloatMax h, s, v;
+			TUNSIGNEDINT h, s, v;
 
 			if (delta == 0)
 				h = 0;
