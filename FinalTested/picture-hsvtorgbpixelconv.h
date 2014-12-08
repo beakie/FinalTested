@@ -14,12 +14,12 @@ namespace Picture
 	public:
 		Common::Vector3<TUNITINTERVAL> convertPixel(const Common::Vector3<TUNITINTERVAL>& pixel)
 		{
-			if (pixel.Values[1] == 0)
-				return Common::Vector3<TUNITINTERVAL>(pixel.Values[2], pixel.Values[2], pixel.Values[2]);
-
 			FloatMax h = (FloatMax)pixel.Values[0];
 			FloatMax s = (FloatMax)pixel.Values[1];
 			FloatMax v = (FloatMax)pixel.Values[2];
+
+			if (s == 0)
+				return Common::Vector3<TUNITINTERVAL>(v, v, v);
 
 			h = pixel.Values[0] * 6;
 			int i = floor(h);

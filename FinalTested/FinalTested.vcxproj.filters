@@ -248,5 +248,8 @@
     <ClInclude Include="picture-rgbtocmykpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="picture-cmyktorgbpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
