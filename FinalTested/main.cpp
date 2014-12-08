@@ -68,6 +68,26 @@ int main(int argc, char *argv[])
 	*/
 
 	/*
+	Picture::RgbToHsvPixelConv<Common::UnitIntervalMax> rgbHsvConv = Picture::RgbToHsvPixelConv<Common::UnitIntervalMax>();
+	Common::Vector3<Common::UnitIntervalMax> hsvPixel = rgbHsvConv.convertPixel(Common::Vector3<Common::UnitIntervalMax>(0.0392156862745098, 0.0784313725490196, 0.1176470588235294));
+
+	Picture::HsvToRgbPixelConv<Common::UnitIntervalMax> hsvRgbConv = Picture::HsvToRgbPixelConv<Common::UnitIntervalMax>();
+	Common::Vector3<Common::UnitIntervalMax> rgb1Pixel = hsvRgbConv.convertPixel(hsvPixel);
+
+	Picture::RgbToCmykPixelConv<Common::UnitIntervalMax> rgbCmykConv = Picture::RgbToCmykPixelConv<Common::UnitIntervalMax>();
+	Common::Vector4<Common::UnitIntervalMax> cmykPixel = rgbCmykConv.convertPixel(rgb1Pixel);
+
+	Picture::CmykToRgbPixelConv<Common::UnitIntervalMax> cmykRgbConv = Picture::CmykToRgbPixelConv<Common::UnitIntervalMax>();
+	Common::Vector3<Common::UnitIntervalMax> rgb2Pixel = cmykRgbConv.convertPixel(cmykPixel);
+
+	Picture::RgbToArgbPixelConv<Common::UnitIntervalMax> rgbRgbaConv = Picture::RgbToArgbPixelConv<Common::UnitIntervalMax>();
+	Common::Vector4<Common::UnitIntervalMax> argbPixel = rgbRgbaConv.convertPixel(rgb2Pixel);
+
+	Picture::ArgbToRgbPixelConv<Common::UnitIntervalMax> rgbaRgbConv = Picture::ArgbToRgbPixelConv<Common::UnitIntervalMax>();
+	Common::Vector3<Common::UnitIntervalMax> rgb3Pixel = rgbaRgbConv.convertPixel(argbPixel);
+	*/
+
+	/*
 	// OLD STUFF
 	Movement::Skeletal<> skeletal = Movement::Skeletal<>();
 
@@ -94,24 +114,6 @@ int main(int argc, char *argv[])
 	//skeletal.ZeroPositions.Positions[3]->operator=({ 300, 0, 0 });
 
 	//Common::ManagedList<Space3d::LineSegment3d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
-
-	Picture::RgbToHsvPixelConv<Common::UnitIntervalMax> rgbHsvConv = Picture::RgbToHsvPixelConv<Common::UnitIntervalMax>();
-	Common::Vector3<Common::UnitIntervalMax> hsvPixel = rgbHsvConv.convertPixel(Common::Vector3<Common::UnitIntervalMax>(0.0392156862745098, 0.0784313725490196, 0.1176470588235294));
-
-	Picture::HsvToRgbPixelConv<Common::UnitIntervalMax> hsvRgbConv = Picture::HsvToRgbPixelConv<Common::UnitIntervalMax>();
-	Common::Vector3<Common::UnitIntervalMax> rgb1Pixel = hsvRgbConv.convertPixel(hsvPixel);
-
-	Picture::RgbToCmykPixelConv<Common::UnitIntervalMax> rgbCmykConv = Picture::RgbToCmykPixelConv<Common::UnitIntervalMax>();
-	Common::Vector4<Common::UnitIntervalMax> cmykPixel = rgbCmykConv.convertPixel(rgb1Pixel);
-
-	Picture::CmykToRgbPixelConv<Common::UnitIntervalMax> cmykRgbConv = Picture::CmykToRgbPixelConv<Common::UnitIntervalMax>();
-	Common::Vector3<Common::UnitIntervalMax> rgb2Pixel = cmykRgbConv.convertPixel(cmykPixel);
-
-	Picture::RgbToArgbPixelConv<Common::UnitIntervalMax> rgbRgbaConv = Picture::RgbToArgbPixelConv<Common::UnitIntervalMax>();
-	Common::Vector4<Common::UnitIntervalMax> argbPixel = rgbRgbaConv.convertPixel(rgb2Pixel);
-
-	Picture::ArgbToRgbPixelConv<Common::UnitIntervalMax> rgbaRgbConv = Picture::ArgbToRgbPixelConv<Common::UnitIntervalMax>();
-	Common::Vector3<Common::UnitIntervalMax> rgb3Pixel = rgbaRgbConv.convertPixel(argbPixel);
 
 	return a.exec();
 }
