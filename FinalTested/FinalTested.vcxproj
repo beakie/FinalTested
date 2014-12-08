@@ -119,6 +119,7 @@
     <ClInclude Include="picture-quadcolormap.h" />
     <ClInclude Include="picture-colormodelconvbuilders_.h" />
     <ClInclude Include="picture-quadcolormapscaledpixelconv.h" />
+    <ClInclude Include="picture-rgbtoargbpixelconv.h" />
     <ClInclude Include="picture-rgbtocmykpixelconv.h" />
     <ClInclude Include="picture-rgbtohsvpixelconv.h" />
     <ClInclude Include="picture-selectchanavgquadchanpixelconv.h" />
