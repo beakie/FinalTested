@@ -17,6 +17,7 @@
 //yuv
 
 
+#include "picture-argbtorgbpixelconv.h"
 #include "picture-cmyktorgbpixelconv.h"
 #include "picture-colorhelpers_.h"
 #include "picture-colormaps_.h"
@@ -25,6 +26,7 @@
 #include "picture-quadchanpixelconvbuilders_.h"
 #include "picture-quadcolormap.h"
 #include "picture-quadcolormapscaledpixelconv.h"
+#include "picture-rgbtoargbpixelconv.h"
 #include "picture-rgbtocmykpixelconv.h"
 #include "picture-rgbtohsvpixelconv.h"
 #include "picture-selectchanavgquadchanpixelconv.h"
