@@ -254,5 +254,8 @@
     <ClInclude Include="picture-rgbtoargbpixelconv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="picture-argbtorgbpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
