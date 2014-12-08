@@ -6,11 +6,13 @@
 
 #include "studio.h"
 
+/*
 template <>
 static Picture::Rgb8 Common::getDefault<Picture::Rgb8>()
 {
-	return Picture::Rgb8(1, 2, 3);
+return Picture::Rgb8(1, 2, 3);
 }
+*/
 
 int main(int argc, char *argv[])
 {
