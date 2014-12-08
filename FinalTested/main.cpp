@@ -95,11 +95,14 @@ int main(int argc, char *argv[])
 
 	//Common::ManagedList<Space3d::LineSegment3d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
 
-	Picture::RgbToHsvPixelConv<Common::UnitIntervalMax> hsvConv = Picture::RgbToHsvPixelConv<Common::UnitIntervalMax>();
-	Common::Vector3<Common::UnitIntervalMax> hsvPixel = hsvConv.convertPixel(Common::Vector3<Common::UnitIntervalMax>(0.0392156862745098, 0.0784313725490196, 0.1176470588235294));
+	Picture::RgbToHsvPixelConv<Common::UnitIntervalMax> rgbHsvConv = Picture::RgbToHsvPixelConv<Common::UnitIntervalMax>();
+	Common::Vector3<Common::UnitIntervalMax> hsvPixel = rgbHsvConv.convertPixel(Common::Vector3<Common::UnitIntervalMax>(0.0392156862745098, 0.0784313725490196, 0.1176470588235294));
 
-	Picture::HsvToRgbPixelConv<Common::UnitIntervalMax> rgbConv = Picture::HsvToRgbPixelConv<Common::UnitIntervalMax>();
-	Common::Vector3<Common::UnitIntervalMax> rgbPixel = rgbConv.convertPixel(hsvPixel);
+	Picture::HsvToRgbPixelConv<Common::UnitIntervalMax> hsvRgbConv = Picture::HsvToRgbPixelConv<Common::UnitIntervalMax>();
+	Common::Vector3<Common::UnitIntervalMax> rgb1Pixel = hsvRgbConv.convertPixel(hsvPixel);
+
+	Picture::RgbToCmykPixelConv<Common::UnitIntervalMax> rgbCmykConv = Picture::RgbToCmykPixelConv<Common::UnitIntervalMax>();
+	Common::Vector4<Common::UnitIntervalMax> cmykPixel = rgbCmykConv.convertPixel(rgb1Pixel);
 
 	return a.exec();
 }

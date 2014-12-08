@@ -24,6 +24,7 @@
 #include "picture-quadchanpixelconvbuilders_.h"
 #include "picture-quadcolormap.h"
 #include "picture-quadcolormapscaledpixelconv.h"
+#include "picture-rgbtocmykpixelconv.h"
 #include "picture-rgbtohsvpixelconv.h"
 #include "picture-selectchanavgquadchanpixelconv.h"
 #include "picture-selectchanavgtrichanpixelconv.h"

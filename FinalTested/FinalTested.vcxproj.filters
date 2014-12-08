@@ -245,5 +245,8 @@
     <ClInclude Include="bodyrender-jointtojointbones_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="picture-rgbtocmykpixelconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
