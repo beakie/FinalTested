@@ -95,8 +95,11 @@ int main(int argc, char *argv[])
 
 	//Common::ManagedList<Space3d::LineSegment3d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
 
-	Picture::RgbToHsvPixelConv<Common::UnitIntervalMax> conv = Picture::RgbToHsvPixelConv<Common::UnitIntervalMax>();
-	Common::Vector3<Common::UnitIntervalMax> pixel = conv.convertPixel(Common::Vector3<Common::UnitIntervalMax>(0.0392156862745098, 0.0784313725490196, 0.1176470588235294));
+	Picture::RgbToHsvPixelConv<Common::UnitIntervalMax> hsvConv = Picture::RgbToHsvPixelConv<Common::UnitIntervalMax>();
+	Common::Vector3<Common::UnitIntervalMax> hsvPixel = hsvConv.convertPixel(Common::Vector3<Common::UnitIntervalMax>(0.0392156862745098, 0.0784313725490196, 0.1176470588235294));
+
+	Picture::HsvToRgbPixelConv<Common::UnitIntervalMax> rgbConv = Picture::HsvToRgbPixelConv<Common::UnitIntervalMax>();
+	Common::Vector3<Common::UnitIntervalMax> rgbPixel = rgbConv.convertPixel(hsvPixel);
 
 	return a.exec();
 }

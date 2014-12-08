@@ -6,18 +6,22 @@
 
 namespace Picture
 {
-	template <typename TVALUE>
+	template <typename TUNITINTERVAL>
 	class HsvToRgbPixelConv
 	{
 		// move function variables to here
 
 	public:
-		Common::Vector3<TVALUE> convertPixel(const Common::Vector3<TVALUE>& pixel)
+		Common::Vector3<TUNITINTERVAL> convertPixel(const Common::Vector3<TUNITINTERVAL>& pixel)
 		{
 			if (pixel.Values[1] == 0)
-				return Common::Vector3<TVALUE>(pixel.Values[2], pixel.Values[2], pixel.Values[2]);
+				return Common::Vector3<TUNITINTERVAL>(pixel.Values[2], pixel.Values[2], pixel.Values[2]);
 
-			float h = pixel.Values[0] / 60;
+			FloatMax h = (FloatMax)pixel.Values[0];
+			FloatMax s = (FloatMax)pixel.Values[1];
+			FloatMax v = (FloatMax)pixel.Values[2];
+
+			h = pixel.Values[0] * 6;
 			int i = floor(h);
 			float f = h - i;
 			float p = pixel.Values[2] * (1 - pixel.Values[1]);
@@ -25,17 +29,17 @@ namespace Picture
 			float t = pixel.Values[2] * (1 - pixel.Values[1] * (1 - f));
 			switch (i) {
 			case 0:
-				return Common::Vector3<TVALUE>(v, t, p);
+				return Common::Vector3<TUNITINTERVAL>(v, t, p);
 			case 1:
-				return Common::Vector3<TVALUE>(q, v, p);
+				return Common::Vector3<TUNITINTERVAL>(q, v, p);
 			case 2:
-				return Common::Vector3<TVALUE>(p, v, t);
+				return Common::Vector3<TUNITINTERVAL>(p, v, t);
 			case 3:
-				return Common::Vector3<TVALUE>(p, q, v);
+				return Common::Vector3<TUNITINTERVAL>(p, q, v);
 			case 4:
-				return Common::Vector3<TVALUE>(t, p, v);
+				return Common::Vector3<TUNITINTERVAL>(t, p, v);
 			default:
-				return Common::Vector3<TVALUE>(v, p, q);
+				return Common::Vector3<TUNITINTERVAL>(v, p, q);
 			}
 		}
 	};
