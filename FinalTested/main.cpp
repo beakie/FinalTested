@@ -104,5 +104,8 @@ int main(int argc, char *argv[])
 	Picture::RgbToCmykPixelConv<Common::UnitIntervalMax> rgbCmykConv = Picture::RgbToCmykPixelConv<Common::UnitIntervalMax>();
 	Common::Vector4<Common::UnitIntervalMax> cmykPixel = rgbCmykConv.convertPixel(rgb1Pixel);
 
+	Picture::CmykToRgbPixelConv<Common::UnitIntervalMax> cmykRgbConv = Picture::CmykToRgbPixelConv<Common::UnitIntervalMax>();
+	Common::Vector3<Common::UnitIntervalMax> rgb2Pixel = cmykRgbConv.convertPixel(cmykPixel);
+
 	return a.exec();
 }

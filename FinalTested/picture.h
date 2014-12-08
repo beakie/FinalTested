@@ -17,6 +17,7 @@
 //yuv
 
 
+#include "picture-cmyktorgbpixelconv.h"
 #include "picture-colorhelpers_.h"
 #include "picture-colormaps_.h"
 #include "picture-colormodelconvbuilders_.h"
