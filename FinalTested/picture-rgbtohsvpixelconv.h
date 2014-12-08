@@ -45,47 +45,6 @@ namespace Picture
 			
 			return Common::Vector3<TUNITINTERVAL>(h / 360, s, v);
 		}
-
-		Common::Vector3<UInt8> convertPixel2(const Common::Vector3<UInt8>& pixel)
-		{
-			UInt8 upperBound = Common::getUpperBound<UInt8>();
-
-			FloatMax r = (FloatMax)pixel.Values[0] / upperBound;
-			FloatMax g = (FloatMax)pixel.Values[1] / upperBound;
-			FloatMax b = (FloatMax)pixel.Values[2] / upperBound;
-
-			FloatMax max = Common::max(r, g, b);
-			FloatMax min = Common::min(r, g, b);
-			FloatMax delta = max - min;
-
-			FloatMax h, s, v;
-
-			if (delta == 0)
-				h = 0;
-			else if (max == r)
-				h = (UInt8)((g - b) / delta) % 6;
-			else if (max == g)
-				h = (b - r) / delta + 2;
-			else
-				h = (r - g) / delta + 4;
-
-			h *= 60;
-
-			if (h < 0)
-				h += 360;
-
-			v = max;
-
-			if (v == 0)
-				s = 0;
-			else
-				s = delta / v;
-
-			s *= 100;
-			v *= 100;
-
-			return Common::Vector3<UInt8>(h, s, v);
-		}
 	};
 
 }
