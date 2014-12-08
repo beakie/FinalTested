@@ -3,20 +3,6 @@
 
 #include "common.h"
 
-// todo
-// picture-rgbtohsvpixelconv
-// picture-hsvtorgbpixelconv
-//..and the rest
-
-//http://en.wikipedia.org/wiki/List_of_color_spaces_and_their_uses
-//color spaces
-//argb
-//cmyk
-//rgb
-//hsv
-//yuv
-
-
 #include "picture-argbtorgbpixelconv.h"
 #include "picture-cmyktorgbpixelconv.h"
 #include "picture-colorhelpers_.h"
