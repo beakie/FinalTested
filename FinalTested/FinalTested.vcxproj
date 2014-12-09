@@ -82,7 +82,9 @@
   <ItemGroup>
     <ClInclude Include="bodyrender-jointtojointbones_.h" />
     <ClInclude Include="bodyrender.h" />
+    <ClInclude Include="common-fromunitintervalpixelconv.h" />
     <ClInclude Include="common-managedlist.h" />
+    <ClInclude Include="common-tounitintervalpixelconv.h" />
     <ClInclude Include="movement-positiontranslation_.h" />
     <ClInclude Include="movement-positionlist.h" />
     <ClInclude Include="movement-skeletal.h" />

@@ -70,6 +70,7 @@ int main(int argc, char *argv[])
 	*/
 
 	/*
+
 	Picture::RgbToHsvPixelConv<Common::UnitIntervalMax> rgbHsvConv = Picture::RgbToHsvPixelConv<Common::UnitIntervalMax>();
 	Common::Vector3<Common::UnitIntervalMax> hsvPixel = rgbHsvConv.convertPixel(Common::Vector3<Common::UnitIntervalMax>(0.0392156862745098, 0.0784313725490196, 0.1176470588235294));
 
@@ -87,6 +88,7 @@ int main(int argc, char *argv[])
 
 	Picture::ArgbToRgbPixelConv<Common::UnitIntervalMax> rgbaRgbConv = Picture::ArgbToRgbPixelConv<Common::UnitIntervalMax>();
 	Common::Vector3<Common::UnitIntervalMax> rgb3Pixel = rgbaRgbConv.convertPixel(argbPixel);
+
 	*/
 
 	/*
