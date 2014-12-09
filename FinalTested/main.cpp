@@ -121,5 +121,13 @@ int main(int argc, char *argv[])
 	//Common::ManagedList<Space3d::LineSegment3d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
 	*/
 
+	// Missing UInt32 bound stuff
+
+	Common::ToUnitIntervalPixelConv<Int8> convToUnitInterval = Common::ToUnitIntervalPixelConv<Int8>();
+	Common::FromUnitIntervalPixelConv<Int8> convFromUnitInterval = Common::FromUnitIntervalPixelConv<Int8>();
+
+	Common::UnitIntervalMax i = convToUnitInterval.convertPixel(13);
+	Int8 ui = convFromUnitInterval.convertPixel(i);
+
 	return a.exec();
 }
