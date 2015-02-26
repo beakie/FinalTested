@@ -19,6 +19,27 @@
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{17cf1123-6a07-4128-85e1-ae7bc2d05815}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Movement">
+      <UniqueIdentifier>{64e7c71c-b8cb-4b8b-ab2f-751a8088b1ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Picture">
+      <UniqueIdentifier>{ae823c40-e7f0-4708-ba42-1faceb2456fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Space2d">
+      <UniqueIdentifier>{d963c7b3-1195-42f2-82af-b1b49183e775}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Space3d">
+      <UniqueIdentifier>{afb2697a-2578-47cd-94b6-204236974e74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Render3d">
+      <UniqueIdentifier>{a8614f95-046b-45f5-9970-868ce0fd0614}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BodyRender">
+      <UniqueIdentifier>{9db52877-b2df-419c-a8e9-369b86a5c53b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -29,239 +50,239 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="common-matrix3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-matrix2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-matrix4.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-imatrixadapter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-qt.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-quadcolormap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-selectchanavgtrichanpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-spreadchantrichanpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-spreadvaluetrichanpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-tricolormap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-selectchantrichanpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-spreadvaluequadchanpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-spreadchanquadchanpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-selectchanquadchanpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-selectchanavgquadchanpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-quadchanpixelconvbuilders_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-trichanpixelconvbuilders_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-colormaps_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-qt-imagemapper_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-scalecastpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-math_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-unitinterval.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-ipixelconverter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-tuple.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-castpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-colormodelconvbuilders_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-colormodelhelpers_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-rgbtohsvpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-hsvtorgbpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-chainpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-vector2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-vector3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-vector4.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-colorhelpers_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-bounds_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-quadcolormapscaledpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-tricolormapscaledpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-tricolormappalettepixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-nullable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-list.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-nullablenull.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-unitvector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="space3d.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="space3d-coordinate.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="space2d-plot.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="space2d.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="space2d-common_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="space3d-common_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-quaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="studio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="space3d-transformmatrixbuilders_.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="common-vector4.h">
+      <Filter>Header Files\Common</Filter>
     </ClInclude>
-    <ClInclude Include="space2d-transformmatrixbuilders_.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="common.h">
+      <Filter>Header Files\Common</Filter>
     </ClInclude>
-    <ClInclude Include="space3d-transformquaternionbuilders_.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="common-bounds_.h">
+      <Filter>Header Files\Common</Filter>
     </ClInclude>
-    <ClInclude Include="render3d.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="common-castpixelconv.h">
+      <Filter>Header Files\Common</Filter>
     </ClInclude>
-    <ClInclude Include="movement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-jointlist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="space3d-axis3d.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="space2d-axis2d.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-bonemap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-managedlist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-skeletal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-positiontranslation_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="render3d-orthographic_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movement-positionlist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="space3d-linesegment3d.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="space2d-linesegment2d.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bodyrender.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bodyrender-jointtojointbones_.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-rgbtocmykpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-cmyktorgbpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-rgbtoargbpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="picture-argbtorgbpixelconv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common-tounitintervalpixelconv.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="common-chainpixelconv.h">
+      <Filter>Header Files\Common</Filter>
     </ClInclude>
     <ClInclude Include="common-fromunitintervalpixelconv.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-image.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-imatrixadapter.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-ipixelconverter.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-list.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-managedlist.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-math_.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-matrix2.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-matrix3.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-matrix4.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-nullable.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-nullablenull.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-quaternion.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-scalecastpixelconv.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-tounitintervalpixelconv.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-tuple.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-unitinterval.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-unitvector.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-vector2.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="common-vector3.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="movement.h">
+      <Filter>Header Files\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="movement-bonemap.h">
+      <Filter>Header Files\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="movement-jointlist.h">
+      <Filter>Header Files\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="movement-positionlist.h">
+      <Filter>Header Files\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="movement-positiontranslation_.h">
+      <Filter>Header Files\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="movement-skeletal.h">
+      <Filter>Header Files\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="picture.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-argbtorgbpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-cmyktorgbpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-colorhelpers_.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-colormaps_.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-colormodelconvbuilders_.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-colormodelhelpers_.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-hsvtorgbpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-qt.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-qt-imagemapper_.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-quadchanpixelconvbuilders_.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-quadcolormap.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-quadcolormapscaledpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-rgbtoargbpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-rgbtocmykpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-rgbtohsvpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-selectchanavgquadchanpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-selectchanavgtrichanpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-selectchanquadchanpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-selectchantrichanpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-spreadchanquadchanpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-spreadchantrichanpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-spreadvaluequadchanpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-spreadvaluetrichanpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-trichanpixelconvbuilders_.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-tricolormap.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-tricolormappalettepixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="picture-tricolormapscaledpixelconv.h">
+      <Filter>Header Files\Picture</Filter>
+    </ClInclude>
+    <ClInclude Include="space2d.h">
+      <Filter>Header Files\Space2d</Filter>
+    </ClInclude>
+    <ClInclude Include="space2d-axis2d.h">
+      <Filter>Header Files\Space2d</Filter>
+    </ClInclude>
+    <ClInclude Include="space2d-common_.h">
+      <Filter>Header Files\Space2d</Filter>
+    </ClInclude>
+    <ClInclude Include="space2d-linesegment2d.h">
+      <Filter>Header Files\Space2d</Filter>
+    </ClInclude>
+    <ClInclude Include="space2d-plot.h">
+      <Filter>Header Files\Space2d</Filter>
+    </ClInclude>
+    <ClInclude Include="space2d-transformmatrixbuilders_.h">
+      <Filter>Header Files\Space2d</Filter>
+    </ClInclude>
+    <ClInclude Include="space3d.h">
+      <Filter>Header Files\Space3d</Filter>
+    </ClInclude>
+    <ClInclude Include="space3d-axis3d.h">
+      <Filter>Header Files\Space3d</Filter>
+    </ClInclude>
+    <ClInclude Include="space3d-common_.h">
+      <Filter>Header Files\Space3d</Filter>
+    </ClInclude>
+    <ClInclude Include="space3d-coordinate.h">
+      <Filter>Header Files\Space3d</Filter>
+    </ClInclude>
+    <ClInclude Include="space3d-linesegment3d.h">
+      <Filter>Header Files\Space3d</Filter>
+    </ClInclude>
+    <ClInclude Include="space3d-transformmatrixbuilders_.h">
+      <Filter>Header Files\Space3d</Filter>
+    </ClInclude>
+    <ClInclude Include="space3d-transformquaternionbuilders_.h">
+      <Filter>Header Files\Space3d</Filter>
+    </ClInclude>
+    <ClInclude Include="render3d.h">
+      <Filter>Header Files\Render3d</Filter>
+    </ClInclude>
+    <ClInclude Include="render3d-orthographic_.h">
+      <Filter>Header Files\Render3d</Filter>
+    </ClInclude>
+    <ClInclude Include="bodyrender.h">
+      <Filter>Header Files\BodyRender</Filter>
+    </ClInclude>
+    <ClInclude Include="bodyrender-jointtojointbones_.h">
+      <Filter>Header Files\BodyRender</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
